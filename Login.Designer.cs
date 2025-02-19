@@ -150,6 +150,7 @@
             this.btnEntrar.TabIndex = 8;
             this.btnEntrar.Text = "ENTRAR";
             this.btnEntrar.UseVisualStyleBackColor = false;
+            this.btnEntrar.MouseHover += new System.EventHandler(this.btnEntrar_MouseHover);
             // 
             // txtUsuario
             // 

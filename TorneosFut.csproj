@@ -125,5 +125,10 @@
   <ItemGroup>
     <None Include="Resources\show.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="media\door.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

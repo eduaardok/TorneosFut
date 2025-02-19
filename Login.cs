@@ -8,7 +8,8 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Media;
+using System.Xml.Linq;
 namespace TorneosFut
 {
     public partial class Login : Form
@@ -70,6 +71,13 @@ namespace TorneosFut
                 Ptbhide.BackgroundImage = Properties.Resources.hide;
                 Txtclave.PasswordChar = '*';
             } 
+        }
+
+        private void btnEntrar_MouseHover(object sender, EventArgs e)
+        {
+            SoundPlayer Media = new SoundPlayer();
+            Media.SoundLocation = "media\\door.wav";
+            Media.Play();
         }
     }
 }
