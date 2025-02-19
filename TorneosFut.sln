@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35806.99 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TorneosFut", "TorneosFut.csproj", "{B2926E6F-C97D-4E2B-B328-0C65DC36D965}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B2926E6F-C97D-4E2B-B328-0C65DC36D965}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2926E6F-C97D-4E2B-B328-0C65DC36D965}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2926E6F-C97D-4E2B-B328-0C65DC36D965}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2926E6F-C97D-4E2B-B328-0C65DC36D965}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A2A2C4BA-BC9A-4FDE-BCDD-34C864B2EB27}
+	EndGlobalSection
+EndGlobal
