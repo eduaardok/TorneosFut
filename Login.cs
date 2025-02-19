@@ -13,7 +13,6 @@ namespace TorneosFut
 {
     public partial class Login : Form
     {
-
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
           (
@@ -28,12 +27,10 @@ namespace TorneosFut
         {
             InitializeComponent();
         }
-
         private void X_Click(object sender, EventArgs e)
         {
             Close();
         }
-
         private void Login_Load(object sender, EventArgs e)
         {
             System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath();
@@ -54,22 +51,17 @@ namespace TorneosFut
             Txtclave.Region = Region.FromHrgn(CreateRoundRectRgn(1, 1, Txtclave.Width, Txtclave.Height, 5, 5));
             btnEntrar.Region= Region.FromHrgn(CreateRoundRectRgn(1, 1, btnEntrar.Width, btnEntrar.Height, 20, 20));
         }
-
         private void X_MouseHover(object sender, EventArgs e)
         {
                 X.BackgroundImage = Properties.Resources.multiply;
         }
-
         private void X_MouseLeave(object sender, EventArgs e)
         {
                 X.BackgroundImage = Properties.Resources.delete;
         }
-
         private void pictureBox3_MouseClick(object sender, MouseEventArgs e)
         {
-           
         }
-
         private void Ptbhide_Click(object sender, EventArgs e)
         {
             if (Txtclave.PasswordChar == '*')
@@ -82,7 +74,6 @@ namespace TorneosFut
             {
                 Ptbhide.BackgroundImage = Properties.Resources.hide;
                 Txtclave.PasswordChar = '*';
-
             } 
         }
     }
