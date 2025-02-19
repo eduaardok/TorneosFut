@@ -92,5 +92,38 @@
   <ItemGroup>
     <None Include="Resources\key.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Smaller Network Connection Background %281080p_25fps_H264-128kbit_AAC%29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2025-02-18 at 10.21.25 PM.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\multiply.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\futxpert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fxfutxpert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoFX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hide.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\show.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
