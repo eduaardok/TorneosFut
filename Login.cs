@@ -62,7 +62,6 @@ namespace TorneosFut
         {
             if (Txtclave.PasswordChar == '*')
             {
-
                 Ptbhide.BackgroundImage = Properties.Resources.show;
                 Txtclave.PasswordChar = default;
             }
