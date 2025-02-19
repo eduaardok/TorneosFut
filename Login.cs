@@ -34,16 +34,12 @@ namespace TorneosFut
         private void Login_Load(object sender, EventArgs e)
         {
             System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath();
-            int radius = 15; // Adjust the value to change the roundness of the corners
-
-            // Create a rounded rectangle path using the form's size and radius
-            path.AddArc(0, 0, radius, radius, 180, 90); // Top-left corner
-            path.AddArc(this.Width - radius, 0, radius, radius, 270, 90); // Top-right corner
-            path.AddArc(this.Width - radius, this.Height - radius, radius, radius, 0, 90); // Bottom-right corner
-            path.AddArc(0, this.Height - radius, radius, radius, 90, 90); // Bottom-left corner
-
+            int radius = 15;
+            path.AddArc(0, 0, radius, radius, 180, 90); 
+            path.AddArc(this.Width - radius, 0, radius, radius, 270, 90); 
+            path.AddArc(this.Width - radius, this.Height - radius, radius, radius, 0, 90); 
+            path.AddArc(0, this.Height - radius, radius, radius, 90, 90); 
             path.CloseFigure();
-            // Create a region with the rounded rectangle path and apply it to the form
             this.Region = new Region(path);
             Txtclave.UseSystemPasswordChar = false;
             Txtclave.PasswordChar= '*';
