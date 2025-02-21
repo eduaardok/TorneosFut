@@ -63,6 +63,16 @@ namespace TorneosFut.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _0002 {
+            get {
+                object obj = ResourceManager.GetObject("0002", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _0002_0700__online_video_cutter_com__0_ {
             get {
                 object obj = ResourceManager.GetObject("0002-0700 (online-video-cutter.com)(0)", resourceCulture);
