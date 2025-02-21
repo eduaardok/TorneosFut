@@ -50,13 +50,17 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.AutoScroll = true;
+            this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.X);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(845, 37);
+            this.panel1.Size = new System.Drawing.Size(845, 40);
             this.panel1.TabIndex = 0;
             // 
             // pictureBox2
@@ -79,7 +83,7 @@
             this.X.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.X.Location = new System.Drawing.Point(809, 0);
             this.X.Name = "X";
-            this.X.Size = new System.Drawing.Size(36, 37);
+            this.X.Size = new System.Drawing.Size(36, 40);
             this.X.TabIndex = 0;
             this.X.UseVisualStyleBackColor = true;
             this.X.Click += new System.EventHandler(this.X_Click);
@@ -188,7 +192,6 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = global::TorneosFut.Properties.Resources._0002_0700__online_video_cutter_com__0_;
             this.pictureBox1.Location = new System.Drawing.Point(0, 37);
             this.pictureBox1.Name = "pictureBox1";
