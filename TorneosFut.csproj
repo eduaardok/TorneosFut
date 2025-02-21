@@ -129,6 +129,11 @@
     <Content Include="media\door.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\eyes.png" />
+    <None Include="Resources\hide1.png" />
+    <None Include="Resources\key %281%29.png" />
+    <None Include="Resources\userr.png" />
+    <None Include="Resources\0002-0700 %28online-video-cutter.com%29%280%29.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

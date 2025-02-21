@@ -32,7 +32,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.X = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.Txtclave = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,10 +41,11 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.Ptbhide = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ptbhide)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -86,22 +86,12 @@
             this.X.MouseLeave += new System.EventHandler(this.X_MouseLeave);
             this.X.MouseHover += new System.EventHandler(this.X_MouseHover);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::TorneosFut.Properties.Resources.Smaller_Network_Connection_Background__1080p_25fps_H264_128kbit_AAC_;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 37);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(845, 520);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Onest Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(120, 249);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(94, 20);
@@ -121,6 +111,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Onest Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(120, 201);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 20);
@@ -132,6 +123,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Onest Bold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(113, 152);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(176, 26);
@@ -144,6 +136,7 @@
             this.btnEntrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEntrar.Font = new System.Drawing.Font("Onest Bold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEntrar.ForeColor = System.Drawing.Color.White;
             this.btnEntrar.Location = new System.Drawing.Point(128, 311);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(142, 42);
@@ -162,7 +155,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Transparent;
-            this.panel4.BackgroundImage = global::TorneosFut.Properties.Resources.key;
+            this.panel4.BackgroundImage = global::TorneosFut.Properties.Resources.key__1_;
             this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel4.Location = new System.Drawing.Point(76, 258);
             this.panel4.Name = "panel4";
@@ -172,7 +165,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.BackgroundImage = global::TorneosFut.Properties.Resources.user;
+            this.panel3.BackgroundImage = global::TorneosFut.Properties.Resources.userr;
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel3.Location = new System.Drawing.Point(76, 207);
             this.panel3.Name = "panel3";
@@ -182,8 +175,8 @@
             // Ptbhide
             // 
             this.Ptbhide.BackColor = System.Drawing.Color.Transparent;
-            this.Ptbhide.BackgroundImage = global::TorneosFut.Properties.Resources.hide;
-            this.Ptbhide.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Ptbhide.BackgroundImage = global::TorneosFut.Properties.Resources.hide1;
+            this.Ptbhide.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Ptbhide.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Ptbhide.Location = new System.Drawing.Point(295, 272);
             this.Ptbhide.Name = "Ptbhide";
@@ -193,11 +186,22 @@
             this.Ptbhide.Click += new System.EventHandler(this.Ptbhide_Click);
             this.Ptbhide.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox3_MouseClick);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::TorneosFut.Properties.Resources._0002_0700__online_video_cutter_com__0_;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 37);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(845, 520);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::TorneosFut.Properties.Resources.Smaller_Network_Connection_Background__1080p_25fps_H264_128kbit_AAC_;
+            this.BackgroundImage = global::TorneosFut.Properties.Resources._0002_0700__online_video_cutter_com__0_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(845, 557);
             this.Controls.Add(this.Ptbhide);
@@ -221,8 +225,8 @@
             this.Load += new System.EventHandler(this.Login_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ptbhide)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -232,7 +236,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button X;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox Txtclave;
         private System.Windows.Forms.Label label3;
@@ -243,6 +246,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox Ptbhide;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

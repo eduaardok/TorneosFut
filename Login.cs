@@ -63,12 +63,12 @@ namespace TorneosFut
         {
             if (Txtclave.PasswordChar == '*')
             {
-                Ptbhide.BackgroundImage = Properties.Resources.show;
+                Ptbhide.BackgroundImage = Properties.Resources.eyes;
                 Txtclave.PasswordChar = default;
             }
             else if (Txtclave.PasswordChar == default)
             {
-                Ptbhide.BackgroundImage = Properties.Resources.hide;
+                Ptbhide.BackgroundImage = Properties.Resources.hide1;
                 Txtclave.PasswordChar = '*';
             } 
         }
