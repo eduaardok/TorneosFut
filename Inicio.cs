@@ -5,14 +5,25 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Reflection.Emit;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TorneosFut
 {
-    public partial class Inicio: Form
+    public partial class Inicio : Form
     {
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+(
+  int nleft,
+  int nTop,
+  int nRight,
+  int nBottom,
+  int nWidhtEllipse,
+  int nHeightEllipse
+);
         Equipos equi;
         public Inicio()
         {
@@ -282,6 +293,127 @@ namespace TorneosFut
         private void btnAggEquipo_Click(object sender, EventArgs e)
         {
             AbrirFormEnPanel(PanelAggEquipo, equi);
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Opacity += .07;
+        }
+
+        private void Inicio_Load(object sender, EventArgs e)
+        {
+            timer1.Start();
+            btnTorneo.Region = Region.FromHrgn(CreateRoundRectRgn(1, 1, btnTorneo.Width, btnTorneo.Height, 50, 50));
+            btnTor.Region = Region.FromHrgn(CreateRoundRectRgn(1, 1, btnTor.Width, btnTor.Height, 10, 10));
+            btnEquipos.Region = Region.FromHrgn(CreateRoundRectRgn(1, 1, btnEquipos.Width, btnEquipos.Height, 50, 50));
+            btnEqui.Region = Region.FromHrgn(CreateRoundRectRgn(1, 1, btnEqui.Width, btnEqui.Height, 10, 10));
+            btnJugadores.Region = Region.FromHrgn(CreateRoundRectRgn(1, 1, btnJugadores.Width, btnJugadores.Height, 50, 50));
+            btnJug.Region = Region.FromHrgn(CreateRoundRectRgn(1, 1, btnJug.Width, btnJug.Height, 10, 10));
+            btnArbitros.Region = Region.FromHrgn(CreateRoundRectRgn(1, 1, btnArbitros.Width, btnArbitros.Height, 50, 50));
+            btnArb.Region = Region.FromHrgn(CreateRoundRectRgn(1, 1, btnArb.Width, btnArb.Height, 10, 10));
+            btnEstadios.Region = Region.FromHrgn(CreateRoundRectRgn(1, 1, btnEstadios.Width, btnEstadios.Height, 50, 50));
+            btnEst.Region = Region.FromHrgn(CreateRoundRectRgn(1, 1, btnEst.Width, btnEst.Height, 10, 10));
+            btnReportes.Region = Region.FromHrgn(CreateRoundRectRgn(1, 1, btnReportes.Width, btnReportes.Height, 50, 50));
+            btnRep.Region = Region.FromHrgn(CreateRoundRectRgn(1, 1, btnRep.Width, btnRep.Height, 10, 10));
+            btnUsuarios.Region = Region.FromHrgn(CreateRoundRectRgn(1, 1, btnUsuarios.Width, btnUsuarios.Height, 50, 50));
+            btnUsu.Region = Region.FromHrgn(CreateRoundRectRgn(1, 1, btnUsu.Width, btnUsu.Height, 10, 10));
+            btnCaja.Region = Region.FromHrgn(CreateRoundRectRgn(1, 1, btnCaja.Width, btnCaja.Height, 50, 50));
+            btnCj.Region = Region.FromHrgn(CreateRoundRectRgn(1, 1, btnCj.Width, btnCj.Height, 10, 10));
+            btnConfiguracion.Region = Region.FromHrgn(CreateRoundRectRgn(1, 1, btnConfiguracion.Width, btnConfiguracion.Height, 50, 50));
+        }
+        private void btnTorneo_MouseLeave(object sender, EventArgs e)
+        {
+            btnTorneo.BackColor = Color.Teal;
+        }
+
+
+        private void btnEquipos_MouseLeave(object sender, EventArgs e)
+        {
+            btnEquipos.BackColor = Color.Teal;
+        }
+
+
+        private void btnJugadores_MouseLeave(object sender, EventArgs e)
+        {
+            btnJugadores.BackColor = Color.Teal;
+        }
+        private void btnArbitros_MouseLeave(object sender, EventArgs e)
+        {
+            btnArbitros.BackColor = Color.Teal;
+        }
+        private void btnEstadios_MouseLeave(object sender, EventArgs e)
+        {
+            btnEstadios.BackColor = Color.Teal;
+        }
+
+        private void btnReportes_MouseLeave(object sender, EventArgs e)
+        {
+            btnReportes.BackColor = Color.Teal;
+        }
+
+        private void btnUsuarios_MouseLeave(object sender, EventArgs e)
+        {
+            btnUsuarios.BackColor = Color.Teal;
+        }
+
+        private void btnCaja_MouseLeave(object sender, EventArgs e)
+        {
+            btnCaja.BackColor = Color.Teal;
+        }
+
+        private void btnCaja_MouseEnter(object sender, EventArgs e)
+        {
+            btnCaja.BackColor = Color.PaleTurquoise;
+        }
+
+        private void btnReportes_MouseEnter(object sender, EventArgs e)
+        {
+            btnReportes.BackColor = Color.PaleTurquoise;
+        }
+
+        private void btnEstadios_MouseEnter(object sender, EventArgs e)
+        {
+            btnEstadios.BackColor = Color.PaleTurquoise;
+
+        }
+
+        private void btnArbitros_MouseEnter(object sender, EventArgs e)
+        {
+            btnArbitros.BackColor = Color.PaleTurquoise;
+
+        }
+
+        private void btnJugadores_MouseEnter(object sender, EventArgs e)
+        {
+            btnJugadores.BackColor = Color.PaleTurquoise;
+
+        }
+
+        private void btnEquipos_MouseEnter(object sender, EventArgs e)
+        {
+            btnEquipos.BackColor = Color.PaleTurquoise;
+
+        }
+
+        private void btnTorneo_MouseEnter(object sender, EventArgs e)
+        {
+            btnTorneo.BackColor = Color.PaleTurquoise;
+
+        }
+
+        private void btnUsuarios_MouseEnter(object sender, EventArgs e)
+        {
+            btnUsuarios.BackColor = Color.PaleTurquoise;
+        }
+
+        private void btnConfiguracion_MouseLeave(object sender, EventArgs e)
+        {
+            btnConfiguracion.BackColor = Color.Teal;
+        }
+
+        private void btnConfiguracion_MouseEnter(object sender, EventArgs e)
+        {
+            btnConfiguracion.BackColor = Color.PaleTurquoise;
         }
     }
 }

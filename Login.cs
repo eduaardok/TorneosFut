@@ -1,4 +1,7 @@
-﻿using System;
+﻿
+
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -35,7 +38,7 @@ namespace TorneosFut
         }
         private void Login_Load(object sender, EventArgs e)
         {
-
+            timer1.Start();
             System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath();
             int radius = 15;
             path.AddArc(0, 0, radius, radius, 180, 90);
@@ -52,11 +55,11 @@ namespace TorneosFut
         }
         private void X_MouseHover(object sender, EventArgs e)
         {
-                X.BackgroundImage = Properties.Resources.multiply;
+            X.BackgroundImage = Properties.Resources.multiply;
         }
         private void X_MouseLeave(object sender, EventArgs e)
         {
-                X.BackgroundImage = Properties.Resources.delete;
+            X.BackgroundImage = Properties.Resources.delete;
         }
         private void pictureBox3_MouseClick(object sender, MouseEventArgs e)
         {
@@ -72,7 +75,7 @@ namespace TorneosFut
             {
                 Ptbhide.BackgroundImage = Properties.Resources.hide1;
                 Txtclave.PasswordChar = '*';
-            } 
+            }
         }
 
         private void btnEntrar_MouseHover(object sender, EventArgs e)
@@ -81,8 +84,17 @@ namespace TorneosFut
             Media.SoundLocation = "media\\door.wav";
             Media.Play();
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Opacity += .07;
+        }
+
+        private void btnEntrar_Click(object sender, EventArgs e)
+        {
+            Inicio n = new Inicio();
+            this.Hide();
+            n.Show();
+        }
     }
 }
-
-
-

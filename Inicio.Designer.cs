@@ -28,7 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.PanelMenuLateral = new System.Windows.Forms.Panel();
+            this.SubPanelCaja = new System.Windows.Forms.Panel();
+            this.btnCj = new System.Windows.Forms.Button();
+            this.btnComprobante = new System.Windows.Forms.Button();
+            this.btnIngreEngre = new System.Windows.Forms.Button();
+            this.btnCaja = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.btnConfiguracion = new System.Windows.Forms.Button();
             this.SubPanelUsuarios = new System.Windows.Forms.Panel();
             this.btnUsu = new System.Windows.Forms.Button();
@@ -66,15 +73,11 @@
             this.btnMisTorneos = new System.Windows.Forms.Button();
             this.btnCrearTorneo = new System.Windows.Forms.Button();
             this.btnTorneo = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnCaja = new System.Windows.Forms.Button();
-            this.SubPanelCaja = new System.Windows.Forms.Panel();
-            this.btnCj = new System.Windows.Forms.Button();
-            this.btnComprobante = new System.Windows.Forms.Button();
-            this.btnIngreEngre = new System.Windows.Forms.Button();
-            this.PanelAggEquipo = new System.Windows.Forms.Panel();
             this.PanelLogo = new System.Windows.Forms.Panel();
+            this.PanelAggEquipo = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.PanelMenuLateral.SuspendLayout();
+            this.SubPanelCaja.SuspendLayout();
             this.SubPanelUsuarios.SuspendLayout();
             this.SubPanelReportes.SuspendLayout();
             this.SubPanelEstadios.SuspendLayout();
@@ -82,7 +85,6 @@
             this.SubPanelJugadores.SuspendLayout();
             this.SubPanelEquipos.SuspendLayout();
             this.SubPanelTorneo.SuspendLayout();
-            this.SubPanelCaja.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelMenuLateral
@@ -115,9 +117,85 @@
             this.PanelMenuLateral.Size = new System.Drawing.Size(251, 721);
             this.PanelMenuLateral.TabIndex = 0;
             // 
+            // SubPanelCaja
+            // 
+            this.SubPanelCaja.Controls.Add(this.btnCj);
+            this.SubPanelCaja.Controls.Add(this.btnComprobante);
+            this.SubPanelCaja.Controls.Add(this.btnIngreEngre);
+            this.SubPanelCaja.Dock = System.Windows.Forms.DockStyle.Top;
+            this.SubPanelCaja.Location = new System.Drawing.Point(0, 1231);
+            this.SubPanelCaja.Name = "SubPanelCaja";
+            this.SubPanelCaja.Size = new System.Drawing.Size(234, 88);
+            this.SubPanelCaja.TabIndex = 18;
+            this.SubPanelCaja.Visible = false;
+            // 
+            // btnCj
+            // 
+            this.btnCj.BackColor = System.Drawing.Color.Teal;
+            this.btnCj.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCj.Location = new System.Drawing.Point(0, -1);
+            this.btnCj.Name = "btnCj";
+            this.btnCj.Size = new System.Drawing.Size(45, 88);
+            this.btnCj.TabIndex = 4;
+            this.btnCj.UseVisualStyleBackColor = false;
+            this.btnCj.Click += new System.EventHandler(this.btnCj_Click);
+            // 
+            // btnComprobante
+            // 
+            this.btnComprobante.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnComprobante.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
+            this.btnComprobante.Font = new System.Drawing.Font("Onest Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnComprobante.Location = new System.Drawing.Point(0, 43);
+            this.btnComprobante.Name = "btnComprobante";
+            this.btnComprobante.Padding = new System.Windows.Forms.Padding(41, 0, 0, 0);
+            this.btnComprobante.Size = new System.Drawing.Size(234, 43);
+            this.btnComprobante.TabIndex = 1;
+            this.btnComprobante.Text = "Comprobantes";
+            this.btnComprobante.UseVisualStyleBackColor = true;
+            // 
+            // btnIngreEngre
+            // 
+            this.btnIngreEngre.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnIngreEngre.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
+            this.btnIngreEngre.Font = new System.Drawing.Font("Onest Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIngreEngre.Location = new System.Drawing.Point(0, 0);
+            this.btnIngreEngre.Name = "btnIngreEngre";
+            this.btnIngreEngre.Padding = new System.Windows.Forms.Padding(41, 0, 0, 0);
+            this.btnIngreEngre.Size = new System.Drawing.Size(234, 43);
+            this.btnIngreEngre.TabIndex = 0;
+            this.btnIngreEngre.Text = "Ingresos/Egresos";
+            this.btnIngreEngre.UseVisualStyleBackColor = true;
+            // 
+            // btnCaja
+            // 
+            this.btnCaja.BackColor = System.Drawing.Color.Teal;
+            this.btnCaja.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCaja.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCaja.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnCaja.Font = new System.Drawing.Font("Onest Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCaja.ForeColor = System.Drawing.Color.White;
+            this.btnCaja.Location = new System.Drawing.Point(0, 1171);
+            this.btnCaja.Name = "btnCaja";
+            this.btnCaja.Size = new System.Drawing.Size(234, 60);
+            this.btnCaja.TabIndex = 17;
+            this.btnCaja.Text = "Caja";
+            this.btnCaja.UseVisualStyleBackColor = false;
+            this.btnCaja.Click += new System.EventHandler(this.btnCaja_Click);
+            this.btnCaja.MouseEnter += new System.EventHandler(this.btnCaja_MouseEnter);
+            this.btnCaja.MouseLeave += new System.EventHandler(this.btnCaja_MouseLeave);
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(12, 1624);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(208, 72);
+            this.panel1.TabIndex = 16;
+            this.panel1.Visible = false;
+            // 
             // btnConfiguracion
             // 
             this.btnConfiguracion.BackColor = System.Drawing.Color.Teal;
+            this.btnConfiguracion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConfiguracion.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnConfiguracion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnConfiguracion.Font = new System.Drawing.Font("Onest Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -129,6 +207,8 @@
             this.btnConfiguracion.Text = "Configuraciones";
             this.btnConfiguracion.UseVisualStyleBackColor = false;
             this.btnConfiguracion.Click += new System.EventHandler(this.btnConfiguracion_Click);
+            this.btnConfiguracion.MouseEnter += new System.EventHandler(this.btnConfiguracion_MouseEnter);
+            this.btnConfiguracion.MouseLeave += new System.EventHandler(this.btnConfiguracion_MouseLeave);
             // 
             // SubPanelUsuarios
             // 
@@ -145,6 +225,7 @@
             // btnUsu
             // 
             this.btnUsu.BackColor = System.Drawing.Color.Teal;
+            this.btnUsu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUsu.Location = new System.Drawing.Point(0, -1);
             this.btnUsu.Name = "btnUsu";
             this.btnUsu.Size = new System.Drawing.Size(45, 88);
@@ -181,6 +262,7 @@
             // btnUsuarios
             // 
             this.btnUsuarios.BackColor = System.Drawing.Color.Teal;
+            this.btnUsuarios.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUsuarios.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnUsuarios.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnUsuarios.Font = new System.Drawing.Font("Onest Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -192,6 +274,8 @@
             this.btnUsuarios.Text = "Usuarios";
             this.btnUsuarios.UseVisualStyleBackColor = false;
             this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
+            this.btnUsuarios.MouseEnter += new System.EventHandler(this.btnUsuarios_MouseEnter);
+            this.btnUsuarios.MouseLeave += new System.EventHandler(this.btnUsuarios_MouseLeave);
             // 
             // SubPanelReportes
             // 
@@ -208,6 +292,7 @@
             // btnRep
             // 
             this.btnRep.BackColor = System.Drawing.Color.Teal;
+            this.btnRep.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRep.Location = new System.Drawing.Point(0, -1);
             this.btnRep.Name = "btnRep";
             this.btnRep.Size = new System.Drawing.Size(45, 88);
@@ -244,6 +329,7 @@
             // btnReportes
             // 
             this.btnReportes.BackColor = System.Drawing.Color.Teal;
+            this.btnReportes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReportes.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnReportes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnReportes.Font = new System.Drawing.Font("Onest Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -255,6 +341,8 @@
             this.btnReportes.Text = "Reportes";
             this.btnReportes.UseVisualStyleBackColor = false;
             this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
+            this.btnReportes.MouseEnter += new System.EventHandler(this.btnReportes_MouseEnter);
+            this.btnReportes.MouseLeave += new System.EventHandler(this.btnReportes_MouseLeave);
             // 
             // SubPanelEstadios
             // 
@@ -271,6 +359,7 @@
             // btnEst
             // 
             this.btnEst.BackColor = System.Drawing.Color.Teal;
+            this.btnEst.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEst.Location = new System.Drawing.Point(0, -1);
             this.btnEst.Name = "btnEst";
             this.btnEst.Size = new System.Drawing.Size(45, 88);
@@ -307,6 +396,7 @@
             // btnEstadios
             // 
             this.btnEstadios.BackColor = System.Drawing.Color.Teal;
+            this.btnEstadios.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEstadios.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnEstadios.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnEstadios.Font = new System.Drawing.Font("Onest Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -318,6 +408,8 @@
             this.btnEstadios.Text = "Estadios";
             this.btnEstadios.UseVisualStyleBackColor = false;
             this.btnEstadios.Click += new System.EventHandler(this.btnEstadios_Click);
+            this.btnEstadios.MouseEnter += new System.EventHandler(this.btnEstadios_MouseEnter);
+            this.btnEstadios.MouseLeave += new System.EventHandler(this.btnEstadios_MouseLeave);
             // 
             // SubPanelArbitros
             // 
@@ -334,6 +426,7 @@
             // btnArb
             // 
             this.btnArb.BackColor = System.Drawing.Color.Teal;
+            this.btnArb.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnArb.Location = new System.Drawing.Point(0, -1);
             this.btnArb.Name = "btnArb";
             this.btnArb.Size = new System.Drawing.Size(45, 88);
@@ -370,6 +463,7 @@
             // btnArbitros
             // 
             this.btnArbitros.BackColor = System.Drawing.Color.Teal;
+            this.btnArbitros.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnArbitros.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnArbitros.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnArbitros.Font = new System.Drawing.Font("Onest Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -381,6 +475,8 @@
             this.btnArbitros.Text = "Arbitros";
             this.btnArbitros.UseVisualStyleBackColor = false;
             this.btnArbitros.Click += new System.EventHandler(this.btnArbitros_Click);
+            this.btnArbitros.MouseEnter += new System.EventHandler(this.btnArbitros_MouseEnter);
+            this.btnArbitros.MouseLeave += new System.EventHandler(this.btnArbitros_MouseLeave);
             // 
             // SubPanelJugadores
             // 
@@ -397,6 +493,7 @@
             // btnJug
             // 
             this.btnJug.BackColor = System.Drawing.Color.Teal;
+            this.btnJug.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnJug.Location = new System.Drawing.Point(0, 0);
             this.btnJug.Name = "btnJug";
             this.btnJug.Size = new System.Drawing.Size(45, 88);
@@ -433,6 +530,7 @@
             // btnJugadores
             // 
             this.btnJugadores.BackColor = System.Drawing.Color.Teal;
+            this.btnJugadores.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnJugadores.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnJugadores.FlatAppearance.BorderSize = 0;
             this.btnJugadores.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
@@ -445,6 +543,8 @@
             this.btnJugadores.Text = "Jugadores";
             this.btnJugadores.UseVisualStyleBackColor = false;
             this.btnJugadores.Click += new System.EventHandler(this.btnJugadores_Click);
+            this.btnJugadores.MouseEnter += new System.EventHandler(this.btnJugadores_MouseEnter);
+            this.btnJugadores.MouseLeave += new System.EventHandler(this.btnJugadores_MouseLeave);
             // 
             // SubPanelEquipos
             // 
@@ -461,6 +561,7 @@
             // btnEqui
             // 
             this.btnEqui.BackColor = System.Drawing.Color.Teal;
+            this.btnEqui.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEqui.Location = new System.Drawing.Point(0, -1);
             this.btnEqui.Name = "btnEqui";
             this.btnEqui.Size = new System.Drawing.Size(45, 88);
@@ -498,6 +599,7 @@
             // btnEquipos
             // 
             this.btnEquipos.BackColor = System.Drawing.Color.Teal;
+            this.btnEquipos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEquipos.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnEquipos.FlatAppearance.BorderSize = 0;
             this.btnEquipos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
@@ -510,6 +612,8 @@
             this.btnEquipos.Text = "Equipos";
             this.btnEquipos.UseVisualStyleBackColor = false;
             this.btnEquipos.Click += new System.EventHandler(this.btnEquipos_Click);
+            this.btnEquipos.MouseEnter += new System.EventHandler(this.btnEquipos_MouseEnter);
+            this.btnEquipos.MouseLeave += new System.EventHandler(this.btnEquipos_MouseLeave);
             // 
             // SubPanelTorneo
             // 
@@ -527,6 +631,7 @@
             // btnTor
             // 
             this.btnTor.BackColor = System.Drawing.Color.Teal;
+            this.btnTor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTor.Location = new System.Drawing.Point(0, 0);
             this.btnTor.Name = "btnTor";
             this.btnTor.Size = new System.Drawing.Size(45, 129);
@@ -576,6 +681,7 @@
             // btnTorneo
             // 
             this.btnTorneo.BackColor = System.Drawing.Color.Teal;
+            this.btnTorneo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTorneo.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnTorneo.FlatAppearance.BorderSize = 0;
             this.btnTorneo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
@@ -588,87 +694,8 @@
             this.btnTorneo.Text = "Torneo";
             this.btnTorneo.UseVisualStyleBackColor = false;
             this.btnTorneo.Click += new System.EventHandler(this.btnTorneo_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(12, 1624);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(208, 72);
-            this.panel1.TabIndex = 16;
-            this.panel1.Visible = false;
-            // 
-            // btnCaja
-            // 
-            this.btnCaja.BackColor = System.Drawing.Color.Teal;
-            this.btnCaja.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCaja.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnCaja.Font = new System.Drawing.Font("Onest Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCaja.ForeColor = System.Drawing.Color.White;
-            this.btnCaja.Location = new System.Drawing.Point(0, 1171);
-            this.btnCaja.Name = "btnCaja";
-            this.btnCaja.Size = new System.Drawing.Size(234, 60);
-            this.btnCaja.TabIndex = 17;
-            this.btnCaja.Text = "Caja";
-            this.btnCaja.UseVisualStyleBackColor = false;
-            this.btnCaja.Click += new System.EventHandler(this.btnCaja_Click);
-            // 
-            // SubPanelCaja
-            // 
-            this.SubPanelCaja.Controls.Add(this.btnCj);
-            this.SubPanelCaja.Controls.Add(this.btnComprobante);
-            this.SubPanelCaja.Controls.Add(this.btnIngreEngre);
-            this.SubPanelCaja.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SubPanelCaja.Location = new System.Drawing.Point(0, 1231);
-            this.SubPanelCaja.Name = "SubPanelCaja";
-            this.SubPanelCaja.Size = new System.Drawing.Size(234, 88);
-            this.SubPanelCaja.TabIndex = 18;
-            this.SubPanelCaja.Visible = false;
-            // 
-            // btnCj
-            // 
-            this.btnCj.BackColor = System.Drawing.Color.Teal;
-            this.btnCj.Location = new System.Drawing.Point(0, -1);
-            this.btnCj.Name = "btnCj";
-            this.btnCj.Size = new System.Drawing.Size(45, 88);
-            this.btnCj.TabIndex = 4;
-            this.btnCj.UseVisualStyleBackColor = false;
-            this.btnCj.Click += new System.EventHandler(this.btnCj_Click);
-            // 
-            // btnComprobante
-            // 
-            this.btnComprobante.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnComprobante.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
-            this.btnComprobante.Font = new System.Drawing.Font("Onest Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnComprobante.Location = new System.Drawing.Point(0, 43);
-            this.btnComprobante.Name = "btnComprobante";
-            this.btnComprobante.Padding = new System.Windows.Forms.Padding(41, 0, 0, 0);
-            this.btnComprobante.Size = new System.Drawing.Size(234, 43);
-            this.btnComprobante.TabIndex = 1;
-            this.btnComprobante.Text = "Comprobantes";
-            this.btnComprobante.UseVisualStyleBackColor = true;
-            // 
-            // btnIngreEngre
-            // 
-            this.btnIngreEngre.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnIngreEngre.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
-            this.btnIngreEngre.Font = new System.Drawing.Font("Onest Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIngreEngre.Location = new System.Drawing.Point(0, 0);
-            this.btnIngreEngre.Name = "btnIngreEngre";
-            this.btnIngreEngre.Padding = new System.Windows.Forms.Padding(41, 0, 0, 0);
-            this.btnIngreEngre.Size = new System.Drawing.Size(234, 43);
-            this.btnIngreEngre.TabIndex = 0;
-            this.btnIngreEngre.Text = "Ingresos/Egresos";
-            this.btnIngreEngre.UseVisualStyleBackColor = true;
-            // 
-            // PanelAggEquipo
-            // 
-            this.PanelAggEquipo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.PanelAggEquipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.PanelAggEquipo.Location = new System.Drawing.Point(253, -1);
-            this.PanelAggEquipo.Name = "PanelAggEquipo";
-            this.PanelAggEquipo.Size = new System.Drawing.Size(1116, 722);
-            this.PanelAggEquipo.TabIndex = 1;
+            this.btnTorneo.MouseEnter += new System.EventHandler(this.btnTorneo_MouseEnter);
+            this.btnTorneo.MouseLeave += new System.EventHandler(this.btnTorneo_MouseLeave);
             // 
             // PanelLogo
             // 
@@ -681,6 +708,23 @@
             this.PanelLogo.Size = new System.Drawing.Size(234, 94);
             this.PanelLogo.TabIndex = 0;
             // 
+            // PanelAggEquipo
+            // 
+            this.PanelAggEquipo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.PanelAggEquipo.AutoSize = true;
+            this.PanelAggEquipo.BackColor = System.Drawing.Color.Black;
+            this.PanelAggEquipo.Location = new System.Drawing.Point(253, -1);
+            this.PanelAggEquipo.Name = "PanelAggEquipo";
+            this.PanelAggEquipo.Size = new System.Drawing.Size(1116, 722);
+            this.PanelAggEquipo.TabIndex = 1;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 10;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -692,7 +736,9 @@
             this.Name = "Inicio";
             this.Text = "ººººººººººººººº";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Inicio_Load);
             this.PanelMenuLateral.ResumeLayout(false);
+            this.SubPanelCaja.ResumeLayout(false);
             this.SubPanelUsuarios.ResumeLayout(false);
             this.SubPanelReportes.ResumeLayout(false);
             this.SubPanelEstadios.ResumeLayout(false);
@@ -700,8 +746,8 @@
             this.SubPanelJugadores.ResumeLayout(false);
             this.SubPanelEquipos.ResumeLayout(false);
             this.SubPanelTorneo.ResumeLayout(false);
-            this.SubPanelCaja.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -753,5 +799,6 @@
         private System.Windows.Forms.Button btnComprobante;
         private System.Windows.Forms.Button btnIngreEngre;
         private System.Windows.Forms.Panel PanelAggEquipo;
+        private System.Windows.Forms.Timer timer1;
     }
 }
