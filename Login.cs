@@ -53,10 +53,7 @@ namespace TorneosFut
             Txtclave.Region = Region.FromHrgn(CreateRoundRectRgn(1, 1, Txtclave.Width, Txtclave.Height, 5, 5));
             btnEntrar.Region = Region.FromHrgn(CreateRoundRectRgn(1, 1, btnEntrar.Width, btnEntrar.Height, 20, 20));
         }
-        private void X_MouseHover(object sender, EventArgs e)
-        {
-            X.BackgroundImage = Properties.Resources.multiply;
-        }
+
         private void X_MouseLeave(object sender, EventArgs e)
         {
             X.BackgroundImage = Properties.Resources.delete;
@@ -126,6 +123,12 @@ namespace TorneosFut
         {
             if (e.KeyCode == Keys.Enter)
                 Logeo();
+        }
+
+        private void X_MouseEnter(object sender, EventArgs e)
+        {
+            X.BackgroundImage = Properties.Resources.multiply;
+
         }
     }
 }

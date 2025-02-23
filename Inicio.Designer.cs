@@ -73,12 +73,12 @@
             this.btnMisTorneos = new System.Windows.Forms.Button();
             this.btnCrearTorneo = new System.Windows.Forms.Button();
             this.btnTorneo = new System.Windows.Forms.Button();
+            this.PanelLogo = new System.Windows.Forms.Panel();
             this.PanelAggEquipo = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnSalir = new System.Windows.Forms.Button();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
-            this.PanelLogo = new System.Windows.Forms.Panel();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.PanelMenuLateral.SuspendLayout();
             this.SubPanelCaja.SuspendLayout();
             this.SubPanelUsuarios.SuspendLayout();
@@ -135,7 +135,7 @@
             // 
             // btnCj
             // 
-            this.btnCj.BackColor = System.Drawing.Color.Teal;
+            this.btnCj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(14)))), ((int)(((byte)(140)))));
             this.btnCj.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCj.Location = new System.Drawing.Point(0, -1);
             this.btnCj.Name = "btnCj";
@@ -172,12 +172,12 @@
             // 
             // btnCaja
             // 
-            this.btnCaja.BackColor = System.Drawing.Color.Teal;
+            this.btnCaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(14)))), ((int)(((byte)(140)))));
             this.btnCaja.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCaja.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnCaja.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnCaja.Font = new System.Drawing.Font("Onest Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCaja.ForeColor = System.Drawing.Color.White;
+            this.btnCaja.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnCaja.Location = new System.Drawing.Point(0, 1171);
             this.btnCaja.Name = "btnCaja";
             this.btnCaja.Size = new System.Drawing.Size(234, 60);
@@ -198,12 +198,12 @@
             // 
             // btnConfiguracion
             // 
-            this.btnConfiguracion.BackColor = System.Drawing.Color.Teal;
+            this.btnConfiguracion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(14)))), ((int)(((byte)(140)))));
             this.btnConfiguracion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConfiguracion.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnConfiguracion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnConfiguracion.Font = new System.Drawing.Font("Onest Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfiguracion.ForeColor = System.Drawing.Color.White;
+            this.btnConfiguracion.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnConfiguracion.Location = new System.Drawing.Point(0, 2368);
             this.btnConfiguracion.Name = "btnConfiguracion";
             this.btnConfiguracion.Size = new System.Drawing.Size(234, 60);
@@ -228,7 +228,7 @@
             // 
             // btnUsu
             // 
-            this.btnUsu.BackColor = System.Drawing.Color.Teal;
+            this.btnUsu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(14)))), ((int)(((byte)(140)))));
             this.btnUsu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUsu.Location = new System.Drawing.Point(0, -1);
             this.btnUsu.Name = "btnUsu";
@@ -266,12 +266,12 @@
             // 
             // btnUsuarios
             // 
-            this.btnUsuarios.BackColor = System.Drawing.Color.Teal;
+            this.btnUsuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(14)))), ((int)(((byte)(140)))));
             this.btnUsuarios.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUsuarios.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnUsuarios.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnUsuarios.Font = new System.Drawing.Font("Onest Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUsuarios.ForeColor = System.Drawing.Color.White;
+            this.btnUsuarios.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnUsuarios.Location = new System.Drawing.Point(0, 1023);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Size = new System.Drawing.Size(234, 60);
@@ -296,7 +296,7 @@
             // 
             // btnRep
             // 
-            this.btnRep.BackColor = System.Drawing.Color.Teal;
+            this.btnRep.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(14)))), ((int)(((byte)(140)))));
             this.btnRep.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRep.Location = new System.Drawing.Point(0, -1);
             this.btnRep.Name = "btnRep";
@@ -333,12 +333,12 @@
             // 
             // btnReportes
             // 
-            this.btnReportes.BackColor = System.Drawing.Color.Teal;
+            this.btnReportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(14)))), ((int)(((byte)(140)))));
             this.btnReportes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReportes.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnReportes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnReportes.Font = new System.Drawing.Font("Onest Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReportes.ForeColor = System.Drawing.Color.White;
+            this.btnReportes.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnReportes.Location = new System.Drawing.Point(0, 875);
             this.btnReportes.Name = "btnReportes";
             this.btnReportes.Size = new System.Drawing.Size(234, 60);
@@ -363,7 +363,7 @@
             // 
             // btnEst
             // 
-            this.btnEst.BackColor = System.Drawing.Color.Teal;
+            this.btnEst.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(14)))), ((int)(((byte)(140)))));
             this.btnEst.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEst.Location = new System.Drawing.Point(0, -1);
             this.btnEst.Name = "btnEst";
@@ -400,12 +400,12 @@
             // 
             // btnEstadios
             // 
-            this.btnEstadios.BackColor = System.Drawing.Color.Teal;
+            this.btnEstadios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(14)))), ((int)(((byte)(140)))));
             this.btnEstadios.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEstadios.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnEstadios.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnEstadios.Font = new System.Drawing.Font("Onest Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEstadios.ForeColor = System.Drawing.Color.White;
+            this.btnEstadios.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnEstadios.Location = new System.Drawing.Point(0, 727);
             this.btnEstadios.Name = "btnEstadios";
             this.btnEstadios.Size = new System.Drawing.Size(234, 60);
@@ -430,7 +430,7 @@
             // 
             // btnArb
             // 
-            this.btnArb.BackColor = System.Drawing.Color.Teal;
+            this.btnArb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(14)))), ((int)(((byte)(140)))));
             this.btnArb.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnArb.Location = new System.Drawing.Point(0, -1);
             this.btnArb.Name = "btnArb";
@@ -467,12 +467,12 @@
             // 
             // btnArbitros
             // 
-            this.btnArbitros.BackColor = System.Drawing.Color.Teal;
+            this.btnArbitros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(14)))), ((int)(((byte)(140)))));
             this.btnArbitros.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnArbitros.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnArbitros.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnArbitros.Font = new System.Drawing.Font("Onest Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnArbitros.ForeColor = System.Drawing.Color.White;
+            this.btnArbitros.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnArbitros.Location = new System.Drawing.Point(0, 579);
             this.btnArbitros.Name = "btnArbitros";
             this.btnArbitros.Size = new System.Drawing.Size(234, 60);
@@ -497,7 +497,7 @@
             // 
             // btnJug
             // 
-            this.btnJug.BackColor = System.Drawing.Color.Teal;
+            this.btnJug.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(14)))), ((int)(((byte)(140)))));
             this.btnJug.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnJug.Location = new System.Drawing.Point(0, 0);
             this.btnJug.Name = "btnJug";
@@ -534,13 +534,13 @@
             // 
             // btnJugadores
             // 
-            this.btnJugadores.BackColor = System.Drawing.Color.Teal;
+            this.btnJugadores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(14)))), ((int)(((byte)(140)))));
             this.btnJugadores.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnJugadores.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnJugadores.FlatAppearance.BorderSize = 0;
             this.btnJugadores.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnJugadores.Font = new System.Drawing.Font("Onest Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnJugadores.ForeColor = System.Drawing.Color.White;
+            this.btnJugadores.ForeColor = System.Drawing.Color.Black;
             this.btnJugadores.Location = new System.Drawing.Point(0, 431);
             this.btnJugadores.Name = "btnJugadores";
             this.btnJugadores.Size = new System.Drawing.Size(234, 60);
@@ -557,6 +557,7 @@
             this.SubPanelEquipos.Controls.Add(this.btnEquipo);
             this.SubPanelEquipos.Controls.Add(this.btnAggEquipo);
             this.SubPanelEquipos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.SubPanelEquipos.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.SubPanelEquipos.Location = new System.Drawing.Point(0, 343);
             this.SubPanelEquipos.Name = "SubPanelEquipos";
             this.SubPanelEquipos.Size = new System.Drawing.Size(234, 88);
@@ -565,7 +566,7 @@
             // 
             // btnEqui
             // 
-            this.btnEqui.BackColor = System.Drawing.Color.Teal;
+            this.btnEqui.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(14)))), ((int)(((byte)(140)))));
             this.btnEqui.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEqui.Location = new System.Drawing.Point(0, -1);
             this.btnEqui.Name = "btnEqui";
@@ -603,13 +604,13 @@
             // 
             // btnEquipos
             // 
-            this.btnEquipos.BackColor = System.Drawing.Color.Teal;
+            this.btnEquipos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(14)))), ((int)(((byte)(140)))));
             this.btnEquipos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEquipos.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnEquipos.FlatAppearance.BorderSize = 0;
             this.btnEquipos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnEquipos.Font = new System.Drawing.Font("Onest Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEquipos.ForeColor = System.Drawing.Color.White;
+            this.btnEquipos.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnEquipos.Location = new System.Drawing.Point(0, 283);
             this.btnEquipos.Name = "btnEquipos";
             this.btnEquipos.Size = new System.Drawing.Size(234, 60);
@@ -635,7 +636,7 @@
             // 
             // btnTor
             // 
-            this.btnTor.BackColor = System.Drawing.Color.Teal;
+            this.btnTor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(14)))), ((int)(((byte)(140)))));
             this.btnTor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTor.Location = new System.Drawing.Point(0, 0);
             this.btnTor.Name = "btnTor";
@@ -685,13 +686,13 @@
             // 
             // btnTorneo
             // 
-            this.btnTorneo.BackColor = System.Drawing.Color.Teal;
+            this.btnTorneo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(14)))), ((int)(((byte)(140)))));
             this.btnTorneo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTorneo.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnTorneo.FlatAppearance.BorderSize = 0;
             this.btnTorneo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnTorneo.Font = new System.Drawing.Font("Onest Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTorneo.ForeColor = System.Drawing.Color.White;
+            this.btnTorneo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnTorneo.Location = new System.Drawing.Point(0, 94);
             this.btnTorneo.Name = "btnTorneo";
             this.btnTorneo.Size = new System.Drawing.Size(234, 60);
@@ -701,69 +702,6 @@
             this.btnTorneo.Click += new System.EventHandler(this.btnTorneo_Click);
             this.btnTorneo.MouseEnter += new System.EventHandler(this.btnTorneo_MouseEnter);
             this.btnTorneo.MouseLeave += new System.EventHandler(this.btnTorneo_MouseLeave);
-            // 
-            // PanelAggEquipo
-            // 
-            this.PanelAggEquipo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.PanelAggEquipo.AutoSize = true;
-            this.PanelAggEquipo.BackColor = System.Drawing.Color.Black;
-            this.PanelAggEquipo.Location = new System.Drawing.Point(253, -1);
-            this.PanelAggEquipo.Name = "PanelAggEquipo";
-            this.PanelAggEquipo.Size = new System.Drawing.Size(1122, 725);
-            this.PanelAggEquipo.TabIndex = 1;
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 10;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // panel2
-            // 
-            this.panel2.AutoScroll = true;
-            this.panel2.AutoSize = true;
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.btnCerrarSesion);
-            this.panel2.Controls.Add(this.btnSalir);
-            this.panel2.Location = new System.Drawing.Point(253, -1);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1119, 49);
-            this.panel2.TabIndex = 2;
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.BackColor = System.Drawing.Color.Red;
-            this.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSalir.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnSalir.FlatAppearance.BorderSize = 0;
-            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.Font = new System.Drawing.Font("Onest Bold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(1017, 0);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(102, 49);
-            this.btnSalir.TabIndex = 1;
-            this.btnSalir.Text = "X";
-            this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // btnCerrarSesion
-            // 
-            this.btnCerrarSesion.BackColor = System.Drawing.Color.IndianRed;
-            this.btnCerrarSesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrarSesion.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnCerrarSesion.FlatAppearance.BorderSize = 0;
-            this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrarSesion.Font = new System.Drawing.Font("Onest Bold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarSesion.Location = new System.Drawing.Point(915, 0);
-            this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(102, 49);
-            this.btnCerrarSesion.TabIndex = 2;
-            this.btnCerrarSesion.Text = "Cerrar Sesión";
-            this.btnCerrarSesion.UseVisualStyleBackColor = false;
-            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
             // PanelLogo
             // 
@@ -776,6 +714,71 @@
             this.PanelLogo.Size = new System.Drawing.Size(234, 94);
             this.PanelLogo.TabIndex = 0;
             // 
+            // PanelAggEquipo
+            // 
+            this.PanelAggEquipo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.PanelAggEquipo.AutoSize = true;
+            this.PanelAggEquipo.BackColor = System.Drawing.Color.Black;
+            this.PanelAggEquipo.Location = new System.Drawing.Point(253, 49);
+            this.PanelAggEquipo.Name = "PanelAggEquipo";
+            this.PanelAggEquipo.Size = new System.Drawing.Size(1115, 675);
+            this.PanelAggEquipo.TabIndex = 1;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 10;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.AutoScroll = true;
+            this.panel2.AutoSize = true;
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.btnCerrarSesion);
+            this.panel2.Controls.Add(this.btnSalir);
+            this.panel2.Location = new System.Drawing.Point(253, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1122, 49);
+            this.panel2.TabIndex = 2;
+            // 
+            // btnCerrarSesion
+            // 
+            this.btnCerrarSesion.BackColor = System.Drawing.Color.IndianRed;
+            this.btnCerrarSesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrarSesion.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnCerrarSesion.FlatAppearance.BorderSize = 0;
+            this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarSesion.Font = new System.Drawing.Font("Onest Bold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarSesion.Location = new System.Drawing.Point(922, 0);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Size = new System.Drawing.Size(98, 49);
+            this.btnCerrarSesion.TabIndex = 2;
+            this.btnCerrarSesion.Text = "Cerrar Sesión";
+            this.btnCerrarSesion.UseVisualStyleBackColor = false;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.Red;
+            this.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalir.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnSalir.FlatAppearance.BorderSize = 0;
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.Font = new System.Drawing.Font("Onest Bold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Location = new System.Drawing.Point(1020, 0);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(102, 49);
+            this.btnSalir.TabIndex = 1;
+            this.btnSalir.Text = "X";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -786,11 +789,12 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.PanelAggEquipo);
             this.Controls.Add(this.PanelMenuLateral);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Inicio";
             this.Text = "INICIO";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Inicio_Load);
             this.PanelMenuLateral.ResumeLayout(false);
             this.SubPanelCaja.ResumeLayout(false);

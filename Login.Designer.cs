@@ -88,8 +88,8 @@
             this.X.TabIndex = 0;
             this.X.UseVisualStyleBackColor = true;
             this.X.Click += new System.EventHandler(this.X_Click);
+            this.X.MouseEnter += new System.EventHandler(this.X_MouseEnter);
             this.X.MouseLeave += new System.EventHandler(this.X_MouseLeave);
-            this.X.MouseHover += new System.EventHandler(this.X_MouseHover);
             // 
             // label4
             // 

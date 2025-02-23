@@ -26,11 +26,13 @@ namespace TorneosFut
           int nHeightEllipse
         );
         Equipos equi;
+        Usuarios usu;
         public Inicio(bool a) //parametro booleano para saber si el usuario que accedio es admin
         {
             esAdmin = a; //guardado en una variable estatica 
             InitializeComponent();
-            //equi = new Equipos();
+            equi = new Equipos();
+
         }
         public static void AbrirFormEnPanel(Panel panel, Form formHijo)
         {
@@ -326,93 +328,93 @@ namespace TorneosFut
         }
         private void btnTorneo_MouseLeave(object sender, EventArgs e)
         {
-            btnTorneo.BackColor = Color.Teal;
+            btnTorneo.BackColor = ColorTranslator.FromHtml("#FB0E8C");
         }
 
 
         private void btnEquipos_MouseLeave(object sender, EventArgs e)
         {
-            btnEquipos.BackColor = Color.Teal;
+            btnEquipos.BackColor = ColorTranslator.FromHtml("#FB0E8C");
         }
 
 
         private void btnJugadores_MouseLeave(object sender, EventArgs e)
         {
-            btnJugadores.BackColor = Color.Teal;
+            btnJugadores.BackColor = ColorTranslator.FromHtml("#FB0E8C");
         }
         private void btnArbitros_MouseLeave(object sender, EventArgs e)
         {
-            btnArbitros.BackColor = Color.Teal;
+            btnArbitros.BackColor = ColorTranslator.FromHtml("#FB0E8C");
         }
         private void btnEstadios_MouseLeave(object sender, EventArgs e)
         {
-            btnEstadios.BackColor = Color.Teal;
+            btnEstadios.BackColor = ColorTranslator.FromHtml("#FB0E8C");
         }
 
         private void btnReportes_MouseLeave(object sender, EventArgs e)
         {
-            btnReportes.BackColor = Color.Teal;
+            btnReportes.BackColor = ColorTranslator.FromHtml("#FB0E8C");
         }
 
         private void btnUsuarios_MouseLeave(object sender, EventArgs e)
         {
-            btnUsuarios.BackColor = Color.Teal;
+            btnUsuarios.BackColor = ColorTranslator.FromHtml("#FB0E8C");
         }
 
         private void btnCaja_MouseLeave(object sender, EventArgs e)
         {
-            btnCaja.BackColor = Color.Teal;
+            btnCaja.BackColor = ColorTranslator.FromHtml("#FB0E8C");
         }
 
         private void btnCaja_MouseEnter(object sender, EventArgs e)
         {
-            btnCaja.BackColor = Color.PaleTurquoise;
+            btnCaja.BackColor = ColorTranslator.FromHtml("#7C7C7C");
         }
 
         private void btnReportes_MouseEnter(object sender, EventArgs e)
         {
-            btnReportes.BackColor = Color.PaleTurquoise;
+            btnReportes.BackColor = ColorTranslator.FromHtml("#7C7C7C");
         }
 
         private void btnEstadios_MouseEnter(object sender, EventArgs e)
         {
-            btnEstadios.BackColor = Color.PaleTurquoise;
+            btnEstadios.BackColor = ColorTranslator.FromHtml("#7C7C7C");
 
         }
 
         private void btnArbitros_MouseEnter(object sender, EventArgs e)
         {
-            btnArbitros.BackColor = Color.PaleTurquoise;
+            btnArbitros.BackColor = ColorTranslator.FromHtml("#7C7C7C");
 
         }
 
         private void btnJugadores_MouseEnter(object sender, EventArgs e)
         {
-            btnJugadores.BackColor = Color.PaleTurquoise;
+            btnJugadores.BackColor = ColorTranslator.FromHtml("#7C7C7C")   ;
         }
 
         private void btnEquipos_MouseEnter(object sender, EventArgs e)
         {
-            btnEquipos.BackColor = Color.PaleTurquoise;
+            btnEquipos.BackColor = ColorTranslator.FromHtml("#7C7C7C");
         }
 
         private void btnTorneo_MouseEnter(object sender, EventArgs e)
         {
-            btnTorneo.BackColor = Color.PaleTurquoise;
+            btnTorneo.BackColor = ColorTranslator.FromHtml("#7C7C7C");
         }
         private void btnUsuarios_MouseEnter(object sender, EventArgs e)
         {
-            btnUsuarios.BackColor = Color.PaleTurquoise;
+            btnUsuarios.BackColor = ColorTranslator.FromHtml("#7C7C7C");
         }
 
         private void btnConfiguracion_MouseLeave(object sender, EventArgs e)
         {
-            btnConfiguracion.BackColor = Color.Teal;
+            btnConfiguracion.BackColor = ColorTranslator.FromHtml("#FB0E8C");
         }
 
         private void btnConfiguracion_MouseEnter(object sender, EventArgs e)
         {
-            btnConfiguracion.BackColor = Color.PaleTurquoise;
+            btnConfiguracion.BackColor = ColorTranslator.FromHtml("#7C7C7C");
         }
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
@@ -428,8 +430,10 @@ namespace TorneosFut
         private void btnUsuario_Click(object sender, EventArgs e)
         {
             //manejo de usuarios
-            Usuarios u = new Usuarios();
-            u.ShowDialog();
+            usu = new Usuarios();
+
+            AbrirFormEnPanel(PanelAggEquipo, usu);
+
         }
         void AccesoAdmin()
         {
