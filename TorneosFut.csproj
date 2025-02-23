@@ -47,12 +47,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="csConexion.cs" />
+    <Compile Include="csCorreo.cs" />
     <Compile Include="csEncriptar.cs" />
     <Compile Include="Equipos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Equipos.Designer.cs">
       <DependentUpon>Equipos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios.Designer.cs">
+      <DependentUpon>Usuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Inicio.cs">
       <SubType>Form</SubType>
@@ -70,6 +77,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Equipos.resx">
       <DependentUpon>Equipos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios.resx">
+      <DependentUpon>Usuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>

@@ -14,21 +14,23 @@ namespace TorneosFut
 {
     public partial class Inicio : Form
     {
+        static bool esAdmin;
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
-(
-  int nleft,
-  int nTop,
-  int nRight,
-  int nBottom,
-  int nWidhtEllipse,
-  int nHeightEllipse
-);
+        (
+          int nleft,
+          int nTop,
+          int nRight,
+          int nBottom,
+          int nWidhtEllipse,
+          int nHeightEllipse
+        );
         Equipos equi;
-        public Inicio()
+        public Inicio(bool a) //parametro booleano para saber si el usuario que accedio es admin
         {
+            esAdmin = a; //guardado en una variable estatica 
             InitializeComponent();
-            equi = new Equipos();
+            //equi = new Equipos();
         }
         public static void AbrirFormEnPanel(Panel panel, Form formHijo)
         {
@@ -320,6 +322,7 @@ namespace TorneosFut
             btnCaja.Region = Region.FromHrgn(CreateRoundRectRgn(1, 1, btnCaja.Width, btnCaja.Height, 50, 50));
             btnCj.Region = Region.FromHrgn(CreateRoundRectRgn(1, 1, btnCj.Width, btnCj.Height, 10, 10));
             btnConfiguracion.Region = Region.FromHrgn(CreateRoundRectRgn(1, 1, btnConfiguracion.Width, btnConfiguracion.Height, 50, 50));
+            AccesoAdmin();
         }
         private void btnTorneo_MouseLeave(object sender, EventArgs e)
         {
@@ -386,21 +389,17 @@ namespace TorneosFut
         private void btnJugadores_MouseEnter(object sender, EventArgs e)
         {
             btnJugadores.BackColor = Color.PaleTurquoise;
-
         }
 
         private void btnEquipos_MouseEnter(object sender, EventArgs e)
         {
             btnEquipos.BackColor = Color.PaleTurquoise;
-
         }
 
         private void btnTorneo_MouseEnter(object sender, EventArgs e)
         {
             btnTorneo.BackColor = Color.PaleTurquoise;
-
         }
-
         private void btnUsuarios_MouseEnter(object sender, EventArgs e)
         {
             btnUsuarios.BackColor = Color.PaleTurquoise;
@@ -416,9 +415,27 @@ namespace TorneosFut
             btnConfiguracion.BackColor = Color.PaleTurquoise;
         }
 
-        private void btnCerrarSesion_Click_1(object sender, EventArgs e)
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnUsuario_Click(object sender, EventArgs e)
+        {
+            //manejo de usuarios
+            Usuarios u = new Usuarios();
+            u.ShowDialog();
+        }
+        void AccesoAdmin()
+        {
+            btnUsuarios.Enabled = esAdmin;
+            btnUsuario.Enabled = esAdmin;
+            btnAggUsuario.Enabled = esAdmin;
         }
     }
 }

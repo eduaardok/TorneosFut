@@ -73,11 +73,12 @@
             this.btnMisTorneos = new System.Windows.Forms.Button();
             this.btnCrearTorneo = new System.Windows.Forms.Button();
             this.btnTorneo = new System.Windows.Forms.Button();
-            this.PanelLogo = new System.Windows.Forms.Panel();
             this.PanelAggEquipo = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
+            this.PanelLogo = new System.Windows.Forms.Panel();
             this.PanelMenuLateral.SuspendLayout();
             this.SubPanelCaja.SuspendLayout();
             this.SubPanelUsuarios.SuspendLayout();
@@ -189,7 +190,7 @@
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(12, 1624);
+            this.panel1.Location = new System.Drawing.Point(12, 2296);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(208, 72);
             this.panel1.TabIndex = 16;
@@ -203,7 +204,7 @@
             this.btnConfiguracion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnConfiguracion.Font = new System.Drawing.Font("Onest Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfiguracion.ForeColor = System.Drawing.Color.White;
-            this.btnConfiguracion.Location = new System.Drawing.Point(0, 1696);
+            this.btnConfiguracion.Location = new System.Drawing.Point(0, 2368);
             this.btnConfiguracion.Name = "btnConfiguracion";
             this.btnConfiguracion.Size = new System.Drawing.Size(234, 60);
             this.btnConfiguracion.TabIndex = 15;
@@ -248,6 +249,7 @@
             this.btnUsuario.TabIndex = 1;
             this.btnUsuario.Text = "Usuarios";
             this.btnUsuario.UseVisualStyleBackColor = true;
+            this.btnUsuario.Click += new System.EventHandler(this.btnUsuario_Click);
             // 
             // btnAggUsuario
             // 
@@ -700,17 +702,6 @@
             this.btnTorneo.MouseEnter += new System.EventHandler(this.btnTorneo_MouseEnter);
             this.btnTorneo.MouseLeave += new System.EventHandler(this.btnTorneo_MouseLeave);
             // 
-            // PanelLogo
-            // 
-            this.PanelLogo.BackColor = System.Drawing.Color.White;
-            this.PanelLogo.BackgroundImage = global::TorneosFut.Properties.Resources.fxfutxpert;
-            this.PanelLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PanelLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelLogo.Location = new System.Drawing.Point(0, 0);
-            this.PanelLogo.Name = "PanelLogo";
-            this.PanelLogo.Size = new System.Drawing.Size(234, 94);
-            this.PanelLogo.TabIndex = 0;
-            // 
             // PanelAggEquipo
             // 
             this.PanelAggEquipo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -734,10 +725,28 @@
             this.panel2.AutoSize = true;
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.btnCerrarSesion);
+            this.panel2.Controls.Add(this.btnSalir);
             this.panel2.Location = new System.Drawing.Point(253, -1);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1119, 49);
             this.panel2.TabIndex = 2;
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.Red;
+            this.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalir.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnSalir.FlatAppearance.BorderSize = 0;
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.Font = new System.Drawing.Font("Onest Bold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Location = new System.Drawing.Point(1017, 0);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(102, 49);
+            this.btnSalir.TabIndex = 1;
+            this.btnSalir.Text = "X";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnCerrarSesion
             // 
@@ -748,13 +757,24 @@
             this.btnCerrarSesion.FlatAppearance.BorderSize = 0;
             this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrarSesion.Font = new System.Drawing.Font("Onest Bold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarSesion.Location = new System.Drawing.Point(1017, 0);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(915, 0);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Size = new System.Drawing.Size(102, 49);
-            this.btnCerrarSesion.TabIndex = 0;
+            this.btnCerrarSesion.TabIndex = 2;
             this.btnCerrarSesion.Text = "Cerrar Sesión";
             this.btnCerrarSesion.UseVisualStyleBackColor = false;
-            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click_1);
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
+            // 
+            // PanelLogo
+            // 
+            this.PanelLogo.BackColor = System.Drawing.Color.White;
+            this.PanelLogo.BackgroundImage = global::TorneosFut.Properties.Resources.fxfutxpert;
+            this.PanelLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PanelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelLogo.Location = new System.Drawing.Point(0, 0);
+            this.PanelLogo.Name = "PanelLogo";
+            this.PanelLogo.Size = new System.Drawing.Size(234, 94);
+            this.PanelLogo.TabIndex = 0;
             // 
             // Inicio
             // 
@@ -838,5 +858,6 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnCerrarSesion;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

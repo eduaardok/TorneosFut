@@ -104,7 +104,10 @@ namespace TorneosFut
             else
             {
                 MessageBox.Show("Se inició sesión de forma correcta");
-                Inicio n = new Inicio();
+                bool admin = false;
+                if (txtUsuario.Text == "admin")
+                    admin = true; //para saber si el que ingresa es el admin
+                Inicio n = new Inicio(admin);
                 this.Hide();
                 n.ShowDialog();
                 txtUsuario.Text = "";
