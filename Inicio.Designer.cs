@@ -723,7 +723,7 @@
             this.PanelAggEquipo.BackColor = System.Drawing.Color.Black;
             this.PanelAggEquipo.Location = new System.Drawing.Point(253, 49);
             this.PanelAggEquipo.Name = "PanelAggEquipo";
-            this.PanelAggEquipo.Size = new System.Drawing.Size(1115, 675);
+            this.PanelAggEquipo.Size = new System.Drawing.Size(1115, 672);
             this.PanelAggEquipo.TabIndex = 1;
             // 
             // timer1
@@ -789,7 +789,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.PanelAggEquipo);
             this.Controls.Add(this.PanelMenuLateral);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Inicio";
