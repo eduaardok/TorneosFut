@@ -32,41 +32,47 @@
             this.btnConfiguracion = new System.Windows.Forms.Button();
             this.SubPanelUsuarios = new System.Windows.Forms.Panel();
             this.btnUsu = new System.Windows.Forms.Button();
-            this.button19 = new System.Windows.Forms.Button();
-            this.button20 = new System.Windows.Forms.Button();
+            this.btnUsuario = new System.Windows.Forms.Button();
+            this.btnAggUsuario = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.SubPanelReportes = new System.Windows.Forms.Panel();
             this.btnRep = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
+            this.btnGeneReporte = new System.Windows.Forms.Button();
+            this.btnEstadisticas = new System.Windows.Forms.Button();
             this.btnReportes = new System.Windows.Forms.Button();
             this.SubPanelEstadios = new System.Windows.Forms.Panel();
             this.btnEst = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
+            this.btnEstadio = new System.Windows.Forms.Button();
+            this.btnAggEstadios = new System.Windows.Forms.Button();
             this.btnEstadios = new System.Windows.Forms.Button();
             this.SubPanelArbitros = new System.Windows.Forms.Panel();
             this.btnArb = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
+            this.btnArbitro = new System.Windows.Forms.Button();
+            this.btnAggArbitro = new System.Windows.Forms.Button();
             this.btnArbitros = new System.Windows.Forms.Button();
             this.SubPanelJugadores = new System.Windows.Forms.Panel();
             this.btnJug = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
+            this.btnJugador = new System.Windows.Forms.Button();
+            this.btnAggJugador = new System.Windows.Forms.Button();
             this.btnJugadores = new System.Windows.Forms.Button();
             this.SubPanelEquipos = new System.Windows.Forms.Panel();
             this.btnEqui = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnEquipo = new System.Windows.Forms.Button();
+            this.btnAggEquipo = new System.Windows.Forms.Button();
             this.btnEquipos = new System.Windows.Forms.Button();
             this.SubPanelTorneo = new System.Windows.Forms.Panel();
             this.btnTor = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnGesTorneo = new System.Windows.Forms.Button();
+            this.btnMisTorneos = new System.Windows.Forms.Button();
+            this.btnCrearTorneo = new System.Windows.Forms.Button();
             this.btnTorneo = new System.Windows.Forms.Button();
             this.PanelLogo = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCaja = new System.Windows.Forms.Button();
+            this.SubPanelCaja = new System.Windows.Forms.Panel();
+            this.btnCj = new System.Windows.Forms.Button();
+            this.btnComprobante = new System.Windows.Forms.Button();
+            this.btnIngreEngre = new System.Windows.Forms.Button();
             this.PanelMenuLateral.SuspendLayout();
             this.SubPanelUsuarios.SuspendLayout();
             this.SubPanelReportes.SuspendLayout();
@@ -75,6 +81,7 @@
             this.SubPanelJugadores.SuspendLayout();
             this.SubPanelEquipos.SuspendLayout();
             this.SubPanelTorneo.SuspendLayout();
+            this.SubPanelCaja.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelMenuLateral
@@ -83,6 +90,9 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.PanelMenuLateral.AutoScroll = true;
             this.PanelMenuLateral.BackColor = System.Drawing.Color.White;
+            this.PanelMenuLateral.Controls.Add(this.SubPanelCaja);
+            this.PanelMenuLateral.Controls.Add(this.btnCaja);
+            this.PanelMenuLateral.Controls.Add(this.panel1);
             this.PanelMenuLateral.Controls.Add(this.btnConfiguracion);
             this.PanelMenuLateral.Controls.Add(this.SubPanelUsuarios);
             this.PanelMenuLateral.Controls.Add(this.btnUsuarios);
@@ -109,24 +119,25 @@
             this.btnConfiguracion.BackColor = System.Drawing.Color.Teal;
             this.btnConfiguracion.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnConfiguracion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnConfiguracion.Font = new System.Drawing.Font("Onest Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfiguracion.Font = new System.Drawing.Font("Onest Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfiguracion.ForeColor = System.Drawing.Color.White;
-            this.btnConfiguracion.Location = new System.Drawing.Point(0, 688);
+            this.btnConfiguracion.Location = new System.Drawing.Point(0, 1696);
             this.btnConfiguracion.Name = "btnConfiguracion";
-            this.btnConfiguracion.Size = new System.Drawing.Size(234, 35);
+            this.btnConfiguracion.Size = new System.Drawing.Size(234, 60);
             this.btnConfiguracion.TabIndex = 15;
             this.btnConfiguracion.Text = "Configuraciones";
             this.btnConfiguracion.UseVisualStyleBackColor = false;
+            this.btnConfiguracion.Click += new System.EventHandler(this.btnConfiguracion_Click);
             // 
             // SubPanelUsuarios
             // 
             this.SubPanelUsuarios.Controls.Add(this.btnUsu);
-            this.SubPanelUsuarios.Controls.Add(this.button19);
-            this.SubPanelUsuarios.Controls.Add(this.button20);
+            this.SubPanelUsuarios.Controls.Add(this.btnUsuario);
+            this.SubPanelUsuarios.Controls.Add(this.btnAggUsuario);
             this.SubPanelUsuarios.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SubPanelUsuarios.Location = new System.Drawing.Point(0, 642);
+            this.SubPanelUsuarios.Location = new System.Drawing.Point(0, 1083);
             this.SubPanelUsuarios.Name = "SubPanelUsuarios";
-            this.SubPanelUsuarios.Size = new System.Drawing.Size(234, 46);
+            this.SubPanelUsuarios.Size = new System.Drawing.Size(234, 88);
             this.SubPanelUsuarios.TabIndex = 14;
             this.SubPanelUsuarios.Visible = false;
             // 
@@ -135,45 +146,47 @@
             this.btnUsu.BackColor = System.Drawing.Color.Teal;
             this.btnUsu.Location = new System.Drawing.Point(0, -1);
             this.btnUsu.Name = "btnUsu";
-            this.btnUsu.Size = new System.Drawing.Size(45, 48);
+            this.btnUsu.Size = new System.Drawing.Size(45, 88);
             this.btnUsu.TabIndex = 4;
             this.btnUsu.UseVisualStyleBackColor = false;
             this.btnUsu.Click += new System.EventHandler(this.btnUsu_Click);
             // 
-            // button19
+            // btnUsuario
             // 
-            this.button19.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button19.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
-            this.button19.Location = new System.Drawing.Point(0, 23);
-            this.button19.Name = "button19";
-            this.button19.Padding = new System.Windows.Forms.Padding(41, 0, 0, 0);
-            this.button19.Size = new System.Drawing.Size(234, 23);
-            this.button19.TabIndex = 1;
-            this.button19.Text = "button19";
-            this.button19.UseVisualStyleBackColor = true;
+            this.btnUsuario.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnUsuario.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
+            this.btnUsuario.Font = new System.Drawing.Font("Onest Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUsuario.Location = new System.Drawing.Point(0, 43);
+            this.btnUsuario.Name = "btnUsuario";
+            this.btnUsuario.Padding = new System.Windows.Forms.Padding(41, 0, 0, 0);
+            this.btnUsuario.Size = new System.Drawing.Size(234, 43);
+            this.btnUsuario.TabIndex = 1;
+            this.btnUsuario.Text = "Usuarios";
+            this.btnUsuario.UseVisualStyleBackColor = true;
             // 
-            // button20
+            // btnAggUsuario
             // 
-            this.button20.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button20.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
-            this.button20.Location = new System.Drawing.Point(0, 0);
-            this.button20.Name = "button20";
-            this.button20.Padding = new System.Windows.Forms.Padding(41, 0, 0, 0);
-            this.button20.Size = new System.Drawing.Size(234, 23);
-            this.button20.TabIndex = 0;
-            this.button20.Text = "button20";
-            this.button20.UseVisualStyleBackColor = true;
+            this.btnAggUsuario.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAggUsuario.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
+            this.btnAggUsuario.Font = new System.Drawing.Font("Onest Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAggUsuario.Location = new System.Drawing.Point(0, 0);
+            this.btnAggUsuario.Name = "btnAggUsuario";
+            this.btnAggUsuario.Padding = new System.Windows.Forms.Padding(41, 0, 0, 0);
+            this.btnAggUsuario.Size = new System.Drawing.Size(234, 43);
+            this.btnAggUsuario.TabIndex = 0;
+            this.btnAggUsuario.Text = "Agregar Usuario";
+            this.btnAggUsuario.UseVisualStyleBackColor = true;
             // 
             // btnUsuarios
             // 
             this.btnUsuarios.BackColor = System.Drawing.Color.Teal;
             this.btnUsuarios.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnUsuarios.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnUsuarios.Font = new System.Drawing.Font("Onest Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUsuarios.Font = new System.Drawing.Font("Onest Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsuarios.ForeColor = System.Drawing.Color.White;
-            this.btnUsuarios.Location = new System.Drawing.Point(0, 607);
+            this.btnUsuarios.Location = new System.Drawing.Point(0, 1023);
             this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(234, 35);
+            this.btnUsuarios.Size = new System.Drawing.Size(234, 60);
             this.btnUsuarios.TabIndex = 13;
             this.btnUsuarios.Text = "Usuarios";
             this.btnUsuarios.UseVisualStyleBackColor = false;
@@ -182,12 +195,12 @@
             // SubPanelReportes
             // 
             this.SubPanelReportes.Controls.Add(this.btnRep);
-            this.SubPanelReportes.Controls.Add(this.button16);
-            this.SubPanelReportes.Controls.Add(this.button17);
+            this.SubPanelReportes.Controls.Add(this.btnGeneReporte);
+            this.SubPanelReportes.Controls.Add(this.btnEstadisticas);
             this.SubPanelReportes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SubPanelReportes.Location = new System.Drawing.Point(0, 561);
+            this.SubPanelReportes.Location = new System.Drawing.Point(0, 935);
             this.SubPanelReportes.Name = "SubPanelReportes";
-            this.SubPanelReportes.Size = new System.Drawing.Size(234, 46);
+            this.SubPanelReportes.Size = new System.Drawing.Size(234, 88);
             this.SubPanelReportes.TabIndex = 12;
             this.SubPanelReportes.Visible = false;
             // 
@@ -196,45 +209,47 @@
             this.btnRep.BackColor = System.Drawing.Color.Teal;
             this.btnRep.Location = new System.Drawing.Point(0, -1);
             this.btnRep.Name = "btnRep";
-            this.btnRep.Size = new System.Drawing.Size(45, 48);
+            this.btnRep.Size = new System.Drawing.Size(45, 88);
             this.btnRep.TabIndex = 5;
             this.btnRep.UseVisualStyleBackColor = false;
             this.btnRep.Click += new System.EventHandler(this.btnRep_Click);
             // 
-            // button16
+            // btnGeneReporte
             // 
-            this.button16.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button16.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
-            this.button16.Location = new System.Drawing.Point(0, 23);
-            this.button16.Name = "button16";
-            this.button16.Padding = new System.Windows.Forms.Padding(41, 0, 0, 0);
-            this.button16.Size = new System.Drawing.Size(234, 23);
-            this.button16.TabIndex = 1;
-            this.button16.Text = "button16";
-            this.button16.UseVisualStyleBackColor = true;
+            this.btnGeneReporte.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnGeneReporte.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
+            this.btnGeneReporte.Font = new System.Drawing.Font("Onest Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGeneReporte.Location = new System.Drawing.Point(0, 43);
+            this.btnGeneReporte.Name = "btnGeneReporte";
+            this.btnGeneReporte.Padding = new System.Windows.Forms.Padding(41, 0, 0, 0);
+            this.btnGeneReporte.Size = new System.Drawing.Size(234, 43);
+            this.btnGeneReporte.TabIndex = 1;
+            this.btnGeneReporte.Text = "Generar Reporte";
+            this.btnGeneReporte.UseVisualStyleBackColor = true;
             // 
-            // button17
+            // btnEstadisticas
             // 
-            this.button17.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button17.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
-            this.button17.Location = new System.Drawing.Point(0, 0);
-            this.button17.Name = "button17";
-            this.button17.Padding = new System.Windows.Forms.Padding(41, 0, 0, 0);
-            this.button17.Size = new System.Drawing.Size(234, 23);
-            this.button17.TabIndex = 0;
-            this.button17.Text = "button17";
-            this.button17.UseVisualStyleBackColor = true;
+            this.btnEstadisticas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEstadisticas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
+            this.btnEstadisticas.Font = new System.Drawing.Font("Onest Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEstadisticas.Location = new System.Drawing.Point(0, 0);
+            this.btnEstadisticas.Name = "btnEstadisticas";
+            this.btnEstadisticas.Padding = new System.Windows.Forms.Padding(41, 0, 0, 0);
+            this.btnEstadisticas.Size = new System.Drawing.Size(234, 43);
+            this.btnEstadisticas.TabIndex = 0;
+            this.btnEstadisticas.Text = "Estadisticas";
+            this.btnEstadisticas.UseVisualStyleBackColor = true;
             // 
             // btnReportes
             // 
             this.btnReportes.BackColor = System.Drawing.Color.Teal;
             this.btnReportes.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnReportes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnReportes.Font = new System.Drawing.Font("Onest Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportes.Font = new System.Drawing.Font("Onest Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReportes.ForeColor = System.Drawing.Color.White;
-            this.btnReportes.Location = new System.Drawing.Point(0, 526);
+            this.btnReportes.Location = new System.Drawing.Point(0, 875);
             this.btnReportes.Name = "btnReportes";
-            this.btnReportes.Size = new System.Drawing.Size(234, 35);
+            this.btnReportes.Size = new System.Drawing.Size(234, 60);
             this.btnReportes.TabIndex = 11;
             this.btnReportes.Text = "Reportes";
             this.btnReportes.UseVisualStyleBackColor = false;
@@ -243,12 +258,12 @@
             // SubPanelEstadios
             // 
             this.SubPanelEstadios.Controls.Add(this.btnEst);
-            this.SubPanelEstadios.Controls.Add(this.button13);
-            this.SubPanelEstadios.Controls.Add(this.button14);
+            this.SubPanelEstadios.Controls.Add(this.btnEstadio);
+            this.SubPanelEstadios.Controls.Add(this.btnAggEstadios);
             this.SubPanelEstadios.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SubPanelEstadios.Location = new System.Drawing.Point(0, 480);
+            this.SubPanelEstadios.Location = new System.Drawing.Point(0, 787);
             this.SubPanelEstadios.Name = "SubPanelEstadios";
-            this.SubPanelEstadios.Size = new System.Drawing.Size(234, 46);
+            this.SubPanelEstadios.Size = new System.Drawing.Size(234, 88);
             this.SubPanelEstadios.TabIndex = 10;
             this.SubPanelEstadios.Visible = false;
             // 
@@ -257,45 +272,47 @@
             this.btnEst.BackColor = System.Drawing.Color.Teal;
             this.btnEst.Location = new System.Drawing.Point(0, -1);
             this.btnEst.Name = "btnEst";
-            this.btnEst.Size = new System.Drawing.Size(45, 48);
+            this.btnEst.Size = new System.Drawing.Size(45, 88);
             this.btnEst.TabIndex = 4;
             this.btnEst.UseVisualStyleBackColor = false;
             this.btnEst.Click += new System.EventHandler(this.btnEst_Click);
             // 
-            // button13
+            // btnEstadio
             // 
-            this.button13.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button13.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
-            this.button13.Location = new System.Drawing.Point(0, 23);
-            this.button13.Name = "button13";
-            this.button13.Padding = new System.Windows.Forms.Padding(41, 0, 0, 0);
-            this.button13.Size = new System.Drawing.Size(234, 23);
-            this.button13.TabIndex = 1;
-            this.button13.Text = "button13";
-            this.button13.UseVisualStyleBackColor = true;
+            this.btnEstadio.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEstadio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
+            this.btnEstadio.Font = new System.Drawing.Font("Onest Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEstadio.Location = new System.Drawing.Point(0, 43);
+            this.btnEstadio.Name = "btnEstadio";
+            this.btnEstadio.Padding = new System.Windows.Forms.Padding(41, 0, 0, 0);
+            this.btnEstadio.Size = new System.Drawing.Size(234, 43);
+            this.btnEstadio.TabIndex = 1;
+            this.btnEstadio.Text = "Estadios";
+            this.btnEstadio.UseVisualStyleBackColor = true;
             // 
-            // button14
+            // btnAggEstadios
             // 
-            this.button14.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button14.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
-            this.button14.Location = new System.Drawing.Point(0, 0);
-            this.button14.Name = "button14";
-            this.button14.Padding = new System.Windows.Forms.Padding(41, 0, 0, 0);
-            this.button14.Size = new System.Drawing.Size(234, 23);
-            this.button14.TabIndex = 0;
-            this.button14.Text = "button14";
-            this.button14.UseVisualStyleBackColor = true;
+            this.btnAggEstadios.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAggEstadios.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
+            this.btnAggEstadios.Font = new System.Drawing.Font("Onest Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAggEstadios.Location = new System.Drawing.Point(0, 0);
+            this.btnAggEstadios.Name = "btnAggEstadios";
+            this.btnAggEstadios.Padding = new System.Windows.Forms.Padding(41, 0, 0, 0);
+            this.btnAggEstadios.Size = new System.Drawing.Size(234, 43);
+            this.btnAggEstadios.TabIndex = 0;
+            this.btnAggEstadios.Text = "Agregar Estadio";
+            this.btnAggEstadios.UseVisualStyleBackColor = true;
             // 
             // btnEstadios
             // 
             this.btnEstadios.BackColor = System.Drawing.Color.Teal;
             this.btnEstadios.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnEstadios.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnEstadios.Font = new System.Drawing.Font("Onest Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEstadios.Font = new System.Drawing.Font("Onest Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEstadios.ForeColor = System.Drawing.Color.White;
-            this.btnEstadios.Location = new System.Drawing.Point(0, 445);
+            this.btnEstadios.Location = new System.Drawing.Point(0, 727);
             this.btnEstadios.Name = "btnEstadios";
-            this.btnEstadios.Size = new System.Drawing.Size(234, 35);
+            this.btnEstadios.Size = new System.Drawing.Size(234, 60);
             this.btnEstadios.TabIndex = 9;
             this.btnEstadios.Text = "Estadios";
             this.btnEstadios.UseVisualStyleBackColor = false;
@@ -304,12 +321,12 @@
             // SubPanelArbitros
             // 
             this.SubPanelArbitros.Controls.Add(this.btnArb);
-            this.SubPanelArbitros.Controls.Add(this.button12);
-            this.SubPanelArbitros.Controls.Add(this.button11);
+            this.SubPanelArbitros.Controls.Add(this.btnArbitro);
+            this.SubPanelArbitros.Controls.Add(this.btnAggArbitro);
             this.SubPanelArbitros.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SubPanelArbitros.Location = new System.Drawing.Point(0, 399);
+            this.SubPanelArbitros.Location = new System.Drawing.Point(0, 639);
             this.SubPanelArbitros.Name = "SubPanelArbitros";
-            this.SubPanelArbitros.Size = new System.Drawing.Size(234, 46);
+            this.SubPanelArbitros.Size = new System.Drawing.Size(234, 88);
             this.SubPanelArbitros.TabIndex = 8;
             this.SubPanelArbitros.Visible = false;
             // 
@@ -318,45 +335,47 @@
             this.btnArb.BackColor = System.Drawing.Color.Teal;
             this.btnArb.Location = new System.Drawing.Point(0, -1);
             this.btnArb.Name = "btnArb";
-            this.btnArb.Size = new System.Drawing.Size(45, 48);
+            this.btnArb.Size = new System.Drawing.Size(45, 88);
             this.btnArb.TabIndex = 4;
             this.btnArb.UseVisualStyleBackColor = false;
             this.btnArb.Click += new System.EventHandler(this.btnArb_Click);
             // 
-            // button12
+            // btnArbitro
             // 
-            this.button12.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button12.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
-            this.button12.Location = new System.Drawing.Point(0, 23);
-            this.button12.Name = "button12";
-            this.button12.Padding = new System.Windows.Forms.Padding(41, 0, 0, 0);
-            this.button12.Size = new System.Drawing.Size(234, 23);
-            this.button12.TabIndex = 1;
-            this.button12.Text = "button12";
-            this.button12.UseVisualStyleBackColor = true;
+            this.btnArbitro.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnArbitro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
+            this.btnArbitro.Font = new System.Drawing.Font("Onest Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnArbitro.Location = new System.Drawing.Point(0, 43);
+            this.btnArbitro.Name = "btnArbitro";
+            this.btnArbitro.Padding = new System.Windows.Forms.Padding(41, 0, 0, 0);
+            this.btnArbitro.Size = new System.Drawing.Size(234, 43);
+            this.btnArbitro.TabIndex = 1;
+            this.btnArbitro.Text = "Arbitros";
+            this.btnArbitro.UseVisualStyleBackColor = true;
             // 
-            // button11
+            // btnAggArbitro
             // 
-            this.button11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button11.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
-            this.button11.Location = new System.Drawing.Point(0, 0);
-            this.button11.Name = "button11";
-            this.button11.Padding = new System.Windows.Forms.Padding(41, 0, 0, 0);
-            this.button11.Size = new System.Drawing.Size(234, 23);
-            this.button11.TabIndex = 0;
-            this.button11.Text = "button11";
-            this.button11.UseVisualStyleBackColor = true;
+            this.btnAggArbitro.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAggArbitro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
+            this.btnAggArbitro.Font = new System.Drawing.Font("Onest Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAggArbitro.Location = new System.Drawing.Point(0, 0);
+            this.btnAggArbitro.Name = "btnAggArbitro";
+            this.btnAggArbitro.Padding = new System.Windows.Forms.Padding(41, 0, 0, 0);
+            this.btnAggArbitro.Size = new System.Drawing.Size(234, 43);
+            this.btnAggArbitro.TabIndex = 0;
+            this.btnAggArbitro.Text = "Agregar Arbitro";
+            this.btnAggArbitro.UseVisualStyleBackColor = true;
             // 
             // btnArbitros
             // 
             this.btnArbitros.BackColor = System.Drawing.Color.Teal;
             this.btnArbitros.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnArbitros.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnArbitros.Font = new System.Drawing.Font("Onest Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnArbitros.Font = new System.Drawing.Font("Onest Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnArbitros.ForeColor = System.Drawing.Color.White;
-            this.btnArbitros.Location = new System.Drawing.Point(0, 364);
+            this.btnArbitros.Location = new System.Drawing.Point(0, 579);
             this.btnArbitros.Name = "btnArbitros";
-            this.btnArbitros.Size = new System.Drawing.Size(234, 35);
+            this.btnArbitros.Size = new System.Drawing.Size(234, 60);
             this.btnArbitros.TabIndex = 7;
             this.btnArbitros.Text = "Arbitros";
             this.btnArbitros.UseVisualStyleBackColor = false;
@@ -365,12 +384,12 @@
             // SubPanelJugadores
             // 
             this.SubPanelJugadores.Controls.Add(this.btnJug);
-            this.SubPanelJugadores.Controls.Add(this.button10);
-            this.SubPanelJugadores.Controls.Add(this.button9);
+            this.SubPanelJugadores.Controls.Add(this.btnJugador);
+            this.SubPanelJugadores.Controls.Add(this.btnAggJugador);
             this.SubPanelJugadores.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SubPanelJugadores.Location = new System.Drawing.Point(0, 316);
+            this.SubPanelJugadores.Location = new System.Drawing.Point(0, 491);
             this.SubPanelJugadores.Name = "SubPanelJugadores";
-            this.SubPanelJugadores.Size = new System.Drawing.Size(234, 48);
+            this.SubPanelJugadores.Size = new System.Drawing.Size(234, 88);
             this.SubPanelJugadores.TabIndex = 6;
             this.SubPanelJugadores.Visible = false;
             // 
@@ -379,34 +398,36 @@
             this.btnJug.BackColor = System.Drawing.Color.Teal;
             this.btnJug.Location = new System.Drawing.Point(0, 0);
             this.btnJug.Name = "btnJug";
-            this.btnJug.Size = new System.Drawing.Size(45, 48);
+            this.btnJug.Size = new System.Drawing.Size(45, 88);
             this.btnJug.TabIndex = 4;
             this.btnJug.UseVisualStyleBackColor = false;
             this.btnJug.Click += new System.EventHandler(this.btnJug_Click);
             // 
-            // button10
+            // btnJugador
             // 
-            this.button10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button10.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
-            this.button10.Location = new System.Drawing.Point(0, 23);
-            this.button10.Name = "button10";
-            this.button10.Padding = new System.Windows.Forms.Padding(41, 0, 0, 0);
-            this.button10.Size = new System.Drawing.Size(234, 23);
-            this.button10.TabIndex = 1;
-            this.button10.Text = "button10";
-            this.button10.UseVisualStyleBackColor = true;
+            this.btnJugador.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnJugador.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
+            this.btnJugador.Font = new System.Drawing.Font("Onest Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJugador.Location = new System.Drawing.Point(0, 43);
+            this.btnJugador.Name = "btnJugador";
+            this.btnJugador.Padding = new System.Windows.Forms.Padding(41, 0, 0, 0);
+            this.btnJugador.Size = new System.Drawing.Size(234, 43);
+            this.btnJugador.TabIndex = 1;
+            this.btnJugador.Text = "Jugadores";
+            this.btnJugador.UseVisualStyleBackColor = true;
             // 
-            // button9
+            // btnAggJugador
             // 
-            this.button9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
-            this.button9.Location = new System.Drawing.Point(0, 0);
-            this.button9.Name = "button9";
-            this.button9.Padding = new System.Windows.Forms.Padding(41, 0, 0, 0);
-            this.button9.Size = new System.Drawing.Size(234, 23);
-            this.button9.TabIndex = 0;
-            this.button9.Text = "button9";
-            this.button9.UseVisualStyleBackColor = true;
+            this.btnAggJugador.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAggJugador.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
+            this.btnAggJugador.Font = new System.Drawing.Font("Onest Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAggJugador.Location = new System.Drawing.Point(0, 0);
+            this.btnAggJugador.Name = "btnAggJugador";
+            this.btnAggJugador.Padding = new System.Windows.Forms.Padding(41, 0, 0, 0);
+            this.btnAggJugador.Size = new System.Drawing.Size(234, 43);
+            this.btnAggJugador.TabIndex = 0;
+            this.btnAggJugador.Text = "Agregar Jugador";
+            this.btnAggJugador.UseVisualStyleBackColor = true;
             // 
             // btnJugadores
             // 
@@ -414,11 +435,11 @@
             this.btnJugadores.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnJugadores.FlatAppearance.BorderSize = 0;
             this.btnJugadores.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnJugadores.Font = new System.Drawing.Font("Onest Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJugadores.Font = new System.Drawing.Font("Onest Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnJugadores.ForeColor = System.Drawing.Color.White;
-            this.btnJugadores.Location = new System.Drawing.Point(0, 281);
+            this.btnJugadores.Location = new System.Drawing.Point(0, 431);
             this.btnJugadores.Name = "btnJugadores";
-            this.btnJugadores.Size = new System.Drawing.Size(234, 35);
+            this.btnJugadores.Size = new System.Drawing.Size(234, 60);
             this.btnJugadores.TabIndex = 5;
             this.btnJugadores.Text = "Jugadores";
             this.btnJugadores.UseVisualStyleBackColor = false;
@@ -427,12 +448,12 @@
             // SubPanelEquipos
             // 
             this.SubPanelEquipos.Controls.Add(this.btnEqui);
-            this.SubPanelEquipos.Controls.Add(this.button7);
-            this.SubPanelEquipos.Controls.Add(this.button6);
+            this.SubPanelEquipos.Controls.Add(this.btnEquipo);
+            this.SubPanelEquipos.Controls.Add(this.btnAggEquipo);
             this.SubPanelEquipos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SubPanelEquipos.Location = new System.Drawing.Point(0, 233);
+            this.SubPanelEquipos.Location = new System.Drawing.Point(0, 343);
             this.SubPanelEquipos.Name = "SubPanelEquipos";
-            this.SubPanelEquipos.Size = new System.Drawing.Size(234, 48);
+            this.SubPanelEquipos.Size = new System.Drawing.Size(234, 88);
             this.SubPanelEquipos.TabIndex = 4;
             this.SubPanelEquipos.Visible = false;
             // 
@@ -441,34 +462,36 @@
             this.btnEqui.BackColor = System.Drawing.Color.Teal;
             this.btnEqui.Location = new System.Drawing.Point(0, -1);
             this.btnEqui.Name = "btnEqui";
-            this.btnEqui.Size = new System.Drawing.Size(45, 48);
+            this.btnEqui.Size = new System.Drawing.Size(45, 88);
             this.btnEqui.TabIndex = 3;
             this.btnEqui.UseVisualStyleBackColor = false;
             this.btnEqui.Click += new System.EventHandler(this.btnEqui_Click);
             // 
-            // button7
+            // btnEquipo
             // 
-            this.button7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
-            this.button7.Location = new System.Drawing.Point(0, 23);
-            this.button7.Name = "button7";
-            this.button7.Padding = new System.Windows.Forms.Padding(41, 0, 0, 0);
-            this.button7.Size = new System.Drawing.Size(234, 23);
-            this.button7.TabIndex = 1;
-            this.button7.Text = "button7";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnEquipo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEquipo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
+            this.btnEquipo.Font = new System.Drawing.Font("Onest Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEquipo.Location = new System.Drawing.Point(0, 43);
+            this.btnEquipo.Name = "btnEquipo";
+            this.btnEquipo.Padding = new System.Windows.Forms.Padding(41, 0, 0, 0);
+            this.btnEquipo.Size = new System.Drawing.Size(234, 43);
+            this.btnEquipo.TabIndex = 1;
+            this.btnEquipo.Text = "Equipos";
+            this.btnEquipo.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // btnAggEquipo
             // 
-            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
-            this.button6.Location = new System.Drawing.Point(0, 0);
-            this.button6.Name = "button6";
-            this.button6.Padding = new System.Windows.Forms.Padding(41, 0, 0, 0);
-            this.button6.Size = new System.Drawing.Size(234, 23);
-            this.button6.TabIndex = 0;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnAggEquipo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAggEquipo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
+            this.btnAggEquipo.Font = new System.Drawing.Font("Onest Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAggEquipo.Location = new System.Drawing.Point(0, 0);
+            this.btnAggEquipo.Name = "btnAggEquipo";
+            this.btnAggEquipo.Padding = new System.Windows.Forms.Padding(41, 0, 0, 0);
+            this.btnAggEquipo.Size = new System.Drawing.Size(234, 43);
+            this.btnAggEquipo.TabIndex = 0;
+            this.btnAggEquipo.Text = "Agregar Equipos";
+            this.btnAggEquipo.UseVisualStyleBackColor = true;
             // 
             // btnEquipos
             // 
@@ -476,11 +499,11 @@
             this.btnEquipos.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnEquipos.FlatAppearance.BorderSize = 0;
             this.btnEquipos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnEquipos.Font = new System.Drawing.Font("Onest Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEquipos.Font = new System.Drawing.Font("Onest Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEquipos.ForeColor = System.Drawing.Color.White;
-            this.btnEquipos.Location = new System.Drawing.Point(0, 198);
+            this.btnEquipos.Location = new System.Drawing.Point(0, 283);
             this.btnEquipos.Name = "btnEquipos";
-            this.btnEquipos.Size = new System.Drawing.Size(234, 35);
+            this.btnEquipos.Size = new System.Drawing.Size(234, 60);
             this.btnEquipos.TabIndex = 3;
             this.btnEquipos.Text = "Equipos";
             this.btnEquipos.UseVisualStyleBackColor = false;
@@ -489,13 +512,13 @@
             // SubPanelTorneo
             // 
             this.SubPanelTorneo.Controls.Add(this.btnTor);
-            this.SubPanelTorneo.Controls.Add(this.button4);
-            this.SubPanelTorneo.Controls.Add(this.button3);
-            this.SubPanelTorneo.Controls.Add(this.button2);
+            this.SubPanelTorneo.Controls.Add(this.btnGesTorneo);
+            this.SubPanelTorneo.Controls.Add(this.btnMisTorneos);
+            this.SubPanelTorneo.Controls.Add(this.btnCrearTorneo);
             this.SubPanelTorneo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SubPanelTorneo.Location = new System.Drawing.Point(0, 129);
+            this.SubPanelTorneo.Location = new System.Drawing.Point(0, 154);
             this.SubPanelTorneo.Name = "SubPanelTorneo";
-            this.SubPanelTorneo.Size = new System.Drawing.Size(234, 69);
+            this.SubPanelTorneo.Size = new System.Drawing.Size(234, 129);
             this.SubPanelTorneo.TabIndex = 2;
             this.SubPanelTorneo.Visible = false;
             // 
@@ -504,46 +527,49 @@
             this.btnTor.BackColor = System.Drawing.Color.Teal;
             this.btnTor.Location = new System.Drawing.Point(0, 0);
             this.btnTor.Name = "btnTor";
-            this.btnTor.Size = new System.Drawing.Size(45, 69);
+            this.btnTor.Size = new System.Drawing.Size(45, 129);
             this.btnTor.TabIndex = 1;
             this.btnTor.UseVisualStyleBackColor = false;
             this.btnTor.Click += new System.EventHandler(this.btnTor_Click);
             // 
-            // button4
+            // btnGesTorneo
             // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
-            this.button4.Location = new System.Drawing.Point(0, 46);
-            this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(41, 0, 0, 0);
-            this.button4.Size = new System.Drawing.Size(234, 23);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnGesTorneo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnGesTorneo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
+            this.btnGesTorneo.Font = new System.Drawing.Font("Onest Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGesTorneo.Location = new System.Drawing.Point(0, 86);
+            this.btnGesTorneo.Name = "btnGesTorneo";
+            this.btnGesTorneo.Padding = new System.Windows.Forms.Padding(41, 0, 0, 0);
+            this.btnGesTorneo.Size = new System.Drawing.Size(234, 43);
+            this.btnGesTorneo.TabIndex = 2;
+            this.btnGesTorneo.Text = "Gestionar Torneo";
+            this.btnGesTorneo.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnMisTorneos
             // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
-            this.button3.Location = new System.Drawing.Point(0, 23);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(41, 0, 0, 0);
-            this.button3.Size = new System.Drawing.Size(234, 23);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnMisTorneos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMisTorneos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
+            this.btnMisTorneos.Font = new System.Drawing.Font("Onest Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMisTorneos.Location = new System.Drawing.Point(0, 43);
+            this.btnMisTorneos.Name = "btnMisTorneos";
+            this.btnMisTorneos.Padding = new System.Windows.Forms.Padding(41, 0, 0, 0);
+            this.btnMisTorneos.Size = new System.Drawing.Size(234, 43);
+            this.btnMisTorneos.TabIndex = 1;
+            this.btnMisTorneos.Text = "Mis Torneos";
+            this.btnMisTorneos.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnCrearTorneo
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
-            this.button2.Location = new System.Drawing.Point(0, 0);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(41, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(234, 23);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnCrearTorneo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCrearTorneo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
+            this.btnCrearTorneo.Font = new System.Drawing.Font("Onest Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCrearTorneo.Location = new System.Drawing.Point(0, 0);
+            this.btnCrearTorneo.Name = "btnCrearTorneo";
+            this.btnCrearTorneo.Padding = new System.Windows.Forms.Padding(41, 0, 0, 0);
+            this.btnCrearTorneo.Size = new System.Drawing.Size(234, 43);
+            this.btnCrearTorneo.TabIndex = 0;
+            this.btnCrearTorneo.Text = "Crear Torneo";
+            this.btnCrearTorneo.UseVisualStyleBackColor = true;
             // 
             // btnTorneo
             // 
@@ -551,11 +577,11 @@
             this.btnTorneo.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnTorneo.FlatAppearance.BorderSize = 0;
             this.btnTorneo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnTorneo.Font = new System.Drawing.Font("Onest Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTorneo.Font = new System.Drawing.Font("Onest Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTorneo.ForeColor = System.Drawing.Color.White;
             this.btnTorneo.Location = new System.Drawing.Point(0, 94);
             this.btnTorneo.Name = "btnTorneo";
-            this.btnTorneo.Size = new System.Drawing.Size(234, 35);
+            this.btnTorneo.Size = new System.Drawing.Size(234, 60);
             this.btnTorneo.TabIndex = 1;
             this.btnTorneo.Text = "Torneo";
             this.btnTorneo.UseVisualStyleBackColor = false;
@@ -571,6 +597,77 @@
             this.PanelLogo.Name = "PanelLogo";
             this.PanelLogo.Size = new System.Drawing.Size(234, 94);
             this.PanelLogo.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(12, 1624);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(208, 72);
+            this.panel1.TabIndex = 16;
+            this.panel1.Visible = false;
+            // 
+            // btnCaja
+            // 
+            this.btnCaja.BackColor = System.Drawing.Color.Teal;
+            this.btnCaja.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCaja.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnCaja.Font = new System.Drawing.Font("Onest Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCaja.ForeColor = System.Drawing.Color.White;
+            this.btnCaja.Location = new System.Drawing.Point(0, 1171);
+            this.btnCaja.Name = "btnCaja";
+            this.btnCaja.Size = new System.Drawing.Size(234, 60);
+            this.btnCaja.TabIndex = 17;
+            this.btnCaja.Text = "Caja";
+            this.btnCaja.UseVisualStyleBackColor = false;
+            this.btnCaja.Click += new System.EventHandler(this.btnCaja_Click);
+            // 
+            // SubPanelCaja
+            // 
+            this.SubPanelCaja.Controls.Add(this.btnCj);
+            this.SubPanelCaja.Controls.Add(this.btnComprobante);
+            this.SubPanelCaja.Controls.Add(this.btnIngreEngre);
+            this.SubPanelCaja.Dock = System.Windows.Forms.DockStyle.Top;
+            this.SubPanelCaja.Location = new System.Drawing.Point(0, 1231);
+            this.SubPanelCaja.Name = "SubPanelCaja";
+            this.SubPanelCaja.Size = new System.Drawing.Size(234, 88);
+            this.SubPanelCaja.TabIndex = 18;
+            this.SubPanelCaja.Visible = false;
+            // 
+            // btnCj
+            // 
+            this.btnCj.BackColor = System.Drawing.Color.Teal;
+            this.btnCj.Location = new System.Drawing.Point(0, -1);
+            this.btnCj.Name = "btnCj";
+            this.btnCj.Size = new System.Drawing.Size(45, 88);
+            this.btnCj.TabIndex = 4;
+            this.btnCj.UseVisualStyleBackColor = false;
+            this.btnCj.Click += new System.EventHandler(this.btnCj_Click);
+            // 
+            // btnComprobante
+            // 
+            this.btnComprobante.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnComprobante.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
+            this.btnComprobante.Font = new System.Drawing.Font("Onest Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnComprobante.Location = new System.Drawing.Point(0, 43);
+            this.btnComprobante.Name = "btnComprobante";
+            this.btnComprobante.Padding = new System.Windows.Forms.Padding(41, 0, 0, 0);
+            this.btnComprobante.Size = new System.Drawing.Size(234, 43);
+            this.btnComprobante.TabIndex = 1;
+            this.btnComprobante.Text = "Comprobantes";
+            this.btnComprobante.UseVisualStyleBackColor = true;
+            // 
+            // btnIngreEngre
+            // 
+            this.btnIngreEngre.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnIngreEngre.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
+            this.btnIngreEngre.Font = new System.Drawing.Font("Onest Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIngreEngre.Location = new System.Drawing.Point(0, 0);
+            this.btnIngreEngre.Name = "btnIngreEngre";
+            this.btnIngreEngre.Padding = new System.Windows.Forms.Padding(41, 0, 0, 0);
+            this.btnIngreEngre.Size = new System.Drawing.Size(234, 43);
+            this.btnIngreEngre.TabIndex = 0;
+            this.btnIngreEngre.Text = "Ingresos/Egresos";
+            this.btnIngreEngre.UseVisualStyleBackColor = true;
             // 
             // Inicio
             // 
@@ -590,6 +687,7 @@
             this.SubPanelJugadores.ResumeLayout(false);
             this.SubPanelEquipos.ResumeLayout(false);
             this.SubPanelTorneo.ResumeLayout(false);
+            this.SubPanelCaja.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -601,32 +699,32 @@
         private System.Windows.Forms.Panel SubPanelTorneo;
         private System.Windows.Forms.Button btnTorneo;
         private System.Windows.Forms.Panel SubPanelJugadores;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button btnJugador;
+        private System.Windows.Forms.Button btnAggJugador;
         private System.Windows.Forms.Button btnJugadores;
         private System.Windows.Forms.Panel SubPanelEquipos;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnEquipo;
+        private System.Windows.Forms.Button btnAggEquipo;
         private System.Windows.Forms.Button btnEquipos;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnGesTorneo;
+        private System.Windows.Forms.Button btnMisTorneos;
+        private System.Windows.Forms.Button btnCrearTorneo;
         private System.Windows.Forms.Button btnConfiguracion;
         private System.Windows.Forms.Panel SubPanelUsuarios;
-        private System.Windows.Forms.Button button19;
-        private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.Button btnUsuario;
+        private System.Windows.Forms.Button btnAggUsuario;
         private System.Windows.Forms.Button btnUsuarios;
         private System.Windows.Forms.Panel SubPanelReportes;
-        private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Button btnGeneReporte;
+        private System.Windows.Forms.Button btnEstadisticas;
         private System.Windows.Forms.Button btnReportes;
         private System.Windows.Forms.Panel SubPanelEstadios;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button btnEstadio;
+        private System.Windows.Forms.Button btnAggEstadios;
         private System.Windows.Forms.Button btnEstadios;
         private System.Windows.Forms.Panel SubPanelArbitros;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button btnArbitro;
+        private System.Windows.Forms.Button btnAggArbitro;
         private System.Windows.Forms.Button btnArbitros;
         private System.Windows.Forms.Button btnUsu;
         private System.Windows.Forms.Button btnRep;
@@ -635,5 +733,11 @@
         private System.Windows.Forms.Button btnJug;
         private System.Windows.Forms.Button btnEqui;
         private System.Windows.Forms.Button btnTor;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnCaja;
+        private System.Windows.Forms.Panel SubPanelCaja;
+        private System.Windows.Forms.Button btnCj;
+        private System.Windows.Forms.Button btnComprobante;
+        private System.Windows.Forms.Button btnIngreEngre;
     }
 }
