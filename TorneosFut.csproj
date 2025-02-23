@@ -55,6 +55,11 @@
     <Compile Include="Equipos.Designer.cs">
       <DependentUpon>Equipos.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuColorTable.cs" />
+    <Compile Include="MenuRenderer.cs" />
+    <Compile Include="RJDropDownMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
