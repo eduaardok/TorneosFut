@@ -17,6 +17,7 @@ namespace TorneosFut
 {
     public partial class Login : Form
     {
+        csConexion conec = new csConexion(); 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
           (
@@ -92,9 +93,15 @@ namespace TorneosFut
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            Inicio n = new Inicio();
-            this.Hide();
-            n.Show();
+            if (conec.Login(txtUsuario.Text, Txtclave.Text))
+            {
+                Inicio n = new Inicio();
+                this.Hide();
+                n.Show();
+            } else
+            {
+                MessageBox.Show("Credenciales incorrectas", "Inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
