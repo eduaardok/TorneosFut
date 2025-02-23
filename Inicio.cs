@@ -306,6 +306,8 @@ namespace TorneosFut
 
         private void Inicio_Load(object sender, EventArgs e)
         {
+            this.WindowState= FormWindowState.Maximized;
+            this.FormBorderStyle= FormBorderStyle.None;
             timer1.Start();
             btnTorneo.Region = Region.FromHrgn(CreateRoundRectRgn(1, 1, btnTorneo.Width, btnTorneo.Height, 50, 50));
             btnTor.Region = Region.FromHrgn(CreateRoundRectRgn(1, 1, btnTor.Width, btnTor.Height, 10, 10));

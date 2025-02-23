@@ -789,13 +789,12 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.PanelAggEquipo);
             this.Controls.Add(this.PanelMenuLateral);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Inicio";
             this.Opacity = 0D;
             this.Text = "INICIO";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Inicio_Load);
             this.PanelMenuLateral.ResumeLayout(false);
             this.SubPanelCaja.ResumeLayout(false);
