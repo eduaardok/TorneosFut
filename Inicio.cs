@@ -13,11 +13,24 @@ namespace TorneosFut
 {
     public partial class Inicio: Form
     {
+        Equipos equi;
         public Inicio()
         {
             InitializeComponent();
+            equi = new Equipos();
         }
+        public static void AbrirFormEnPanel(Panel panel, Form formHijo)
+        {
+            if (panel.Controls.Count > 0)
+                panel.Controls.Clear(); // Limpia cualquier contenido previo
 
+            formHijo.TopLevel = false;  // Indica que no es un formulario independiente
+            formHijo.Dock = DockStyle.Fill; // Ajusta al tamaño del panel
+            panel.Controls.Add(formHijo); // Agrega el formulario al panel
+            panel.Tag = formHijo; // Asocia el formulario con el panel
+            formHijo.BringToFront(); // Lo trae al frente
+            formHijo.Show(); // Muestra el formulario dentro del panel
+        }
         private void btnTorneo_Click(object sender, EventArgs e)
         {
             SubPanelTorneo.Visible = true;
@@ -37,6 +50,8 @@ namespace TorneosFut
             btnReportes.Visible = true;
             btnUsuarios.Visible = true;
             btnCaja.Visible = true;
+
+            equi.Hide();
         }
 
         private void btnTor_Click(object sender, EventArgs e)
@@ -65,6 +80,7 @@ namespace TorneosFut
             btnReportes.Visible = true;
             btnUsuarios.Visible = true;
             btnCaja.Visible = true;
+
         }
 
         private void btnEqui_Click(object sender, EventArgs e)
@@ -261,6 +277,11 @@ namespace TorneosFut
             btnReportes.Visible = true;
             btnUsuarios.Visible = true;
             btnCaja.Visible = true;
+        }
+
+        private void btnAggEquipo_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(PanelAggEquipo, equi);
         }
     }
 }

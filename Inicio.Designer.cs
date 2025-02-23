@@ -66,13 +66,14 @@
             this.btnMisTorneos = new System.Windows.Forms.Button();
             this.btnCrearTorneo = new System.Windows.Forms.Button();
             this.btnTorneo = new System.Windows.Forms.Button();
-            this.PanelLogo = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCaja = new System.Windows.Forms.Button();
             this.SubPanelCaja = new System.Windows.Forms.Panel();
             this.btnCj = new System.Windows.Forms.Button();
             this.btnComprobante = new System.Windows.Forms.Button();
             this.btnIngreEngre = new System.Windows.Forms.Button();
+            this.PanelAggEquipo = new System.Windows.Forms.Panel();
+            this.PanelLogo = new System.Windows.Forms.Panel();
             this.PanelMenuLateral.SuspendLayout();
             this.SubPanelUsuarios.SuspendLayout();
             this.SubPanelReportes.SuspendLayout();
@@ -111,7 +112,7 @@
             this.PanelMenuLateral.Controls.Add(this.PanelLogo);
             this.PanelMenuLateral.Location = new System.Drawing.Point(0, 0);
             this.PanelMenuLateral.Name = "PanelMenuLateral";
-            this.PanelMenuLateral.Size = new System.Drawing.Size(251, 716);
+            this.PanelMenuLateral.Size = new System.Drawing.Size(251, 721);
             this.PanelMenuLateral.TabIndex = 0;
             // 
             // btnConfiguracion
@@ -492,6 +493,7 @@
             this.btnAggEquipo.TabIndex = 0;
             this.btnAggEquipo.Text = "Agregar Equipos";
             this.btnAggEquipo.UseVisualStyleBackColor = true;
+            this.btnAggEquipo.Click += new System.EventHandler(this.btnAggEquipo_Click);
             // 
             // btnEquipos
             // 
@@ -587,17 +589,6 @@
             this.btnTorneo.UseVisualStyleBackColor = false;
             this.btnTorneo.Click += new System.EventHandler(this.btnTorneo_Click);
             // 
-            // PanelLogo
-            // 
-            this.PanelLogo.BackColor = System.Drawing.Color.White;
-            this.PanelLogo.BackgroundImage = global::TorneosFut.Properties.Resources.fxfutxpert;
-            this.PanelLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PanelLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelLogo.Location = new System.Drawing.Point(0, 0);
-            this.PanelLogo.Name = "PanelLogo";
-            this.PanelLogo.Size = new System.Drawing.Size(234, 94);
-            this.PanelLogo.TabIndex = 0;
-            // 
             // panel1
             // 
             this.panel1.Location = new System.Drawing.Point(12, 1624);
@@ -669,12 +660,34 @@
             this.btnIngreEngre.Text = "Ingresos/Egresos";
             this.btnIngreEngre.UseVisualStyleBackColor = true;
             // 
+            // PanelAggEquipo
+            // 
+            this.PanelAggEquipo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.PanelAggEquipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.PanelAggEquipo.Location = new System.Drawing.Point(253, -1);
+            this.PanelAggEquipo.Name = "PanelAggEquipo";
+            this.PanelAggEquipo.Size = new System.Drawing.Size(1116, 722);
+            this.PanelAggEquipo.TabIndex = 1;
+            // 
+            // PanelLogo
+            // 
+            this.PanelLogo.BackColor = System.Drawing.Color.White;
+            this.PanelLogo.BackgroundImage = global::TorneosFut.Properties.Resources.fxfutxpert;
+            this.PanelLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PanelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelLogo.Location = new System.Drawing.Point(0, 0);
+            this.PanelLogo.Name = "PanelLogo";
+            this.PanelLogo.Size = new System.Drawing.Size(234, 94);
+            this.PanelLogo.TabIndex = 0;
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.ClientSize = new System.Drawing.Size(822, 720);
+            this.ClientSize = new System.Drawing.Size(1370, 720);
+            this.Controls.Add(this.PanelAggEquipo);
             this.Controls.Add(this.PanelMenuLateral);
             this.Name = "Inicio";
             this.Text = "ººººººººººººººº";
@@ -739,5 +752,6 @@
         private System.Windows.Forms.Button btnCj;
         private System.Windows.Forms.Button btnComprobante;
         private System.Windows.Forms.Button btnIngreEngre;
+        private System.Windows.Forms.Panel PanelAggEquipo;
     }
 }
