@@ -793,6 +793,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Inicio";
+            this.Opacity = 0D;
             this.Text = "INICIO";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Inicio_Load);
