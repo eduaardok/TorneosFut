@@ -110,6 +110,7 @@
             this.Txtclave.PasswordChar = '*';
             this.Txtclave.Size = new System.Drawing.Size(169, 20);
             this.Txtclave.TabIndex = 12;
+            this.Txtclave.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Txtclave_KeyUp);
             // 
             // label3
             // 
@@ -157,6 +158,7 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(169, 20);
             this.txtUsuario.TabIndex = 9;
+            this.txtUsuario.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtUsuario_KeyUp);
             // 
             // panel4
             // 

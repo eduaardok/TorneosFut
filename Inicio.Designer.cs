@@ -76,6 +76,8 @@
             this.PanelLogo = new System.Windows.Forms.Panel();
             this.PanelAggEquipo = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.PanelMenuLateral.SuspendLayout();
             this.SubPanelCaja.SuspendLayout();
             this.SubPanelUsuarios.SuspendLayout();
@@ -85,6 +87,7 @@
             this.SubPanelJugadores.SuspendLayout();
             this.SubPanelEquipos.SuspendLayout();
             this.SubPanelTorneo.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelMenuLateral
@@ -717,7 +720,7 @@
             this.PanelAggEquipo.BackColor = System.Drawing.Color.Black;
             this.PanelAggEquipo.Location = new System.Drawing.Point(253, -1);
             this.PanelAggEquipo.Name = "PanelAggEquipo";
-            this.PanelAggEquipo.Size = new System.Drawing.Size(1116, 722);
+            this.PanelAggEquipo.Size = new System.Drawing.Size(1122, 725);
             this.PanelAggEquipo.TabIndex = 1;
             // 
             // timer1
@@ -725,17 +728,49 @@
             this.timer1.Interval = 10;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // panel2
+            // 
+            this.panel2.AutoScroll = true;
+            this.panel2.AutoSize = true;
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.btnCerrarSesion);
+            this.panel2.Location = new System.Drawing.Point(253, -1);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1119, 49);
+            this.panel2.TabIndex = 2;
+            // 
+            // btnCerrarSesion
+            // 
+            this.btnCerrarSesion.BackColor = System.Drawing.Color.IndianRed;
+            this.btnCerrarSesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrarSesion.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnCerrarSesion.FlatAppearance.BorderSize = 0;
+            this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarSesion.Font = new System.Drawing.Font("Onest Bold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarSesion.Location = new System.Drawing.Point(1017, 0);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Size = new System.Drawing.Size(102, 49);
+            this.btnCerrarSesion.TabIndex = 0;
+            this.btnCerrarSesion.Text = "Cerrar Sesión";
+            this.btnCerrarSesion.UseVisualStyleBackColor = false;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click_1);
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.ClientSize = new System.Drawing.Size(1370, 720);
+            this.ControlBox = false;
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.PanelAggEquipo);
             this.Controls.Add(this.PanelMenuLateral);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Inicio";
-            this.Text = "ººººººººººººººº";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Text = "INICIO";
             this.Load += new System.EventHandler(this.Inicio_Load);
             this.PanelMenuLateral.ResumeLayout(false);
             this.SubPanelCaja.ResumeLayout(false);
@@ -746,6 +781,7 @@
             this.SubPanelJugadores.ResumeLayout(false);
             this.SubPanelEquipos.ResumeLayout(false);
             this.SubPanelTorneo.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -800,5 +836,7 @@
         private System.Windows.Forms.Button btnIngreEngre;
         private System.Windows.Forms.Panel PanelAggEquipo;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnCerrarSesion;
     }
 }

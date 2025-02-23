@@ -1,7 +1,4 @@
-﻿
-
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,11 +10,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
 using System.Xml.Linq;
+using System.Runtime.Remoting.Contexts;
 namespace TorneosFut
 {
     public partial class Login : Form
     {
-        csConexion conec = new csConexion(); 
+        static csConexion conec = new csConexion();
+        static csEncriptar encrip = new csEncriptar();
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
           (
@@ -93,15 +92,37 @@ namespace TorneosFut
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            if (conec.Login(txtUsuario.Text, Txtclave.Text))
-            {
-                Inicio n = new Inicio();
-                this.Hide();
-                n.Show();
-            } else
+            Logeo();
+        }
+        void Logeo()
+        {
+            string password = encrip.Encriptar(Txtclave.Text, "futxpert");
+            if (!conec.Login(txtUsuario.Text, password))
             {
                 MessageBox.Show("Credenciales incorrectas", "Inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            else
+            {
+                MessageBox.Show("Se inició sesión de forma correcta");
+                Inicio n = new Inicio();
+                this.Hide();
+                n.ShowDialog();
+                txtUsuario.Text = "";
+                Txtclave.Text = "";
+                this.Show();
+            }
+        }
+
+        private void Txtclave_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                Logeo();
+        }
+
+        private void txtUsuario_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                Logeo();
         }
     }
 }

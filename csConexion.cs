@@ -43,7 +43,7 @@ namespace TorneosFut
 
         public bool Login(string usuario, string contraseña)
         {
-            string consulta = $"select Clave from Administrador";
+            string consulta = $"select Clave from Administrador where Usuario='{usuario}'";
             DataTable dt = ListDGV(consulta);
             for (int i = 0; i < dt.Rows.Count; i++)
             {

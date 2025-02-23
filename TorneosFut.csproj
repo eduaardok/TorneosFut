@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="csConexion.cs" />
+    <Compile Include="csEncriptar.cs" />
     <Compile Include="Equipos.cs">
       <SubType>Form</SubType>
     </Compile>

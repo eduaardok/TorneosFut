@@ -415,5 +415,10 @@ namespace TorneosFut
         {
             btnConfiguracion.BackColor = Color.PaleTurquoise;
         }
+
+        private void btnCerrarSesion_Click_1(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
