@@ -1,6 +1,6 @@
 ﻿namespace TorneosFut
 {
-    partial class Equipos
+    partial class FrmEquipos
     {
         /// <summary>
         /// Required designer variable.

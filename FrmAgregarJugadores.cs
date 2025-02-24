@@ -11,10 +11,10 @@ using TorneosFut;
 
 namespace pruebas
 {
-    public partial class AgregarJugadores : Form
+    public partial class FrmAgregarJugadores : Form
     {
         csConexion conexion = new csConexion();
-        public AgregarJugadores()
+        public FrmAgregarJugadores()
         {
             InitializeComponent();
         }

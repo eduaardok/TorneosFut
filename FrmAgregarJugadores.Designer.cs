@@ -1,6 +1,6 @@
 ﻿namespace pruebas
 {
-    partial class AgregarJugadores
+    partial class FrmAgregarJugadores
     {
         /// <summary>
         /// Required designer variable.
@@ -305,13 +305,14 @@
             this.Txtnombre.Size = new System.Drawing.Size(178, 20);
             this.Txtnombre.TabIndex = 24;
             // 
-            // AgregarJugadores
+            // FrmAgregarJugadores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
-            this.Name = "AgregarJugadores";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "FrmAgregarJugadores";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);

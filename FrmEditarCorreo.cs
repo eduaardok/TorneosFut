@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace TorneosFut
 {
-    public partial class EditarCorreo: Form
+    public partial class FrmEditarCorreo: Form
     {
         csConexion conexion = new csConexion();
         string id;
-        public EditarCorreo(string i)
+        public FrmEditarCorreo(string i)
         {
             InitializeComponent();
             id = i;

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TorneosFut
 {
-    public partial class Equipos: Form
+    public partial class FrmEquipos: Form
     {
-        public Equipos()
+        public FrmEquipos()
         {
             InitializeComponent();
         }

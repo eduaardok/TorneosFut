@@ -1,6 +1,6 @@
 ﻿namespace pruebas
 {
-    partial class VerJugadores
+    partial class FrmVerJugadores
     {
         /// <summary>
         /// Required designer variable.
@@ -80,8 +80,9 @@
             this.btneditarjuga.TabIndex = 0;
             this.btneditarjuga.Text = "Editar";
             this.btneditarjuga.UseVisualStyleBackColor = true;
+            this.btneditarjuga.Click += new System.EventHandler(this.btneditarjuga_Click);
             // 
-            // VerJugadores
+            // FrmVerJugadores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -89,7 +90,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvjugadores);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "VerJugadores";
+            this.Name = "FrmVerJugadores";
             this.Text = "VerJugadores";
             this.Load += new System.EventHandler(this.VerJugadores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvjugadores)).EndInit();

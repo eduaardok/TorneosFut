@@ -46,81 +46,90 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AgregarJugadores.cs">
+    <Compile Include="FrmAgregarJugadores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AgregarJugadores.Designer.cs">
-      <DependentUpon>AgregarJugadores.cs</DependentUpon>
+    <Compile Include="FrmAgregarJugadores.Designer.cs">
+      <DependentUpon>FrmAgregarJugadores.cs</DependentUpon>
     </Compile>
     <Compile Include="csConexion.cs" />
     <Compile Include="csCorreo.cs" />
     <Compile Include="csEncriptar.cs" />
-    <Compile Include="EditarClave.cs">
+    <Compile Include="FrmEditarClave.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditarClave.Designer.cs">
-      <DependentUpon>EditarClave.cs</DependentUpon>
+    <Compile Include="FrmEditarClave.Designer.cs">
+      <DependentUpon>FrmEditarClave.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditarCorreo.cs">
+    <Compile Include="FrmEditarCorreo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditarCorreo.Designer.cs">
-      <DependentUpon>EditarCorreo.cs</DependentUpon>
+    <Compile Include="FrmEditarCorreo.Designer.cs">
+      <DependentUpon>FrmEditarCorreo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Equipos.cs">
+    <Compile Include="FrmEditarjugador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Equipos.Designer.cs">
-      <DependentUpon>Equipos.cs</DependentUpon>
+    <Compile Include="FrmEditarjugador.Designer.cs">
+      <DependentUpon>FrmEditarjugador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEquipos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEquipos.Designer.cs">
+      <DependentUpon>FrmEquipos.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuColorTable.cs" />
     <Compile Include="MenuRenderer.cs" />
     <Compile Include="RJDropDownMenu.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Inicio.cs">
+    <Compile Include="FrmInicio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Inicio.Designer.cs">
-      <DependentUpon>Inicio.cs</DependentUpon>
+    <Compile Include="FrmInicio.Designer.cs">
+      <DependentUpon>FrmInicio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Usuarios.cs">
+    <Compile Include="FrmUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Usuarios.Designer.cs">
-      <DependentUpon>Usuarios.cs</DependentUpon>
+    <Compile Include="FrmUsuarios.Designer.cs">
+      <DependentUpon>FrmUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="VerJugadores.cs">
+    <Compile Include="FrmVerJugadores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VerJugadores.Designer.cs">
-      <DependentUpon>VerJugadores.cs</DependentUpon>
+    <Compile Include="FrmVerJugadores.Designer.cs">
+      <DependentUpon>FrmVerJugadores.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AgregarJugadores.resx">
-      <DependentUpon>AgregarJugadores.cs</DependentUpon>
+    <EmbeddedResource Include="FrmAgregarJugadores.resx">
+      <DependentUpon>FrmAgregarJugadores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditarClave.resx">
-      <DependentUpon>EditarClave.cs</DependentUpon>
+    <EmbeddedResource Include="FrmEditarClave.resx">
+      <DependentUpon>FrmEditarClave.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditarCorreo.resx">
-      <DependentUpon>EditarCorreo.cs</DependentUpon>
+    <EmbeddedResource Include="FrmEditarCorreo.resx">
+      <DependentUpon>FrmEditarCorreo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Equipos.resx">
-      <DependentUpon>Equipos.cs</DependentUpon>
+    <EmbeddedResource Include="FrmEditarjugador.resx">
+      <DependentUpon>FrmEditarjugador.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Inicio.resx">
-      <DependentUpon>Inicio.cs</DependentUpon>
+    <EmbeddedResource Include="FrmEquipos.resx">
+      <DependentUpon>FrmEquipos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="FrmInicio.resx">
+      <DependentUpon>FrmInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -132,11 +141,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Usuarios.resx">
-      <DependentUpon>Usuarios.cs</DependentUpon>
+    <EmbeddedResource Include="FrmUsuarios.resx">
+      <DependentUpon>FrmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VerJugadores.resx">
-      <DependentUpon>VerJugadores.cs</DependentUpon>
+    <EmbeddedResource Include="FrmVerJugadores.resx">
+      <DependentUpon>FrmVerJugadores.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

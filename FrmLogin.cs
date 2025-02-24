@@ -13,7 +13,7 @@ using System.Xml.Linq;
 using System.Runtime.Remoting.Contexts;
 namespace TorneosFut
 {
-    public partial class Login : Form
+    public partial class FrmLogin : Form
     {
         static csConexion conec = new csConexion();
         static csEncriptar encrip = new csEncriptar();
@@ -27,7 +27,7 @@ namespace TorneosFut
              int nWidhtEllipse,
              int nHeightEllipse
           );
-        public Login()
+        public FrmLogin()
         {
             InitializeComponent();
 
@@ -104,7 +104,7 @@ namespace TorneosFut
                 bool admin = false;
                 if (txtUsuario.Text == "admin")
                     admin = true; //para saber si el que ingresa es el admin
-                Inicio n = new Inicio(admin);
+                FrmInicio n = new FrmInicio(admin);
                 this.Hide();
                 n.ShowDialog();
                 txtUsuario.Text = "";

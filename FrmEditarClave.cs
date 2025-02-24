@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace TorneosFut
 {
-    public partial class EditarClave: Form
+    public partial class FrmEditarClave: Form
     {
         static string id;
         csConexion conexion = new csConexion();
         csEncriptar encriptar = new csEncriptar();
-        public EditarClave(string i)
+        public FrmEditarClave(string i)
         {
             id = i;
             InitializeComponent();

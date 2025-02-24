@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace TorneosFut
 {
-    public partial class Inicio : Form
+    public partial class FrmInicio : Form
     {
         static bool esAdmin;
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -26,11 +26,11 @@ namespace TorneosFut
           int nWidhtEllipse,
           int nHeightEllipse
         );
-        Equipos equi;
-        Usuarios usu;
-        VerJugadores verJu;
-        AgregarJugadores aggJu;
-        public Inicio(bool a) //parametro booleano para saber si el usuario que accedio es admin
+        FrmEquipos equi;
+        FrmUsuarios usu;
+        FrmVerJugadores verJu;
+        FrmAgregarJugadores aggJu;
+        public FrmInicio(bool a) //parametro booleano para saber si el usuario que accedio es admin
         {
             esAdmin = a; //guardado en una variable estatica 
             InitializeComponent();
@@ -316,26 +316,26 @@ namespace TorneosFut
 
         private void agregarJugadorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            aggJu = new AgregarJugadores();
+            aggJu = new FrmAgregarJugadores();
 
             AbrirFormEnPanel(PanelAggEquipo, aggJu);
         }
 
         private void jugadoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            verJu = new VerJugadores();
+            verJu = new FrmVerJugadores();
             AbrirFormEnPanel(PanelAggEquipo, verJu);
         }
 
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            usu = new Usuarios();
+            usu = new FrmUsuarios();
             AbrirFormEnPanel(PanelAggEquipo, usu);
         }
 
         private void equiposToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            equi = new Equipos();
+            equi = new FrmEquipos();
             AbrirFormEnPanel(PanelAggEquipo, equi);
         }
     }

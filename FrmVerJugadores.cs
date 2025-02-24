@@ -11,10 +11,10 @@ using TorneosFut;
 
 namespace pruebas
 {
-    public partial class VerJugadores: Form
+    public partial class FrmVerJugadores: Form
     {
         csConexion conexion = new csConexion();
-        public VerJugadores()
+        public FrmVerJugadores()
         {
             InitializeComponent();
             AdaptarDGV();
@@ -48,6 +48,30 @@ namespace pruebas
         private void button1_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btneditarjuga_Click(object sender, EventArgs e)
+        {
+            if (dgvjugadores.RowCount > 0)
+            {
+                if (dgvjugadores.CurrentRow.Index >= 0)
+                {
+                    string id = dgvjugadores.Rows[dgvjugadores.CurrentRow.Index].Cells[0].Value.ToString();
+                    FrmEditarjugador edi = new FrmEditarjugador(id);
+
+                    edi.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione el usuario que desea editar");
+                }
+            }
+            else
+            {
+                MessageBox.Show("La tabla está vacía");
+            }
+            AdaptarDGV();
+            
         }
     }
 }
