@@ -182,6 +182,7 @@
     <Content Include="media\door.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\football-arena-background.jpg" />
     <None Include="Resources\0002.gif" />
     <None Include="Resources\eyes.png" />
     <None Include="Resources\hide1.png" />

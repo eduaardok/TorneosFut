@@ -123,6 +123,16 @@ namespace TorneosFut.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap football_arena_background {
+            get {
+                object obj = ResourceManager.GetObject("football-arena-background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap futxpert {
             get {
                 object obj = ResourceManager.GetObject("futxpert", resourceCulture);
