@@ -35,7 +35,6 @@ namespace TorneosFut
         {
             this.Close();
         }
-
         private void btnCambiarCorreo_Click(object sender, EventArgs e)
         {
             txtCorreo.Text = txtCorreo.Text.Trim();
