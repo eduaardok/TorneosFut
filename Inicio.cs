@@ -52,7 +52,6 @@ namespace TorneosFut
             rjDropdownMenu1.Show(btnTorneo, btnTorneo.Width, 0);
 
         }
-
         private void btnTor_Click(object sender, EventArgs e)
         {
             btnTorneo.Visible = true;
