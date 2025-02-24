@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgregarJugadores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarJugadores.Designer.cs">
+      <DependentUpon>AgregarJugadores.cs</DependentUpon>
+    </Compile>
     <Compile Include="csConexion.cs" />
     <Compile Include="csCorreo.cs" />
     <Compile Include="csEncriptar.cs" />
@@ -92,6 +98,15 @@
     <Compile Include="Usuarios.Designer.cs">
       <DependentUpon>Usuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="VerJugadores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VerJugadores.Designer.cs">
+      <DependentUpon>VerJugadores.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AgregarJugadores.resx">
+      <DependentUpon>AgregarJugadores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditarClave.resx">
       <DependentUpon>EditarClave.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,6 +134,9 @@
     </Compile>
     <EmbeddedResource Include="Usuarios.resx">
       <DependentUpon>Usuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VerJugadores.resx">
+      <DependentUpon>VerJugadores.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

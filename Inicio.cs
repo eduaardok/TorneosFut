@@ -1,4 +1,5 @@
-﻿using System;
+﻿using pruebas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,12 +28,12 @@ namespace TorneosFut
         );
         Equipos equi;
         Usuarios usu;
+        VerJugadores verJu;
+        AgregarJugadores aggJu;
         public Inicio(bool a) //parametro booleano para saber si el usuario que accedio es admin
         {
             esAdmin = a; //guardado en una variable estatica 
             InitializeComponent();
-            equi = new Equipos();
-
         }
         public static void AbrirFormEnPanel(Panel panel, Form formHijo)
         {
@@ -48,9 +49,7 @@ namespace TorneosFut
         }
         private void btnTorneo_Click(object sender, EventArgs e)
         {
-
             rjDropdownMenu1.Show(btnTorneo, btnTorneo.Width, 0);
-            equi.Hide();
 
         }
 
@@ -259,8 +258,6 @@ namespace TorneosFut
         private void btnTorneo_MouseEnter(object sender, EventArgs e)
         {
             btnTorneo.BackColor = ColorTranslator.FromHtml("#7C7C7C");
-            equi.Hide();
-
         }
         private void btnUsuarios_MouseEnter(object sender, EventArgs e)
         {
@@ -320,19 +317,27 @@ namespace TorneosFut
 
         private void agregarJugadorToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            aggJu = new AgregarJugadores();
 
+            AbrirFormEnPanel(PanelAggEquipo, aggJu);
         }
 
         private void jugadoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            verJu = new VerJugadores();
+            AbrirFormEnPanel(PanelAggEquipo, verJu);
         }
 
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             usu = new Usuarios();
-
             AbrirFormEnPanel(PanelAggEquipo, usu);
+        }
+
+        private void equiposToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            equi = new Equipos();
+            AbrirFormEnPanel(PanelAggEquipo, equi);
         }
     }
 }

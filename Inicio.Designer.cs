@@ -409,19 +409,20 @@
             this.rjDropdownMenu2.MenuItemTextColor = System.Drawing.Color.Empty;
             this.rjDropdownMenu2.Name = "rjDropdownMenu2";
             this.rjDropdownMenu2.PrimaryColor = System.Drawing.Color.Empty;
-            this.rjDropdownMenu2.Size = new System.Drawing.Size(162, 48);
+            this.rjDropdownMenu2.Size = new System.Drawing.Size(181, 70);
             // 
             // agregarEquiposToolStripMenuItem
             // 
             this.agregarEquiposToolStripMenuItem.Name = "agregarEquiposToolStripMenuItem";
-            this.agregarEquiposToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.agregarEquiposToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.agregarEquiposToolStripMenuItem.Text = "Agregar Equipos";
             // 
             // equiposToolStripMenuItem
             // 
             this.equiposToolStripMenuItem.Name = "equiposToolStripMenuItem";
-            this.equiposToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.equiposToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.equiposToolStripMenuItem.Text = "Equipos";
+            this.equiposToolStripMenuItem.Click += new System.EventHandler(this.equiposToolStripMenuItem_Click);
             // 
             // rjDropdownMenu3
             // 
@@ -532,18 +533,18 @@
             this.rjDropdownMenu7.MenuItemTextColor = System.Drawing.Color.Empty;
             this.rjDropdownMenu7.Name = "rjDropdownMenu7";
             this.rjDropdownMenu7.PrimaryColor = System.Drawing.Color.Empty;
-            this.rjDropdownMenu7.Size = new System.Drawing.Size(181, 70);
+            this.rjDropdownMenu7.Size = new System.Drawing.Size(160, 48);
             // 
             // agregarUsuarioToolStripMenuItem
             // 
             this.agregarUsuarioToolStripMenuItem.Name = "agregarUsuarioToolStripMenuItem";
-            this.agregarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.agregarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.agregarUsuarioToolStripMenuItem.Text = "Agregar Usuario";
             // 
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
