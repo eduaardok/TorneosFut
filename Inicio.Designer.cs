@@ -1,6 +1,6 @@
 ﻿namespace TorneosFut
 {
-    partial class FrmInicio
+    partial class Inicio
     {
         /// <summary>
         /// Required designer variable.
@@ -38,14 +38,14 @@
             this.btnEstadios = new System.Windows.Forms.Button();
             this.btnEntrenador = new System.Windows.Forms.Button();
             this.btnJugadores = new System.Windows.Forms.Button();
-            this.btnEquipos = new System.Windows.Forms.Button();
             this.btnTorneo = new System.Windows.Forms.Button();
             this.PanelLogo = new System.Windows.Forms.Panel();
-            this.PanelAggEquipo = new System.Windows.Forms.Panel();
+            this.PanelPrincipal = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.btnEquipos = new System.Windows.Forms.Button();
             this.rjDropdownMenu1 = new pruebas.RJDropdownMenu(this.components);
             this.crearTorneoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.misTorneosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -254,25 +254,6 @@
             this.btnJugadores.MouseEnter += new System.EventHandler(this.btnJugadores_MouseEnter);
             this.btnJugadores.MouseLeave += new System.EventHandler(this.btnJugadores_MouseLeave);
             // 
-            // btnEquipos
-            // 
-            this.btnEquipos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(14)))), ((int)(((byte)(140)))));
-            this.btnEquipos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEquipos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEquipos.FlatAppearance.BorderSize = 0;
-            this.btnEquipos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnEquipos.Font = new System.Drawing.Font("Onest Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEquipos.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnEquipos.Location = new System.Drawing.Point(0, 154);
-            this.btnEquipos.Name = "btnEquipos";
-            this.btnEquipos.Size = new System.Drawing.Size(251, 60);
-            this.btnEquipos.TabIndex = 3;
-            this.btnEquipos.Text = "Equipos";
-            this.btnEquipos.UseVisualStyleBackColor = false;
-            this.btnEquipos.Click += new System.EventHandler(this.btnEquipos_Click);
-            this.btnEquipos.MouseEnter += new System.EventHandler(this.btnEquipos_MouseEnter);
-            this.btnEquipos.MouseLeave += new System.EventHandler(this.btnEquipos_MouseLeave);
-            // 
             // btnTorneo
             // 
             this.btnTorneo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(14)))), ((int)(((byte)(140)))));
@@ -303,17 +284,19 @@
             this.PanelLogo.Size = new System.Drawing.Size(251, 94);
             this.PanelLogo.TabIndex = 0;
             // 
-            // PanelAggEquipo
+            // PanelPrincipal
             // 
-            this.PanelAggEquipo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.PanelPrincipal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.PanelAggEquipo.AutoSize = true;
-            this.PanelAggEquipo.BackColor = System.Drawing.Color.Black;
-            this.PanelAggEquipo.Location = new System.Drawing.Point(253, 49);
-            this.PanelAggEquipo.Name = "PanelAggEquipo";
-            this.PanelAggEquipo.Size = new System.Drawing.Size(1115, 672);
-            this.PanelAggEquipo.TabIndex = 1;
+            this.PanelPrincipal.AutoSize = true;
+            this.PanelPrincipal.BackColor = System.Drawing.Color.Black;
+            this.PanelPrincipal.BackgroundImage = global::TorneosFut.Properties.Resources.football_arena_background;
+            this.PanelPrincipal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PanelPrincipal.Location = new System.Drawing.Point(253, 49);
+            this.PanelPrincipal.Name = "PanelPrincipal";
+            this.PanelPrincipal.Size = new System.Drawing.Size(1115, 672);
+            this.PanelPrincipal.TabIndex = 1;
             // 
             // timer1
             // 
@@ -368,6 +351,25 @@
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // btnEquipos
+            // 
+            this.btnEquipos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(14)))), ((int)(((byte)(140)))));
+            this.btnEquipos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEquipos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEquipos.FlatAppearance.BorderSize = 0;
+            this.btnEquipos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnEquipos.Font = new System.Drawing.Font("Onest Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEquipos.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnEquipos.Location = new System.Drawing.Point(0, 154);
+            this.btnEquipos.Name = "btnEquipos";
+            this.btnEquipos.Size = new System.Drawing.Size(251, 60);
+            this.btnEquipos.TabIndex = 3;
+            this.btnEquipos.Text = "Equipos";
+            this.btnEquipos.UseVisualStyleBackColor = false;
+            this.btnEquipos.Click += new System.EventHandler(this.btnEquipos_Click);
+            this.btnEquipos.MouseEnter += new System.EventHandler(this.btnEquipos_MouseEnter);
+            this.btnEquipos.MouseLeave += new System.EventHandler(this.btnEquipos_MouseLeave);
+            // 
             // rjDropdownMenu1
             // 
             this.rjDropdownMenu1.IsMainMenu = false;
@@ -379,24 +381,24 @@
             this.rjDropdownMenu1.MenuItemTextColor = System.Drawing.Color.Empty;
             this.rjDropdownMenu1.Name = "rjDropdownMenu1";
             this.rjDropdownMenu1.PrimaryColor = System.Drawing.Color.Empty;
-            this.rjDropdownMenu1.Size = new System.Drawing.Size(165, 70);
+            this.rjDropdownMenu1.Size = new System.Drawing.Size(164, 70);
             // 
             // crearTorneoToolStripMenuItem
             // 
             this.crearTorneoToolStripMenuItem.Name = "crearTorneoToolStripMenuItem";
-            this.crearTorneoToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.crearTorneoToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.crearTorneoToolStripMenuItem.Text = "Crear Torneo";
             // 
             // misTorneosToolStripMenuItem
             // 
             this.misTorneosToolStripMenuItem.Name = "misTorneosToolStripMenuItem";
-            this.misTorneosToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.misTorneosToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.misTorneosToolStripMenuItem.Text = "Mis Torneos";
             // 
             // gestionarTorneoToolStripMenuItem
             // 
             this.gestionarTorneoToolStripMenuItem.Name = "gestionarTorneoToolStripMenuItem";
-            this.gestionarTorneoToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.gestionarTorneoToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.gestionarTorneoToolStripMenuItem.Text = "Gestionar Torneo";
             // 
             // rjDropdownMenu2
@@ -604,7 +606,7 @@
             this.ClientSize = new System.Drawing.Size(1370, 720);
             this.ControlBox = false;
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.PanelAggEquipo);
+            this.Controls.Add(this.PanelPrincipal);
             this.Controls.Add(this.PanelMenuLateral);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -635,14 +637,13 @@
         private System.Windows.Forms.Panel PanelLogo;
         private System.Windows.Forms.Button btnTorneo;
         private System.Windows.Forms.Button btnJugadores;
-        private System.Windows.Forms.Button btnEquipos;
         private System.Windows.Forms.Button btnConfiguracion;
         private System.Windows.Forms.Button btnUsuarios;
         private System.Windows.Forms.Button btnReportes;
         private System.Windows.Forms.Button btnEstadios;
         private System.Windows.Forms.Button btnEntrenador;
         private System.Windows.Forms.Button btnCaja;
-        private System.Windows.Forms.Panel PanelAggEquipo;
+        private System.Windows.Forms.Panel PanelPrincipal;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnCerrarSesion;
@@ -676,5 +677,6 @@
         private pruebas.RJDropdownMenu rjDropdownMenu9;
         private System.Windows.Forms.ToolStripMenuItem agregarEntrenadorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem entrenadoresToolStripMenuItem;
+        private System.Windows.Forms.Button btnEquipos;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace TorneosFut
 {
-    partial class FrmEditarCorreo
+    partial class EditarCorreo
     {
         /// <summary>
         /// Required designer variable.

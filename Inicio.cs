@@ -1,5 +1,4 @@
-﻿using pruebas;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,7 +12,7 @@ using System.Windows.Forms;
 
 namespace TorneosFut
 {
-    public partial class FrmInicio : Form
+    public partial class Inicio : Form
     {
         static bool esAdmin;
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -26,14 +25,14 @@ namespace TorneosFut
           int nWidhtEllipse,
           int nHeightEllipse
         );
-        FrmEquipos equi;
-        FrmUsuarios usu;
-        FrmVerJugadores verJu;
-        FrmAgregarJugadores aggJu;
-        public FrmInicio(bool a) //parametro booleano para saber si el usuario que accedio es admin
+        Equipos equi;
+        Usuarios usu;
+        public Inicio(bool a) //parametro booleano para saber si el usuario que accedio es admin
         {
             esAdmin = a; //guardado en una variable estatica 
             InitializeComponent();
+            equi = new Equipos();
+
         }
         public static void AbrirFormEnPanel(Panel panel, Form formHijo)
         {
@@ -49,9 +48,12 @@ namespace TorneosFut
         }
         private void btnTorneo_Click(object sender, EventArgs e)
         {
+
             rjDropdownMenu1.Show(btnTorneo, btnTorneo.Width, 0);
+            equi.Hide();
 
         }
+
         private void btnTor_Click(object sender, EventArgs e)
         {
             btnTorneo.Visible = true;
@@ -134,11 +136,6 @@ namespace TorneosFut
         {
 
 
-        }
-
-        private void btnAggEquipo_Click(object sender, EventArgs e)
-        {
-            AbrirFormEnPanel(PanelAggEquipo, equi);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -257,6 +254,8 @@ namespace TorneosFut
         private void btnTorneo_MouseEnter(object sender, EventArgs e)
         {
             btnTorneo.BackColor = ColorTranslator.FromHtml("#7C7C7C");
+            equi.Hide();
+
         }
         private void btnUsuarios_MouseEnter(object sender, EventArgs e)
         {
@@ -316,27 +315,24 @@ namespace TorneosFut
 
         private void agregarJugadorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            aggJu = new FrmAgregarJugadores();
 
-            AbrirFormEnPanel(PanelAggEquipo, aggJu);
         }
 
         private void jugadoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            verJu = new FrmVerJugadores();
-            AbrirFormEnPanel(PanelAggEquipo, verJu);
+
         }
 
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            usu = new FrmUsuarios();
-            AbrirFormEnPanel(PanelAggEquipo, usu);
+            usu = new Usuarios();
+
+            AbrirFormEnPanel(PanelPrincipal, usu);
         }
 
         private void equiposToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            equi = new FrmEquipos();
-            AbrirFormEnPanel(PanelAggEquipo, equi);
+            AbrirFormEnPanel(PanelPrincipal, equi);
         }
     }
 }

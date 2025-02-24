@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace TorneosFut
 {
-    public partial class FrmUsuarios: Form
+    public partial class Usuarios: Form
     {
         csConexion conexion = new csConexion();
-        public FrmUsuarios()
+        public Usuarios()
         {
             InitializeComponent();
             dgvUsuarios.DataSource = conexion.ListDGV("Select * from Administrador");
@@ -49,7 +49,7 @@ namespace TorneosFut
                 if (dgvUsuarios.CurrentRow.Index >= 0)
                 {
                     string id= dgvUsuarios.Rows[dgvUsuarios.CurrentRow.Index].Cells[0].Value.ToString();
-                    FrmEditarClave ed = new FrmEditarClave(id);
+                    EditarClave ed = new EditarClave(id);
                     ed.ShowDialog();
                 }
                 else
@@ -76,7 +76,7 @@ namespace TorneosFut
                 if (dgvUsuarios.CurrentRow.Index >= 0)
                 {
                     string id = dgvUsuarios.Rows[dgvUsuarios.CurrentRow.Index].Cells[0].Value.ToString();
-                    FrmEditarCorreo ed = new FrmEditarCorreo(id);
+                    EditarCorreo ed = new EditarCorreo(id);
                     ed.ShowDialog();
                 }
                 else
