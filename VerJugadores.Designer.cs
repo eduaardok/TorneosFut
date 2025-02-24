@@ -31,7 +31,6 @@
             this.dgvjugadores = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btneditarjuga = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvjugadores)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -66,7 +65,6 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btneditarjuga);
             this.panel1.Location = new System.Drawing.Point(731, -2);
             this.panel1.Name = "panel1";
@@ -82,17 +80,6 @@
             this.btneditarjuga.TabIndex = 0;
             this.btneditarjuga.Text = "Editar";
             this.btneditarjuga.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button1.Location = new System.Drawing.Point(3, 288);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(65, 45);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "X";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // VerJugadores
             // 
@@ -116,6 +103,5 @@
         private System.Windows.Forms.DataGridView dgvjugadores;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btneditarjuga;
-        private System.Windows.Forms.Button button1;
     }
 }
