@@ -433,19 +433,19 @@
             this.rjDropdownMenu3.MenuItemTextColor = System.Drawing.Color.Empty;
             this.rjDropdownMenu3.Name = "rjDropdownMenu3";
             this.rjDropdownMenu3.PrimaryColor = System.Drawing.Color.Empty;
-            this.rjDropdownMenu3.Size = new System.Drawing.Size(181, 70);
+            this.rjDropdownMenu3.Size = new System.Drawing.Size(162, 48);
             // 
             // agregarJugadorToolStripMenuItem
             // 
             this.agregarJugadorToolStripMenuItem.Name = "agregarJugadorToolStripMenuItem";
-            this.agregarJugadorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.agregarJugadorToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.agregarJugadorToolStripMenuItem.Text = "Agregar Jugador";
             this.agregarJugadorToolStripMenuItem.Click += new System.EventHandler(this.agregarJugadorToolStripMenuItem_Click);
             // 
             // jugadoresToolStripMenuItem
             // 
             this.jugadoresToolStripMenuItem.Name = "jugadoresToolStripMenuItem";
-            this.jugadoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.jugadoresToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.jugadoresToolStripMenuItem.Text = "Jugadores";
             this.jugadoresToolStripMenuItem.Click += new System.EventHandler(this.jugadoresToolStripMenuItem_Click);
             // 
@@ -464,14 +464,14 @@
             // agregarArbitroToolStripMenuItem
             // 
             this.agregarArbitroToolStripMenuItem.Name = "agregarArbitroToolStripMenuItem";
-            this.agregarArbitroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.agregarArbitroToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.agregarArbitroToolStripMenuItem.Text = "Agregar Árbitro";
             this.agregarArbitroToolStripMenuItem.Click += new System.EventHandler(this.agregarArbitroToolStripMenuItem_Click);
             // 
             // arbitrosToolStripMenuItem
             // 
             this.arbitrosToolStripMenuItem.Name = "arbitrosToolStripMenuItem";
-            this.arbitrosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.arbitrosToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.arbitrosToolStripMenuItem.Text = "Árbitros";
             // 
             // rjDropdownMenu5
@@ -532,19 +532,20 @@
             this.rjDropdownMenu7.MenuItemTextColor = System.Drawing.Color.Empty;
             this.rjDropdownMenu7.Name = "rjDropdownMenu7";
             this.rjDropdownMenu7.PrimaryColor = System.Drawing.Color.Empty;
-            this.rjDropdownMenu7.Size = new System.Drawing.Size(160, 48);
+            this.rjDropdownMenu7.Size = new System.Drawing.Size(181, 70);
             // 
             // agregarUsuarioToolStripMenuItem
             // 
             this.agregarUsuarioToolStripMenuItem.Name = "agregarUsuarioToolStripMenuItem";
-            this.agregarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.agregarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.agregarUsuarioToolStripMenuItem.Text = "Agregar Usuario";
             // 
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
+            this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // rjDropdownMenu8
             // 

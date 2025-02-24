@@ -290,9 +290,7 @@ namespace TorneosFut
         private void btnUsuario_Click(object sender, EventArgs e)
         {
             //manejo de usuarios
-            usu = new Usuarios();
-
-            AbrirFormEnPanel(PanelAggEquipo, usu);
+      
 
         }
         void AccesoAdmin()
@@ -328,6 +326,13 @@ namespace TorneosFut
         private void jugadoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            usu = new Usuarios();
+
+            AbrirFormEnPanel(PanelAggEquipo, usu);
         }
     }
 }

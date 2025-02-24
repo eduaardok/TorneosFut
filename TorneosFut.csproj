@@ -49,6 +49,18 @@
     <Compile Include="csConexion.cs" />
     <Compile Include="csCorreo.cs" />
     <Compile Include="csEncriptar.cs" />
+    <Compile Include="EditarClave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditarClave.Designer.cs">
+      <DependentUpon>EditarClave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditarCorreo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditarCorreo.Designer.cs">
+      <DependentUpon>EditarCorreo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Equipos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,12 +71,6 @@
     <Compile Include="MenuRenderer.cs" />
     <Compile Include="RJDropDownMenu.cs">
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Usuarios.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Usuarios.Designer.cs">
-      <DependentUpon>Usuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Inicio.cs">
       <SubType>Form</SubType>
@@ -80,11 +86,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios.Designer.cs">
+      <DependentUpon>Usuarios.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="EditarClave.resx">
+      <DependentUpon>EditarClave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditarCorreo.resx">
+      <DependentUpon>EditarCorreo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Equipos.resx">
       <DependentUpon>Equipos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Usuarios.resx">
-      <DependentUpon>Usuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
@@ -102,6 +117,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Usuarios.resx">
+      <DependentUpon>Usuarios.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

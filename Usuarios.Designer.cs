@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnEditarClave = new System.Windows.Forms.Button();
-            this.btnEditarCorreo = new System.Windows.Forms.Button();
-            this.dgvUsuarios = new System.Windows.Forms.DataGridView();
             this.btnExit = new System.Windows.Forms.Button();
+            this.btnEditarCorreo = new System.Windows.Forms.Button();
+            this.btnEditarClave = new System.Windows.Forms.Button();
+            this.dgvUsuarios = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
@@ -44,66 +44,82 @@
             this.panel1.Controls.Add(this.btnEditarCorreo);
             this.panel1.Controls.Add(this.btnEditarClave);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(664, 0);
+            this.panel1.Location = new System.Drawing.Point(979, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(136, 450);
+            this.panel1.Size = new System.Drawing.Size(136, 672);
             this.panel1.TabIndex = 1;
             // 
-            // btnEditarClave
+            // btnExit
             // 
-            this.btnEditarClave.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEditarClave.Font = new System.Drawing.Font("Onest SemiBold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarClave.Location = new System.Drawing.Point(0, 0);
-            this.btnEditarClave.Name = "btnEditarClave";
-            this.btnEditarClave.Size = new System.Drawing.Size(136, 89);
-            this.btnEditarClave.TabIndex = 0;
-            this.btnEditarClave.Text = "Editar Clave";
-            this.btnEditarClave.UseVisualStyleBackColor = true;
+            this.btnExit.BackColor = System.Drawing.Color.Red;
+            this.btnExit.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Location = new System.Drawing.Point(0, 473);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(136, 199);
+            this.btnExit.TabIndex = 2;
+            this.btnExit.Text = "X";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnEditarCorreo
             // 
             this.btnEditarCorreo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEditarCorreo.Font = new System.Drawing.Font("Onest SemiBold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarCorreo.Location = new System.Drawing.Point(0, 89);
             this.btnEditarCorreo.Name = "btnEditarCorreo";
             this.btnEditarCorreo.Size = new System.Drawing.Size(136, 89);
             this.btnEditarCorreo.TabIndex = 1;
             this.btnEditarCorreo.Text = "Editar Correo";
             this.btnEditarCorreo.UseVisualStyleBackColor = true;
+            this.btnEditarCorreo.Click += new System.EventHandler(this.btnEditarCorreo_Click);
+            // 
+            // btnEditarClave
+            // 
+            this.btnEditarClave.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEditarClave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarClave.Location = new System.Drawing.Point(0, 0);
+            this.btnEditarClave.Name = "btnEditarClave";
+            this.btnEditarClave.Size = new System.Drawing.Size(136, 89);
+            this.btnEditarClave.TabIndex = 0;
+            this.btnEditarClave.Text = "Editar Clave";
+            this.btnEditarClave.UseVisualStyleBackColor = true;
+            this.btnEditarClave.Click += new System.EventHandler(this.btnEditarClave_Click);
             // 
             // dgvUsuarios
             // 
-            this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvUsuarios.AllowUserToAddRows = false;
+            this.dgvUsuarios.AllowUserToDeleteRows = false;
+            this.dgvUsuarios.AllowUserToResizeColumns = false;
+            this.dgvUsuarios.AllowUserToResizeRows = false;
+            this.dgvUsuarios.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvUsuarios.Location = new System.Drawing.Point(0, 0);
+            this.dgvUsuarios.MultiSelect = false;
             this.dgvUsuarios.Name = "dgvUsuarios";
-            this.dgvUsuarios.Size = new System.Drawing.Size(664, 450);
-            this.dgvUsuarios.TabIndex = 2;
-            // 
-            // btnExit
-            // 
-            this.btnExit.BackColor = System.Drawing.Color.Red;
-            this.btnExit.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnExit.Font = new System.Drawing.Font("Onest SemiBold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(0, 415);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(136, 35);
-            this.btnExit.TabIndex = 2;
-            this.btnExit.Text = "X";
-            this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.dgvUsuarios.ReadOnly = true;
+            this.dgvUsuarios.RowHeadersVisible = false;
+            this.dgvUsuarios.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvUsuarios.ShowCellToolTips = false;
+            this.dgvUsuarios.ShowEditingIcon = false;
+            this.dgvUsuarios.Size = new System.Drawing.Size(979, 672);
+            this.dgvUsuarios.TabIndex = 4;
             // 
             // Usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1115, 672);
             this.Controls.Add(this.dgvUsuarios);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Usuarios";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Usuarios_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             this.ResumeLayout(false);
@@ -115,7 +131,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnEditarCorreo;
         private System.Windows.Forms.Button btnEditarClave;
-        private System.Windows.Forms.DataGridView dgvUsuarios;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.DataGridView dgvUsuarios;
     }
 }
