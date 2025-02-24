@@ -38,6 +38,7 @@
             this.btnEstadios = new System.Windows.Forms.Button();
             this.btnEntrenador = new System.Windows.Forms.Button();
             this.btnJugadores = new System.Windows.Forms.Button();
+            this.btnEquipos = new System.Windows.Forms.Button();
             this.btnTorneo = new System.Windows.Forms.Button();
             this.PanelLogo = new System.Windows.Forms.Panel();
             this.PanelPrincipal = new System.Windows.Forms.Panel();
@@ -45,7 +46,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.btnEquipos = new System.Windows.Forms.Button();
             this.rjDropdownMenu1 = new pruebas.RJDropdownMenu(this.components);
             this.crearTorneoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.misTorneosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -254,6 +254,25 @@
             this.btnJugadores.MouseEnter += new System.EventHandler(this.btnJugadores_MouseEnter);
             this.btnJugadores.MouseLeave += new System.EventHandler(this.btnJugadores_MouseLeave);
             // 
+            // btnEquipos
+            // 
+            this.btnEquipos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(14)))), ((int)(((byte)(140)))));
+            this.btnEquipos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEquipos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEquipos.FlatAppearance.BorderSize = 0;
+            this.btnEquipos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnEquipos.Font = new System.Drawing.Font("Onest Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEquipos.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnEquipos.Location = new System.Drawing.Point(0, 154);
+            this.btnEquipos.Name = "btnEquipos";
+            this.btnEquipos.Size = new System.Drawing.Size(251, 60);
+            this.btnEquipos.TabIndex = 3;
+            this.btnEquipos.Text = "Equipos";
+            this.btnEquipos.UseVisualStyleBackColor = false;
+            this.btnEquipos.Click += new System.EventHandler(this.btnEquipos_Click);
+            this.btnEquipos.MouseEnter += new System.EventHandler(this.btnEquipos_MouseEnter);
+            this.btnEquipos.MouseLeave += new System.EventHandler(this.btnEquipos_MouseLeave);
+            // 
             // btnTorneo
             // 
             this.btnTorneo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(14)))), ((int)(((byte)(140)))));
@@ -351,25 +370,6 @@
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // btnEquipos
-            // 
-            this.btnEquipos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(14)))), ((int)(((byte)(140)))));
-            this.btnEquipos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEquipos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEquipos.FlatAppearance.BorderSize = 0;
-            this.btnEquipos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnEquipos.Font = new System.Drawing.Font("Onest Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEquipos.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnEquipos.Location = new System.Drawing.Point(0, 154);
-            this.btnEquipos.Name = "btnEquipos";
-            this.btnEquipos.Size = new System.Drawing.Size(251, 60);
-            this.btnEquipos.TabIndex = 3;
-            this.btnEquipos.Text = "Equipos";
-            this.btnEquipos.UseVisualStyleBackColor = false;
-            this.btnEquipos.Click += new System.EventHandler(this.btnEquipos_Click);
-            this.btnEquipos.MouseEnter += new System.EventHandler(this.btnEquipos_MouseEnter);
-            this.btnEquipos.MouseLeave += new System.EventHandler(this.btnEquipos_MouseLeave);
-            // 
             // rjDropdownMenu1
             // 
             this.rjDropdownMenu1.IsMainMenu = false;
@@ -381,24 +381,24 @@
             this.rjDropdownMenu1.MenuItemTextColor = System.Drawing.Color.Empty;
             this.rjDropdownMenu1.Name = "rjDropdownMenu1";
             this.rjDropdownMenu1.PrimaryColor = System.Drawing.Color.Empty;
-            this.rjDropdownMenu1.Size = new System.Drawing.Size(164, 70);
+            this.rjDropdownMenu1.Size = new System.Drawing.Size(165, 70);
             // 
             // crearTorneoToolStripMenuItem
             // 
             this.crearTorneoToolStripMenuItem.Name = "crearTorneoToolStripMenuItem";
-            this.crearTorneoToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.crearTorneoToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.crearTorneoToolStripMenuItem.Text = "Crear Torneo";
             // 
             // misTorneosToolStripMenuItem
             // 
             this.misTorneosToolStripMenuItem.Name = "misTorneosToolStripMenuItem";
-            this.misTorneosToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.misTorneosToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.misTorneosToolStripMenuItem.Text = "Mis Torneos";
             // 
             // gestionarTorneoToolStripMenuItem
             // 
             this.gestionarTorneoToolStripMenuItem.Name = "gestionarTorneoToolStripMenuItem";
-            this.gestionarTorneoToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.gestionarTorneoToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.gestionarTorneoToolStripMenuItem.Text = "Gestionar Torneo";
             // 
             // rjDropdownMenu2
@@ -411,18 +411,18 @@
             this.rjDropdownMenu2.MenuItemTextColor = System.Drawing.Color.Empty;
             this.rjDropdownMenu2.Name = "rjDropdownMenu2";
             this.rjDropdownMenu2.PrimaryColor = System.Drawing.Color.Empty;
-            this.rjDropdownMenu2.Size = new System.Drawing.Size(181, 70);
+            this.rjDropdownMenu2.Size = new System.Drawing.Size(162, 48);
             // 
             // agregarEquiposToolStripMenuItem
             // 
             this.agregarEquiposToolStripMenuItem.Name = "agregarEquiposToolStripMenuItem";
-            this.agregarEquiposToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.agregarEquiposToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.agregarEquiposToolStripMenuItem.Text = "Agregar Equipos";
             // 
             // equiposToolStripMenuItem
             // 
             this.equiposToolStripMenuItem.Name = "equiposToolStripMenuItem";
-            this.equiposToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.equiposToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.equiposToolStripMenuItem.Text = "Equipos";
             this.equiposToolStripMenuItem.Click += new System.EventHandler(this.equiposToolStripMenuItem_Click);
             // 
@@ -476,6 +476,7 @@
             this.arbitrosToolStripMenuItem.Name = "arbitrosToolStripMenuItem";
             this.arbitrosToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.arbitrosToolStripMenuItem.Text = "Árbitros";
+            this.arbitrosToolStripMenuItem.Click += new System.EventHandler(this.arbitrosToolStripMenuItem_Click);
             // 
             // rjDropdownMenu5
             // 
@@ -542,6 +543,7 @@
             this.agregarUsuarioToolStripMenuItem.Name = "agregarUsuarioToolStripMenuItem";
             this.agregarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.agregarUsuarioToolStripMenuItem.Text = "Agregar Usuario";
+            this.agregarUsuarioToolStripMenuItem.Click += new System.EventHandler(this.agregarUsuarioToolStripMenuItem_Click);
             // 
             // usuariosToolStripMenuItem
             // 
@@ -584,19 +586,20 @@
             this.rjDropdownMenu9.MenuItemTextColor = System.Drawing.Color.Empty;
             this.rjDropdownMenu9.Name = "rjDropdownMenu9";
             this.rjDropdownMenu9.PrimaryColor = System.Drawing.Color.Empty;
-            this.rjDropdownMenu9.Size = new System.Drawing.Size(178, 48);
+            this.rjDropdownMenu9.Size = new System.Drawing.Size(181, 70);
             // 
             // agregarEntrenadorToolStripMenuItem
             // 
             this.agregarEntrenadorToolStripMenuItem.Name = "agregarEntrenadorToolStripMenuItem";
-            this.agregarEntrenadorToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.agregarEntrenadorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.agregarEntrenadorToolStripMenuItem.Text = "Agregar Entrenador";
             // 
             // entrenadoresToolStripMenuItem
             // 
             this.entrenadoresToolStripMenuItem.Name = "entrenadoresToolStripMenuItem";
-            this.entrenadoresToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.entrenadoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.entrenadoresToolStripMenuItem.Text = "Entrenadores";
+            this.entrenadoresToolStripMenuItem.Click += new System.EventHandler(this.entrenadoresToolStripMenuItem_Click);
             // 
             // Inicio
             // 

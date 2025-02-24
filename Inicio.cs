@@ -1,4 +1,7 @@
-﻿using System;
+﻿using agregarUsuario;
+using pruebas;
+using PruebasTorneos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,12 +30,20 @@ namespace TorneosFut
         );
         Equipos equi;
         Usuarios usu;
+        VerJugadores verju;
+        AgregarJugadores aggju;
+         AgregarUsuario aggusu;
+        FrmEntrenadores entren;
+
         public Inicio(bool a) //parametro booleano para saber si el usuario que accedio es admin
         {
             esAdmin = a; //guardado en una variable estatica 
             InitializeComponent();
             equi = new Equipos();
-
+            verju= new VerJugadores();
+            aggju = new AgregarJugadores();
+            aggusu=new AgregarUsuario();
+            entren=new FrmEntrenadores();
         }
         public static void AbrirFormEnPanel(Panel panel, Form formHijo)
         {
@@ -315,12 +326,12 @@ namespace TorneosFut
 
         private void agregarJugadorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            AbrirFormEnPanel(PanelPrincipal,aggju);
         }
 
         private void jugadoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            AbrirFormEnPanel(PanelPrincipal, verju);
         }
 
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -333,6 +344,21 @@ namespace TorneosFut
         private void equiposToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AbrirFormEnPanel(PanelPrincipal, equi);
+        }
+
+        private void agregarUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(PanelPrincipal, aggusu);
+        }
+
+        private void arbitrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void entrenadoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(PanelPrincipal, entren);
+
         }
     }
 }
