@@ -202,7 +202,7 @@
             // 
             // btnCerrar
             // 
-            this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
+            this.btnCerrar.BackColor = System.Drawing.Color.White;
             this.btnCerrar.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnCerrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnCerrar.Location = new System.Drawing.Point(0, 0);
@@ -215,7 +215,8 @@
             // panelModulos
             // 
             this.panelModulos.BackColor = System.Drawing.Color.White;
-            this.panelModulos.BackgroundImage = global::TorneosFut.Properties.Resources.fxfutxpert;
+            this.panelModulos.BackgroundImage = global::TorneosFut.Properties.Resources.FX;
+            this.panelModulos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panelModulos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelModulos.Location = new System.Drawing.Point(294, 50);
             this.panelModulos.Name = "panelModulos";
@@ -238,9 +239,10 @@
             // 
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.lblUsuario.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblUsuario.Font = new System.Drawing.Font("Onest Bold", 18F, System.Drawing.FontStyle.Bold);
             this.lblUsuario.ForeColor = System.Drawing.Color.White;
-            this.lblUsuario.Location = new System.Drawing.Point(1580, 9);
+            this.lblUsuario.Location = new System.Drawing.Point(1660, 0);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(124, 30);
             this.lblUsuario.TabIndex = 2;
@@ -252,7 +254,7 @@
             this.pictureBox2.BackgroundImage = global::TorneosFut.Properties.Resources.userr;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox2.Location = new System.Drawing.Point(1710, 0);
+            this.pictureBox2.Location = new System.Drawing.Point(1586, 0);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(74, 50);
             this.pictureBox2.TabIndex = 9;
