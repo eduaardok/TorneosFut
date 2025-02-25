@@ -30,7 +30,6 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelOpciones = new System.Windows.Forms.Panel();
-            this.btnUsuarios = new System.Windows.Forms.Button();
             this.btnCaja = new System.Windows.Forms.Button();
             this.btnArbitros = new System.Windows.Forms.Button();
             this.btnEstadios = new System.Windows.Forms.Button();
@@ -40,13 +39,15 @@
             this.btnTorneos = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.panelModulos = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnEntrenadores = new System.Windows.Forms.Button();
+            this.btnUsuarios = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panelOpciones.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -67,6 +68,7 @@
             this.panelOpciones.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panelOpciones.Controls.Add(this.pictureBox1);
             this.panelOpciones.Controls.Add(this.btnUsuarios);
+            this.panelOpciones.Controls.Add(this.btnEntrenadores);
             this.panelOpciones.Controls.Add(this.btnCaja);
             this.panelOpciones.Controls.Add(this.btnArbitros);
             this.panelOpciones.Controls.Add(this.btnEstadios);
@@ -79,21 +81,6 @@
             this.panelOpciones.Name = "panelOpciones";
             this.panelOpciones.Size = new System.Drawing.Size(294, 911);
             this.panelOpciones.TabIndex = 8;
-            // 
-            // btnUsuarios
-            // 
-            this.btnUsuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.btnUsuarios.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnUsuarios.Font = new System.Drawing.Font("Onest Bold", 20F, System.Drawing.FontStyle.Bold);
-            this.btnUsuarios.ForeColor = System.Drawing.Color.White;
-            this.btnUsuarios.Location = new System.Drawing.Point(0, 595);
-            this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(294, 85);
-            this.btnUsuarios.TabIndex = 7;
-            this.btnUsuarios.Text = "USUARIOS";
-            this.btnUsuarios.UseVisualStyleBackColor = false;
-            this.btnUsuarios.MouseEnter += new System.EventHandler(this.btnUsuarios_MouseEnter);
-            this.btnUsuarios.MouseLeave += new System.EventHandler(this.btnUsuarios_MouseLeave);
             // 
             // btnCaja
             // 
@@ -207,7 +194,7 @@
             this.btnCerrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnCerrar.Location = new System.Drawing.Point(0, 0);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(294, 50);
+            this.btnCerrar.Size = new System.Drawing.Size(60, 50);
             this.btnCerrar.TabIndex = 1;
             this.btnCerrar.Text = "-";
             this.btnCerrar.UseVisualStyleBackColor = false;
@@ -215,25 +202,13 @@
             // panelModulos
             // 
             this.panelModulos.BackColor = System.Drawing.Color.White;
-            this.panelModulos.BackgroundImage = global::TorneosFut.Properties.Resources.FX;
+            this.panelModulos.BackgroundImage = global::TorneosFut.Properties.Resources.fxfutxpert;
             this.panelModulos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panelModulos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelModulos.Location = new System.Drawing.Point(294, 50);
             this.panelModulos.Name = "panelModulos";
             this.panelModulos.Size = new System.Drawing.Size(1490, 911);
             this.panelModulos.TabIndex = 9;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = global::TorneosFut.Properties.Resources.fxfutxpert;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 680);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(294, 231);
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
             // 
             // lblUsuario
             // 
@@ -260,6 +235,48 @@
             this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
             // 
+            // btnEntrenadores
+            // 
+            this.btnEntrenadores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            this.btnEntrenadores.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEntrenadores.Font = new System.Drawing.Font("Onest Bold", 20F, System.Drawing.FontStyle.Bold);
+            this.btnEntrenadores.ForeColor = System.Drawing.Color.White;
+            this.btnEntrenadores.Location = new System.Drawing.Point(0, 595);
+            this.btnEntrenadores.Name = "btnEntrenadores";
+            this.btnEntrenadores.Size = new System.Drawing.Size(294, 85);
+            this.btnEntrenadores.TabIndex = 9;
+            this.btnEntrenadores.Text = "ENTRENADORES";
+            this.btnEntrenadores.UseVisualStyleBackColor = false;
+            this.btnEntrenadores.MouseEnter += new System.EventHandler(this.btnEntrenadores_MouseEnter);
+            this.btnEntrenadores.MouseLeave += new System.EventHandler(this.btnEntrenadores_MouseLeave);
+            // 
+            // btnUsuarios
+            // 
+            this.btnUsuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            this.btnUsuarios.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnUsuarios.Font = new System.Drawing.Font("Onest Bold", 20F, System.Drawing.FontStyle.Bold);
+            this.btnUsuarios.ForeColor = System.Drawing.Color.White;
+            this.btnUsuarios.Location = new System.Drawing.Point(0, 680);
+            this.btnUsuarios.Name = "btnUsuarios";
+            this.btnUsuarios.Size = new System.Drawing.Size(294, 85);
+            this.btnUsuarios.TabIndex = 11;
+            this.btnUsuarios.Text = "USUARIOS";
+            this.btnUsuarios.UseVisualStyleBackColor = false;
+            this.btnUsuarios.MouseEnter += new System.EventHandler(this.btnUsuarios_MouseEnter);
+            this.btnUsuarios.MouseLeave += new System.EventHandler(this.btnUsuarios_MouseLeave);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = global::TorneosFut.Properties.Resources.logoFX;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 765);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(294, 146);
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -278,8 +295,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panelOpciones.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -288,7 +305,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panelOpciones;
-        private System.Windows.Forms.Button btnUsuarios;
         private System.Windows.Forms.Button btnCaja;
         private System.Windows.Forms.Button btnArbitros;
         private System.Windows.Forms.Button btnEstadios;
@@ -298,8 +314,10 @@
         private System.Windows.Forms.Button btnTorneos;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Panel panelModulos;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button btnUsuarios;
+        private System.Windows.Forms.Button btnEntrenadores;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

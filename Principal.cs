@@ -85,10 +85,7 @@ namespace TorneosFut
             btnCaja.BackColor = ColorTranslator.FromHtml("#FB038C");
         }
 
-        private void btnUsuarios_MouseEnter(object sender, EventArgs e)
-        {
-            btnUsuarios.BackColor = ColorTranslator.FromHtml("#FB038C");
-        }
+        
 
         private void btnTorneos_MouseLeave(object sender, EventArgs e)
         {
@@ -131,11 +128,6 @@ namespace TorneosFut
 
         }
 
-        private void btnUsuarios_MouseLeave(object sender, EventArgs e)
-        {
-            btnUsuarios.BackColor = Color.FromArgb(20, 25, 29);
-        }
-
         private void Principal_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
@@ -157,11 +149,34 @@ namespace TorneosFut
             // btnEntrenador.Region = Region.FromHrgn(CreateRoundRectRgn(1, 1, btnEntrenador.Width, btnEntrenador.Height, 50, 50));
             // btnConfiguracion.Region = Region.FromHrgn(CreateRoundRectRgn(1, 1, btnConfiguracion.Width, btnConfiguracion.Height, 50, 50));
              btnArbitros.Region = Region.FromHrgn(CreateRoundRectRgn(1, 1, btnArbitros.Width, btnArbitros.Height, 50, 50));
+            btnEntrenadores.Region = Region.FromHrgn(CreateRoundRectRgn(1, 1, btnEntrenadores.Width, btnEntrenadores.Height, 50, 50));
+
             // AccesoAdmin();
         }
         void AccesoAdmin()
         {
             btnUsuarios.Enabled = esAdmin;
+        }
+
+        private void btnEntrenadores_MouseLeave(object sender, EventArgs e)
+        {
+            btnEntrenadores.BackColor = Color.FromArgb(20, 25, 29);
+        }
+
+        private void btnEntrenadores_MouseEnter(object sender, EventArgs e)
+        {
+            btnEntrenadores.BackColor = ColorTranslator.FromHtml("#FB038C");
+        }
+
+        private void btnUsuarios_MouseEnter(object sender, EventArgs e)
+        {
+            btnUsuarios.BackColor = ColorTranslator.FromHtml("#FB038C");
+        }
+
+        private void btnUsuarios_MouseLeave(object sender, EventArgs e)
+        {
+            btnUsuarios.BackColor = Color.FromArgb(20, 25, 29);
+
         }
     }
 }
