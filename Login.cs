@@ -104,7 +104,8 @@ namespace TorneosFut
                 bool admin = false;
                 if (txtUsuario.Text == "admin")
                     admin = true; //para saber si el que ingresa es el admin
-                Inicio n = new Inicio(admin);
+                //Inicio n = new Inicio(admin);
+                Principal n = new Principal(admin);
                 this.Hide();
                 n.ShowDialog();
                 txtUsuario.Text = "";

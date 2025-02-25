@@ -13,7 +13,7 @@ namespace TorneosFut
     internal class csConexion
     {
         SqlConnection conec;
-        static string cadenaconec = $"Server=26.102.193.210; Database=BDTorneosFutbol; User id= FutXpert; Password= Torneos";
+        static string cadenaconec = $"Server=DESKTOP-CIGAE77; Database=BDTorneosFutbol; User id= FutXpert; Password= Torneos";
         public csConexion()
         {
             conec = new SqlConnection(cadenaconec);
