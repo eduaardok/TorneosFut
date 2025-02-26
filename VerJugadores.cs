@@ -11,52 +11,62 @@ using TorneosFut;
 
 namespace pruebas
 {
-    public partial class VerJugadores: Form
+    public partial class verjugadores : Form
     {
         csConexion conexion = new csConexion();
-        public VerJugadores()
+
+        public verjugadores()
         {
             InitializeComponent();
-            AdaptarDGV();
-
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void txtBuscador_KeyUp(object sender, KeyEventArgs e)
         {
-
-        }
-        void AdaptarDGV()
-        {
-            int filas, columnas;
-            filas = dgvjugadores.RowCount;
-            columnas = dgvjugadores.ColumnCount;
-            for (int i = 0; i < filas; i++)
+            string filtro = txtBuscador.Text.Trim().ToString();
+            if (string.IsNullOrWhiteSpace(filtro))
             {
-                dgvjugadores.Rows[i].Height = dgvjugadores.Height / filas;
+                dgvJugador.DataSource = conexion.ListDGV("select Nombres,Apellidos,Sexo,FechaNacimiento,Posicion,EquipoActual,Goles,Disponibilidad, PartidosJugados,Nacionalidad,Peso,Altura,PiernaHabil from Jugador");
             }
-            for (int i = 0; i < columnas; i++)
+            else
             {
-                dgvjugadores.Columns[i].Width = dgvjugadores.Width / columnas;
+                string consulta = $"select Nombres,Apellidos,Sexo,FechaNacimiento,Posicion,EquipoActual,Goles,Disponibilidad, PartidosJugados,Nacionalidad,Peso,Altura,PiernaHabil from Jugador where IDJugador like '%{filtro}%' or " +
+                    $"Nombres like '%{filtro}%' or Apellidos like '%{filtro}%' or EquipoActual like '%{filtro}%'";
+
+                DataTable dt = conexion.ListDGV(consulta);
+                dgvJugador.DataSource = dt;
             }
-            dgvjugadores.DataSource = conexion.ListDGV("Select * from Jugador");
-
-
         }
-        private void VerJugadores_Load(object sender, EventArgs e)
+        public static void AbrirFormEnPanel(Panel panel, Form formHijo)
         {
-            
+            if (panel.Controls.Count > 0)
+                panel.Controls.Clear(); // Limpia cualquier contenido previo
+
+            formHijo.TopLevel = false;  // Indica que no es un formulario independiente
+            formHijo.Dock = DockStyle.Fill; // Ajusta al tamaño del panel
+            panel.Controls.Add(formHijo); // Agrega el formulario al panel
+            panel.Tag = formHijo; // Asocia el formulario con el panel
+            formHijo.BringToFront(); // Lo trae al frente
+            formHijo.Show(); // Muestra el formulario dentro del panel
+        }
+        private void dgvJugador_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
         }
 
-        private void btneditarjuga_Click(object sender, EventArgs e)
+        private void verjugadores_Load(object sender, EventArgs e)
+        {
+            dgvJugador.DataSource = conexion.ListDGV("select IDJugador,Nombres,Apellidos,Sexo,FechaNacimiento,Posicion,EquipoActual,Goles,Disponibilidad, PartidosJugados,Nacionalidad,Peso,Altura,PiernaHabil from Jugador");
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
         {
 
-
-            if (dgvjugadores.RowCount > 0)
+            if (dgvJugador.RowCount > 0)
             {
-                if (dgvjugadores.CurrentRow.Index >= 0)
+                if (dgvJugador.CurrentRow.Index >= 0)
                 {
-                    string id = dgvjugadores.Rows[dgvjugadores.CurrentRow.Index].Cells[0].Value.ToString();
-                    EditarJugador edi = new EditarJugador(id);
+
+                    string id = dgvJugador.Rows[dgvJugador.CurrentRow.Index].Cells[0].Value.ToString();
+                    editarjugador edi = new editarjugador(id, this);
                     edi.ShowDialog();
                 }
                 else
@@ -68,7 +78,15 @@ namespace pruebas
             {
                 MessageBox.Show("La tabla está vacía");
             }
-            AdaptarDGV();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
 
         }
     }

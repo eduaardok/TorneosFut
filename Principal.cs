@@ -8,7 +8,8 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Usuarios;
+using pruebas;
 namespace TorneosFut
 {
     public partial class Principal: Form
@@ -24,6 +25,8 @@ namespace TorneosFut
           int nHeightEllipse
         );
         static bool esAdmin;
+        GestionUsuario Usuario;
+        Jugador ju;
         public Principal(bool a=true)
         {
             esAdmin = a;
@@ -31,6 +34,8 @@ namespace TorneosFut
             this.WindowState = FormWindowState.Maximized;
             this.StartPosition = FormStartPosition.Manual;
             this.Bounds = Screen.PrimaryScreen.WorkingArea;
+            Usuario=new GestionUsuario();
+            ju = new Jugador();
         }
         public static void AbrirFormEnPanel(Panel panel, Form formHijo)
         {
@@ -216,6 +221,17 @@ namespace TorneosFut
         private void timer1_Tick(object sender, EventArgs e)
         {
             Opacity += .07;
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(panelModulos, Usuario);
+            
+        }
+
+        private void btnJugadores_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(panelModulos, ju);
         }
     }
 }

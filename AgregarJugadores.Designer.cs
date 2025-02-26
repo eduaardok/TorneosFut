@@ -54,7 +54,7 @@
             // 
             // Txtnombre
             // 
-            this.Txtnombre.Location = new System.Drawing.Point(174, 83);
+            this.Txtnombre.Location = new System.Drawing.Point(159, 91);
             this.Txtnombre.Name = "Txtnombre";
             this.Txtnombre.Size = new System.Drawing.Size(178, 20);
             this.Txtnombre.TabIndex = 0;
@@ -66,21 +66,24 @@
             this.cmbsexo.Items.AddRange(new object[] {
             "M",
             "F"});
-            this.cmbsexo.Location = new System.Drawing.Point(174, 128);
+            this.cmbsexo.Location = new System.Drawing.Point(159, 140);
             this.cmbsexo.Name = "cmbsexo";
             this.cmbsexo.Size = new System.Drawing.Size(121, 21);
             this.cmbsexo.TabIndex = 1;
             // 
             // dtpNacimiento
             // 
-            this.dtpNacimiento.Location = new System.Drawing.Point(370, 255);
+            this.dtpNacimiento.Location = new System.Drawing.Point(354, 286);
+            this.dtpNacimiento.MaxDate = new System.DateTime(2017, 12, 31, 0, 0, 0, 0);
+            this.dtpNacimiento.MinDate = new System.DateTime(1983, 1, 1, 0, 0, 0, 0);
             this.dtpNacimiento.Name = "dtpNacimiento";
             this.dtpNacimiento.Size = new System.Drawing.Size(200, 20);
             this.dtpNacimiento.TabIndex = 4;
+            this.dtpNacimiento.Value = new System.DateTime(2017, 12, 31, 0, 0, 0, 0);
             // 
             // txtapellido
             // 
-            this.txtapellido.Location = new System.Drawing.Point(370, 83);
+            this.txtapellido.Location = new System.Drawing.Point(353, 91);
             this.txtapellido.Name = "txtapellido";
             this.txtapellido.Size = new System.Drawing.Size(178, 20);
             this.txtapellido.TabIndex = 5;
@@ -107,7 +110,7 @@
             "Delantero centro",
             "Segunda punta",
             "Falso nueve"});
-            this.CmbPosicion.Location = new System.Drawing.Point(174, 168);
+            this.CmbPosicion.Location = new System.Drawing.Point(159, 192);
             this.CmbPosicion.Name = "CmbPosicion";
             this.CmbPosicion.Size = new System.Drawing.Size(121, 21);
             this.CmbPosicion.TabIndex = 6;
@@ -119,21 +122,21 @@
             this.cmbpierna.Items.AddRange(new object[] {
             "Derecha",
             "Izquierda"});
-            this.cmbpierna.Location = new System.Drawing.Point(370, 138);
+            this.cmbpierna.Location = new System.Drawing.Point(353, 140);
             this.cmbpierna.Name = "cmbpierna";
             this.cmbpierna.Size = new System.Drawing.Size(178, 21);
             this.cmbpierna.TabIndex = 7;
             // 
             // txtpeso
             // 
-            this.txtpeso.Location = new System.Drawing.Point(370, 178);
+            this.txtpeso.Location = new System.Drawing.Point(353, 191);
             this.txtpeso.Name = "txtpeso";
             this.txtpeso.Size = new System.Drawing.Size(111, 20);
             this.txtpeso.TabIndex = 8;
             // 
             // txtaltura
             // 
-            this.txtaltura.Location = new System.Drawing.Point(370, 216);
+            this.txtaltura.Location = new System.Drawing.Point(353, 239);
             this.txtaltura.Name = "txtaltura";
             this.txtaltura.Size = new System.Drawing.Size(100, 20);
             this.txtaltura.TabIndex = 9;
@@ -144,7 +147,7 @@
             this.Cmbequipo.FormattingEnabled = true;
             this.Cmbequipo.Items.AddRange(new object[] {
             "Ninguno"});
-            this.Cmbequipo.Location = new System.Drawing.Point(174, 208);
+            this.Cmbequipo.Location = new System.Drawing.Point(159, 238);
             this.Cmbequipo.Name = "Cmbequipo";
             this.Cmbequipo.Size = new System.Drawing.Size(121, 21);
             this.Cmbequipo.TabIndex = 10;
@@ -152,36 +155,40 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(174, 67);
+            this.lblNombre.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Location = new System.Drawing.Point(156, 64);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(49, 13);
+            this.lblNombre.Size = new System.Drawing.Size(94, 24);
             this.lblNombre.TabIndex = 11;
             this.lblNombre.Text = "Nombres";
             // 
             // lblapellido
             // 
             this.lblapellido.AutoSize = true;
-            this.lblapellido.Location = new System.Drawing.Point(371, 67);
+            this.lblapellido.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblapellido.Location = new System.Drawing.Point(350, 64);
             this.lblapellido.Name = "lblapellido";
-            this.lblapellido.Size = new System.Drawing.Size(49, 13);
+            this.lblapellido.Size = new System.Drawing.Size(94, 24);
             this.lblapellido.TabIndex = 12;
             this.lblapellido.Text = "Apellidos";
             // 
             // lblsexo
             // 
             this.lblsexo.AutoSize = true;
-            this.lblsexo.Location = new System.Drawing.Point(174, 112);
+            this.lblsexo.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblsexo.Location = new System.Drawing.Point(156, 114);
             this.lblsexo.Name = "lblsexo";
-            this.lblsexo.Size = new System.Drawing.Size(31, 13);
+            this.lblsexo.Size = new System.Drawing.Size(54, 24);
             this.lblsexo.TabIndex = 13;
             this.lblsexo.Text = "Sexo";
             // 
             // lblPosicion
             // 
             this.lblPosicion.AutoSize = true;
-            this.lblPosicion.Location = new System.Drawing.Point(171, 152);
+            this.lblPosicion.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPosicion.Location = new System.Drawing.Point(155, 165);
             this.lblPosicion.Name = "lblPosicion";
-            this.lblPosicion.Size = new System.Drawing.Size(47, 13);
+            this.lblPosicion.Size = new System.Drawing.Size(88, 24);
             this.lblPosicion.TabIndex = 14;
             this.lblPosicion.Text = "Posicion";
             this.lblPosicion.Click += new System.EventHandler(this.lblPosicion_Click);
@@ -190,79 +197,89 @@
             // 
             this.LblPierna.AutoSize = true;
             this.LblPierna.BackColor = System.Drawing.SystemColors.Control;
-            this.LblPierna.Location = new System.Drawing.Point(367, 112);
+            this.LblPierna.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblPierna.Location = new System.Drawing.Point(349, 114);
             this.LblPierna.Name = "LblPierna";
-            this.LblPierna.Size = new System.Drawing.Size(64, 13);
+            this.LblPierna.Size = new System.Drawing.Size(122, 24);
             this.LblPierna.TabIndex = 15;
             this.LblPierna.Text = "Pierna Hábil";
             // 
             // lblpeso
             // 
             this.lblpeso.AutoSize = true;
-            this.lblpeso.Location = new System.Drawing.Point(367, 162);
+            this.lblpeso.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblpeso.Location = new System.Drawing.Point(349, 164);
             this.lblpeso.Name = "lblpeso";
-            this.lblpeso.Size = new System.Drawing.Size(51, 13);
+            this.lblpeso.Size = new System.Drawing.Size(91, 24);
             this.lblpeso.TabIndex = 16;
             this.lblpeso.Text = "Peso/KG";
             // 
             // lblfecha
             // 
             this.lblfecha.AutoSize = true;
-            this.lblfecha.Location = new System.Drawing.Point(367, 239);
+            this.lblfecha.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblfecha.Location = new System.Drawing.Point(350, 259);
             this.lblfecha.Name = "lblfecha";
-            this.lblfecha.Size = new System.Drawing.Size(108, 13);
+            this.lblfecha.Size = new System.Drawing.Size(205, 24);
             this.lblfecha.TabIndex = 17;
             this.lblfecha.Text = "Fecha de Nacimiento";
             // 
             // lblaltura
             // 
             this.lblaltura.AutoSize = true;
-            this.lblaltura.Location = new System.Drawing.Point(367, 201);
+            this.lblaltura.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblaltura.Location = new System.Drawing.Point(349, 214);
             this.lblaltura.Name = "lblaltura";
-            this.lblaltura.Size = new System.Drawing.Size(34, 13);
+            this.lblaltura.Size = new System.Drawing.Size(66, 24);
             this.lblaltura.TabIndex = 18;
             this.lblaltura.Text = "Altura";
             // 
             // lblequipo
             // 
             this.lblequipo.AutoSize = true;
-            this.lblequipo.Location = new System.Drawing.Point(171, 192);
+            this.lblequipo.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblequipo.Location = new System.Drawing.Point(155, 214);
             this.lblequipo.Name = "lblequipo";
-            this.lblequipo.Size = new System.Drawing.Size(40, 13);
+            this.lblequipo.Size = new System.Drawing.Size(73, 24);
             this.lblequipo.TabIndex = 19;
             this.lblequipo.Text = "Equipo";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(171, 232);
+            this.label1.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(156, 262);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 13);
+            this.label1.Size = new System.Drawing.Size(131, 24);
             this.label1.TabIndex = 21;
             this.label1.Text = "Nacionalidad";
             // 
             // TxtNacionalidad
             // 
-            this.TxtNacionalidad.Location = new System.Drawing.Point(174, 248);
+            this.TxtNacionalidad.Location = new System.Drawing.Point(159, 289);
             this.TxtNacionalidad.Name = "TxtNacionalidad";
-            this.TxtNacionalidad.Size = new System.Drawing.Size(100, 20);
+            this.TxtNacionalidad.Size = new System.Drawing.Size(178, 20);
             this.TxtNacionalidad.TabIndex = 20;
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(476, 302);
+            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            this.btnAgregar.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.ForeColor = System.Drawing.Color.White;
+            this.btnAgregar.Location = new System.Drawing.Point(436, 321);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(94, 82);
+            this.btnAgregar.Size = new System.Drawing.Size(118, 82);
             this.btnAgregar.TabIndex = 22;
             this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // AgregarJugadores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1488, 846);
+            this.ControlBox = false;
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TxtNacionalidad);
@@ -285,6 +302,8 @@
             this.Controls.Add(this.cmbsexo);
             this.Controls.Add(this.Txtnombre);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AgregarJugadores";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
