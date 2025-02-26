@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblUsuario = new System.Windows.Forms.Label();
@@ -44,6 +45,9 @@
             this.btnEquipos = new System.Windows.Forms.Button();
             this.btnTorneos = new System.Windows.Forms.Button();
             this.panelModulos = new System.Windows.Forms.Panel();
+            this.tmopen = new System.Windows.Forms.Timer(this.components);
+            this.timeclose = new System.Windows.Forms.Timer(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelOpciones.SuspendLayout();
@@ -98,6 +102,7 @@
             this.btnCerrar.TabIndex = 1;
             this.btnCerrar.Text = "-";
             this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // panelOpciones
             // 
@@ -277,6 +282,21 @@
             this.panelModulos.Size = new System.Drawing.Size(1490, 911);
             this.panelModulos.TabIndex = 9;
             // 
+            // tmopen
+            // 
+            this.tmopen.Interval = 1;
+            this.tmopen.Tick += new System.EventHandler(this.tmopen_Tick);
+            // 
+            // timeclose
+            // 
+            this.timeclose.Interval = 1;
+            this.timeclose.Tick += new System.EventHandler(this.timeclose_Tick);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 15;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -288,6 +308,7 @@
             this.Font = new System.Drawing.Font("Onest Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "Principal";
+            this.Opacity = 0D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FUTXPERT";
             this.Load += new System.EventHandler(this.Principal_Load);
@@ -319,5 +340,8 @@
         private System.Windows.Forms.Button btnUsuarios;
         private System.Windows.Forms.Button btnEntrenadores;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Timer tmopen;
+        private System.Windows.Forms.Timer timeclose;
+        private System.Windows.Forms.Timer timer1;
     }
 }

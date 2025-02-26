@@ -130,6 +130,7 @@ namespace TorneosFut
 
         private void Principal_Load(object sender, EventArgs e)
         {
+            timer1.Start();
             this.WindowState = FormWindowState.Maximized;
             this.StartPosition = FormStartPosition.Manual;
             this.Bounds = Screen.PrimaryScreen.WorkingArea;
@@ -177,6 +178,44 @@ namespace TorneosFut
         {
             btnUsuarios.BackColor = Color.FromArgb(20, 25, 29);
 
+        }
+
+        private void tmopen_Tick(object sender, EventArgs e)
+        {
+            if (panelOpciones.Width < 294)
+            {
+                panelOpciones.Width = panelOpciones.Width + 20;
+            }
+            else
+            {
+                tmopen.Stop();
+            }
+        }
+
+        private void timeclose_Tick(object sender, EventArgs e)
+        {
+            if (panelOpciones.Width > 0)
+            {
+                    panelOpciones.Width = panelOpciones.Width - 20;
+            }
+            else
+            {
+                timeclose.Stop();
+            }
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            if (panelOpciones.Width > 0)
+            {
+                timeclose.Start();
+            }
+            else tmopen.Start();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Opacity += .07;
         }
     }
 }
