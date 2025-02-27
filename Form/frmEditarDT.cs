@@ -1,0 +1,141 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
+using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace PruebasTorneos
+{
+    public partial class frmEditarDT: Form
+    {
+        csConexion conec = new csConexion();
+        csEntrenador dt = new csEntrenador();
+        public frmEditarDT()
+        {
+            InitializeComponent();
+        }
+        private void frmEditarDT_Load(object sender, EventArgs e)
+        {
+            dt.Cargar(dgvEntrenador);
+            dgvEntrenador.CellFormatting += dgvEntrenador_CellFormatting;
+        }
+
+        private void btnEditarIMG_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog img = new OpenFileDialog();
+            img.Filter = "archivos de imagen (*jpg; *png;) | *jpg; *png;";
+            if (img.ShowDialog() == DialogResult.OK)
+            {
+                ptbNewIMG.Image = Image.FromFile(img.FileName);
+            }
+        }
+
+        private void dgvEntrenador_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dgvEntrenador.Columns[e.ColumnIndex].Name == "PartidosGanados")
+            {
+                e.CellStyle.ForeColor = Color.Green;
+            }
+            if (dgvEntrenador.Columns[e.ColumnIndex].Name == "PartidosEmpatados")
+            {
+                e.CellStyle.ForeColor = Color.Orange;
+            }
+            if (dgvEntrenador.Columns[e.ColumnIndex].Name == "PartidosPerdidos")
+            {
+                e.CellStyle.ForeColor = Color.Red;
+            }
+            if (dgvEntrenador.Columns[e.ColumnIndex].Name == "Sexo" && e.Value != null)
+            {
+                string valor = e.Value.ToString().Trim().ToLower();
+                if (valor == "masculino")
+                {
+                    e.CellStyle.ForeColor = Color.Blue;
+                }
+                else if (valor == "femenino")
+                {
+                    e.CellStyle.ForeColor = Color.Magenta;
+                }
+            }
+        }
+
+        private void dgvEntrenador_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvEntrenador.Rows.Count == 0 || dgvEntrenador.SelectedRows.Count == 0)
+                    return;
+                int fila = dgvEntrenador.SelectedRows[0].Index;
+                string celda = dgvEntrenador.Rows[fila].Cells["IDEntrenador"].Value.ToString();
+
+                string consulta = $"SELECT ImagenEntrenador FROM Entrenador WHERE IDEntrenador = {celda}";
+
+                byte[] imagenBytes = conec.ObtenerImagen(consulta);
+                if (imagenBytes != null && imagenBytes.Length > 0)
+                {
+                    using (MemoryStream ms = new MemoryStream(imagenBytes))
+                    {
+                        ptbNewIMG.Image = Image.FromStream(ms);
+                    }
+                }
+                else
+                {
+                    ptbNewIMG.Image = null;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar la imagen: " + ex.Message);
+            }
+        }
+
+        private void txtBuscar_KeyUp(object sender, KeyEventArgs e)
+        {
+            dt.filtro(txtBuscar.Text.Trim(), dgvEntrenador);
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtNombre.Text) || string.IsNullOrWhiteSpace(txtApellido.Text))
+            {
+                MessageBox.Show("Se deben llenar todos los campos");
+                return;
+            }
+            int idEntrenador = Convert.ToInt32(dgvEntrenador.SelectedRows[0].Cells["IDEntrenador"].Value);
+            try
+            {
+                if (dgvEntrenador.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Selecciona un entrenador primero.");
+                    return;
+                }
+                string nombre = txtNombre.Text;
+                string apellido = txtApellido.Text;
+
+                MemoryStream ms = new MemoryStream();
+                ptbNewIMG.Image.Save(ms, ImageFormat.Jpeg);
+                byte[] imgByte = ms.ToArray();
+                if (conec.EditarEntrenador(idEntrenador, nombre, apellido, imgByte))
+                {
+                    MessageBox.Show("Entrenador actualizado correctamente.");
+                    dt.Cargar(dgvEntrenador);
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo actualizar el entrenador.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al actualizar entrenador: {ex.Message}");
+            }
+        }
+    }
+}

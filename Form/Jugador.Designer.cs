@@ -83,7 +83,7 @@
             this.gnAgregarJu.Font = new System.Drawing.Font("Onest Bold", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gnAgregarJu.ForeColor = System.Drawing.Color.Black;
             this.gnAgregarJu.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
-            this.gnAgregarJu.Location = new System.Drawing.Point(490, 0);
+            this.gnAgregarJu.Location = new System.Drawing.Point(490, 5);
             this.gnAgregarJu.Name = "gnAgregarJu";
             this.gnAgregarJu.Size = new System.Drawing.Size(516, 59);
             this.gnAgregarJu.TabIndex = 1;

@@ -52,99 +52,117 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AgregarJugadores.cs">
+    <Compile Include="Class\csEntrenador.cs" />
+    <Compile Include="Form\AgregarJugadores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AgregarJugadores.Designer.cs">
+    <Compile Include="Form\AgregarJugadores.Designer.cs">
       <DependentUpon>AgregarJugadores.cs</DependentUpon>
     </Compile>
-    <Compile Include="AgregarUsuario.cs">
+    <Compile Include="Form\AgregarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AgregarUsuario.Designer.cs">
+    <Compile Include="Form\AgregarUsuario.Designer.cs">
       <DependentUpon>AgregarUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="csConexion.cs" />
-    <Compile Include="csCorreo.cs" />
-    <Compile Include="csEncriptar.cs" />
-    <Compile Include="csEntrenador.cs" />
-    <Compile Include="editarjugador.cs">
+    <Compile Include="Class\csConexion.cs" />
+    <Compile Include="Class\csCorreo.cs" />
+    <Compile Include="Class\csEncriptar.cs" />
+    <Compile Include="Form\editarjugador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="editarjugador.Designer.cs">
+    <Compile Include="Form\editarjugador.Designer.cs">
       <DependentUpon>editarjugador.cs</DependentUpon>
     </Compile>
-    <Compile Include="Equipos.cs">
+    <Compile Include="Form\frmAggEntrenador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Equipos.Designer.cs">
-      <DependentUpon>Equipos.cs</DependentUpon>
+    <Compile Include="Form\frmAggEntrenador.Designer.cs">
+      <DependentUpon>frmAggEntrenador.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmEntrenadores.cs">
+    <Compile Include="Form\frmEditarDT.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmEntrenadores.Designer.cs">
+    <Compile Include="Form\frmEditarDT.Designer.cs">
+      <DependentUpon>frmEditarDT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmEntrenadores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmEntrenadores.Designer.cs">
       <DependentUpon>FrmEntrenadores.cs</DependentUpon>
     </Compile>
-    <Compile Include="GestionUsuario.cs">
+    <Compile Include="Form\GestionUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GestionUsuario.Designer.cs">
+    <Compile Include="Form\GestionUsuario.Designer.cs">
       <DependentUpon>GestionUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Jugador.cs">
+    <Compile Include="Form\Jugador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Jugador.Designer.cs">
+    <Compile Include="Form\Jugador.Designer.cs">
       <DependentUpon>Jugador.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuColorTable.cs" />
-    <Compile Include="MenuRenderer.cs" />
-    <Compile Include="Login.cs">
+    <Compile Include="Class\MenuColorTable.cs" />
+    <Compile Include="Class\MenuRenderer.cs" />
+    <Compile Include="Form\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
+    <Compile Include="Form\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Principal.cs">
+    <Compile Include="Form\Padre.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Principal.Designer.cs">
+    <Compile Include="Form\Padre.Designer.cs">
+      <DependentUpon>Padre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Principal.Designer.cs">
       <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="verjugadores.cs">
+    <Compile Include="Form\verjugadores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="verjugadores.Designer.cs">
+    <Compile Include="Form\verjugadores.Designer.cs">
       <DependentUpon>verjugadores.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AgregarJugadores.resx">
+    <EmbeddedResource Include="Form\AgregarJugadores.resx">
       <DependentUpon>AgregarJugadores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AgregarUsuario.resx">
+    <EmbeddedResource Include="Form\AgregarUsuario.resx">
       <DependentUpon>AgregarUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="editarjugador.resx">
+    <EmbeddedResource Include="Form\editarjugador.resx">
       <DependentUpon>editarjugador.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Equipos.resx">
-      <DependentUpon>Equipos.cs</DependentUpon>
+    <EmbeddedResource Include="Form\frmAggEntrenador.resx">
+      <DependentUpon>frmAggEntrenador.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmEntrenadores.resx">
+    <EmbeddedResource Include="Form\frmEditarDT.resx">
+      <DependentUpon>frmEditarDT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmEntrenadores.resx">
       <DependentUpon>FrmEntrenadores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GestionUsuario.resx">
+    <EmbeddedResource Include="Form\GestionUsuario.resx">
       <DependentUpon>GestionUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Jugador.resx">
+    <EmbeddedResource Include="Form\Jugador.resx">
       <DependentUpon>Jugador.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
+    <EmbeddedResource Include="Form\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Principal.resx">
+    <EmbeddedResource Include="Form\Padre.resx">
+      <DependentUpon>Padre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -157,7 +175,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="verjugadores.resx">
+    <EmbeddedResource Include="Form\verjugadores.resx">
       <DependentUpon>verjugadores.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />

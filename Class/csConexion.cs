@@ -56,7 +56,114 @@ namespace TorneosFut
             CerrarCon();
             return data;
         }
+        public bool EjecutarTransaccion(string consultaDatos, string consultaImagen, byte[] imagen)
+        {
+            conec.Open();
+            SqlTransaction transaccion = conec.BeginTransaction();
 
+            try
+            {
+                string consultaID = consultaDatos + "; SELECT SCOPE_IDENTITY();";
+                SqlCommand comandoDatos = new SqlCommand(consultaID, conec, transaccion);
+                int idEntrenador = Convert.ToInt32(comandoDatos.ExecuteScalar());
+                SqlCommand comandoImagen = new SqlCommand(consultaImagen, conec, transaccion);
+                comandoImagen.Parameters.AddWithValue("@imagen", imagen);
+                comandoImagen.Parameters.AddWithValue("@IDEntrenador", idEntrenador);
+                comandoImagen.ExecuteNonQuery();
+                transaccion.Commit();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                transaccion.Rollback();
+                MessageBox.Show($"Error en la transacción: {ex.Message}");
+                return false;
+            }
+        }
+
+        public bool InsertarImagen(byte[] imagen)
+        {
+            try
+            {
+                AbrirCon();
+                string consulIMG = "insert into Entrenador (ImagenEntrenador) values (@imagen)";
+                SqlCommand comando = new SqlCommand(consulIMG, conec);
+                comando.Parameters.AddWithValue("@imagen", imagen);
+                comando.ExecuteNonQuery();
+                CerrarCon();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                CerrarCon();
+                return false;
+            }
+        }
+
+        public bool EditarEntrenador(int idEntrenador, string nombre, string apellido, byte[] imagen)
+        {
+            conec.Open();
+            SqlTransaction transaccion = conec.BeginTransaction();
+
+            try
+            {
+                string consultaDatos = "update Entrenador set Nombres = @nombre, Apellidos = @apellido " +
+                                        "where IDEntrenador = @idEntrenador";
+
+                SqlCommand comandoDatos = new SqlCommand(consultaDatos, conec, transaccion);
+                comandoDatos.Parameters.AddWithValue("@nombre", nombre);
+                comandoDatos.Parameters.AddWithValue("@apellido", apellido);
+                comandoDatos.Parameters.AddWithValue("@idEntrenador", idEntrenador);
+                comandoDatos.ExecuteNonQuery();
+
+                string consultaImagen = "UPDATE Entrenador SET ImagenEntrenador = @imagen WHERE IDEntrenador = @idEntrenador";
+                SqlCommand comandoImagen = new SqlCommand(consultaImagen, conec, transaccion);
+                comandoImagen.Parameters.AddWithValue("@imagen", imagen);
+                comandoImagen.Parameters.AddWithValue("@idEntrenador", idEntrenador);
+                comandoImagen.ExecuteNonQuery();
+
+                transaccion.Commit();
+                conec.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                transaccion.Rollback();
+                MessageBox.Show($"Error en la transacción: {ex.Message}");
+                conec.Close();
+                return false;
+            }
+        }
+
+        public byte[] ObtenerImagen(string consulta)
+        {
+            byte[] imagen = null;
+
+            try
+            {
+                AbrirCon();
+                SqlCommand comando = new SqlCommand(consulta, conec);
+                SqlDataReader reader = comando.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    if (!reader.IsDBNull(reader.GetOrdinal("ImagenEntrenador")))
+                    {
+                        imagen = (byte[])reader["ImagenEntrenador"];
+                    }
+                }
+
+                reader.Close();
+                CerrarCon();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al obtener la imagen: " + ex.Message);
+            }
+
+            return imagen;
+        }
         public bool Login(string usuario, string contraseña)
         {
             string consulta = $"select Clave from Administrador where Usuario='{usuario}'";

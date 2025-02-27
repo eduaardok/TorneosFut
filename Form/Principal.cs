@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Usuarios;
 using pruebas;
+using PruebasTorneos;
 namespace TorneosFut
 {
     public partial class Principal: Form
@@ -27,6 +28,7 @@ namespace TorneosFut
         static bool esAdmin;
         GestionUsuario Usuario;
         Jugador ju;
+        Padre entre;
         public Principal(bool a=true)
         {
             esAdmin = a;
@@ -36,6 +38,7 @@ namespace TorneosFut
             this.Bounds = Screen.PrimaryScreen.WorkingArea;
             Usuario=new GestionUsuario();
             ju = new Jugador();
+            entre= new Padre();
         }
         public static void AbrirFormEnPanel(Panel panel, Form formHijo)
         {
@@ -232,6 +235,11 @@ namespace TorneosFut
         private void btnJugadores_Click(object sender, EventArgs e)
         {
             AbrirFormEnPanel(panelModulos, ju);
+        }
+
+        private void btnEntrenadores_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(panelModulos, entre);
         }
     }
 }
