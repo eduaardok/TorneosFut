@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TorneosFut;
+using TorneosFut.Class;
 
 namespace pruebas
 {
@@ -16,6 +17,7 @@ namespace pruebas
         int ID;
         csConexion conexion = new csConexion();
         verjugadores f;
+        csJugador jugador = new csJugador();
         public editarjugador(string id, verjugadores jugador)
         {
             InitializeComponent();
@@ -51,8 +53,7 @@ namespace pruebas
                 {
                     if (!validaaltu(txtaltura) && !validaaltu(txtpeso))
                     {
-                        conexion.Consulta($"UPDATE Jugador set Nombres='{Txtnombre.Text}', Apellidos='{txtapellido.Text}'" +
-                            $",Posicion='{CmbPosicion.Text}', EquipoActual={int.Parse(Cmbequipo.SelectedValue.ToString())}, Peso={decimal.Parse(txtpeso.Text)}, Altura= {decimal.Parse(txtaltura.Text)}  where IDJugador={ID}");
+                        jugador.editarjugador(Txtnombre, txtapellido, CmbPosicion, Cmbequipo, txtpeso, txtaltura, ID);
                         txtaltura.Clear();
                         txtapellido.Clear();
                         txtpeso.Clear();
@@ -60,7 +61,7 @@ namespace pruebas
                         Cmbequipo.SelectedIndex = -1;
                         CmbPosicion.SelectedIndex = -1;
                         MessageBox.Show("Jugador editado con exito");
-                        f.dgvJugador.DataSource = conexion.ListDGV("Select* from Jugador");
+                        f.dgvJugador.DataSource = jugador.mostrarJugador();
                         Close();
                     }
                     else MessageBox.Show("altura invalida");

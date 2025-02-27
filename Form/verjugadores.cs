@@ -8,13 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TorneosFut;
+using TorneosFut.Class;
 
 namespace pruebas
 {
     public partial class verjugadores : Form
     {
         csConexion conexion = new csConexion();
-
+        csJugador jugador = new csJugador();
         public verjugadores()
         {
             InitializeComponent();
@@ -25,12 +26,11 @@ namespace pruebas
             string filtro = txtBuscador.Text.Trim().ToString();
             if (string.IsNullOrWhiteSpace(filtro))
             {
-                dgvJugador.DataSource = conexion.ListDGV("select Nombres,Apellidos,Sexo,FechaNacimiento,Posicion,EquipoActual,Goles,Disponibilidad, PartidosJugados,Nacionalidad,Peso,Altura,PiernaHabil from Jugador");
+                dgvJugador.DataSource = jugador.mostrarJugador();
             }
             else
             {
-                string consulta = $"select Nombres,Apellidos,Sexo,FechaNacimiento,Posicion,EquipoActual,Goles,Disponibilidad, PartidosJugados,Nacionalidad,Peso,Altura,PiernaHabil from Jugador where IDJugador like '%{filtro}%' or " +
-                    $"Nombres like '%{filtro}%' or Apellidos like '%{filtro}%' or EquipoActual like '%{filtro}%'";
+                string consulta = jugador.filtro(filtro);
 
                 DataTable dt = conexion.ListDGV(consulta);
                 dgvJugador.DataSource = dt;
@@ -54,7 +54,7 @@ namespace pruebas
 
         private void verjugadores_Load(object sender, EventArgs e)
         {
-            dgvJugador.DataSource = conexion.ListDGV("select IDJugador,Nombres,Apellidos,Sexo,FechaNacimiento,Posicion,EquipoActual,Goles,Disponibilidad, PartidosJugados,Nacionalidad,Peso,Altura,PiernaHabil from Jugador");
+            dgvJugador.DataSource =jugador.mostrarJugador();
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)

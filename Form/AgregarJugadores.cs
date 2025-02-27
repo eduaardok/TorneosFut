@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TorneosFut;
+using TorneosFut.Class;
 
 namespace pruebas
 {
@@ -15,6 +16,7 @@ namespace pruebas
     {
         csConexion conexion = new csConexion();
         verjugadores ve;
+        csJugador jugador= new csJugador();
         public AgregarJugadores(verjugadores f)
         {
             InitializeComponent();
@@ -49,10 +51,7 @@ namespace pruebas
                     {
                         if (!validaaltu(txtaltura) && !validaaltu(txtpeso))
                         {
-                            conexion.Consulta("INSERT INTO Jugador (Nombres, Apellidos, Sexo, FechaNacimiento, Posicion, EquipoActual, Goles, Asistencias," +
-                             " Disponibilidad, PartidosJugados, Nacionalidad, Peso, Altura, PiernaHabil, ImagenJugador) " +
-                                      $"VALUES ('{Txtnombre.Text}', '{txtapellido.Text}', '{cmbsexo.Text}', '{dtpNacimiento.Value}', '{CmbPosicion.Text}', {int.Parse(Cmbequipo.SelectedValue.ToString())}, {0}, {0}, {1}, {0}, " +
-                                  $"'{TxtNacionalidad.Text}', {decimal.Parse(txtpeso.Text)}, {decimal.Parse(txtaltura.Text)}, '{cmbpierna.Text}', 'imangens')");
+                            jugador.agregarJugador(Txtnombre,txtapellido,cmbsexo,dtpNacimiento,CmbPosicion, Cmbequipo,TxtNacionalidad,txtpeso,txtaltura,cmbpierna);
                             txtaltura.Clear();
                             txtapellido.Clear();
                             txtpeso.Clear();
@@ -63,7 +62,7 @@ namespace pruebas
                             Cmbequipo.SelectedIndex = -1;
                             CmbPosicion.SelectedIndex = -1;
                             MessageBox.Show("Jugador agregado con exito");
-                            ve.dgvJugador.DataSource = conexion.ListDGV("Select * from Jugador");
+                            ve.dgvJugador.DataSource = jugador.mostrarJugador();
 
                         }
                         else MessageBox.Show("altura invalida");

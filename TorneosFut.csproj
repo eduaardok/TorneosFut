@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\csEntrenador.cs" />
+    <Compile Include="Class\csJugador.cs" />
     <Compile Include="Form\AgregarJugadores.cs">
       <SubType>Form</SubType>
     </Compile>
