@@ -63,7 +63,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1784, 50);
+            this.panel1.Size = new System.Drawing.Size(1370, 50);
             this.panel1.TabIndex = 6;
             // 
             // pictureBox2
@@ -72,7 +72,7 @@
             this.pictureBox2.BackgroundImage = global::TorneosFut.Properties.Resources.userr;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox2.Location = new System.Drawing.Point(1586, 0);
+            this.pictureBox2.Location = new System.Drawing.Point(1172, 0);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(74, 50);
             this.pictureBox2.TabIndex = 9;
@@ -85,7 +85,7 @@
             this.lblUsuario.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblUsuario.Font = new System.Drawing.Font("Onest Bold", 18F, System.Drawing.FontStyle.Bold);
             this.lblUsuario.ForeColor = System.Drawing.Color.White;
-            this.lblUsuario.Location = new System.Drawing.Point(1660, 0);
+            this.lblUsuario.Location = new System.Drawing.Point(1246, 0);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(124, 30);
             this.lblUsuario.TabIndex = 2;
@@ -121,7 +121,7 @@
             this.panelOpciones.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelOpciones.Location = new System.Drawing.Point(0, 50);
             this.panelOpciones.Name = "panelOpciones";
-            this.panelOpciones.Size = new System.Drawing.Size(294, 911);
+            this.panelOpciones.Size = new System.Drawing.Size(294, 699);
             this.panelOpciones.TabIndex = 8;
             // 
             // pictureBox1
@@ -132,7 +132,7 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Location = new System.Drawing.Point(0, 765);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(294, 146);
+            this.pictureBox1.Size = new System.Drawing.Size(294, 0);
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
@@ -297,14 +297,14 @@
             this.panelModulos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelModulos.Location = new System.Drawing.Point(294, 50);
             this.panelModulos.Name = "panelModulos";
-            this.panelModulos.Size = new System.Drawing.Size(1490, 911);
+            this.panelModulos.Size = new System.Drawing.Size(1076, 699);
             this.panelModulos.TabIndex = 9;
             // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1784, 961);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.panelModulos);
             this.Controls.Add(this.panelOpciones);
             this.Controls.Add(this.panel1);
