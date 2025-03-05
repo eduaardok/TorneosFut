@@ -16,10 +16,15 @@ namespace PruebasTorneos
 {
     public partial class frmEditarDT: Form
     {
-        csConexion conec = new csConexion();
-        csEntrenador dt = new csEntrenador();
-        public frmEditarDT()
+        csConexion conexion ;
+        csEntrenador dt;
+        public frmEditarDT(string u, string c)
         {
+
+            conexion = new csConexion();
+            conexion.Usuario = u;
+            conexion.Clave = c;
+            dt = new csEntrenador(u,c);
             InitializeComponent();
         }
         private void frmEditarDT_Load(object sender, EventArgs e)
@@ -77,7 +82,7 @@ namespace PruebasTorneos
 
                 string consulta = $"SELECT ImagenEntrenador FROM Entrenador WHERE IDEntrenador = {celda}";
 
-                byte[] imagenBytes = conec.ObtenerImagen(consulta);
+                byte[] imagenBytes = conexion.ObtenerImagen(consulta);
                 if (imagenBytes != null && imagenBytes.Length > 0)
                 {
                     using (MemoryStream ms = new MemoryStream(imagenBytes))
@@ -123,7 +128,7 @@ namespace PruebasTorneos
                 MemoryStream ms = new MemoryStream();
                 ptbNewIMG.Image.Save(ms, ImageFormat.Jpeg);
                 byte[] imgByte = ms.ToArray();
-                if (conec.EditarEntrenador(idEntrenador, nombre, apellido, imgByte))
+                if (conexion.EditarEntrenador(idEntrenador, nombre, apellido, imgByte))
                 {
                     MessageBox.Show("Entrenador actualizado correctamente.");
                     dt.Cargar(dgvEntrenador);

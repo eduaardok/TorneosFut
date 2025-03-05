@@ -18,14 +18,15 @@ namespace Usuarios
         DataTable dt;
         csConexion conexion;
         csEncriptar encriptar;
-        public AgregarUsuario(bool a, int i)
+        public AgregarUsuario(bool a, int i, string u, string c)
         {
+            conexion = new csConexion();
+            conexion.Usuario = u;
+            conexion.Clave = c;
             agg = a;
             id = i;
             InitializeComponent();
         }
-
-       
         private void btngSalir_Click_1(object sender, EventArgs e)
         {
             this.Close();
@@ -70,7 +71,6 @@ namespace Usuarios
         private void AgregarUsuario_Load(object sender, EventArgs e)
         {
             dt = new DataTable();
-            conexion = new csConexion();
             encriptar = new csEncriptar();
             Editar();
         }

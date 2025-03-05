@@ -9,7 +9,13 @@ namespace TorneosFut.Class
 {
     class csJugador
     {
-        csConexion conexion=new csConexion();
+        csConexion conexion;
+        public csJugador(string u, string c)
+        {
+            conexion = new csConexion();
+            conexion.Usuario = u;
+            conexion.Clave = c;
+        }
 
         public DataTable mostrarJugador()
         {

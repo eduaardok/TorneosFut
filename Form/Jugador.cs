@@ -13,15 +13,18 @@ namespace pruebas
 {
     public partial class Jugador: Form
     {
-        csConexion conexion = new csConexion();
+        csConexion conexion;
         verjugadores verJu;
         AgregarJugadores agregaJu;
-        public Jugador()
+        public Jugador(string u, string c)
         {
 
+            conexion = new csConexion();
+            conexion.Usuario = u;
+            conexion.Clave = c;
             InitializeComponent();
-            verJu = new verjugadores();
-            agregaJu = new AgregarJugadores(verJu);
+            verJu = new verjugadores(u,c);
+            agregaJu = new AgregarJugadores(verJu, u, c);
 
 
         }

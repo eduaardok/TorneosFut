@@ -15,9 +15,12 @@ namespace PruebasTorneos
 {
     public partial class frmAggEntrenador: Form
     {
-        csConexion conec = new csConexion();
-        public frmAggEntrenador()
+        csConexion conexion;
+        public frmAggEntrenador(string u, string c)
         {
+            conexion = new csConexion();
+            conexion.Usuario = u;
+            conexion.Clave = c;
             InitializeComponent();
         }
 
@@ -51,7 +54,7 @@ namespace PruebasTorneos
                 string consultaDatos = $"insert into Entrenador (Nombres, Apellidos, Sexo, PartidosGanados, PartidosEmpatados, PartidosPerdidos) " +
                                        $"values ('{txtNombre.Text}', '{txtApellido.Text}', '{cbmSexo.Text}', 0, 0, 0)";
                 string consultaImagen = "update Entrenador set ImagenEntrenador = @imagen where IDEntrenador = @idEntrenador";
-                if (conec.EjecutarTransaccion(consultaDatos, consultaImagen, imgByte))
+                if (conexion.EjecutarTransaccion(consultaDatos, consultaImagen, imgByte))
                 {
                     MessageBox.Show("Entrenador registrado correctamente");
                 }

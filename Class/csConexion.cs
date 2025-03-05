@@ -12,30 +12,51 @@ namespace TorneosFut
 {
     internal class csConexion
     {
-        SqlConnection conec;
-        //static string cadenaconec = $"Server=DESKTOP-CIGAE77; Database=BDTorneosFutbol; User id= FutXpert; Password= Torneos";
-        static string cadenaconec = $"Server=26.102.193.210; Database=BDTorneosFutbol; User id= FutXpert; Password= Torneos";
-        static string cadenamaster = $"Server=26.102.193.210; Database=master; User id= FutXpert; Password= Torneos";
-        SqlConnection master;
+        private SqlConnection conec;
+        private string _server = "26.102.193.210";
+        private string _database = "BDTorneosFutbol";
+        private string _usuario;
+        private string _clave;
+
+        public string Server
+        {
+            get => _server;
+            set => _server = value;
+        }
+        public string Database
+        {
+            get => _database;
+            set => _database = value;
+        }
+        public string Usuario
+        {
+            get => _usuario;
+            set => _usuario = value;
+        }
+        public string Clave
+        {
+            get => _clave;
+            set => _clave = value;
+        }
+        public SqlConnection Conexion
+        {
+            get => conec;
+            set => conec = value;
+        }
+        private string CadenaConexion => $"Server={_server}; Database={_database}; User id={_usuario}; Password={_clave};";
         public csConexion()
         {
-            conec = new SqlConnection(cadenaconec);
-            master = new SqlConnection(cadenamaster);
+            _usuario = "UsuarioLectura";
+            _clave = "usuario";
         }
-        public bool AbrirCon(SqlConnection c)
+        void Conectar()
         {
-            try
-            {
-                c.Open();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            return true;
+            string CadenaConexion = $"Server={_server}; Database={_database}; User id={_usuario}; Password={_clave};";
+            conec = new SqlConnection(CadenaConexion);
         }
         public bool AbrirCon()
         {
+            Conectar();
             try
             {
                 conec.Open();
@@ -166,7 +187,7 @@ namespace TorneosFut
         }
         public bool Login(string usuario, string contraseña)
         {
-            string consulta = $"select Clave from Administrador where Usuario='{usuario}'";
+            string consulta = $"select ClaveApp from Administrador where UsuarioApp='{usuario}'";
             DataTable dt = ListDGV(consulta);
             for (int i = 0; i < dt.Rows.Count; i++)
             {
@@ -177,7 +198,16 @@ namespace TorneosFut
             }
             return false;
         }
-
+        public string RetornaUser(string u)
+        {
+            DataTable dt = ListDGV($"select UsuarioBD from Administrador where UsuarioApp='{u}'");
+            return $"{dt.Rows[0][0].ToString()}";
+        }
+        public string RetornaClave(string u)
+        {
+            DataTable dt = ListDGV($"select ClaveBD from Administrador where UsuarioApp='{u}'");
+            return $"{dt.Rows[0][0].ToString()}";
+        }
         public bool Consulta(string consul)
         {
             AbrirCon();
@@ -195,11 +225,6 @@ namespace TorneosFut
                 return false;
             }
         }
-        public bool CerrarCon(SqlConnection c)
-        {
-            c.Close();
-            return true;
-        }
         public bool CerrarCon()
         {
             conec.Close();
@@ -207,40 +232,42 @@ namespace TorneosFut
         }
         public bool CrearLoginBD(string user, string pass)
         {
-            AbrirCon(master);
+            Database = "master";
+            AbrirCon();
             string consul = $"IF NOT EXISTS (SELECT * FROM sys.server_principals WHERE name = '{user}') BEGIN " +
                 $"CREATE LOGIN {user} WITH PASSWORD = '{pass}'; END" +
                 $"  USE BDTorneosFutbol; IF NOT EXISTS (SELECT * FROM sys.database_principals WHERE name = '{user}') " +
                 $"   BEGIN CREATE USER {user} FOR LOGIN {user};ALTER ROLE db_owner ADD MEMBER {user}; END";
-            SqlCommand crearL = new SqlCommand(consul, master);
+            SqlCommand crearL = new SqlCommand(consul, conec);
             try
             {
                 crearL.ExecuteNonQuery();
-                CerrarCon(master);
+                CerrarCon();
                 return true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                CerrarCon(master);
+                CerrarCon();
                 return false;
             }
         }
         public bool ActualizarLoginBD(string user, string pass)
         {
-            AbrirCon(master);
+            Database = "master";
+            AbrirCon();
             string consul = $"ALTER LOGIN {user} WITH PASSWORD = '{pass}';";
-            SqlCommand actualizarL = new SqlCommand(consul, master);
+            SqlCommand actualizarL = new SqlCommand(consul, conec);
             try
             {
                 actualizarL.ExecuteNonQuery();
-                CerrarCon(master);
+                CerrarCon();
                 return true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                CerrarCon(master);
+                CerrarCon();
                 return false;
             }
         }

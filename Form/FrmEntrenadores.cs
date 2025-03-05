@@ -15,10 +15,14 @@ namespace PruebasTorneos
 {
     public partial class frmEntrenadores: Form
     {
-        csConexion conec = new csConexion(); 
-        csEntrenador dt = new csEntrenador();
-        public frmEntrenadores()
+        csConexion conexion;
+        csEntrenador dt;
+        public frmEntrenadores(string u, string c)
         {
+            conexion = new csConexion();
+            conexion.Usuario = u;
+            conexion.Clave = c;
+            dt = new csEntrenador(u, c);
             InitializeComponent();
         }
 
@@ -72,7 +76,7 @@ namespace PruebasTorneos
 
                 string consulta = $"SELECT ImagenEntrenador FROM Entrenador WHERE IDEntrenador = {celda}";
 
-                byte[] imagenBytes = conec.ObtenerImagen(consulta);
+                byte[] imagenBytes = conexion.ObtenerImagen(consulta);
 
                 if (imagenBytes != null && imagenBytes.Length > 0)
                 {
@@ -94,7 +98,7 @@ namespace PruebasTorneos
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            frmEditarDT edit = new frmEditarDT();
+            frmEditarDT edit = new frmEditarDT(conexion.Usuario, conexion.Clave);
             edit.Show();
         }
     }

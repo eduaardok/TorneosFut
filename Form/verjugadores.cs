@@ -14,10 +14,14 @@ namespace pruebas
 {
     public partial class verjugadores : Form
     {
-        csConexion conexion = new csConexion();
-        csJugador jugador = new csJugador();
-        public verjugadores()
+        csConexion conexion;
+        csJugador jugador;
+        public verjugadores(string u, string c)
         {
+            conexion = new csConexion();
+            conexion.Usuario = u;
+            conexion.Clave = c;
+            jugador = new csJugador(u, c);
             InitializeComponent();
         }
 
@@ -66,7 +70,7 @@ namespace pruebas
                 {
 
                     string id = dgvJugador.Rows[dgvJugador.CurrentRow.Index].Cells[0].Value.ToString();
-                    editarjugador edi = new editarjugador(id, this);
+                    editarjugador edi = new editarjugador(id, this, conexion.Usuario, conexion.Clave);
                     edi.ShowDialog();
                 }
                 else

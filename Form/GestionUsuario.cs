@@ -14,10 +14,14 @@ namespace Usuarios
     public partial class GestionUsuario: Form
     {
         static bool mostrarClave = false;
-        csConexion conexion = new csConexion();
-        public GestionUsuario()
+        csConexion conexion;
+        public GestionUsuario(string u,string c) 
         {
+            conexion = new csConexion();
+            conexion.Usuario = u;
+            conexion.Clave = c;
             InitializeComponent();
+            ActualizarTabla();
         }
         private void GestionUsuario_Load(object sender, EventArgs e)
         {
@@ -64,7 +68,7 @@ namespace Usuarios
 
         private void btngCrear_Click(object sender, EventArgs e)
         {
-            AgregarUsuario a = new AgregarUsuario(true, -1);
+            AgregarUsuario a = new AgregarUsuario(true, -1, conexion.Usuario, conexion.Clave);
             //AbrirFormEnPanel(panelDgv, a);
             a.ShowDialog();
 
@@ -77,7 +81,7 @@ namespace Usuarios
                 if (dgvUsuarios.CurrentRow.Index >= 0)
                 {
                     int id = int.Parse(dgvUsuarios.Rows[dgvUsuarios.CurrentRow.Index].Cells[0].Value.ToString());
-                    AgregarUsuario a = new AgregarUsuario(false, id);
+                    AgregarUsuario a = new AgregarUsuario(false, id, conexion.Usuario, conexion.Clave);
                     //AbrirFormEnPanel(panelDgv, a);
                     a.ShowDialog();
                     ActualizarTabla();

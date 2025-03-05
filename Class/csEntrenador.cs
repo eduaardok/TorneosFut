@@ -9,15 +9,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TorneosFut;
+using TorneosFut.Class;
 namespace PruebasTorneos
 {
     internal class csEntrenador
     {
-        csConexion conec = new csConexion();
+        csConexion conexion;
+        public csEntrenador(string u, string c)
+        {
+            conexion = new csConexion();
+            conexion.Usuario = u;
+            conexion.Clave = c;
+        }
         public void Cargar(DataGridView dgvEntrenador)
         {
             string consul = "select IDEntrenador, Nombres, Apellidos, Sexo, coalesce(cast(EquipoActual as varchar), 'SinEquipo') as EquipoActual, PartidosGanados, PartidosPerdidos, PartidosEmpatados, (PartidosGanados+PartidosPerdidos+PartidosEmpatados) as TotalPartidos from Entrenador";
-            DataTable dt = conec.ListDGV(consul);
+            DataTable dt = conexion.ListDGV(consul);
             dgvEntrenador.DataSource = dt;
             foreach (DataGridViewColumn column in dgvEntrenador.Columns)
             {
@@ -37,7 +44,7 @@ namespace PruebasTorneos
         {
             if (string.IsNullOrWhiteSpace(filtro))
             {
-                dgvEntrenador.DataSource = conec.ListDGV("select IDEntrenador, Nombres, Apellidos, Sexo, coalesce(cast(EquipoActual as varchar), 'SinEquipo') as EquipoActual, " +
+                dgvEntrenador.DataSource = conexion.ListDGV("select IDEntrenador, Nombres, Apellidos, Sexo, coalesce(cast(EquipoActual as varchar), 'SinEquipo') as EquipoActual, " +
                     "PartidosGanados, PartidosPerdidos, PartidosEmpatados, (PartidosGanados+PartidosPerdidos+PartidosEmpatados) as TotalPartidos from Entrenador");
                 AdaptarDGV(dgvEntrenador);
             }
@@ -47,7 +54,7 @@ namespace PruebasTorneos
                     $"PartidosGanados, PartidosPerdidos, PartidosEmpatados, (PartidosGanados+PartidosPerdidos+PartidosEmpatados) as TotalPartidos from Entrenador where IDEntrenador like '%{filtro}%' or " +
                     $"Nombres like '%{filtro}%' or Apellidos like '%{filtro}%' or EquipoActual like '%{filtro}%'";
 
-                DataTable dt = conec.ListDGV(consulta);
+                DataTable dt = conexion.ListDGV(consulta);
                 dgvEntrenador.DataSource = dt;
             }
         }

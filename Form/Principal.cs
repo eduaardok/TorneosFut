@@ -24,21 +24,28 @@ namespace TorneosFut
           int nBottom,
           int nWidhtEllipse,
           int nHeightEllipse
-        );
+        ); 
+        static csConexion conexion;
         static bool esAdmin;
         GestionUsuario Usuario;
         Jugador ju;
         Padre entre;
-        public Principal(bool a=true)
+        public Principal(string u, string c)
         {
-            esAdmin = a;
+            if (u == "FutXpert")
+                esAdmin = true;
+            else
+                esAdmin = false;
+            conexion = new csConexion();
+            conexion.Usuario = u;
+            conexion.Clave = c;
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
             this.StartPosition = FormStartPosition.Manual;
             this.Bounds = Screen.PrimaryScreen.WorkingArea;
-            Usuario=new GestionUsuario();
-            ju = new Jugador();
-            entre= new Padre();
+            Usuario=new GestionUsuario(conexion.Usuario, conexion.Clave);
+            ju = new Jugador(conexion.Usuario, conexion.Clave);
+            entre= new Padre(conexion.Usuario, conexion.Clave);
         }
         public static void AbrirFormEnPanel(Panel panel, Form formHijo)
         {
@@ -160,11 +167,12 @@ namespace TorneosFut
              btnArbitros.Region = Region.FromHrgn(CreateRoundRectRgn(1, 1, btnArbitros.Width, btnArbitros.Height, 50, 50));
             btnEntrenadores.Region = Region.FromHrgn(CreateRoundRectRgn(1, 1, btnEntrenadores.Width, btnEntrenadores.Height, 50, 50));
 
-            // AccesoAdmin();
+            AccesoAdmin();
         }
         void AccesoAdmin()
         {
             btnUsuarios.Enabled = esAdmin;
+            btnUsuarios.Visible = esAdmin;
         }
 
         private void btnEntrenadores_MouseLeave(object sender, EventArgs e)

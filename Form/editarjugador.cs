@@ -15,11 +15,15 @@ namespace pruebas
     public partial class editarjugador: Form
     {
         int ID;
-        csConexion conexion = new csConexion();
+        csConexion conexion;
         verjugadores f;
-        csJugador jugador = new csJugador();
-        public editarjugador(string id, verjugadores jugador)
+        csJugador jugador;
+        public editarjugador(string id, verjugadores jugador, string u, string c)
         {
+            conexion = new csConexion();
+            conexion.Usuario = u;
+            conexion.Clave = c;
+
             InitializeComponent();
             ID = int.Parse(id);
             f = jugador;
