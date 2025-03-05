@@ -23,7 +23,6 @@ namespace PruebasTorneos
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
-            AdaptarDGV(dgvEntrenador);
         }
         void AdaptarDGV(DataGridView dgvEntrenador)
         {

@@ -193,10 +193,14 @@ namespace TorneosFut
             if (panelOpciones.Width < 294)
             {
                 panelOpciones.Width = panelOpciones.Width + 20;
+                btnCerrar.Enabled = false;
+
             }
             else
             {
+
                 tmopen.Stop();
+                btnCerrar.Enabled = true;
             }
         }
 
@@ -205,9 +209,13 @@ namespace TorneosFut
             if (panelOpciones.Width > 0)
             {
                     panelOpciones.Width = panelOpciones.Width - 20;
+                btnCerrar.Enabled = false;
+
             }
             else
             {
+                btnCerrar.Enabled = true;
+
                 timeclose.Stop();
             }
         }

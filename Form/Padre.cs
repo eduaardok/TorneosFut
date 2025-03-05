@@ -28,8 +28,7 @@ namespace PruebasTorneos
             panelContenedor.Controls.Clear();
 
             form.TopLevel = false;
-            form.FormBorderStyle = FormBorderStyle.None;
-            form.Dock = DockStyle.Fill;
+
 
             panelContenedor.Controls.Add(form);
             form.Show();
