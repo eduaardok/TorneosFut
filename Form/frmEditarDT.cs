@@ -10,7 +10,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TorneosFut; 
+using TorneosFut;
 
 namespace PruebasTorneos
 {
@@ -108,39 +108,53 @@ namespace PruebasTorneos
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtNombre.Text) || string.IsNullOrWhiteSpace(txtApellido.Text))
-            {
-                MessageBox.Show("Se deben llenar todos los campos");
-                return;
-            }
             int idEntrenador = Convert.ToInt32(dgvEntrenador.SelectedRows[0].Cells["IDEntrenador"].Value);
-            try
+            if(ptbNewIMG.Image == null)
             {
-                if (dgvEntrenador.SelectedRows.Count == 0)
+                MessageBox.Show("Elija una imagen antes de continuar");
+            }
+            else
+            {
+                try
                 {
-                    MessageBox.Show("Selecciona un entrenador primero.");
-                    return;
+                    if (dgvEntrenador.SelectedRows.Count == 0)
+                    {
+                        MessageBox.Show("Selecciona un entrenador primero.");
+                        return;
+                    }
+                    MemoryStream ms = new MemoryStream();
+                    ptbNewIMG.Image.Save(ms, ImageFormat.Jpeg);
+                    byte[] imgByte = ms.ToArray();
+                    if (conexion.EditarImagen(idEntrenador, imgByte, "Entrenador", "ImagenEntrenador", "IDEntrenador"))
+                    {
+                        MessageBox.Show("Entrenador actualizado correctamente.");
+                        dt.Cargar(dgvEntrenador);
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo actualizar el entrenador.");
+                    }
                 }
-                string nombre = txtNombre.Text;
-                string apellido = txtApellido.Text;
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al actualizar entrenador: {ex.Message}");
+                }
+            }
+        }
 
-                MemoryStream ms = new MemoryStream();
-                ptbNewIMG.Image.Save(ms, ImageFormat.Jpeg);
-                byte[] imgByte = ms.ToArray();
-                if (conexion.EditarImagen(idEntrenador, imgByte, "Entrenador", "ImagenEntrenador", "IDEntrenador"))
-                {
-                    MessageBox.Show("Entrenador actualizado correctamente.");
-                    dt.Cargar(dgvEntrenador);
-                }
-                else
-                {
-                    MessageBox.Show("No se pudo actualizar el entrenador.");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error al actualizar entrenador: {ex.Message}");
-            }
+        private void dgvEntrenador_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void ptbNewIMG_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

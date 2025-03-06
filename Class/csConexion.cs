@@ -17,7 +17,6 @@ namespace TorneosFut
         private string _database = "BDTorneosFutbol";
         private string _usuario;
         private string _clave;
-
         public string Server
         {
             get => _server;
