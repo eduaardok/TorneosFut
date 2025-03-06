@@ -82,7 +82,7 @@ namespace PruebasTorneos
 
                 string consulta = $"select ImagenEntrenador from Entrenador where IDEntrenador = {celda}";
 
-                byte[] imagenBytes = conec.ObtenerImagen(consulta, "ImagenEntrenador");
+                byte[] imagenBytes = conexion.ObtenerImagen(consulta, "ImagenEntrenador");
                 if (imagenBytes != null && imagenBytes.Length > 0)
                 {
                     using (MemoryStream ms = new MemoryStream(imagenBytes))
@@ -127,7 +127,7 @@ namespace PruebasTorneos
                 MemoryStream ms = new MemoryStream();
                 ptbNewIMG.Image.Save(ms, ImageFormat.Jpeg);
                 byte[] imgByte = ms.ToArray();
-                if (conec.EditarImagen(idEntrenador, imgByte, "Entrenador", "ImagenEntrenador", "IDEntrenador"))
+                if (conexion.EditarImagen(idEntrenador, imgByte, "Entrenador", "ImagenEntrenador", "IDEntrenador"))
                 {
                     MessageBox.Show("Entrenador actualizado correctamente.");
                     dt.Cargar(dgvEntrenador);

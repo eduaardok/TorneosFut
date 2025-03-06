@@ -76,7 +76,7 @@ namespace PruebasTorneos
 
                 string consulta = $"select ImagenEntrenador from Entrenador where IDEntrenador = {celda}";
 
-                byte[] imagenBytes = conec.ObtenerImagen(consulta, "ImagenEntrenador");
+                byte[] imagenBytes = conexion.ObtenerImagen(consulta, "ImagenEntrenador");
 
                 if (imagenBytes != null && imagenBytes.Length > 0)
                 {
