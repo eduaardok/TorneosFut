@@ -80,9 +80,9 @@ namespace PruebasTorneos
                 int fila = dgvEntrenador.SelectedRows[0].Index;
                 string celda = dgvEntrenador.Rows[fila].Cells["IDEntrenador"].Value.ToString();
 
-                string consulta = $"SELECT ImagenEntrenador FROM Entrenador WHERE IDEntrenador = {celda}";
+                string consulta = $"select ImagenEntrenador from Entrenador where IDEntrenador = {celda}";
 
-                byte[] imagenBytes = conexion.ObtenerImagen(consulta);
+                byte[] imagenBytes = conec.ObtenerImagen(consulta, "ImagenEntrenador");
                 if (imagenBytes != null && imagenBytes.Length > 0)
                 {
                     using (MemoryStream ms = new MemoryStream(imagenBytes))
@@ -94,7 +94,6 @@ namespace PruebasTorneos
                 {
                     ptbNewIMG.Image = null;
                 }
-
             }
             catch (Exception ex)
             {
@@ -128,7 +127,7 @@ namespace PruebasTorneos
                 MemoryStream ms = new MemoryStream();
                 ptbNewIMG.Image.Save(ms, ImageFormat.Jpeg);
                 byte[] imgByte = ms.ToArray();
-                if (conexion.EditarEntrenador(idEntrenador, nombre, apellido, imgByte))
+                if (conec.EditarImagen(idEntrenador, imgByte, "Entrenador", "ImagenEntrenador", "IDEntrenador"))
                 {
                     MessageBox.Show("Entrenador actualizado correctamente.");
                     dt.Cargar(dgvEntrenador);

@@ -77,20 +77,23 @@ namespace TorneosFut
             CerrarCon();
             return data;
         }
-        public bool EjecutarTransaccion(string consultaDatos, string consultaImagen, byte[] imagen)
+
+        // Para guardar la imagen
+        public bool EjecutarTransaccion(string consultaDatos, string consultaImagen, byte[] imagen, string nombreParametroID = "@IDEntidad")
         {
             conec.Open();
             SqlTransaction transaccion = conec.BeginTransaction();
-
             try
             {
                 string consultaID = consultaDatos + "; SELECT SCOPE_IDENTITY();";
                 SqlCommand comandoDatos = new SqlCommand(consultaID, conec, transaccion);
-                int idEntrenador = Convert.ToInt32(comandoDatos.ExecuteScalar());
+                int idEntidad = Convert.ToInt32(comandoDatos.ExecuteScalar());
+
                 SqlCommand comandoImagen = new SqlCommand(consultaImagen, conec, transaccion);
                 comandoImagen.Parameters.AddWithValue("@imagen", imagen);
-                comandoImagen.Parameters.AddWithValue("@IDEntrenador", idEntrenador);
+                comandoImagen.Parameters.AddWithValue(nombreParametroID, idEntidad);
                 comandoImagen.ExecuteNonQuery();
+
                 transaccion.Commit();
                 return true;
             }
@@ -100,50 +103,23 @@ namespace TorneosFut
                 MessageBox.Show($"Error en la transacción: {ex.Message}");
                 return false;
             }
+            // Esta es la estructura que se usa para llamar la función, también guarda registros en general no solo la imagen, así que deben // hacer 2 consultas, una para la imagen y otra para guardar los demás datos, vean el código del frmAggEntrenador en el evento 
+            // clic del botón para que vean como se usa, también ahí esta el código para que vean como se convierte la imagen a byte y todo eso
+            // conec.EjecutarTransaccion(consultaDatos, consultaImagen, imgByte)
         }
 
-        public bool InsertarImagen(byte[] imagen)
-        {
-            try
-            {
-                AbrirCon();
-                string consulIMG = "insert into Entrenador (ImagenEntrenador) values (@imagen)";
-                SqlCommand comando = new SqlCommand(consulIMG, conec);
-                comando.Parameters.AddWithValue("@imagen", imagen);
-                comando.ExecuteNonQuery();
-                CerrarCon();
-                return true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                CerrarCon();
-                return false;
-            }
-        }
-
-        public bool EditarEntrenador(int idEntrenador, string nombre, string apellido, byte[] imagen)
+        // Para editar la imagen
+        public bool EditarImagen(int idEntidad, byte[] imagen, string tabla, string columnaImagen, string columnaID)
         {
             conec.Open();
             SqlTransaction transaccion = conec.BeginTransaction();
-
             try
             {
-                string consultaDatos = "update Entrenador set Nombres = @nombre, Apellidos = @apellido " +
-                                        "where IDEntrenador = @idEntrenador";
-
-                SqlCommand comandoDatos = new SqlCommand(consultaDatos, conec, transaccion);
-                comandoDatos.Parameters.AddWithValue("@nombre", nombre);
-                comandoDatos.Parameters.AddWithValue("@apellido", apellido);
-                comandoDatos.Parameters.AddWithValue("@idEntrenador", idEntrenador);
-                comandoDatos.ExecuteNonQuery();
-
-                string consultaImagen = "UPDATE Entrenador SET ImagenEntrenador = @imagen WHERE IDEntrenador = @idEntrenador";
+                string consultaImagen = $"update {tabla} set {columnaImagen} = @imagen where {columnaID} = @idEntidad";
                 SqlCommand comandoImagen = new SqlCommand(consultaImagen, conec, transaccion);
                 comandoImagen.Parameters.AddWithValue("@imagen", imagen);
-                comandoImagen.Parameters.AddWithValue("@idEntrenador", idEntrenador);
+                comandoImagen.Parameters.AddWithValue("@idEntidad", idEntidad);
                 comandoImagen.ExecuteNonQuery();
-
                 transaccion.Commit();
                 conec.Close();
                 return true;
@@ -155,26 +131,28 @@ namespace TorneosFut
                 conec.Close();
                 return false;
             }
+            // Esta función solamente edita lo que son las imágenes, no es como la anterior que también edita los registros, así que tengan en cuenta esto
+            // aquí esta el ejemplo de como se usa la función el ID del entrenador yo lo obtengo directamente del DGV, no se como lo harán ustedes pero deben pasárselo ya sea como variable o si no de forma directa, lo de img es prácticamente lo mismo que antes solo que ahora se va a editar la info, le tienen que pasar aparte de esas 2 cosas, el nombre de la tabla, el nombre que tenga la columna en donde se guarda la imagen, y el nombre de la columna en la que se almacena el ID de lo que sea que vayan a guardar
+            // al igual que antes pueden ir al frmEditarDT para que vean como lo uso yo
+            // conec.EditarImagen(idEntrenador, imgByte, "Entrenador", "ImagenEntrenador", "IDEntrenador");
         }
 
-        public byte[] ObtenerImagen(string consulta)
+        // Para poder obtener la imagen y mostrarla 
+        public byte[] ObtenerImagen(string consulta, string columnaImagen)
         {
             byte[] imagen = null;
-
             try
             {
                 AbrirCon();
                 SqlCommand comando = new SqlCommand(consulta, conec);
                 SqlDataReader reader = comando.ExecuteReader();
-
                 if (reader.Read())
                 {
-                    if (!reader.IsDBNull(reader.GetOrdinal("ImagenEntrenador")))
+                    if (!reader.IsDBNull(reader.GetOrdinal(columnaImagen)))
                     {
-                        imagen = (byte[])reader["ImagenEntrenador"];
+                        imagen = (byte[])reader[columnaImagen];
                     }
                 }
-
                 reader.Close();
                 CerrarCon();
             }
@@ -182,9 +160,12 @@ namespace TorneosFut
             {
                 MessageBox.Show("Error al obtener la imagen: " + ex.Message);
             }
-
             return imagen;
+            // Aquí como se ve solamente es de pasar la consulta y el nombre de la columna en la que se almacena la imagen así como antes, yo hago que se muestre cuando se selecciona algo en el DGV, así mismo vean el código que hay en frmEntrenadores para que vean como lo uso
+            // conec.ObtenerImagen(consulta, "ImagenEntrenador")
         }
+
+
         public bool Login(string usuario, string contraseña)
         {
             string consulta = $"select ClaveApp from Administrador where UsuarioApp='{usuario}'";

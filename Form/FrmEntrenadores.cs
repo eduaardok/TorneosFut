@@ -74,9 +74,9 @@ namespace PruebasTorneos
                 int fila = dgvEntrenador.SelectedRows[0].Index;
                 string celda = dgvEntrenador.Rows[fila].Cells["IDEntrenador"].Value.ToString();
 
-                string consulta = $"SELECT ImagenEntrenador FROM Entrenador WHERE IDEntrenador = {celda}";
+                string consulta = $"select ImagenEntrenador from Entrenador where IDEntrenador = {celda}";
 
-                byte[] imagenBytes = conexion.ObtenerImagen(consulta);
+                byte[] imagenBytes = conec.ObtenerImagen(consulta, "ImagenEntrenador");
 
                 if (imagenBytes != null && imagenBytes.Length > 0)
                 {
