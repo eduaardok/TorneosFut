@@ -12,9 +12,12 @@ namespace TorneosFut
 {
     public partial class AgregarEquipo: Form
     {
-        csConexion conexion = new csConexion();
-        public AgregarEquipo()
+        csConexion conexion;
+        public AgregarEquipo(string u, string c)
         {
+            conexion = new csConexion();
+            conexion.Usuario = u;
+            conexion.Clave = c;
             InitializeComponent();
             cmbEntrenador.DataSource = conexion.ListDGV("select* from Entrenador");
             cmbEntrenador.ValueMember = "IDEntrenador";
@@ -87,13 +90,18 @@ namespace TorneosFut
                     conexion.Consulta($"UPDATE Equipo SET NombreClub = '{txtNombreClub.Text}', Presidente = '{txtPresidente.Text}', Genero = '{cmbGenero.Text}', IDEstadio = {int.Parse(cmbEstadio.SelectedValue.ToString())}, IDEntrenador = {int.Parse(cmbEntrenador.SelectedValue.ToString())}" +
                                       $"WHERE IDEquipo = {int.Parse(txtId.Text)}");
 
-                    MessageBox.Show("Se edito correctamente");
+                    MessageBox.Show("Se editó correctamente");
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Se produjo un error" + ex.ToString());
             }
+        }
+
+        private void lblBorde1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

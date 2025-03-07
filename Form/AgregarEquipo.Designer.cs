@@ -222,6 +222,7 @@
             this.lblBorde1.Name = "lblBorde1";
             this.lblBorde1.Size = new System.Drawing.Size(800, 450);
             this.lblBorde1.TabIndex = 49;
+            this.lblBorde1.Click += new System.EventHandler(this.lblBorde1_Click);
             this.lblBorde1.Paint += new System.Windows.Forms.PaintEventHandler(this.lblBorde1_Paint);
             // 
             // lblBodr2

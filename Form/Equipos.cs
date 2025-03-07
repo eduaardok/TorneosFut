@@ -46,9 +46,14 @@ namespace TorneosFut
 
         private void button1_Click(object sender, EventArgs e)
         {
-            aggEquipo = new AgregarEquipo();
+            aggEquipo = new AgregarEquipo(conexion.Usuario, conexion.Clave);
             aggEquipo.lblEntregarVisi(false, true);
             aggEquipo.Show();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

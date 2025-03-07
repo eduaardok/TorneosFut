@@ -49,6 +49,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(1315, 524);
             this.label1.TabIndex = 0;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             this.label1.Paint += new System.Windows.Forms.PaintEventHandler(this.label1_Paint);
             // 
             // dgvEquipos

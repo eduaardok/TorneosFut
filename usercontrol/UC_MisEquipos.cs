@@ -39,16 +39,20 @@ namespace TorneosFut.BotonesEquipos
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            AdaptarDGV(dgvEquipos);
             label1.Paint += label1_Paint; 
         }
-        void AdaptarDGV(DataGridView dgvEntrenador)
+        void AdaptarDGV(DataGridView dgv)
         {
-            int filas = dgvEntrenador.RowCount;
+            dt = conexion.ListDGV("Select * from Equipo");
+            DataView dv = new DataView(dt);
+            dgv.DataSource = dv;
+            int filas = dgv.RowCount;
             for (int i = 0; i < filas; i++)
             {
-                dgvEntrenador.Rows[i].Height = dgvEntrenador.Height / filas;
+                dgv.Rows[i].Height = 40;//dgv.Height / filas;
             }
-            dgvEntrenador.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
         //barra buscar equipo
         private void txtBarraBuscar_Click(object sender, EventArgs e)
@@ -95,7 +99,8 @@ namespace TorneosFut.BotonesEquipos
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            agregarEquipo = new AgregarEquipo();
+            //editar
+            agregarEquipo = new AgregarEquipo(conexion.Usuario, conexion.Clave);
             agregarEquipo.txtId.Text = dgvEquipos[0, dgvEquipos.CurrentRow.Index].Value.ToString();
             agregarEquipo.txtNombreClub.Text = dgvEquipos[1, dgvEquipos.CurrentRow.Index].Value.ToString();
             agregarEquipo.txtPresidente.Text = dgvEquipos[2, dgvEquipos.CurrentRow.Index].Value.ToString();
@@ -104,10 +109,11 @@ namespace TorneosFut.BotonesEquipos
             agregarEquipo.cmbEntrenador.Text = dgvEquipos[5, dgvEquipos.CurrentRow.Index].Value.ToString();
             agregarEquipo.lblEntregarVisi(true, false);
             agregarEquipo.ShowDialog();
+            AdaptarDGV(dgvEquipos);
         }
         private void btnVerEquipo_Click(object sender, EventArgs e)
         {
-            conexion = new csConexion();
+            //conexion = new csConexion();
 
             if (dgvEquipos.CurrentRow != null)
             {
@@ -131,6 +137,11 @@ namespace TorneosFut.BotonesEquipos
             {
                 MessageBox.Show("Seleccione un equipo antes de continuar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
