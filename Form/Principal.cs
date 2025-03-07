@@ -31,7 +31,7 @@ namespace TorneosFut
         Jugador ju;
         Padre entre;
         Equipos equi;
-        public Principal(string u, string c)
+        public Principal(string u, string c,string name)
         {
             if (u == "FutXpert")
                 esAdmin = true;
@@ -40,11 +40,13 @@ namespace TorneosFut
             conexion = new csConexion();
             conexion.Usuario = u;
             conexion.Clave = c;
+            
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
             this.StartPosition = FormStartPosition.Manual;
             this.Bounds = Screen.PrimaryScreen.WorkingArea;
             Usuario=new GestionUsuario(conexion.Usuario, conexion.Clave);
+            ddbtnOpcionesU.Text = name;
             ju = new Jugador(conexion.Usuario, conexion.Clave);
             entre= new Padre(conexion.Usuario, conexion.Clave);
             equi = new Equipos(conexion.Usuario, conexion.Clave);
@@ -268,6 +270,16 @@ namespace TorneosFut
         private void btnEquipos_Click(object sender, EventArgs e)
         {
             AbrirFormEnPanel(panelModulos, equi);
+        }
+
+        private void cAMBIARCLAVEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cERRARSESIONToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -107,7 +107,7 @@ namespace TorneosFut
                 if (txtUsuario.Text == "admin")
                     admin = true; //para saber si el que ingresa es el admin
                 //Inicio n = new Inicio(admin);
-                Principal n = new Principal(conec.RetornaUser(txtUsuario.Text), encrip.Desencriptar(conec.RetornaClave(txtUsuario.Text), "futxpert"));
+                Principal n = new Principal(conec.RetornaUser(txtUsuario.Text), encrip.Desencriptar(conec.RetornaClave(txtUsuario.Text), "futxpert"), txtUsuario.Text);
                 this.Hide();
                 n.ShowDialog();
                 txtUsuario.Text = "";
