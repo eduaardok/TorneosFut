@@ -31,6 +31,7 @@ namespace TorneosFut
         Jugador ju;
         Padre entre;
         Equipos equi;
+        static csEncriptar encriptar;
         public Principal(string u, string c,string name)
         {
             if (u == "FutXpert")
@@ -40,7 +41,7 @@ namespace TorneosFut
             conexion = new csConexion();
             conexion.Usuario = u;
             conexion.Clave = c;
-            
+            encriptar = new csEncriptar();
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
             this.StartPosition = FormStartPosition.Manual;
@@ -274,9 +275,11 @@ namespace TorneosFut
 
         private void cAMBIARCLAVEToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            DataTable dt = conexion.ListDGV($"select ClaveApp, IDAdmin from Administrador where UsuarioApp='{ddbtnOpcionesU.Text}'");
+           frmCambiarClave cambiarClave = new frmCambiarClave(conexion.Usuario, conexion.Clave, encriptar.Desencriptar(dt.Rows[0][0].ToString(), "futxpert"), dt.Rows[0][1].ToString());
+            cambiarClave.ShowDialog();
 
         }
-
         private void cERRARSESIONToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
