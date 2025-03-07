@@ -71,40 +71,36 @@ namespace pruebas
                             f.dgvJugador.DataSource = jugadorr.mostrarJugador();
                             Close();
                         }
-                        else MessageBox.Show("altura invalida");
+                        else MessageBox.Show("Altura/Peso invalida");
                     }
-                    else MessageBox.Show("Nombre invalido, solo se permite letras");
+                    else MessageBox.Show("Nombre/Apellido invalido, solo se permite letras");
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             { MessageBox.Show(ex.Message); }
         }
         bool validaaltu(TextBox txt)
         {
-            for (int i = 1; i < txt.Text.Length; i++)
+            foreach (char c in txt.Text)
             {
-                for (int j = 46; j < 58; j++)
+                if (!char.IsDigit(c) && c != '.')
                 {
-                    if (txt.Text[i] != j)
-                    {
-                        return false;
-                    }
+                    return true;
                 }
             }
-            return true;
+            return false;
         }
+
         bool valinombres(TextBox txt)
         {
-            for (int i = 1; i < txt.Text.Length; i++)
+            foreach (char c in txt.Text)
             {
-                for (int j = 97; j < 123; j++)
+                if (!char.IsLetter(c) && c != ' ')
                 {
-                    if (txt.Text[i] != j)
-                    {
-                        return false;
-                    }
+                    return true;
                 }
             }
-            return true;
+            return false;
         }
 
         private void btnEditarIMG_Click(object sender, EventArgs e)

@@ -82,31 +82,26 @@ namespace pruebas
 
         bool validaaltu(TextBox txt)
         {
-            for (int i = 1; i < txt.Text.Length; i++)
+            foreach (char c in txt.Text)
             {
-                for (int j = 46; j < 58; j++)
+                if (!char.IsDigit(c) && c != '.')
                 {
-                    if (txt.Text[i] != j )
-                    {
-                        return false;
-                    }
+                    return true;
                 }
             }
-            return true;
+            return false;
         }
+
         bool valinombres(TextBox txt)
         {
-            for (int i = 1; i < txt.Text.Length; i++)
+            foreach (char c in txt.Text)
             {
-                for (int j = 97; j < 123; j++)
+                if (!char.IsLetter(c) && c != ' ')
                 {
-                    if (txt.Text[i] != j)
-                    {
-                        return false;
-                    }
+                    return true;
                 }
             }
-            return true;
+            return false;
         }
 
     }
