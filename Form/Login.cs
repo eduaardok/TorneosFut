@@ -17,6 +17,7 @@ namespace TorneosFut
     {
         static csConexion conec = new csConexion();
         static csEncriptar encrip = new csEncriptar();
+        int click;
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
           (
@@ -52,6 +53,7 @@ namespace TorneosFut
             txtUsuario.Region = Region.FromHrgn(CreateRoundRectRgn(1, 1, txtUsuario.Width, txtUsuario.Height, 5, 5));
             Txtclave.Region = Region.FromHrgn(CreateRoundRectRgn(1, 1, Txtclave.Width, Txtclave.Height, 5, 5));
             btnEntrar.Region = Region.FromHrgn(CreateRoundRectRgn(1, 1, btnEntrar.Width, btnEntrar.Height, 20, 20));
+            Txtclave.PasswordChar = default;
         }
 
         private void X_MouseLeave(object sender, EventArgs e)
@@ -130,6 +132,44 @@ namespace TorneosFut
         {
             X.BackgroundImage = Properties.Resources.multiply;
 
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left) // Verifica si el botón izquierdo del mouse está presionado
+            {
+                // Mueve el formulario a la nueva posición
+                this.Location = new Point(
+                    this.Location.X + e.X - (c.Width / 2),
+                    this.Location.Y + e.Y - (c.Height / 2));
+            }
+        }
+
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUsuario_MouseClick(object sender, MouseEventArgs e)
+        {
+            click++;
+            if (click == 1)
+            {
+                label3.Visible = true;
+                label4.Visible = true;
+                txtUsuario.Clear();
+                Txtclave.Clear();
+                Txtclave.PasswordChar = '*';
+            }
+        }
+
+        private void Login_Paint(object sender, PaintEventArgs e)
+        {
         }
     }
 }

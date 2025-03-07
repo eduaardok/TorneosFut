@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -63,24 +64,31 @@ namespace pruebas
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-
-            if (dgvJugador.RowCount > 0)
+            try
             {
-                if (dgvJugador.CurrentRow.Index >= 0)
-                {
 
-                    string id = dgvJugador.Rows[dgvJugador.CurrentRow.Index].Cells[0].Value.ToString();
-                    editarjugador edi = new editarjugador(id, this, conexion.Usuario, conexion.Clave);
-                    edi.ShowDialog();
+                if (dgvJugador.RowCount > 0)
+                {
+                    if (dgvJugador.CurrentRow.Index >= 0)
+                    {
+
+                        string id = dgvJugador.Rows[dgvJugador.CurrentRow.Index].Cells[0].Value.ToString();
+                        editarjugador edi = new editarjugador(id, this, conexion.Usuario, conexion.Clave);
+                        edi.ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Seleccione el usuario que desea editar");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Seleccione el usuario que desea editar");
+                    MessageBox.Show("La tabla está vacía");
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("La tabla está vacía");
+                MessageBox.Show(ex.ToString());
             }
         }
 
@@ -92,6 +100,37 @@ namespace pruebas
         private void timer1_Tick_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void dgvJugador_SelectionChanged(object sender, EventArgs e)
+        {
+            //try
+            //{
+            //    if (dgvJugador.Rows.Count == 0 || dgvJugador.SelectedRows.Count == 0)
+            //        return;
+
+            //    int fila = dgvJugador.SelectedRows[0].Index;
+            //    string celda = dgvJugador.Rows[fila].Cells["IDJugador"].Value.ToString();
+            //    string consulta = $"select ImagenJugador from Jugador where IDJugador = {celda}";
+
+            //    byte[] imagenBytes = conexion.ObtenerImagen(consulta, "ImagenJugador");
+
+            //    if (imagenBytes != null && imagenBytes.Length > 0)
+            //    {
+            //        using (MemoryStream ms = new MemoryStream(imagenBytes))
+            //        {
+            //            ptbIMG.Image = Image.FromStream(ms);
+            //        }
+            //    }
+            //    else
+            //    {
+            //        ptbIMG.Image = null;
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Error al cargar la imagen: " + ex.Message);
+            //}
         }
     }
 }

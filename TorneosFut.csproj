@@ -54,6 +54,12 @@
   <ItemGroup>
     <Compile Include="Class\csEntrenador.cs" />
     <Compile Include="Class\csJugador.cs" />
+    <Compile Include="Form\AgregarEquipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\AgregarEquipo.Designer.cs">
+      <DependentUpon>AgregarEquipo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\AgregarJugadores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,12 @@
     </Compile>
     <Compile Include="Form\editarjugador.Designer.cs">
       <DependentUpon>editarjugador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Equipos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Equipos.Designer.cs">
+      <DependentUpon>Equipos.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\frmAggEntrenador.cs">
       <SubType>Form</SubType>
@@ -125,6 +137,12 @@
     <Compile Include="Form\Principal.Designer.cs">
       <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\VerEquipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\VerEquipo.Designer.cs">
+      <DependentUpon>VerEquipo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Form\verjugadores.cs">
@@ -133,6 +151,21 @@
     <Compile Include="Form\verjugadores.Designer.cs">
       <DependentUpon>verjugadores.cs</DependentUpon>
     </Compile>
+    <Compile Include="usercontrol\UC_MisEquipos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="usercontrol\UC_MisEquipos.Designer.cs">
+      <DependentUpon>UC_MisEquipos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrol\UC_TodosEquipos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="usercontrol\UC_TodosEquipos.Designer.cs">
+      <DependentUpon>UC_TodosEquipos.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form\AgregarEquipo.resx">
+      <DependentUpon>AgregarEquipo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\AgregarJugadores.resx">
       <DependentUpon>AgregarJugadores.cs</DependentUpon>
     </EmbeddedResource>
@@ -141,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\editarjugador.resx">
       <DependentUpon>editarjugador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Equipos.resx">
+      <DependentUpon>Equipos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\frmAggEntrenador.resx">
       <DependentUpon>frmAggEntrenador.cs</DependentUpon>
@@ -166,6 +202,9 @@
     <EmbeddedResource Include="Form\Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\VerEquipo.resx">
+      <DependentUpon>VerEquipo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -178,6 +217,12 @@
     </Compile>
     <EmbeddedResource Include="Form\verjugadores.resx">
       <DependentUpon>verjugadores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="usercontrol\UC_MisEquipos.resx">
+      <DependentUpon>UC_MisEquipos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="usercontrol\UC_TodosEquipos.resx">
+      <DependentUpon>UC_TodosEquipos.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

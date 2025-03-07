@@ -256,6 +256,7 @@
             this.btnEquipos.TabIndex = 1;
             this.btnEquipos.Text = "EQUIPOS";
             this.btnEquipos.UseVisualStyleBackColor = false;
+            this.btnEquipos.Click += new System.EventHandler(this.btnEquipos_Click);
             this.btnEquipos.MouseEnter += new System.EventHandler(this.btnEquipos_MouseEnter);
             this.btnEquipos.MouseLeave += new System.EventHandler(this.btnEquipos_MouseLeave);
             // 
@@ -271,6 +272,7 @@
             this.btnTorneos.TabIndex = 0;
             this.btnTorneos.Text = " TORNEOS";
             this.btnTorneos.UseVisualStyleBackColor = false;
+            this.btnTorneos.Click += new System.EventHandler(this.btnTorneos_Click);
             this.btnTorneos.MouseEnter += new System.EventHandler(this.btnTorneos_MouseEnter);
             this.btnTorneos.MouseLeave += new System.EventHandler(this.btnTorneos_MouseLeave);
             // 

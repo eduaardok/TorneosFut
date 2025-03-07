@@ -17,9 +17,10 @@ namespace pruebas
         int ID;
         csConexion conexion;
         verjugadores f;
-        csJugador jugador;
+        csJugador jugadorr;
         public editarjugador(string id, verjugadores jugador, string u, string c)
         {
+            jugadorr = new csJugador(u,c);
             conexion = new csConexion();
             conexion.Usuario = u;
             conexion.Clave = c;
@@ -51,27 +52,31 @@ namespace pruebas
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (txtaltura.Text != "" && txtapellido.Text != "" && CmbPosicion.Text != "" && Cmbequipo.Text != "" && txtpeso.Text != "" && txtaltura.Text != "")
+            try
             {
-                if (!valinombres(Txtnombre) && !valinombres(txtapellido))
+                if (txtaltura.Text != "" && txtapellido.Text != "" && CmbPosicion.Text != "" && Cmbequipo.Text != "" && txtpeso.Text != "" && txtaltura.Text != "")
                 {
-                    if (!validaaltu(txtaltura) && !validaaltu(txtpeso))
+                    if (!valinombres(Txtnombre) && !valinombres(txtapellido))
                     {
-                        jugador.editarjugador(Txtnombre, txtapellido, CmbPosicion, Cmbequipo, txtpeso, txtaltura, ID);
-                        txtaltura.Clear();
-                        txtapellido.Clear();
-                        txtpeso.Clear();
-                        Txtnombre.Clear();
-                        Cmbequipo.SelectedIndex = -1;
-                        CmbPosicion.SelectedIndex = -1;
-                        MessageBox.Show("Jugador editado con exito");
-                        f.dgvJugador.DataSource = jugador.mostrarJugador();
-                        Close();
+                        if (!validaaltu(txtaltura) && !validaaltu(txtpeso))
+                        {
+                            jugadorr.editarjugador(Txtnombre, txtapellido, CmbPosicion, Cmbequipo, txtpeso, txtaltura, ID);
+                            txtaltura.Clear();
+                            txtapellido.Clear();
+                            txtpeso.Clear();
+                            Txtnombre.Clear();
+                            Cmbequipo.SelectedIndex = -1;
+                            CmbPosicion.SelectedIndex = -1;
+                            MessageBox.Show("Jugador editado con exito");
+                            f.dgvJugador.DataSource = jugadorr.mostrarJugador();
+                            Close();
+                        }
+                        else MessageBox.Show("altura invalida");
                     }
-                    else MessageBox.Show("altura invalida");
+                    else MessageBox.Show("Nombre invalido, solo se permite letras");
                 }
-                else MessageBox.Show("Nombre invalido, solo se permite letras");
-            }
+            }catch(Exception ex)
+            { MessageBox.Show(ex.Message); }
         }
         bool validaaltu(TextBox txt)
         {
@@ -100,6 +105,11 @@ namespace pruebas
                 }
             }
             return true;
+        }
+
+        private void btnEditarIMG_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

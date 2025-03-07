@@ -30,6 +30,7 @@ namespace TorneosFut
         GestionUsuario Usuario;
         Jugador ju;
         Padre entre;
+        Equipos equi;
         public Principal(string u, string c)
         {
             if (u == "FutXpert")
@@ -46,6 +47,7 @@ namespace TorneosFut
             Usuario=new GestionUsuario(conexion.Usuario, conexion.Clave);
             ju = new Jugador(conexion.Usuario, conexion.Clave);
             entre= new Padre(conexion.Usuario, conexion.Clave);
+            equi = new Equipos(conexion.Usuario, conexion.Clave);
         }
         public static void AbrirFormEnPanel(Panel panel, Form formHijo)
         {
@@ -256,6 +258,16 @@ namespace TorneosFut
         private void btnEntrenadores_Click(object sender, EventArgs e)
         {
             AbrirFormEnPanel(panelModulos, entre);
+        }
+
+        private void btnTorneos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEquipos_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(panelModulos, equi);
         }
     }
 }
