@@ -11,14 +11,14 @@ using System.Windows.Forms;
 using TorneosFut;
 namespace Usuarios
 {
-    public partial class AgregarUsuario: Form
+    public partial class AggUsuario: Form
     {
         static bool agg = true;
         static int id;
         DataTable dt;
         csConexion conexion;
         csEncriptar encriptar;
-        public AgregarUsuario(bool a, int i, string u, string c)
+        public AggUsuario(bool a, int i, string u, string c)
         {
             conexion = new csConexion();
             conexion.Usuario = u;

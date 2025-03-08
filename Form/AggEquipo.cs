@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace TorneosFut
 {
-    public partial class AgregarEquipo: Form
+    public partial class AggEquipo: Form
     {
         csConexion conexion;
-        public AgregarEquipo(string u, string c)
+        public AggEquipo(string u, string c)
         {
             conexion = new csConexion();
             conexion.Usuario = u;

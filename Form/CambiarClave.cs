@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace TorneosFut
 {
-    public partial class frmCambiarClave: Form
+    public partial class CambiarClave: Form
     {
         csConexion conexion;
         static csEncriptar encriptar;
         static string id;
-        public frmCambiarClave(string u, string c, string pass, string i)
+        public CambiarClave(string u, string c, string pass, string i)
         {
             conexion = new csConexion();
             conexion.Usuario = u;
@@ -26,11 +26,9 @@ namespace TorneosFut
             lblClaveAct.Text = pass;
 
         }
-
         private void frmCambiarClave_Load(object sender, EventArgs e)
         {
         }
-
         private void btngEnviar_Click(object sender, EventArgs e)
         {
             string claveApp = encriptar.Encriptar(txtClaveApp.Text, "futxpert");

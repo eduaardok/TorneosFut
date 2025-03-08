@@ -31,6 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tstSuperior = new System.Windows.Forms.ToolStrip();
+            this.ddbtnOpcionesU = new System.Windows.Forms.ToolStripDropDownButton();
+            this.cAMBIARCLAVEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cERRARSESIONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.panelOpciones = new System.Windows.Forms.Panel();
@@ -48,15 +52,11 @@
             this.timeclose = new System.Windows.Forms.Timer(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panelModulos = new System.Windows.Forms.Panel();
-            this.tstSuperior = new System.Windows.Forms.ToolStrip();
-            this.ddbtnOpcionesU = new System.Windows.Forms.ToolStripDropDownButton();
-            this.cAMBIARCLAVEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cERRARSESIONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
+            this.tstSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelOpciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.tstSuperior.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -70,6 +70,51 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1370, 50);
             this.panel1.TabIndex = 6;
+            // 
+            // tstSuperior
+            // 
+            this.tstSuperior.BackColor = System.Drawing.Color.Transparent;
+            this.tstSuperior.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tstSuperior.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ddbtnOpcionesU});
+            this.tstSuperior.Location = new System.Drawing.Point(60, 0);
+            this.tstSuperior.Name = "tstSuperior";
+            this.tstSuperior.Size = new System.Drawing.Size(1236, 50);
+            this.tstSuperior.TabIndex = 10;
+            this.tstSuperior.Text = "toolStrip1";
+            // 
+            // ddbtnOpcionesU
+            // 
+            this.ddbtnOpcionesU.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.ddbtnOpcionesU.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.ddbtnOpcionesU.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cAMBIARCLAVEToolStripMenuItem,
+            this.cERRARSESIONToolStripMenuItem});
+            this.ddbtnOpcionesU.Font = new System.Drawing.Font("Onest Bold", 20F, System.Drawing.FontStyle.Bold);
+            this.ddbtnOpcionesU.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.ddbtnOpcionesU.Image = ((System.Drawing.Image)(resources.GetObject("ddbtnOpcionesU.Image")));
+            this.ddbtnOpcionesU.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ddbtnOpcionesU.Name = "ddbtnOpcionesU";
+            this.ddbtnOpcionesU.Size = new System.Drawing.Size(151, 47);
+            this.ddbtnOpcionesU.Text = "USUARIO";
+            // 
+            // cAMBIARCLAVEToolStripMenuItem
+            // 
+            this.cAMBIARCLAVEToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.cAMBIARCLAVEToolStripMenuItem.Font = new System.Drawing.Font("Onest Bold", 10F, System.Drawing.FontStyle.Bold);
+            this.cAMBIARCLAVEToolStripMenuItem.Name = "cAMBIARCLAVEToolStripMenuItem";
+            this.cAMBIARCLAVEToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.cAMBIARCLAVEToolStripMenuItem.Text = "CAMBIAR CLAVE";
+            this.cAMBIARCLAVEToolStripMenuItem.Click += new System.EventHandler(this.cAMBIARCLAVEToolStripMenuItem_Click);
+            // 
+            // cERRARSESIONToolStripMenuItem
+            // 
+            this.cERRARSESIONToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.cERRARSESIONToolStripMenuItem.Font = new System.Drawing.Font("Onest Bold", 10F, System.Drawing.FontStyle.Bold);
+            this.cERRARSESIONToolStripMenuItem.Name = "cERRARSESIONToolStripMenuItem";
+            this.cERRARSESIONToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.cERRARSESIONToolStripMenuItem.Text = "CERRAR SESION";
+            this.cERRARSESIONToolStripMenuItem.Click += new System.EventHandler(this.cERRARSESIONToolStripMenuItem_Click);
             // 
             // pictureBox2
             // 
@@ -294,51 +339,6 @@
             this.panelModulos.Size = new System.Drawing.Size(1076, 699);
             this.panelModulos.TabIndex = 9;
             // 
-            // tstSuperior
-            // 
-            this.tstSuperior.BackColor = System.Drawing.Color.Transparent;
-            this.tstSuperior.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tstSuperior.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ddbtnOpcionesU});
-            this.tstSuperior.Location = new System.Drawing.Point(60, 0);
-            this.tstSuperior.Name = "tstSuperior";
-            this.tstSuperior.Size = new System.Drawing.Size(1236, 50);
-            this.tstSuperior.TabIndex = 10;
-            this.tstSuperior.Text = "toolStrip1";
-            // 
-            // ddbtnOpcionesU
-            // 
-            this.ddbtnOpcionesU.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.ddbtnOpcionesU.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.ddbtnOpcionesU.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cAMBIARCLAVEToolStripMenuItem,
-            this.cERRARSESIONToolStripMenuItem});
-            this.ddbtnOpcionesU.Font = new System.Drawing.Font("Onest Bold", 20F, System.Drawing.FontStyle.Bold);
-            this.ddbtnOpcionesU.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
-            this.ddbtnOpcionesU.Image = ((System.Drawing.Image)(resources.GetObject("ddbtnOpcionesU.Image")));
-            this.ddbtnOpcionesU.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ddbtnOpcionesU.Name = "ddbtnOpcionesU";
-            this.ddbtnOpcionesU.Size = new System.Drawing.Size(151, 47);
-            this.ddbtnOpcionesU.Text = "USUARIO";
-            // 
-            // cAMBIARCLAVEToolStripMenuItem
-            // 
-            this.cAMBIARCLAVEToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.cAMBIARCLAVEToolStripMenuItem.Font = new System.Drawing.Font("Onest Bold", 10F, System.Drawing.FontStyle.Bold);
-            this.cAMBIARCLAVEToolStripMenuItem.Name = "cAMBIARCLAVEToolStripMenuItem";
-            this.cAMBIARCLAVEToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
-            this.cAMBIARCLAVEToolStripMenuItem.Text = "CAMBIAR CLAVE";
-            this.cAMBIARCLAVEToolStripMenuItem.Click += new System.EventHandler(this.cAMBIARCLAVEToolStripMenuItem_Click);
-            // 
-            // cERRARSESIONToolStripMenuItem
-            // 
-            this.cERRARSESIONToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.cERRARSESIONToolStripMenuItem.Font = new System.Drawing.Font("Onest Bold", 10F, System.Drawing.FontStyle.Bold);
-            this.cERRARSESIONToolStripMenuItem.Name = "cERRARSESIONToolStripMenuItem";
-            this.cERRARSESIONToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
-            this.cERRARSESIONToolStripMenuItem.Text = "CERRAR SESION";
-            this.cERRARSESIONToolStripMenuItem.Click += new System.EventHandler(this.cERRARSESIONToolStripMenuItem_Click);
-            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -357,11 +357,11 @@
             this.Resize += new System.EventHandler(this.Principal_Resize);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.tstSuperior.ResumeLayout(false);
+            this.tstSuperior.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelOpciones.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.tstSuperior.ResumeLayout(false);
-            this.tstSuperior.PerformLayout();
             this.ResumeLayout(false);
 
         }

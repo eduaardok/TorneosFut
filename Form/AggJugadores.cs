@@ -12,12 +12,12 @@ using TorneosFut.Class;
 
 namespace pruebas
 {
-    public partial class AgregarJugadores : Form
+    public partial class AggJugadores : Form
     {
         csConexion conexion;
-        verjugadores ve;
+        Jugador ve;
         csJugador jugador;
-        public AgregarJugadores(verjugadores f, string u, string c)
+        public AggJugadores(Jugador f, string u, string c)
         {
             conexion = new csConexion();
             conexion.Usuario = u;
@@ -104,5 +104,9 @@ namespace pruebas
             return false;
         }
 
+        private void btngCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

@@ -12,13 +12,13 @@ using TorneosFut.Class;
 
 namespace pruebas
 {
-    public partial class editarjugador: Form
+    public partial class Editjugador: Form
     {
         int ID;
         csConexion conexion;
-        verjugadores f;
+        Jugador f;
         csJugador jugadorr;
-        public editarjugador(string id, verjugadores jugador, string u, string c)
+        public Editjugador(string id, Jugador jugador, string u, string c)
         {
             jugadorr = new csJugador(u,c);
             conexion = new csConexion();

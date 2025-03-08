@@ -1,6 +1,6 @@
 ﻿namespace TorneosFut
 {
-    partial class AgregarEquipo
+    partial class AggEquipo
     {
         /// <summary>
         /// Required designer variable.

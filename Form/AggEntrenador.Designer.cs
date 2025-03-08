@@ -1,6 +1,6 @@
 ﻿namespace PruebasTorneos
 {
-    partial class frmAggEntrenador
+    partial class AggEntrenador
     {
         /// <summary>
         /// Required designer variable.

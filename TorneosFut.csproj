@@ -54,32 +54,32 @@
   <ItemGroup>
     <Compile Include="Class\csEntrenador.cs" />
     <Compile Include="Class\csJugador.cs" />
-    <Compile Include="Form\AgregarEquipo.cs">
+    <Compile Include="Form\AggEquipo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\AgregarEquipo.Designer.cs">
-      <DependentUpon>AgregarEquipo.cs</DependentUpon>
+    <Compile Include="Form\AggEquipo.Designer.cs">
+      <DependentUpon>AggEquipo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\AgregarJugadores.cs">
+    <Compile Include="Form\AggJugadores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\AgregarJugadores.Designer.cs">
-      <DependentUpon>AgregarJugadores.cs</DependentUpon>
+    <Compile Include="Form\AggJugadores.Designer.cs">
+      <DependentUpon>AggJugadores.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\AgregarUsuario.cs">
+    <Compile Include="Form\AggUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form\AgregarUsuario.Designer.cs">
-      <DependentUpon>AgregarUsuario.cs</DependentUpon>
+      <DependentUpon>AggUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Class\csConexion.cs" />
     <Compile Include="Class\csCorreo.cs" />
     <Compile Include="Class\csEncriptar.cs" />
-    <Compile Include="Form\editarjugador.cs">
+    <Compile Include="Form\Editjugador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\editarjugador.Designer.cs">
-      <DependentUpon>editarjugador.cs</DependentUpon>
+    <Compile Include="Form\Editjugador.Designer.cs">
+      <DependentUpon>Editjugador.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\Equipos.cs">
       <SubType>Form</SubType>
@@ -87,23 +87,23 @@
     <Compile Include="Form\Equipos.Designer.cs">
       <DependentUpon>Equipos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\frmAggEntrenador.cs">
+    <Compile Include="Form\AggEntrenador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\frmAggEntrenador.Designer.cs">
-      <DependentUpon>frmAggEntrenador.cs</DependentUpon>
+    <Compile Include="Form\AggEntrenador.Designer.cs">
+      <DependentUpon>AggEntrenador.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\frmEditarDT.cs">
+    <Compile Include="Form\EditEntrenador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\frmEditarDT.Designer.cs">
-      <DependentUpon>frmEditarDT.cs</DependentUpon>
+    <Compile Include="Form\EditEntrenador.Designer.cs">
+      <DependentUpon>EditEntrenador.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\FrmEntrenadores.cs">
+    <Compile Include="Form\Entrenadores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\frmEntrenadores.Designer.cs">
-      <DependentUpon>FrmEntrenadores.cs</DependentUpon>
+    <Compile Include="Form\Entrenadores.Designer.cs">
+      <DependentUpon>Entrenadores.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\GestionUsuario.cs">
       <SubType>Form</SubType>
@@ -125,11 +125,11 @@
     <Compile Include="Form\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\Padre.cs">
+    <Compile Include="Form\Entrenador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Padre.Designer.cs">
-      <DependentUpon>Padre.cs</DependentUpon>
+    <Compile Include="Form\Entrenador.Designer.cs">
+      <DependentUpon>Entrenador.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\Principal.cs">
       <SubType>Form</SubType>
@@ -137,26 +137,14 @@
     <Compile Include="Form\Principal.Designer.cs">
       <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\VerEquipo.cs">
+    <Compile Include="Form\CambiarClave.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\VerEquipo.Designer.cs">
-      <DependentUpon>VerEquipo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmCambiarClave.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmCambiarClave.Designer.cs">
-      <DependentUpon>frmCambiarClave.cs</DependentUpon>
+    <Compile Include="Form\CambiarClave.Designer.cs">
+      <DependentUpon>CambiarClave.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Form\verjugadores.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\verjugadores.Designer.cs">
-      <DependentUpon>verjugadores.cs</DependentUpon>
-    </Compile>
     <Compile Include="usercontrol\UC_MisEquipos.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -169,29 +157,29 @@
     <Compile Include="usercontrol\UC_TodosEquipos.Designer.cs">
       <DependentUpon>UC_TodosEquipos.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form\AgregarEquipo.resx">
-      <DependentUpon>AgregarEquipo.cs</DependentUpon>
+    <EmbeddedResource Include="Form\AggEquipo.resx">
+      <DependentUpon>AggEquipo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\AgregarJugadores.resx">
-      <DependentUpon>AgregarJugadores.cs</DependentUpon>
+    <EmbeddedResource Include="Form\AggJugadores.resx">
+      <DependentUpon>AggJugadores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\AgregarUsuario.resx">
-      <DependentUpon>AgregarUsuario.cs</DependentUpon>
+    <EmbeddedResource Include="Form\AggUsuario.resx">
+      <DependentUpon>AggUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\editarjugador.resx">
-      <DependentUpon>editarjugador.cs</DependentUpon>
+    <EmbeddedResource Include="Form\Editjugador.resx">
+      <DependentUpon>Editjugador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Equipos.resx">
       <DependentUpon>Equipos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\frmAggEntrenador.resx">
-      <DependentUpon>frmAggEntrenador.cs</DependentUpon>
+    <EmbeddedResource Include="Form\AggEntrenador.resx">
+      <DependentUpon>AggEntrenador.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\frmEditarDT.resx">
-      <DependentUpon>frmEditarDT.cs</DependentUpon>
+    <EmbeddedResource Include="Form\EditEntrenador.resx">
+      <DependentUpon>EditEntrenador.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\FrmEntrenadores.resx">
-      <DependentUpon>FrmEntrenadores.cs</DependentUpon>
+    <EmbeddedResource Include="Form\Entrenadores.resx">
+      <DependentUpon>Entrenadores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\GestionUsuario.resx">
       <DependentUpon>GestionUsuario.cs</DependentUpon>
@@ -202,17 +190,14 @@
     <EmbeddedResource Include="Form\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Padre.resx">
-      <DependentUpon>Padre.cs</DependentUpon>
+    <EmbeddedResource Include="Form\Entrenador.resx">
+      <DependentUpon>Entrenador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\VerEquipo.resx">
-      <DependentUpon>VerEquipo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmCambiarClave.resx">
-      <DependentUpon>frmCambiarClave.cs</DependentUpon>
+    <EmbeddedResource Include="Form\CambiarClave.resx">
+      <DependentUpon>CambiarClave.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -224,9 +209,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Form\verjugadores.resx">
-      <DependentUpon>verjugadores.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="usercontrol\UC_MisEquipos.resx">
       <DependentUpon>UC_MisEquipos.cs</DependentUpon>
     </EmbeddedResource>

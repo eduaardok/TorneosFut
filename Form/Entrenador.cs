@@ -11,21 +11,21 @@ using TorneosFut;
 
 namespace PruebasTorneos
 {
-    public partial class Padre: Form
+    public partial class Entrenador: Form
     {
         csConexion conexion;
-        public Padre(string u, string c)
+        public Entrenador(string u, string c)
         {
             conexion = new csConexion();
             conexion.Usuario = u;
             conexion.Clave = c;
             InitializeComponent();
-            frmEntrenadores dt = new frmEntrenadores(conexion.Usuario, conexion.Clave);
+            Entrenadores dt = new Entrenadores(conexion.Usuario, conexion.Clave);
             addForm(dt);
         }
         private void btnVerDT_Click_1(object sender, EventArgs e)
         {
-            frmEntrenadores dt = new frmEntrenadores(conexion.Usuario, conexion.Clave);
+            Entrenadores dt = new Entrenadores(conexion.Usuario, conexion.Clave);
             addForm(dt);
         }
         private void addForm(Form form)
@@ -46,7 +46,7 @@ namespace PruebasTorneos
 
         private void btnAggDT_Click(object sender, EventArgs e)
         {
-            frmAggEntrenador agg = new frmAggEntrenador(conexion.Usuario, conexion.Clave);
+            AggEntrenador agg = new AggEntrenador(conexion.Usuario, conexion.Clave);
             addForm(agg); 
         }
     }

@@ -29,7 +29,7 @@ namespace TorneosFut
         static bool esAdmin;
         GestionUsuario Usuario;
         Jugador ju;
-        Padre entre;
+        Entrenador entre;
         Equipos equi;
         static csEncriptar encriptar;
         public Principal(string u, string c,string name)
@@ -49,7 +49,7 @@ namespace TorneosFut
             Usuario=new GestionUsuario(conexion.Usuario, conexion.Clave);
             ddbtnOpcionesU.Text = name;
             ju = new Jugador(conexion.Usuario, conexion.Clave);
-            entre= new Padre(conexion.Usuario, conexion.Clave);
+            entre= new Entrenador(conexion.Usuario, conexion.Clave);
             equi = new Equipos(conexion.Usuario, conexion.Clave);
         }
         public static void AbrirFormEnPanel(Panel panel, Form formHijo)
@@ -276,7 +276,7 @@ namespace TorneosFut
         private void cAMBIARCLAVEToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DataTable dt = conexion.ListDGV($"select ClaveApp, IDAdmin from Administrador where UsuarioApp='{ddbtnOpcionesU.Text}'");
-           frmCambiarClave cambiarClave = new frmCambiarClave(conexion.Usuario, conexion.Clave, encriptar.Desencriptar(dt.Rows[0][0].ToString(), "futxpert"), dt.Rows[0][1].ToString());
+           CambiarClave cambiarClave = new CambiarClave(conexion.Usuario, conexion.Clave, encriptar.Desencriptar(dt.Rows[0][0].ToString(), "futxpert"), dt.Rows[0][1].ToString());
             cambiarClave.ShowDialog();
 
         }

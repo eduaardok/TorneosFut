@@ -1,6 +1,6 @@
 ﻿namespace pruebas
 {
-    partial class editarjugador
+    partial class Editjugador
     {
         /// <summary>
         /// Required designer variable.
@@ -220,7 +220,7 @@
             this.btnEditarIMG.Visible = false;
             this.btnEditarIMG.Click += new System.EventHandler(this.btnEditarIMG_Click);
             // 
-            // editarjugador
+            // Editjugador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -246,10 +246,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "editarjugador";
+            this.Name = "Editjugador";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "editarjugador";
             this.Load += new System.EventHandler(this.editarjugador_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();

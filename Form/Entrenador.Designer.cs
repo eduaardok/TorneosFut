@@ -1,6 +1,6 @@
 ﻿namespace PruebasTorneos
 {
-    partial class Padre
+    partial class Entrenador
     {
         /// <summary>
         /// Required designer variable.
@@ -100,7 +100,7 @@
             this.panelContenedor.Size = new System.Drawing.Size(940, 457);
             this.panelContenedor.TabIndex = 1;
             // 
-            // Padre
+            // Entrenador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -108,7 +108,7 @@
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Padre";
+            this.Name = "Entrenador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Padre";
             this.Load += new System.EventHandler(this.Padre_Load);

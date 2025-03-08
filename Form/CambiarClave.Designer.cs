@@ -1,6 +1,6 @@
 ﻿namespace TorneosFut
 {
-    partial class frmCambiarClave
+    partial class CambiarClave
     {
         /// <summary>
         /// Required designer variable.

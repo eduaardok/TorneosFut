@@ -7,14 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace TorneosFut.BotonesEquipos
 {
     public partial class UC_TodosEquipos: UserControl
     {
         public int equ = 0;
         csConexion conexion;
-        VerEquipo equipo;
         DataTable dt = new DataTable();
         public UC_TodosEquipos(string u, string c)
         {
@@ -96,29 +94,6 @@ namespace TorneosFut.BotonesEquipos
 
         private void btnVerTodosEquipos_Click(object sender, EventArgs e)
         {
-            conexion = new csConexion();
-            if (dgvTodosEquipos.CurrentRow != null)
-            {
-                equipo = new VerEquipo(equ);
-                equipo.txtNombrever.Text = dgvTodosEquipos[1, dgvTodosEquipos.CurrentRow.Index]?.Value?.ToString() ?? "";
-                equipo.txtPresidentever.Text = dgvTodosEquipos[2, dgvTodosEquipos.CurrentRow.Index]?.Value?.ToString() ?? "";
-                equipo.txtGenerover.Text = dgvTodosEquipos[3, dgvTodosEquipos.CurrentRow.Index]?.Value?.ToString() ?? "";
-                DataTable dtEntrenador = conexion.ListDGV($"SELECT Nombres FROM Entrenador WHERE IDEntrenador = {int.Parse(dgvTodosEquipos[5, dgvTodosEquipos.CurrentRow.Index]?.Value?.ToString())}");
-                if (dtEntrenador.Rows.Count > 0)
-                {
-                    equipo.txtEntrenadorver.Text = dtEntrenador.Rows[0]["Nombres"].ToString();
-                }
-                DataTable dtEstadio = conexion.ListDGV($"SELECT Nombre FROM Estadio WHERE IDEstadio = {int.Parse(dgvTodosEquipos[4, dgvTodosEquipos.CurrentRow.Index]?.Value?.ToString())}");
-                if (dtEstadio.Rows.Count > 0)
-                {
-                    equipo.txtEstadiover.Text = dtEstadio.Rows[0]["Nombre"].ToString();
-                }
-                equipo.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Seleccione un equipo antes de continuar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
         }
     }
 }

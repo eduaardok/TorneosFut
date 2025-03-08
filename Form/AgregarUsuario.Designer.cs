@@ -1,12 +1,11 @@
 ﻿namespace Usuarios
 {
-    partial class AgregarUsuario
+    partial class AggUsuario
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
@@ -19,7 +18,6 @@
             }
             base.Dispose(disposing);
         }
-
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -461,14 +459,14 @@
             this.lblEncabezado.TabIndex = 33;
             this.lblEncabezado.Text = "CREACIÓN DE USUARIO";
             // 
-            // AgregarUsuario
+            // AggUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(829, 492);
             this.Controls.Add(this.panelOpc);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "AgregarUsuario";
+            this.Name = "AggUsuario";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AgregarUsuario";
@@ -489,7 +487,6 @@
         }
 
         #endregion
-
         private System.Windows.Forms.Panel panelOpc;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;

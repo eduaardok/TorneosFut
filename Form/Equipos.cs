@@ -8,13 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TorneosFut.BotonesEquipos;
-
 namespace TorneosFut
 {
     public partial class Equipos: Form
     {
         csConexion conexion ;
-        AgregarEquipo aggEquipo;
+        AggEquipo aggEquipo;
         public Equipos(string u, string c)
         {
             conexion = new csConexion();
@@ -46,7 +45,7 @@ namespace TorneosFut
 
         private void button1_Click(object sender, EventArgs e)
         {
-            aggEquipo = new AgregarEquipo(conexion.Usuario, conexion.Clave);
+            aggEquipo = new AggEquipo(conexion.Usuario, conexion.Clave);
             aggEquipo.lblEntregarVisi(false, true);
             aggEquipo.Show();
         }

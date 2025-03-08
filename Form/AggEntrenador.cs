@@ -13,10 +13,10 @@ using TorneosFut;
 
 namespace PruebasTorneos
 {
-    public partial class frmAggEntrenador: Form
+    public partial class AggEntrenador: Form
     {
         csConexion conexion;
-        public frmAggEntrenador(string u, string c)
+        public AggEntrenador(string u, string c)
         {
             conexion = new csConexion();
             conexion.Usuario = u;

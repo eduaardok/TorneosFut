@@ -68,7 +68,7 @@ namespace Usuarios
 
         private void btngCrear_Click(object sender, EventArgs e)
         {
-            AgregarUsuario a = new AgregarUsuario(true, -1, conexion.Usuario, conexion.Clave);
+            AggUsuario a = new AggUsuario(true, -1, conexion.Usuario, conexion.Clave);
             //AbrirFormEnPanel(panelDgv, a);
             a.ShowDialog();
 
@@ -81,7 +81,7 @@ namespace Usuarios
                 if (dgvUsuarios.CurrentRow.Index >= 0)
                 {
                     int id = int.Parse(dgvUsuarios.Rows[dgvUsuarios.CurrentRow.Index].Cells[0].Value.ToString());
-                    AgregarUsuario a = new AgregarUsuario(false, id, conexion.Usuario, conexion.Clave);
+                    AggUsuario a = new AggUsuario(false, id, conexion.Usuario, conexion.Clave);
                     //AbrirFormEnPanel(panelDgv, a);
                     a.ShowDialog();
                     ActualizarTabla();

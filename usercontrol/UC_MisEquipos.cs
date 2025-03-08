@@ -7,14 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//using PruebasTorneos;
 namespace TorneosFut.BotonesEquipos
 {
     public partial class UC_MisEquipos: UserControl
     {
-        AgregarEquipo agregarEquipo;
+        AggEquipo agregarEquipo;
         csConexion conexion;
-        VerEquipo equipo;
         public int equ = 0;
         DataTable dt = new DataTable();
         public UC_MisEquipos(string u, string c)
@@ -100,43 +98,18 @@ namespace TorneosFut.BotonesEquipos
         private void button2_Click(object sender, EventArgs e)
         {
             //editar
-            agregarEquipo = new AgregarEquipo(conexion.Usuario, conexion.Clave);
+            agregarEquipo = new AggEquipo(conexion.Usuario, conexion.Clave);
             agregarEquipo.txtId.Text = dgvEquipos[0, dgvEquipos.CurrentRow.Index].Value.ToString();
             agregarEquipo.txtNombreClub.Text = dgvEquipos[1, dgvEquipos.CurrentRow.Index].Value.ToString();
             agregarEquipo.txtPresidente.Text = dgvEquipos[2, dgvEquipos.CurrentRow.Index].Value.ToString();
             agregarEquipo.cmbGenero.Text = dgvEquipos[3, dgvEquipos.CurrentRow.Index].Value.ToString();
             agregarEquipo.cmbEstadio.Text = dgvEquipos[4, dgvEquipos.CurrentRow.Index].Value.ToString();
             agregarEquipo.cmbEntrenador.Text = dgvEquipos[5, dgvEquipos.CurrentRow.Index].Value.ToString();
-            agregarEquipo.lblEntregarVisi(true, false);
-            agregarEquipo.ShowDialog();
+
             AdaptarDGV(dgvEquipos);
         }
         private void btnVerEquipo_Click(object sender, EventArgs e)
         {
-            //conexion = new csConexion();
-
-            if (dgvEquipos.CurrentRow != null)
-            {
-                equipo = new VerEquipo(equ);
-                equipo.txtNombrever.Text = dgvEquipos[1, dgvEquipos.CurrentRow.Index]?.Value?.ToString() ?? "";
-                equipo.txtPresidentever.Text = dgvEquipos[2, dgvEquipos.CurrentRow.Index]?.Value?.ToString() ?? "";
-                equipo.txtGenerover.Text = dgvEquipos[3, dgvEquipos.CurrentRow.Index]?.Value?.ToString() ?? "";
-                DataTable dtEntrenador = conexion.ListDGV($"SELECT Nombres FROM Entrenador WHERE IDEntrenador = {int.Parse(dgvEquipos[5, dgvEquipos.CurrentRow.Index]?.Value?.ToString())}");
-                if (dtEntrenador.Rows.Count > 0)
-                {
-                    equipo.txtEntrenadorver.Text = dtEntrenador.Rows[0]["Nombres"].ToString();
-                }
-                DataTable dtEstadio = conexion.ListDGV($"SELECT Nombre FROM Estadio WHERE IDEstadio = {int.Parse(dgvEquipos[4, dgvEquipos.CurrentRow.Index]?.Value?.ToString())}");
-                if (dtEstadio.Rows.Count > 0)
-                {
-                    equipo.txtEstadiover.Text = dtEstadio.Rows[0]["Nombre"].ToString();
-                }
-                equipo.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Seleccione un equipo antes de continuar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
         }
 
         private void label1_Click(object sender, EventArgs e)

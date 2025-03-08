@@ -73,7 +73,7 @@ namespace pruebas
                     {
 
                         string id = dgvJugador.Rows[dgvJugador.CurrentRow.Index].Cells[0].Value.ToString();
-                        editarjugador edi = new editarjugador(id, this, conexion.Usuario, conexion.Clave);
+                        Editjugador edi = new Editjugador(id, this, conexion.Usuario, conexion.Clave);
                         edi.ShowDialog();
                     }
                     else

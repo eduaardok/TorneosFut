@@ -1,6 +1,6 @@
 ﻿namespace PruebasTorneos
 {
-    partial class frmEntrenadores
+    partial class Entrenadores
     {
         /// <summary>
         /// Required designer variable.
