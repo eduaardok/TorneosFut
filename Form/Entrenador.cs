@@ -28,6 +28,7 @@ namespace PruebasTorneos
 
         private void Padre_Load(object sender, EventArgs e)
         {
+            this.Dock= DockStyle.Fill;
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
             dts.Cargar(dgvEntrenador);
             dgvEntrenador.CellFormatting += dgvEntrenador_CellFormatting;
