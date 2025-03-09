@@ -25,8 +25,10 @@ namespace Usuarios
         }
         private void GestionUsuario_Load(object sender, EventArgs e)
         {
-            ActualizarTabla();
+            Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
+            dgvUsuarios.DataSource = conexion.ListDGV("Select * from Administrador");
             AdaptarDGV();
+
         }
         void ActualizarTabla()
         {
@@ -84,7 +86,6 @@ namespace Usuarios
                     AggUsuario a = new AggUsuario(false, id, conexion.Usuario, conexion.Clave);
                     //AbrirFormEnPanel(panelDgv, a);
                     a.ShowDialog();
-                    ActualizarTabla();
                 }
                 else
                 {
@@ -122,6 +123,15 @@ namespace Usuarios
                 btngMostrar.Text = "OCULTAR CLAVE";
                 mostrarClave = true;
                 ActualizarTabla();
+            }
+        }
+
+        private void txtFiltro_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (txtFiltro.Text == "Buscar por nombre de Usuario")
+            {
+                txtFiltro.Text = "";
+                txtFiltro.ForeColor = Color.Black;
             }
         }
     }

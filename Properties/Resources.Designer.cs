@@ -163,6 +163,16 @@ namespace TorneosFut.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fxfutxpertblanco {
+            get {
+                object obj = ResourceManager.GetObject("fxfutxpertblanco", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap hide {
             get {
                 object obj = ResourceManager.GetObject("hide", resourceCulture);
@@ -186,6 +196,126 @@ namespace TorneosFut.Properties {
         internal static System.Drawing.Bitmap IconoLupa {
             get {
                 object obj = ResourceManager.GetObject("IconoLupa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_cucha_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-cucha-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_cucha_50__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-cucha-50 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_futbol_playa_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-futbol-playa-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_futbol_playa_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-futbol-playa-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_llamada_de_conferencia_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-llamada-de-conferencia-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_luna_creciente_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-luna-creciente-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_luna_creciente_50__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-luna-creciente-50 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_male_teacher_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-male-teacher-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_organizador_80 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-organizador-80", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_patrocinador_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-patrocinador-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_trofeo_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-trofeo-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_usuario_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-usuario-50", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -246,6 +376,26 @@ namespace TorneosFut.Properties {
         internal static System.Drawing.Bitmap Smaller_Network_Connection_Background__1080p_25fps_H264_128kbit_AAC_ {
             get {
                 object obj = ResourceManager.GetObject("Smaller Network Connection Background (1080p_25fps_H264-128kbit_AAC)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tournament {
+            get {
+                object obj = ResourceManager.GetObject("tournament", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tournament__1_ {
+            get {
+                object obj = ResourceManager.GetObject("tournament (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

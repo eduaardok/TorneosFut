@@ -33,6 +33,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtClaveApp = new System.Windows.Forms.TextBox();
             this.lblNueva = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblEncabezado = new System.Windows.Forms.Label();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btngEnviar
@@ -107,20 +110,49 @@
             this.lblNueva.TabIndex = 36;
             this.lblNueva.Text = "Nueva clave:";
             // 
-            // frmCambiarClave
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.panel2.Controls.Add(this.lblEncabezado);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(610, 50);
+            this.panel2.TabIndex = 41;
+            // 
+            // lblEncabezado
+            // 
+            this.lblEncabezado.AutoSize = true;
+            this.lblEncabezado.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEncabezado.ForeColor = System.Drawing.Color.White;
+            this.lblEncabezado.Location = new System.Drawing.Point(12, 8);
+            this.lblEncabezado.Name = "lblEncabezado";
+            this.lblEncabezado.Size = new System.Drawing.Size(195, 25);
+            this.lblEncabezado.TabIndex = 33;
+            this.lblEncabezado.Text = "CAMBIAR CLAVE";
+            // 
+            // CambiarClave
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(610, 349);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.btngEnviar);
             this.Controls.Add(this.lblClaveAct);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtClaveApp);
             this.Controls.Add(this.lblNueva);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "frmCambiarClave";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "CambiarClave";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "CAMBIO DE CLAVE";
             this.Load += new System.EventHandler(this.frmCambiarClave_Load);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,5 +165,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtClaveApp;
         private System.Windows.Forms.Label lblNueva;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lblEncabezado;
     }
 }

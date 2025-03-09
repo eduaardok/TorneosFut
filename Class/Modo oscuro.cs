@@ -1,0 +1,106 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace TorneosFut
+{
+    public static class Modo_oscuro
+    {
+        public static void AplicarModoOscuro(Control formulario, bool activarModoOscuro)
+        {
+            // Dependiendo del estado de "activarModoOscuro", aplicamos el modo oscuro o claro
+            if (activarModoOscuro)
+            {
+                AplicarTemaOscuro(formulario);
+            }
+            else
+            {
+                AplicarTemaClaro(formulario);
+            }
+        }
+
+        private static void AplicarTemaOscuro(Control formulario)
+        {
+            // Aplicar el fondo del formulario y paneles solo si no son botones específicos
+            if (formulario is Form)
+            {
+                formulario.BackColor = Color.FromArgb(20, 25, 29);  // Fondo del formulario en modo oscuro
+            }
+
+            // Recorrer los controles del formulario
+            foreach (Control control in formulario.Controls)
+            {
+                // Excluir los botones específicos que no deben cambiar
+                if (control is Button && control.Name != "btnModoOscuro")  // No cambia el botón "ModoOscuro"
+                {
+                    continue; // No cambiar este botón
+                }
+
+                // Cambiar el color de los labels
+                if (control is Label)
+                {
+                    control.ForeColor = Color.White;  // Texto blanco
+                }
+
+                // Cambiar el estilo de los DataGridViews
+                if (control is DataGridView)
+                {
+                    DataGridView dgv = (DataGridView)control;
+                    dgv.BackgroundColor = Color.FromArgb(20, 25, 29);  // Fondo oscuro
+                    dgv.ForeColor = Color.White;  // Texto blanco
+                    dgv.DefaultCellStyle.BackColor = Color.FromArgb(30, 35, 40);
+                    dgv.DefaultCellStyle.ForeColor = Color.White;
+                    dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(50, 55, 60);
+                    dgv.DefaultCellStyle.SelectionForeColor = Color.White;
+                }
+
+                // Llamamos recursivamente a los controles hijos
+                AplicarTemaOscuro(control);
+            }
+        }
+
+        private static void AplicarTemaClaro(Control formulario)
+        {
+            // Aplicar el fondo del formulario y paneles en modo claro
+            if (formulario is Form)
+            {
+                formulario.BackColor = Color.White;  // Fondo del formulario en modo claro
+            }
+
+            // Recorrer los controles del formulario
+            foreach (Control control in formulario.Controls)
+            {
+                // Excluir los botones específicos que no deben cambiar
+                if (control is Button && control.Name != "btnModoOscuro")  // No cambia el botón "ModoOscuro"
+                {
+                    continue; // No cambiar este botón
+                }
+
+                // Cambiar el color de los labels
+                if (control is Label)
+                {
+                    control.ForeColor = Color.Black;  // Texto negro
+                }
+
+                // Cambiar el estilo de los DataGridViews
+                if (control is DataGridView)
+                {
+                    DataGridView dgv = (DataGridView)control;
+                    dgv.BackgroundColor = Color.White;  // Fondo claro
+                    dgv.ForeColor = Color.Black;  // Texto negro
+                    dgv.DefaultCellStyle.BackColor = Color.White;
+                    dgv.DefaultCellStyle.ForeColor = Color.Black;
+                    dgv.DefaultCellStyle.SelectionBackColor = Color.LightGray;
+                    dgv.DefaultCellStyle.SelectionForeColor = Color.Black;
+                }
+
+                // Llamamos recursivamente a los controles hijos
+                AplicarTemaClaro(control);
+            }
+        }
+    }
+    }

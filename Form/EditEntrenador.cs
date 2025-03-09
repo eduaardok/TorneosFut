@@ -29,6 +29,7 @@ namespace PruebasTorneos
         }
         private void frmEditarDT_Load(object sender, EventArgs e)
         {
+            Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
             dt.Cargar(dgvEntrenador);
             dgvEntrenador.CellFormatting += dgvEntrenador_CellFormatting;
         }
@@ -155,6 +156,11 @@ namespace PruebasTorneos
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btngCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

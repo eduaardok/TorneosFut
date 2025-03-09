@@ -46,6 +46,9 @@
             this.lblEditarEqui = new System.Windows.Forms.Label();
             this.btnEditar = new Guna.UI2.WinForms.Guna2Button();
             this.txtId = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblEncabezado = new System.Windows.Forms.Label();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblequipo
@@ -169,13 +172,14 @@
             // 
             // btnAgregar
             // 
+            this.btnAgregar.BackColor = System.Drawing.SystemColors.Window;
             this.btnAgregar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnAgregar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnAgregar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnAgregar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAgregar.FillColor = System.Drawing.Color.White;
+            this.btnAgregar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
             this.btnAgregar.Font = new System.Drawing.Font("Onest Bold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.ForeColor = System.Drawing.Color.Black;
+            this.btnAgregar.ForeColor = System.Drawing.Color.White;
             this.btnAgregar.HoverState.CustomBorderColor = System.Drawing.Color.White;
             this.btnAgregar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnAgregar.HoverState.ForeColor = System.Drawing.Color.White;
@@ -192,7 +196,7 @@
             this.btnCancelar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnCancelar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnCancelar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCancelar.FillColor = System.Drawing.Color.White;
+            this.btnCancelar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
             this.btnCancelar.Font = new System.Drawing.Font("Onest Bold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.Black;
             this.btnCancelar.HoverState.CustomBorderColor = System.Drawing.Color.White;
@@ -209,7 +213,7 @@
             // 
             this.lblAggEquipo.BackColor = System.Drawing.Color.White;
             this.lblAggEquipo.Font = new System.Drawing.Font("Onest Bold", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAggEquipo.Location = new System.Drawing.Point(198, 38);
+            this.lblAggEquipo.Location = new System.Drawing.Point(192, 50);
             this.lblAggEquipo.Name = "lblAggEquipo";
             this.lblAggEquipo.Size = new System.Drawing.Size(458, 50);
             this.lblAggEquipo.TabIndex = 0;
@@ -238,7 +242,7 @@
             // 
             this.lblEditarEqui.BackColor = System.Drawing.Color.White;
             this.lblEditarEqui.Font = new System.Drawing.Font("Onest Bold", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEditarEqui.Location = new System.Drawing.Point(277, 38);
+            this.lblEditarEqui.Location = new System.Drawing.Point(268, 50);
             this.lblEditarEqui.Name = "lblEditarEqui";
             this.lblEditarEqui.Size = new System.Drawing.Size(270, 50);
             this.lblEditarEqui.TabIndex = 51;
@@ -250,9 +254,9 @@
             this.btnEditar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnEditar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnEditar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnEditar.FillColor = System.Drawing.Color.White;
+            this.btnEditar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
             this.btnEditar.Font = new System.Drawing.Font("Onest Bold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.ForeColor = System.Drawing.Color.Black;
+            this.btnEditar.ForeColor = System.Drawing.Color.White;
             this.btnEditar.HoverState.CustomBorderColor = System.Drawing.Color.White;
             this.btnEditar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnEditar.HoverState.ForeColor = System.Drawing.Color.White;
@@ -272,12 +276,34 @@
             this.txtId.TabIndex = 53;
             this.txtId.Visible = false;
             // 
-            // AgregarEquipo
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.panel2.Controls.Add(this.lblEncabezado);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(800, 50);
+            this.panel2.TabIndex = 54;
+            // 
+            // lblEncabezado
+            // 
+            this.lblEncabezado.AutoSize = true;
+            this.lblEncabezado.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEncabezado.ForeColor = System.Drawing.Color.White;
+            this.lblEncabezado.Location = new System.Drawing.Point(12, 8);
+            this.lblEncabezado.Name = "lblEncabezado";
+            this.lblEncabezado.Size = new System.Drawing.Size(320, 25);
+            this.lblEncabezado.TabIndex = 33;
+            this.lblEncabezado.Text = "AGREGAR/EDITAR USUARIO";
+            // 
+            // AggEquipo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.lblEditarEqui);
@@ -297,9 +323,16 @@
             this.Controls.Add(this.lblBodr2);
             this.Controls.Add(this.lblBorde1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "AgregarEquipo";
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "AggEquipo";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AgregarEquipo";
+            this.Load += new System.EventHandler(this.AggEquipo_Load);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -324,5 +357,7 @@
         public System.Windows.Forms.TextBox txtPresidente;
         public System.Windows.Forms.ComboBox cmbGenero;
         public System.Windows.Forms.TextBox txtNombreClub;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lblEncabezado;
     }
 }

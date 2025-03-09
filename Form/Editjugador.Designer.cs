@@ -45,14 +45,17 @@
             this.dgvDatos = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnEditarIMG = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblEncabezado = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnEditar
             // 
             this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
             this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(242, 188);
+            this.btnEditar.Location = new System.Drawing.Point(238, 246);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(94, 82);
             this.btnEditar.TabIndex = 43;
@@ -63,7 +66,7 @@
             // lblequipo
             // 
             this.lblequipo.AutoSize = true;
-            this.lblequipo.Location = new System.Drawing.Point(46, 126);
+            this.lblequipo.Location = new System.Drawing.Point(42, 184);
             this.lblequipo.Name = "lblequipo";
             this.lblequipo.Size = new System.Drawing.Size(40, 13);
             this.lblequipo.TabIndex = 40;
@@ -72,7 +75,7 @@
             // lblaltura
             // 
             this.lblaltura.AutoSize = true;
-            this.lblaltura.Location = new System.Drawing.Point(239, 125);
+            this.lblaltura.Location = new System.Drawing.Point(235, 183);
             this.lblaltura.Name = "lblaltura";
             this.lblaltura.Size = new System.Drawing.Size(34, 13);
             this.lblaltura.TabIndex = 39;
@@ -81,7 +84,7 @@
             // lblpeso
             // 
             this.lblpeso.AutoSize = true;
-            this.lblpeso.Location = new System.Drawing.Point(239, 86);
+            this.lblpeso.Location = new System.Drawing.Point(235, 144);
             this.lblpeso.Name = "lblpeso";
             this.lblpeso.Size = new System.Drawing.Size(51, 13);
             this.lblpeso.TabIndex = 37;
@@ -90,7 +93,7 @@
             // lblPosicion
             // 
             this.lblPosicion.AutoSize = true;
-            this.lblPosicion.Location = new System.Drawing.Point(46, 86);
+            this.lblPosicion.Location = new System.Drawing.Point(42, 144);
             this.lblPosicion.Name = "lblPosicion";
             this.lblPosicion.Size = new System.Drawing.Size(47, 13);
             this.lblPosicion.TabIndex = 35;
@@ -99,7 +102,7 @@
             // lblapellido
             // 
             this.lblapellido.AutoSize = true;
-            this.lblapellido.Location = new System.Drawing.Point(243, 41);
+            this.lblapellido.Location = new System.Drawing.Point(239, 99);
             this.lblapellido.Name = "lblapellido";
             this.lblapellido.Size = new System.Drawing.Size(49, 13);
             this.lblapellido.TabIndex = 33;
@@ -108,7 +111,7 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(46, 41);
+            this.lblNombre.Location = new System.Drawing.Point(42, 99);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(49, 13);
             this.lblNombre.TabIndex = 32;
@@ -120,21 +123,21 @@
             this.Cmbequipo.FormattingEnabled = true;
             this.Cmbequipo.Items.AddRange(new object[] {
             "Ninguno"});
-            this.Cmbequipo.Location = new System.Drawing.Point(49, 142);
+            this.Cmbequipo.Location = new System.Drawing.Point(45, 200);
             this.Cmbequipo.Name = "Cmbequipo";
             this.Cmbequipo.Size = new System.Drawing.Size(121, 21);
             this.Cmbequipo.TabIndex = 31;
             // 
             // txtaltura
             // 
-            this.txtaltura.Location = new System.Drawing.Point(242, 141);
+            this.txtaltura.Location = new System.Drawing.Point(238, 199);
             this.txtaltura.Name = "txtaltura";
             this.txtaltura.Size = new System.Drawing.Size(100, 20);
             this.txtaltura.TabIndex = 30;
             // 
             // txtpeso
             // 
-            this.txtpeso.Location = new System.Drawing.Point(242, 102);
+            this.txtpeso.Location = new System.Drawing.Point(238, 160);
             this.txtpeso.Name = "txtpeso";
             this.txtpeso.Size = new System.Drawing.Size(111, 20);
             this.txtpeso.TabIndex = 29;
@@ -161,21 +164,21 @@
             "Delantero centro",
             "Segunda punta",
             "Falso nueve"});
-            this.CmbPosicion.Location = new System.Drawing.Point(49, 102);
+            this.CmbPosicion.Location = new System.Drawing.Point(45, 160);
             this.CmbPosicion.Name = "CmbPosicion";
             this.CmbPosicion.Size = new System.Drawing.Size(121, 21);
             this.CmbPosicion.TabIndex = 27;
             // 
             // txtapellido
             // 
-            this.txtapellido.Location = new System.Drawing.Point(242, 57);
+            this.txtapellido.Location = new System.Drawing.Point(238, 115);
             this.txtapellido.Name = "txtapellido";
             this.txtapellido.Size = new System.Drawing.Size(178, 20);
             this.txtapellido.TabIndex = 26;
             // 
             // Txtnombre
             // 
-            this.Txtnombre.Location = new System.Drawing.Point(46, 57);
+            this.Txtnombre.Location = new System.Drawing.Point(42, 115);
             this.Txtnombre.Name = "Txtnombre";
             this.Txtnombre.Size = new System.Drawing.Size(178, 20);
             this.Txtnombre.TabIndex = 23;
@@ -183,7 +186,7 @@
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
-            this.btnCancelar.Location = new System.Drawing.Point(49, 188);
+            this.btnCancelar.Location = new System.Drawing.Point(45, 246);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(94, 82);
             this.btnCancelar.TabIndex = 44;
@@ -202,7 +205,7 @@
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(437, 41);
+            this.panel1.Location = new System.Drawing.Point(433, 99);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(141, 112);
             this.panel1.TabIndex = 46;
@@ -211,7 +214,7 @@
             // 
             this.btnEditarIMG.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
             this.btnEditarIMG.Font = new System.Drawing.Font("Onest Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarIMG.Location = new System.Drawing.Point(427, 171);
+            this.btnEditarIMG.Location = new System.Drawing.Point(423, 229);
             this.btnEditarIMG.Name = "btnEditarIMG";
             this.btnEditarIMG.Size = new System.Drawing.Size(191, 35);
             this.btnEditarIMG.TabIndex = 47;
@@ -220,12 +223,34 @@
             this.btnEditarIMG.Visible = false;
             this.btnEditarIMG.Click += new System.EventHandler(this.btnEditarIMG_Click);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.panel2.Controls.Add(this.lblEncabezado);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(617, 50);
+            this.panel2.TabIndex = 48;
+            // 
+            // lblEncabezado
+            // 
+            this.lblEncabezado.AutoSize = true;
+            this.lblEncabezado.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEncabezado.ForeColor = System.Drawing.Color.White;
+            this.lblEncabezado.Location = new System.Drawing.Point(12, 8);
+            this.lblEncabezado.Name = "lblEncabezado";
+            this.lblEncabezado.Size = new System.Drawing.Size(210, 25);
+            this.lblEncabezado.TabIndex = 33;
+            this.lblEncabezado.Text = "EDITAR JUGADOR";
+            // 
             // Editjugador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(657, 415);
+            this.ClientSize = new System.Drawing.Size(617, 370);
             this.ControlBox = false;
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnEditarIMG);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvDatos);
@@ -253,6 +278,8 @@
             this.Text = "editarjugador";
             this.Load += new System.EventHandler(this.editarjugador_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -277,5 +304,7 @@
         private System.Windows.Forms.DataGridView dgvDatos;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnEditarIMG;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lblEncabezado;
     }
 }

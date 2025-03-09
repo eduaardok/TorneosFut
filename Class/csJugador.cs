@@ -19,7 +19,7 @@ namespace TorneosFut.Class
 
         public DataTable mostrarJugador()
         {
-            return conexion.ListDGV("select Nombres,Apellidos,Sexo,FechaNacimiento,Posicion,EquipoActual,Goles,Disponibilidad, PartidosJugados,Nacionalidad,Peso,Altura,PiernaHabil from Jugador");
+            return conexion.ListDGV("select IDJugador,Nombres,Apellidos,Sexo,FechaNacimiento,Posicion,EquipoActual,Goles,Disponibilidad, PartidosJugados,Nacionalidad,Peso,Altura,PiernaHabil from Jugador");
         }
         public string filtro(string filtro)
         {

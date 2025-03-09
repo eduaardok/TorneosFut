@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.c = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.X = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.Txtclave = new System.Windows.Forms.TextBox();
@@ -42,12 +43,11 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.Ptbhide = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.guna2NotificationPaint1 = new Guna.UI2.WinForms.Guna2NotificationPaint(this.components);
             this.c.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Ptbhide)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Ptbhide)).BeginInit();
             this.SuspendLayout();
             // 
             // c
@@ -66,6 +66,16 @@
             this.c.TabIndex = 0;
             this.c.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             this.c.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::TorneosFut.Properties.Resources.fxfutxpert;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Location = new System.Drawing.Point(-10, 2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(154, 37);
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
             // 
             // X
             // 
@@ -198,21 +208,11 @@
             this.timer1.Interval = 10;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = global::TorneosFut.Properties.Resources.fxfutxpert;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(-20, -10);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(154, 37);
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(372, 352);
             this.Controls.Add(this.Ptbhide);
@@ -237,8 +237,8 @@
             this.Load += new System.EventHandler(this.Login_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Login_Paint);
             this.c.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Ptbhide)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Ptbhide)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

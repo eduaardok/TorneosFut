@@ -33,6 +33,7 @@ namespace pruebas
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
             Cmbequipo.DataSource = conexion.ListDGV("select* from Equipo");
             Cmbequipo.ValueMember = "IDEquipo";
             Cmbequipo.DisplayMember = "NombreClub";
@@ -49,13 +50,13 @@ namespace pruebas
             try
             {
 
-                if (txtaltura.Text != "" && txtapellido.Text != "" && cmbsexo.Text != "" && dtpNacimiento.Text != "" && CmbPosicion.Text != "" && Cmbequipo.Text != "" && TxtNacionalidad.Text != "" && txtpeso.Text != "" && txtaltura.Text != "" && cmbpierna.Text != "")
+                if (txtaltura.Text != "" && txtapellido.Text != "" && cmbsexo.Text != "" && dtpNacimiento.Text != "" && CmbPosicion.Text != "" && TxtNacionalidad.Text != "" && txtpeso.Text != "" && txtaltura.Text != "" && cmbpierna.Text != "")
                 {
                     if (!valinombres(Txtnombre) && !valinombres(txtapellido))
                     {
                         if (!validaaltu(txtaltura) && !validaaltu(txtpeso))
                         {
-                            jugador.agregarJugador(Txtnombre,txtapellido,cmbsexo,dtpNacimiento,CmbPosicion, Cmbequipo,TxtNacionalidad,txtpeso,txtaltura,cmbpierna);
+                            jugador.agregarJugador(Txtnombre, txtapellido, cmbsexo, dtpNacimiento, CmbPosicion, Cmbequipo, TxtNacionalidad, txtpeso, txtaltura, cmbpierna);
                             txtaltura.Clear();
                             txtapellido.Clear();
                             txtpeso.Clear();
@@ -73,6 +74,7 @@ namespace pruebas
                     }
                     else MessageBox.Show("Nombre invalido, solo se permite letras");
                 }
+                else MessageBox.Show("Llenar todos los campos");
             }
             catch (Exception ex)
             {

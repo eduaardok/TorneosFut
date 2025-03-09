@@ -26,7 +26,7 @@ namespace PruebasTorneos
 
         private void frmAggEntrenador_Load(object sender, EventArgs e)
         {
-
+            Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -67,6 +67,11 @@ namespace PruebasTorneos
             {
                 MessageBox.Show($"Error al registrar: {ex.Message}");
             }
+        }
+
+        private void btngCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

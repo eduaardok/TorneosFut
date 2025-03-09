@@ -28,6 +28,7 @@ namespace TorneosFut
         }
         private void frmCambiarClave_Load(object sender, EventArgs e)
         {
+            Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
         }
         private void btngEnviar_Click(object sender, EventArgs e)
         {

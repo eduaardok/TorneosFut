@@ -70,6 +70,7 @@ namespace Usuarios
 
         private void AgregarUsuario_Load(object sender, EventArgs e)
         {
+            Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
             dt = new DataTable();
             encriptar = new csEncriptar();
             Editar();

@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TorneosFut;
 using TorneosFut.Class;
+using TorneosFut.Properties;
+using static Guna.UI2.WinForms.Suite.Descriptions;
 
 namespace pruebas
 {
@@ -43,6 +45,8 @@ namespace pruebas
        
         private void VerJugadores_Load(object sender, EventArgs e)
         {
+            Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
+
             dgvJugador.DataSource = jugador.mostrarJugador();
             AdaptarDGV();
         }

@@ -24,7 +24,6 @@ namespace pruebas
             conexion = new csConexion();
             conexion.Usuario = u;
             conexion.Clave = c;
-
             InitializeComponent();
             ID = int.Parse(id);
             f = jugador;
@@ -32,7 +31,7 @@ namespace pruebas
 
         private void editarjugador_Load(object sender, EventArgs e)
         {
-
+            Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
             dgvDatos.DataSource = conexion.ListDGV($"Select* from Jugador where IDJugador={ID}");
             Txtnombre.Text = dgvDatos.Rows[0].Cells[1].Value.ToString();  
             txtapellido.Text= dgvDatos.Rows[0].Cells[2].Value.ToString();
