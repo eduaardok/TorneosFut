@@ -200,7 +200,7 @@
             // LblPierna
             // 
             this.LblPierna.AutoSize = true;
-            this.LblPierna.BackColor = System.Drawing.SystemColors.Control;
+            this.LblPierna.BackColor = System.Drawing.Color.Transparent;
             this.LblPierna.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblPierna.Location = new System.Drawing.Point(240, 127);
             this.LblPierna.Name = "LblPierna";

@@ -155,6 +155,18 @@
     </Compile>
     <Compile Include="Class\Modo oscuro.cs" />
     <Compile Include="Class\GlobalSettings.cs" />
+    <Compile Include="Form\Organizadores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Organizadores.Designer.cs">
+      <DependentUpon>Organizadores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Patrocinadores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Patrocinadores.Designer.cs">
+      <DependentUpon>Patrocinadores.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Form\Torneo.cs">
@@ -201,6 +213,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Entrenador.resx">
       <DependentUpon>Entrenador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Organizadores.resx">
+      <DependentUpon>Organizadores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Patrocinadores.resx">
+      <DependentUpon>Patrocinadores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>

@@ -40,7 +40,7 @@ namespace TorneosFut
             }
             else
             {
-                conexion.Consulta($"update Administrador set ClaveApp='{claveApp}' where IDAdmin={id}");
+                conexion.Consulta($"update Usuario set ClaveUsuario='{claveApp}' where IDUsuario={id}");
                 MessageBox.Show($"Usuario editado");
                 this.Close();
             }

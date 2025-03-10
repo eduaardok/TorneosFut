@@ -46,7 +46,7 @@ namespace Usuarios
                 string claveBD = encriptar.Encriptar(txtClaveBD.Text, "futxpert");
                 if (agg)
                 {
-                    conexion.Consulta($"insert into Administrador " +
+                    conexion.Consulta($"insert into Usuario " +
                     $"(Nombre, UsuarioApp, ClaveApp, Correo, UsuarioBD, ClaveBD) values ('{txtNombre.Text}','{txtUsuarioApp.Text}'," +
                     $"'{claveApp}', '{txtCorreo.Text + cmbCorreos.Text}', '{txtUsuarioBD.Text}', '{claveBD}')");
                     conexion.CrearLoginBD(txtUsuarioBD.Text, txtClaveBD.Text);

@@ -69,7 +69,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1370, 50);
+            this.panel1.Size = new System.Drawing.Size(1330, 50);
             this.panel1.TabIndex = 6;
             // 
             // tstSuperior
@@ -80,7 +80,7 @@
             this.ddbtnOpcionesU});
             this.tstSuperior.Location = new System.Drawing.Point(60, 0);
             this.tstSuperior.Name = "tstSuperior";
-            this.tstSuperior.Size = new System.Drawing.Size(1236, 50);
+            this.tstSuperior.Size = new System.Drawing.Size(1196, 50);
             this.tstSuperior.TabIndex = 10;
             this.tstSuperior.Text = "toolStrip1";
             // 
@@ -111,7 +111,7 @@
             this.panelOpciones.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelOpciones.Location = new System.Drawing.Point(0, 50);
             this.panelOpciones.Name = "panelOpciones";
-            this.panelOpciones.Size = new System.Drawing.Size(294, 632);
+            this.panelOpciones.Size = new System.Drawing.Size(294, 618);
             this.panelOpciones.TabIndex = 8;
             // 
             // tmopen
@@ -137,7 +137,7 @@
             this.panelModulos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelModulos.Location = new System.Drawing.Point(294, 50);
             this.panelModulos.Name = "panelModulos";
-            this.panelModulos.Size = new System.Drawing.Size(1076, 632);
+            this.panelModulos.Size = new System.Drawing.Size(1036, 618);
             this.panelModulos.TabIndex = 9;
             this.panelModulos.Paint += new System.Windows.Forms.PaintEventHandler(this.panelModulos_Paint);
             // 
@@ -149,7 +149,7 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Location = new System.Drawing.Point(0, 510);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(294, 122);
+            this.pictureBox1.Size = new System.Drawing.Size(294, 108);
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
@@ -205,6 +205,7 @@
             this.btnPatrocinador.Text = "PATROCINADORES";
             this.btnPatrocinador.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPatrocinador.UseVisualStyleBackColor = false;
+            this.btnPatrocinador.Click += new System.EventHandler(this.btnPatrocinador_Click);
             this.btnPatrocinador.MouseEnter += new System.EventHandler(this.btnCaja_MouseEnter);
             this.btnPatrocinador.MouseLeave += new System.EventHandler(this.btnCaja_MouseLeave);
             // 
@@ -223,6 +224,7 @@
             this.btnOrganizador.Text = "ORGANIZADORES";
             this.btnOrganizador.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnOrganizador.UseVisualStyleBackColor = false;
+            this.btnOrganizador.Click += new System.EventHandler(this.btnOrganizador_Click);
             this.btnOrganizador.MouseEnter += new System.EventHandler(this.btnPartidos_MouseEnter);
             this.btnOrganizador.MouseLeave += new System.EventHandler(this.btnPartidos_MouseLeave);
             // 
@@ -329,7 +331,7 @@
             this.pictureBox2.BackgroundImage = global::TorneosFut.Properties.Resources.userr;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox2.Location = new System.Drawing.Point(1296, 0);
+            this.pictureBox2.Location = new System.Drawing.Point(1256, 0);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(74, 50);
             this.pictureBox2.TabIndex = 9;
@@ -339,7 +341,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 682);
+            this.ClientSize = new System.Drawing.Size(1330, 668);
             this.Controls.Add(this.panelModulos);
             this.Controls.Add(this.panelOpciones);
             this.Controls.Add(this.panel1);

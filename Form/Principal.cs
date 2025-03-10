@@ -33,6 +33,8 @@ namespace TorneosFut
         Equipos equi;
         static csEncriptar encriptar;
         Torneo tor;
+        Patrocinadores Patro;
+        Organizadores Orga;
         public Principal(string u, string c,string name)
         {
             if (u == "FutXpert")
@@ -52,6 +54,8 @@ namespace TorneosFut
             entre= new Entrenador(conexion.Usuario, conexion.Clave);
             equi = new Equipos(conexion.Usuario, conexion.Clave);
            tor = new Torneo(conexion.Usuario, conexion.Clave);
+            Patro = new Patrocinadores(conexion.Usuario,conexion.Clave);
+            Orga = new Organizadores(conexion.Usuario,conexion.Clave);
         }
         public static void AbrirFormEnPanel(Panel panel, Form formHijo)
         {
@@ -304,6 +308,16 @@ namespace TorneosFut
             }
             // Mostrar solo el panel (si no está ya visible)
             panelModulos.BringToFront();  // Asegura que el panel sea el que se muestre
+        }
+
+        private void btnOrganizador_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(panelModulos, Orga);
+        }
+
+        private void btnPatrocinador_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(panelModulos, Patro);
         }
     }
 }
