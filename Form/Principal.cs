@@ -47,11 +47,11 @@ namespace TorneosFut
             this.WindowState = FormWindowState.Maximized;
             this.StartPosition = FormStartPosition.Manual;
             this.Bounds = Screen.PrimaryScreen.WorkingArea;
-            Usuario=new GestionUsuario(conexion.Usuario, conexion.Clave);
+           // Usuario=new GestionUsuario(conexion.Usuario, conexion.Clave);
             ddbtnOpcionesU.Text = name;
-            entre= new Entrenador(conexion.Usuario, conexion.Clave);
-            equi = new Equipos(conexion.Usuario, conexion.Clave);
-            tor = new Torneo(conexion.Usuario, conexion.Clave);
+           // entre= new Entrenador(conexion.Usuario, conexion.Clave);
+          //  equi = new Equipos(conexion.Usuario, conexion.Clave);
+           // tor = new Torneo(conexion.Usuario, conexion.Clave);
         }
         public static void AbrirFormEnPanel(Panel panel, Form formHijo)
         {
@@ -237,7 +237,7 @@ namespace TorneosFut
 
         private void cAMBIARCLAVEToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DataTable dt = conexion.ListDGV($"select ClaveApp, IDAdmin from Administrador where UsuarioApp='{ddbtnOpcionesU.Text}'");
+            DataTable dt = conexion.ListDGV($"select ClaveUsuario, IDUsuario from Usuario where NombreUsuario='{ddbtnOpcionesU.Text}'");
            CambiarClave cambiarClave = new CambiarClave(conexion.Usuario, conexion.Clave, encriptar.Desencriptar(dt.Rows[0][0].ToString(), "futxpert"), dt.Rows[0][1].ToString());
             cambiarClave.ShowDialog();
 

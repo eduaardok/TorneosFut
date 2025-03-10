@@ -97,12 +97,13 @@ namespace TorneosFut
         {
             string password = encrip.Encriptar(Txtclave.Text, "futxpert");
             if (!conec.Login(txtUsuario.Text, password))
-            {
+            { 
                 MessageBox.Show("Credenciales incorrectas", "Inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
                 MessageBox.Show("Se inició sesión de forma correcta");
+                conec.RegistrarAuditoriaInicioSesion(conec.RetornaUser(txtUsuario.Text), true);
                 bool admin = false;
                 if (txtUsuario.Text == "admin")
                     admin = true; //para saber si el que ingresa es el admin
