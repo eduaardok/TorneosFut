@@ -130,5 +130,10 @@ namespace PruebasTorneos
                 txtBuscarEntrenador.ForeColor = Color.Black;
             }
         }
+
+        private void btnEditar_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -81,5 +81,10 @@ namespace TorneosFut
 
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

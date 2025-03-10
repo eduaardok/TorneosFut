@@ -44,14 +44,14 @@ namespace TorneosFut
             conexion.Clave = c;
             encriptar = new csEncriptar();
             InitializeComponent();
-            this.WindowState = FormWindowState.Maximized;
-            this.StartPosition = FormStartPosition.Manual;
-            this.Bounds = Screen.PrimaryScreen.WorkingArea;
-           // Usuario=new GestionUsuario(conexion.Usuario, conexion.Clave);
+            //this.WindowState = FormWindowState.Maximized;
+            //this.StartPosition = FormStartPosition.Manual;
+            //this.Bounds = Screen.PrimaryScreen.WorkingArea;
+            Usuario=new GestionUsuario(conexion.Usuario, conexion.Clave);
             ddbtnOpcionesU.Text = name;
-           // entre= new Entrenador(conexion.Usuario, conexion.Clave);
-          //  equi = new Equipos(conexion.Usuario, conexion.Clave);
-           // tor = new Torneo(conexion.Usuario, conexion.Clave);
+            entre= new Entrenador(conexion.Usuario, conexion.Clave);
+            equi = new Equipos(conexion.Usuario, conexion.Clave);
+           tor = new Torneo(conexion.Usuario, conexion.Clave);
         }
         public static void AbrirFormEnPanel(Panel panel, Form formHijo)
         {

@@ -26,18 +26,18 @@ namespace Usuarios
         private void GestionUsuario_Load(object sender, EventArgs e)
         {
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
-            dgvUsuarios.DataSource = conexion.ListDGV("Select * from Administrador");
+            dgvUsuarios.DataSource = conexion.ListDGV("Select * from Usuario");
             AdaptarDGV();
 
         }
         void ActualizarTabla()
         {
             if(mostrarClave)
-            dgvUsuarios.DataSource = conexion.ListDGV($"Select * from Administrador where IDAdmin like '%{txtFiltro.Text}%' or Nombre like '%{txtFiltro.Text}%'" +
-                                    $" or UsuarioApp like '%{txtFiltro.Text}%' or UsuarioBD like '%{txtFiltro.Text}%'");
+            dgvUsuarios.DataSource = conexion.ListDGV($"Select * from Usuario where IDUsuario like '%{txtFiltro.Text}%' or Nombres like '%{txtFiltro.Text}%'" +
+                                    $" or NombreUsuario like '%{txtFiltro.Text}%' or NombreUsuarioBD like '%{txtFiltro.Text}%'");
             else
-                dgvUsuarios.DataSource = conexion.ListDGV($"Select IDAdmin, Nombre, UsuarioApp, Correo, UsuarioBD from Administrador where IDAdmin like '%{txtFiltro.Text}%' or Nombre like '%{txtFiltro.Text}%'" +
-                                    $" or UsuarioApp like '%{txtFiltro.Text}%' or UsuarioBD like '%{txtFiltro.Text}%'");
+                dgvUsuarios.DataSource = conexion.ListDGV($"Select IDUsuario, Nombres, NombreUsuario, Correo, NombreUsuarioBD from Usuario where IDUsuario like '%{txtFiltro.Text}%' or Nombres like '%{txtFiltro.Text}%'" +
+                                    $" or NombreUsuario like '%{txtFiltro.Text}%' or NombreUsuarioBD like '%{txtFiltro.Text}%'");
             AdaptarDGV();
         }
         void AdaptarDGV()
