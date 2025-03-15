@@ -12,7 +12,6 @@ namespace TorneosFut
     {
         public static void AplicarModoOscuro(Control formulario, bool activarModoOscuro)
         {
-            // Dependiendo del estado de "activarModoOscuro", aplicamos el modo oscuro o claro
             if (activarModoOscuro)
             {
                 AplicarTemaOscuro(formulario);
@@ -30,8 +29,6 @@ namespace TorneosFut
             {
                 formulario.BackColor = Color.FromArgb(20, 25, 29);  // Fondo del formulario en modo oscuro
             }
-
-            // Recorrer los controles del formulario
             foreach (Control control in formulario.Controls)
             {
                 // Excluir los botones específicos que no deben cambiar
@@ -90,14 +87,13 @@ namespace TorneosFut
                 if (control is DataGridView)
                 {
                     DataGridView dgv = (DataGridView)control;
-                    dgv.BackgroundColor = Color.White;  // Fondo claro
-                    dgv.ForeColor = Color.Black;  // Texto negro
+                    dgv.BackgroundColor = Color.White; 
+                    dgv.ForeColor = Color.Black; 
                     dgv.DefaultCellStyle.BackColor = Color.White;
                     dgv.DefaultCellStyle.ForeColor = Color.Black;
                     dgv.DefaultCellStyle.SelectionBackColor = Color.LightGray;
                     dgv.DefaultCellStyle.SelectionForeColor = Color.Black;
                 }
-
                 // Llamamos recursivamente a los controles hijos
                 AplicarTemaClaro(control);
             }

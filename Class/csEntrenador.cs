@@ -44,15 +44,15 @@ namespace PruebasTorneos
         {
             if (string.IsNullOrWhiteSpace(filtro))
             {
-                dgvEntrenador.DataSource = conexion.ListDGV("select IDEntrenador, Nombres, Apellidos, Sexo, coalesce(cast(EquipoActual as varchar), 'SinEquipo') as EquipoActual, " +
-                    "PartidosGanados, PartidosPerdidos, PartidosEmpatados, (PartidosGanados+PartidosPerdidos+PartidosEmpatados) as TotalPartidos from Entrenador");
+                dgvEntrenador.DataSource = conexion.ListDGV(@"select IDEntrenador, Nombres, Apellidos, Sexo, coalesce(cast(EquipoActual as varchar), 'SinEquipo') as EquipoActual, 
+                                                            PartidosGanados, PartidosPerdidos, PartidosEmpatados, (PartidosGanados+PartidosPerdidos+PartidosEmpatados) as TotalPartidos from Entrenador");
                 AdaptarDGV(dgvEntrenador);
             }
             else
             {
-                string consulta = $"select IDEntrenador, Nombres, Apellidos, Sexo, coalesce(cast(EquipoActual as varchar), 'SinEquipo') as EquipoActual, " +
-                    $"PartidosGanados, PartidosPerdidos, PartidosEmpatados, (PartidosGanados+PartidosPerdidos+PartidosEmpatados) as TotalPartidos from Entrenador where IDEntrenador like '%{filtro}%' or " +
-                    $"Nombres like '%{filtro}%' or Apellidos like '%{filtro}%' or EquipoActual like '%{filtro}%'";
+                string consulta = $@"select IDEntrenador, Nombres, Apellidos, Sexo, coalesce(cast(EquipoActual as varchar), 'SinEquipo') as EquipoActual, 
+                    PartidosGanados, PartidosPerdidos, PartidosEmpatados, (PartidosGanados+PartidosPerdidos+PartidosEmpatados) as TotalPartidos from Entrenador where IDEntrenador like '%{filtro}%' or 
+                    Nombres like '%{filtro}%' or Apellidos like '%{filtro}%' or EquipoActual like '%{filtro}%'";
 
                 DataTable dt = conexion.ListDGV(consulta);
                 dgvEntrenador.DataSource = dt;
