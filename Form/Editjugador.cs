@@ -37,10 +37,7 @@ namespace pruebas
             txtapellido.Text= dgvDatos.Rows[0].Cells[2].Value.ToString();
             txtpeso.Text= dgvDatos.Rows[0].Cells[12].Value.ToString();
             txtaltura.Text= dgvDatos.Rows[0].Cells[13].Value.ToString();
-            Cmbequipo.DataSource= conexion.ListDGV($"Select* from Equipo ");
             CmbPosicion.Text = dgvDatos.Rows[0].Cells[5].Value.ToString();
-            Cmbequipo.DisplayMember = "NombreClub";
-            Cmbequipo.ValueMember = "IDEquipo";
 
         }
 
@@ -53,18 +50,17 @@ namespace pruebas
         {
             try
             {
-                if (txtaltura.Text != "" && txtapellido.Text != "" && CmbPosicion.Text != "" && Cmbequipo.Text != "" && txtpeso.Text != "" && txtaltura.Text != "")
+                if (txtaltura.Text != "" && txtapellido.Text != "" && CmbPosicion.Text != "" && txtpeso.Text != "" && txtaltura.Text != "")
                 {
                     if (!valinombres(Txtnombre) && !valinombres(txtapellido))
                     {
                         if (!validaaltu(txtaltura) && !validaaltu(txtpeso))
                         {
-                            jugadorr.editarjugador(Txtnombre, txtapellido, CmbPosicion, Cmbequipo, txtpeso, txtaltura, ID);
+                            jugadorr.editarjugador(Txtnombre, txtapellido, CmbPosicion, txtpeso, txtaltura, ID);
                             txtaltura.Clear();
                             txtapellido.Clear();
                             txtpeso.Clear();
                             Txtnombre.Clear();
-                            Cmbequipo.SelectedIndex = -1;
                             CmbPosicion.SelectedIndex = -1;
                             MessageBox.Show("Jugador editado con exito");
                             f.dgvJugador.DataSource = jugadorr.mostrarJugador();

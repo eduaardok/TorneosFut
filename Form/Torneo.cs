@@ -15,15 +15,16 @@ namespace TorneosFut
     public partial class Torneo: Form
     {
         csConexion conexion;
-        Jugador ju;
-
+        Patrocinadores patro;
+        Organizadores orga;
         public Torneo(string u, string c)
         {
             conexion = new csConexion();
             conexion.Usuario = u;
             conexion.Clave = c;
             InitializeComponent();
-            ju = new Jugador(conexion.Usuario, conexion.Clave);
+            patro = new Patrocinadores(conexion.Usuario, conexion.Clave);
+            orga = new Organizadores(conexion.Usuario, conexion.Clave);
 
 
         }
@@ -38,10 +39,11 @@ namespace TorneosFut
             panel.Tag = formHijo; // Asocia el formulario con el panel
             formHijo.BringToFront(); // Lo trae al frente
             formHijo.Show(); // Muestra el formulario dentro del panel
+            panel.Show();
         }
         private void btnJugadores_Click(object sender, EventArgs e)
         {
-               AbrirFormEnPanel(panelmodul, ju);
+               AbrirFormEnPanel(panelmodul, patro);
         }
 
         private void btnArbitros_Click(object sender, EventArgs e)
@@ -51,11 +53,12 @@ namespace TorneosFut
 
         private void btnEstadios_Click(object sender, EventArgs e)
         {
-
+            AbrirFormEnPanel(panelmodul,orga);
         }
 
         private void Torneo_Load(object sender, EventArgs e)
         {
+            panelmodul.Hide();
             //if (BackColor == Color.White)
             //{
             //    ju.label2.ForeColor = Color.Black;
@@ -85,6 +88,11 @@ namespace TorneosFut
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            panelmodul.Hide();
         }
     }
 }

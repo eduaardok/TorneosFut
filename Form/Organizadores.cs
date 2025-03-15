@@ -22,5 +22,10 @@ namespace TorneosFut
             InitializeComponent();
             
         }
+
+        private void Organizadores_Load(object sender, EventArgs e)
+        {
+            Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
+        }
     }
 }

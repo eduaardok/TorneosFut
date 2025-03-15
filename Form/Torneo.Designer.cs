@@ -28,41 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnJugadores = new System.Windows.Forms.Button();
-            this.btnEstadios = new System.Windows.Forms.Button();
+            this.btnJugador = new System.Windows.Forms.Button();
+            this.btnOrganizador = new System.Windows.Forms.Button();
             this.btnArbitros = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelmodul = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnJugadores
+            // btnJugador
             // 
-            this.btnJugadores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.btnJugadores.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnJugadores.Font = new System.Drawing.Font("Onest Bold", 20F, System.Drawing.FontStyle.Bold);
-            this.btnJugadores.ForeColor = System.Drawing.Color.White;
-            this.btnJugadores.Location = new System.Drawing.Point(337, 3);
-            this.btnJugadores.Name = "btnJugadores";
-            this.btnJugadores.Size = new System.Drawing.Size(294, 85);
-            this.btnJugadores.TabIndex = 3;
-            this.btnJugadores.Text = "JUGADORES";
-            this.btnJugadores.UseVisualStyleBackColor = false;
-            this.btnJugadores.Click += new System.EventHandler(this.btnJugadores_Click);
+            this.btnJugador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            this.btnJugador.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnJugador.Font = new System.Drawing.Font("Onest Bold", 20F, System.Drawing.FontStyle.Bold);
+            this.btnJugador.ForeColor = System.Drawing.Color.White;
+            this.btnJugador.Image = global::TorneosFut.Properties.Resources.icons8_patrocinador_50;
+            this.btnJugador.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnJugador.Location = new System.Drawing.Point(312, 3);
+            this.btnJugador.Name = "btnJugador";
+            this.btnJugador.Size = new System.Drawing.Size(319, 85);
+            this.btnJugador.TabIndex = 3;
+            this.btnJugador.Text = "PATROCINADORES";
+            this.btnJugador.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnJugador.UseVisualStyleBackColor = false;
+            this.btnJugador.Click += new System.EventHandler(this.btnJugadores_Click);
             // 
-            // btnEstadios
+            // btnOrganizador
             // 
-            this.btnEstadios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.btnEstadios.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEstadios.Font = new System.Drawing.Font("Onest Bold", 20F, System.Drawing.FontStyle.Bold);
-            this.btnEstadios.ForeColor = System.Drawing.Color.White;
-            this.btnEstadios.Location = new System.Drawing.Point(966, 3);
-            this.btnEstadios.Name = "btnEstadios";
-            this.btnEstadios.Size = new System.Drawing.Size(294, 85);
-            this.btnEstadios.TabIndex = 5;
-            this.btnEstadios.Text = "ESTADIOS";
-            this.btnEstadios.UseVisualStyleBackColor = false;
-            this.btnEstadios.Click += new System.EventHandler(this.btnEstadios_Click);
+            this.btnOrganizador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            this.btnOrganizador.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnOrganizador.Font = new System.Drawing.Font("Onest Bold", 20F, System.Drawing.FontStyle.Bold);
+            this.btnOrganizador.ForeColor = System.Drawing.Color.White;
+            this.btnOrganizador.Image = global::TorneosFut.Properties.Resources.icons8_organizador_80;
+            this.btnOrganizador.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOrganizador.Location = new System.Drawing.Point(966, 3);
+            this.btnOrganizador.Name = "btnOrganizador";
+            this.btnOrganizador.Size = new System.Drawing.Size(318, 85);
+            this.btnOrganizador.TabIndex = 5;
+            this.btnOrganizador.Text = "ORGANIZADORES";
+            this.btnOrganizador.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnOrganizador.UseVisualStyleBackColor = false;
+            this.btnOrganizador.Click += new System.EventHandler(this.btnEstadios_Click);
             // 
             // btnArbitros
             // 
@@ -81,9 +88,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
-            this.panel1.Controls.Add(this.btnJugadores);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnJugador);
             this.panel1.Controls.Add(this.btnArbitros);
-            this.panel1.Controls.Add(this.btnEstadios);
+            this.panel1.Controls.Add(this.btnOrganizador);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -99,6 +107,20 @@
             this.panelmodul.Name = "panelmodul";
             this.panelmodul.Size = new System.Drawing.Size(1490, 811);
             this.panelmodul.TabIndex = 8;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Font = new System.Drawing.Font("Onest Bold", 20F, System.Drawing.FontStyle.Bold);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(21, 9);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(124, 85);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "<--";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Torneo
             // 
@@ -123,10 +145,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnJugadores;
-        private System.Windows.Forms.Button btnEstadios;
+        private System.Windows.Forms.Button btnJugador;
+        private System.Windows.Forms.Button btnOrganizador;
         private System.Windows.Forms.Button btnArbitros;
         private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.Panel panelmodul;
+        private System.Windows.Forms.Button button1;
     }
 }

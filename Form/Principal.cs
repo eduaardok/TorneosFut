@@ -86,19 +86,8 @@ namespace TorneosFut
         }
 
 
-        private void btnPartidos_MouseEnter(object sender, EventArgs e)
-        {
-            btnOrganizador.BackColor = ColorTranslator.FromHtml("#FB038C");
-        }
-
-
         private void btnArbitros_MouseEnter(object sender, EventArgs e)
         {
-        }
-
-        private void btnCaja_MouseEnter(object sender, EventArgs e)
-        {
-            btnPatrocinador.BackColor = ColorTranslator.FromHtml("#FB038C");
         }
 
         
@@ -114,17 +103,6 @@ namespace TorneosFut
 
         }
 
-
-        private void btnPartidos_MouseLeave(object sender, EventArgs e)
-        {
-            btnOrganizador.BackColor = Color.FromArgb(20, 25, 29);
-
-        }
-        private void btnCaja_MouseLeave(object sender, EventArgs e)
-        {
-            btnPatrocinador.BackColor = Color.FromArgb(20, 25, 29);
-
-        }
         private void Principal_Load(object sender, EventArgs e)
         {
             timer1.Start();
@@ -140,15 +118,6 @@ namespace TorneosFut
             btnUsuarios.Visible = esAdmin;
         }
 
-        private void btnEntrenadores_MouseLeave(object sender, EventArgs e)
-        {
-            btnEntrenadores.BackColor = Color.FromArgb(20, 25, 29);
-        }
-
-        private void btnEntrenadores_MouseEnter(object sender, EventArgs e)
-        {
-            btnEntrenadores.BackColor = ColorTranslator.FromHtml("#FB038C");
-        }
 
         private void btnUsuarios_MouseEnter(object sender, EventArgs e)
         {
@@ -198,21 +167,15 @@ namespace TorneosFut
             {
                 timeclose.Start();
                 btnTorneos.Text = "";
-                btnPatrocinador.Text = "";
                 btnUsuarios.Text = "";
                 btnEquipos.Text = "";
-                btnOrganizador.Text = "";
-                btnEntrenadores.Text = "";
             }
             else
             {
                 tmopen.Start();
                 btnTorneos.Text = "TORNEO";
-                btnPatrocinador.Text = "PATROCINADORES";
                 btnUsuarios.Text = "USUARIOS";
                 btnEquipos.Text = "EQUIPOS";
-                btnOrganizador.Text = "ORGANIZADORES";
-                btnEntrenadores.Text = "ENTRENADORES";
             }
         }
         private void timer1_Tick(object sender, EventArgs e)
@@ -222,21 +185,31 @@ namespace TorneosFut
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
             AbrirFormEnPanel(panelModulos, Usuario);
+            equi.Close();
+            tor.Close();
             
         }
-        private void btnEntrenadores_Click(object sender, EventArgs e)
-        {
-            AbrirFormEnPanel(panelModulos, entre);
-        }
+  
 
         private void btnTorneos_Click(object sender, EventArgs e)
         {
+            if (tor != null)
+            {
+                tor = new Torneo(conexion.Usuario, conexion.Clave);
+            }
             AbrirFormEnPanel(panelModulos, tor);
+            equi.Close();
         }
 
         private void btnEquipos_Click(object sender, EventArgs e)
         {
+            if (equi != null)
+            {
+                equi = new Equipos(conexion.Usuario, conexion.Clave);
+            }
             AbrirFormEnPanel(panelModulos, equi);
+            tor.Close();
+            
         }
 
         private void cAMBIARCLAVEToolStripMenuItem_Click(object sender, EventArgs e)
@@ -308,16 +281,6 @@ namespace TorneosFut
             }
             // Mostrar solo el panel (si no está ya visible)
             panelModulos.BringToFront();  // Asegura que el panel sea el que se muestre
-        }
-
-        private void btnOrganizador_Click(object sender, EventArgs e)
-        {
-            AbrirFormEnPanel(panelModulos, Orga);
-        }
-
-        private void btnPatrocinador_Click(object sender, EventArgs e)
-        {
-            AbrirFormEnPanel(panelModulos, Patro);
         }
     }
 }

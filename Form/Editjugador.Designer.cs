@@ -29,13 +29,11 @@
         private void InitializeComponent()
         {
             this.btnEditar = new System.Windows.Forms.Button();
-            this.lblequipo = new System.Windows.Forms.Label();
             this.lblaltura = new System.Windows.Forms.Label();
             this.lblpeso = new System.Windows.Forms.Label();
             this.lblPosicion = new System.Windows.Forms.Label();
             this.lblapellido = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.Cmbequipo = new System.Windows.Forms.ComboBox();
             this.txtaltura = new System.Windows.Forms.TextBox();
             this.txtpeso = new System.Windows.Forms.TextBox();
             this.CmbPosicion = new System.Windows.Forms.ComboBox();
@@ -63,19 +61,10 @@
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // lblequipo
-            // 
-            this.lblequipo.AutoSize = true;
-            this.lblequipo.Location = new System.Drawing.Point(42, 184);
-            this.lblequipo.Name = "lblequipo";
-            this.lblequipo.Size = new System.Drawing.Size(40, 13);
-            this.lblequipo.TabIndex = 40;
-            this.lblequipo.Text = "Equipo";
-            // 
             // lblaltura
             // 
             this.lblaltura.AutoSize = true;
-            this.lblaltura.Location = new System.Drawing.Point(235, 183);
+            this.lblaltura.Location = new System.Drawing.Point(42, 184);
             this.lblaltura.Name = "lblaltura";
             this.lblaltura.Size = new System.Drawing.Size(34, 13);
             this.lblaltura.TabIndex = 39;
@@ -117,20 +106,9 @@
             this.lblNombre.TabIndex = 32;
             this.lblNombre.Text = "Nombres";
             // 
-            // Cmbequipo
-            // 
-            this.Cmbequipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Cmbequipo.FormattingEnabled = true;
-            this.Cmbequipo.Items.AddRange(new object[] {
-            "Ninguno"});
-            this.Cmbequipo.Location = new System.Drawing.Point(45, 200);
-            this.Cmbequipo.Name = "Cmbequipo";
-            this.Cmbequipo.Size = new System.Drawing.Size(121, 21);
-            this.Cmbequipo.TabIndex = 31;
-            // 
             // txtaltura
             // 
-            this.txtaltura.Location = new System.Drawing.Point(238, 199);
+            this.txtaltura.Location = new System.Drawing.Point(45, 200);
             this.txtaltura.Name = "txtaltura";
             this.txtaltura.Size = new System.Drawing.Size(100, 20);
             this.txtaltura.TabIndex = 30;
@@ -256,13 +234,11 @@
             this.Controls.Add(this.dgvDatos);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.lblequipo);
             this.Controls.Add(this.lblaltura);
             this.Controls.Add(this.lblpeso);
             this.Controls.Add(this.lblPosicion);
             this.Controls.Add(this.lblapellido);
             this.Controls.Add(this.lblNombre);
-            this.Controls.Add(this.Cmbequipo);
             this.Controls.Add(this.txtaltura);
             this.Controls.Add(this.txtpeso);
             this.Controls.Add(this.CmbPosicion);
@@ -288,13 +264,11 @@
         #endregion
 
         private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.Label lblequipo;
         private System.Windows.Forms.Label lblaltura;
         private System.Windows.Forms.Label lblpeso;
         private System.Windows.Forms.Label lblPosicion;
         private System.Windows.Forms.Label lblapellido;
         private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.ComboBox Cmbequipo;
         private System.Windows.Forms.TextBox txtaltura;
         private System.Windows.Forms.TextBox txtpeso;
         private System.Windows.Forms.ComboBox CmbPosicion;

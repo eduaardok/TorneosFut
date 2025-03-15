@@ -1,4 +1,5 @@
 ﻿using pruebas;
+using PruebasTorneos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,8 @@ namespace TorneosFut
         csConexion conexion ;
         AggEquipo aggEquipo;
         csEquipo equipo;
+        Jugador ju;
+        Entrenador entre;
         public Equipos(string u, string c)
         {
             conexion = new csConexion();
@@ -23,8 +26,8 @@ namespace TorneosFut
             conexion.Clave = c;
             InitializeComponent();
             equipo = new csEquipo(conexion.Usuario,conexion.Clave);
-
-
+            ju= new Jugador(conexion.Usuario, conexion.Clave);
+            entre = new Entrenador (conexion.Usuario, conexion.Clave);
         }
         private void addUserControl(UserControl userControll)
         {
@@ -63,10 +66,6 @@ namespace TorneosFut
         {
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-        }
-
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
@@ -77,6 +76,7 @@ namespace TorneosFut
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
             dgvEquipos.DataSource = equipo.mostrarequipo();
             AdaptarDGV();
+            panelmodul.Hide();
         }
 
         private void btngMostrar_Click(object sender, EventArgs e)
@@ -99,7 +99,19 @@ namespace TorneosFut
             aggEquipo.ShowDialog();
 
         }
+        public static void AbrirFormEnPanel(Panel panel, Form formHijo)
+        {
+            if (panel.Controls.Count > 0)
+                panel.Controls.Clear(); // Limpia cualquier contenido previo
 
+            formHijo.TopLevel = false;  // Indica que no es un formulario independiente
+            formHijo.Dock = DockStyle.Fill; // Ajusta al tamaño del panel
+            panel.Controls.Add(formHijo); // Agrega el formulario al panel
+            panel.Tag = formHijo; // Asocia el formulario con el panel
+            formHijo.BringToFront(); // Lo trae al frente
+            formHijo.Show(); // Muestra el formulario dentro del panel
+            panel.Show();
+        }
         private void txtBuscarJugador_MouseClick(object sender, MouseEventArgs e)
         {
             if (txtBuscarEquipo.Text == "Buscar por nombre del Equipo")
@@ -126,6 +138,21 @@ namespace TorneosFut
         private void txtBuscarJugador_KeyUp(object sender, KeyEventArgs e)
         {
             filtro(txtBuscarEquipo.Text.Trim(), dgvEquipos);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            panelmodul.Hide();
+        }
+
+        private void btnJugador_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(panelmodul,ju);
+        }
+
+        private void btnEntrenador_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(panelmodul, entre);
         }
     }
 

@@ -206,6 +206,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Patrocinadores";
+            this.Load += new System.EventHandler(this.Patrocinadores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbIMGPatrocinador)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPatrocinador)).EndInit();

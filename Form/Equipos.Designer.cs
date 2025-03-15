@@ -40,10 +40,16 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btngEditar = new Guna.UI2.WinForms.Guna2Button();
             this.ptbIMG = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnJugador = new System.Windows.Forms.Button();
+            this.btnEntrenador = new System.Windows.Forms.Button();
+            this.panelmodul = new System.Windows.Forms.Panel();
             this.panelDgv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbIMG)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2DragControl1
@@ -57,7 +63,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Onest Bold", 25F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(35, 9);
+            this.label1.Location = new System.Drawing.Point(51, 108);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(151, 43);
             this.label1.TabIndex = 6;
@@ -68,9 +74,9 @@
             this.panelDgv.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelDgv.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panelDgv.Controls.Add(this.dgvEquipos);
-            this.panelDgv.Location = new System.Drawing.Point(43, 247);
+            this.panelDgv.Location = new System.Drawing.Point(43, 346);
             this.panelDgv.Name = "panelDgv";
-            this.panelDgv.Size = new System.Drawing.Size(1415, 642);
+            this.panelDgv.Size = new System.Drawing.Size(1415, 543);
             this.panelDgv.TabIndex = 5;
             // 
             // dgvEquipos
@@ -103,7 +109,7 @@
             this.dgvEquipos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEquipos.ShowCellToolTips = false;
             this.dgvEquipos.ShowEditingIcon = false;
-            this.dgvEquipos.Size = new System.Drawing.Size(1415, 642);
+            this.dgvEquipos.Size = new System.Drawing.Size(1415, 543);
             this.dgvEquipos.TabIndex = 5;
             // 
             // btngMostrar
@@ -126,7 +132,7 @@
             this.btngMostrar.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btngMostrar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
             this.btngMostrar.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btngMostrar.Location = new System.Drawing.Point(404, 145);
+            this.btngMostrar.Location = new System.Drawing.Point(420, 244);
             this.btngMostrar.Name = "btngMostrar";
             this.btngMostrar.Size = new System.Drawing.Size(271, 59);
             this.btngMostrar.TabIndex = 11;
@@ -139,7 +145,7 @@
             this.txtBuscarEquipo.Font = new System.Drawing.Font("Onest Light", 20F);
             this.txtBuscarEquipo.ForeColor = System.Drawing.Color.Gray;
             this.txtBuscarEquipo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtBuscarEquipo.Location = new System.Drawing.Point(161, 75);
+            this.txtBuscarEquipo.Location = new System.Drawing.Point(177, 174);
             this.txtBuscarEquipo.Multiline = true;
             this.txtBuscarEquipo.Name = "txtBuscarEquipo";
             this.txtBuscarEquipo.Size = new System.Drawing.Size(635, 48);
@@ -153,7 +159,7 @@
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.BackgroundImage = global::TorneosFut.Properties.Resources.IconoLupa;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(105, 75);
+            this.pictureBox1.Location = new System.Drawing.Point(121, 174);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(50, 49);
             this.pictureBox1.TabIndex = 17;
@@ -178,7 +184,7 @@
             this.btngEditar.ForeColor = System.Drawing.Color.Black;
             this.btngEditar.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btngEditar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
-            this.btngEditar.Location = new System.Drawing.Point(196, 145);
+            this.btngEditar.Location = new System.Drawing.Point(212, 244);
             this.btngEditar.Name = "btngEditar";
             this.btngEditar.Size = new System.Drawing.Size(180, 59);
             this.btngEditar.TabIndex = 10;
@@ -189,12 +195,78 @@
             // 
             this.ptbIMG.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ptbIMG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ptbIMG.Location = new System.Drawing.Point(855, 100);
+            this.ptbIMG.Location = new System.Drawing.Point(871, 199);
             this.ptbIMG.Name = "ptbIMG";
             this.ptbIMG.Size = new System.Drawing.Size(166, 141);
             this.ptbIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbIMG.TabIndex = 25;
             this.ptbIMG.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnJugador);
+            this.panel1.Controls.Add(this.btnEntrenador);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1490, 100);
+            this.panel1.TabIndex = 26;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Font = new System.Drawing.Font("Onest Bold", 20F, System.Drawing.FontStyle.Bold);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(21, 9);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(124, 85);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "<--";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnJugador
+            // 
+            this.btnJugador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            this.btnJugador.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnJugador.Font = new System.Drawing.Font("Onest Bold", 20F, System.Drawing.FontStyle.Bold);
+            this.btnJugador.ForeColor = System.Drawing.Color.White;
+            this.btnJugador.Location = new System.Drawing.Point(420, 9);
+            this.btnJugador.Name = "btnJugador";
+            this.btnJugador.Size = new System.Drawing.Size(294, 85);
+            this.btnJugador.TabIndex = 3;
+            this.btnJugador.Text = "JUGADORES";
+            this.btnJugador.UseVisualStyleBackColor = false;
+            this.btnJugador.Click += new System.EventHandler(this.btnJugador_Click);
+            // 
+            // btnEntrenador
+            // 
+            this.btnEntrenador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            this.btnEntrenador.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEntrenador.Font = new System.Drawing.Font("Onest Bold", 20F, System.Drawing.FontStyle.Bold);
+            this.btnEntrenador.ForeColor = System.Drawing.Color.White;
+            this.btnEntrenador.Image = global::TorneosFut.Properties.Resources.icons8_male_teacher_64;
+            this.btnEntrenador.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEntrenador.Location = new System.Drawing.Point(727, 9);
+            this.btnEntrenador.Name = "btnEntrenador";
+            this.btnEntrenador.Size = new System.Drawing.Size(310, 85);
+            this.btnEntrenador.TabIndex = 6;
+            this.btnEntrenador.Text = "ENTRENADORES";
+            this.btnEntrenador.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEntrenador.UseVisualStyleBackColor = false;
+            this.btnEntrenador.Click += new System.EventHandler(this.btnEntrenador_Click);
+            // 
+            // panelmodul
+            // 
+            this.panelmodul.BackColor = System.Drawing.Color.White;
+            this.panelmodul.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelmodul.Location = new System.Drawing.Point(0, 100);
+            this.panelmodul.Name = "panelmodul";
+            this.panelmodul.Size = new System.Drawing.Size(1490, 811);
+            this.panelmodul.TabIndex = 27;
             // 
             // Equipos
             // 
@@ -203,6 +275,8 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1490, 911);
             this.ControlBox = false;
+            this.Controls.Add(this.panelmodul);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.ptbIMG);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtBuscarEquipo);
@@ -225,6 +299,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbIMG)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -240,5 +315,10 @@
         public System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button btngEditar;
         private System.Windows.Forms.PictureBox ptbIMG;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnJugador;
+        private System.Windows.Forms.Button btnEntrenador;
+        public System.Windows.Forms.Panel panelmodul;
     }
 }

@@ -110,9 +110,9 @@
             this.panelDgv.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelDgv.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panelDgv.Controls.Add(this.dgvJugador);
-            this.panelDgv.Location = new System.Drawing.Point(31, 244);
+            this.panelDgv.Location = new System.Drawing.Point(154, 244);
             this.panelDgv.Name = "panelDgv";
-            this.panelDgv.Size = new System.Drawing.Size(1415, 642);
+            this.panelDgv.Size = new System.Drawing.Size(1186, 601);
             this.panelDgv.TabIndex = 13;
             // 
             // dgvJugador
@@ -145,7 +145,7 @@
             this.dgvJugador.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvJugador.ShowCellToolTips = false;
             this.dgvJugador.ShowEditingIcon = false;
-            this.dgvJugador.Size = new System.Drawing.Size(1415, 642);
+            this.dgvJugador.Size = new System.Drawing.Size(1186, 601);
             this.dgvJugador.TabIndex = 5;
             // 
             // pictureBox1

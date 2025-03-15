@@ -37,7 +37,6 @@
             this.cmbpierna = new System.Windows.Forms.ComboBox();
             this.txtpeso = new System.Windows.Forms.TextBox();
             this.txtaltura = new System.Windows.Forms.TextBox();
-            this.Cmbequipo = new System.Windows.Forms.ComboBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblapellido = new System.Windows.Forms.Label();
             this.lblsexo = new System.Windows.Forms.Label();
@@ -46,7 +45,6 @@
             this.lblpeso = new System.Windows.Forms.Label();
             this.lblfecha = new System.Windows.Forms.Label();
             this.lblaltura = new System.Windows.Forms.Label();
-            this.lblequipo = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.TxtNacionalidad = new System.Windows.Forms.TextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -145,17 +143,6 @@
             this.txtaltura.Size = new System.Drawing.Size(100, 20);
             this.txtaltura.TabIndex = 9;
             // 
-            // Cmbequipo
-            // 
-            this.Cmbequipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Cmbequipo.FormattingEnabled = true;
-            this.Cmbequipo.Items.AddRange(new object[] {
-            "Ninguno"});
-            this.Cmbequipo.Location = new System.Drawing.Point(50, 251);
-            this.Cmbequipo.Name = "Cmbequipo";
-            this.Cmbequipo.Size = new System.Drawing.Size(121, 21);
-            this.Cmbequipo.TabIndex = 10;
-            // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
@@ -238,21 +225,11 @@
             this.lblaltura.TabIndex = 18;
             this.lblaltura.Text = "Altura*";
             // 
-            // lblequipo
-            // 
-            this.lblequipo.AutoSize = true;
-            this.lblequipo.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblequipo.Location = new System.Drawing.Point(46, 227);
-            this.lblequipo.Name = "lblequipo";
-            this.lblequipo.Size = new System.Drawing.Size(73, 24);
-            this.lblequipo.TabIndex = 19;
-            this.lblequipo.Text = "Equipo";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(47, 275);
+            this.label1.Location = new System.Drawing.Point(46, 229);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(140, 24);
             this.label1.TabIndex = 21;
@@ -260,7 +237,7 @@
             // 
             // TxtNacionalidad
             // 
-            this.TxtNacionalidad.Location = new System.Drawing.Point(50, 302);
+            this.TxtNacionalidad.Location = new System.Drawing.Point(49, 256);
             this.TxtNacionalidad.Name = "TxtNacionalidad";
             this.TxtNacionalidad.Size = new System.Drawing.Size(178, 20);
             this.TxtNacionalidad.TabIndex = 20;
@@ -335,7 +312,6 @@
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TxtNacionalidad);
-            this.Controls.Add(this.lblequipo);
             this.Controls.Add(this.lblaltura);
             this.Controls.Add(this.lblfecha);
             this.Controls.Add(this.lblpeso);
@@ -344,7 +320,6 @@
             this.Controls.Add(this.lblsexo);
             this.Controls.Add(this.lblapellido);
             this.Controls.Add(this.lblNombre);
-            this.Controls.Add(this.Cmbequipo);
             this.Controls.Add(this.txtaltura);
             this.Controls.Add(this.txtpeso);
             this.Controls.Add(this.cmbpierna);
@@ -380,7 +355,6 @@
         private System.Windows.Forms.ComboBox cmbpierna;
         private System.Windows.Forms.TextBox txtpeso;
         private System.Windows.Forms.TextBox txtaltura;
-        private System.Windows.Forms.ComboBox Cmbequipo;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblapellido;
         private System.Windows.Forms.Label lblsexo;
@@ -389,7 +363,6 @@
         private System.Windows.Forms.Label lblpeso;
         private System.Windows.Forms.Label lblfecha;
         private System.Windows.Forms.Label lblaltura;
-        private System.Windows.Forms.Label lblequipo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TxtNacionalidad;
         private System.Windows.Forms.Button btnAgregar;

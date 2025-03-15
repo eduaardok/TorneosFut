@@ -206,6 +206,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Organizadores";
+            this.Load += new System.EventHandler(this.Organizadores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbIMGOrganizador)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrganizador)).EndInit();

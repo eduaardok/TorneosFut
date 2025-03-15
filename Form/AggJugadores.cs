@@ -34,10 +34,6 @@ namespace pruebas
         private void Form1_Load(object sender, EventArgs e)
         {
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
-            Cmbequipo.DataSource = conexion.ListDGV("select* from Equipo");
-            Cmbequipo.ValueMember = "IDEquipo";
-            Cmbequipo.DisplayMember = "NombreClub";
-            Cmbequipo.SelectedIndex = -1;
         }
 
         private void lblPosicion_Click(object sender, EventArgs e)
@@ -56,7 +52,7 @@ namespace pruebas
                     {
                         if (!validaaltu(txtaltura) && !validaaltu(txtpeso))
                         {
-                            jugador.agregarJugador(Txtnombre, txtapellido, cmbsexo, dtpNacimiento, CmbPosicion, Cmbequipo, TxtNacionalidad, txtpeso, txtaltura, cmbpierna);
+                            jugador.agregarJugador(Txtnombre, txtapellido, cmbsexo, dtpNacimiento, CmbPosicion,TxtNacionalidad, txtpeso, txtaltura, cmbpierna);
                             txtaltura.Clear();
                             txtapellido.Clear();
                             txtpeso.Clear();
@@ -64,7 +60,6 @@ namespace pruebas
                             Txtnombre.Clear();
                             cmbpierna.SelectedIndex = -1;
                             cmbsexo.SelectedIndex = -1;
-                            Cmbequipo.SelectedIndex = -1;
                             CmbPosicion.SelectedIndex = -1;
                             MessageBox.Show("Jugador agregado con exito");
                             ve.dgvJugador.DataSource = jugador.mostrarJugador();

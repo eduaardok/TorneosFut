@@ -20,29 +20,28 @@ namespace TorneosFut.Class
 
         public DataTable mostrarJugador()
         {
-            return conexion.ListDGV(@"select IDJugador,Nombres,Apellidos,Sexo,FechaNacimiento,
-                                    Posicion,EquipoActual,Goles,Disponibilidad,
-                                    PartidosJugados,Nacionalidad,Peso,Altura,PiernaHabil from Jugador");
+            return conexion.ListDGV(@"select IDJugador,NombreJugador,ApellidoJugador,Sexo,fechaNacimiento,
+                                    Posicion,Nacionalidad,Peso,Altura,PiernaHabil from Jugador");
         }
         public string filtro(string filtro)
         {
-            return $@"select Nombres,Apellidos,Sexo,FechaNacimiento,Posicion,EquipoActual,Goles,Disponibilidad, PartidosJugados,
-                    Nacionalidad,Peso,Altura,PiernaHabil from Jugador where IDJugador like '%{filtro}%' or 
+            return $@"select IDJugador,NombreJugador,ApellidoJugador,Sexo,fechaNacimiento,
+                                    Posicion,Nacionalidad,Peso,Altura,PiernaHabil from Jugador where IDJugador like '%{filtro}%' or 
                     Nombres like '%{filtro}%' or Apellidos like '%{filtro}%' or EquipoActual like '%{filtro}%'";
         }
-        public void editarjugador(TextBox Txtnombre, TextBox txtapellido, ComboBox CmbPosicion,ComboBox Cmbequipo, TextBox txtpeso, TextBox txtaltura, int ID)
+        public void editarjugador(TextBox Txtnombre, TextBox txtapellido, ComboBox CmbPosicion, TextBox txtpeso, TextBox txtaltura, int ID)
         {
-            conexion.Consulta($@"UPDATE Jugador set Nombres='{Txtnombre.Text}', Apellidos='{txtapellido.Text}'
-                            ,Posicion='{CmbPosicion.Text}', EquipoActual={int.Parse(Cmbequipo.SelectedValue.ToString())}, 
+            conexion.Consulta($@"UPDATE Jugador set NombreJugador='{Txtnombre.Text}', ApellidoJugador='{txtapellido.Text}'
+                            ,Posicion='{CmbPosicion.Text}', 
                             Peso={decimal.Parse(txtpeso.Text)}, Altura= {decimal.Parse(txtaltura.Text)}  where IDJugador={ID}");
         }
-        public void agregarJugador(TextBox Txtnombre, TextBox txtapellido, ComboBox cmbsexo, DateTimePicker dtpNacimiento, ComboBox CmbPosicion, ComboBox Cmbequipo,TextBox TxtNacionalidad, TextBox txtpeso, TextBox txtaltura, ComboBox cmbpierna)
+        public void agregarJugador(TextBox Txtnombre, TextBox txtapellido, ComboBox cmbsexo, DateTimePicker dtpNacimiento, ComboBox CmbPosicion, TextBox TxtNacionalidad, TextBox txtpeso, TextBox txtaltura, ComboBox cmbpierna)
         {
-            conexion.Consulta($@"INSERT INTO Jugador (Nombres, Apellidos, Sexo, FechaNacimiento, Posicion, EquipoActual, Goles, Asistencias,
-                            Disponibilidad, PartidosJugados, Nacionalidad, Peso, Altura, PiernaHabil, ImagenJugador)  
+            conexion.Consulta($@"INSERT INTO Jugador (NombreJugador,ApellidoJugador,Sexo,fechaNacimiento,
+                                    Posicion,Nacionalidad,Peso,Altura,PiernaHabil, ImagenJugador)  
                             VALUES ('{Txtnombre.Text}', '{txtapellido.Text}', '{cmbsexo.Text}', '{dtpNacimiento.Value}', 
-                            '{CmbPosicion.Text}', {int.Parse(Cmbequipo.SelectedValue.ToString())}, {0}, {0}, {1}, {0}, 
-                            '{TxtNacionalidad.Text}', {decimal.Parse(txtpeso.Text)}, {decimal.Parse(txtaltura.Text)}, '{cmbpierna.Text}', 'imangens')");
+                            '{CmbPosicion.Text}','{TxtNacionalidad.Text}', {decimal.Parse(txtpeso.Text)}, {decimal.Parse(txtaltura.Text)}, 
+                            '{cmbpierna.Text}', 'imangens')");
         }
     }
 }

@@ -20,5 +20,10 @@ namespace TorneosFut
             conexion.Clave = c;
             InitializeComponent();
         }
+
+        private void Patrocinadores_Load(object sender, EventArgs e)
+        {
+            Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
+        }
     }
 }

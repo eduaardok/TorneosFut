@@ -90,7 +90,7 @@ namespace pruebas
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            try
+             try
             {
 
                 if (dgvJugador.RowCount > 0)

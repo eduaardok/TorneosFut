@@ -42,9 +42,6 @@
             this.panelOpciones = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnUsuarios = new System.Windows.Forms.Button();
-            this.btnEntrenadores = new System.Windows.Forms.Button();
-            this.btnPatrocinador = new System.Windows.Forms.Button();
-            this.btnOrganizador = new System.Windows.Forms.Button();
             this.btnEquipos = new System.Windows.Forms.Button();
             this.btnTorneos = new System.Windows.Forms.Button();
             this.tmopen = new System.Windows.Forms.Timer(this.components);
@@ -176,9 +173,6 @@
             this.panelOpciones.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panelOpciones.Controls.Add(this.pictureBox1);
             this.panelOpciones.Controls.Add(this.btnUsuarios);
-            this.panelOpciones.Controls.Add(this.btnEntrenadores);
-            this.panelOpciones.Controls.Add(this.btnPatrocinador);
-            this.panelOpciones.Controls.Add(this.btnOrganizador);
             this.panelOpciones.Controls.Add(this.btnEquipos);
             this.panelOpciones.Controls.Add(this.btnTorneos);
             this.panelOpciones.Dock = System.Windows.Forms.DockStyle.Left;
@@ -190,12 +184,12 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = global::TorneosFut.Properties.Resources.logoFX;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 504);
+            this.pictureBox1.Image = global::TorneosFut.Properties.Resources.logoFX;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 249);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(294, 114);
+            this.pictureBox1.Size = new System.Drawing.Size(294, 369);
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
@@ -207,7 +201,7 @@
             this.btnUsuarios.ForeColor = System.Drawing.Color.White;
             this.btnUsuarios.Image = global::TorneosFut.Properties.Resources.icons8_usuario_50;
             this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsuarios.Location = new System.Drawing.Point(0, 425);
+            this.btnUsuarios.Location = new System.Drawing.Point(0, 170);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Size = new System.Drawing.Size(294, 79);
             this.btnUsuarios.TabIndex = 11;
@@ -216,63 +210,6 @@
             this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             this.btnUsuarios.MouseEnter += new System.EventHandler(this.btnUsuarios_MouseEnter);
             this.btnUsuarios.MouseLeave += new System.EventHandler(this.btnUsuarios_MouseLeave);
-            // 
-            // btnEntrenadores
-            // 
-            this.btnEntrenadores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.btnEntrenadores.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEntrenadores.Font = new System.Drawing.Font("Onest Bold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEntrenadores.ForeColor = System.Drawing.Color.White;
-            this.btnEntrenadores.Image = global::TorneosFut.Properties.Resources.icons8_male_teacher_64;
-            this.btnEntrenadores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEntrenadores.Location = new System.Drawing.Point(0, 340);
-            this.btnEntrenadores.Name = "btnEntrenadores";
-            this.btnEntrenadores.Size = new System.Drawing.Size(294, 85);
-            this.btnEntrenadores.TabIndex = 9;
-            this.btnEntrenadores.Text = "ENTRENADORES";
-            this.btnEntrenadores.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEntrenadores.UseVisualStyleBackColor = false;
-            this.btnEntrenadores.Click += new System.EventHandler(this.btnEntrenadores_Click);
-            this.btnEntrenadores.MouseEnter += new System.EventHandler(this.btnEntrenadores_MouseEnter);
-            this.btnEntrenadores.MouseLeave += new System.EventHandler(this.btnEntrenadores_MouseLeave);
-            // 
-            // btnPatrocinador
-            // 
-            this.btnPatrocinador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.btnPatrocinador.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPatrocinador.Font = new System.Drawing.Font("Onest Bold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPatrocinador.ForeColor = System.Drawing.Color.White;
-            this.btnPatrocinador.Image = global::TorneosFut.Properties.Resources.icons8_patrocinador_50;
-            this.btnPatrocinador.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPatrocinador.Location = new System.Drawing.Point(0, 255);
-            this.btnPatrocinador.Name = "btnPatrocinador";
-            this.btnPatrocinador.Size = new System.Drawing.Size(294, 85);
-            this.btnPatrocinador.TabIndex = 6;
-            this.btnPatrocinador.Text = "PATROCINADORES";
-            this.btnPatrocinador.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnPatrocinador.UseVisualStyleBackColor = false;
-            this.btnPatrocinador.Click += new System.EventHandler(this.btnPatrocinador_Click);
-            this.btnPatrocinador.MouseEnter += new System.EventHandler(this.btnCaja_MouseEnter);
-            this.btnPatrocinador.MouseLeave += new System.EventHandler(this.btnCaja_MouseLeave);
-            // 
-            // btnOrganizador
-            // 
-            this.btnOrganizador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.btnOrganizador.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnOrganizador.Font = new System.Drawing.Font("Onest Bold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOrganizador.ForeColor = System.Drawing.Color.White;
-            this.btnOrganizador.Image = global::TorneosFut.Properties.Resources.icons8_futbol_playa_50;
-            this.btnOrganizador.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOrganizador.Location = new System.Drawing.Point(0, 170);
-            this.btnOrganizador.Name = "btnOrganizador";
-            this.btnOrganizador.Size = new System.Drawing.Size(294, 85);
-            this.btnOrganizador.TabIndex = 3;
-            this.btnOrganizador.Text = "ORGANIZADORES";
-            this.btnOrganizador.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnOrganizador.UseVisualStyleBackColor = false;
-            this.btnOrganizador.Click += new System.EventHandler(this.btnOrganizador_Click);
-            this.btnOrganizador.MouseEnter += new System.EventHandler(this.btnPartidos_MouseEnter);
-            this.btnOrganizador.MouseLeave += new System.EventHandler(this.btnPartidos_MouseLeave);
             // 
             // btnEquipos
             // 
@@ -346,6 +283,7 @@
             this.Controls.Add(this.panelOpciones);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Onest Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "Principal";
@@ -369,14 +307,11 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panelOpciones;
-        private System.Windows.Forms.Button btnPatrocinador;
-        private System.Windows.Forms.Button btnOrganizador;
         private System.Windows.Forms.Button btnTorneos;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Panel panelModulos;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnUsuarios;
-        private System.Windows.Forms.Button btnEntrenadores;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Timer tmopen;
         private System.Windows.Forms.Timer timeclose;
