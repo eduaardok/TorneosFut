@@ -67,6 +67,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form\AggTorneo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\AggTorneo.Designer.cs">
+      <DependentUpon>AggTorneo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Class\csEntrenador.cs" />
     <Compile Include="Class\csEquipo.cs" />
     <Compile Include="Class\csJugador.cs" />
@@ -187,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\AggJugadores.resx">
       <DependentUpon>AggJugadores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\AggTorneo.resx">
+      <DependentUpon>AggTorneo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\AggUsuario.resx">
       <DependentUpon>AggUsuario.cs</DependentUpon>
