@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TorneosFut.Class;
+using Usuarios;
 
 namespace TorneosFut
 {
@@ -93,6 +94,22 @@ namespace TorneosFut
         private void button1_Click(object sender, EventArgs e)
         {
             panelmodul.Hide();
+        }
+
+        private void btnCrear_Click(object sender, EventArgs e)
+        {
+            int id = -1;
+            AggTorneo a = new AggTorneo(true, id, conexion.Usuario, conexion.Clave);
+            //AbrirFormEnPanel(panelDgv, a);
+            a.ShowDialog();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            int id = 1;
+            AggTorneo a = new AggTorneo(false, id, conexion.Usuario, conexion.Clave);
+            //AbrirFormEnPanel(panelDgv, a);
+            a.ShowDialog();
         }
     }
 }

@@ -15,18 +15,18 @@ namespace Usuarios
     {
         static bool mostrarClave = false;
         csConexion conexion;
+        csDGV csDGV;
         public GestionUsuario(string u,string c) 
         {
-            conexion = new csConexion();
-            conexion.Usuario = u;
-            conexion.Clave = c;
+            conexion = new csConexion(u,c);
+            csDGV = new csDGV(u, c);
             InitializeComponent();
             ActualizarTabla();
         }
         private void GestionUsuario_Load(object sender, EventArgs e)
         {
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
-            dgvUsuarios.DataSource = conexion.ListDGV("Select * from Usuario");
+            csDGV.MostrarUsuarios(dgvUsuarios);
             AdaptarDGV();
 
         }

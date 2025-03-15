@@ -18,6 +18,7 @@ namespace Usuarios
         DataTable dt;
         csConexion conexion;
         csEncriptar encriptar;
+        csUsuario csusuario;
         public AggUsuario(bool a, int i, string u, string c)
         {
             conexion = new csConexion();

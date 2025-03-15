@@ -28,16 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btnJugador = new System.Windows.Forms.Button();
-            this.btnOrganizador = new System.Windows.Forms.Button();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnArbitros = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.panelmodul = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtBuscarTorneo = new System.Windows.Forms.TextBox();
             this.dgvOrganizador = new System.Windows.Forms.DataGridView();
             this.btnPartidos = new Guna.UI2.WinForms.Guna2Button();
@@ -45,45 +42,14 @@
             this.btnEquipos = new Guna.UI2.WinForms.Guna2Button();
             this.btnPatrocinadores = new Guna.UI2.WinForms.Guna2Button();
             this.btnCrear = new Guna.UI2.WinForms.Guna2Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnJugador = new System.Windows.Forms.Button();
+            this.btnOrganizador = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelmodul.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrganizador)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnJugador
-            // 
-            this.btnJugador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.btnJugador.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnJugador.Font = new System.Drawing.Font("Onest Bold", 20F, System.Drawing.FontStyle.Bold);
-            this.btnJugador.ForeColor = System.Drawing.Color.White;
-            this.btnJugador.Image = global::TorneosFut.Properties.Resources.icons8_patrocinador_50;
-            this.btnJugador.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnJugador.Location = new System.Drawing.Point(312, 3);
-            this.btnJugador.Name = "btnJugador";
-            this.btnJugador.Size = new System.Drawing.Size(319, 85);
-            this.btnJugador.TabIndex = 3;
-            this.btnJugador.Text = "PATROCINADORES";
-            this.btnJugador.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnJugador.UseVisualStyleBackColor = false;
-            this.btnJugador.Click += new System.EventHandler(this.btnJugadores_Click);
-            // 
-            // btnOrganizador
-            // 
-            this.btnOrganizador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.btnOrganizador.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnOrganizador.Font = new System.Drawing.Font("Onest Bold", 20F, System.Drawing.FontStyle.Bold);
-            this.btnOrganizador.ForeColor = System.Drawing.Color.White;
-            this.btnOrganizador.Image = global::TorneosFut.Properties.Resources.icons8_organizador_80;
-            this.btnOrganizador.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOrganizador.Location = new System.Drawing.Point(966, 3);
-            this.btnOrganizador.Name = "btnOrganizador";
-            this.btnOrganizador.Size = new System.Drawing.Size(318, 85);
-            this.btnOrganizador.TabIndex = 5;
-            this.btnOrganizador.Text = "ORGANIZADORES";
-            this.btnOrganizador.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnOrganizador.UseVisualStyleBackColor = false;
-            this.btnOrganizador.Click += new System.EventHandler(this.btnEstadios_Click);
             // 
             // btnArbitros
             // 
@@ -144,17 +110,6 @@
             this.panelmodul.Size = new System.Drawing.Size(1490, 811);
             this.panelmodul.TabIndex = 8;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.BackgroundImage = global::TorneosFut.Properties.Resources.IconoLupa;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(151, 56);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 49);
-            this.pictureBox1.TabIndex = 49;
-            this.pictureBox1.TabStop = false;
-            // 
             // txtBuscarTorneo
             // 
             this.txtBuscarTorneo.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -177,35 +132,35 @@
             this.dgvOrganizador.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvOrganizador.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvOrganizador.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvOrganizador.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOrganizador.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvOrganizador.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvOrganizador.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvOrganizador.DefaultCellStyle = dataGridViewCellStyle11;
             this.dgvOrganizador.EnableHeadersVisualStyles = false;
             this.dgvOrganizador.Location = new System.Drawing.Point(151, 254);
             this.dgvOrganizador.Name = "dgvOrganizador";
             this.dgvOrganizador.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvOrganizador.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOrganizador.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvOrganizador.RowHeadersVisible = false;
             this.dgvOrganizador.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvOrganizador.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -262,6 +217,7 @@
             this.btnEditar.Size = new System.Drawing.Size(180, 59);
             this.btnEditar.TabIndex = 53;
             this.btnEditar.Text = "EDITAR TORNEO";
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnEquipos
             // 
@@ -334,11 +290,57 @@
             this.btnCrear.ForeColor = System.Drawing.Color.Black;
             this.btnCrear.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnCrear.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
-            this.btnCrear.Location = new System.Drawing.Point(350, 161);
+            this.btnCrear.Location = new System.Drawing.Point(356, 161);
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Size = new System.Drawing.Size(180, 59);
             this.btnCrear.TabIndex = 56;
             this.btnCrear.Text = "CREAR TORNEO";
+            this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.BackgroundImage = global::TorneosFut.Properties.Resources.IconoLupa;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(151, 56);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 49);
+            this.pictureBox1.TabIndex = 49;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnJugador
+            // 
+            this.btnJugador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            this.btnJugador.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnJugador.Font = new System.Drawing.Font("Onest Bold", 20F, System.Drawing.FontStyle.Bold);
+            this.btnJugador.ForeColor = System.Drawing.Color.White;
+            this.btnJugador.Image = global::TorneosFut.Properties.Resources.icons8_patrocinador_50;
+            this.btnJugador.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnJugador.Location = new System.Drawing.Point(312, 3);
+            this.btnJugador.Name = "btnJugador";
+            this.btnJugador.Size = new System.Drawing.Size(319, 85);
+            this.btnJugador.TabIndex = 3;
+            this.btnJugador.Text = "PATROCINADORES";
+            this.btnJugador.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnJugador.UseVisualStyleBackColor = false;
+            this.btnJugador.Click += new System.EventHandler(this.btnJugadores_Click);
+            // 
+            // btnOrganizador
+            // 
+            this.btnOrganizador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            this.btnOrganizador.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnOrganizador.Font = new System.Drawing.Font("Onest Bold", 20F, System.Drawing.FontStyle.Bold);
+            this.btnOrganizador.ForeColor = System.Drawing.Color.White;
+            this.btnOrganizador.Image = global::TorneosFut.Properties.Resources.icons8_organizador_80;
+            this.btnOrganizador.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOrganizador.Location = new System.Drawing.Point(966, 3);
+            this.btnOrganizador.Name = "btnOrganizador";
+            this.btnOrganizador.Size = new System.Drawing.Size(318, 85);
+            this.btnOrganizador.TabIndex = 5;
+            this.btnOrganizador.Text = "ORGANIZADORES";
+            this.btnOrganizador.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnOrganizador.UseVisualStyleBackColor = false;
+            this.btnOrganizador.Click += new System.EventHandler(this.btnEstadios_Click);
             // 
             // Torneo
             // 
@@ -359,8 +361,8 @@
             this.panel1.ResumeLayout(false);
             this.panelmodul.ResumeLayout(false);
             this.panelmodul.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrganizador)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
