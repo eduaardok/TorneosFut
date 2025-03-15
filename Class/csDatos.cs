@@ -7,20 +7,18 @@ using System.Windows.Forms;
 
 namespace TorneosFut
 {
-
-    class csDGV
+    class csDatos
     {
         csConexion conexion;
         csUsuario csUsuario;
-        public csDGV(string u, string c)
+        public csDatos(string u, string c)
         {
             conexion = new csConexion(u, c);
             csUsuario = new csUsuario(u, c);
         }
-         public void MostrarUsuarios(DataGridView dgv)
+        public int ObtenerIDUsuario(DataGridView dgv)
         {
-            dgv.DataSource = csUsuario.ListaDeUsuarios();
+            return csUsuario.IDUsuario(dgv);
         }
-
     }
 }

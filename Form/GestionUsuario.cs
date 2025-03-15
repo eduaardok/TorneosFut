@@ -16,10 +16,12 @@ namespace Usuarios
         static bool mostrarClave = false;
         csConexion conexion;
         csDGV csDGV;
+        csDatos csDatos;
         public GestionUsuario(string u,string c) 
         {
             conexion = new csConexion(u,c);
             csDGV = new csDGV(u, c);
+            csDatos = new csDatos(u, c);
             InitializeComponent();
             ActualizarTabla();
         }
@@ -27,45 +29,18 @@ namespace Usuarios
         {
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
             csDGV.MostrarUsuarios(dgvUsuarios);
-            AdaptarDGV();
+            csDGV.AdaptarDGV(dgvUsuarios, panelDgv);
 
         }
         void ActualizarTabla()
         {
-            if(mostrarClave)
-            dgvUsuarios.DataSource = conexion.ListDGV($"Select * from Usuario where IDUsuario like '%{txtFiltro.Text}%' or Nombres like '%{txtFiltro.Text}%'" +
-                                    $" or NombreUsuario like '%{txtFiltro.Text}%' or NombreUsuarioBD like '%{txtFiltro.Text}%'");
-            else
-                dgvUsuarios.DataSource = conexion.ListDGV($"Select IDUsuario, Nombres, NombreUsuario, Correo, NombreUsuarioBD from Usuario where IDUsuario like '%{txtFiltro.Text}%' or Nombres like '%{txtFiltro.Text}%'" +
-                                    $" or NombreUsuario like '%{txtFiltro.Text}%' or NombreUsuarioBD like '%{txtFiltro.Text}%'");
-            AdaptarDGV();
+            csDGV.MostrarUsuariosFiltro(dgvUsuarios, mostrarClave, txtFiltro.Text);
+            csDGV.AdaptarDGV(dgvUsuarios, panelDgv);
         }
-        void AdaptarDGV()
-        {
-            dgvUsuarios.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#14191D");
-            dgvUsuarios.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            dgvUsuarios.EnableHeadersVisualStyles = false;
-            //ActualizarTabla();
-            dgvUsuarios.Width = panelDgv.Width;
-            dgvUsuarios.Height = panelDgv.Height;
-
-            int filas, columnas;
-            filas = dgvUsuarios.RowCount;
-            columnas = dgvUsuarios.ColumnCount;
-            dgvUsuarios.ColumnHeadersHeight = 50;//dgvUsuarios.Height / (1+filas);
-            for (int i = 0; i < filas; i++)
-            {
-                dgvUsuarios.Rows[i].Height = 60;//dgvUsuarios.Height / (1+filas);
-            }
-            for (int i = 0; i < columnas; i++)
-            {
-                dgvUsuarios.Columns[i].Width = dgvUsuarios.Width / columnas;
-            }
-        }
-
+        
         private void dgvUsuarios_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            AdaptarDGV();
+            csDGV.AdaptarDGV(dgvUsuarios, panelDgv);
         }
 
         private void btngCrear_Click(object sender, EventArgs e)
@@ -82,7 +57,7 @@ namespace Usuarios
             {
                 if (dgvUsuarios.CurrentRow.Index >= 0)
                 {
-                    int id = int.Parse(dgvUsuarios.Rows[dgvUsuarios.CurrentRow.Index].Cells[0].Value.ToString());
+                    int id = csDatos.ObtenerIDUsuario(dgvUsuarios);
                     AggUsuario a = new AggUsuario(false, id, conexion.Usuario, conexion.Clave);
                     //AbrirFormEnPanel(panelDgv, a);
                     a.ShowDialog();
@@ -96,7 +71,7 @@ namespace Usuarios
             {
                 MessageBox.Show("La tabla está vacía");
             }
-            AdaptarDGV();
+            csDGV.AdaptarDGV(dgvUsuarios, panelDgv);
         }
 
         private void btngLimpiar_Click(object sender, EventArgs e)
@@ -112,6 +87,8 @@ namespace Usuarios
 
         private void btngMostrar_Click(object sender, EventArgs e)
         {
+            if (txtFiltro.Text == "Buscar por nombre de Usuario")
+                txtFiltro.Text = "";
             if (btngMostrar.Text == "OCULTAR CLAVE")
             {
                 btngMostrar.Text = "MOSTRAR CLAVE";

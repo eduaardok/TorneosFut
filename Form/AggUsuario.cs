@@ -48,7 +48,7 @@ namespace Usuarios
                 if (agg)
                 {
                     conexion.Consulta($"insert into Usuario " +
-                    $"(Nombre, UsuarioApp, ClaveApp, Correo, UsuarioBD, ClaveBD) values ('{txtNombre.Text}','{txtUsuarioApp.Text}'," +
+                    $"(Nombres, NombreUsuario, ClaveUsuario, Correo, NombreUsuarioBD, ClaveBD) values ('{txtNombre.Text}','{txtUsuarioApp.Text}'," +
                     $"'{claveApp}', '{txtCorreo.Text + cmbCorreos.Text}', '{txtUsuarioBD.Text}', '{claveBD}')");
                     conexion.CrearLoginBD(txtUsuarioBD.Text, txtClaveBD.Text);
                     MessageBox.Show($"Usuario agregado");
@@ -57,9 +57,9 @@ namespace Usuarios
                 else
                 {
                    // dt = conexion.ListDGV($"select * from Administrador where IDAdmin= {id}");
-                    conexion.Consulta($"update Administrador " +
-                    $"set Nombre='{txtNombre.Text}', UsuarioApp= '{txtUsuarioApp.Text}',ClaveApp='{claveApp}', " +
-                    $" Correo= '{txtCorreo.Text + cmbCorreos.Text}', UsuarioBD= '{txtUsuarioBD.Text}',ClaveBD='{claveBD}' where IDAdmin={id} ");
+                    conexion.Consulta($"update Usuario " +
+                    $"set Nombres='{txtNombre.Text}', NombreUsuario= '{txtUsuarioApp.Text}',ClaveUsuario='{claveApp}', " +
+                    $" Correo= '{txtCorreo.Text + cmbCorreos.Text}', NombreUsuarioBD= '{txtUsuarioBD.Text}',ClaveBD='{claveBD}' where IDUsuario={id} ");
                    conexion.ActualizarLoginBD(txtUsuarioBD.Text, txtClaveBD.Text);
                     MessageBox.Show($"Usuario editado");
                     this.Close();
@@ -83,7 +83,7 @@ namespace Usuarios
                 lblEncabezado.Text = "EDICIÓN DE USUARIO";
                 txtUsuarioBD.ReadOnly = true;
                 btngEnviar.Text = "EDITAR";
-                dt = conexion.ListDGV($"select * from Administrador where IDAdmin= {id}");
+                dt = conexion.ListDGV($"select * from Usuario where IDUsuario= {id}");
                 txtNombre.Text = dt.Rows[0][1].ToString();
                 txtUsuarioApp.Text = dt.Rows[0][2].ToString();
                 txtClaveApp.Text = encriptar.Desencriptar(dt.Rows[0][3].ToString(), "futxpert");
@@ -112,9 +112,9 @@ namespace Usuarios
             else
             {
                 if (!agg)
-                    dt = conexion.ListDGV($"select * from Administrador where Nombre = '{txtNombre.Text}' and IDAdmin != {id}");
+                    dt = conexion.ListDGV($"select * from Usuario where Nombre = '{txtNombre.Text}' and IDUsuario != {id}");
                 else
-                    dt = conexion.ListDGV($"select * from Administrador where Nombre = '{txtNombre.Text}'");
+                    dt = conexion.ListDGV($"select * from Usuario where Nombre = '{txtNombre.Text}'");
                 if (dt.Rows.Count > 0)
                 {
                     txtNombre.Text= txtNombre.Text+"1";
@@ -128,9 +128,9 @@ namespace Usuarios
             else
             {
                 if (!agg)
-                    dt = conexion.ListDGV($"select * from Administrador where UsuarioApp = '{txtUsuarioApp.Text}' and IDAdmin != {id}");
+                    dt = conexion.ListDGV($"select * from Usuario where NombreUsuario = '{txtUsuarioApp.Text}' and IDUsuario != {id}");
                 else
-                    dt = conexion.ListDGV($"select * from Administrador where UsuarioApp = '{txtUsuarioApp.Text}'");
+                    dt = conexion.ListDGV($"select * from Usuario where NombreUsuario = '{txtUsuarioApp.Text}'");
                 if (dt.Rows.Count > 0)
                 {
                     lblaUsuarioApp.Text = "El nombre de usuario ya está en uso";
@@ -145,9 +145,9 @@ namespace Usuarios
             else
             {
                 if (!agg)
-                    dt = conexion.ListDGV($"select * from Administrador where UsuarioBD = '{txtUsuarioBD.Text}' and IDAdmin != {id}");
+                    dt = conexion.ListDGV($"select * from Usuario where NombreUsuarioBD = '{txtUsuarioBD.Text}' and IDUsuario != {id}");
                 else
-                    dt = conexion.ListDGV($"select * from Administrador where UsuarioBD = '{txtUsuarioBD.Text}'");
+                    dt = conexion.ListDGV($"select * from Usuario where NombreUsuarioBD = '{txtUsuarioBD.Text}'");
                 if (dt.Rows.Count > 0)
                 {
                     lblaUsuarioBD.Text = "El nombre de usuario ya está en uso";
@@ -167,9 +167,9 @@ namespace Usuarios
                     return false;
                 }
                 if (!agg)
-                    dt = conexion.ListDGV($"select * from Administrador where Correo = '{txtCorreo.Text+cmbCorreos.Text}' and IDAdmin != {id}");
+                    dt = conexion.ListDGV($"select * from Usuario where Correo = '{txtCorreo.Text+cmbCorreos.Text}' and IDUsuario != {id}");
                 else
-                    dt = conexion.ListDGV($"select * from Administrador where Correo = '{txtCorreo.Text + cmbCorreos.Text}'");
+                    dt = conexion.ListDGV($"select * from Usuario where Correo = '{txtCorreo.Text + cmbCorreos.Text}'");
                 if (dt.Rows.Count > 0)
                 {
                     lblaMail.Text = "El correo ya está en uso";

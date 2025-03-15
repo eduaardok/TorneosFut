@@ -5,6 +5,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
+using System.Windows.Forms;
+
 
 namespace TorneosFut
 {
@@ -14,6 +17,12 @@ namespace TorneosFut
         public csUsuario(string u, string c)
         {
             conexion = new csConexion(u, c);
+        }
+        
+        public int IDUsuario(DataGridView dgv)
+        {
+            int id = int.Parse(dgv.Rows[dgv.CurrentRow.Index].Cells[0].Value.ToString());
+            return id;
         }
         public DataTable ListaDeUsuarios()
         {
@@ -32,5 +41,6 @@ namespace TorneosFut
 
             return dt;
         }
+
     }
 }

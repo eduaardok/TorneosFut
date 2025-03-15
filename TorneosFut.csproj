@@ -67,7 +67,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="csDGV.cs" />
+    <Compile Include="Class\csDGV.cs" />
+    <Compile Include="Class\csDatos.cs" />
     <Compile Include="Form\AggTorneo.cs">
       <SubType>Form</SubType>
     </Compile>
