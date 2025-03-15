@@ -17,9 +17,7 @@ namespace PruebasTorneos
         csConexion conexion;
         public csEntrenador(string u, string c)
         {
-            conexion = new csConexion();
-            conexion.Usuario = u;
-            conexion.Clave = c;
+            conexion = new csConexion(u,c);
         }
         public void Cargar(DataGridView dgvEntrenador)
         {
@@ -55,6 +53,18 @@ namespace PruebasTorneos
                 DataTable dt = conexion.ListDGV(consulta);
                 dgvEntrenador.DataSource = dt;
             }
+        }
+        public DataTable ListadeEntrenadoresfiltro(string filtro)
+        {
+            DataTable dt;
+            dt = conexion.ListDGV($"select * FROM Entrenador where IDEntrenador like '%{filtro}%' " +
+                $"or NombreEntrenador like '%{filtro}%' or ApellidoEntrenador like '%{filtro}%' or Sexo like '%%' or FechaNacimiento like '%{filtro}%'");
+            return dt;
+        }
+        public DataTable ListadeEntrenadores()
+        {
+            DataTable dt = conexion.ListDGV("Select * from Entrenador");
+            return dt;
         }
     }
 }

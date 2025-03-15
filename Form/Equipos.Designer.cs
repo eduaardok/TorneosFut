@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.panelDgv = new System.Windows.Forms.Panel();
@@ -45,6 +45,7 @@
             this.btnJugador = new System.Windows.Forms.Button();
             this.btnEntrenador = new System.Windows.Forms.Button();
             this.panelmodul = new System.Windows.Forms.Panel();
+            this.btnEstadio = new System.Windows.Forms.Button();
             this.panelDgv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -87,14 +88,14 @@
             this.dgvEquipos.AllowUserToResizeRows = false;
             this.dgvEquipos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEquipos.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEquipos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEquipos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvEquipos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvEquipos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvEquipos.EnableHeadersVisualStyles = false;
@@ -104,8 +105,8 @@
             this.dgvEquipos.ReadOnly = true;
             this.dgvEquipos.RowHeadersVisible = false;
             this.dgvEquipos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
-            this.dgvEquipos.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.dgvEquipos.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvEquipos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEquipos.ShowCellToolTips = false;
             this.dgvEquipos.ShowEditingIcon = false;
@@ -205,6 +206,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
+            this.panel1.Controls.Add(this.btnEstadio);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btnJugador);
             this.panel1.Controls.Add(this.btnEntrenador);
@@ -234,7 +236,7 @@
             this.btnJugador.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnJugador.Font = new System.Drawing.Font("Onest Bold", 20F, System.Drawing.FontStyle.Bold);
             this.btnJugador.ForeColor = System.Drawing.Color.White;
-            this.btnJugador.Location = new System.Drawing.Point(420, 9);
+            this.btnJugador.Location = new System.Drawing.Point(290, 3);
             this.btnJugador.Name = "btnJugador";
             this.btnJugador.Size = new System.Drawing.Size(294, 85);
             this.btnJugador.TabIndex = 3;
@@ -250,7 +252,7 @@
             this.btnEntrenador.ForeColor = System.Drawing.Color.White;
             this.btnEntrenador.Image = global::TorneosFut.Properties.Resources.icons8_male_teacher_64;
             this.btnEntrenador.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEntrenador.Location = new System.Drawing.Point(727, 9);
+            this.btnEntrenador.Location = new System.Drawing.Point(590, 3);
             this.btnEntrenador.Name = "btnEntrenador";
             this.btnEntrenador.Size = new System.Drawing.Size(310, 85);
             this.btnEntrenador.TabIndex = 6;
@@ -267,6 +269,20 @@
             this.panelmodul.Name = "panelmodul";
             this.panelmodul.Size = new System.Drawing.Size(1490, 811);
             this.panelmodul.TabIndex = 27;
+            // 
+            // btnEstadio
+            // 
+            this.btnEstadio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            this.btnEstadio.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEstadio.Font = new System.Drawing.Font("Onest Bold", 20F, System.Drawing.FontStyle.Bold);
+            this.btnEstadio.ForeColor = System.Drawing.Color.White;
+            this.btnEstadio.Location = new System.Drawing.Point(906, 3);
+            this.btnEstadio.Name = "btnEstadio";
+            this.btnEstadio.Size = new System.Drawing.Size(294, 85);
+            this.btnEstadio.TabIndex = 8;
+            this.btnEstadio.Text = "ESTADIOS";
+            this.btnEstadio.UseVisualStyleBackColor = false;
+            this.btnEstadio.Click += new System.EventHandler(this.btnEstadio_Click);
             // 
             // Equipos
             // 
@@ -320,5 +336,6 @@
         private System.Windows.Forms.Button btnJugador;
         private System.Windows.Forms.Button btnEntrenador;
         public System.Windows.Forms.Panel panelmodul;
+        private System.Windows.Forms.Button btnEstadio;
     }
 }

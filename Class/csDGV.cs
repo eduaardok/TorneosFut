@@ -1,10 +1,12 @@
-﻿using System;
+﻿using PruebasTorneos;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TorneosFut.Class;
 
 namespace TorneosFut
 {
@@ -13,10 +15,16 @@ namespace TorneosFut
     {
         csConexion conexion;
         csUsuario csUsuario;
+        csJugador csJugador;
+        csEquipo csEquipo;
+        csEntrenador csEntrenador;
         public csDGV(string u, string c)
         {
             conexion = new csConexion(u, c);
             csUsuario = new csUsuario(u, c);
+            csJugador= new csJugador  (u, c);
+            csEntrenador = new csEntrenador (u, c);
+            csEquipo = new csEquipo(u, c);
         }
         public void AdaptarDGV(DataGridView dgv, Panel pnl)
         {
@@ -47,6 +55,33 @@ namespace TorneosFut
         public void MostrarUsuariosFiltro(DataGridView dgv, bool mostrarClave,string filtro)
         {
             dgv.DataSource = csUsuario.ListaDeUsuariosFiltro(mostrarClave, filtro);
+        }
+        //JUGADORES 
+        public void MostrarJugadores(DataGridView dgv)
+        {
+            dgv.DataSource = csJugador.ListadeJugadores();
+        }
+        public void MostrarJugadoresFiltro(DataGridView dgv, bool mostrarClave, string filtro)
+        {
+            dgv.DataSource = csJugador.ListadeJugadoresfiltro(filtro);
+        }
+        //EQUIPOS
+        public void MostrarEquipops(DataGridView dgv)
+        {
+            dgv.DataSource = csEquipo.ListadeEquipos();
+        }
+        public void MostrarEquiposFiltro(DataGridView dgv, string filtro)
+        {
+            dgv.DataSource = csEquipo.ListadeEquiposfiltro(filtro);
+        }
+        //ENTRENADORES
+        public void MostrarEntrenadores(DataGridView dgv)
+        {
+            dgv.DataSource = csEntrenador.ListadeEntrenadores();
+        }
+        public void MostrarEntrenadoresFiltro(DataGridView dgv, bool mostrarClave, string filtro)
+        {
+            dgv.DataSource = csEntrenador.ListadeEntrenadoresfiltro(filtro);
         }
     }
 }

@@ -18,15 +18,17 @@ namespace TorneosFut
         csConexion conexion;
         Patrocinadores patro;
         Organizadores orga;
-        public Torneo(string u, string c)
+        GestionarPartidos partidos;
+        Principal T;
+        public Torneo(string u, string c, Principal r)
         {
             conexion = new csConexion();
             conexion.Usuario = u;
             conexion.Clave = c;
             InitializeComponent();
-            patro = new Patrocinadores(conexion.Usuario, conexion.Clave);
-            orga = new Organizadores(conexion.Usuario, conexion.Clave);
-
+            patro = new Patrocinadores(u,c);
+            orga = new Organizadores(u,c);
+            T = r;
 
         }
         public static void AbrirFormEnPanel(Panel panel, Form formHijo)
@@ -59,7 +61,7 @@ namespace TorneosFut
 
         private void Torneo_Load(object sender, EventArgs e)
         {
-           // panelmodul.Hide();
+            panelmodul.Hide();
             //if (BackColor == Color.White)
             //{
             //    ju.label2.ForeColor = Color.Black;
@@ -110,6 +112,15 @@ namespace TorneosFut
             AggTorneo a = new AggTorneo(false, id, conexion.Usuario, conexion.Clave);
             //AbrirFormEnPanel(panelDgv, a);
             a.ShowDialog();
+        }
+
+        private void btnPartidos_Click(object sender, EventArgs e)
+        {
+            partidos = new GestionarPartidos(conexion.Usuario, conexion.Clave,this,T);
+            panelmodul.Show();
+            T.Hide();
+            partidos.ShowDialog();
+           
         }
     }
 }

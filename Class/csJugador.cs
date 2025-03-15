@@ -13,9 +13,7 @@ namespace TorneosFut.Class
 
         public csJugador(string u, string c)
         {
-            conexion = new csConexion();
-            conexion.Usuario = u;
-            conexion.Clave = c;
+            conexion = new csConexion(u, c);
         }
 
         public DataTable mostrarJugador()
@@ -42,6 +40,18 @@ namespace TorneosFut.Class
                             VALUES ('{Txtnombre.Text}', '{txtapellido.Text}', '{cmbsexo.Text}', '{dtpNacimiento.Value}', 
                             '{CmbPosicion.Text}','{TxtNacionalidad.Text}', {decimal.Parse(txtpeso.Text)}, {decimal.Parse(txtaltura.Text)}, 
                             '{cmbpierna.Text}', 'imangens')");
+        }
+        public DataTable ListadeJugadores()
+        {
+            DataTable dt = conexion.ListDGV("Select * from Jugador");
+            return dt;
+        }
+        public DataTable ListadeJugadoresfiltro(string filtro)
+        {
+            DataTable dt;
+            dt = conexion.ListDGV($"select * from Jugador where IDJugador like '%{filtro}%' " +
+                    $"or Nombres like '%{filtro}%' or Apellidos like '%{filtro}%' or EquipoActual like '%{filtro}%'");
+            return dt;
         }
     }
 }

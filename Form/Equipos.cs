@@ -19,15 +19,17 @@ namespace TorneosFut
         csEquipo equipo;
         Jugador ju;
         Entrenador entre;
+        csDGV csDGV;
         public Equipos(string u, string c)
         {
             conexion = new csConexion();
             conexion.Usuario = u;
             conexion.Clave = c;
             InitializeComponent();
-            equipo = new csEquipo(conexion.Usuario,conexion.Clave);
-            ju= new Jugador(conexion.Usuario, conexion.Clave);
-            entre = new Entrenador (conexion.Usuario, conexion.Clave);
+            equipo = new csEquipo(u, c);
+            ju= new Jugador(u,c);
+            entre = new Entrenador (u,c);
+            csDGV = new csDGV(u,c);
         }
         private void addUserControl(UserControl userControll)
         {
@@ -74,7 +76,8 @@ namespace TorneosFut
         private void Equipos_Load(object sender, EventArgs e)
         {
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
-            dgvEquipos.DataSource = equipo.mostrarequipo();
+            //dgvEquipos.DataSource = dgvEquipo¿();
+            csDGV.MostrarEquipops(dgvEquipos);
             AdaptarDGV();
             panelmodul.Hide();
         }
@@ -124,7 +127,8 @@ namespace TorneosFut
         {
             if (string.IsNullOrWhiteSpace(filtro))
             {
-                dgvEquipos.DataSource = equipo.mostrarequipo();
+                //dgvEquipos.DataSource = equipo.mostrarequipo();
+                csDGV.MostrarEquiposFiltro(dgvEquipos,txtBuscarEquipo.Text);
                 AdaptarDGV();
             }
             else
@@ -153,6 +157,11 @@ namespace TorneosFut
         private void btnEntrenador_Click(object sender, EventArgs e)
         {
             AbrirFormEnPanel(panelmodul, entre);
+        }
+
+        private void btnEstadio_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

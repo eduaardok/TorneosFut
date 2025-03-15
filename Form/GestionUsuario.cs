@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TorneosFut;
-
+using PruebasTorneos;
 namespace Usuarios
 {
     public partial class GestionUsuario: Form

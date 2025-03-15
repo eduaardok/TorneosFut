@@ -13,13 +13,13 @@ namespace TorneosFut
     internal class csConexion
     {
         private SqlConnection conec;
-        //private string _server = "26.102.193.210";
+        private string _server = "26.102.193.210";
 
 
-        //private string _database = "BDTorneosBetaV2";
+        private string _database = "BDTorneosBetaV2";
         // private string _database = "BDTorneosFutbol";
-        private string _server = ".";
-        private string _database = "BDTorneosBetaCopia";
+        //private string _server = ".";
+        //private string _database = "BDTorneosBetaCopia";
 
         private string _usuario;
         private string _clave;

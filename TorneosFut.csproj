@@ -69,6 +69,12 @@
   <ItemGroup>
     <Compile Include="Class\csDGV.cs" />
     <Compile Include="Class\csDatos.cs" />
+    <Compile Include="Form\Estadio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Estadio.Designer.cs">
+      <DependentUpon>Estadio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\AggTorneo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,12 @@
     <Compile Include="Form\Editjugador.Designer.cs">
       <DependentUpon>Editjugador.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\Entrenador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Entrenador.Designer.cs">
+      <DependentUpon>Entrenador.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\Equipos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,31 +136,37 @@
     <Compile Include="Form\EditEntrenador.Designer.cs">
       <DependentUpon>EditEntrenador.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\GestionarPartidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\GestionarPartidos.Designer.cs">
+      <DependentUpon>GestionarPartidos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\GestionUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form\GestionUsuario.Designer.cs">
       <DependentUpon>GestionUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\Goles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Goles.Designer.cs">
+      <DependentUpon>Goles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class\MenuColorTable.cs" />
+    <Compile Include="Class\MenuRenderer.cs" />
     <Compile Include="Form\Jugador.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form\Jugador.Designer.cs">
       <DependentUpon>Jugador.cs</DependentUpon>
     </Compile>
-    <Compile Include="Class\MenuColorTable.cs" />
-    <Compile Include="Class\MenuRenderer.cs" />
     <Compile Include="Form\Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form\Entrenador.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\Entrenador.Designer.cs">
-      <DependentUpon>Entrenador.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\Principal.cs">
       <SubType>Form</SubType>
@@ -190,6 +208,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
+    <EmbeddedResource Include="Form\Estadio.resx">
+      <DependentUpon>Estadio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\AggEquipo.resx">
       <DependentUpon>AggEquipo.cs</DependentUpon>
     </EmbeddedResource>
@@ -205,6 +226,9 @@
     <EmbeddedResource Include="Form\Editjugador.resx">
       <DependentUpon>Editjugador.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\Entrenador.resx">
+      <DependentUpon>Entrenador.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\Equipos.resx">
       <DependentUpon>Equipos.cs</DependentUpon>
     </EmbeddedResource>
@@ -214,17 +238,20 @@
     <EmbeddedResource Include="Form\EditEntrenador.resx">
       <DependentUpon>EditEntrenador.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\GestionarPartidos.resx">
+      <DependentUpon>GestionarPartidos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\GestionUsuario.resx">
       <DependentUpon>GestionUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Goles.resx">
+      <DependentUpon>Goles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Jugador.resx">
       <DependentUpon>Jugador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\Entrenador.resx">
-      <DependentUpon>Entrenador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Organizadores.resx">
       <DependentUpon>Organizadores.cs</DependentUpon>
