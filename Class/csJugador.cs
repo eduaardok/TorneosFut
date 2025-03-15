@@ -35,11 +35,11 @@ namespace TorneosFut.Class
         }
         public void agregarJugador(TextBox Txtnombre, TextBox txtapellido, ComboBox cmbsexo, DateTimePicker dtpNacimiento, ComboBox CmbPosicion, TextBox TxtNacionalidad, TextBox txtpeso, TextBox txtaltura, ComboBox cmbpierna)
         {
-            conexion.Consulta($@"INSERT INTO Jugador (NombreJugador,ApellidoJugador,Sexo,fechaNacimiento,
-                                    Posicion,Nacionalidad,Peso,Altura,PiernaHabil, ImagenJugador)  
-                            VALUES ('{Txtnombre.Text}', '{txtapellido.Text}', '{cmbsexo.Text}', '{dtpNacimiento.Value}', 
+            conexion.Consulta($@"INSERT INTO Jugador (IDJugador, NombreJugador,ApellidoJugador,Sexo,fechaNacimiento,
+                                    Posicion,Nacionalidad,Peso,Altura,PiernaHabil)  
+                            VALUES ('1250598925', '{Txtnombre.Text}', '{txtapellido.Text}', '{cmbsexo.Text}', '{dtpNacimiento.Value}', 
                             '{CmbPosicion.Text}','{TxtNacionalidad.Text}', {decimal.Parse(txtpeso.Text)}, {decimal.Parse(txtaltura.Text)}, 
-                            '{cmbpierna.Text}', 'imangens')");
+                            '{cmbpierna.Text}')");
         }
         public DataTable ListadeJugadores()
         {

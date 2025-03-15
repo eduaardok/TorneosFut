@@ -74,7 +74,7 @@ namespace PruebasTorneos
 
         private void dgvEntrenador_SelectionChanged(object sender, EventArgs e)
         {
-            try
+            /*try
             {
                 if (dgvEntrenador.Rows.Count == 0 || dgvEntrenador.SelectedRows.Count == 0)
                     return;
@@ -99,7 +99,7 @@ namespace PruebasTorneos
             catch (Exception ex)
             {
                 MessageBox.Show("Error al cargar la imagen: " + ex.Message);
-            }
+            }*/
         }
 
         private void txtBuscar_KeyUp(object sender, KeyEventArgs e)
@@ -109,7 +109,7 @@ namespace PruebasTorneos
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            int idEntrenador = Convert.ToInt32(dgvEntrenador.SelectedRows[0].Cells["IDEntrenador"].Value);
+            /*int idEntrenador = Convert.ToInt32(dgvEntrenador.SelectedRows[0].Cells["IDEntrenador"].Value);
             if(ptbNewIMG.Image == null)
             {
                 MessageBox.Show("Elija una imagen antes de continuar");
@@ -140,7 +140,7 @@ namespace PruebasTorneos
                 {
                     MessageBox.Show($"Error al actualizar entrenador: {ex.Message}");
                 }
-            }
+            }*/
         }
 
         private void dgvEntrenador_CellContentClick(object sender, DataGridViewCellEventArgs e)

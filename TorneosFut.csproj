@@ -69,6 +69,7 @@
   <ItemGroup>
     <Compile Include="Class\csDGV.cs" />
     <Compile Include="Class\csDatos.cs" />
+    <Compile Include="Class\csImagenes.cs" />
     <Compile Include="Form\Estadio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -336,6 +337,7 @@
     <Content Include="media\door.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\Sin_foto.jpg" />
     <None Include="Resources\icons8-cucha-50 %281%29.png" />
     <None Include="Resources\icons8-cucha-50.png" />
     <None Include="Resources\fxfutxpertblanco.png" />
@@ -371,6 +373,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Imagenes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

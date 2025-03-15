@@ -28,7 +28,7 @@ namespace TorneosFut
         }
         public void lblEntregarVisi(bool visble, bool novisble)
         {
-            lblEditarEqui.Visible = visble;
+            //lblEditarEqui.Visible = visble;
             lblAggEquipo.Visible = novisble;
             btnEditar.Visible = visble;
             btnAgregar.Visible = novisble;
@@ -66,15 +66,15 @@ namespace TorneosFut
 
         private void lblBorde1_Paint(object sender, PaintEventArgs e)
         {
-            lblBorde1.BackColor = Color.Transparent;
+            /*lblBorde1.BackColor = Color.Transparent;
             using (Pen pen = new Pen(ColorTranslator.FromHtml("#FB038C"), 3))
             {
                 e.Graphics.DrawRectangle(pen, 0, 0, lblBorde1.Width - 1, lblBorde1.Height - 1);
-            }
+            }*/
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            lblBorde1.Paint += lblBorde1_Paint;
+            //lblBorde1.Paint += lblBorde1_Paint;
         }
         private void Form2_Load(object sender, EventArgs e)
         {

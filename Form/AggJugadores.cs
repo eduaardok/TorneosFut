@@ -14,11 +14,15 @@ namespace pruebas
 {
     public partial class AggJugadores : Form
     {
+        OpenFileDialog img;
+        csImagenes imagenes;
         csConexion conexion;
         Jugador ve;
         csJugador jugador;
         public AggJugadores(Jugador f, string u, string c)
         {
+            img = new OpenFileDialog();
+            imagenes = new csImagenes();
             conexion = new csConexion();
             conexion.Usuario = u;
             conexion.Clave = c;
@@ -63,7 +67,6 @@ namespace pruebas
                             CmbPosicion.SelectedIndex = -1;
                             MessageBox.Show("Jugador agregado con exito");
                             ve.dgvJugador.DataSource = jugador.mostrarJugador();
-
                         }
                         else MessageBox.Show("altura invalida");
                     }
@@ -104,6 +107,17 @@ namespace pruebas
         private void btngCancelar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnCargarimagen_Click(object sender, EventArgs e)
+        {
+            img.Filter = "Archivos de imagen|*.jpg;*.jpeg;*.png;";
+            img.Title = "Selecciona una imagen";
+
+            if (img.ShowDialog() == DialogResult.OK)
+            {
+                ptbImagen.Image = Image.FromFile(img.FileName);
+            }
         }
     }
 }

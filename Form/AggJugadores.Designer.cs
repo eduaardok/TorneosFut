@@ -53,10 +53,10 @@
             this.lblEncabezado = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtIDJugador = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ptbImagen = new System.Windows.Forms.PictureBox();
             this.btnCargarimagen = new Guna.UI2.WinForms.Guna2Button();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbImagen)).BeginInit();
             this.SuspendLayout();
             // 
             // Txtnombre
@@ -250,7 +250,7 @@
             // btnAgregar
             // 
             this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.Font = new System.Drawing.Font("Onest Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
             this.btnAgregar.Location = new System.Drawing.Point(278, 335);
             this.btnAgregar.Name = "btnAgregar";
@@ -323,14 +323,15 @@
             this.txtIDJugador.Size = new System.Drawing.Size(178, 20);
             this.txtIDJugador.TabIndex = 50;
             // 
-            // pictureBox1
+            // ptbImagen
             // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox1.Location = new System.Drawing.Point(476, 77);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(264, 242);
-            this.pictureBox1.TabIndex = 52;
-            this.pictureBox1.TabStop = false;
+            this.ptbImagen.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.ptbImagen.Location = new System.Drawing.Point(476, 77);
+            this.ptbImagen.Name = "ptbImagen";
+            this.ptbImagen.Size = new System.Drawing.Size(264, 242);
+            this.ptbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbImagen.TabIndex = 52;
+            this.ptbImagen.TabStop = false;
             // 
             // btnCargarimagen
             // 
@@ -355,6 +356,7 @@
             this.btnCargarimagen.Size = new System.Drawing.Size(152, 44);
             this.btnCargarimagen.TabIndex = 53;
             this.btnCargarimagen.Text = "Cargar Imagen";
+            this.btnCargarimagen.Click += new System.EventHandler(this.btnCargarimagen_Click);
             // 
             // AggJugadores
             // 
@@ -363,7 +365,7 @@
             this.ClientSize = new System.Drawing.Size(759, 422);
             this.ControlBox = false;
             this.Controls.Add(this.btnCargarimagen);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.ptbImagen);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtIDJugador);
             this.Controls.Add(this.panel2);
@@ -398,7 +400,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbImagen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -431,7 +433,7 @@
         private System.Windows.Forms.Label lblEncabezado;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtIDJugador;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox ptbImagen;
         private Guna.UI2.WinForms.Guna2Button btnCargarimagen;
     }
 }

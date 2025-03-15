@@ -9,12 +9,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Imaging;
-using TorneosFut; 
+using TorneosFut;
+using TorneosFut.Class;
 
 namespace PruebasTorneos
 {
     public partial class AggEntrenador: Form
     {
+        OpenFileDialog img = new OpenFileDialog();
+        csImagenes imagenes = new csImagenes(); 
         csConexion conexion;
         public AggEntrenador(string u, string c)
         {
@@ -31,41 +34,26 @@ namespace PruebasTorneos
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            OpenFileDialog img = new OpenFileDialog();
-            img.Filter = "archivos de imagen (*jpg; *png;) | *jpg; *png;";
+            img.Filter = "Archivos de imagen|*.jpg;*.jpeg;*.png;";
+            img.Title = "Selecciona una imagen";
+
             if (img.ShowDialog() == DialogResult.OK)
             {
-                ptbImagen.Image = Image.FromFile(img.FileName); 
+                ptbImagen.Image = Image.FromFile(img.FileName);
             }
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtNombre.Text) || string.IsNullOrWhiteSpace(txtApellido.Text) || string.IsNullOrWhiteSpace(cbmSexo.Text))
+            if (img.FileName != "")
             {
-                MessageBox.Show("Se deben llenar todos los campos");
-                return;
-            }
-            try
-            {
-                MemoryStream ms = new MemoryStream();
-                ptbImagen.Image.Save(ms, ImageFormat.Jpeg);
-                byte[] imgByte = ms.ToArray();
-                string consultaDatos = $"insert into Entrenador (Nombres, Apellidos, Sexo, PartidosGanados, PartidosEmpatados, PartidosPerdidos) " +
-                                       $"values ('{txtNombre.Text}', '{txtApellido.Text}', '{cbmSexo.Text}', 0, 0, 0)";
-                string consultaImagen = "update Entrenador set ImagenEntrenador = @imagen where IDEntrenador = @idEntrenador";
-                if (conexion.EjecutarTransaccion(consultaDatos, consultaImagen, imgByte))
+                string nombreIMG = "Imagen" + DateTime.Now.Ticks.ToString();
+                string nombreARCH = imagenes.guardarIMG(img.FileName, nombreIMG);
+
+                if (conexion.Consulta($"update Estadio set ImagenEstadio = '{nombreARCH}' where IDEstadio = 2"))
                 {
-                    MessageBox.Show("Entrenador registrado correctamente");
+                    MessageBox.Show("Foto guardada con exito");
                 }
-                else
-                {
-                    MessageBox.Show("No se pudo registrar el entrenador.");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error al registrar: {ex.Message}");
             }
         }
 

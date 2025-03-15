@@ -87,7 +87,7 @@ namespace PruebasTorneos
  
         private void dgvEntrenador_SelectionChanged(object sender, EventArgs e)
         {
-            try
+            /*try
             {
                 if (dgvEntrenador.Rows.Count == 0 || dgvEntrenador.SelectedRows.Count == 0)
                     return;
@@ -114,7 +114,7 @@ namespace PruebasTorneos
             catch (Exception ex)
             {
                 MessageBox.Show("Error al cargar la imagen: " + ex.Message);
-            }
+            }*/
         }
 
         private void txtBuscarEquipo_KeyUp(object sender, KeyEventArgs e)

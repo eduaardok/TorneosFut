@@ -89,7 +89,7 @@ namespace TorneosFut
         }
 
         // Para guardar la imagen
-        public bool EjecutarTransaccion(string consultaDatos, string consultaImagen, byte[] imagen, string nombreParametroID = "@IDEntidad")
+        /*public bool EjecutarTransaccion(string consultaDatos, string consultaImagen, byte[] imagen, string nombreParametroID = "@IDEntidad")
         {
             conec.Open();
             SqlTransaction transaccion = conec.BeginTransaction();
@@ -173,7 +173,7 @@ namespace TorneosFut
             return imagen;
             // Aquí como se ve solamente es de pasar la consulta y el nombre de la columna en la que se almacena la imagen así como antes, yo hago que se muestre cuando se selecciona algo en el DGV, así mismo vean el código que hay en frmEntrenadores para que vean como lo uso
             // conec.ObtenerImagen(consulta, "ImagenEntrenador")
-        }
+        }*/
         public void RegistrarAuditoriaInicioSesion()
         {
             string query = "EXEC InsertarAuditoriaInicioSesion";
