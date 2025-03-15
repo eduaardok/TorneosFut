@@ -31,13 +31,15 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.tstSuperior = new System.Windows.Forms.ToolStrip();
+            this.ddbtnOpcionesU = new System.Windows.Forms.ToolStripDropDownButton();
+            this.cAMBIARCLAVEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cERRARSESIONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.panelOpciones = new System.Windows.Forms.Panel();
-            this.tmopen = new System.Windows.Forms.Timer(this.components);
-            this.timeclose = new System.Windows.Forms.Timer(this.components);
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.panelModulos = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.btnEntrenadores = new System.Windows.Forms.Button();
@@ -45,17 +47,15 @@
             this.btnOrganizador = new System.Windows.Forms.Button();
             this.btnEquipos = new System.Windows.Forms.Button();
             this.btnTorneos = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.ddbtnOpcionesU = new System.Windows.Forms.ToolStripDropDownButton();
-            this.cAMBIARCLAVEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cERRARSESIONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.tmopen = new System.Windows.Forms.Timer(this.components);
+            this.timeclose = new System.Windows.Forms.Timer(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panelModulos = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.tstSuperior.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelOpciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -72,6 +72,34 @@
             this.panel1.Size = new System.Drawing.Size(1330, 50);
             this.panel1.TabIndex = 6;
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.BackgroundImage = global::TorneosFut.Properties.Resources.icons8_cucha_50;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.button2.Location = new System.Drawing.Point(120, 0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(60, 50);
+            this.button2.TabIndex = 12;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.BackgroundImage = global::TorneosFut.Properties.Resources.icons8_luna_creciente_50__1_;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(60, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(60, 50);
+            this.button1.TabIndex = 11;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // tstSuperior
             // 
             this.tstSuperior.BackColor = System.Drawing.Color.Transparent;
@@ -83,6 +111,51 @@
             this.tstSuperior.Size = new System.Drawing.Size(1196, 50);
             this.tstSuperior.TabIndex = 10;
             this.tstSuperior.Text = "toolStrip1";
+            // 
+            // ddbtnOpcionesU
+            // 
+            this.ddbtnOpcionesU.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.ddbtnOpcionesU.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.ddbtnOpcionesU.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cAMBIARCLAVEToolStripMenuItem,
+            this.cERRARSESIONToolStripMenuItem});
+            this.ddbtnOpcionesU.Font = new System.Drawing.Font("Onest Bold", 20F, System.Drawing.FontStyle.Bold);
+            this.ddbtnOpcionesU.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.ddbtnOpcionesU.Image = ((System.Drawing.Image)(resources.GetObject("ddbtnOpcionesU.Image")));
+            this.ddbtnOpcionesU.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ddbtnOpcionesU.Name = "ddbtnOpcionesU";
+            this.ddbtnOpcionesU.Size = new System.Drawing.Size(151, 47);
+            this.ddbtnOpcionesU.Text = "USUARIO";
+            // 
+            // cAMBIARCLAVEToolStripMenuItem
+            // 
+            this.cAMBIARCLAVEToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.cAMBIARCLAVEToolStripMenuItem.Font = new System.Drawing.Font("Onest Bold", 10F, System.Drawing.FontStyle.Bold);
+            this.cAMBIARCLAVEToolStripMenuItem.Name = "cAMBIARCLAVEToolStripMenuItem";
+            this.cAMBIARCLAVEToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.cAMBIARCLAVEToolStripMenuItem.Text = "CAMBIAR CLAVE";
+            this.cAMBIARCLAVEToolStripMenuItem.Click += new System.EventHandler(this.cAMBIARCLAVEToolStripMenuItem_Click);
+            // 
+            // cERRARSESIONToolStripMenuItem
+            // 
+            this.cERRARSESIONToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.cERRARSESIONToolStripMenuItem.Font = new System.Drawing.Font("Onest Bold", 10F, System.Drawing.FontStyle.Bold);
+            this.cERRARSESIONToolStripMenuItem.Name = "cERRARSESIONToolStripMenuItem";
+            this.cERRARSESIONToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.cERRARSESIONToolStripMenuItem.Text = "CERRAR SESION";
+            this.cERRARSESIONToolStripMenuItem.Click += new System.EventHandler(this.cERRARSESIONToolStripMenuItem_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.BackgroundImage = global::TorneosFut.Properties.Resources.userr;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox2.Location = new System.Drawing.Point(1256, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(74, 50);
+            this.pictureBox2.TabIndex = 9;
+            this.pictureBox2.TabStop = false;
             // 
             // btnCerrar
             // 
@@ -114,42 +187,15 @@
             this.panelOpciones.Size = new System.Drawing.Size(294, 618);
             this.panelOpciones.TabIndex = 8;
             // 
-            // tmopen
-            // 
-            this.tmopen.Interval = 1;
-            this.tmopen.Tick += new System.EventHandler(this.tmopen_Tick);
-            // 
-            // timeclose
-            // 
-            this.timeclose.Interval = 1;
-            this.timeclose.Tick += new System.EventHandler(this.timeclose_Tick);
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 15;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // panelModulos
-            // 
-            this.panelModulos.BackColor = System.Drawing.Color.White;
-            this.panelModulos.BackgroundImage = global::TorneosFut.Properties.Resources.fxfutxpert;
-            this.panelModulos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panelModulos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelModulos.Location = new System.Drawing.Point(294, 50);
-            this.panelModulos.Name = "panelModulos";
-            this.panelModulos.Size = new System.Drawing.Size(1036, 618);
-            this.panelModulos.TabIndex = 9;
-            this.panelModulos.Paint += new System.Windows.Forms.PaintEventHandler(this.panelModulos_Paint);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = global::TorneosFut.Properties.Resources.logoFX;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 510);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 504);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(294, 108);
+            this.pictureBox1.Size = new System.Drawing.Size(294, 114);
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
@@ -163,7 +209,7 @@
             this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUsuarios.Location = new System.Drawing.Point(0, 425);
             this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(294, 85);
+            this.btnUsuarios.Size = new System.Drawing.Size(294, 79);
             this.btnUsuarios.TabIndex = 11;
             this.btnUsuarios.Text = "USUARIOS";
             this.btnUsuarios.UseVisualStyleBackColor = false;
@@ -264,78 +310,32 @@
             this.btnTorneos.MouseEnter += new System.EventHandler(this.btnTorneos_MouseEnter);
             this.btnTorneos.MouseLeave += new System.EventHandler(this.btnTorneos_MouseLeave);
             // 
-            // button2
+            // tmopen
             // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.BackgroundImage = global::TorneosFut.Properties.Resources.icons8_cucha_50;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
-            this.button2.Location = new System.Drawing.Point(120, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(60, 50);
-            this.button2.TabIndex = 12;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.tmopen.Interval = 1;
+            this.tmopen.Tick += new System.EventHandler(this.tmopen_Tick);
             // 
-            // button1
+            // timeclose
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.BackgroundImage = global::TorneosFut.Properties.Resources.icons8_luna_creciente_50__1_;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(60, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(60, 50);
-            this.button1.TabIndex = 11;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.timeclose.Interval = 1;
+            this.timeclose.Tick += new System.EventHandler(this.timeclose_Tick);
             // 
-            // ddbtnOpcionesU
+            // timer1
             // 
-            this.ddbtnOpcionesU.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.ddbtnOpcionesU.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.ddbtnOpcionesU.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cAMBIARCLAVEToolStripMenuItem,
-            this.cERRARSESIONToolStripMenuItem});
-            this.ddbtnOpcionesU.Font = new System.Drawing.Font("Onest Bold", 20F, System.Drawing.FontStyle.Bold);
-            this.ddbtnOpcionesU.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
-            this.ddbtnOpcionesU.Image = ((System.Drawing.Image)(resources.GetObject("ddbtnOpcionesU.Image")));
-            this.ddbtnOpcionesU.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ddbtnOpcionesU.Name = "ddbtnOpcionesU";
-            this.ddbtnOpcionesU.Size = new System.Drawing.Size(151, 47);
-            this.ddbtnOpcionesU.Text = "USUARIO";
+            this.timer1.Interval = 15;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // cAMBIARCLAVEToolStripMenuItem
+            // panelModulos
             // 
-            this.cAMBIARCLAVEToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.cAMBIARCLAVEToolStripMenuItem.Font = new System.Drawing.Font("Onest Bold", 10F, System.Drawing.FontStyle.Bold);
-            this.cAMBIARCLAVEToolStripMenuItem.Name = "cAMBIARCLAVEToolStripMenuItem";
-            this.cAMBIARCLAVEToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
-            this.cAMBIARCLAVEToolStripMenuItem.Text = "CAMBIAR CLAVE";
-            this.cAMBIARCLAVEToolStripMenuItem.Click += new System.EventHandler(this.cAMBIARCLAVEToolStripMenuItem_Click);
-            // 
-            // cERRARSESIONToolStripMenuItem
-            // 
-            this.cERRARSESIONToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.cERRARSESIONToolStripMenuItem.Font = new System.Drawing.Font("Onest Bold", 10F, System.Drawing.FontStyle.Bold);
-            this.cERRARSESIONToolStripMenuItem.Name = "cERRARSESIONToolStripMenuItem";
-            this.cERRARSESIONToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
-            this.cERRARSESIONToolStripMenuItem.Text = "CERRAR SESION";
-            this.cERRARSESIONToolStripMenuItem.Click += new System.EventHandler(this.cERRARSESIONToolStripMenuItem_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.BackgroundImage = global::TorneosFut.Properties.Resources.userr;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox2.Location = new System.Drawing.Point(1256, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(74, 50);
-            this.pictureBox2.TabIndex = 9;
-            this.pictureBox2.TabStop = false;
+            this.panelModulos.BackColor = System.Drawing.Color.White;
+            this.panelModulos.BackgroundImage = global::TorneosFut.Properties.Resources.fxfutxpert;
+            this.panelModulos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panelModulos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelModulos.Location = new System.Drawing.Point(294, 50);
+            this.panelModulos.Name = "panelModulos";
+            this.panelModulos.Size = new System.Drawing.Size(1036, 618);
+            this.panelModulos.TabIndex = 9;
+            this.panelModulos.Paint += new System.Windows.Forms.PaintEventHandler(this.panelModulos_Paint);
             // 
             // Principal
             // 
@@ -358,9 +358,9 @@
             this.panel1.PerformLayout();
             this.tstSuperior.ResumeLayout(false);
             this.tstSuperior.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelOpciones.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
