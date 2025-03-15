@@ -122,6 +122,7 @@
             this.dgvEntrenador.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEntrenador.Size = new System.Drawing.Size(1186, 601);
             this.dgvEntrenador.TabIndex = 23;
+            this.dgvEntrenador.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEntrenador_CellContentClick);
             // 
             // btnEditar
             // 
@@ -184,6 +185,7 @@
             this.btnAggDT.Size = new System.Drawing.Size(184, 52);
             this.btnAggDT.TabIndex = 19;
             this.btnAggDT.Text = "Agregar Entrenadores";
+            this.btnAggDT.Click += new System.EventHandler(this.btnAggDT_Click_1);
             // 
             // Entrenador
             // 

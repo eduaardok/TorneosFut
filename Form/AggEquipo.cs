@@ -13,6 +13,8 @@ namespace TorneosFut
     public partial class AggEquipo: Form
     {
         csConexion conexion;
+        OpenFileDialog img = new OpenFileDialog();
+
         public AggEquipo(string u, string c)
         {
             conexion = new csConexion();
@@ -107,6 +109,17 @@ namespace TorneosFut
         private void AggEquipo_Load(object sender, EventArgs e)
         {
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
+        }
+
+        private void btnSeleccionarIMG_Click(object sender, EventArgs e)
+        {
+            img.Filter = "Archivos de imagen|*.jpg;*.jpeg;*.png;";
+            img.Title = "Selecciona una imagen";
+
+            if (img.ShowDialog() == DialogResult.OK)
+            {
+                ptbImagen.Image = Image.FromFile(img.FileName);
+            }
         }
     }
 }

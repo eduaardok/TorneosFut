@@ -21,8 +21,8 @@ namespace PruebasTorneos
             conexion = new csConexion();
             conexion.Usuario = u;
             conexion.Clave = c;
-            InitializeComponent();
             dts = new csEntrenador(u, c);
+            InitializeComponent();
 
         }
 
@@ -30,7 +30,7 @@ namespace PruebasTorneos
         {
             this.Dock= DockStyle.Fill;
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
-            dts.Cargar(dgvEntrenador);
+            dts.Cargar(dgvEntrenador, ptbIMG);
             dgvEntrenador.CellFormatting += dgvEntrenador_CellFormatting;
         }
 
@@ -47,7 +47,7 @@ namespace PruebasTorneos
 
         private void dgvEntrenador_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (dgvEntrenador.Columns[e.ColumnIndex].Name == "PartidosGanados")
+           /* if (dgvEntrenador.Columns[e.ColumnIndex].Name == "PartidosGanados")
             {
                 e.CellStyle.ForeColor = Color.Green;
             }
@@ -70,7 +70,7 @@ namespace PruebasTorneos
                 {
                     e.CellStyle.ForeColor = Color.Magenta;
                 }
-            }
+            }*/
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -132,6 +132,17 @@ namespace PruebasTorneos
         }
 
         private void btnEditar_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAggDT_Click_1(object sender, EventArgs e)
+        {
+            AggEntrenador ent = new AggEntrenador(conexion.Usuario, conexion.Clave);
+            ent.ShowDialog();
+        }
+
+        private void dgvEntrenador_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

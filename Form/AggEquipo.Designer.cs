@@ -46,11 +46,11 @@
             this.txtId = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblEncabezado = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ptbImagen = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSeleccionarIMG = new Guna.UI2.WinForms.Guna2Button();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbImagen)).BeginInit();
             this.SuspendLayout();
             // 
             // lblequipo
@@ -279,15 +279,15 @@
             this.lblEncabezado.TabIndex = 33;
             this.lblEncabezado.Text = "AGREGAR/EDITAR USUARIO";
             // 
-            // pictureBox1
+            // ptbImagen
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(653, 110);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(163, 180);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 55;
-            this.pictureBox1.TabStop = false;
+            this.ptbImagen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ptbImagen.Location = new System.Drawing.Point(653, 110);
+            this.ptbImagen.Name = "ptbImagen";
+            this.ptbImagen.Size = new System.Drawing.Size(163, 180);
+            this.ptbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbImagen.TabIndex = 55;
+            this.ptbImagen.TabStop = false;
             // 
             // label1
             // 
@@ -318,6 +318,7 @@
             this.btnSeleccionarIMG.Size = new System.Drawing.Size(163, 25);
             this.btnSeleccionarIMG.TabIndex = 57;
             this.btnSeleccionarIMG.Text = "Selccionar imagen";
+            this.btnSeleccionarIMG.Click += new System.EventHandler(this.btnSeleccionarIMG_Click);
             // 
             // AggEquipo
             // 
@@ -327,7 +328,7 @@
             this.ClientSize = new System.Drawing.Size(916, 542);
             this.Controls.Add(this.btnSeleccionarIMG);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.ptbImagen);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.btnEditar);
@@ -356,7 +357,7 @@
             this.Load += new System.EventHandler(this.AggEquipo_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbImagen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -381,7 +382,7 @@
         public System.Windows.Forms.TextBox txtNombreClub;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblEncabezado;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox ptbImagen;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button btnSeleccionarIMG;
     }

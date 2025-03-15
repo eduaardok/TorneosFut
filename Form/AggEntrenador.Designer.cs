@@ -34,11 +34,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.cbmSexo = new System.Windows.Forms.ComboBox();
+            this.cmbSexo = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnImportar = new System.Windows.Forms.Button();
             this.ptbImagen = new System.Windows.Forms.PictureBox();
             this.btngCancelar = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -105,18 +105,18 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "Sexo";
             // 
-            // cbmSexo
+            // cmbSexo
             // 
-            this.cbmSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbmSexo.Font = new System.Drawing.Font("Onest Light", 9.749998F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbmSexo.FormattingEnabled = true;
-            this.cbmSexo.Items.AddRange(new object[] {
+            this.cmbSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSexo.Font = new System.Drawing.Font("Onest Light", 9.749998F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSexo.FormattingEnabled = true;
+            this.cmbSexo.Items.AddRange(new object[] {
             "Masculino",
             "Femenino"});
-            this.cbmSexo.Location = new System.Drawing.Point(118, 252);
-            this.cbmSexo.Name = "cbmSexo";
-            this.cbmSexo.Size = new System.Drawing.Size(225, 25);
-            this.cbmSexo.TabIndex = 11;
+            this.cmbSexo.Location = new System.Drawing.Point(118, 252);
+            this.cmbSexo.Name = "cmbSexo";
+            this.cmbSexo.Size = new System.Drawing.Size(225, 28);
+            this.cmbSexo.TabIndex = 11;
             // 
             // comboBox2
             // 
@@ -125,7 +125,7 @@
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(118, 311);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(225, 25);
+            this.comboBox2.Size = new System.Drawing.Size(225, 28);
             this.comboBox2.TabIndex = 13;
             // 
             // label5
@@ -152,17 +152,17 @@
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // btnAgregar
+            // btnImportar
             // 
-            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
-            this.btnAgregar.Font = new System.Drawing.Font("Onest Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(426, 333);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(166, 38);
-            this.btnAgregar.TabIndex = 16;
-            this.btnAgregar.Text = "Importar foto";
-            this.btnAgregar.UseVisualStyleBackColor = false;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            this.btnImportar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
+            this.btnImportar.Font = new System.Drawing.Font("Onest Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImportar.Location = new System.Drawing.Point(426, 333);
+            this.btnImportar.Name = "btnImportar";
+            this.btnImportar.Size = new System.Drawing.Size(166, 38);
+            this.btnImportar.TabIndex = 16;
+            this.btnImportar.Text = "Importar foto";
+            this.btnImportar.UseVisualStyleBackColor = false;
+            this.btnImportar.Click += new System.EventHandler(this.btnImportar_Click);
             // 
             // ptbImagen
             // 
@@ -227,12 +227,12 @@
             this.ControlBox = false;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btngCancelar);
-            this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.btnImportar);
             this.Controls.Add(this.ptbImagen);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.cbmSexo);
+            this.Controls.Add(this.cmbSexo);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtApellido);
@@ -263,12 +263,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cbmSexo;
+        private System.Windows.Forms.ComboBox cmbSexo;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.PictureBox ptbImagen;
-        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnImportar;
         private Guna.UI2.WinForms.Guna2Button btngCancelar;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblEncabezado;

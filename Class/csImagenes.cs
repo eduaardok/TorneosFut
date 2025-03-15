@@ -64,7 +64,7 @@ namespace TorneosFut.Class
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Erro al cargar la imagen: {ex.Message}");
+                MessageBox.Show($"Error al cargar la imagen: {ex.Message}");
             }
         }
 

@@ -15,19 +15,44 @@ namespace PruebasTorneos
     internal class csEntrenador
     {
         csConexion conexion;
+        csImagenes csImagenes;
         public csEntrenador(string u, string c)
         {
             conexion = new csConexion(u,c);
+            csImagenes = new csImagenes();
         }
-        public void Cargar(DataGridView dgvEntrenador)
+        public int IDEntrenador(DataGridView dgv)
+        {
+            int id = int.Parse(dgv.Rows[dgv.CurrentRow.Index].Cells[0].Value.ToString());
+            return id;
+        }
+        public string Imagen(string i)
+        {
+
+            DataGridView dt = new DataGridView();
+            dt.DataSource=    conexion.ListDGV($"Select ImagenEntrenador from Entrenador where IDEntrenador = '{i}'");
+            string img = dt.Rows[0].Cells[0].Value.ToString(); 
+            return img;
+        }
+        public bool AgregarEntrenador(string nombre, string apellido, string sexo, string imagen)
+        {
+            if (conexion.Consulta($"insert into Entrenador (IDEntrenador, NombreEntrenador, ApellidoEntrenador, Sexo, FechaNacimiento, ImagenEntrenador)" +
+                $" values ('01000','{nombre}','{apellido}', '{sexo}', getdate(), '{imagen}')"))
+                return true;
+            else
+                return false;
+        }
+
+        public void Cargar(DataGridView dgvEntrenador, PictureBox ptb)
         {
             string consul = "select IDEntrenador, NombreEntrenador, ApellidoEntrenador, Sexo from Entrenador";
             DataTable dt = conexion.ListDGV(consul);
             dgvEntrenador.DataSource = dt;
-            foreach (DataGridViewColumn column in dgvEntrenador.Columns)
+            /*foreach (DataGridViewColumn column in dgvEntrenador.Columns)
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
-            }
+            }*/
+            MostrarImagen("10111", ptb);
         }
         void AdaptarDGV(DataGridView dgvEntrenador)
         {
@@ -37,6 +62,14 @@ namespace PruebasTorneos
                 dgvEntrenador.Rows[i].Height = dgvEntrenador.Height / filas;
             }
             dgvEntrenador.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+        public void MostrarImagen(string id,PictureBox ptb)
+        {
+
+            
+                            csImagenes.CargarImagen("Imagen638776550043571267.png", ptb);
+
+            //csImagenes.CargarImagen(Imagen(id), ptb);
         }
         public void filtro(string filtro, DataGridView dgvEntrenador)
         {

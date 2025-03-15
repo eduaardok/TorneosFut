@@ -56,7 +56,7 @@ namespace pruebas
                     {
                         if (!validaaltu(txtaltura) && !validaaltu(txtpeso))
                         {
-                            jugador.agregarJugador(Txtnombre, txtapellido, cmbsexo, dtpNacimiento, CmbPosicion,TxtNacionalidad, txtpeso, txtaltura, cmbpierna);
+                            jugador.agregarJugador(txtIDJugador,Txtnombre, txtapellido, cmbsexo, dtpNacimiento, CmbPosicion,TxtNacionalidad, txtpeso, txtaltura, cmbpierna);
                             txtaltura.Clear();
                             txtapellido.Clear();
                             txtpeso.Clear();

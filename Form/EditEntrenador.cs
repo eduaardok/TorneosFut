@@ -30,7 +30,7 @@ namespace PruebasTorneos
         private void frmEditarDT_Load(object sender, EventArgs e)
         {
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
-            dt.Cargar(dgvEntrenador);
+            dt.Cargar(dgvEntrenador, pictureBox1);
             dgvEntrenador.CellFormatting += dgvEntrenador_CellFormatting;
         }
 
