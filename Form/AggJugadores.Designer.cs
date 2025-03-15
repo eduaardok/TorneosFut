@@ -51,12 +51,17 @@
             this.btngCancelar = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblEncabezado = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtIDJugador = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnCargarimagen = new Guna.UI2.WinForms.Guna2Button();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // Txtnombre
             // 
-            this.Txtnombre.Location = new System.Drawing.Point(50, 104);
+            this.Txtnombre.Location = new System.Drawing.Point(50, 153);
             this.Txtnombre.Name = "Txtnombre";
             this.Txtnombre.Size = new System.Drawing.Size(178, 20);
             this.Txtnombre.TabIndex = 0;
@@ -68,7 +73,7 @@
             this.cmbsexo.Items.AddRange(new object[] {
             "M",
             "F"});
-            this.cmbsexo.Location = new System.Drawing.Point(50, 153);
+            this.cmbsexo.Location = new System.Drawing.Point(50, 203);
             this.cmbsexo.Name = "cmbsexo";
             this.cmbsexo.Size = new System.Drawing.Size(121, 21);
             this.cmbsexo.TabIndex = 1;
@@ -112,7 +117,7 @@
             "Delantero centro",
             "Segunda punta",
             "Falso nueve"});
-            this.CmbPosicion.Location = new System.Drawing.Point(50, 205);
+            this.CmbPosicion.Location = new System.Drawing.Point(51, 248);
             this.CmbPosicion.Name = "CmbPosicion";
             this.CmbPosicion.Size = new System.Drawing.Size(121, 21);
             this.CmbPosicion.TabIndex = 6;
@@ -147,7 +152,7 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(47, 77);
+            this.lblNombre.Location = new System.Drawing.Point(46, 126);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(103, 24);
             this.lblNombre.TabIndex = 11;
@@ -167,7 +172,7 @@
             // 
             this.lblsexo.AutoSize = true;
             this.lblsexo.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblsexo.Location = new System.Drawing.Point(47, 127);
+            this.lblsexo.Location = new System.Drawing.Point(47, 176);
             this.lblsexo.Name = "lblsexo";
             this.lblsexo.Size = new System.Drawing.Size(63, 24);
             this.lblsexo.TabIndex = 13;
@@ -177,7 +182,7 @@
             // 
             this.lblPosicion.AutoSize = true;
             this.lblPosicion.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPosicion.Location = new System.Drawing.Point(46, 178);
+            this.lblPosicion.Location = new System.Drawing.Point(47, 224);
             this.lblPosicion.Name = "lblPosicion";
             this.lblPosicion.Size = new System.Drawing.Size(97, 24);
             this.lblPosicion.TabIndex = 14;
@@ -229,7 +234,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(46, 229);
+            this.label1.Location = new System.Drawing.Point(47, 272);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(140, 24);
             this.label1.TabIndex = 21;
@@ -237,7 +242,7 @@
             // 
             // TxtNacionalidad
             // 
-            this.TxtNacionalidad.Location = new System.Drawing.Point(49, 256);
+            this.TxtNacionalidad.Location = new System.Drawing.Point(50, 299);
             this.TxtNacionalidad.Name = "TxtNacionalidad";
             this.TxtNacionalidad.Size = new System.Drawing.Size(178, 20);
             this.TxtNacionalidad.TabIndex = 20;
@@ -287,7 +292,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(511, 50);
+            this.panel2.Size = new System.Drawing.Size(759, 50);
             this.panel2.TabIndex = 49;
             // 
             // lblEncabezado
@@ -301,12 +306,66 @@
             this.lblEncabezado.TabIndex = 33;
             this.lblEncabezado.Text = "AGREGAR JUGADOR";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(46, 77);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(39, 24);
+            this.label2.TabIndex = 51;
+            this.label2.Text = "ID*";
+            // 
+            // txtIDJugador
+            // 
+            this.txtIDJugador.Location = new System.Drawing.Point(50, 104);
+            this.txtIDJugador.Name = "txtIDJugador";
+            this.txtIDJugador.Size = new System.Drawing.Size(178, 20);
+            this.txtIDJugador.TabIndex = 50;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pictureBox1.Location = new System.Drawing.Point(476, 77);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(264, 242);
+            this.pictureBox1.TabIndex = 52;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnCargarimagen
+            // 
+            this.btnCargarimagen.BackColor = System.Drawing.Color.White;
+            this.btnCargarimagen.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnCargarimagen.CheckedState.CustomBorderColor = System.Drawing.Color.Black;
+            this.btnCargarimagen.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.btnCargarimagen.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.btnCargarimagen.CustomBorderColor = System.Drawing.Color.White;
+            this.btnCargarimagen.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 4);
+            this.btnCargarimagen.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCargarimagen.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCargarimagen.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCargarimagen.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCargarimagen.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
+            this.btnCargarimagen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCargarimagen.ForeColor = System.Drawing.Color.Black;
+            this.btnCargarimagen.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.btnCargarimagen.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
+            this.btnCargarimagen.Location = new System.Drawing.Point(536, 325);
+            this.btnCargarimagen.Name = "btnCargarimagen";
+            this.btnCargarimagen.Size = new System.Drawing.Size(152, 44);
+            this.btnCargarimagen.TabIndex = 53;
+            this.btnCargarimagen.Text = "Cargar Imagen";
+            // 
             // AggJugadores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(511, 422);
+            this.ClientSize = new System.Drawing.Size(759, 422);
             this.ControlBox = false;
+            this.Controls.Add(this.btnCargarimagen);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtIDJugador);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btngCancelar);
             this.Controls.Add(this.btnAgregar);
@@ -339,6 +398,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -369,6 +429,10 @@
         private Guna.UI2.WinForms.Guna2Button btngCancelar;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblEncabezado;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtIDJugador;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private Guna.UI2.WinForms.Guna2Button btnCargarimagen;
     }
 }
 
