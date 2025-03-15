@@ -41,10 +41,11 @@ namespace TorneosFut
                 esAdmin = true;
             else
                 esAdmin = false;
-            conexion = new csConexion();
-            conexion.Usuario = u;
-            conexion.Clave = c;
+            conexion = new csConexion(u, c);
+            //conexion.Usuario = u;
+            //conexion.Clave = c;
             encriptar = new csEncriptar();
+            conexion.RegistrarAuditoriaInicioSesion();
             InitializeComponent();
             //this.WindowState = FormWindowState.Maximized;
             //this.StartPosition = FormStartPosition.Manual;
@@ -53,7 +54,7 @@ namespace TorneosFut
             ddbtnOpcionesU.Text = name;
             entre= new Entrenador(conexion.Usuario, conexion.Clave);
             equi = new Equipos(conexion.Usuario, conexion.Clave);
-           tor = new Torneo(conexion.Usuario, conexion.Clave);
+            tor = new Torneo(conexion.Usuario, conexion.Clave);
             Patro = new Patrocinadores(conexion.Usuario,conexion.Clave);
             Orga = new Organizadores(conexion.Usuario,conexion.Clave);
         }
@@ -111,6 +112,7 @@ namespace TorneosFut
             this.StartPosition = FormStartPosition.Manual;
             this.Bounds = Screen.PrimaryScreen.WorkingArea;
             AccesoAdmin();
+            this.Text = $"FUTXPERT - Conectado a la base de datos como: {conexion.Usuario}";
         }
         void AccesoAdmin()
         {

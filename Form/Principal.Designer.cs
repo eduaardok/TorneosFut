@@ -185,7 +185,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pictureBox1.Image = global::TorneosFut.Properties.Resources.logoFX;
             this.pictureBox1.Location = new System.Drawing.Point(0, 249);
             this.pictureBox1.Name = "pictureBox1";

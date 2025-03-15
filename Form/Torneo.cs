@@ -58,7 +58,7 @@ namespace TorneosFut
 
         private void Torneo_Load(object sender, EventArgs e)
         {
-            panelmodul.Hide();
+           // panelmodul.Hide();
             //if (BackColor == Color.White)
             //{
             //    ju.label2.ForeColor = Color.Black;

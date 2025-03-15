@@ -70,6 +70,7 @@
     <Compile Include="Class\csEntrenador.cs" />
     <Compile Include="Class\csEquipo.cs" />
     <Compile Include="Class\csJugador.cs" />
+    <Compile Include="Class\csUsuario.cs" />
     <Compile Include="Form\AggEquipo.cs">
       <SubType>Form</SubType>
     </Compile>

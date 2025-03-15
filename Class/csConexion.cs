@@ -13,10 +13,14 @@ namespace TorneosFut
     internal class csConexion
     {
         private SqlConnection conec;
-        private string _server = "26.102.193.210";
-       // private string _server = ".";
-         private string _database = "BDTorneosBetaV2";
+        //private string _server = "26.102.193.210";
+
+
+        //private string _database = "BDTorneosBetaV2";
         // private string _database = "BDTorneosFutbol";
+        private string _server = ".";
+        private string _database = "BDTorneosBetaCopia";
+
         private string _usuario;
         private string _clave;
         public string Server
@@ -49,6 +53,11 @@ namespace TorneosFut
         {
             _usuario = "UsuarioLectura";
             _clave = "usuario";
+        }
+        public csConexion(string us, string cl)
+        {
+            _usuario = us;
+            _clave = cl;
         }
         void Conectar()
         {
@@ -165,12 +174,9 @@ namespace TorneosFut
             // Aquí como se ve solamente es de pasar la consulta y el nombre de la columna en la que se almacena la imagen así como antes, yo hago que se muestre cuando se selecciona algo en el DGV, así mismo vean el código que hay en frmEntrenadores para que vean como lo uso
             // conec.ObtenerImagen(consulta, "ImagenEntrenador")
         }
-        public void RegistrarAuditoriaInicioSesion(string usuario, bool exito)
+        public void RegistrarAuditoriaInicioSesion()
         {
-            string estado = exito ? "Exitoso" : "Fallido";
-
-            string query = "INSERT INTO Auditoria_IniciosDeSesion (usuario, estado) " +
-                           $"VALUES ('{usuario}', '{estado}')";
+            string query = "EXEC InsertarAuditoriaInicioSesion";
             Consulta(query);
         }
 

@@ -103,7 +103,6 @@ namespace TorneosFut
             else
             {
                 MessageBox.Show("Se inició sesión de forma correcta");
-                conec.RegistrarAuditoriaInicioSesion(conec.RetornaUser(txtUsuario.Text), true);
                 bool admin = false;
                 if (txtUsuario.Text == "admin")
                     admin = true; //para saber si el que ingresa es el admin
