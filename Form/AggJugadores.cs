@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TorneosFut;
 using TorneosFut.Class;
-
 namespace pruebas
 {
     public partial class AggJugadores : Form
@@ -56,7 +55,7 @@ namespace pruebas
                     {
                         if (!validaaltu(txtaltura) && !validaaltu(txtpeso))
                         {
-                            jugador.agregarJugador(txtIDJugador,Txtnombre, txtapellido, cmbsexo, dtpNacimiento, CmbPosicion,TxtNacionalidad, txtpeso, txtaltura, cmbpierna);
+                            jugador.AgregarJugador(txtIDJugador,Txtnombre, txtapellido, cmbsexo, dtpNacimiento, CmbPosicion,TxtNacionalidad, txtpeso, txtaltura, cmbpierna);
                             txtaltura.Clear();
                             txtapellido.Clear();
                             txtpeso.Clear();

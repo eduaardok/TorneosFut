@@ -125,17 +125,11 @@
     <Compile Include="Form\Equipos.Designer.cs">
       <DependentUpon>Equipos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\AggEntrenador.cs">
+    <Compile Include="Form\AggEditEntrenador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\AggEntrenador.Designer.cs">
-      <DependentUpon>AggEntrenador.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form\EditEntrenador.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\EditEntrenador.Designer.cs">
-      <DependentUpon>EditEntrenador.cs</DependentUpon>
+    <Compile Include="Form\AggEditEntrenador.Designer.cs">
+      <DependentUpon>AggEditEntrenador.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\GestionarPartidos.cs">
       <SubType>Form</SubType>
@@ -233,11 +227,8 @@
     <EmbeddedResource Include="Form\Equipos.resx">
       <DependentUpon>Equipos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\AggEntrenador.resx">
-      <DependentUpon>AggEntrenador.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\EditEntrenador.resx">
-      <DependentUpon>EditEntrenador.cs</DependentUpon>
+    <EmbeddedResource Include="Form\AggEditEntrenador.resx">
+      <DependentUpon>AggEditEntrenador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\GestionarPartidos.resx">
       <DependentUpon>GestionarPartidos.cs</DependentUpon>

@@ -56,7 +56,7 @@ namespace pruebas
                     {
                         if (!validaaltu(txtaltura) && !validaaltu(txtpeso))
                         {
-                            jugadorr.editarjugador(Txtnombre, txtapellido, CmbPosicion, txtpeso, txtaltura, ID);
+                            //jugadorr.editarjugador(Txtnombre, txtapellido, CmbPosicion, txtpeso, txtaltura, ID);
                             txtaltura.Clear();
                             txtapellido.Clear();
                             txtpeso.Clear();

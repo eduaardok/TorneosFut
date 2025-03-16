@@ -29,9 +29,9 @@ namespace TorneosFut
 
 
         //Insertar Temporal
-        public bool InsertarEntrenador(string nombre, string apellido, string sexo, string imagen, string filename)
+        public bool InsertarEntrenador(string Id,string nombre, string apellido, string sexo,string fecha, string imagen, string filename)
         {
-            if (csEntrenador.AgregarEntrenador(nombre, apellido, sexo, imagen+ Path.GetExtension(filename)))
+            if (csEntrenador.AgregarEntrenador(Id,nombre, apellido, sexo,fecha, imagen+ Path.GetExtension(filename)))
                 csImagenes.guardarIMG(filename, imagen);
             else
                 return false;

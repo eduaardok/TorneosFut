@@ -40,8 +40,6 @@
             this.txtNombreClub = new System.Windows.Forms.TextBox();
             this.btnAgregar = new Guna.UI2.WinForms.Guna2Button();
             this.btnCancelar = new Guna.UI2.WinForms.Guna2Button();
-            this.lblAggEquipo = new System.Windows.Forms.Label();
-            this.lblBodr2 = new System.Windows.Forms.Label();
             this.btnEditar = new Guna.UI2.WinForms.Guna2Button();
             this.txtId = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -58,7 +56,7 @@
             this.lblequipo.AutoSize = true;
             this.lblequipo.BackColor = System.Drawing.Color.White;
             this.lblequipo.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblequipo.Location = new System.Drawing.Point(51, 378);
+            this.lblequipo.Location = new System.Drawing.Point(34, 271);
             this.lblequipo.Name = "lblequipo";
             this.lblequipo.Size = new System.Drawing.Size(114, 24);
             this.lblequipo.TabIndex = 40;
@@ -69,7 +67,7 @@
             this.lblPosicion.AutoSize = true;
             this.lblPosicion.BackColor = System.Drawing.Color.White;
             this.lblPosicion.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPosicion.Location = new System.Drawing.Point(51, 325);
+            this.lblPosicion.Location = new System.Drawing.Point(34, 218);
             this.lblPosicion.Name = "lblPosicion";
             this.lblPosicion.Size = new System.Drawing.Size(79, 24);
             this.lblPosicion.TabIndex = 35;
@@ -80,7 +78,7 @@
             this.lblsexo.AutoSize = true;
             this.lblsexo.BackColor = System.Drawing.Color.White;
             this.lblsexo.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblsexo.Location = new System.Drawing.Point(51, 275);
+            this.lblsexo.Location = new System.Drawing.Point(34, 168);
             this.lblsexo.Name = "lblsexo";
             this.lblsexo.Size = new System.Drawing.Size(77, 24);
             this.lblsexo.TabIndex = 34;
@@ -91,7 +89,7 @@
             this.lblapellido.AutoSize = true;
             this.lblapellido.BackColor = System.Drawing.Color.White;
             this.lblapellido.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblapellido.Location = new System.Drawing.Point(51, 224);
+            this.lblapellido.Location = new System.Drawing.Point(34, 117);
             this.lblapellido.Name = "lblapellido";
             this.lblapellido.Size = new System.Drawing.Size(111, 24);
             this.lblapellido.TabIndex = 33;
@@ -102,7 +100,7 @@
             this.lblNombre.AutoSize = true;
             this.lblNombre.BackColor = System.Drawing.Color.White;
             this.lblNombre.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(50, 177);
+            this.lblNombre.Location = new System.Drawing.Point(33, 70);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(94, 24);
             this.lblNombre.TabIndex = 32;
@@ -114,7 +112,7 @@
             this.cmbEntrenador.FormattingEnabled = true;
             this.cmbEntrenador.Items.AddRange(new object[] {
             "Ninguno"});
-            this.cmbEntrenador.Location = new System.Drawing.Point(207, 382);
+            this.cmbEntrenador.Location = new System.Drawing.Point(190, 275);
             this.cmbEntrenador.Name = "cmbEntrenador";
             this.cmbEntrenador.Size = new System.Drawing.Size(121, 21);
             this.cmbEntrenador.TabIndex = 31;
@@ -141,14 +139,14 @@
             "Delantero centro",
             "Segunda punta",
             "Falso nueve"});
-            this.cmbEstadio.Location = new System.Drawing.Point(208, 329);
+            this.cmbEstadio.Location = new System.Drawing.Point(191, 222);
             this.cmbEstadio.Name = "cmbEstadio";
             this.cmbEstadio.Size = new System.Drawing.Size(121, 21);
             this.cmbEstadio.TabIndex = 27;
             // 
             // txtPresidente
             // 
-            this.txtPresidente.Location = new System.Drawing.Point(207, 228);
+            this.txtPresidente.Location = new System.Drawing.Point(190, 121);
             this.txtPresidente.Name = "txtPresidente";
             this.txtPresidente.Size = new System.Drawing.Size(178, 20);
             this.txtPresidente.TabIndex = 26;
@@ -160,14 +158,14 @@
             this.cmbGenero.Items.AddRange(new object[] {
             "Masculino",
             "Femenino"});
-            this.cmbGenero.Location = new System.Drawing.Point(208, 279);
+            this.cmbGenero.Location = new System.Drawing.Point(191, 172);
             this.cmbGenero.Name = "cmbGenero";
             this.cmbGenero.Size = new System.Drawing.Size(121, 21);
             this.cmbGenero.TabIndex = 24;
             // 
             // txtNombreClub
             // 
-            this.txtNombreClub.Location = new System.Drawing.Point(207, 181);
+            this.txtNombreClub.Location = new System.Drawing.Point(190, 74);
             this.txtNombreClub.Name = "txtNombreClub";
             this.txtNombreClub.Size = new System.Drawing.Size(178, 20);
             this.txtNombreClub.TabIndex = 23;
@@ -185,7 +183,7 @@
             this.btnAgregar.HoverState.CustomBorderColor = System.Drawing.Color.White;
             this.btnAgregar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnAgregar.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnAgregar.Location = new System.Drawing.Point(662, 348);
+            this.btnAgregar.Location = new System.Drawing.Point(438, 294);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(138, 54);
             this.btnAgregar.TabIndex = 46;
@@ -204,31 +202,12 @@
             this.btnCancelar.HoverState.CustomBorderColor = System.Drawing.Color.White;
             this.btnCancelar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnCancelar.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(662, 468);
+            this.btnCancelar.Location = new System.Drawing.Point(438, 414);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(138, 54);
             this.btnCancelar.TabIndex = 47;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // lblAggEquipo
-            // 
-            this.lblAggEquipo.BackColor = System.Drawing.Color.White;
-            this.lblAggEquipo.Font = new System.Drawing.Font("Onest Bold", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAggEquipo.Location = new System.Drawing.Point(229, 50);
-            this.lblAggEquipo.Name = "lblAggEquipo";
-            this.lblAggEquipo.Size = new System.Drawing.Size(458, 50);
-            this.lblAggEquipo.TabIndex = 0;
-            this.lblAggEquipo.Text = "AGREGAR NUEVO EQUIPO";
-            // 
-            // lblBodr2
-            // 
-            this.lblBodr2.BackColor = System.Drawing.Color.White;
-            this.lblBodr2.Location = new System.Drawing.Point(0, 0);
-            this.lblBodr2.Name = "lblBodr2";
-            this.lblBodr2.Size = new System.Drawing.Size(800, 100);
-            this.lblBodr2.TabIndex = 50;
-            this.lblBodr2.Paint += new System.Windows.Forms.PaintEventHandler(this.lblBodr2_Paint);
             // 
             // btnEditar
             // 
@@ -242,7 +221,7 @@
             this.btnEditar.HoverState.CustomBorderColor = System.Drawing.Color.White;
             this.btnEditar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnEditar.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(662, 408);
+            this.btnEditar.Location = new System.Drawing.Point(438, 354);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(138, 54);
             this.btnEditar.TabIndex = 52;
@@ -252,7 +231,7 @@
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(208, 430);
+            this.txtId.Location = new System.Drawing.Point(191, 323);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(121, 20);
             this.txtId.TabIndex = 53;
@@ -265,7 +244,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(916, 50);
+            this.panel2.Size = new System.Drawing.Size(624, 50);
             this.panel2.TabIndex = 54;
             // 
             // lblEncabezado
@@ -273,16 +252,16 @@
             this.lblEncabezado.AutoSize = true;
             this.lblEncabezado.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEncabezado.ForeColor = System.Drawing.Color.White;
-            this.lblEncabezado.Location = new System.Drawing.Point(12, 8);
+            this.lblEncabezado.Location = new System.Drawing.Point(49, 9);
             this.lblEncabezado.Name = "lblEncabezado";
-            this.lblEncabezado.Size = new System.Drawing.Size(320, 25);
+            this.lblEncabezado.Size = new System.Drawing.Size(216, 25);
             this.lblEncabezado.TabIndex = 33;
-            this.lblEncabezado.Text = "AGREGAR/EDITAR USUARIO";
+            this.lblEncabezado.Text = "AGREGAR EQUIPO";
             // 
             // ptbImagen
             // 
             this.ptbImagen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ptbImagen.Location = new System.Drawing.Point(653, 110);
+            this.ptbImagen.Location = new System.Drawing.Point(429, 56);
             this.ptbImagen.Name = "ptbImagen";
             this.ptbImagen.Size = new System.Drawing.Size(163, 180);
             this.ptbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -294,7 +273,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(51, 430);
+            this.label1.Location = new System.Drawing.Point(34, 323);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(139, 24);
             this.label1.TabIndex = 56;
@@ -313,7 +292,7 @@
             this.btnSeleccionarIMG.HoverState.CustomBorderColor = System.Drawing.Color.White;
             this.btnSeleccionarIMG.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnSeleccionarIMG.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnSeleccionarIMG.Location = new System.Drawing.Point(653, 296);
+            this.btnSeleccionarIMG.Location = new System.Drawing.Point(429, 242);
             this.btnSeleccionarIMG.Name = "btnSeleccionarIMG";
             this.btnSeleccionarIMG.Size = new System.Drawing.Size(163, 25);
             this.btnSeleccionarIMG.TabIndex = 57;
@@ -325,14 +304,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(916, 542);
+            this.ClientSize = new System.Drawing.Size(624, 486);
             this.Controls.Add(this.btnSeleccionarIMG);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ptbImagen);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.lblAggEquipo);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.lblequipo);
@@ -345,7 +323,6 @@
             this.Controls.Add(this.txtPresidente);
             this.Controls.Add(this.cmbGenero);
             this.Controls.Add(this.txtNombreClub);
-            this.Controls.Add(this.lblBodr2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -371,8 +348,6 @@
         private System.Windows.Forms.Label lblNombre;
         private Guna.UI2.WinForms.Guna2Button btnAgregar;
         private Guna.UI2.WinForms.Guna2Button btnCancelar;
-        private System.Windows.Forms.Label lblAggEquipo;
-        private System.Windows.Forms.Label lblBodr2;
         private Guna.UI2.WinForms.Guna2Button btnEditar;
         public System.Windows.Forms.TextBox txtId;
         public System.Windows.Forms.ComboBox cmbEntrenador;

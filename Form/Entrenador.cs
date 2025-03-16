@@ -36,7 +36,7 @@ namespace PruebasTorneos
 
         private void btnAggDT_Click(object sender, EventArgs e)
         {
-            AggEntrenador agg = new AggEntrenador(conexion.Usuario, conexion.Clave);
+            AggEditEntrenador agg = new AggEditEntrenador(conexion.Usuario, conexion.Clave, true);
             agg.ShowDialog();
         }
 
@@ -47,35 +47,12 @@ namespace PruebasTorneos
 
         private void dgvEntrenador_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-           /* if (dgvEntrenador.Columns[e.ColumnIndex].Name == "PartidosGanados")
-            {
-                e.CellStyle.ForeColor = Color.Green;
-            }
-            if (dgvEntrenador.Columns[e.ColumnIndex].Name == "PartidosEmpatados")
-            {
-                e.CellStyle.ForeColor = Color.Orange;
-            }
-            if (dgvEntrenador.Columns[e.ColumnIndex].Name == "PartidosPerdidos")
-            {
-                e.CellStyle.ForeColor = Color.Red;
-            }
-            if (dgvEntrenador.Columns[e.ColumnIndex].Name == "Sexo" && e.Value != null)
-            {
-                string valor = e.Value.ToString().Trim().ToLower();
-                if (valor == "masculino")
-                {
-                    e.CellStyle.ForeColor = Color.Blue;
-                }
-                else if (valor == "femenino")
-                {
-                    e.CellStyle.ForeColor = Color.Magenta;
-                }
-            }*/
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            EditEntrenador edit = new EditEntrenador(conexion.Usuario, conexion.Clave);
+
+            AggEditEntrenador edit = new AggEditEntrenador(conexion.Usuario, conexion.Clave, false);
             edit.ShowDialog();
         }
 
@@ -87,34 +64,7 @@ namespace PruebasTorneos
  
         private void dgvEntrenador_SelectionChanged(object sender, EventArgs e)
         {
-            /*try
-            {
-                if (dgvEntrenador.Rows.Count == 0 || dgvEntrenador.SelectedRows.Count == 0)
-                    return;
-
-                int fila = dgvEntrenador.SelectedRows[0].Index;
-                string celda = dgvEntrenador.Rows[fila].Cells["IDEntrenador"].Value.ToString();
-
-                string consulta = $"select ImagenEntrenador from Entrenador where IDEntrenador = {celda}";
-
-                byte[] imagenBytes = conexion.ObtenerImagen(consulta, "ImagenEntrenador");
-
-                if (imagenBytes != null && imagenBytes.Length > 0)
-                {
-                    using (MemoryStream ms = new MemoryStream(imagenBytes))
-                    {
-                        ptbIMG.Image = Image.FromStream(ms);
-                    }
-                }
-                else
-                {
-                    ptbIMG.Image = null;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al cargar la imagen: " + ex.Message);
-            }*/
+        
         }
 
         private void txtBuscarEquipo_KeyUp(object sender, KeyEventArgs e)
@@ -138,7 +88,7 @@ namespace PruebasTorneos
 
         private void btnAggDT_Click_1(object sender, EventArgs e)
         {
-            AggEntrenador ent = new AggEntrenador(conexion.Usuario, conexion.Clave);
+            AggEditEntrenador ent = new AggEntrenador(conexion.Usuario, conexion.Clave);
             ent.ShowDialog();
         }
 

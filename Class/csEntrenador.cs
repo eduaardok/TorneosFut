@@ -34,10 +34,10 @@ namespace PruebasTorneos
             string img = dt.Rows[0].Cells[0].Value.ToString(); 
             return img;
         }
-        public bool AgregarEntrenador(string nombre, string apellido, string sexo, string imagen)
+        public bool AgregarEntrenador(string Id,string nombre, string apellido, string sexo,string fecha , string imagen)
         {
             if (conexion.Consulta($"insert into Entrenador (IDEntrenador, NombreEntrenador, ApellidoEntrenador, Sexo, FechaNacimiento, ImagenEntrenador)" +
-                $" values ('01000','{nombre}','{apellido}', '{sexo}', getdate(), '{imagen}')"))
+                $" values ('{Id}','{nombre}','{apellido}', '{sexo}', '{fecha}', '{imagen}')"))
                 return true;
             else
                 return false;
