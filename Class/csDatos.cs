@@ -34,11 +34,17 @@ namespace TorneosFut
         }
         public bool InsertarEntrenador(string Id,string nombre, string apellido, string sexo,string fecha, string imagen, string filename)
         {
-            if (csEntrenador.AgregarEntrenador(Id,nombre, apellido, sexo,fecha, imagen+ Path.GetExtension(filename)))
-                csImagenes.guardarIMG(filename, imagen);
-            else
+            if (validarIDEntrenador(Id))
+            {
+                if (csEntrenador.AgregarEntrenador(Id, nombre, apellido, sexo, fecha, imagen + Path.GetExtension(filename)))
+                {
+                    csImagenes.guardarIMG(filename, imagen);
+                    return true;
+                }
+                else
+                    return false;
+            }else 
                 return false;
-            return true;
         }
         public bool InsertarEquipo(string IdEquipo,string IdEstadio, string nombre, string genero, string Eqlocal, string Eqvisitante, string imagen, string presidente,string filename)
         {
@@ -86,9 +92,28 @@ namespace TorneosFut
                     return true;
 
                 }
-                MessageBox.Show(IDS[i].ToString());
+            }
+            return false;
+        }
+        public bool IDEntrenadorRepetido(string id)
+        {
+            DataTable dt = csEntrenador.ListaidEntrenador();
 
+            string[] IDS = new string[dt.Rows.Count];
 
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                IDS[i] = dt.Rows[i][0].ToString();
+            }
+            for (int i = 0; i < IDS.Length; i++)
+            {
+
+                if (IDS[i] == id)
+                {
+                    MessageBox.Show("Número de cédula ya existente");
+                    return true;
+
+                }
             }
             return false;
         }
@@ -96,6 +121,15 @@ namespace TorneosFut
         {
 
             if (validarsolonumero(ID) && validarlongitud(ID,10)&& !(IDJugadorRepetido(ID)))
+            {
+                return true;
+            }
+            return false;
+        }
+        public bool validarIDEntrenador(string ID)
+        {
+
+            if (validarsolonumero(ID) && validarlongitud(ID, 10) && !(IDEntrenadorRepetido(ID)))
             {
                 return true;
             }

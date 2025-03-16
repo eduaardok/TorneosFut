@@ -42,7 +42,11 @@ namespace PruebasTorneos
             else
                 return false;
         }
-
+        public DataTable ListaidEntrenador()
+        {
+            DataTable dt = conexion.ListDGV("Select IDEntrenador from Entrenador");
+            return dt;
+        }
         public void Cargar(DataGridView dgvEntrenador, PictureBox ptb)
         {
             string consul = "select IDEntrenador, NombreEntrenador, ApellidoEntrenador, Sexo from Entrenador";
