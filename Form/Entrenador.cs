@@ -88,7 +88,7 @@ namespace PruebasTorneos
 
         private void btnAggDT_Click_1(object sender, EventArgs e)
         {
-            AggEditEntrenador ent = new AggEntrenador(conexion.Usuario, conexion.Clave);
+            AggEditEntrenador ent = new AggEditEntrenador(conexion.Usuario, conexion.Clave,true);
             ent.ShowDialog();
         }
 

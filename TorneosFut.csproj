@@ -69,6 +69,7 @@
   <ItemGroup>
     <Compile Include="Class\csDGV.cs" />
     <Compile Include="Class\csDatos.cs" />
+    <Compile Include="Class\csEstadio.cs" />
     <Compile Include="Class\csImagenes.cs" />
     <Compile Include="Form\Estadio.cs">
       <SubType>Form</SubType>

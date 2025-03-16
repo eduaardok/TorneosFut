@@ -18,6 +18,7 @@ namespace TorneosFut
         csJugador csJugador;
         csEquipo csEquipo;
         csEntrenador csEntrenador;
+        csEstadio csEstadio;
         public csDGV(string u, string c)
         {
             conexion = new csConexion(u, c);
@@ -25,6 +26,7 @@ namespace TorneosFut
             csJugador= new csJugador  (u, c);
             csEntrenador = new csEntrenador (u, c);
             csEquipo = new csEquipo(u, c);
+            csEstadio= new csEstadio(u, c);
         }
         public void AdaptarDGV(DataGridView dgv, Panel pnl)
         {
@@ -82,6 +84,13 @@ namespace TorneosFut
         public void MostrarEntrenadoresFiltro(DataGridView dgv, bool mostrarClave, string filtro)
         {
             dgv.DataSource = csEntrenador.ListadeEntrenadoresfiltro(filtro);
+        }
+        public void LlenarcmbEstadio(ComboBox cmbEstadio)
+        {
+
+            cmbEstadio.DataSource = csEstadio.ListadeEstadio();
+            cmbEstadio.ValueMember = "IDEstadio";
+            cmbEstadio.DisplayMember = "NombreEstadio";
         }
     }
 }
