@@ -122,5 +122,12 @@ namespace TorneosFut
             partidos.ShowDialog();
            
         }
+        
+        private void btnCrear_Click_1(object sender, EventArgs e)
+        {
+            AggTorneo aggTorneo = new AggTorneo(true, -1, conexion.Usuario, conexion.Clave);
+            aggTorneo.ShowDialog();
+            
+        }
     }
 }

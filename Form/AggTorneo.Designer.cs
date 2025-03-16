@@ -32,6 +32,8 @@
             this.btngSalir = new Guna.UI2.WinForms.Guna2Button();
             this.lblEncabezado = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblfecha = new System.Windows.Forms.Label();
+            this.dtpInicio = new System.Windows.Forms.DateTimePicker();
             this.cmbOrganizador = new System.Windows.Forms.ComboBox();
             this.cmbModoFutbol = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,8 +44,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.lblfecha = new System.Windows.Forms.Label();
-            this.dtpNacimiento = new System.Windows.Forms.DateTimePicker();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -102,7 +102,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Controls.Add(this.lblfecha);
-            this.panel3.Controls.Add(this.dtpNacimiento);
+            this.panel3.Controls.Add(this.dtpInicio);
             this.panel3.Controls.Add(this.cmbOrganizador);
             this.panel3.Controls.Add(this.cmbModoFutbol);
             this.panel3.Controls.Add(this.label1);
@@ -117,6 +117,27 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(634, 440);
             this.panel3.TabIndex = 32;
+            // 
+            // lblfecha
+            // 
+            this.lblfecha.AutoSize = true;
+            this.lblfecha.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblfecha.Location = new System.Drawing.Point(50, 256);
+            this.lblfecha.Name = "lblfecha";
+            this.lblfecha.Size = new System.Drawing.Size(149, 24);
+            this.lblfecha.TabIndex = 48;
+            this.lblfecha.Text = "Fecha de Inicio";
+            // 
+            // dtpInicio
+            // 
+            this.dtpInicio.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpInicio.Location = new System.Drawing.Point(50, 283);
+            this.dtpInicio.MaxDate = new System.DateTime(2050, 12, 31, 0, 0, 0, 0);
+            this.dtpInicio.MinDate = new System.DateTime(2025, 1, 1, 0, 0, 0, 0);
+            this.dtpInicio.Name = "dtpInicio";
+            this.dtpInicio.Size = new System.Drawing.Size(313, 28);
+            this.dtpInicio.TabIndex = 47;
+            this.dtpInicio.Value = new System.DateTime(2025, 1, 1, 0, 0, 0, 0);
             // 
             // cmbOrganizador
             // 
@@ -266,27 +287,6 @@
             this.label2.TabIndex = 24;
             this.label2.Text = "Nombre:";
             // 
-            // lblfecha
-            // 
-            this.lblfecha.AutoSize = true;
-            this.lblfecha.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblfecha.Location = new System.Drawing.Point(50, 256);
-            this.lblfecha.Name = "lblfecha";
-            this.lblfecha.Size = new System.Drawing.Size(149, 24);
-            this.lblfecha.TabIndex = 48;
-            this.lblfecha.Text = "Fecha de Inicio";
-            // 
-            // dtpNacimiento
-            // 
-            this.dtpNacimiento.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpNacimiento.Location = new System.Drawing.Point(50, 283);
-            this.dtpNacimiento.MaxDate = new System.DateTime(2050, 12, 31, 0, 0, 0, 0);
-            this.dtpNacimiento.MinDate = new System.DateTime(2025, 1, 1, 0, 0, 0, 0);
-            this.dtpNacimiento.Name = "dtpNacimiento";
-            this.dtpNacimiento.Size = new System.Drawing.Size(313, 28);
-            this.dtpNacimiento.TabIndex = 47;
-            this.dtpNacimiento.Value = new System.DateTime(2025, 1, 1, 0, 0, 0, 0);
-            // 
             // AggTorneo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -329,6 +329,6 @@
         private System.Windows.Forms.Panel panel5;
         private Guna.UI2.WinForms.Guna2Button btngEnviar;
         private System.Windows.Forms.Label lblfecha;
-        private System.Windows.Forms.DateTimePicker dtpNacimiento;
+        private System.Windows.Forms.DateTimePicker dtpInicio;
     }
 }

@@ -15,11 +15,13 @@ namespace TorneosFut
         csConexion conexion;
         static int id;
         static bool agg = true;
+        csDatos csDatos;
         public AggTorneo(bool a, int i, string u, string c)
         {
             conexion = new csConexion(u, c);
             agg = a;
             id = i;
+            csDatos = new csDatos(u, c);
             InitializeComponent();
         }
         void Editar()
@@ -41,10 +43,14 @@ namespace TorneosFut
         {
             this.Close();
         }
-
+        int GenerarIDRandom()
+        {
+            Random rnd = new Random(DateTime.Now.Millisecond);
+            return rnd.Next(0, 100);
+        }
         private void btngEnviar_Click(object sender, EventArgs e)
         {
-
+            csDatos.InsertarTorneo(GenerarIDRandom(), txtNombre, cmbFormato, cmbModoFutbol,id, cmbOrganizador, dtpInicio);
         }
     }
 }

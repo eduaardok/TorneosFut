@@ -10,7 +10,7 @@ namespace TorneosFut.Class
 {
     class csJugador
     {
-        csConexion conexion;
+        csConexion csConexion;
         private string _idJugador;
         private string _nombreJugador;
         private string _apellidoJugador;
@@ -24,7 +24,7 @@ namespace TorneosFut.Class
         private string _imagenJugador;
         public csJugador(string u, string c)
         {
-            conexion = new csConexion(u,c);
+            csConexion = new csConexion(u,c);
         }
         public string IDJugador
         {
@@ -84,23 +84,23 @@ namespace TorneosFut.Class
         }
         public DataTable mostrarJugador()
         {
-            return conexion.ListDGV("select IDJugador,NombreJugador,ApellidoJugador,Sexo,FechaNacimiento,"
+            return csConexion.ListDGV("select IDJugador,NombreJugador,ApellidoJugador,Sexo,FechaNacimiento,"
                                    + "Posicion,Nacionalidad,Peso,Altura,PiernaHabil from Jugador");
         }
         public DataTable ListaidJugadores()
         {
-            DataTable dt = conexion.ListDGV("Select IDJugador from Jugador");
+            DataTable dt = csConexion.ListDGV("Select IDJugador from Jugador");
             return dt;
         }
         public DataTable ListadeJugadores()
         {
-            DataTable dt = conexion.ListDGV("Select * from Jugador");
+            DataTable dt = csConexion.ListDGV("Select * from Jugador");
             return dt;
         }
         public DataTable ListadeJugadoresFiltro(string filtro)
         {
             DataTable dt;
-            dt = conexion.ListDGV($"select IDJugador,NombreJugador,ApellidoJugador,Sexo,FechaNacimiento, Posicion,Nacionalidad,Peso,Altura,PiernaHabil from Jugador where IDJugador like '%{filtro}%' " +
+            dt = csConexion.ListDGV($"select IDJugador,NombreJugador,ApellidoJugador,Sexo,FechaNacimiento, Posicion,Nacionalidad,Peso,Altura,PiernaHabil from Jugador where IDJugador like '%{filtro}%' " +
                     $"or NombreJugador like '%{filtro}%' or ApellidoJugador like '%{filtro}%' or Posicion like '%{filtro}%'");
             return dt;
         }
@@ -135,7 +135,7 @@ namespace TorneosFut.Class
                 $"        <ImagenJugador>{ImagenJugador}</ImagenJugador>" +
                 "    </Jugador>" +
                 "</Jugadores>";
-            if (conexion.Consulta($"DECLARE @cadenaa VARCHAR(MAX) = '{xmlJugador}'; EXEC spRegistraJugador @cadenaa;"))
+            if (csConexion.Consulta($"DECLARE @cadenaa VARCHAR(MAX) = '{xmlJugador}'; EXEC spRegistraJugador @cadenaa;"))
                 return true;
             else
                 return false;

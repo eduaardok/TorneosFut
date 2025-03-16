@@ -35,10 +35,13 @@ namespace TorneosFut.Class
 
             return dt;
         }
-        public bool AgregarTorneo(TextBox idTorneo, TextBox Txtnombre, ComboBox formato, ComboBox ModoFutbol, int IdUsuario, ComboBox Organizador, DateTimePicker te)
+        public bool AgregarTorneo(int idTorneo, TextBox Txtnombre, ComboBox formato, ComboBox ModoFutbol, int IdUsuario, ComboBox Organizador, DateTimePicker te)
         {
-
-            return true;
+            if (csConexion.Consulta($"insert into Torneo (IDTorneo, NombreTorneo, IDFormato, IDModoFutbol, IDOrganizador, FechaInicio, IDUsuario, Usuario, Estado)" +
+                $" values ({idTorneo}, '{Txtnombre.Text}', {formato.Text}, {ModoFutbol.Text}, {Organizador.Text},'{te.Value.ToString()}' ,{IdUsuario}, system_user, 'PENDIENTE')"))
+                return true;
+            else
+                return false;
 
         }
     }

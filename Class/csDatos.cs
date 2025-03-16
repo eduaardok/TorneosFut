@@ -42,6 +42,7 @@ namespace TorneosFut
                 if (csEntrenador.AgregarEntrenador(Id, nombre, apellido, sexo, fecha, imagen + Path.GetExtension(filename)))
                 {
                     csImagenes.guardarIMG(filename, imagen);
+                    MessageBox.Show("Entrenador registrado correctamente");
                     return true;
                 }
                 else
@@ -60,6 +61,7 @@ namespace TorneosFut
                 if (csEquipo.AgregarEquipo(IdEquipo, IdEstadio, nombre, genero, Eqlocal, Eqvisitante, imagen + Path.GetExtension(filename), presidente))
                 {
                     csImagenes.guardarIMG(filename, imagen);
+                    MessageBox.Show("Equipo registrado correctamente");
                     return true;
                 }
                 else
@@ -67,7 +69,6 @@ namespace TorneosFut
             }
             else
             {
-
                 return true;
             }
         }
@@ -79,6 +80,7 @@ namespace TorneosFut
                 if (csJugador.AgregarJugador(idJugador, Txtnombre, txtapellido, cmbsexo, dtpNacimiento, CmbPosicion, TxtNacionalidad, txtpeso, txtaltura, cmbpierna, imagen + Path.GetExtension(filename)))
                 {
                     csImagenes.guardarIMG(filename, imagen);
+                    MessageBox.Show("Jugador registrado correctamente");
                     return true;
                 }
                 else
@@ -86,7 +88,28 @@ namespace TorneosFut
             }
             else
             {
-                
+                return false;
+            }
+        }
+        int GenerarIDRandom()
+        {
+            Random rnd = new Random(DateTime.Now.Millisecond);
+            return rnd.Next(0, 100);
+        }
+        public bool InsertarTorneo(int idTorneo, TextBox Txtnombre, ComboBox formato, ComboBox ModoFutbol, int IdUsuario, ComboBox Organizador, DateTimePicker te)
+        {
+            if (validarIDTorneo(idTorneo.ToString()))
+            {
+                if (csTorneo.AgregarTorneo(idTorneo, Txtnombre, formato, ModoFutbol, IdUsuario, Organizador, te))
+                {
+                    MessageBox.Show("Torneo registrado correctamente");
+                    return true;
+                }
+                else
+                    return false;
+            }
+            else
+            {
                 return false;
             }
         }
@@ -106,7 +129,6 @@ namespace TorneosFut
                 {
                     MessageBox.Show("El ID ya existe");
                     return true;
-
                 }
                 MessageBox.Show(IDS[i].ToString());
             }
@@ -129,11 +151,7 @@ namespace TorneosFut
                 {
                     MessageBox.Show("Número de cédula ya existente");
                     return true;
-
                 }
-                MessageBox.Show(IDS[i].ToString());
-
-
             }
             return false;
         }
@@ -154,9 +172,7 @@ namespace TorneosFut
                 {
                     MessageBox.Show("Número de cédula ya existente");
                     return true;
-
                 }
-                MessageBox.Show(IDS[i].ToString());
             }
             return false;
         }
@@ -177,11 +193,7 @@ namespace TorneosFut
                 {
                     MessageBox.Show($"Ya existe un torneo registrado con el ID: {id}");
                     return true;
-
                 }
-                MessageBox.Show(IDS[i].ToString());
-
-
             }
             return false;
         }
