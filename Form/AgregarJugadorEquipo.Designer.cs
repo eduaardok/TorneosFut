@@ -37,14 +37,18 @@
             this.lblequipoder = new System.Windows.Forms.Label();
             this.lblequipoizq = new System.Windows.Forms.Label();
             this.tblequiposizq = new System.Windows.Forms.DataGridView();
+            this.btngCancelar = new Guna.UI2.WinForms.Guna2Button();
+            this.lblDorsal = new System.Windows.Forms.Label();
+            this.numDorsal = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.tblequiposder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblequiposizq)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDorsal)).BeginInit();
             this.SuspendLayout();
             // 
             // btnguardar
             // 
             this.btnguardar.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnguardar.Location = new System.Drawing.Point(305, 302);
+            this.btnguardar.Location = new System.Drawing.Point(32, 371);
             this.btnguardar.Margin = new System.Windows.Forms.Padding(2);
             this.btnguardar.Name = "btnguardar";
             this.btnguardar.Size = new System.Drawing.Size(63, 27);
@@ -57,6 +61,7 @@
             // 
             this.tblequiposder.AllowUserToAddRows = false;
             this.tblequiposder.AllowUserToDeleteRows = false;
+            this.tblequiposder.AllowUserToResizeColumns = false;
             this.tblequiposder.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tblequiposder.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.tblequiposder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -64,6 +69,7 @@
             this.tblequiposder.Margin = new System.Windows.Forms.Padding(2);
             this.tblequiposder.Name = "tblequiposder";
             this.tblequiposder.ReadOnly = true;
+            this.tblequiposder.RowHeadersVisible = false;
             this.tblequiposder.RowTemplate.Height = 24;
             this.tblequiposder.Size = new System.Drawing.Size(180, 317);
             this.tblequiposder.TabIndex = 19;
@@ -81,24 +87,24 @@
             // btnagregar
             // 
             this.btnagregar.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnagregar.Location = new System.Drawing.Point(305, 122);
+            this.btnagregar.Location = new System.Drawing.Point(305, 86);
             this.btnagregar.Margin = new System.Windows.Forms.Padding(2);
             this.btnagregar.Name = "btnagregar";
             this.btnagregar.Size = new System.Drawing.Size(63, 27);
             this.btnagregar.TabIndex = 16;
-            this.btnagregar.Text = "<<";
+            this.btnagregar.Text = ">>";
             this.btnagregar.UseVisualStyleBackColor = true;
             this.btnagregar.Click += new System.EventHandler(this.btnagregar_Click);
             // 
             // btnquitar
             // 
             this.btnquitar.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnquitar.Location = new System.Drawing.Point(305, 98);
+            this.btnquitar.Location = new System.Drawing.Point(305, 117);
             this.btnquitar.Margin = new System.Windows.Forms.Padding(2);
             this.btnquitar.Name = "btnquitar";
             this.btnquitar.Size = new System.Drawing.Size(63, 27);
             this.btnquitar.TabIndex = 15;
-            this.btnquitar.Text = ">>";
+            this.btnquitar.Text = "<<";
             this.btnquitar.UseVisualStyleBackColor = true;
             this.btnquitar.Click += new System.EventHandler(this.btnquitar_Click);
             // 
@@ -132,9 +138,9 @@
             this.lblequipoizq.Location = new System.Drawing.Point(97, 32);
             this.lblequipoizq.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblequipoizq.Name = "lblequipoizq";
-            this.lblequipoizq.Size = new System.Drawing.Size(116, 16);
+            this.lblequipoizq.Size = new System.Drawing.Size(122, 16);
             this.lblequipoizq.TabIndex = 12;
-            this.lblequipoizq.Text = "Todos los Jugadores";
+            this.lblequipoizq.Text = "Jugadores sin equipo";
             // 
             // tblequiposizq
             // 
@@ -155,10 +161,57 @@
             this.tblequiposizq.Size = new System.Drawing.Size(180, 317);
             this.tblequiposizq.TabIndex = 21;
             // 
+            // btngCancelar
+            // 
+            this.btngCancelar.BackColor = System.Drawing.Color.White;
+            this.btngCancelar.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btngCancelar.CheckedState.CustomBorderColor = System.Drawing.Color.Black;
+            this.btngCancelar.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.btngCancelar.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.btngCancelar.CustomBorderColor = System.Drawing.Color.White;
+            this.btngCancelar.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 4);
+            this.btngCancelar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btngCancelar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btngCancelar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btngCancelar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btngCancelar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
+            this.btngCancelar.Font = new System.Drawing.Font("Onest Bold", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btngCancelar.ForeColor = System.Drawing.Color.Black;
+            this.btngCancelar.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.btngCancelar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
+            this.btngCancelar.Location = new System.Drawing.Point(-1, 417);
+            this.btngCancelar.Name = "btngCancelar";
+            this.btngCancelar.Size = new System.Drawing.Size(122, 33);
+            this.btngCancelar.TabIndex = 32;
+            this.btngCancelar.Text = "CANCELAR";
+            this.btngCancelar.Click += new System.EventHandler(this.btngCancelar_Click);
+            // 
+            // lblDorsal
+            // 
+            this.lblDorsal.AutoSize = true;
+            this.lblDorsal.BackColor = System.Drawing.Color.Transparent;
+            this.lblDorsal.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDorsal.Location = new System.Drawing.Point(313, 175);
+            this.lblDorsal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDorsal.Name = "lblDorsal";
+            this.lblDorsal.Size = new System.Drawing.Size(44, 16);
+            this.lblDorsal.TabIndex = 34;
+            this.lblDorsal.Text = "Dorsal:";
+            // 
+            // numDorsal
+            // 
+            this.numDorsal.Location = new System.Drawing.Point(293, 194);
+            this.numDorsal.Name = "numDorsal";
+            this.numDorsal.Size = new System.Drawing.Size(84, 20);
+            this.numDorsal.TabIndex = 35;
+            // 
             // AgregarJugadorEquipo
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(684, 450);
+            this.Controls.Add(this.numDorsal);
+            this.Controls.Add(this.lblDorsal);
+            this.Controls.Add(this.btngCancelar);
             this.Controls.Add(this.tblequiposizq);
             this.Controls.Add(this.btnguardar);
             this.Controls.Add(this.tblequiposder);
@@ -175,6 +228,7 @@
             this.Load += new System.EventHandler(this.AgregarJugadorEquipo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tblequiposder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblequiposizq)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDorsal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,5 +245,8 @@
         private System.Windows.Forms.Label lblequipoder;
         private System.Windows.Forms.Label lblequipoizq;
         private System.Windows.Forms.DataGridView tblequiposizq;
+        private Guna.UI2.WinForms.Guna2Button btngCancelar;
+        private System.Windows.Forms.Label lblDorsal;
+        private System.Windows.Forms.NumericUpDown numDorsal;
     }
 }

@@ -105,14 +105,20 @@ namespace TorneosFut.Class
             DataTable dt = csConexion.ListDGV("Select IDJugador from Jugador");
             return dt;
         }
+        public DataTable ListaDorsalesJugadores(string idEquipo)
+        {
+            DataTable dt = csConexion.ListDGV($"Select Dorsal from Jugador_Equipo where IDEquipo = '{idEquipo}'");
+            return dt;
+        }
         public DataTable ListadeJugadores()
         {
             DataTable dt = csConexion.ListDGV("Select * from Jugador");
             return dt;
         }
-        public DataTable ListadeJugadoresParaEq()
+        public DataTable ListadeJugadoresSinEquipo()
         {
-            DataTable dt = csConexion.ListDGV("select IDJugador,NombreJugador,ApellidoJugador from Jugador");
+            DataTable dt = csConexion.ListDGV("select j.IDJugador,NombreJugador,ApellidoJugador from Jugador j  left join Jugador_Equipo e " +
+                "on j.IDJugador=e.IDJugador where e.IDEquipo is null or e.FechaSalida is not null");
             return dt;
         }
         public DataTable ListadeJugadoresFiltro(string filtro)
@@ -158,6 +164,20 @@ namespace TorneosFut.Class
             else
                 return false;
         }
-
+        public bool AgregarJugadorEquipo(string IDJugador, string IDEquipo, int Dorsal)
+        {
+            if (csConexion.Consulta($"insert into Jugador_Equipo (IDJugador, IDEquipo, FechaEntrada, Dorsal)" +
+                $" values ('{IDJugador}', '{IDEquipo}', GETDATE(), {Dorsal})"))
+                return true;
+            else
+                return false;
+        }
+        public bool DejarJugadorSinEquipo(string IDJugador, string IDEquipo)
+        {
+            if (csConexion.Consulta($"update Jugador_Equipo set FechaSalida= getdate() where IDJugador='{IDJugador}' and IDEquipo='{IDEquipo}'"))
+                return true;
+            else
+                return false;
+        }
     }
 }

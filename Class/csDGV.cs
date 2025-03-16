@@ -91,15 +91,15 @@ namespace TorneosFut
         //JUGADORES 
         public void MostrarJugadores(DataGridView dgv)
         {
-            dgv.DataSource = csJugador.ListadeJugadores();
+            dgv.DataSource = csJugador.mostrarJugador();
         }
         public void MostrarJugadoresFiltro(DataGridView dgv, string filtro)
         {
             dgv.DataSource = csJugador.ListadeJugadoresFiltro(filtro);
         }
-        public void MostrarJugadoresE (DataGridView dgv)
+        public void MostrarJugadoresSinEquipo (DataGridView dgv)
         {
-            dgv.DataSource = csJugador.ListadeJugadoresParaEq();
+            dgv.DataSource = csJugador.ListadeJugadoresSinEquipo();
         }
 
         //EQUIPOS
@@ -111,9 +111,9 @@ namespace TorneosFut
         {
             dgv.DataSource = csEquipo.ListadeEquiposFiltro(filtro);
         }
-        public void MostrarJugadoresEquipo(DataGridView dgv)
+        public void MostrarJugadoresEquipo(DataGridView dgv, string id)
         {
-            dgv.DataSource = csEquipo.listaDeJugadorEqupo();
+            dgv.DataSource = csEquipo.ListaDeJugadoresEquipo(id);
         }
         //ENTRENADORES
         public void MostrarEntrenadores(DataGridView dgv)

@@ -28,7 +28,6 @@ namespace TorneosFut
             ju = new Jugador(u, c);
             entre = new Entrenador(u, c);
             csDGV = new csDGV(u, c);
-            aggjugadorEquipo = new AgregarJugadorEquipo(u, c);
             InitializeComponent();
         }
         private void addUserControl(UserControl userControll)
@@ -165,6 +164,7 @@ namespace TorneosFut
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
+            aggjugadorEquipo = new AgregarJugadorEquipo(conexion.Usuario, conexion.Clave, dgvEquipos.CurrentRow.Cells[0].Value.ToString());
             aggjugadorEquipo.ShowDialog();
         }
     }

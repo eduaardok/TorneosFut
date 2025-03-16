@@ -77,8 +77,6 @@ namespace pruebas
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
         }
-
-
         private void timer1_Tick(object sender, EventArgs e)
         {
 
@@ -125,7 +123,6 @@ namespace pruebas
 
         private void dgvPartido_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            //e.Handled = true;
         }
     }
 }

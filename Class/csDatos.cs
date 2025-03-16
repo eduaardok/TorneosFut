@@ -1,4 +1,5 @@
-﻿using PruebasTorneos;
+﻿using pruebas;
+using PruebasTorneos;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -91,10 +92,22 @@ namespace TorneosFut
                 return false;
             }
         }
-        int GenerarIDRandom()
+        public bool InsertarJugadorEquipo(string IDJugador, string IDEquipo, int Dorsal)
         {
-            Random rnd = new Random(DateTime.Now.Millisecond);
-            return rnd.Next(0, 100);
+            if (!DorsalJugadorRepetido(IDEquipo,Dorsal.ToString()))
+            {
+                if (csJugador.AgregarJugadorEquipo(IDJugador, IDEquipo, Dorsal))
+                {
+                    MessageBox.Show("Jugador registrado correctamente en el equipo");
+                    return true;
+                }
+                else
+                    return false;
+            }
+            else
+            {
+                return false;
+            }
         }
         public bool InsertarTorneo(int idTorneo, TextBox Txtnombre, ComboBox formato, ComboBox ModoFutbol, int IdUsuario, ComboBox Organizador, DateTimePicker te)
         {
@@ -112,6 +125,16 @@ namespace TorneosFut
             {
                 return false;
             }
+        }
+        public bool JugadorSinEquipo(string IdJugador, string IdEquipo)
+        {
+            if (csJugador.DejarJugadorSinEquipo(IdJugador, IdEquipo))
+            {
+                MessageBox.Show("Jugador apartado del equipo");
+                return true;
+            }
+            else
+                return false;
         }
         public bool IDEquipoRepetido(string id)
         {
@@ -202,6 +225,24 @@ namespace TorneosFut
             if (validarSoloNumeros(id) && !(IDTorneoRepetido(id)))
             {
                 return true;
+            }
+            return false;
+        }
+        public bool DorsalJugadorRepetido(string id, string dorsal)
+        {
+            DataTable dt = csJugador.ListaDorsalesJugadores(id);
+            string[] dorsales = new string[dt.Rows.Count];
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                dorsales[i] = dt.Rows[i][0].ToString();
+            }
+            for (int i = 0; i < dorsales.Length; i++)
+            {
+                if (dorsales[i] == id)
+                {
+                    MessageBox.Show($"Ya un jugador registrado con ese dorsal");
+                    return true;
+                }
             }
             return false;
         }
