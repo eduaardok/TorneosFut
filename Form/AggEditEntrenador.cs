@@ -46,7 +46,7 @@ namespace PruebasTorneos
         {
             if (agregar)
             {
-                if (csDatos.InsertarEntrenador(txtID.Text,txtNombre.Text, txtApellido.Text, cmbSexo.Text,dtpNacimiento.Text, nombreArchivo, img.FileName))
+                if (csDatos.InsertarEntrenador(txtID.Text,txtNombre.Text, txtApellido.Text, cmbSexo.Text,dtpNacimiento.Value.ToString(), nombreArchivo, img.FileName))
                 {
                     MessageBox.Show("insertado");
                 }
