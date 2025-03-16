@@ -56,7 +56,8 @@ namespace TorneosFut
         }
         private void btngEnviar_Click(object sender, EventArgs e)
         {
-            csDatos.InsertarTorneo(GenerarIDRandom(), txtNombre, cmbFormato, cmbModoFutbol,id, cmbOrganizador, dtpInicio);
+            MessageBox.Show("Inhabilitado por el momento");
+            //csDatos.InsertarTorneo(GenerarIDRandom(), txtNombre.Text, cmbFormato.SelectedValue.ToString(), cmbModoFutbol.SelectedValue.ToString(), id, cmbOrganizador.SelectedValue.ToString(), dtpInicio.Value.ToString()) ;
         }
     }
 }

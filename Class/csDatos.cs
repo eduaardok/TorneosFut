@@ -109,7 +109,7 @@ namespace TorneosFut
                 return false;
             }
         }
-        public bool InsertarTorneo(int idTorneo, TextBox Txtnombre, ComboBox formato, ComboBox ModoFutbol, int IdUsuario, ComboBox Organizador, DateTimePicker te)
+        public bool InsertarTorneo(int idTorneo, string Txtnombre, string formato, string ModoFutbol, int IdUsuario, string Organizador, string te)
         {
             if (validarIDTorneo(idTorneo.ToString()))
             {
