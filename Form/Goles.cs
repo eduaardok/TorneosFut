@@ -32,6 +32,7 @@ namespace pruebas
         private void editarjugador_Load(object sender, EventArgs e)
         {
             csDGV.MostrarEquiposCMB(CmbEquipo);
+            
         }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -100,10 +101,15 @@ namespace pruebas
         private void CmbEquipo_SelectedIndexChanged(object sender, EventArgs e)
         {
             csPartido = null;
-           csPartido= new csPartido(conexion.Usuario,conexion.Clave,"0","0",CmbEquipo.SelectedIndex.ToString());
-            CMBJugador.DataSource=csPartido.ListaJugador();
+           csPartido= new csPartido(conexion.Usuario,conexion.Clave,CmbEquipo.Text);
+            CMBJugador.DataSource = csPartido.ListaDeJugadoresEquipo(CmbEquipo.Text);
             CMBJugador.ValueMember = "IDJugador";
             CMBJugador.DisplayMember = "NombreJugador";
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

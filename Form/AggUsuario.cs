@@ -62,8 +62,10 @@ namespace Usuarios
                     $" Correo= '{txtCorreo.Text + cmbCorreos.Text}', NombreUsuarioBD= '{txtUsuarioBD.Text}',ClaveBD='{claveBD}' where IDUsuario={id} ");
                    conexion.ActualizarLoginBD(txtUsuarioBD.Text, txtClaveBD.Text);
                     MessageBox.Show($"Usuario editado");
+
                     this.Close();
                 }
+                
             }
             else
             MessageBox.Show("Verifique los campos ingresados");
@@ -112,9 +114,9 @@ namespace Usuarios
             else
             {
                 if (!agg)
-                    dt = conexion.ListDGV($"select * from Usuario where Nombre = '{txtNombre.Text}' and IDUsuario != {id}");
+                    dt = conexion.ListDGV($"select * from Usuario where Nombres = '{txtNombre.Text}' and IDUsuario != {id}");
                 else
-                    dt = conexion.ListDGV($"select * from Usuario where Nombre = '{txtNombre.Text}'");
+                    dt = conexion.ListDGV($"select * from Usuario where Nombres = '{txtNombre.Text}'");
                 if (dt.Rows.Count > 0)
                 {
                     txtNombre.Text= txtNombre.Text+"1";

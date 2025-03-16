@@ -48,7 +48,8 @@ namespace Usuarios
             AggUsuario a = new AggUsuario(true, -1, conexion.Usuario, conexion.Clave);
             //AbrirFormEnPanel(panelDgv, a);
             a.ShowDialog();
-
+            txtFiltro.Text = "";
+            ActualizarTabla();
         }
 
         private void btngEditar_Click(object sender, EventArgs e)
@@ -71,7 +72,11 @@ namespace Usuarios
             {
                 MessageBox.Show("La tabla está vacía");
             }
-            csDGV.AdaptarDGV(dgvUsuarios, panelDgv);
+            txtFiltro.Text = "";
+            ActualizarTabla();
+
+           
+
         }
 
         private void btngLimpiar_Click(object sender, EventArgs e)

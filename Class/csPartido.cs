@@ -14,12 +14,11 @@ namespace TorneosFut.Class
         string IDTorneo;
         string IDPartido;
         string IDEquipo;
-        public csPartido(string u, string c, string iDtorneo="0",string Idpartido="0", string IdEquipo="0")
+        public csPartido(string u, string c, string iDtorneo="0",string Idpartido="0")
         {
             csConexion = new csConexion(u, c);
             IDTorneo = iDtorneo;
             IDPartido = Idpartido;
-            IDEquipo = IdEquipo;
         }
         public DataTable ListadePartido()
         {
@@ -33,8 +32,24 @@ namespace TorneosFut.Class
         }
         public DataTable ListaJugador()
         {
-            DataTable dt = csConexion.ListDGV($"Select JE.IDJugador,JE.IDEquipo, J.NombreJugador from Jugador_Equipo JE inner join Jugador J on JE.IDJugador=J.IDJugador where IDEquipo={IDEquipo} ");
+            DataTable dt = csConexion.ListDGV($"Select JE.IDJugador,JE.IDEquipo, J.NombreJugador from Jugador_Equipo JE inner join Jugador J on JE.IDJugador=J.IDJugador where IDEquipo='{IDEquipo}' ");
             return dt;
+        }
+        public DataTable ListaDeJugadoresEquipo(string id)
+        {
+            DataTable dt = csConexion.ListDGV($"Select JE.IDJugador,JE.IDEquipo, J.NombreJugador from Jugador_Equipo JE " +
+                $"inner join Jugador J on JE.IDJugador=J.IDJugador where JE.IDEquipo='{id}' and FechaSalida is null");
+            return dt;
+        }
+        public string IDEquipoLocal()
+        {
+            DataTable dt = csConexion.ListDGV($"select EquipoLocal from  Partido where IDPartido={IDPartido}");
+            return dt.Rows[0][0].ToString();
+        }
+        public string IDEquipoVisitante()
+        {
+            DataTable dt = csConexion.ListDGV($"select EquipoVisitante from  Partido where IDPartido={IDPartido}");
+            return dt.Rows[0][0].ToString();
         }
     }
 }

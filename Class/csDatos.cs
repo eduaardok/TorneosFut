@@ -153,7 +153,6 @@ namespace TorneosFut
                     MessageBox.Show("El ID ya existe");
                     return true;
                 }
-                MessageBox.Show(IDS[i].ToString());
             }
             return false;
         }

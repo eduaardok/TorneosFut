@@ -24,7 +24,6 @@ namespace pruebas
         public GestionarPartidos(string IDtorneo,string u, string c, Torneo t, Principal te)
         {
             conexion = new csConexion(u, c);
-            
             IdTorneo = IDtorneo;
             csDGV = new csDGV(u,c, IdTorneo, IDPartido);
             InitializeComponent();
@@ -90,7 +89,7 @@ namespace pruebas
         private void btnGol_Click(object sender, EventArgs e)
         {
             csDGV = null;
-            csDGV = new csDGV(conexion.Usuario,conexion.Clave, IdTorneo, IDPartido);
+            csDGV = new csDGV(conexion.Usuario, conexion.Clave, IdTorneo, IDPartido);
             gol = new Goles(conexion.Usuario,conexion.Clave,IDPartido);
             gol.ShowDialog();
         }
