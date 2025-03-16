@@ -40,8 +40,8 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.txtaltura = new System.Windows.Forms.TextBox();
             this.txtpeso = new System.Windows.Forms.TextBox();
-            this.Equipo = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.CmbEquipo = new System.Windows.Forms.ComboBox();
+            this.CMBJugador = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.panel2.SuspendLayout();
@@ -129,7 +129,7 @@
             // lblapellido
             // 
             this.lblapellido.AutoSize = true;
-            this.lblapellido.Location = new System.Drawing.Point(263, 79);
+            this.lblapellido.Location = new System.Drawing.Point(269, 78);
             this.lblapellido.Name = "lblapellido";
             this.lblapellido.Size = new System.Drawing.Size(104, 13);
             this.lblapellido.TabIndex = 55;
@@ -158,21 +158,24 @@
             this.txtpeso.Size = new System.Drawing.Size(111, 20);
             this.txtpeso.TabIndex = 52;
             // 
-            // Equipo
+            // CmbEquipo
             // 
-            this.Equipo.FormattingEnabled = true;
-            this.Equipo.Location = new System.Drawing.Point(69, 94);
-            this.Equipo.Name = "Equipo";
-            this.Equipo.Size = new System.Drawing.Size(121, 21);
-            this.Equipo.TabIndex = 64;
+            this.CmbEquipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbEquipo.FormattingEnabled = true;
+            this.CmbEquipo.Location = new System.Drawing.Point(69, 94);
+            this.CmbEquipo.Name = "CmbEquipo";
+            this.CmbEquipo.Size = new System.Drawing.Size(121, 21);
+            this.CmbEquipo.TabIndex = 64;
+            this.CmbEquipo.SelectedIndexChanged += new System.EventHandler(this.CmbEquipo_SelectedIndexChanged);
             // 
-            // comboBox1
+            // CMBJugador
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(266, 94);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 65;
+            this.CMBJugador.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CMBJugador.FormattingEnabled = true;
+            this.CMBJugador.Location = new System.Drawing.Point(266, 94);
+            this.CMBJugador.Name = "CMBJugador";
+            this.CMBJugador.Size = new System.Drawing.Size(121, 21);
+            this.CMBJugador.TabIndex = 65;
             // 
             // textBox1
             // 
@@ -188,8 +191,8 @@
             this.ClientSize = new System.Drawing.Size(554, 379);
             this.ControlBox = false;
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.Equipo);
+            this.Controls.Add(this.CMBJugador);
+            this.Controls.Add(this.CmbEquipo);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAgregar);
@@ -231,8 +234,8 @@
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.TextBox txtaltura;
         private System.Windows.Forms.TextBox txtpeso;
-        private System.Windows.Forms.ComboBox Equipo;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox CmbEquipo;
+        private System.Windows.Forms.ComboBox CMBJugador;
         private System.Windows.Forms.TextBox textBox1;
     }
 }

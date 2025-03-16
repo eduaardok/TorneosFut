@@ -57,10 +57,6 @@ namespace PruebasTorneos
             string consul = "select IDEntrenador, NombreEntrenador, ApellidoEntrenador, Sexo from Entrenador";
             DataTable dt = conexion.ListDGV(consul);
             dgvEntrenador.DataSource = dt;
-            /*foreach (DataGridViewColumn column in dgvEntrenador.Columns)
-            {
-                column.SortMode = DataGridViewColumnSortMode.NotSortable;
-            }*/
             MostrarImagen("10111", ptb);
         }
         

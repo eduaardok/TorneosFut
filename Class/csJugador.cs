@@ -11,6 +11,7 @@ namespace TorneosFut.Class
     class csJugador
     {
         csConexion csConexion;
+        csImagenes csImagenes;
         private string _idJugador;
         private string _nombreJugador;
         private string _apellidoJugador;
@@ -22,10 +23,14 @@ namespace TorneosFut.Class
         private string _altura;
         private string _piernaHabil;
         private string _imagenJugador;
+        string ID;
         public csJugador(string u, string c)
         {
             csConexion = new csConexion(u,c);
+            csImagenes = new csImagenes();
+            
         }
+
         public string IDJugador
         {
             get => _idJugador;
@@ -82,6 +87,14 @@ namespace TorneosFut.Class
             get => _imagenJugador;
             set => _imagenJugador = value;
         }
+        public string Imagen(string i)
+        {
+
+            DataGridView dt = new DataGridView();
+            dt.DataSource = csConexion.ListDGV($"Select ImagenJugador from Jugador where IDJugador = '{ID}'");
+            string img = dt.Rows[0].Cells[0].Value.ToString();
+            return img;
+        }
         public DataTable mostrarJugador()
         {
             return csConexion.ListDGV("select IDJugador,NombreJugador,ApellidoJugador,Sexo,FechaNacimiento,"
@@ -95,6 +108,11 @@ namespace TorneosFut.Class
         public DataTable ListadeJugadores()
         {
             DataTable dt = csConexion.ListDGV("Select * from Jugador");
+            return dt;
+        }
+        public DataTable ListadeJugadoresParaEq()
+        {
+            DataTable dt = csConexion.ListDGV("select IDJugador,NombreJugador,ApellidoJugador from Jugador");
             return dt;
         }
         public DataTable ListadeJugadoresFiltro(string filtro)

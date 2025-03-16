@@ -28,41 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btnArbitros = new System.Windows.Forms.Button();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.btnJugador = new System.Windows.Forms.Button();
+            this.btnArbitros = new System.Windows.Forms.Button();
             this.btnOrganizador = new System.Windows.Forms.Button();
             this.btnCrear = new Guna.UI2.WinForms.Guna2Button();
             this.btnPatrocinadores = new Guna.UI2.WinForms.Guna2Button();
             this.btnEquipos = new Guna.UI2.WinForms.Guna2Button();
             this.btnEditar = new Guna.UI2.WinForms.Guna2Button();
             this.btnPartidos = new Guna.UI2.WinForms.Guna2Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtBuscarTorneo = new System.Windows.Forms.TextBox();
-            this.dgvOrganizador = new System.Windows.Forms.DataGridView();
+            this.dgvTorneo = new System.Windows.Forms.DataGridView();
             this.panelmodul = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTorneo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOrganizador)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnArbitros
-            // 
-            this.btnArbitros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.btnArbitros.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnArbitros.Font = new System.Drawing.Font("Onest Bold", 20F, System.Drawing.FontStyle.Bold);
-            this.btnArbitros.ForeColor = System.Drawing.Color.White;
-            this.btnArbitros.Location = new System.Drawing.Point(651, 3);
-            this.btnArbitros.Name = "btnArbitros";
-            this.btnArbitros.Size = new System.Drawing.Size(294, 85);
-            this.btnArbitros.TabIndex = 6;
-            this.btnArbitros.Text = "ÁRBITROS";
-            this.btnArbitros.UseVisualStyleBackColor = false;
-            this.btnArbitros.Click += new System.EventHandler(this.btnArbitros_Click);
             // 
             // panel1
             // 
@@ -108,6 +94,22 @@
             this.btnJugador.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnJugador.UseVisualStyleBackColor = false;
             this.btnJugador.Click += new System.EventHandler(this.btnJugadores_Click);
+            // 
+            // btnArbitros
+            // 
+            this.btnArbitros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            this.btnArbitros.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnArbitros.Font = new System.Drawing.Font("Onest Bold", 20F, System.Drawing.FontStyle.Bold);
+            this.btnArbitros.ForeColor = System.Drawing.Color.White;
+            this.btnArbitros.Image = global::TorneosFut.Properties.Resources.icons8_silbato_50;
+            this.btnArbitros.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnArbitros.Location = new System.Drawing.Point(651, 3);
+            this.btnArbitros.Name = "btnArbitros";
+            this.btnArbitros.Size = new System.Drawing.Size(294, 85);
+            this.btnArbitros.TabIndex = 6;
+            this.btnArbitros.Text = "ÁRBITROS";
+            this.btnArbitros.UseVisualStyleBackColor = false;
+            this.btnArbitros.Click += new System.EventHandler(this.btnArbitros_Click);
             // 
             // btnOrganizador
             // 
@@ -256,17 +258,6 @@
             this.btnPartidos.Text = "GESTIONAR PARTIDOS";
             this.btnPartidos.Click += new System.EventHandler(this.btnPartidos_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.BackgroundImage = global::TorneosFut.Properties.Resources.IconoLupa;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(152, 106);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 49);
-            this.pictureBox1.TabIndex = 59;
-            this.pictureBox1.TabStop = false;
-            // 
             // txtBuscarTorneo
             // 
             this.txtBuscarTorneo.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -279,50 +270,53 @@
             this.txtBuscarTorneo.Size = new System.Drawing.Size(633, 48);
             this.txtBuscarTorneo.TabIndex = 58;
             this.txtBuscarTorneo.Text = "Buscar por nombre del Torneo";
+            this.txtBuscarTorneo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtBuscarTorneo_MouseClick);
+            this.txtBuscarTorneo.TextChanged += new System.EventHandler(this.txtBuscarTorneo_TextChanged);
             // 
-            // dgvOrganizador
+            // dgvTorneo
             // 
-            this.dgvOrganizador.AllowUserToAddRows = false;
-            this.dgvOrganizador.AllowUserToDeleteRows = false;
-            this.dgvOrganizador.AllowUserToResizeColumns = false;
-            this.dgvOrganizador.AllowUserToResizeRows = false;
-            this.dgvOrganizador.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dgvOrganizador.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvOrganizador.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvOrganizador.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvOrganizador.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvOrganizador.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvOrganizador.EnableHeadersVisualStyles = false;
-            this.dgvOrganizador.Location = new System.Drawing.Point(152, 304);
-            this.dgvOrganizador.Name = "dgvOrganizador";
-            this.dgvOrganizador.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvOrganizador.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvOrganizador.RowHeadersVisible = false;
-            this.dgvOrganizador.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvOrganizador.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOrganizador.Size = new System.Drawing.Size(1189, 501);
-            this.dgvOrganizador.TabIndex = 57;
+            this.dgvTorneo.AllowUserToAddRows = false;
+            this.dgvTorneo.AllowUserToDeleteRows = false;
+            this.dgvTorneo.AllowUserToResizeColumns = false;
+            this.dgvTorneo.AllowUserToResizeRows = false;
+            this.dgvTorneo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dgvTorneo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvTorneo.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTorneo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.dgvTorneo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTorneo.DefaultCellStyle = dataGridViewCellStyle11;
+            this.dgvTorneo.EnableHeadersVisualStyles = false;
+            this.dgvTorneo.Location = new System.Drawing.Point(152, 304);
+            this.dgvTorneo.Name = "dgvTorneo";
+            this.dgvTorneo.ReadOnly = true;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTorneo.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            this.dgvTorneo.RowHeadersVisible = false;
+            this.dgvTorneo.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvTorneo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvTorneo.Size = new System.Drawing.Size(1189, 501);
+            this.dgvTorneo.TabIndex = 57;
+            this.dgvTorneo.SelectionChanged += new System.EventHandler(this.dgvTorneo_SelectionChanged);
             // 
             // panelmodul
             // 
@@ -332,6 +326,17 @@
             this.panelmodul.Name = "panelmodul";
             this.panelmodul.Size = new System.Drawing.Size(1490, 811);
             this.panelmodul.TabIndex = 65;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.BackgroundImage = global::TorneosFut.Properties.Resources.IconoLupa;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(152, 106);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 49);
+            this.pictureBox1.TabIndex = 59;
+            this.pictureBox1.TabStop = false;
             // 
             // Torneo
             // 
@@ -347,7 +352,7 @@
             this.Controls.Add(this.btnPartidos);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtBuscarTorneo);
-            this.Controls.Add(this.dgvOrganizador);
+            this.Controls.Add(this.dgvTorneo);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -358,8 +363,8 @@
             this.Text = "Torneo";
             this.Load += new System.EventHandler(this.Torneo_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTorneo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOrganizador)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -379,7 +384,7 @@
         private Guna.UI2.WinForms.Guna2Button btnPartidos;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtBuscarTorneo;
-        public System.Windows.Forms.DataGridView dgvOrganizador;
+        public System.Windows.Forms.DataGridView dgvTorneo;
         public System.Windows.Forms.Panel panelmodul;
     }
 }

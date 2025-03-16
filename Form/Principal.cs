@@ -35,6 +35,7 @@ namespace TorneosFut
         Torneo tor;
         Patrocinadores Patro;
         Organizadores Orga;
+        Auditoria auditoria;
         public Principal(string u, string c,string name)
         {
             if (u == "FutXpert")
@@ -42,21 +43,17 @@ namespace TorneosFut
             else
                 esAdmin = false;
             conexion = new csConexion(u, c);
-            //conexion.Usuario = u;
-            //conexion.Clave = c;
             encriptar = new csEncriptar();
             conexion.RegistrarAuditoriaInicioSesion();
             InitializeComponent();
-            //this.WindowState = FormWindowState.Maximized;
-            //this.StartPosition = FormStartPosition.Manual;
-            //this.Bounds = Screen.PrimaryScreen.WorkingArea;
-            Usuario=new GestionUsuario(conexion.Usuario, conexion.Clave);
+            Usuario=new GestionUsuario(u, c);
             ddbtnOpcionesU.Text = name;
-            entre= new Entrenador(conexion.Usuario, conexion.Clave);
-            equi = new Equipos(conexion.Usuario, conexion.Clave);
-            tor = new Torneo(conexion.Usuario, conexion.Clave, this);
-            Patro = new Patrocinadores(conexion.Usuario,conexion.Clave);
-            Orga = new Organizadores(conexion.Usuario,conexion.Clave);
+            entre= new Entrenador(u, c);
+            equi = new Equipos(u, c);
+            tor = new Torneo(u, c, this);
+            Patro = new Patrocinadores(u, c);
+            Orga = new Organizadores(u, c);
+            auditoria = new Auditoria(u,c);
         }
         public static void AbrirFormEnPanel(Panel panel, Form formHijo)
         {
@@ -283,6 +280,11 @@ namespace TorneosFut
             }
             // Mostrar solo el panel (si no está ya visible)
             panelModulos.BringToFront();  // Asegura que el panel sea el que se muestre
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(panelModulos,auditoria);
         }
     }
 }

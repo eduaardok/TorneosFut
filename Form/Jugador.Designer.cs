@@ -37,6 +37,7 @@
             this.dgvJugador = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtBuscarJugador = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panelDgv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJugador)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -72,7 +73,7 @@
             this.guna2Button1.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
             this.guna2Button1.HoverState.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(1207, 179);
+            this.guna2Button1.Location = new System.Drawing.Point(531, 179);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(214, 59);
             this.guna2Button1.TabIndex = 11;
@@ -98,7 +99,7 @@
             this.btnAgregarJugador.ForeColor = System.Drawing.Color.Black;
             this.btnAgregarJugador.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnAgregarJugador.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
-            this.btnAgregarJugador.Location = new System.Drawing.Point(966, 179);
+            this.btnAgregarJugador.Location = new System.Drawing.Point(278, 179);
             this.btnAgregarJugador.Name = "btnAgregarJugador";
             this.btnAgregarJugador.Size = new System.Drawing.Size(222, 59);
             this.btnAgregarJugador.TabIndex = 12;
@@ -153,7 +154,7 @@
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.BackgroundImage = global::TorneosFut.Properties.Resources.IconoLupa;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(63, 179);
+            this.pictureBox1.Location = new System.Drawing.Point(62, 103);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(50, 49);
             this.pictureBox1.TabIndex = 15;
@@ -165,7 +166,7 @@
             this.txtBuscarJugador.Font = new System.Drawing.Font("Onest Light", 20F);
             this.txtBuscarJugador.ForeColor = System.Drawing.Color.Gray;
             this.txtBuscarJugador.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtBuscarJugador.Location = new System.Drawing.Point(119, 180);
+            this.txtBuscarJugador.Location = new System.Drawing.Point(109, 104);
             this.txtBuscarJugador.Multiline = true;
             this.txtBuscarJugador.Name = "txtBuscarJugador";
             this.txtBuscarJugador.Size = new System.Drawing.Size(841, 48);
@@ -175,11 +176,19 @@
             this.txtBuscarJugador.TextChanged += new System.EventHandler(this.txtBuscarJugador_TextChanged);
             this.txtBuscarJugador.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBuscarMisEquipos_KeyUp);
             // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(972, 14);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(177, 138);
+            this.panel1.TabIndex = 47;
+            // 
             // Jugador
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1490, 911);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtBuscarJugador);
             this.Controls.Add(this.panelDgv);
@@ -210,5 +219,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtBuscarJugador;
         public System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel1;
     }
 }

@@ -44,5 +44,15 @@ namespace TorneosFut.Class
                 return false;
 
         }
+        public DataTable LlenarOrganizadores()
+        {
+            DataTable dt = csConexion.ListDGV("Select* from Organizador");
+            return dt;
+        }
+        public DataTable LlenarFormato()
+        {
+            DataTable dt = csConexion.ListDGV("Select* from Formato");
+            return dt;
+        }
     }
 }

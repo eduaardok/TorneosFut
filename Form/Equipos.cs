@@ -20,6 +20,7 @@ namespace TorneosFut
         Jugador ju;
         Entrenador entre;
         csDGV csDGV;
+        AgregarJugadorEquipo aggjugadorEquipo;
         public Equipos(string u, string c)
         {
             conexion = new csConexion(u,c);
@@ -27,6 +28,7 @@ namespace TorneosFut
             ju = new Jugador(u, c);
             entre = new Entrenador(u, c);
             csDGV = new csDGV(u, c);
+            aggjugadorEquipo = new AgregarJugadorEquipo(u, c);
             InitializeComponent();
         }
         private void addUserControl(UserControl userControll)
@@ -159,6 +161,11 @@ namespace TorneosFut
             if (txtBuscarEquipo.Text == "Buscar por nombre del Equipo")
                 txtBuscarEquipo.Text = "";
             ActualizarTabla();
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            aggjugadorEquipo.ShowDialog();
         }
     }
 

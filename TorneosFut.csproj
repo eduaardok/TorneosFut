@@ -67,6 +67,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form\AgregarJugadorEquipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\AgregarJugadorEquipo.Designer.cs">
+      <DependentUpon>AgregarJugadorEquipo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class\csPartido.cs" />
+    <Compile Include="Form\Auditoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Auditoria.Designer.cs">
+      <DependentUpon>Auditoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\AggEditOrganizadorres.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -232,6 +245,12 @@
     <EmbeddedResource Include="Form\AggEditPatrocinador.resx">
       <DependentUpon>AggEditPatrocinador.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\AgregarJugadorEquipo.resx">
+      <DependentUpon>AgregarJugadorEquipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Auditoria.resx">
+      <DependentUpon>Auditoria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\Estadio.resx">
       <DependentUpon>Estadio.cs</DependentUpon>
     </EmbeddedResource>
@@ -357,6 +376,11 @@
     <Content Include="media\door.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\icons8-estadio-50.png" />
+    <None Include="Resources\icons8-fútbol-64.png" />
+    <None Include="Resources\icons8-silbato-50.png" />
+    <None Include="Resources\icons8-audit-50.png" />
+    <None Include="Resources\icons8-asignación-entregado-50.png" />
     <None Include="Resources\Sin_foto.jpg" />
     <None Include="Resources\icons8-cucha-50 %281%29.png" />
     <None Include="Resources\icons8-cucha-50.png" />

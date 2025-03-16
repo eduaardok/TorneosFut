@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TorneosFut;
+using TorneosFut.Class;
 
 namespace pruebas
 {
@@ -15,12 +16,17 @@ namespace pruebas
     {
         csConexion conexion;
         Goles gol;
-        string ID;
+        string IDPartido;
         Torneo tr;
         Principal r;
-        public GestionarPartidos(string u, string c, Torneo t, Principal te)
+        csDGV csDGV;
+        string IdTorneo;
+        public GestionarPartidos(string IDtorneo,string u, string c, Torneo t, Principal te)
         {
             conexion = new csConexion(u, c);
+            
+            IdTorneo = IDtorneo;
+            csDGV = new csDGV(u,c, IdTorneo, IDPartido);
             InitializeComponent();
             tr = t;
             r = te;
@@ -61,6 +67,15 @@ namespace pruebas
         private void verjugadores_Load(object sender, EventArgs e)
         {
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
+            csDGV.MostrarPartidos(dgvPartido);
+            csDGV.AdaptarDGV(dgvPartido);
+            dgvPartido.Columns["IDPartido"].Visible = false;
+            dgvPartido.Columns["IDTorneo"].Visible = false;
+            dgvPartido.ColumnHeaderMouseClick += dgvPartido_ColumnHeaderMouseClick;
+            foreach (DataGridViewColumn column in dgvPartido.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
         }
 
 
@@ -76,14 +91,18 @@ namespace pruebas
 
         private void btnGol_Click(object sender, EventArgs e)
         {
-            gol = new Goles();
+            csDGV = null;
+            csDGV = new csDGV(conexion.Usuario,conexion.Clave, IdTorneo, IDPartido);
+            gol = new Goles(conexion.Usuario,conexion.Clave,IDPartido);
             gol.ShowDialog();
         }
 
         private void dgvPartido_SelectionChanged(object sender, EventArgs e)
         {
-            int fila = dgvPartido.SelectedRows[0].Index;
-            ID = dgvPartido.Rows[fila].Cells["IDPartido"].Value.ToString();
+            if (dgvPartido.CurrentRow != null && dgvPartido.CurrentRow.Index >= 0)
+            {
+                 IDPartido = dgvPartido.Rows[dgvPartido.CurrentRow.Index].Cells[0].Value.ToString();
+            }
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -102,6 +121,11 @@ namespace pruebas
                     this.Location.X + e.X - (c.Width / 2),
                     this.Location.Y + e.Y - (c.Height / 2));
             }
+        }
+
+        private void dgvPartido_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            //e.Handled = true;
         }
     }
 }

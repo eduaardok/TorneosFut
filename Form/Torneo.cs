@@ -20,6 +20,10 @@ namespace TorneosFut
         Organizadores orga;
         GestionarPartidos partidos;
         Principal T;
+        csDGV csDGV;
+        string IDTorneo;
+        string IDPartido;
+
         public Torneo(string u, string c, Principal r)
         {
             conexion = new csConexion();
@@ -28,6 +32,7 @@ namespace TorneosFut
             InitializeComponent();
             patro = new Patrocinadores(u,c);
             orga = new Organizadores(u,c);
+            csDGV= new csDGV(u ,c);
             T = r;
 
         }
@@ -62,29 +67,8 @@ namespace TorneosFut
         private void Torneo_Load(object sender, EventArgs e)
         {
             panelmodul.Hide();
-            //if (BackColor == Color.White)
-            //{
-            //    ju.label2.ForeColor = Color.Black;
-            //    ju.BackColor = Color.White;
-            //    ju.dgvJugador.BackgroundColor = Color.White;
-            //    ju.dgvJugador.ForeColor = Color.Black;
-            //    ju.dgvJugador.DefaultCellStyle.BackColor = Color.White;
-            //    ju.dgvJugador.DefaultCellStyle.ForeColor = Color.Black;
-            //    ju.dgvJugador.DefaultCellStyle.SelectionBackColor = Color.LightGray;
-            //    ju.dgvJugador.DefaultCellStyle.SelectionForeColor = Color.Black;
-            //}
-            //else
-            //{
-            //    ju.BackColor = Color.FromArgb(20, 25, 29);
-            //    ju.label2.ForeColor = Color.White;
-            //    ju.dgvJugador.BackgroundColor = Color.FromArgb(20, 25, 29);
-            //    ju.dgvJugador.ForeColor = Color.White;
-            //    ju.dgvJugador.DefaultCellStyle.BackColor = Color.FromArgb(30, 35, 40);
-            //    ju.dgvJugador.DefaultCellStyle.ForeColor = Color.White;
-            //    ju.dgvJugador.DefaultCellStyle.SelectionBackColor = Color.FromArgb(50, 55, 60);
-            //    ju.dgvJugador.DefaultCellStyle.SelectionForeColor = Color.White;
-            //}
-
+            csDGV.MostrarTorneo(dgvTorneo);
+           
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
         }
 
@@ -116,7 +100,8 @@ namespace TorneosFut
 
         private void btnPartidos_Click(object sender, EventArgs e)
         {
-            partidos = new GestionarPartidos(conexion.Usuario, conexion.Clave,this,T);
+
+            partidos = new GestionarPartidos(IDTorneo,conexion.Usuario, conexion.Clave,this,T);
             panelmodul.Show();
             T.Hide();
             partidos.ShowDialog();
@@ -128,6 +113,28 @@ namespace TorneosFut
             AggTorneo aggTorneo = new AggTorneo(true, -1, conexion.Usuario, conexion.Clave);
             aggTorneo.ShowDialog();
             
+        }
+
+        private void dgvTorneo_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvTorneo.CurrentRow != null && dgvTorneo.CurrentRow.Index >= 0)
+            {
+                IDTorneo = dgvTorneo.Rows[dgvTorneo.CurrentRow.Index].Cells[0].Value.ToString();
+            }
+        }
+
+        private void txtBuscarTorneo_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (txtBuscarTorneo.Text == "Buscar por nombre del Torneo")
+            {
+                txtBuscarTorneo.Text = "";
+                txtBuscarTorneo.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtBuscarTorneo_TextChanged(object sender, EventArgs e)
+        {
+            csDGV.MostrarTorneoFiltro(dgvTorneo,  txtBuscarTorneo.Text);
         }
     }
 }

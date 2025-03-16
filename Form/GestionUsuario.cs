@@ -111,5 +111,10 @@ namespace Usuarios
                 txtFiltro.ForeColor = Color.Black;
             }
         }
+
+        private void txtFiltro_TextAlignChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

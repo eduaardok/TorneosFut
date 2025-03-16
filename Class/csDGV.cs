@@ -19,14 +19,19 @@ namespace TorneosFut
         csEquipo csEquipo;
         csEntrenador csEntrenador;
         csEstadio csEstadio;
-        public csDGV(string u, string c)
+        csTorneo csTorneo;
+        csPartido csPartido;
+
+        public csDGV(string u, string c, string IDTorneo = "0", string IDpartido = "0")
         {
             conexion = new csConexion(u, c);
             csUsuario = new csUsuario(u, c);
-            csJugador= new csJugador  (u, c);
-            csEntrenador = new csEntrenador (u, c);
+            csJugador = new csJugador(u, c);
+            csEntrenador = new csEntrenador(u, c);
             csEquipo = new csEquipo(u, c);
-            csEstadio= new csEstadio(u, c);
+            csEstadio = new csEstadio(u, c);
+            csTorneo = new csTorneo(u, c);
+            csPartido = new csPartido(u, c, IDTorneo, IDpartido);
         }
         public void AdaptarDGV(DataGridView dgv, Panel pnl)
         {
@@ -74,19 +79,29 @@ namespace TorneosFut
         {
             dgv.DataSource = csUsuario.ListaDeUsuarios();
         }
-        public void MostrarUsuariosFiltro(DataGridView dgv, bool mostrarClave,string filtro)
+        public void MostrarUsuariosFiltro(DataGridView dgv, bool mostrarClave, string filtro)
         {
             dgv.DataSource = csUsuario.ListaDeUsuariosFiltro(mostrarClave, filtro);
         }
+        public void MostrarAuditoriaFiltro(DataGridView dgv, bool mostrarClave, string filtro)
+        {
+            dgv.DataSource = csUsuario.ListaDeAuditoriaFiltro(mostrarClave, filtro);
+        }
+
         //JUGADORES 
         public void MostrarJugadores(DataGridView dgv)
         {
             dgv.DataSource = csJugador.ListadeJugadores();
         }
-        public void MostrarJugadoresFiltro(DataGridView dgv,  string filtro)
+        public void MostrarJugadoresFiltro(DataGridView dgv, string filtro)
         {
             dgv.DataSource = csJugador.ListadeJugadoresFiltro(filtro);
         }
+        public void MostrarJugadoresE (DataGridView dgv)
+        {
+            dgv.DataSource = csJugador.ListadeJugadoresParaEq();
+        }
+
         //EQUIPOS
         public void MostrarEquipos(DataGridView dgv)
         {
@@ -95,6 +110,10 @@ namespace TorneosFut
         public void MostrarEquiposFiltro(DataGridView dgv, string filtro)
         {
             dgv.DataSource = csEquipo.ListadeEquiposFiltro(filtro);
+        }
+        public void MostrarJugadoresEquipo(DataGridView dgv)
+        {
+            dgv.DataSource = csEquipo.listaDeJugadorEqupo();
         }
         //ENTRENADORES
         public void MostrarEntrenadores(DataGridView dgv)
@@ -105,11 +124,51 @@ namespace TorneosFut
         {
             dgv.DataSource = csEntrenador.ListadeEntrenadoresFiltro(filtro);
         }
+        public void MostrarAuditoriaInicioSesion(DataGridView dgv)
+        {
+            dgv.DataSource= csUsuario.AuditoriaInicioSesion();
+        }
+        public void MostrarAuditoriaCambios(DataGridView dgv)
+        {
+            dgv.DataSource = csUsuario.AuditoriaCambios();
+        }
+        //PARTIDO
+        public void MostrarPartidos(DataGridView dgv)
+        {
+            dgv.DataSource = csPartido.ListadePartido();
+        }
+        public void MostrarEquiposCMB(ComboBox cmbEquipo)
+        {
+            cmbEquipo.DataSource = csPartido.ListaDeEquipos();
+            cmbEquipo.ValueMember = "IDPartido";
+            cmbEquipo.DisplayMember = "Equipo";
+        }
+        //TORNEO
+        public void MostrarTorneo(DataGridView dgv)
+        {
+            dgv.DataSource = csTorneo.ListadeTorneo();
+        }
+        public void MostrarTorneoFiltro(DataGridView dgv, string Filtro)
+        {
+            dgv.DataSource = csTorneo.ListadeTorneofiltro(Filtro);
+        }
         public void LlenarcmbEstadio(ComboBox cmbEstadio)
         {
             cmbEstadio.DataSource = csEstadio.ListadeEstadio();
             cmbEstadio.ValueMember = "IDEstadio";
             cmbEstadio.DisplayMember = "NombreEstadio";
+        }
+        public void llenarcmbOrganizador(ComboBox cmborganizad)
+        {
+            cmborganizad.DataSource= csTorneo.LlenarOrganizadores();
+            cmborganizad.ValueMember = "IDOrganizador";
+            cmborganizad.DisplayMember = "NombreEmpresa";
+        }
+        public void llenarcmbFormato(ComboBox cmbFormato)
+        {
+            cmbFormato.DataSource=csTorneo.LlenarFormato();
+            cmbFormato.ValueMember = "IDFormato";
+            cmbFormato.DisplayMember = "NombreFormato";
         }
     }
 }

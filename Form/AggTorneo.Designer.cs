@@ -146,11 +146,6 @@
             this.cmbOrganizador.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbOrganizador.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.cmbOrganizador.FormattingEnabled = true;
-            this.cmbOrganizador.Items.AddRange(new object[] {
-            "@gmail.com",
-            "@outlook.com",
-            "@yahoo.com",
-            "@hotmail.com"});
             this.cmbOrganizador.Location = new System.Drawing.Point(330, 53);
             this.cmbOrganizador.Name = "cmbOrganizador";
             this.cmbOrganizador.Size = new System.Drawing.Size(231, 33);
@@ -164,10 +159,10 @@
             this.cmbModoFutbol.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.cmbModoFutbol.FormattingEnabled = true;
             this.cmbModoFutbol.Items.AddRange(new object[] {
-            "@gmail.com",
-            "@outlook.com",
-            "@yahoo.com",
-            "@hotmail.com"});
+            "Fútbol 11",
+            "Fútbol 7",
+            "Fútbol 5",
+            "Fútbol sala"});
             this.cmbModoFutbol.Location = new System.Drawing.Point(330, 204);
             this.cmbModoFutbol.Name = "cmbModoFutbol";
             this.cmbModoFutbol.Size = new System.Drawing.Size(231, 33);
@@ -228,11 +223,6 @@
             this.cmbFormato.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFormato.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.cmbFormato.FormattingEnabled = true;
-            this.cmbFormato.Items.AddRange(new object[] {
-            "@gmail.com",
-            "@outlook.com",
-            "@yahoo.com",
-            "@hotmail.com"});
             this.cmbFormato.Location = new System.Drawing.Point(54, 204);
             this.cmbFormato.Name = "cmbFormato";
             this.cmbFormato.Size = new System.Drawing.Size(231, 33);

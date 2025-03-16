@@ -74,9 +74,9 @@
             // 
             this.ptbIMG.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ptbIMG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ptbIMG.Location = new System.Drawing.Point(871, 126);
+            this.ptbIMG.Location = new System.Drawing.Point(869, 38);
             this.ptbIMG.Name = "ptbIMG";
-            this.ptbIMG.Size = new System.Drawing.Size(166, 141);
+            this.ptbIMG.Size = new System.Drawing.Size(247, 202);
             this.ptbIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbIMG.TabIndex = 24;
             this.ptbIMG.TabStop = false;
@@ -134,7 +134,7 @@
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(310, 188);
+            this.btnEditar.Location = new System.Drawing.Point(395, 188);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(123, 52);
             this.btnEditar.TabIndex = 22;
@@ -183,7 +183,7 @@
             this.btnAggDT.ForeColor = System.Drawing.Color.Black;
             this.btnAggDT.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnAggDT.HoverState.FillColor = System.Drawing.Color.White;
-            this.btnAggDT.Location = new System.Drawing.Point(503, 188);
+            this.btnAggDT.Location = new System.Drawing.Point(646, 188);
             this.btnAggDT.Name = "btnAggDT";
             this.btnAggDT.Size = new System.Drawing.Size(184, 52);
             this.btnAggDT.TabIndex = 19;

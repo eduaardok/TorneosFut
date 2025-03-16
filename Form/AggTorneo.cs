@@ -16,12 +16,14 @@ namespace TorneosFut
         static int id;
         static bool agg = true;
         csDatos csDatos;
+        csDGV csDGV;
         public AggTorneo(bool a, int i, string u, string c)
         {
             conexion = new csConexion(u, c);
             agg = a;
             id = i;
             csDatos = new csDatos(u, c);
+            csDGV = new csDGV(u, c);
             InitializeComponent();
         }
         void Editar()
@@ -37,6 +39,10 @@ namespace TorneosFut
         private void AggTorneo_Load(object sender, EventArgs e)
         {
             Editar();
+            csDGV.llenarcmbOrganizador(cmbOrganizador);
+            cmbOrganizador.SelectedIndex = -1;
+            csDGV.llenarcmbFormato(cmbFormato);
+            cmbFormato.SelectedIndex= -1;
         }
 
         private void btngSalir_Click(object sender, EventArgs e)
