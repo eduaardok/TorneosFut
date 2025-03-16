@@ -22,14 +22,12 @@ namespace TorneosFut
         csDGV csDGV;
         public Equipos(string u, string c)
         {
-            conexion = new csConexion();
-            conexion.Usuario = u;
-            conexion.Clave = c;
-            InitializeComponent();
+            conexion = new csConexion(u,c);
             equipo = new csEquipo(u, c);
-            ju= new Jugador(u,c);
-            entre = new Entrenador (u,c);
-            csDGV = new csDGV(u,c);
+            ju = new Jugador(u, c);
+            entre = new Entrenador(u, c);
+            csDGV = new csDGV(u, c);
+            InitializeComponent();
         }
         private void addUserControl(UserControl userControll)
         {
@@ -125,19 +123,7 @@ namespace TorneosFut
         }
         public void filtro(string filtro, DataGridView dgvEquipos)
         {
-            if (string.IsNullOrWhiteSpace(filtro))
-            {
-                //dgvEquipos.DataSource = equipo.mostrarequipo();
-                csDGV.MostrarEquiposFiltro(dgvEquipos,txtBuscarEquipo.Text);
-                AdaptarDGV();
-            }
-            else
-            {
-                string consulta = $"SELECT * FROM Equipo " +
-                  $"WHERE NombreClub LIKE '%{filtro}%'";
-                DataTable dt = conexion.ListDGV(consulta);
-                dgvEquipos.DataSource = dt;
-            }
+            ActualizarTabla();
         }
         private void txtBuscarJugador_KeyUp(object sender, KeyEventArgs e)
         {
@@ -162,6 +148,17 @@ namespace TorneosFut
         private void btnEstadio_Click(object sender, EventArgs e)
         {
 
+        }
+        void ActualizarTabla()
+        {
+            csDGV.MostrarEquiposFiltro(dgvEquipos, txtBuscarEquipo.Text);
+            csDGV.AdaptarDGV(dgvEquipos, panelDgv);
+        }
+        private void txtBuscarEquipo_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBuscarEquipo.Text == "Buscar por nombre del Equipo")
+                txtBuscarEquipo.Text = "";
+            ActualizarTabla();
         }
     }
 

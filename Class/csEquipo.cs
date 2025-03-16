@@ -77,8 +77,8 @@ namespace TorneosFut.Class
         public DataTable ListadeEquiposfiltro(string filtro)
         {
             DataTable dt;
-            dt = conexion.ListDGV($@"select * from Equipo where IDEquipo like '%{filtro}%' " +
-                                 $"or NombreEquipo like '%{filtro}%' or Genero like '%{filtro}%'");
+            dt = conexion.ListDGV($"select * from Equipo where IDEquipo like '%{filtro}%' " +
+                                 $"or NombreEquipo like '%{filtro}%'");
             return dt;
         }
         public string Imagen(string i)

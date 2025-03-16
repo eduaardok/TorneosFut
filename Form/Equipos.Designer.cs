@@ -41,11 +41,11 @@
             this.btngEditar = new Guna.UI2.WinForms.Guna2Button();
             this.ptbIMG = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnEstadio = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnJugador = new System.Windows.Forms.Button();
             this.btnEntrenador = new System.Windows.Forms.Button();
             this.panelmodul = new System.Windows.Forms.Panel();
-            this.btnEstadio = new System.Windows.Forms.Button();
             this.panelDgv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -153,6 +153,7 @@
             this.txtBuscarEquipo.TabIndex = 16;
             this.txtBuscarEquipo.Text = "Buscar por nombre del Equipo";
             this.txtBuscarEquipo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtBuscarJugador_MouseClick);
+            this.txtBuscarEquipo.TextChanged += new System.EventHandler(this.txtBuscarEquipo_TextChanged);
             this.txtBuscarEquipo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBuscarJugador_KeyUp);
             // 
             // pictureBox1
@@ -216,6 +217,20 @@
             this.panel1.Size = new System.Drawing.Size(1490, 100);
             this.panel1.TabIndex = 26;
             // 
+            // btnEstadio
+            // 
+            this.btnEstadio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            this.btnEstadio.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEstadio.Font = new System.Drawing.Font("Onest Bold", 20F, System.Drawing.FontStyle.Bold);
+            this.btnEstadio.ForeColor = System.Drawing.Color.White;
+            this.btnEstadio.Location = new System.Drawing.Point(906, 3);
+            this.btnEstadio.Name = "btnEstadio";
+            this.btnEstadio.Size = new System.Drawing.Size(294, 85);
+            this.btnEstadio.TabIndex = 8;
+            this.btnEstadio.Text = "ESTADIOS";
+            this.btnEstadio.UseVisualStyleBackColor = false;
+            this.btnEstadio.Click += new System.EventHandler(this.btnEstadio_Click);
+            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
@@ -269,20 +284,6 @@
             this.panelmodul.Name = "panelmodul";
             this.panelmodul.Size = new System.Drawing.Size(1490, 811);
             this.panelmodul.TabIndex = 27;
-            // 
-            // btnEstadio
-            // 
-            this.btnEstadio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.btnEstadio.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEstadio.Font = new System.Drawing.Font("Onest Bold", 20F, System.Drawing.FontStyle.Bold);
-            this.btnEstadio.ForeColor = System.Drawing.Color.White;
-            this.btnEstadio.Location = new System.Drawing.Point(906, 3);
-            this.btnEstadio.Name = "btnEstadio";
-            this.btnEstadio.Size = new System.Drawing.Size(294, 85);
-            this.btnEstadio.TabIndex = 8;
-            this.btnEstadio.Text = "ESTADIOS";
-            this.btnEstadio.UseVisualStyleBackColor = false;
-            this.btnEstadio.Click += new System.EventHandler(this.btnEstadio_Click);
             // 
             // Equipos
             // 

@@ -74,10 +74,7 @@ namespace PruebasTorneos
         }
         public void MostrarImagen(string id,PictureBox ptb)
         {
-
-            
-                            csImagenes.CargarImagen("Imagen638776550043571267.png", ptb);
-
+            csImagenes.CargarImagen("Imagen638776550043571267.png", ptb);
             //csImagenes.CargarImagen(Imagen(id), ptb);
         }
         public void filtro(string filtro, DataGridView dgvEntrenador)
