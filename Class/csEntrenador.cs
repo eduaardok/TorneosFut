@@ -34,6 +34,11 @@ namespace PruebasTorneos
             string img = dt.Rows[0].Cells[0].Value.ToString(); 
             return img;
         }
+        public DataTable ListaIdEntrenadores()
+        {
+            DataTable dt = conexion.ListDGV("Select IDEntrenador from Entrenador");
+            return dt;
+        }
         public bool AgregarEntrenador(string Id,string nombre, string apellido, string sexo,string fecha , string imagen)
         {
             if (conexion.Consulta($"insert into Entrenador (IDEntrenador, NombreEntrenador, ApellidoEntrenador, Sexo, FechaNacimiento, ImagenEntrenador)" +

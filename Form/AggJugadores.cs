@@ -55,7 +55,7 @@ namespace pruebas
         {
             if (agregar)
             {
-                if (csDatos.InsertaJugador(txtIDJugador.Text, Txtnombre, txtapellido, cmbsexo, dtpNacimiento, CmbPosicion, TxtNacionalidad, txtpeso, txtaltura, cmbpierna, nombreArchivo, img.FileName))
+                if (csDatos.InsertarJugador(txtIDJugador.Text, Txtnombre, txtapellido, cmbsexo, dtpNacimiento, CmbPosicion, TxtNacionalidad, txtpeso, txtaltura, cmbpierna, nombreArchivo, img.FileName))
                 {
                     MessageBox.Show("insertado");
                 }

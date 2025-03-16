@@ -28,13 +28,14 @@ namespace TorneosFut
             csEquipo = new csEquipo(u, c);
             csJugador = new csJugador(u, c);
         }
+
         public int ObtenerIDUsuario(DataGridView dgv)
         {
             return csUsuario.IDUsuario(dgv);
         }
         public bool InsertarEntrenador(string Id,string nombre, string apellido, string sexo,string fecha, string imagen, string filename)
         {
-            if (validarIDEntrenador(Id))
+            if(validarIDEntrenador(Id))
             {
                 if (csEntrenador.AgregarEntrenador(Id, nombre, apellido, sexo, fecha, imagen + Path.GetExtension(filename)))
                 {
@@ -43,18 +44,32 @@ namespace TorneosFut
                 }
                 else
                     return false;
-            }else 
-                return false;
-        }
-        public bool InsertarEquipo(string IdEquipo,string IdEstadio, string nombre, string genero, string Eqlocal, string Eqvisitante, string imagen, string presidente,string filename)
-        {
-            if (csEquipo.AgregarEquipo(IdEquipo,IdEstadio, nombre, genero, Eqlocal, Eqvisitante, imagen + Path.GetExtension(filename), presidente))
-                csImagenes.guardarIMG(filename, imagen);
+            }
             else
+            {
                 return false;
-            return true;
+            }
+           
         }
-        public bool InsertaJugador(string idJugador, TextBox Txtnombre, TextBox txtapellido, ComboBox cmbsexo, DateTimePicker dtpNacimiento,
+        public bool InsertarEquipo(string IdEquipo, string IdEstadio, string nombre, string genero, string Eqlocal, string Eqvisitante, string imagen, string presidente, string filename)
+        {
+            if (validarIDEquipo(IdEquipo))
+            {
+                if (csEquipo.AgregarEquipo(IdEquipo, IdEstadio, nombre, genero, Eqlocal, Eqvisitante, imagen + Path.GetExtension(filename), presidente))
+                {
+                    csImagenes.guardarIMG(filename, imagen);
+                    return true;
+                }
+                else
+                    return false;
+            }
+            else
+            {
+
+                return true;
+            }
+        }
+        public bool InsertarJugador(string idJugador, TextBox Txtnombre, TextBox txtapellido, ComboBox cmbsexo, DateTimePicker dtpNacimiento,
                                       ComboBox CmbPosicion, TextBox TxtNacionalidad, TextBox txtpeso, TextBox txtaltura, ComboBox cmbpierna, string imagen, string filename)
         {
             if (validarIDJugador(idJugador))
@@ -72,6 +87,28 @@ namespace TorneosFut
                 
                 return false;
             }
+        }
+        public bool IDEquipoRepetido(string id)
+        {
+            DataTable dt = csEquipo.ListadeEquipos();
+
+            string[] IDS = new string[dt.Rows.Count];
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                IDS[i] = dt.Rows[i][0].ToString();
+            }
+            for (int i = 0; i < IDS.Length; i++)
+            {
+                if (IDS[i] == id)
+                {
+                    MessageBox.Show("El ID ya existe");
+                    return true;
+
+                }
+                MessageBox.Show(IDS[i].ToString());
+            }
+            return false;
         }
         public bool IDJugadorRepetido(string id)
         {
@@ -92,12 +129,15 @@ namespace TorneosFut
                     return true;
 
                 }
+                MessageBox.Show(IDS[i].ToString());
+
+
             }
             return false;
         }
         public bool IDEntrenadorRepetido(string id)
         {
-            DataTable dt = csEntrenador.ListaidEntrenador();
+            DataTable dt = csEntrenador.ListaIdEntrenadores();
 
             string[] IDS = new string[dt.Rows.Count];
 
@@ -114,22 +154,44 @@ namespace TorneosFut
                     return true;
 
                 }
-            }
-            return false;
-        }
-        public bool validarIDJugador(string ID)
-        {
+                MessageBox.Show(IDS[i].ToString());
 
-            if (validarsolonumero(ID) && validarlongitud(ID,10)&& !(IDJugadorRepetido(ID)))
-            {
-                return true;
+
             }
             return false;
         }
         public bool validarIDEntrenador(string ID)
         {
-
             if (validarsolonumero(ID) && validarlongitud(ID, 10) && !(IDEntrenadorRepetido(ID)))
+            {
+                return true;
+            }
+            return false;
+        }
+        public bool validarIDEquipo(string ID)
+        {
+
+            if (validarLongitudEquipo(ID) && !(IDEquipoRepetido(ID)))
+            {
+                return true;
+            }
+            return false;
+        }
+        bool validarLongitudEquipo(string id)
+        {
+            id=id.Trim();
+            if(id.Length<3||id.Length>4)
+            {
+                MessageBox.Show("El ID debe tener de 3 a 4 caracteres");
+                return false;
+            }
+            return true;
+        }
+
+        public bool validarIDJugador(string ID)
+        {
+
+            if (validarsolonumero(ID) && validarlongitud(ID,10)&& !(IDJugadorRepetido(ID)))
             {
                 return true;
             }
@@ -148,6 +210,7 @@ namespace TorneosFut
             }
             return true;
         }
+
         public bool validarlongitud(string ID,int n)
         {
             if (ID.Length == n)

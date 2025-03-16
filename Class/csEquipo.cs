@@ -63,6 +63,11 @@ namespace TorneosFut.Class
             get => _presidente;
             set => _presidente = value;
         }
+        public DataTable ListaIDEquipo()
+        {
+            DataTable dt = conexion.ListDGV("select IDEquipo from Equipo");
+            return dt;
+        }
 
         public DataTable ListadeEquipos()
         {
