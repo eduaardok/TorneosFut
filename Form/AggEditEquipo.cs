@@ -33,16 +33,36 @@ namespace TorneosFut
         {
             if (agregar)
             {
-                if(csDatos.InsertarEquipo(txtId.Text, cmbEstadio.SelectedValue.ToString(), txtNombreClub.Text, cmbGenero.Text, cmbEquipacionLocal.Text, cmbequipacionvisitante.Text, nombreArchivo, txtPresidente.Text, img.FileName))
+                if (csDatos.InsertarEquipo(txtId.Text, cmbEstadio.SelectedValue.ToString(), txtNombreClub.Text, cmbGenero.Text, cmbEquipacionLocal.Text, cmbequipacionvisitante.Text, nombreArchivo, txtPresidente.Text, img.FileName))
                 {
                     MessageBox.Show("Equipo Agregado Correctamente");
                 }
-                else MessageBox.Show("Equipo no Agregado");
+                else
+                {
+                    MessageBox.Show("Equipo no Agregado");
+                }
             }
             else
-            { 
-                //
+            {
+                string query = $"UPDATE Equipo SET " +
+                               $"NombreEquipo = '{txtNombreClub.Text}', " +
+                               $"Genero = '{cmbGenero.Text}', " +
+                               $"EquipacionLocal = '{cmbEquipacionLocal.Text}', " +
+                               $"EquipacionVisitante = '{cmbequipacionvisitante.Text}', " +
+                               $"ImagenEscudo = '{nombreArchivo}', " +
+                               $"Presidente = '{txtPresidente.Text}' " +
+                               $"WHERE IDEquipo = '{txtId.Text}';";
+
+                if (conexion.Consulta(query))
+                {
+                    MessageBox.Show("Equipo actualizado correctamente");
+                }
+                else
+                {
+                    MessageBox.Show("Error al actualizar el equipo");
+                }
             }
+
         }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
