@@ -55,7 +55,19 @@ namespace PruebasTorneos
             }
             else
             {
-                //process
+                string query = $"UPDATE Entrenador SET " +
+                               $"NombreEntrenador = '{txtNombre.Text}', " +
+                               $"ApellidoEntrenador = '{txtApellido.Text}', " +
+                               $"Sexo = '{cmbSexo.Text}', " +
+                               $"FechaNacimiento = '{dtpNacimiento.Value:yyyy-MM-dd}' where IDEntrenador = '{txtID.Text}' ";
+                if (conexion.Consulta(query))
+                {
+                    MessageBox.Show("Entrenador actualizado correctamente");
+                }
+                else
+                {
+                    MessageBox.Show("Error al actualizar el entrenador");
+                }
             }
         }
         public string ObtenerNombreArchivo()
