@@ -66,10 +66,14 @@ namespace PruebasTorneos
         
         public void MostrarImagen(string id,PictureBox ptb)
         {
-            csImagenes.CargarImagen("Imagen638776550043571267.png", ptb);
-            //csImagenes.CargarImagen(Imagen(id), ptb);
+            DataTable datat = conexion.ListDGV($"Select ImagenEntrenador from Entrenador where IDEntrenador = '{id}'");
+
+            if (datat != null && datat.Rows.Count > 0)
+            {
+                string nombreIMG = datat.Rows[0]["ImagenEntrenador"].ToString();
+                csImagenes.CargarImagen(nombreIMG, ptb);
+            }
         }
-        
         public DataTable ListadeEntrenadoresFiltro(string filtro)
         {
             DataTable dt;

@@ -114,5 +114,14 @@ namespace PruebasTorneos
                 txtBuscarEntrenador.ForeColor = Color.Black;
             }
         }
+
+        private void dgvEntrenador_SelectionChanged_1(object sender, EventArgs e)
+        {
+            if (dgvEntrenador.CurrentRow.Index >= 0)
+            {
+                string id = dgvEntrenador.Rows[dgvEntrenador.CurrentRow.Index].Cells[0].Value.ToString();
+                csEntrenador.MostrarImagen(id, ptbIMG);
+            }
+        }
     }
 }

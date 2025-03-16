@@ -52,12 +52,11 @@ namespace TorneosFut.Class
 
                 if (File.Exists(rutIMG) && !string.IsNullOrEmpty(nomIMG))
                 {
-                    imgBox.Image = Image.FromFile(rutIMG); 
+                    imgBox.Image = Image.FromFile(rutIMG);
                     imgBox.SizeMode = PictureBoxSizeMode.StretchImage;
                 }
                 else
                 {
-                    // Da una imagen por defecto
                     imgBox.Image = Properties.Resources.ImagenPorDefecto;
                     imgBox.SizeMode = PictureBoxSizeMode.StretchImage;
                 }
