@@ -54,7 +54,7 @@ namespace PruebasTorneos
         }
         public void Cargar(DataGridView dgvEntrenador, PictureBox ptb)
         {
-            string consul = "select IDEntrenador, NombreEntrenador, ApellidoEntrenador, Sexo, FechaNacimiento from Entrenador";
+            string consul = "select IDEntrenador, NombreEntrenador, ApellidoEntrenador, Sexo from Entrenador";
             DataTable dt = conexion.ListDGV(consul);
             dgvEntrenador.DataSource = dt;
             MostrarImagen("10111", ptb);

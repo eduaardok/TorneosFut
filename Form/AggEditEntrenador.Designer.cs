@@ -253,7 +253,7 @@
             this.dtpNacimiento.Value = new System.DateTime(2017, 12, 31, 0, 0, 0, 0);
             this.dtpNacimiento.ValueChanged += new System.EventHandler(this.dtpNacimiento_ValueChanged);
             // 
-            // AggEditEntrenador
+            // AggEntrenador
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(498, 443);
@@ -276,7 +276,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimizeBox = false;
-            this.Name = "AggEditEntrenador";
+            this.Name = "AggEntrenador";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -292,22 +292,22 @@
 
         #endregion
 
-        public System.Windows.Forms.Label label1;
-        public System.Windows.Forms.TextBox txtNombre;
-        public System.Windows.Forms.Label label2;
-        public System.Windows.Forms.Label label3;
-        public System.Windows.Forms.TextBox txtApellido;
-        public System.Windows.Forms.Label label4;
-        public System.Windows.Forms.ComboBox cmbSexo;
-        public System.Windows.Forms.Button btnGuardar;
-        public System.Windows.Forms.PictureBox ptbImagen;
-        public System.Windows.Forms.Button btnImportar;
-        public Guna.UI2.WinForms.Guna2Button btngCancelar;
-        public System.Windows.Forms.Panel panel2;
-        public System.Windows.Forms.Label lblEncabezado;
-        public System.Windows.Forms.Label lblID;
-        public System.Windows.Forms.TextBox txtID;
-        public System.Windows.Forms.Label lblfecha;
-        public System.Windows.Forms.DateTimePicker dtpNacimiento;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtApellido;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cmbSexo;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.PictureBox ptbImagen;
+        private System.Windows.Forms.Button btnImportar;
+        private Guna.UI2.WinForms.Guna2Button btngCancelar;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lblEncabezado;
+        private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.Label lblfecha;
+        private System.Windows.Forms.DateTimePicker dtpNacimiento;
     }
 }

@@ -48,7 +48,7 @@ namespace Usuarios
                 if (agg)
                 {
                     conexion.Consulta($"insert into Usuario " +
-                    $"(IDUsuario, Nombres, NombreUsuario, ClaveUsuario, Correo, NombreUsuarioBD, ClaveBD) values ({IDNoRepetido()},'{txtNombre.Text}','{txtUsuarioApp.Text}'," +
+                    $"(Nombres, NombreUsuario, ClaveUsuario, Correo, NombreUsuarioBD, ClaveBD) values ('{txtNombre.Text}','{txtUsuarioApp.Text}'," +
                     $"'{claveApp}', '{txtCorreo.Text + cmbCorreos.Text}', '{txtUsuarioBD.Text}', '{claveBD}')");
                     conexion.CrearLoginBD(txtUsuarioBD.Text, txtClaveBD.Text);
                     MessageBox.Show($"Usuario agregado");
@@ -56,44 +56,21 @@ namespace Usuarios
                 }
                 else
                 {
-                    // dt = conexion.ListDGV($"select * from Administrador where IDAdmin= {id}");
+                   // dt = conexion.ListDGV($"select * from Administrador where IDAdmin= {id}");
                     conexion.Consulta($"update Usuario " +
                     $"set Nombres='{txtNombre.Text}', NombreUsuario= '{txtUsuarioApp.Text}',ClaveUsuario='{claveApp}', " +
                     $" Correo= '{txtCorreo.Text + cmbCorreos.Text}', NombreUsuarioBD= '{txtUsuarioBD.Text}',ClaveBD='{claveBD}' where IDUsuario={id} ");
-                    conexion.ActualizarLoginBD(txtUsuarioBD.Text, txtClaveBD.Text);
+                   conexion.ActualizarLoginBD(txtUsuarioBD.Text, txtClaveBD.Text);
                     MessageBox.Show($"Usuario editado");
 
                     this.Close();
                 }
+                
             }
             else
-                MessageBox.Show("Verifique los campos ingresados");
+            MessageBox.Show("Verifique los campos ingresados");
         }
 
-        public int IDNoRepetido()
-        {
-            Random rnd = new Random(DateTime.Now.Millisecond);
-            int idnuevo;
-            DataTable dt = conexion.ListDGV("Select IDUsuario from Usuario");
-            bool idExiste = false;
-            do
-            {
-                idnuevo = rnd.Next(1, 100);
-
-                foreach (DataRow row in dt.Rows)
-                {
-                    if (row["IDUsuario"] != DBNull.Value && Convert.ToInt32(row["IDUsuario"]) == idnuevo)
-                    {
-                        idExiste = true;
-                        break;
-                    }
-                }
-                if (!idExiste)
-                    break;
-
-            } while (idExiste);
-            return idnuevo;
-        }
         private void AgregarUsuario_Load(object sender, EventArgs e)
         {
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
