@@ -16,6 +16,7 @@ namespace TorneosFut
         csEntrenador csEntrenador;
         csImagenes csImagenes;
         csEquipo csEquipo;
+        csJugador csJugador;
         public csDatos(string u, string c)
         {
             conexion = new csConexion(u, c);
@@ -23,6 +24,7 @@ namespace TorneosFut
             csEntrenador = new csEntrenador(u, c);
             csImagenes = new csImagenes();
             csEquipo = new csEquipo(u, c);
+            csJugador = new csJugador(u, c);
         }
         public int ObtenerIDUsuario(DataGridView dgv)
         {
@@ -48,6 +50,15 @@ namespace TorneosFut
                 return false;
             return true;
 
+        }
+        public bool InsertaJugador(TextBox idJugador, TextBox Txtnombre, TextBox txtapellido, ComboBox cmbsexo, DateTimePicker dtpNacimiento,
+                                      ComboBox CmbPosicion, TextBox TxtNacionalidad, TextBox txtpeso, TextBox txtaltura, ComboBox cmbpierna, string imagen, string filename)
+        {
+            if (csJugador.AgregarJugador(idJugador, Txtnombre, txtapellido, cmbsexo, dtpNacimiento, CmbPosicion, TxtNacionalidad, txtpeso, txtaltura, cmbpierna, imagen + Path.GetExtension(filename)))
+                csImagenes.guardarIMG(filename, imagen);
+            else
+                return false;
+            return true;
         }
     }
 }

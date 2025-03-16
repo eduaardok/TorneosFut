@@ -99,8 +99,8 @@ namespace TorneosFut.Class
                     $"or Nombres like '%{filtro}%' or Apellidos like '%{filtro}%' or EquipoActual like '%{filtro}%'");
             return dt;
         }
-        public void AgregarJugador(TextBox idJugador, TextBox Txtnombre, TextBox txtapellido, ComboBox cmbsexo, DateTimePicker dtpNacimiento,
-                                   ComboBox CmbPosicion, TextBox TxtNacionalidad, TextBox txtpeso, TextBox txtaltura, ComboBox cmbpierna)
+        public bool AgregarJugador(TextBox idJugador, TextBox Txtnombre, TextBox txtapellido, ComboBox cmbsexo, DateTimePicker dtpNacimiento,
+                                      ComboBox CmbPosicion, TextBox TxtNacionalidad, TextBox txtpeso, TextBox txtaltura, ComboBox cmbpierna, string imagen)
         {
             NombreJugador = Txtnombre.Text;
             ApellidoJugador = txtapellido.Text;
@@ -112,7 +112,7 @@ namespace TorneosFut.Class
             Altura = txtaltura.Text;
             PiernaHabil = cmbpierna.Text;
             IDJugador = idJugador.Text;
-
+            ImagenJugador = imagen;
             string xmlJugador =
                 "<Jugadores>" +
                 "    <Jugador>" +
@@ -129,7 +129,10 @@ namespace TorneosFut.Class
                 $"        <ImagenJugador>{ImagenJugador}</ImagenJugador>" +
                 "    </Jugador>" +
                 "</Jugadores>";
-            conexion.Consulta($"DECLARE @cadenaa VARCHAR(MAX) = '{xmlJugador}'; EXEC spRegistraJugador @cadenaa;");
+            if (conexion.Consulta($"DECLARE @cadenaa VARCHAR(MAX) = '{xmlJugador}'; EXEC spRegistraJugador @cadenaa;"))
+                return true;
+            else
+                return false;
         }
     }
 }

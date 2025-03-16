@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace TorneosFut
 {
-    public partial class AggEquipo: Form
+    public partial class AggEditEquipo: Form
     {
         csConexion conexion;
         OpenFileDialog img = new OpenFileDialog();
         static bool agregar;
         csDatos csDatos;
         static string nombreArchivo = "";
-        public AggEquipo(string u, string c, bool n)
+        public AggEditEquipo(string u, string c, bool n)
         {
             conexion = new csConexion(u,c);
             csDatos = new csDatos(u,c);

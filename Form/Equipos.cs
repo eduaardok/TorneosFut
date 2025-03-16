@@ -15,7 +15,7 @@ namespace TorneosFut
     public partial class Equipos: Form
     {
         csConexion conexion ;
-        AggEquipo aggEquipo;
+        AggEditEquipo aggEquipo;
         csEquipo equipo;
         Jugador ju;
         Entrenador entre;
@@ -84,7 +84,7 @@ namespace TorneosFut
 
         private void btngMostrar_Click(object sender, EventArgs e)
         {
-            aggEquipo = new AggEquipo(conexion.Usuario, conexion.Clave);
+            //aggEquipo = new AggEditEquipo(conexion.Usuario, conexion.Clave);
             aggEquipo.lblEntregarVisi(false, true);
             aggEquipo.ShowDialog();
         }
@@ -92,13 +92,12 @@ namespace TorneosFut
         private void btngEditar_Click(object sender, EventArgs e)
         {
 
-            aggEquipo = new AggEquipo(conexion.Usuario, conexion.Clave);
+            aggEquipo = new AggEditEquipo(conexion.Usuario, conexion.Clave,false);
             aggEquipo.txtId.Text = dgvEquipos[0, dgvEquipos.CurrentRow.Index].Value.ToString();
             aggEquipo.txtNombreClub.Text = dgvEquipos[1, dgvEquipos.CurrentRow.Index].Value.ToString();
             aggEquipo.txtPresidente.Text = dgvEquipos[2, dgvEquipos.CurrentRow.Index].Value.ToString();
             aggEquipo.cmbGenero.Text = dgvEquipos[3, dgvEquipos.CurrentRow.Index].Value.ToString();
             aggEquipo.cmbEstadio.Text = dgvEquipos[4, dgvEquipos.CurrentRow.Index].Value.ToString();
-            aggEquipo.cmbEntrenador.Text = dgvEquipos[5, dgvEquipos.CurrentRow.Index].Value.ToString();
             aggEquipo.ShowDialog();
 
         }
