@@ -111,6 +111,7 @@ namespace TorneosFut.Class
             ApellidoJugador = txtapellido.Text;
             Sexo = cmbsexo.Text;
             FechaNacimiento = dtpNacimiento.Value.ToString();
+            MessageBox.Show(FechaNacimiento);
             Posicion = CmbPosicion.Text;
             Nacionalidad = TxtNacionalidad.Text;
             Peso = txtpeso.Text;
