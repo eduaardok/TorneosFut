@@ -87,6 +87,11 @@ namespace TorneosFut.Class
             return conexion.ListDGV(@"select IDJugador,NombreJugador,ApellidoJugador,Sexo,fechaNacimiento,
                                     Posicion,Nacionalidad,Peso,Altura,PiernaHabil from Jugador");
         }
+        public DataTable ListaidJugadores()
+        {
+            DataTable dt = conexion.ListDGV("Select IDJugador from Jugador");
+            return dt;
+        }
         public DataTable ListadeJugadores()
         {
             DataTable dt = conexion.ListDGV("Select * from Jugador");
@@ -99,19 +104,19 @@ namespace TorneosFut.Class
                     $"or Nombres like '%{filtro}%' or Apellidos like '%{filtro}%' or EquipoActual like '%{filtro}%'");
             return dt;
         }
-        public bool AgregarJugador(TextBox idJugador, TextBox Txtnombre, TextBox txtapellido, ComboBox cmbsexo, DateTimePicker dtpNacimiento,
+        public bool AgregarJugador(string idJugador, TextBox Txtnombre, TextBox txtapellido, ComboBox cmbsexo, DateTimePicker dtpNacimiento,
                                       ComboBox CmbPosicion, TextBox TxtNacionalidad, TextBox txtpeso, TextBox txtaltura, ComboBox cmbpierna, string imagen)
         {
             NombreJugador = Txtnombre.Text;
             ApellidoJugador = txtapellido.Text;
             Sexo = cmbsexo.Text;
-            FechaNacimiento = dtpNacimiento.Text;
+            FechaNacimiento = dtpNacimiento.Value.ToString();
             Posicion = CmbPosicion.Text;
             Nacionalidad = TxtNacionalidad.Text;
             Peso = txtpeso.Text;
             Altura = txtaltura.Text;
             PiernaHabil = cmbpierna.Text;
-            IDJugador = idJugador.Text;
+            IDJugador = idJugador;
             ImagenJugador = imagen;
             string xmlJugador =
                 "<Jugadores>" +
@@ -134,5 +139,6 @@ namespace TorneosFut.Class
             else
                 return false;
         }
+
     }
 }

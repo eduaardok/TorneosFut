@@ -99,7 +99,7 @@ namespace pruebas
                     {
 
                         string id = dgvJugador.Rows[dgvJugador.CurrentRow.Index].Cells[0].Value.ToString();
-                        Editjugador edi = new Editjugador(id, this, conexion.Usuario, conexion.Clave);
+                        AggJugadores edi = new AggJugadores(conexion.Usuario, conexion.Clave, true);
                         edi.ShowDialog();
                     }
                     else
@@ -120,7 +120,7 @@ namespace pruebas
 
         private void btnAgregarJugador_Click(object sender, EventArgs e)
         {
-            AggJugadores aggju = new AggJugadores(this,conexion.Usuario, conexion.Clave);
+            AggJugadores aggju = new AggJugadores(conexion.Usuario, conexion.Clave,true);
             aggju.ShowDialog();
         }
         public void filtro(string filtro, DataGridView dgvEquipos)

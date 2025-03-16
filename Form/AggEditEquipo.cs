@@ -28,7 +28,6 @@ namespace TorneosFut
         }
         public void lblEntregarVisi(bool visble, bool novisble)
         {
-            btnAgregar.Visible = novisble;
         }
         private void btnAgregar_Click_1(object sender, EventArgs e)
         {

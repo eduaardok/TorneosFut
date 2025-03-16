@@ -176,7 +176,6 @@
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(121, 20);
             this.txtId.TabIndex = 53;
-            this.txtId.Visible = false;
             // 
             // panel2
             // 
@@ -344,6 +343,7 @@
             // 
             // cmbEquipacionLocal
             // 
+            this.cmbEquipacionLocal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEquipacionLocal.FormattingEnabled = true;
             this.cmbEquipacionLocal.Items.AddRange(new object[] {
             "Rojo",
@@ -422,7 +422,7 @@
             this.cmbEquipacionLocal.TabIndex = 60;
             this.cmbEquipacionLocal.TextChanged += new System.EventHandler(this.cmbEquipacionLocal_TextChanged);
             // 
-            // AggEquipo
+            // AggEditEquipo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -450,7 +450,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "AggEquipo";
+            this.Name = "AggEditEquipo";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -25,19 +25,19 @@ namespace pruebas
             conexion.Usuario = u;
             conexion.Clave = c;
             InitializeComponent();
-            ID = int.Parse(id);
+            //ID = int.Parse(id);
             f = jugador;
         }
 
         private void editarjugador_Load(object sender, EventArgs e)
         {
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
-            dgvDatos.DataSource = conexion.ListDGV($"Select* from Jugador where IDJugador={ID}");
-            Txtnombre.Text = dgvDatos.Rows[0].Cells[1].Value.ToString();  
-            txtapellido.Text= dgvDatos.Rows[0].Cells[2].Value.ToString();
-            txtpeso.Text= dgvDatos.Rows[0].Cells[12].Value.ToString();
-            txtaltura.Text= dgvDatos.Rows[0].Cells[13].Value.ToString();
-            CmbPosicion.Text = dgvDatos.Rows[0].Cells[5].Value.ToString();
+            //dgvDatos.DataSource = conexion.ListDGV($"Select* from Jugador where IDJugador={ID}");
+            //Txtnombre.Text = dgvDatos.Rows[0].Cells[1].Value.ToString();  
+            //txtapellido.Text= dgvDatos.Rows[0].Cells[2].Value.ToString();
+            //txtpeso.Text= dgvDatos.Rows[0].Cells[12].Value.ToString();
+            //txtaltura.Text= dgvDatos.Rows[0].Cells[13].Value.ToString();
+            //CmbPosicion.Text = dgvDatos.Rows[0].Cells[5].Value.ToString();
 
         }
 

@@ -30,9 +30,9 @@ namespace TorneosFut.Class
 
             return dt;
         }
-        public bool AgregarTorneo(TextBox idTorneo, TextBox Txtnombre, ComboBox formato, ComboBox ModoFutbol, int IdUsuario, ComboBox Organizador, DateTimePicker)
+        public bool AgregarTorneo(TextBox idTorneo, TextBox Txtnombre, ComboBox formato, ComboBox ModoFutbol, int IdUsuario, ComboBox Organizador, DateTimePicker te)
         {
-
+            return true;
 
         }
     }

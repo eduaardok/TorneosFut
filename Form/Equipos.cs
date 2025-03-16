@@ -84,22 +84,23 @@ namespace TorneosFut
 
         private void btngMostrar_Click(object sender, EventArgs e)
         {
-            //aggEquipo = new AggEditEquipo(conexion.Usuario, conexion.Clave);
-            aggEquipo.lblEntregarVisi(false, true);
+            aggEquipo = new AggEditEquipo(conexion.Usuario, conexion.Clave,true);
             aggEquipo.ShowDialog();
         }
 
         private void btngEditar_Click(object sender, EventArgs e)
         {
-
-            aggEquipo = new AggEditEquipo(conexion.Usuario, conexion.Clave,false);
+            aggEquipo = new AggEditEquipo(conexion.Usuario, conexion.Clave, false);
             aggEquipo.txtId.Text = dgvEquipos[0, dgvEquipos.CurrentRow.Index].Value.ToString();
-            aggEquipo.txtNombreClub.Text = dgvEquipos[1, dgvEquipos.CurrentRow.Index].Value.ToString();
-            aggEquipo.txtPresidente.Text = dgvEquipos[2, dgvEquipos.CurrentRow.Index].Value.ToString();
-            aggEquipo.cmbGenero.Text = dgvEquipos[3, dgvEquipos.CurrentRow.Index].Value.ToString();
-            aggEquipo.cmbEstadio.Text = dgvEquipos[4, dgvEquipos.CurrentRow.Index].Value.ToString();
+            csDGV.LlenarcmbEstadio(aggEquipo.cmbEstadio);
+            //aggEquipo.cmbEstadio.Text = dgvEquipos[1,dgvEquipos.CurrentRow.Index].ToString();
+            aggEquipo.txtNombreClub.Text = dgvEquipos[2, dgvEquipos.CurrentRow.Index].Value.ToString();
+            aggEquipo.cmbGenero.Text = dgvEquipos[4, dgvEquipos.CurrentRow.Index].Value.ToString();
+            aggEquipo.cmbEstadio.Text = dgvEquipos[1, dgvEquipos.CurrentRow.Index].Value.ToString();
+            aggEquipo.cmbEquipacionLocal.Text = dgvEquipos[5, dgvEquipos.CurrentRow.Index].Value.ToString();
+            aggEquipo.cmbequipacionvisitante.Text = dgvEquipos[6, dgvEquipos.CurrentRow.Index].Value.ToString();
+            aggEquipo.txtPresidente.Text= dgvEquipos[3, dgvEquipos.CurrentRow.Index].Value.ToString();
             aggEquipo.ShowDialog();
-
         }
         public static void AbrirFormEnPanel(Panel panel, Form formHijo)
         {

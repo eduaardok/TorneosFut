@@ -1,8 +1,10 @@
 ﻿using PruebasTorneos;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -30,9 +32,6 @@ namespace TorneosFut
         {
             return csUsuario.IDUsuario(dgv);
         }
-
-
-        //Insertar Temporal
         public bool InsertarEntrenador(string Id,string nombre, string apellido, string sexo,string fecha, string imagen, string filename)
         {
             if (csEntrenador.AgregarEntrenador(Id,nombre, apellido, sexo,fecha, imagen+ Path.GetExtension(filename)))
@@ -40,7 +39,6 @@ namespace TorneosFut
             else
                 return false;
             return true;
-                
         }
         public bool InsertarEquipo(string IdEquipo,string IdEstadio, string nombre, string genero, string Eqlocal, string Eqvisitante, string imagen, string presidente,string filename)
         {
@@ -50,14 +48,83 @@ namespace TorneosFut
                 return false;
             return true;
         }
-        public bool InsertaJugador(TextBox idJugador, TextBox Txtnombre, TextBox txtapellido, ComboBox cmbsexo, DateTimePicker dtpNacimiento,
+        public bool InsertaJugador(string idJugador, TextBox Txtnombre, TextBox txtapellido, ComboBox cmbsexo, DateTimePicker dtpNacimiento,
                                       ComboBox CmbPosicion, TextBox TxtNacionalidad, TextBox txtpeso, TextBox txtaltura, ComboBox cmbpierna, string imagen, string filename)
         {
-            if (csJugador.AgregarJugador(idJugador, Txtnombre, txtapellido, cmbsexo, dtpNacimiento, CmbPosicion, TxtNacionalidad, txtpeso, txtaltura, cmbpierna, imagen + Path.GetExtension(filename)))
-                csImagenes.guardarIMG(filename, imagen);
+            if (validarIDJugador(idJugador))
+            {
+                if (csJugador.AgregarJugador(idJugador, Txtnombre, txtapellido, cmbsexo, dtpNacimiento, CmbPosicion, TxtNacionalidad, txtpeso, txtaltura, cmbpierna, imagen + Path.GetExtension(filename)))
+                {
+                    csImagenes.guardarIMG(filename, imagen);
+                    return true;
+                }
+                else
+                    return false;
+            }
             else
+            {
+                
                 return false;
+            }
+        }
+        public bool IDJugadorRepetido(string id)
+        {
+            DataTable dt = csJugador.ListaidJugadores();
+
+            string[] IDS = new string[dt.Rows.Count];
+
+            for (int i = 0; i < dt.Rows. Count; i++)
+            {
+                IDS[i]= dt.Rows[i][0].ToString();
+            }
+            for (int i = 0; i < IDS.Length;i++)
+            {
+
+                if (IDS[i] == id)
+                {
+                    MessageBox.Show("Número de cédula ya existente");
+                    return true;
+
+                }
+                MessageBox.Show(IDS[i].ToString());
+
+
+            }
+            return false;
+        }
+        public bool validarIDJugador(string ID)
+        {
+
+            if (validarsolonumero(ID) && validarlongitud(ID,10)&& !(IDJugadorRepetido(ID)))
+            {
+                return true;
+            }
+            return false;
+        }
+        public bool validarsolonumero(string ID) 
+        {
+            string numero = "1234567890";
+            for(int i = 0; i<ID.Length;i++)
+            {
+                if (!numero.Contains(ID[i]))
+                {
+                    MessageBox.Show("Ingrese solo caractéres númericos");
+                    return false;
+                }
+            }
             return true;
+        }
+        public bool validarlongitud(string ID,int n)
+        {
+            if (ID.Length == n)
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Ingrese un número de cédula válido");
+                return false;
+            }
         }
     }
 }
