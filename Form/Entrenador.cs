@@ -82,7 +82,37 @@ namespace PruebasTorneos
 
         private void btnEditar_Click_1(object sender, EventArgs e)
         {
+            AggEditEntrenador ent = new AggEditEntrenador(conexion.Usuario, conexion.Clave, false);
+            ent.txtID.Text = dgvEntrenador[0, dgvEntrenador.CurrentRow.Index].Value.ToString();
+            ent.txtNombre.Text = dgvEntrenador[1, dgvEntrenador.CurrentRow.Index].Value.ToString();
+            ent.txtApellido.Text = dgvEntrenador[2, dgvEntrenador.CurrentRow.Index].Value.ToString();
+            ent.cmbSexo.Text = dgvEntrenador[3, dgvEntrenador.CurrentRow.Index].Value.ToString();
+            var fechaNacimiento = dgvEntrenador[4, dgvEntrenador.CurrentRow.Index].Value;
+            if (fechaNacimiento != DBNull.Value)
+            {
+                DateTime fecha;
+                if (DateTime.TryParse(fechaNacimiento.ToString(), out fecha))
+                {
+                    if (fecha >= ent.dtpNacimiento.MinDate && fecha <= ent.dtpNacimiento.MaxDate)
+                    {
+                        ent.dtpNacimiento.Value = fecha;
+                    }
+                    else
+                    {
+                        ent.dtpNacimiento.Value = ent.dtpNacimiento.MaxDate;
+                    }
+                }
+                else
+                {
+                    ent.dtpNacimiento.Value = DateTime.Today;
+                }
+            }
+            else
+            {
+                ent.dtpNacimiento.Value = DateTime.Today;
+            }
 
+            ent.ShowDialog();
         }
 
         private void btnAggDT_Click_1(object sender, EventArgs e)
