@@ -84,8 +84,8 @@ namespace TorneosFut.Class
         }
         public DataTable mostrarJugador()
         {
-            return conexion.ListDGV(@"select IDJugador,NombreJugador,ApellidoJugador,Sexo,fechaNacimiento,
-                                    Posicion,Nacionalidad,Peso,Altura,PiernaHabil from Jugador");
+            return conexion.ListDGV("select IDJugador,NombreJugador,ApellidoJugador,Sexo,FechaNacimiento,"
+                                   + "Posicion,Nacionalidad,Peso,Altura,PiernaHabil from Jugador");
         }
         public DataTable ListaidJugadores()
         {
@@ -97,11 +97,11 @@ namespace TorneosFut.Class
             DataTable dt = conexion.ListDGV("Select * from Jugador");
             return dt;
         }
-        public DataTable ListadeJugadoresfiltro(string filtro)
+        public DataTable ListadeJugadoresFiltro(string filtro)
         {
             DataTable dt;
-            dt = conexion.ListDGV($"select * from Jugador where IDJugador like '%{filtro}%' " +
-                    $"or Nombres like '%{filtro}%' or Apellidos like '%{filtro}%' or EquipoActual like '%{filtro}%'");
+            dt = conexion.ListDGV($"select IDJugador,NombreJugador,ApellidoJugador,Sexo,FechaNacimiento, Posicion,Nacionalidad,Peso,Altura,PiernaHabil from Jugador where IDJugador like '%{filtro}%' " +
+                    $"or NombreJugador like '%{filtro}%' or ApellidoJugador like '%{filtro}%' or Posicion like '%{filtro}%'");
             return dt;
         }
         public bool AgregarJugador(string idJugador, TextBox Txtnombre, TextBox txtapellido, ComboBox cmbsexo, DateTimePicker dtpNacimiento,

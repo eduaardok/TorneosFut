@@ -63,41 +63,18 @@ namespace PruebasTorneos
             }*/
             MostrarImagen("10111", ptb);
         }
-        void AdaptarDGV(DataGridView dgvEntrenador)
-        {
-            int filas = dgvEntrenador.RowCount;
-            for (int i = 0; i < filas; i++)
-            {
-                dgvEntrenador.Rows[i].Height = dgvEntrenador.Height / filas;
-            }
-            dgvEntrenador.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-        }
+        
         public void MostrarImagen(string id,PictureBox ptb)
         {
             csImagenes.CargarImagen("Imagen638776550043571267.png", ptb);
             //csImagenes.CargarImagen(Imagen(id), ptb);
         }
-        public void filtro(string filtro, DataGridView dgvEntrenador)
-        {
-            if (string.IsNullOrWhiteSpace(filtro))
-            {
-                dgvEntrenador.DataSource = conexion.ListDGV(@"select IDEntrenador,NombreEntrenador, ApellidoEntrenador, Sexo from Entrenador");
-                AdaptarDGV(dgvEntrenador);
-            }
-            else
-            {
-                string consulta = $@"select IDEntrenador, NombreEntrenador, ApellidoEntrenador, Sexo from Entrenador where IDEntrenador like '%{filtro}%' or 
-                    NombreEntrenador like '%{filtro}%' or ApellidoEntrenador like '%{filtro}%'";
-
-                DataTable dt = conexion.ListDGV(consulta);
-                dgvEntrenador.DataSource = dt;
-            }
-        }
-        public DataTable ListadeEntrenadoresfiltro(string filtro)
+        
+        public DataTable ListadeEntrenadoresFiltro(string filtro)
         {
             DataTable dt;
-            dt = conexion.ListDGV($"select * FROM Entrenador where IDEntrenador like '%{filtro}%' " +
-                $"or NombreEntrenador like '%{filtro}%' or ApellidoEntrenador like '%{filtro}%' or Sexo like '%%' or FechaNacimiento like '%{filtro}%'");
+            dt = conexion.ListDGV($"select IDEntrenador, NombreEntrenador, ApellidoEntrenador, Sexo, FechaNacimiento FROM Entrenador where IDEntrenador like '%{filtro}%' " +
+                $"or NombreEntrenador like '%{filtro}%' or ApellidoEntrenador like '%{filtro}%' or FechaNacimiento like '%{filtro}%'");
             return dt;
         }
         public DataTable ListadeEntrenadores()

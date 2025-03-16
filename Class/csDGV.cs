@@ -50,6 +50,26 @@ namespace TorneosFut
                 dgv.Columns[i].Width = dgv.Width / columnas;
             }
         }
+        public void AdaptarDGV(DataGridView dgv)
+        {
+            dgv.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#14191D");
+            dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgv.EnableHeadersVisualStyles = false;
+            //ActualizarTabla();
+
+            int filas, columnas;
+            filas = dgv.RowCount;
+            columnas = dgv.ColumnCount;
+            dgv.ColumnHeadersHeight = 50;//dgvUsuarios.Height / (1+filas);
+            for (int i = 0; i < filas; i++)
+            {
+                dgv.Rows[i].Height = 60;//dgvUsuarios.Height / (1+filas);
+            }
+            for (int i = 0; i < columnas; i++)
+            {
+                dgv.Columns[i].Width = dgv.Width / columnas;
+            }
+        }
         public void MostrarUsuarios(DataGridView dgv)
         {
             dgv.DataSource = csUsuario.ListaDeUsuarios();
@@ -63,31 +83,30 @@ namespace TorneosFut
         {
             dgv.DataSource = csJugador.ListadeJugadores();
         }
-        public void MostrarJugadoresFiltro(DataGridView dgv, bool mostrarClave, string filtro)
+        public void MostrarJugadoresFiltro(DataGridView dgv,  string filtro)
         {
-            dgv.DataSource = csJugador.ListadeJugadoresfiltro(filtro);
+            dgv.DataSource = csJugador.ListadeJugadoresFiltro(filtro);
         }
         //EQUIPOS
-        public void MostrarEquipops(DataGridView dgv)
+        public void MostrarEquipos(DataGridView dgv)
         {
             dgv.DataSource = csEquipo.ListadeEquipos();
         }
         public void MostrarEquiposFiltro(DataGridView dgv, string filtro)
         {
-            dgv.DataSource = csEquipo.ListadeEquiposfiltro(filtro);
+            dgv.DataSource = csEquipo.ListadeEquiposFiltro(filtro);
         }
         //ENTRENADORES
         public void MostrarEntrenadores(DataGridView dgv)
         {
             dgv.DataSource = csEntrenador.ListadeEntrenadores();
         }
-        public void MostrarEntrenadoresFiltro(DataGridView dgv, bool mostrarClave, string filtro)
+        public void MostrarEntrenadoresFiltro(DataGridView dgv, string filtro)
         {
-            dgv.DataSource = csEntrenador.ListadeEntrenadoresfiltro(filtro);
+            dgv.DataSource = csEntrenador.ListadeEntrenadoresFiltro(filtro);
         }
         public void LlenarcmbEstadio(ComboBox cmbEstadio)
         {
-
             cmbEstadio.DataSource = csEstadio.ListadeEstadio();
             cmbEstadio.ValueMember = "IDEstadio";
             cmbEstadio.DisplayMember = "NombreEstadio";

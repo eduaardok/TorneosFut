@@ -172,6 +172,7 @@
             this.txtBuscarJugador.TabIndex = 14;
             this.txtBuscarJugador.Text = "Buscar por nombre del Jugador";
             this.txtBuscarJugador.Click += new System.EventHandler(this.txtBuscarJugador_Click);
+            this.txtBuscarJugador.TextChanged += new System.EventHandler(this.txtBuscarJugador_TextChanged);
             this.txtBuscarJugador.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBuscarMisEquipos_KeyUp);
             // 
             // Jugador

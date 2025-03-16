@@ -74,16 +74,15 @@ namespace TorneosFut.Class
             DataTable dt = conexion.ListDGV("select IDEquipo,IDEstadio,NombreEquipo,Presidente,Genero,EquipacionLocal,EquipacionVisitante from Equipo");
             return dt;
         }
-        public DataTable ListadeEquiposfiltro(string filtro)
+        public DataTable ListadeEquiposFiltro(string filtro)
         {
             DataTable dt;
-            dt = conexion.ListDGV($"select * from Equipo where IDEquipo like '%{filtro}%' " +
+            dt = conexion.ListDGV($"select IDEquipo,IDEstadio,NombreEquipo,Presidente,Genero,EquipacionLocal,EquipacionVisitante from Equipo where IDEquipo like '%{filtro}%' " +
                                  $"or NombreEquipo like '%{filtro}%'");
             return dt;
         }
         public string Imagen(string i)
         {
-
             DataGridView dt = new DataGridView();
             dt.DataSource = conexion.ListDGV($"Select ImagenEntrenador from Entrenador where IDEntrenador = '{i}'");
             string img = dt.Rows[0].Cells[0].Value.ToString();

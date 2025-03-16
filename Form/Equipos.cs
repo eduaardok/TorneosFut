@@ -75,7 +75,7 @@ namespace TorneosFut
         {
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
             //dgvEquipos.DataSource = dgvEquipo¿();
-            csDGV.MostrarEquipops(dgvEquipos);
+            csDGV.MostrarEquipos(dgvEquipos);
             AdaptarDGV();
             panelmodul.Hide();
         }

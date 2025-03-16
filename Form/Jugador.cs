@@ -18,13 +18,13 @@ namespace pruebas
     {
         csConexion conexion;
         AggJugadores agregaJu;
-        csJugador jugador;
+        csJugador csJugador;
+        csDGV csDGV;
         public Jugador(string u, string c)
         {
-            conexion = new csConexion();
-            jugador = new csJugador(u,c);
-            conexion.Usuario = u;
-            conexion.Clave = c;
+            conexion = new csConexion(u,c);
+            csJugador = new csJugador(u,c);
+            csDGV = new csDGV(u, c);
             InitializeComponent();
         }
         public static void AbrirFormEnPanel(Panel panel, Form formHijo)
@@ -46,32 +46,11 @@ namespace pruebas
         private void VerJugadores_Load(object sender, EventArgs e)
         {
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
-
-            dgvJugador.DataSource = jugador.mostrarJugador();
-            AdaptarDGV();
+            //dgvJugador.DataSource = csJugador.mostrarJugador();
+            csDGV.MostrarJugadores(dgvJugador);
+            csDGV.AdaptarDGV(dgvJugador, panelDgv);
         }
-        void AdaptarDGV()
-        {
-            dgvJugador.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#14191D");
-            dgvJugador.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            dgvJugador.EnableHeadersVisualStyles = false;
-            //ActualizarTabla();
-            dgvJugador.Width = panelDgv.Width;
-            dgvJugador.Height = panelDgv.Height;
-
-            int filas, columnas;
-            filas = dgvJugador.RowCount;
-            columnas = dgvJugador.ColumnCount;
-            dgvJugador.ColumnHeadersHeight = 50;//dgvUsuarios.Height / (1+filas);
-            for (int i = 0; i < filas; i++)
-            {
-                dgvJugador.Rows[i].Height = 60;//dgvUsuarios.Height / (1+filas);
-            }
-            for (int i = 0; i < columnas; i++)
-            {
-                dgvJugador.Columns[i].Width = dgvJugador.Width / columnas;
-            }
-        }
+       
 
         private void gnjugadores_Click(object sender, EventArgs e)
         {
@@ -123,28 +102,16 @@ namespace pruebas
             AggJugadores aggju = new AggJugadores(conexion.Usuario, conexion.Clave,true);
             aggju.ShowDialog();
         }
-        public void filtro(string filtro, DataGridView dgvEquipos)
-        {
-            if (string.IsNullOrWhiteSpace(filtro))
-            {
-                dgvEquipos.DataSource = jugador.mostrarJugador();
-                AdaptarDGV();
-            }
-            else
-            {
-                string consulta = $"SELECT IDJugador, Nombres, Apellidos, Sexo, FechaNacimiento, Posicion, EquipoActual, Goles, " +
-                  $"Disponibilidad, PartidosJugados, Nacionalidad, Peso, Altura, PiernaHabil " +
-                  $"FROM Jugador " +
-                  $"WHERE Nombres LIKE '%{filtro}%' OR Apellidos LIKE '%{filtro}%' OR CONCAT(Nombres, ' ', Apellidos) LIKE '%{filtro}%'";
-                DataTable dt = conexion.ListDGV(consulta);
-                dgvEquipos.DataSource = dt;
-            }
-        }
+      
         private void txtBuscarMisEquipos_KeyUp(object sender, KeyEventArgs e)
         {
-            filtro(txtBuscarJugador.Text.Trim(), dgvJugador);
+            ActualizarTabla();
         }
-
+        void ActualizarTabla()
+        {
+            csDGV.MostrarJugadoresFiltro(dgvJugador, txtBuscarJugador.Text);
+            csDGV.AdaptarDGV(dgvJugador, panelDgv);
+        }
         private void txtBuscarJugador_Click(object sender, EventArgs e)
         {
             if (txtBuscarJugador.Text == "Buscar por nombre del Jugador")
@@ -152,6 +119,11 @@ namespace pruebas
                 txtBuscarJugador.Text = "";
                 txtBuscarJugador.ForeColor = Color.Black;
             }
+        }
+
+        private void txtBuscarJugador_TextChanged(object sender, EventArgs e)
+        {
+            ActualizarTabla();
         }
     }
 }

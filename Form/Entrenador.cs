@@ -15,22 +15,21 @@ namespace PruebasTorneos
     public partial class Entrenador: Form
     {
         csConexion conexion;
-        csEntrenador dts;
+        csDGV csDGV;
+        csEntrenador csEntrenador;
         public Entrenador(string u, string c)
         {
-            conexion = new csConexion();
-            conexion.Usuario = u;
-            conexion.Clave = c;
-            dts = new csEntrenador(u, c);
+            conexion = new csConexion(u, c);
+            csDGV= new csDGV(u, c);
+            csEntrenador = new csEntrenador(u, c);
             InitializeComponent();
-
         }
 
         private void Padre_Load(object sender, EventArgs e)
         {
             this.Dock= DockStyle.Fill;
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
-            dts.Cargar(dgvEntrenador, ptbIMG);
+            csEntrenador.Cargar(dgvEntrenador, ptbIMG);
             dgvEntrenador.CellFormatting += dgvEntrenador_CellFormatting;
         }
 
@@ -69,7 +68,7 @@ namespace PruebasTorneos
 
         private void txtBuscarEquipo_KeyUp(object sender, KeyEventArgs e)
         {
-            dts.filtro(txtBuscarEntrenador.Text.Trim(), dgvEntrenador);
+            ActualizarTabla();
         }
 
         private void txtBuscarEquipo_MouseClick(object sender, MouseEventArgs e)
@@ -95,6 +94,25 @@ namespace PruebasTorneos
         private void dgvEntrenador_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void txtBuscarEntrenador_TextChanged(object sender, EventArgs e)
+        {
+            ActualizarTabla();
+
+        }
+        void ActualizarTabla()
+        {
+            csDGV.MostrarEntrenadoresFiltro(dgvEntrenador, txtBuscarEntrenador.Text);
+            csDGV.AdaptarDGV(dgvEntrenador);
+        }
+        private void txtBuscarEntrenador_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (txtBuscarEntrenador.Text == "Buscar por nombre del Entrenador")
+            {
+                txtBuscarEntrenador.Text = "";
+                txtBuscarEntrenador.ForeColor = Color.Black;
+            }
         }
     }
 }
