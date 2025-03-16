@@ -418,33 +418,33 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox Txtnombre;
-        private System.Windows.Forms.ComboBox cmbsexo;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.DateTimePicker dtpNacimiento;
-        private System.Windows.Forms.TextBox txtapellido;
-        private System.Windows.Forms.ComboBox CmbPosicion;
-        private System.Windows.Forms.ComboBox cmbpierna;
-        private System.Windows.Forms.TextBox txtpeso;
-        private System.Windows.Forms.TextBox txtaltura;
-        private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.Label lblapellido;
-        private System.Windows.Forms.Label lblsexo;
-        private System.Windows.Forms.Label lblPosicion;
-        private System.Windows.Forms.Label LblPierna;
-        private System.Windows.Forms.Label lblpeso;
-        private System.Windows.Forms.Label lblfecha;
-        private System.Windows.Forms.Label lblaltura;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox TxtNacionalidad;
-        private System.Windows.Forms.Button btnAgregar;
-        private Guna.UI2.WinForms.Guna2Button btngCancelar;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label lblEncabezado;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtIDJugador;
-        private System.Windows.Forms.PictureBox ptbImagen;
-        private Guna.UI2.WinForms.Guna2Button btnCargarimagen;
+        public System.Windows.Forms.TextBox Txtnombre;
+        public System.Windows.Forms.ComboBox cmbsexo;
+        public System.ComponentModel.BackgroundWorker backgroundWorker1;
+        public System.Windows.Forms.DateTimePicker dtpNacimiento;
+        public System.Windows.Forms.TextBox txtapellido;
+        public System.Windows.Forms.ComboBox CmbPosicion;
+        public System.Windows.Forms.ComboBox cmbpierna;
+        public System.Windows.Forms.TextBox txtpeso;
+        public System.Windows.Forms.TextBox txtaltura;
+        public System.Windows.Forms.Label lblNombre;
+        public System.Windows.Forms.Label lblapellido;
+        public System.Windows.Forms.Label lblsexo;
+        public System.Windows.Forms.Label lblPosicion;
+        public System.Windows.Forms.Label LblPierna;
+        public System.Windows.Forms.Label lblpeso;
+        public System.Windows.Forms.Label lblfecha;
+        public System.Windows.Forms.Label lblaltura;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.TextBox TxtNacionalidad;
+        public System.Windows.Forms.Button btnAgregar;
+        public Guna.UI2.WinForms.Guna2Button btngCancelar;
+        public System.Windows.Forms.Panel panel2;
+        public System.Windows.Forms.Label lblEncabezado;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.TextBox txtIDJugador;
+        public System.Windows.Forms.PictureBox ptbImagen;
+        public Guna.UI2.WinForms.Guna2Button btnCargarimagen;
     }
 }
 

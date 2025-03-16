@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PruebasTorneos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -69,17 +70,26 @@ namespace pruebas
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-             try
+            AggJugadores agregaJu = new AggJugadores(conexion.Usuario, conexion.Clave, false);
+            try
             {
-
                 if (dgvJugador.RowCount > 0)
                 {
                     if (dgvJugador.CurrentRow.Index >= 0)
                     {
-
                         string id = dgvJugador.Rows[dgvJugador.CurrentRow.Index].Cells[0].Value.ToString();
-                        AggJugadores edi = new AggJugadores(conexion.Usuario, conexion.Clave, true);
-                        edi.ShowDialog();
+
+                        agregaJu.txtIDJugador.Text = dgvJugador.Rows[dgvJugador.CurrentRow.Index].Cells[0].Value.ToString();
+                        agregaJu.Txtnombre.Text = dgvJugador.Rows[dgvJugador.CurrentRow.Index].Cells[1].Value.ToString();
+                        agregaJu.txtapellido.Text = dgvJugador.Rows[dgvJugador.CurrentRow.Index].Cells[2].Value.ToString();
+                        agregaJu.cmbsexo.Text = dgvJugador.Rows[dgvJugador.CurrentRow.Index].Cells[3].Value.ToString();
+                        agregaJu.dtpNacimiento.Value.ToString(dgvJugador.Rows[dgvJugador.CurrentRow.Index].Cells[4].Value.ToString());
+                        agregaJu.CmbPosicion.Text = dgvJugador.Rows[dgvJugador.CurrentRow.Index].Cells[5].Value.ToString();
+                        agregaJu.TxtNacionalidad.Text = dgvJugador.Rows[dgvJugador.CurrentRow.Index].Cells[6].Value.ToString();
+                        agregaJu.txtpeso.Text = dgvJugador.Rows[dgvJugador.CurrentRow.Index].Cells[7].Value.ToString();
+                        agregaJu.txtaltura.Text = dgvJugador.Rows[dgvJugador.CurrentRow.Index].Cells[8].Value.ToString();
+                        agregaJu.cmbpierna.Text = dgvJugador.Rows[dgvJugador.CurrentRow.Index].Cells[9].Value.ToString();
+                        agregaJu.ShowDialog();
                     }
                     else
                     {
@@ -124,6 +134,15 @@ namespace pruebas
         private void txtBuscarJugador_TextChanged(object sender, EventArgs e)
         {
             ActualizarTabla();
+        }
+
+        private void dgvJugador_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvJugador.CurrentRow.Index >= 0)
+            {
+                string id = dgvJugador.Rows[dgvJugador.CurrentRow.Index].Cells[0].Value.ToString();
+                csJugador.MostrarImagen(id, ptbImagen);
+            }
         }
     }
 }

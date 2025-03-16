@@ -37,10 +37,11 @@
             this.dgvJugador = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtBuscarJugador = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.ptbImagen = new System.Windows.Forms.PictureBox();
             this.panelDgv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJugador)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbImagen)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -148,6 +149,7 @@
             this.dgvJugador.ShowEditingIcon = false;
             this.dgvJugador.Size = new System.Drawing.Size(1186, 601);
             this.dgvJugador.TabIndex = 5;
+            this.dgvJugador.SelectionChanged += new System.EventHandler(this.dgvJugador_SelectionChanged);
             // 
             // pictureBox1
             // 
@@ -176,19 +178,22 @@
             this.txtBuscarJugador.TextChanged += new System.EventHandler(this.txtBuscarJugador_TextChanged);
             this.txtBuscarJugador.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBuscarMisEquipos_KeyUp);
             // 
-            // panel1
+            // ptbImagen
             // 
-            this.panel1.Location = new System.Drawing.Point(972, 14);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(177, 138);
-            this.panel1.TabIndex = 47;
+            this.ptbImagen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ptbImagen.Location = new System.Drawing.Point(1009, 45);
+            this.ptbImagen.Name = "ptbImagen";
+            this.ptbImagen.Size = new System.Drawing.Size(207, 193);
+            this.ptbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbImagen.TabIndex = 16;
+            this.ptbImagen.TabStop = false;
             // 
             // Jugador
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1490, 911);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(1386, 788);
+            this.Controls.Add(this.ptbImagen);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtBuscarJugador);
             this.Controls.Add(this.panelDgv);
@@ -206,6 +211,7 @@
             this.panelDgv.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvJugador)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbImagen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -219,6 +225,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtBuscarJugador;
         public System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox ptbImagen;
     }
 }

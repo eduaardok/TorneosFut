@@ -128,6 +128,18 @@ namespace TorneosFut.Class
                     $"or NombreJugador like '%{filtro}%' or ApellidoJugador like '%{filtro}%' or Posicion like '%{filtro}%'");
             return dt;
         }
+
+        public void MostrarImagen(string id, PictureBox ptb)
+        {
+            DataTable datat = csConexion.ListDGV($"Select ImagenJugador from Jugador where IDJugador = '{id}'");
+
+            if (datat != null && datat.Rows.Count > 0)
+            {
+                string nombreIMG = datat.Rows[0]["ImagenJugador"].ToString();
+                csImagenes.CargarImagen(nombreIMG, ptb);
+            }
+        }
+
         public bool AgregarJugador(string idJugador, TextBox Txtnombre, TextBox txtapellido, ComboBox cmbsexo, DateTimePicker dtpNacimiento,
                                       ComboBox CmbPosicion, TextBox TxtNacionalidad, TextBox txtpeso, TextBox txtaltura, ComboBox cmbpierna, string imagen)
         {

@@ -55,16 +55,40 @@ namespace pruebas
         {
             if (agregar)
             {
-                if (csDatos.InsertarJugador(txtIDJugador.Text, Txtnombre, txtapellido, cmbsexo, dtpNacimiento, CmbPosicion, TxtNacionalidad, txtpeso, txtaltura, cmbpierna, nombreArchivo, img.FileName))
+                if (csDatos.InsertarJugador(txtIDJugador.Text, Txtnombre, txtapellido, cmbsexo, dtpNacimiento,
+                                            CmbPosicion, TxtNacionalidad, txtpeso, txtaltura,
+                                            cmbpierna, nombreArchivo, img.FileName))
                 {
-                    MessageBox.Show("insertado");
+                    MessageBox.Show("Jugador agregado correctamente");
                 }
                 else
-                    MessageBox.Show("no insertado");
+                {
+                    MessageBox.Show("Error al agregar el jugador");
+                }
             }
             else
             {
-                //
+                string query = $"UPDATE Jugador SET " +
+                               $"NombreJugador = '{Txtnombre.Text}', " +
+                               $"ApellidoJugador = '{txtapellido.Text}', " +
+                               $"Sexo = '{cmbsexo.Text}', " +
+                               $"FechaNacimiento = '{dtpNacimiento.Value:yyyy-MM-dd}', " +
+                               $"Posicion = '{CmbPosicion.Text}', " +
+                               $"Nacionalidad = '{TxtNacionalidad.Text}', " +
+                               $"Peso = '{txtpeso.Text}', " +
+                               $"Altura = '{txtaltura.Text}', " +
+                               $"PiernaHabil = '{cmbpierna.Text}', " +
+                               $"ImagenJugador = '{nombreArchivo}' " +
+                               $"WHERE IDJugador = '{txtIDJugador.Text}';";
+
+                if (conexion.Consulta(query))
+                {
+                    MessageBox.Show("Jugador actualizado correctamente");
+                }
+                else
+                {
+                    MessageBox.Show("Error al actualizar el jugador");
+                }
             }
         }
         private void btngCancelar_Click(object sender, EventArgs e)

@@ -37,9 +37,11 @@
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ptbImagen = new System.Windows.Forms.PictureBox();
             this.panelDgv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJugador)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbImagen)).BeginInit();
             this.SuspendLayout();
             // 
             // txtBuscarJugador
@@ -48,7 +50,7 @@
             this.txtBuscarJugador.Font = new System.Drawing.Font("Onest Light", 20F);
             this.txtBuscarJugador.ForeColor = System.Drawing.Color.Gray;
             this.txtBuscarJugador.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtBuscarJugador.Location = new System.Drawing.Point(232, 124);
+            this.txtBuscarJugador.Location = new System.Drawing.Point(180, 63);
             this.txtBuscarJugador.Multiline = true;
             this.txtBuscarJugador.Name = "txtBuscarJugador";
             this.txtBuscarJugador.Size = new System.Drawing.Size(463, 48);
@@ -60,7 +62,7 @@
             this.panelDgv.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelDgv.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panelDgv.Controls.Add(this.dgvJugador);
-            this.panelDgv.Location = new System.Drawing.Point(176, 272);
+            this.panelDgv.Location = new System.Drawing.Point(124, 211);
             this.panelDgv.Name = "panelDgv";
             this.panelDgv.Size = new System.Drawing.Size(1186, 601);
             this.panelDgv.TabIndex = 19;
@@ -117,7 +119,7 @@
             this.btnAgregarJugador.ForeColor = System.Drawing.Color.Black;
             this.btnAgregarJugador.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnAgregarJugador.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
-            this.btnAgregarJugador.Location = new System.Drawing.Point(247, 178);
+            this.btnAgregarJugador.Location = new System.Drawing.Point(195, 117);
             this.btnAgregarJugador.Name = "btnAgregarJugador";
             this.btnAgregarJugador.Size = new System.Drawing.Size(222, 59);
             this.btnAgregarJugador.TabIndex = 18;
@@ -143,7 +145,7 @@
             this.guna2Button1.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
             this.guna2Button1.HoverState.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(481, 178);
+            this.guna2Button1.Location = new System.Drawing.Point(429, 117);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(214, 59);
             this.guna2Button1.TabIndex = 17;
@@ -164,17 +166,27 @@
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.BackgroundImage = global::TorneosFut.Properties.Resources.IconoLupa;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(176, 123);
+            this.pictureBox1.Location = new System.Drawing.Point(124, 62);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(50, 49);
             this.pictureBox1.TabIndex = 21;
             this.pictureBox1.TabStop = false;
             // 
+            // ptbImagen
+            // 
+            this.ptbImagen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ptbImagen.Location = new System.Drawing.Point(1136, 41);
+            this.ptbImagen.Name = "ptbImagen";
+            this.ptbImagen.Size = new System.Drawing.Size(174, 164);
+            this.ptbImagen.TabIndex = 22;
+            this.ptbImagen.TabStop = false;
+            // 
             // Estadio
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1490, 911);
+            this.ClientSize = new System.Drawing.Size(1386, 788);
+            this.Controls.Add(this.ptbImagen);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtBuscarJugador);
             this.Controls.Add(this.panelDgv);
@@ -189,6 +201,7 @@
             this.panelDgv.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvJugador)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbImagen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -203,5 +216,6 @@
         private Guna.UI2.WinForms.Guna2Button btnAgregarJugador;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         public System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox ptbImagen;
     }
 }
