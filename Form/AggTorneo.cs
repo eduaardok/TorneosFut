@@ -18,9 +18,9 @@ namespace TorneosFut
         public AggTorneo(bool a, int i, string u, string c)
         {
             conexion = new csConexion(u, c);
-            InitializeComponent();
             agg = a;
             id = i;
+            InitializeComponent();
         }
         void Editar()
         {
@@ -32,7 +32,6 @@ namespace TorneosFut
                 btngEnviar.Text = "EDITAR";
             }
         }
-
         private void AggTorneo_Load(object sender, EventArgs e)
         {
             Editar();
@@ -41,6 +40,11 @@ namespace TorneosFut
         private void btngSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btngEnviar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

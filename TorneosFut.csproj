@@ -67,10 +67,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form\AggEditOrganizadorres.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\AggEditOrganizadorres.Designer.cs">
+      <DependentUpon>AggEditOrganizadorres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\AggEditPatrocinador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\AggEditPatrocinador.Designer.cs">
+      <DependentUpon>AggEditPatrocinador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\AggEditEstadio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\AggEditEstadio.Designer.cs">
+      <DependentUpon>AggEditEstadio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Class\csDGV.cs" />
     <Compile Include="Class\csDatos.cs" />
     <Compile Include="Class\csEstadio.cs" />
     <Compile Include="Class\csImagenes.cs" />
+    <Compile Include="Class\csTorneo.cs" />
     <Compile Include="Form\Estadio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +223,15 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
+    <EmbeddedResource Include="Form\AggEditEstadio.resx">
+      <DependentUpon>AggEditEstadio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\AggEditOrganizadorres.resx">
+      <DependentUpon>AggEditOrganizadorres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\AggEditPatrocinador.resx">
+      <DependentUpon>AggEditPatrocinador.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\Estadio.resx">
       <DependentUpon>Estadio.cs</DependentUpon>
     </EmbeddedResource>

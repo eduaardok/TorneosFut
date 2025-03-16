@@ -49,7 +49,6 @@ namespace TorneosFut
             else
                 return false;
             return true;
-
         }
         public bool InsertaJugador(TextBox idJugador, TextBox Txtnombre, TextBox txtapellido, ComboBox cmbsexo, DateTimePicker dtpNacimiento,
                                       ComboBox CmbPosicion, TextBox TxtNacionalidad, TextBox txtpeso, TextBox txtaltura, ComboBox cmbpierna, string imagen, string filename)

@@ -61,43 +61,48 @@
             // 
             // Txtnombre
             // 
-            this.Txtnombre.Location = new System.Drawing.Point(56, 126);
+            this.Txtnombre.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txtnombre.Location = new System.Drawing.Point(56, 141);
             this.Txtnombre.Name = "Txtnombre";
-            this.Txtnombre.Size = new System.Drawing.Size(178, 20);
+            this.Txtnombre.Size = new System.Drawing.Size(178, 28);
             this.Txtnombre.TabIndex = 0;
             // 
             // cmbsexo
             // 
             this.cmbsexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbsexo.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbsexo.FormattingEnabled = true;
             this.cmbsexo.Items.AddRange(new object[] {
             "M",
             "F"});
-            this.cmbsexo.Location = new System.Drawing.Point(59, 176);
+            this.cmbsexo.Location = new System.Drawing.Point(56, 199);
             this.cmbsexo.Name = "cmbsexo";
-            this.cmbsexo.Size = new System.Drawing.Size(175, 21);
+            this.cmbsexo.Size = new System.Drawing.Size(175, 29);
             this.cmbsexo.TabIndex = 1;
             // 
             // dtpNacimiento
             // 
-            this.dtpNacimiento.Location = new System.Drawing.Point(56, 322);
+            this.dtpNacimiento.Font = new System.Drawing.Font("Onest Light", 12F);
+            this.dtpNacimiento.Location = new System.Drawing.Point(56, 403);
             this.dtpNacimiento.MaxDate = new System.DateTime(2017, 12, 31, 0, 0, 0, 0);
             this.dtpNacimiento.MinDate = new System.DateTime(1983, 1, 1, 0, 0, 0, 0);
             this.dtpNacimiento.Name = "dtpNacimiento";
-            this.dtpNacimiento.Size = new System.Drawing.Size(200, 20);
+            this.dtpNacimiento.Size = new System.Drawing.Size(295, 28);
             this.dtpNacimiento.TabIndex = 4;
             this.dtpNacimiento.Value = new System.DateTime(2017, 12, 31, 0, 0, 0, 0);
             // 
             // txtapellido
             // 
-            this.txtapellido.Location = new System.Drawing.Point(289, 127);
+            this.txtapellido.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtapellido.Location = new System.Drawing.Point(286, 141);
             this.txtapellido.Name = "txtapellido";
-            this.txtapellido.Size = new System.Drawing.Size(178, 20);
+            this.txtapellido.Size = new System.Drawing.Size(178, 28);
             this.txtapellido.TabIndex = 5;
             // 
             // CmbPosicion
             // 
             this.CmbPosicion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbPosicion.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CmbPosicion.FormattingEnabled = true;
             this.CmbPosicion.Items.AddRange(new object[] {
             "Portero (Guardameta)",
@@ -117,42 +122,45 @@
             "Delantero centro",
             "Segunda punta",
             "Falso nueve"});
-            this.CmbPosicion.Location = new System.Drawing.Point(60, 221);
+            this.CmbPosicion.Location = new System.Drawing.Point(56, 282);
             this.CmbPosicion.Name = "CmbPosicion";
-            this.CmbPosicion.Size = new System.Drawing.Size(174, 21);
+            this.CmbPosicion.Size = new System.Drawing.Size(174, 29);
             this.CmbPosicion.TabIndex = 6;
             // 
             // cmbpierna
             // 
             this.cmbpierna.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbpierna.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbpierna.FormattingEnabled = true;
             this.cmbpierna.Items.AddRange(new object[] {
             "Derecha",
             "Izquierda"});
-            this.cmbpierna.Location = new System.Drawing.Point(289, 176);
+            this.cmbpierna.Location = new System.Drawing.Point(286, 200);
             this.cmbpierna.Name = "cmbpierna";
-            this.cmbpierna.Size = new System.Drawing.Size(178, 21);
+            this.cmbpierna.Size = new System.Drawing.Size(178, 29);
             this.cmbpierna.TabIndex = 7;
             // 
             // txtpeso
             // 
-            this.txtpeso.Location = new System.Drawing.Point(289, 227);
+            this.txtpeso.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtpeso.Location = new System.Drawing.Point(286, 259);
             this.txtpeso.Name = "txtpeso";
-            this.txtpeso.Size = new System.Drawing.Size(111, 20);
+            this.txtpeso.Size = new System.Drawing.Size(111, 28);
             this.txtpeso.TabIndex = 8;
             // 
             // txtaltura
             // 
-            this.txtaltura.Location = new System.Drawing.Point(290, 272);
+            this.txtaltura.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtaltura.Location = new System.Drawing.Point(286, 324);
             this.txtaltura.Name = "txtaltura";
-            this.txtaltura.Size = new System.Drawing.Size(100, 20);
+            this.txtaltura.Size = new System.Drawing.Size(100, 28);
             this.txtaltura.TabIndex = 9;
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(56, 100);
+            this.lblNombre.Location = new System.Drawing.Point(52, 109);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(94, 24);
             this.lblNombre.TabIndex = 11;
@@ -162,7 +170,7 @@
             // 
             this.lblapellido.AutoSize = true;
             this.lblapellido.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblapellido.Location = new System.Drawing.Point(285, 100);
+            this.lblapellido.Location = new System.Drawing.Point(282, 114);
             this.lblapellido.Name = "lblapellido";
             this.lblapellido.Size = new System.Drawing.Size(94, 24);
             this.lblapellido.TabIndex = 12;
@@ -172,7 +180,7 @@
             // 
             this.lblsexo.AutoSize = true;
             this.lblsexo.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblsexo.Location = new System.Drawing.Point(56, 149);
+            this.lblsexo.Location = new System.Drawing.Point(52, 172);
             this.lblsexo.Name = "lblsexo";
             this.lblsexo.Size = new System.Drawing.Size(54, 24);
             this.lblsexo.TabIndex = 13;
@@ -182,7 +190,7 @@
             // 
             this.lblPosicion.AutoSize = true;
             this.lblPosicion.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPosicion.Location = new System.Drawing.Point(56, 197);
+            this.lblPosicion.Location = new System.Drawing.Point(52, 245);
             this.lblPosicion.Name = "lblPosicion";
             this.lblPosicion.Size = new System.Drawing.Size(89, 24);
             this.lblPosicion.TabIndex = 14;
@@ -194,7 +202,7 @@
             this.LblPierna.AutoSize = true;
             this.LblPierna.BackColor = System.Drawing.Color.Transparent;
             this.LblPierna.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblPierna.Location = new System.Drawing.Point(285, 150);
+            this.LblPierna.Location = new System.Drawing.Point(282, 172);
             this.LblPierna.Name = "LblPierna";
             this.LblPierna.Size = new System.Drawing.Size(122, 24);
             this.LblPierna.TabIndex = 15;
@@ -204,7 +212,7 @@
             // 
             this.lblpeso.AutoSize = true;
             this.lblpeso.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblpeso.Location = new System.Drawing.Point(285, 200);
+            this.lblpeso.Location = new System.Drawing.Point(285, 232);
             this.lblpeso.Name = "lblpeso";
             this.lblpeso.Size = new System.Drawing.Size(91, 24);
             this.lblpeso.TabIndex = 16;
@@ -214,7 +222,7 @@
             // 
             this.lblfecha.AutoSize = true;
             this.lblfecha.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblfecha.Location = new System.Drawing.Point(56, 295);
+            this.lblfecha.Location = new System.Drawing.Point(52, 376);
             this.lblfecha.Name = "lblfecha";
             this.lblfecha.Size = new System.Drawing.Size(205, 24);
             this.lblfecha.TabIndex = 17;
@@ -224,7 +232,7 @@
             // 
             this.lblaltura.AutoSize = true;
             this.lblaltura.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblaltura.Location = new System.Drawing.Point(285, 250);
+            this.lblaltura.Location = new System.Drawing.Point(285, 295);
             this.lblaltura.Name = "lblaltura";
             this.lblaltura.Size = new System.Drawing.Size(66, 24);
             this.lblaltura.TabIndex = 18;
@@ -234,7 +242,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(56, 245);
+            this.label1.Location = new System.Drawing.Point(52, 314);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(131, 24);
             this.label1.TabIndex = 21;
@@ -242,9 +250,10 @@
             // 
             // TxtNacionalidad
             // 
-            this.TxtNacionalidad.Location = new System.Drawing.Point(59, 272);
+            this.TxtNacionalidad.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtNacionalidad.Location = new System.Drawing.Point(56, 341);
             this.TxtNacionalidad.Name = "TxtNacionalidad";
-            this.TxtNacionalidad.Size = new System.Drawing.Size(178, 20);
+            this.TxtNacionalidad.Size = new System.Drawing.Size(178, 28);
             this.TxtNacionalidad.TabIndex = 20;
             // 
             // btnAgregar
@@ -252,7 +261,7 @@
             this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
             this.btnAgregar.Font = new System.Drawing.Font("Onest Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
-            this.btnAgregar.Location = new System.Drawing.Point(263, 351);
+            this.btnAgregar.Location = new System.Drawing.Point(419, 486);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(144, 59);
             this.btnAgregar.TabIndex = 22;
@@ -278,7 +287,7 @@
             this.btngCancelar.ForeColor = System.Drawing.Color.Black;
             this.btngCancelar.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btngCancelar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
-            this.btngCancelar.Location = new System.Drawing.Point(40, 351);
+            this.btngCancelar.Location = new System.Drawing.Point(259, 486);
             this.btngCancelar.Name = "btngCancelar";
             this.btngCancelar.Size = new System.Drawing.Size(127, 59);
             this.btngCancelar.TabIndex = 23;
@@ -289,9 +298,10 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.panel2.Controls.Add(this.lblEncabezado);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(759, 50);
+            this.panel2.Size = new System.Drawing.Size(849, 50);
             this.panel2.TabIndex = 49;
             // 
             // lblEncabezado
@@ -317,9 +327,10 @@
             // 
             // txtIDJugador
             // 
-            this.txtIDJugador.Location = new System.Drawing.Point(56, 77);
+            this.txtIDJugador.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIDJugador.Location = new System.Drawing.Point(56, 80);
             this.txtIDJugador.Name = "txtIDJugador";
-            this.txtIDJugador.Size = new System.Drawing.Size(178, 20);
+            this.txtIDJugador.Size = new System.Drawing.Size(178, 28);
             this.txtIDJugador.TabIndex = 50;
             // 
             // ptbImagen
@@ -361,7 +372,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(759, 422);
+            this.ClientSize = new System.Drawing.Size(849, 557);
             this.ControlBox = false;
             this.Controls.Add(this.btnCargarimagen);
             this.Controls.Add(this.ptbImagen);
