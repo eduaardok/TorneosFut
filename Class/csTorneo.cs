@@ -22,6 +22,11 @@ namespace TorneosFut.Class
             DataTable dt = csConexion.ListDGV("Select * from Torneo");
             return dt;
         }
+        public DataTable ListaIDTorneo()
+        {
+            DataTable dt = csConexion.ListDGV("Select IDTorneo from Torneo");
+            return dt;
+        }
         public DataTable ListadeTorneofiltro(string filtro)
         {
             DataTable dt;
@@ -32,6 +37,7 @@ namespace TorneosFut.Class
         }
         public bool AgregarTorneo(TextBox idTorneo, TextBox Txtnombre, ComboBox formato, ComboBox ModoFutbol, int IdUsuario, ComboBox Organizador, DateTimePicker te)
         {
+
             return true;
 
         }

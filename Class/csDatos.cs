@@ -19,6 +19,7 @@ namespace TorneosFut
         csImagenes csImagenes;
         csEquipo csEquipo;
         csJugador csJugador;
+        csTorneo csTorneo;
         public csDatos(string u, string c)
         {
             conexion = new csConexion(u, c);
@@ -27,6 +28,7 @@ namespace TorneosFut
             csImagenes = new csImagenes();
             csEquipo = new csEquipo(u, c);
             csJugador = new csJugador(u, c);
+            csTorneo = new csTorneo(u, c);
         }
 
         public int ObtenerIDUsuario(DataGridView dgv)
@@ -155,14 +157,45 @@ namespace TorneosFut
 
                 }
                 MessageBox.Show(IDS[i].ToString());
+            }
+            return false;
+        }
+        public bool IDTorneoRepetido(string id)
+        {
+            DataTable dt = csTorneo.ListaIDTorneo();
+
+            string[] IDS = new string[dt.Rows.Count];
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                IDS[i] = dt.Rows[i][0].ToString();
+            }
+            for (int i = 0; i < IDS.Length; i++)
+            {
+
+                if (IDS[i] == id)
+                {
+                    MessageBox.Show($"Ya existe un torneo registrado con el ID: {id}");
+                    return true;
+
+                }
+                MessageBox.Show(IDS[i].ToString());
 
 
             }
             return false;
         }
+        public bool validarIDTorneo(string id)
+        {
+            if (validarSoloNumeros(id) && !(IDTorneoRepetido(id)))
+            {
+                return true;
+            }
+            return false;
+        }
         public bool validarIDEntrenador(string ID)
         {
-            if (validarsolonumero(ID) && validarlongitud(ID, 10) && !(IDEntrenadorRepetido(ID)))
+            if (validarSoloNumeros(ID) && validarlongitud(ID, 10) && !(IDEntrenadorRepetido(ID)))
             {
                 return true;
             }
@@ -191,20 +224,20 @@ namespace TorneosFut
         public bool validarIDJugador(string ID)
         {
 
-            if (validarsolonumero(ID) && validarlongitud(ID,10)&& !(IDJugadorRepetido(ID)))
+            if (validarSoloNumeros(ID) && validarlongitud(ID,10)&& !(IDJugadorRepetido(ID)))
             {
                 return true;
             }
             return false;
         }
-        public bool validarsolonumero(string ID) 
+        public bool validarSoloNumeros(string ID) 
         {
             string numero = "1234567890";
             for(int i = 0; i<ID.Length;i++)
             {
                 if (!numero.Contains(ID[i]))
                 {
-                    MessageBox.Show("Ingrese solo caractéres númericos");
+                    MessageBox.Show("Ingrese solo caracteres numéricos");
                     return false;
                 }
             }
