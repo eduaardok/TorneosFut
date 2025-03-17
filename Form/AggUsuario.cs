@@ -14,15 +14,16 @@ namespace Usuarios
     public partial class AggUsuario: Form
     {
         static bool agg = true;
-        static int id;
-        DataTable dt;
+        static string id;
         csConexion conexion;
         csEncriptar encriptar;
         csDatos csDatos;
-        public AggUsuario(bool a, int i, string u, string c)
+        csValidaciones csValidaciones;
+        public AggUsuario(bool a, string i, string u, string c)
         {
             conexion = new csConexion(u,c);
             csDatos = new csDatos(u, c);
+            csValidaciones = new csValidaciones(u, c);
             agg = a;
             id = i;
             InitializeComponent();
@@ -46,7 +47,7 @@ namespace Usuarios
                 string claveBD = encriptar.Encriptar(txtClaveBD.Text, "futxpert");
                 if (agg)
                 {
-                    if (csDatos.InsertarUsuario(IDNoRepetido().ToString(), txtNombre.Text, txtUsuarioApp.Text, claveApp, txtCorreo.Text + cmbCorreos.Text, txtUsuarioBD.Text, claveBD))
+                    if (csDatos.InsertarUsuario(txtNombre.Text, txtUsuarioApp.Text, claveApp, txtCorreo.Text + cmbCorreos.Text, txtUsuarioBD.Text, claveBD))
                     {
                         csDatos.CrearLoginBD(txtUsuarioBD.Text, txtClaveBD.Text);
                         MessageBox.Show($"Usuario agregado");
@@ -55,8 +56,7 @@ namespace Usuarios
                 }
                 else
                 {
-                    // dt = conexion.ListDGV($"select * from Administrador where IDAdmin= {id}");
-                    if (csDatos.ActualizarUsuario(id.ToString(), txtNombre.Text, txtUsuarioApp.Text, claveApp, txtCorreo.Text + cmbCorreos.Text, txtUsuarioBD.Text, claveBD))
+                    if (csDatos.ActualizarUsuario(id, txtNombre.Text, txtUsuarioApp.Text, claveApp, txtCorreo.Text + cmbCorreos.Text, txtUsuarioBD.Text, claveBD))
                     {
                         csDatos.ActualizarClaveBD(txtUsuarioBD.Text, txtClaveBD.Text);
                         MessageBox.Show($"Usuario editado");
@@ -67,34 +67,10 @@ namespace Usuarios
             else
                 MessageBox.Show("Verifique los campos ingresados");
         }
-        public int IDNoRepetido()
-        {
-            Random rnd = new Random(DateTime.Now.Millisecond);
-            int idnuevo;
-            DataTable dt = conexion.ListDGV("Select IDUsuario from Usuario");
-            bool idExiste = false;
-            do
-            {
-                idnuevo = rnd.Next(1, 100);
-                foreach (DataRow row in dt.Rows)
-                {
-                    if (row["IDUsuario"] != DBNull.Value && Convert.ToInt32(row["IDUsuario"]) == idnuevo)
-                    {
-                        idExiste = true;
-                        break;
-                    }
-                }
-                if (!idExiste)
-                    break;
-
-            } while (idExiste);
-            return idnuevo;
-        }
 
         private void AgregarUsuario_Load(object sender, EventArgs e)
         {
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
-            dt = new DataTable();
             encriptar = new csEncriptar();
             Editar();
         }
@@ -105,13 +81,12 @@ namespace Usuarios
                 lblEncabezado.Text = "EDICIÓN DE USUARIO";
                 txtUsuarioBD.ReadOnly = true;
                 btngEnviar.Text = "EDITAR";
-                dt = conexion.ListDGV($"select * from Usuario where IDUsuario= {id}");
-                txtNombre.Text = dt.Rows[0][1].ToString();
-                txtUsuarioApp.Text = dt.Rows[0][2].ToString();
-                txtClaveApp.Text = encriptar.Desencriptar(dt.Rows[0][3].ToString(), "futxpert");
-                if (dt.Rows[0][4].ToString().Contains('@'))
+                txtNombre.Text = csDatos.ObtenerNombrePorID(id);
+                txtUsuarioApp.Text = csDatos.ObtenerUsuarioPorID(id);
+                txtClaveApp.Text = encriptar.Desencriptar(csDatos.ObtenerClavePorID(id), "futxpert");
+                if (csDatos.ObtenerCorreoPorID(id).Contains('@'))
                 {
-                    string[] c = dt.Rows[0][4].ToString().Split('@');
+                    string[] c = csDatos.ObtenerCorreoPorID(id).Split('@');
                     txtCorreo.Text = c[0];
                     int index = cmbCorreos.Items.IndexOf("@" + c[1]);
                     if (index >= 0)
@@ -119,9 +94,8 @@ namespace Usuarios
                     else
                         cmbCorreos.SelectedIndex = -1; // Deja en blanco si no está en la lista
                 }
-                txtUsuarioBD.Text = dt.Rows[0][5].ToString();
-                txtClaveBD.Text = encriptar.Desencriptar(dt.Rows[0][6].ToString(), "futxpert");
-
+                txtUsuarioBD.Text = csDatos.ObtenerUsuarioBDPorID(id);
+                txtClaveBD.Text = encriptar.Desencriptar(csDatos.ObtenerClaveBDPorID(id), "futxpert");
             }
         }
         bool Validaciones()
@@ -133,13 +107,10 @@ namespace Usuarios
             }
             else
             {
-                if (!agg)
-                    dt = conexion.ListDGV($"select * from Usuario where Nombres = '{txtNombre.Text}' and IDUsuario != {id}");
-                else
-                    dt = conexion.ListDGV($"select * from Usuario where Nombres = '{txtNombre.Text}'");
-                if (dt.Rows.Count > 0)
+                if (!csValidaciones.ValidarNombre(txtNombre.Text, id))
                 {
-                    txtNombre.Text= txtNombre.Text+"1";
+                    lblaNombre.Text = "El nombre ya está en uso";
+                    return false;
                 }
             }
             if (txtUsuarioApp.Text.Length < 5) //esto para validar el usuario de app ingresado
@@ -149,11 +120,7 @@ namespace Usuarios
             }
             else
             {
-                if (!agg)
-                    dt = conexion.ListDGV($"select * from Usuario where NombreUsuario = '{txtUsuarioApp.Text}' and IDUsuario != {id}");
-                else
-                    dt = conexion.ListDGV($"select * from Usuario where NombreUsuario = '{txtUsuarioApp.Text}'");
-                if (dt.Rows.Count > 0)
+                if (!csValidaciones.ValidarUsuario(txtUsuarioApp.Text, id))
                 {
                     lblaUsuarioApp.Text = "El nombre de usuario ya está en uso";
                     return false;
@@ -166,11 +133,7 @@ namespace Usuarios
             }
             else
             {
-                if (!agg)
-                    dt = conexion.ListDGV($"select * from Usuario where NombreUsuarioBD = '{txtUsuarioBD.Text}' and IDUsuario != {id}");
-                else
-                    dt = conexion.ListDGV($"select * from Usuario where NombreUsuarioBD = '{txtUsuarioBD.Text}'");
-                if (dt.Rows.Count > 0)
+                if (!csValidaciones.ValidarUsuarioBD(txtUsuarioBD.Text, id))
                 {
                     lblaUsuarioBD.Text = "El nombre de usuario ya está en uso";
                     return false;
@@ -188,11 +151,7 @@ namespace Usuarios
                     lblaMail.Text = "Seleccione un tipo de correo";
                     return false;
                 }
-                if (!agg)
-                    dt = conexion.ListDGV($"select * from Usuario where Correo = '{txtCorreo.Text+cmbCorreos.Text}' and IDUsuario != {id}");
-                else
-                    dt = conexion.ListDGV($"select * from Usuario where Correo = '{txtCorreo.Text + cmbCorreos.Text}'");
-                if (dt.Rows.Count > 0)
+                if (!csValidaciones.ValidarCorreo(txtCorreo.Text+cmbCorreos.Text, id))
                 {
                     lblaMail.Text = "El correo ya está en uso";
                     return false;

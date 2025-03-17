@@ -23,7 +23,7 @@ namespace Usuarios
             csDGV = new csDGV(u, c);
             csDatos = new csDatos(u, c);
             InitializeComponent();
-            ActualizarTabla();
+            //ActualizarTabla();
         }
         private void GestionUsuario_Load(object sender, EventArgs e)
         {
@@ -45,7 +45,7 @@ namespace Usuarios
 
         private void btngCrear_Click(object sender, EventArgs e)
         {
-            AggUsuario a = new AggUsuario(true, -1, conexion.Usuario, conexion.Clave);
+            AggUsuario a = new AggUsuario(true, "-1", conexion.Usuario, conexion.Clave);
             //AbrirFormEnPanel(panelDgv, a);
             a.ShowDialog();
             txtFiltro.Text = "";
@@ -58,7 +58,7 @@ namespace Usuarios
             {
                 if (dgvUsuarios.CurrentRow.Index >= 0)
                 {
-                    int id = csDatos.ObtenerIDUsuarioDesdeDGV(dgvUsuarios);
+                    string id = csDatos.ObtenerIDUsuarioDesdeDGV(dgvUsuarios);
                     AggUsuario a = new AggUsuario(false, id, conexion.Usuario, conexion.Clave);
                     //AbrirFormEnPanel(panelDgv, a);
                     a.ShowDialog();
@@ -74,9 +74,6 @@ namespace Usuarios
             }
             txtFiltro.Text = "";
             ActualizarTabla();
-
-           
-
         }
 
         private void btngLimpiar_Click(object sender, EventArgs e)

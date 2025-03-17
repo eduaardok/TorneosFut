@@ -33,7 +33,7 @@ namespace TorneosFut
         }
 
         #region Usuario
-        public int ObtenerIDUsuarioDesdeDGV(DataGridView dgv)
+        public string ObtenerIDUsuarioDesdeDGV(DataGridView dgv)
         {
             return csUsuario.IDUsuarioSeleccionado(dgv);
         }
@@ -54,19 +54,46 @@ namespace TorneosFut
         {
             return csUsuario.ClaveBD(usuario);
         }
-        public bool CrearLoginBD (string u, string c)
+        #region DatosDeID
+        public string ObtenerNombrePorID(string id)
         {
-            return csUsuario.NuevoLogin(u, c);
+            return csUsuario.NombreDeID(id);
         }
-        
+        public string ObtenerUsuarioPorID(string id)
+        {
+            return csUsuario.UsuarioDeID(id);
+        }
+        public string ObtenerClavePorID(string id)
+        {
+            return csUsuario.ClaveDeID(id);
+
+        }
+        public string ObtenerCorreoPorID(string id)
+        {
+            return csUsuario.CorreoDeID(id);
+        }
+        public string ObtenerUsuarioBDPorID(string id)
+        {
+            return csUsuario.UsuarioBDDeID(id);
+        }
+        public string ObtenerClaveBDPorID(string id)
+        {
+            return csUsuario.ClaveBDDeID(id);
+        }
+        #endregion
+
         #endregion
 
         #region Insertar
-        public bool InsertarUsuario(string id, string nombre, string nombreusuario, string clave, string correo, string nombreusuariobd, string clavebd)
+        public bool CrearLoginBD(string u, string c)
+        {
+            return csUsuario.NuevoLogin(u, c);
+        }
+        public bool InsertarUsuario(string nombre, string nombreusuario, string clave, string correo, string nombreusuariobd, string clavebd)
         {
             if (validarUsuario())
             {
-                if (csUsuario.AgregarUsuario(id, nombre, nombreusuario, clave, correo, nombreusuariobd, clavebd))
+                if (csUsuario.AgregarUsuario(csUsuario.IDUsuarioNuevo(), nombre, nombreusuario, clave, correo, nombreusuariobd, clavebd))
                 {
                     return true;
                 }

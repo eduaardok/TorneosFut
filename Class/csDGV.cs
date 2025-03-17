@@ -35,6 +35,7 @@ namespace TorneosFut
             csPartido = new csPartido(u, c, IDTorneo, IDpartido);
             csAuditorias = new csAuditorias(u, c);
         }
+        //Adaptar DataGridView en panel
         public void AdaptarDGV(DataGridView dgv, Panel pnl)
         {
             dgv.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#14191D");
@@ -57,6 +58,7 @@ namespace TorneosFut
                 dgv.Columns[i].Width = dgv.Width / columnas;
             }
         }
+        //Adaptar DataGridView sin panel
         public void AdaptarDGV(DataGridView dgv)
         {
             dgv.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#14191D");
@@ -77,6 +79,7 @@ namespace TorneosFut
                 dgv.Columns[i].Width = dgv.Width / columnas;
             }
         }
+        //USUARIOS
         public void MostrarUsuarios(DataGridView dgv)
         {
             dgv.DataSource = csUsuario.ListaDeUsuarios();
@@ -85,11 +88,19 @@ namespace TorneosFut
         {
             dgv.DataSource = csUsuario.ListaDeUsuariosFiltro(mostrarClave, filtro);
         }
+        //AUDITORIAS
         public void MostrarAuditoriaFiltro(DataGridView dgv, bool audit, string filtro)
         {
             dgv.DataSource = csAuditorias.ListaDeAuditoriaFiltro(audit, filtro);
         }
-
+        public void MostrarAuditoriaInicioSesion(DataGridView dgv)
+        {
+            dgv.DataSource = csAuditorias.AuditoriaInicioSesion();
+        }
+        public void MostrarAuditoriaCambios(DataGridView dgv)
+        {
+            dgv.DataSource = csAuditorias.AuditoriaCambios();
+        }
         //JUGADORES 
         public void MostrarJugadores(DataGridView dgv)
         {
@@ -126,15 +137,8 @@ namespace TorneosFut
         {
             dgv.DataSource = csEntrenador.ListadeEntrenadoresFiltro(filtro);
         }
-        public void MostrarAuditoriaInicioSesion(DataGridView dgv)
-        {
-            dgv.DataSource= csAuditorias.AuditoriaInicioSesion();
-        }
-        public void MostrarAuditoriaCambios(DataGridView dgv)
-        {
-            dgv.DataSource = csAuditorias.AuditoriaCambios();
-        }
-        //PARTIDO
+        
+        //PARTIDOS
         public void MostrarPartidos(DataGridView dgv)
         {
             dgv.DataSource = csPartido.ListadePartido();
@@ -145,7 +149,7 @@ namespace TorneosFut
             cmbEquipo.ValueMember = "IDPartido";
             cmbEquipo.DisplayMember = "Equipo";
         }
-        //TORNEO
+        //TORNEOS
         public void MostrarTorneo(DataGridView dgv)
         {
             dgv.DataSource = csTorneo.ListadeTorneo();

@@ -14,14 +14,11 @@ namespace TorneosFut
     {
         csDatos csDatos;
         private SqlConnection conec;
+        //Server VPN
         private string _server = "26.102.193.210";
-
-
-        private string _database = "BDTorneosBetaV2";
-        // private string _database = "BDTorneosFutbol";
+        //Server Local
         //private string _server = ".";
-        //private string _database = "BDTorneosBetaCopia";
-
+        private string _database = "BDTorneosBetaV2";
         private string _usuario;
         private string _clave;
         public string Server
@@ -49,7 +46,7 @@ namespace TorneosFut
             get => conec;
             set => conec = value;
         }
-        private string CadenaConexion => $"Server={_server}; Database={_database}; User id={_usuario}; Password={_clave};";
+        //private string CadenaConexion => $"Server={_server}; Database={_database}; User id={_usuario}; Password={_clave};";
         public csConexion()
         {
             _usuario = "UsuarioLectura";
@@ -97,9 +94,9 @@ namespace TorneosFut
             Consulta(query);
         }
 
-        public bool Login(string usuario, string contraseña)
+        public bool Login(string usuario, string clave)
         {
-            if(contraseña == csDatos.ObtenerClaveUsuario(usuario))
+            if(clave == csDatos.ObtenerClaveUsuario(usuario))
                     return true;
             return false;
         }

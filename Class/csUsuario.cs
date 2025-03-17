@@ -19,7 +19,7 @@ namespace TorneosFut
         {
             conexion = new csConexion(u, c);
         }
-        //LOGIN
+        #region Login
         public string UsuarioBD(string u)
         {
             DataTable dt = conexion.ListDGV($"select NombreUsuarioBD from Usuario where NombreUsuario='{u}'");
@@ -30,7 +30,9 @@ namespace TorneosFut
             DataTable dt = conexion.ListDGV($"select ClaveBD from Usuario where NombreUsuario='{u}'");
             return $"{dt.Rows[0][0].ToString()}";
         }
-        //USUARIO BD
+        #endregion
+
+        #region Usuario base de datos
         public bool NuevoLogin(string user, string pass)
         {
             conexion.Database = "master";
@@ -66,11 +68,12 @@ namespace TorneosFut
             }
 
         }
+        #endregion
 
-        //USUARIO
-        public int IDUsuarioSeleccionado(DataGridView dgv)
+        #region DevolverCampo
+        public string IDUsuarioSeleccionado(DataGridView dgv)
         {
-            return int.Parse(dgv.Rows[dgv.CurrentRow.Index].Cells[0].Value.ToString());
+            return dgv.Rows[dgv.CurrentRow.Index].Cells[0].Value.ToString();
         }
         public int IDUsuarioDeNombreUsuario(string nombreusuario)
         {
@@ -82,10 +85,64 @@ namespace TorneosFut
             DataTable dt = conexion.ListDGV($"select ClaveUsuario from Usuario where NombreUsuario='{nombreusuario}'");
             return dt.Rows[0][0].ToString();
         }
-        public bool NuevaClaveUsuario(string clave, string id)
+        public string NombreDeID(string id)
         {
-            return conexion.Consulta($"update Usuario set ClaveUsuario='{clave}' where IDUsuario={id}");
+            DataTable dt = conexion.ListDGV($"select Nombre from Usuario where IDUsuario={id}");
+            return dt.Rows[0][0].ToString();
         }
+        public string UsuarioDeID(string id)
+        {
+            DataTable dt = conexion.ListDGV($"select NombreUsuario from Usuario where IDUsuario={id}");
+            return dt.Rows[0][0].ToString();
+        }
+        public string ClaveDeID(string id)
+        {
+            DataTable dt = conexion.ListDGV($"select ClaveUsuario from Usuario where IDUsuario={id}");
+            return dt.Rows[0][0].ToString();
+        }
+        public string CorreoDeID(string id)
+        {
+            DataTable dt = conexion.ListDGV($"select Correo from Usuario where IDUsuario={id}");
+            return dt.Rows[0][0].ToString();
+        }
+        public string UsuarioBDDeID(string id)
+        {
+            DataTable dt = conexion.ListDGV($"select NombreUsuarioBD from Usuario where IDUsuario={id}");
+            return dt.Rows[0][0].ToString();
+        }
+        public string ClaveBDDeID(string id)
+        {
+            DataTable dt = conexion.ListDGV($"select ClaveBD from Usuario where IDUsuario={id}");
+            return dt.Rows[0][0].ToString();
+        }
+
+        public string IDUsuarioNuevo()
+        {
+            DataTable dt = conexion.ListDGV("Select IDUsuario from Usuario order by IDUsuario desc");
+            return (int.Parse(dt.Rows[0][0].ToString())+1).ToString();
+        }
+        #endregion
+
+        #region ListasParaValidaciones
+        public DataTable ListaNombres()
+        {
+            return conexion.ListDGV("select Nombre from Usuario");
+        }
+        public DataTable ListaUsuarios()
+        {
+            return conexion.ListDGV("select NombreUsuario from Usuario");
+        }
+        public DataTable ListaUsuariosBD()
+        {
+            return conexion.ListDGV("select NombreUsuarioBD from Usuario");
+        }
+        public DataTable ListaCorreos()
+        {
+            return conexion.ListDGV("select Correo from Usuario");
+        }
+        #endregion
+
+        #region Listas
         public DataTable ListaDeUsuarios()
         {
            DataTable dt = conexion.ListDGV("Select * from Usuario");
@@ -103,16 +160,26 @@ namespace TorneosFut
 
             return dt;
         }
+        #endregion
 
+        #region Inserts
         public bool AgregarUsuario(string id, string nombre, string nombreusuario, string clave, string correo, string nombreusuariobd, string clavebd)
         {
             return conexion.Consulta($"insert into Usuario (IDUsuario, Nombres, NombreUsuario, ClaveUsuario, Correo, NombreUsuarioBD, ClaveBD) " +
                 $"values ({id},'{nombre}','{nombreusuario}', '{clave}', '{correo}', '{nombreusuariobd}', '{clavebd}')");
         }
+        #endregion
+
+        #region Updates
         public bool ActualizarUsuario(string id, string nombre, string nombreusuario, string clave, string correo, string nombreusuariobd, string clavebd)
         {
             return conexion.Consulta($"update Usuario set Nombres='{nombre}', NombreUsuario= '{nombreusuario}',ClaveUsuario='{clave}', " +
                     $" Correo= '{correo}', NombreUsuarioBD= '{nombreusuariobd}',ClaveBD='{clavebd}' where IDUsuario={id} ");
         }
+        public bool NuevaClaveUsuario(string clave, string id)
+        {
+            return conexion.Consulta($"update Usuario set ClaveUsuario='{clave}' where IDUsuario={id}");
+        }
+        #endregion
     }
 }
