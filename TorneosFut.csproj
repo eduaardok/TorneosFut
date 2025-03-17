@@ -67,6 +67,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="csAuditorias.cs" />
     <Compile Include="Form\AgregarJugadorEquipo.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -104,28 +104,6 @@ namespace TorneosFut
             return dt;
         }
 
-        public DataTable ListaDeAuditoriaFiltro(bool m, string filtro)
-        {
-            DataTable dt;
-            if (m)
-                dt = conexion.ListDGV($"Select * from AuditoriaCambios where IDUsuario like '%{filtro}%' or TipoCambio like '%{filtro}%'" +
-                                         $" or TablaAfectada like '%{filtro}%'");
-            else
-                dt = conexion.ListDGV($"Select * from AuditoriaIniciosDeSesion where Usuario like '%{filtro}%'");
-
-            return dt;
-        }
-
-        public DataTable AuditoriaInicioSesion()
-        {
-            DataTable dt = conexion.ListDGV("Select * from AuditoriaIniciosDeSesion");
-            return dt;
-        }
-        public DataTable AuditoriaCambios()
-        {
-            DataTable dt = conexion.ListDGV("Select * from AuditoriaCambios");
-            return dt;
-        }
         public bool AgregarUsuario(string id, string nombre, string nombreusuario, string clave, string correo, string nombreusuariobd, string clavebd)
         {
             return conexion.Consulta($"insert into Usuario (IDUsuario, Nombres, NombreUsuario, ClaveUsuario, Correo, NombreUsuarioBD, ClaveBD) " +

@@ -99,15 +99,8 @@ namespace TorneosFut
 
         public bool Login(string usuario, string contraseña)
         {
-            string consulta = $"select ClaveUsuario from Usuario where NombreUsuario='{usuario}'";
-            DataTable dt = ListDGV(consulta);
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                if (contraseña == dt.Rows[i][0].ToString())
-                {
+            if(contraseña == csDatos.ObtenerClaveUsuario(usuario))
                     return true;
-                }
-            }
             return false;
         }
         public string RetornaUser(string u)

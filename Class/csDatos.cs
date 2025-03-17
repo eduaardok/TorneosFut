@@ -14,7 +14,7 @@ namespace TorneosFut
 {
     class csDatos
     {
-        csConexion csConexion;
+        //csConexion csConexion;
         csUsuario csUsuario;
         csEntrenador csEntrenador;
         csImagenes csImagenes;
@@ -23,7 +23,7 @@ namespace TorneosFut
         csTorneo csTorneo;
         public csDatos(string u, string c)
         {
-            csConexion = new csConexion(u, c);
+            //csConexion = new csConexion(u, c);
             csUsuario = new csUsuario(u, c);
             csEntrenador = new csEntrenador(u, c);
             csImagenes = new csImagenes();

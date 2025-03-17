@@ -21,6 +21,7 @@ namespace TorneosFut
         csEstadio csEstadio;
         csTorneo csTorneo;
         csPartido csPartido;
+        csAuditorias csAuditorias;
 
         public csDGV(string u, string c, string IDTorneo = "0", string IDpartido = "0")
         {
@@ -32,6 +33,7 @@ namespace TorneosFut
             csEstadio = new csEstadio(u, c);
             csTorneo = new csTorneo(u, c);
             csPartido = new csPartido(u, c, IDTorneo, IDpartido);
+            csAuditorias = new csAuditorias(u, c);
         }
         public void AdaptarDGV(DataGridView dgv, Panel pnl)
         {
@@ -83,9 +85,9 @@ namespace TorneosFut
         {
             dgv.DataSource = csUsuario.ListaDeUsuariosFiltro(mostrarClave, filtro);
         }
-        public void MostrarAuditoriaFiltro(DataGridView dgv, bool mostrarClave, string filtro)
+        public void MostrarAuditoriaFiltro(DataGridView dgv, bool audit, string filtro)
         {
-            dgv.DataSource = csUsuario.ListaDeAuditoriaFiltro(mostrarClave, filtro);
+            dgv.DataSource = csAuditorias.ListaDeAuditoriaFiltro(audit, filtro);
         }
 
         //JUGADORES 
@@ -126,11 +128,11 @@ namespace TorneosFut
         }
         public void MostrarAuditoriaInicioSesion(DataGridView dgv)
         {
-            dgv.DataSource= csUsuario.AuditoriaInicioSesion();
+            dgv.DataSource= csAuditorias.AuditoriaInicioSesion();
         }
         public void MostrarAuditoriaCambios(DataGridView dgv)
         {
-            dgv.DataSource = csUsuario.AuditoriaCambios();
+            dgv.DataSource = csAuditorias.AuditoriaCambios();
         }
         //PARTIDO
         public void MostrarPartidos(DataGridView dgv)
