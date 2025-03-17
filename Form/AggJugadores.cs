@@ -23,9 +23,7 @@ namespace pruebas
         {
             img = new OpenFileDialog();
             imagenes = new csImagenes();
-            conexion = new csConexion();
-            conexion.Usuario = u;
-            conexion.Clave = c;
+            conexion = new csConexion(u,c);
             csDatos = new csDatos(u, c);
             agregar = n;
             InitializeComponent();

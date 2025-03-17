@@ -14,7 +14,7 @@ namespace TorneosFut
 {
     class csDatos
     {
-        csConexion conexion;
+        csConexion csConexion;
         csUsuario csUsuario;
         csEntrenador csEntrenador;
         csImagenes csImagenes;
@@ -23,7 +23,7 @@ namespace TorneosFut
         csTorneo csTorneo;
         public csDatos(string u, string c)
         {
-            conexion = new csConexion(u, c);
+            csConexion = new csConexion(u, c);
             csUsuario = new csUsuario(u, c);
             csEntrenador = new csEntrenador(u, c);
             csImagenes = new csImagenes();
@@ -32,10 +32,54 @@ namespace TorneosFut
             csTorneo = new csTorneo(u, c);
         }
 
-        public int ObtenerIDUsuario(DataGridView dgv)
+        #region Usuario
+        public int ObtenerIDUsuarioDesdeDGV(DataGridView dgv)
         {
-            return csUsuario.IDUsuario(dgv);
+            return csUsuario.IDUsuarioSeleccionado(dgv);
         }
+        public int ObtenerIDUsuario(string nombreusuario)
+        {
+            return csUsuario.IDUsuarioDeNombreUsuario(nombreusuario);
+        }
+        public string ObtenerClaveUsuario(string usuario)
+        {
+            return csUsuario.ClaveUsuarioDeNombreUsuario(usuario);
+        }
+       
+        public string ObtenerUsuarioBD(string usuario)
+        {
+           return  csUsuario.UsuarioBD(usuario);
+        }
+        public string ObtenerClaveBD(string usuario)
+        {
+            return csUsuario.ClaveBD(usuario);
+        }
+        public bool CrearLoginBD (string u, string c)
+        {
+            return csUsuario.NuevoLogin(u, c);
+        }
+        
+        #endregion
+
+        #region Insertar
+        public bool InsertarUsuario(string id, string nombre, string nombreusuario, string clave, string correo, string nombreusuariobd, string clavebd)
+        {
+            if (validarUsuario())
+            {
+                if (csUsuario.AgregarUsuario(id, nombre, nombreusuario, clave, correo, nombreusuariobd, clavebd))
+                {
+                    return true;
+                }
+                else
+                    return false;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+        
         public bool InsertarEntrenador(string Id,string nombre, string apellido, string sexo,string fecha, string imagen, string filename)
         {
             if(validarIDEntrenador(Id))
@@ -125,6 +169,29 @@ namespace TorneosFut
             {
                 return false;
             }
+        }
+        #endregion
+        
+        #region Actualizar
+        public bool ActualizarClaveUsuario(string clave, string id)
+        {
+            return csUsuario.NuevaClaveUsuario(clave, id);
+        }
+        public bool ActualizarClaveBD(string u, string c)
+        {
+            return csUsuario.NuevaClaveLogin(u, c);
+        }
+        public bool ActualizarUsuario(string id, string nombre, string nombreusuario, string clave, string correo, string nombreusuariobd, string clavebd)
+        {
+            return csUsuario.ActualizarUsuario(id, nombre, nombreusuario, clave, correo, nombreusuariobd , clavebd);
+        }
+        #endregion
+        
+        #region Validaciones (hay que moverlas)
+        public bool validarUsuario()
+        {
+            return false;
+
         }
         public bool JugadorSinEquipo(string IdJugador, string IdEquipo)
         {
@@ -308,5 +375,6 @@ namespace TorneosFut
                 return false;
             }
         }
+    #endregion
     }
 }

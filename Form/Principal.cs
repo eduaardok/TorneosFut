@@ -36,6 +36,7 @@ namespace TorneosFut
         Patrocinadores Patro;
         Organizadores Orga;
         Auditoria auditoria;
+        csDatos csDatos;
         public Principal(string u, string c,string name)
         {
             if (u == "FutXpert")
@@ -44,6 +45,7 @@ namespace TorneosFut
                 esAdmin = false;
             conexion = new csConexion(u, c);
             encriptar = new csEncriptar();
+            csDatos = new csDatos(u, c);
             conexion.RegistrarAuditoriaInicioSesion();
             InitializeComponent();
             Usuario=new GestionUsuario(u, c);
@@ -211,18 +213,6 @@ namespace TorneosFut
             
         }
 
-        private void cAMBIARCLAVEToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DataTable dt = conexion.ListDGV($"select ClaveUsuario, IDUsuario from Usuario where NombreUsuario='{ddbtnOpcionesU.Text}'");
-           CambiarClave cambiarClave = new CambiarClave(conexion.Usuario, conexion.Clave, encriptar.Desencriptar(dt.Rows[0][0].ToString(), "futxpert"), dt.Rows[0][1].ToString());
-            cambiarClave.ShowDialog();
-
-        }
-        private void cERRARSESIONToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void panelModulos_Paint(object sender, PaintEventArgs e)
         {
 
@@ -285,6 +275,18 @@ namespace TorneosFut
         private void button3_Click(object sender, EventArgs e)
         {
             AbrirFormEnPanel(panelModulos,auditoria);
+        }
+
+        private void ttmiCambiarClave_Click(object sender, EventArgs e)
+        {
+            CambiarClave cambiarClave = new CambiarClave(conexion.Usuario, conexion.Clave, 
+                                        encriptar.Desencriptar(csDatos.ObtenerClaveUsuario(ddbtnOpcionesU.Text), "futxpert"), csDatos.ObtenerIDUsuario(ddbtnOpcionesU.Text).ToString());
+            cambiarClave.ShowDialog();
+        }
+
+        private void ttmiCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

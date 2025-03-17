@@ -15,9 +15,7 @@ namespace TorneosFut
         csConexion conexion;
         public Patrocinadores(string u, string c)
         {
-            conexion = new csConexion();
-            conexion.Usuario = u;
-            conexion.Clave = c;
+            conexion = new csConexion(u,c);
             InitializeComponent();
         }
 

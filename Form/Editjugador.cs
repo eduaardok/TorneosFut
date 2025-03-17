@@ -21,9 +21,7 @@ namespace pruebas
         public Editjugador(string id, Jugador jugador, string u, string c)
         {
             jugadorr = new csJugador(u,c);
-            conexion = new csConexion();
-            conexion.Usuario = u;
-            conexion.Clave = c;
+            conexion = new csConexion(u,c);
             InitializeComponent();
             //ID = int.Parse(id);
             f = jugador;

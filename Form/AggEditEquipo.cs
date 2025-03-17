@@ -21,8 +21,6 @@ namespace TorneosFut
         {
             conexion = new csConexion(u,c);
             csDatos = new csDatos(u,c);
-            conexion.Usuario = u;
-            conexion.Clave = c;
             agregar = n;
             InitializeComponent();
         }

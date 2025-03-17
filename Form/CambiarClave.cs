@@ -13,15 +13,15 @@ namespace TorneosFut
     public partial class CambiarClave: Form
     {
         csConexion conexion;
+        csDatos csDatos;
         static csEncriptar encriptar;
         static string id;
         public CambiarClave(string u, string c, string pass, string i)
         {
-            conexion = new csConexion();
-            conexion.Usuario = u;
-            conexion.Clave = c;
+            conexion = new csConexion(u, c);
             id = i;
             encriptar = new csEncriptar();
+            csDatos = new csDatos(u, c);
             InitializeComponent();
             lblClaveAct.Text = pass;
 
@@ -40,9 +40,15 @@ namespace TorneosFut
             }
             else
             {
-                conexion.Consulta($"update Usuario set ClaveUsuario='{claveApp}' where IDUsuario={id}");
-                MessageBox.Show($"Usuario editado");
-                this.Close();
+                if (csDatos.ActualizarClaveUsuario(claveApp, id))
+                {
+                    MessageBox.Show($"Su clave ha sido actualizada");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show($"No se pudo actualizar la clave, inténtelo de nuevo");
+                }
             }
         }
     }

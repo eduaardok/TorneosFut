@@ -12,6 +12,7 @@ namespace TorneosFut
 {
     internal class csConexion
     {
+        csDatos csDatos;
         private SqlConnection conec;
         private string _server = "26.102.193.210";
 
@@ -53,11 +54,13 @@ namespace TorneosFut
         {
             _usuario = "UsuarioLectura";
             _clave = "usuario";
+            csDatos = new csDatos(Usuario, Clave);
         }
         public csConexion(string us, string cl)
         {
             _usuario = us;
             _clave = cl;
+            csDatos = new csDatos(Usuario, Clave);
         }
         void Conectar()
         {
@@ -109,13 +112,11 @@ namespace TorneosFut
         }
         public string RetornaUser(string u)
         {
-            DataTable dt = ListDGV($"select NombreUsuarioBD from Usuario where NombreUsuario='{u}'");
-            return $"{dt.Rows[0][0].ToString()}";
+            return csDatos.ObtenerUsuarioBD(u);
         }
         public string RetornaClave(string u)
         {
-            DataTable dt = ListDGV($"select ClaveBD from Usuario where NombreUsuario='{u}'");
-            return $"{dt.Rows[0][0].ToString()}";
+            return csDatos.ObtenerClaveBD(u);
         }
         public bool Consulta(string consul)
         {
@@ -138,54 +139,6 @@ namespace TorneosFut
         {
             conec.Close();
             return true;
-        }
-        public bool CrearLoginBD(string user, string pass)
-        {
-            Database = "master";
-            AbrirCon();
-            string consul = $"IF NOT EXISTS (SELECT * FROM sys.server_principals WHERE name = '{user}') BEGIN " +
-                $"CREATE LOGIN {user} WITH PASSWORD = '{pass}'; END" +
-                $"  USE BDTorneosBetaV2; IF NOT EXISTS (SELECT * FROM sys.database_principals WHERE name = '{user}') " +
-                $"   BEGIN CREATE USER {user} FOR LOGIN {user};ALTER ROLE db_owner ADD MEMBER {user}; END";
-            SqlCommand crearL = new SqlCommand(consul, conec);
-            try
-            {
-                crearL.ExecuteNonQuery();
-                CerrarCon();
-                Database = "BDTorneosBetaV2";
-                return true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                CerrarCon();
-                Database = "BDTorneosBetaV2";
-                return false;
-            }
-
-        }
-        public bool ActualizarLoginBD(string user, string pass)
-        {
-            Database = "master";
-            AbrirCon();
-            string consul = $"ALTER LOGIN {user} WITH PASSWORD = '{pass}';";
-            SqlCommand actualizarL = new SqlCommand(consul, conec);
-            try
-            {
-                actualizarL.ExecuteNonQuery();
-                CerrarCon();
-                Database = "BDTorneosBetaV2";
-                return true;
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-                CerrarCon();
-                Database = "BDTorneosBetaV2";
-                return false;
-            }
-           
         }
     }
 }

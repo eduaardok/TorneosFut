@@ -58,7 +58,7 @@ namespace Usuarios
             {
                 if (dgvUsuarios.CurrentRow.Index >= 0)
                 {
-                    int id = csDatos.ObtenerIDUsuario(dgvUsuarios);
+                    int id = csDatos.ObtenerIDUsuarioDesdeDGV(dgvUsuarios);
                     AggUsuario a = new AggUsuario(false, id, conexion.Usuario, conexion.Clave);
                     //AbrirFormEnPanel(panelDgv, a);
                     a.ShowDialog();

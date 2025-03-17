@@ -26,9 +26,7 @@ namespace TorneosFut
 
         public Torneo(string u, string c, Principal r)
         {
-            conexion = new csConexion();
-            conexion.Usuario = u;
-            conexion.Clave = c;
+            conexion = new csConexion(u,c);
             InitializeComponent();
             patro = new Patrocinadores(u,c);
             orga = new Organizadores(u,c);
