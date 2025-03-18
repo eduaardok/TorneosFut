@@ -40,8 +40,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.panelOpciones = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnAuditorias = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.btnEquipos = new System.Windows.Forms.Button();
             this.btnTorneos = new System.Windows.Forms.Button();
@@ -49,6 +48,7 @@
             this.timeclose = new System.Windows.Forms.Timer(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panelModulos = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.tstSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -172,8 +172,8 @@
             // 
             this.panelOpciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
             this.panelOpciones.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panelOpciones.Controls.Add(this.button3);
             this.panelOpciones.Controls.Add(this.pictureBox1);
+            this.panelOpciones.Controls.Add(this.btnAuditorias);
             this.panelOpciones.Controls.Add(this.btnUsuarios);
             this.panelOpciones.Controls.Add(this.btnEquipos);
             this.panelOpciones.Controls.Add(this.btnTorneos);
@@ -183,33 +183,21 @@
             this.panelOpciones.Size = new System.Drawing.Size(294, 618);
             this.panelOpciones.TabIndex = 8;
             // 
-            // button3
+            // btnAuditorias
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.Font = new System.Drawing.Font("Onest Bold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Image = global::TorneosFut.Properties.Resources.icons8_audit_50;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(0, 249);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(294, 79);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "AUDITORIAS";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pictureBox1.Image = global::TorneosFut.Properties.Resources.logoFX;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 249);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(294, 369);
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
+            this.btnAuditorias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            this.btnAuditorias.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAuditorias.Font = new System.Drawing.Font("Onest Bold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAuditorias.ForeColor = System.Drawing.Color.White;
+            this.btnAuditorias.Image = global::TorneosFut.Properties.Resources.icons8_audit_50;
+            this.btnAuditorias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAuditorias.Location = new System.Drawing.Point(0, 249);
+            this.btnAuditorias.Name = "btnAuditorias";
+            this.btnAuditorias.Size = new System.Drawing.Size(294, 79);
+            this.btnAuditorias.TabIndex = 13;
+            this.btnAuditorias.Text = "AUDITORIAS";
+            this.btnAuditorias.UseVisualStyleBackColor = false;
+            this.btnAuditorias.Click += new System.EventHandler(this.button3_Click);
             // 
             // btnUsuarios
             // 
@@ -292,6 +280,18 @@
             this.panelModulos.TabIndex = 9;
             this.panelModulos.Paint += new System.Windows.Forms.PaintEventHandler(this.panelModulos_Paint);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pictureBox1.Image = global::TorneosFut.Properties.Resources.logoFX;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 334);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(294, 284);
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -331,7 +331,6 @@
         private System.Windows.Forms.Panel panelModulos;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnUsuarios;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Timer tmopen;
         private System.Windows.Forms.Timer timeclose;
         private System.Windows.Forms.Timer timer1;
@@ -342,6 +341,7 @@
         private System.Windows.Forms.Button btnEquipos;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnAuditorias;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

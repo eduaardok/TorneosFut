@@ -19,7 +19,7 @@ namespace TorneosFut
         private string _database = "BDTorneosBetaV2";
         //Server Local
         /* private string _server = "(local)";
-         private string _database = "BDTorneosV3";*/
+         private string _database = "";*/
 
         private string _usuario;
         private string _clave;
@@ -88,7 +88,6 @@ namespace TorneosFut
             CerrarCon();
             return data;
         }
-
         public void RegistrarAuditoriaInicioSesion()
         {
             string query = "EXEC spRegistrarInicioDeSesion";
@@ -99,18 +98,6 @@ namespace TorneosFut
             string query = "EXEC spRegistrarCierreDeSesion";
             Consulta(query);
         }
-
-        /*
-        public string RetornaUser(string u)
-        {
-            csDatos = new csDatos(Usuario, Clave);
-            return csDatos.ObtenerUsuarioBD(u);
-        }
-        public string RetornaClave(string u)
-        {
-            csDatos = new csDatos(Usuario, Clave);
-            return csDatos.ObtenerClaveBD(u);
-        }*/
         public bool Consulta(string consul)
         {
             AbrirCon();

@@ -106,10 +106,6 @@ namespace TorneosFut
             else
             {
                 MessageBox.Show("Se inició sesión de forma correcta");
-               /* bool admin = false;
-                if (txtUsuario.Text == "admin")
-                    admin = true; //para saber si el que ingresa es el admin*/
-                //Inicio n = new Inicio(admin);
                 Principal n = new Principal(csDatos.ObtenerUsuarioBD(txtUsuario.Text), encrip.Desencriptar(csDatos.ObtenerClaveBD(txtUsuario.Text), "futxpert"), txtUsuario.Text);
                 this.Hide();
                 n.ShowDialog();

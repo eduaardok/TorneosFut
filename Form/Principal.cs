@@ -28,10 +28,10 @@ namespace TorneosFut
         ); 
         static csConexion conexion;
         static bool esAdmin;
+        static csEncriptar encriptar;
         GestionUsuario Usuario;
         Entrenador entre;
         Equipos equi;
-        static csEncriptar encriptar;
         Torneo tor;
         Patrocinadores Patro;
         Organizadores Orga;
@@ -39,10 +39,7 @@ namespace TorneosFut
         csDatos csDatos;
         public Principal(string u, string c,string name)
         {
-            if (u == "FutXpert")
-                esAdmin = true;
-            else
-                esAdmin = false;
+            esAdmin =(u == "FutXpert");
             conexion = new csConexion(u, c);
             encriptar = new csEncriptar();
             csDatos = new csDatos(u, c);
@@ -79,18 +76,10 @@ namespace TorneosFut
         {
             btnEquipos.BackColor = ColorTranslator.FromHtml("#FB038C");
         }
-
         private void btnTorneos_MouseEnter(object sender, EventArgs e)
         {
             btnTorneos.BackColor = ColorTranslator.FromHtml("#FB038C");
         }
-
-
-        private void btnArbitros_MouseEnter(object sender, EventArgs e)
-        {
-        }
-
-        
 
         private void btnTorneos_MouseLeave(object sender, EventArgs e)
         {
@@ -100,7 +89,6 @@ namespace TorneosFut
         private void btnEquipos_MouseLeave(object sender, EventArgs e)
         {
             btnEquipos.BackColor = Color.FromArgb(20, 25, 29);
-
         }
 
         private void Principal_Load(object sender, EventArgs e)
@@ -170,6 +158,7 @@ namespace TorneosFut
                 btnTorneos.Text = "";
                 btnUsuarios.Text = "";
                 btnEquipos.Text = "";
+                btnAuditorias.Text = "";
             }
             else
             {
@@ -177,6 +166,8 @@ namespace TorneosFut
                 btnTorneos.Text = "TORNEO";
                 btnUsuarios.Text = "USUARIOS";
                 btnEquipos.Text = "EQUIPOS";
+                btnAuditorias.Text = "AUDITORÍAS";
+
             }
         }
         private void timer1_Tick(object sender, EventArgs e)
@@ -292,7 +283,7 @@ namespace TorneosFut
 
         private void Principal_FormClosed(object sender, FormClosedEventArgs e)
         {
-           // conexion.RegistrarAuditoriaCierreSesion();
+            conexion.RegistrarAuditoriaCierreSesion();
         }
     }
 }

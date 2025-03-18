@@ -116,11 +116,6 @@ namespace TorneosFut
             return dt.Rows[0][0].ToString();
         }
 
-        public string IDUsuarioNuevo()
-        {
-            DataTable dt = conexion.ListDGV("Select IDUsuario from Usuario order by IDUsuario desc");
-            return (int.Parse(dt.Rows[0][0].ToString())+1).ToString();
-        }
         #endregion
 
         #region ListasParaValidaciones
@@ -163,10 +158,10 @@ namespace TorneosFut
         #endregion
 
         #region Inserts
-        public bool AgregarUsuario(string id, string nombre, string nombreusuario, string clave, string correo, string nombreusuariobd, string clavebd)
+        public bool AgregarUsuario(string nombre, string nombreusuario, string clave, string correo, string nombreusuariobd, string clavebd)
         {
             return conexion.Consulta($"insert into Usuario (IDUsuario, Nombres, NombreUsuario, ClaveUsuario, Correo, NombreUsuarioBD, ClaveBD) " +
-                $"values ({id},'{nombre}','{nombreusuario}', '{clave}', '{correo}', '{nombreusuariobd}', '{clavebd}')");
+                $"values ('{nombre}','{nombreusuario}', '{clave}', '{correo}', '{nombreusuariobd}', '{clavebd}')");
         }
         #endregion
 
