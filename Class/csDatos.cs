@@ -32,6 +32,13 @@ namespace TorneosFut
             csTorneo = new csTorneo(u, c);
         }
 
+        public bool Login(string usuario, string clave)
+        {
+            if (clave == ObtenerClaveUsuario(usuario))
+                return true;
+            return false;
+        }
+
         #region Usuario
         public string ObtenerIDUsuarioDesdeDGV(DataGridView dgv)
         {
@@ -91,19 +98,12 @@ namespace TorneosFut
         }
         public bool InsertarUsuario(string nombre, string nombreusuario, string clave, string correo, string nombreusuariobd, string clavebd)
         {
-            if (validarUsuario())
+            if (csUsuario.AgregarUsuario(csUsuario.IDUsuarioNuevo(), nombre, nombreusuario, clave, correo, nombreusuariobd, clavebd))
             {
-                if (csUsuario.AgregarUsuario(csUsuario.IDUsuarioNuevo(), nombre, nombreusuario, clave, correo, nombreusuariobd, clavebd))
-                {
-                    return true;
-                }
-                else
-                    return false;
+                return true;
             }
             else
-            {
                 return false;
-            }
 
         }
         
@@ -215,11 +215,7 @@ namespace TorneosFut
         #endregion
         
         #region Validaciones (hay que moverlas)
-        public bool validarUsuario()
-        {
-            return false;
-
-        }
+       
         public bool JugadorSinEquipo(string IdJugador, string IdEquipo)
         {
             if (csJugador.DejarJugadorSinEquipo(IdJugador, IdEquipo))

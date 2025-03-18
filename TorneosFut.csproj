@@ -133,11 +133,11 @@
     <Compile Include="Form\AggJugadores.Designer.cs">
       <DependentUpon>AggJugadores.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\AggUsuario.cs">
+    <Compile Include="Form\AggEditUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\AgregarUsuario.Designer.cs">
-      <DependentUpon>AggUsuario.cs</DependentUpon>
+    <Compile Include="Form\AggEditUsuario.Designer.cs">
+      <DependentUpon>AggEditUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Class\csConexion.cs" />
     <Compile Include="Class\csCorreo.cs" />
@@ -265,8 +265,8 @@
     <EmbeddedResource Include="Form\AggTorneo.resx">
       <DependentUpon>AggTorneo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\AggUsuario.resx">
-      <DependentUpon>AggUsuario.cs</DependentUpon>
+    <EmbeddedResource Include="Form\AggEditUsuario.resx">
+      <DependentUpon>AggEditUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Editjugador.resx">
       <DependentUpon>Editjugador.cs</DependentUpon>

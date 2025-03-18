@@ -286,7 +286,13 @@ namespace TorneosFut
 
         private void ttmiCerrarSesion_Click(object sender, EventArgs e)
         {
+            conexion.RegistrarAuditoriaCierreSesion();
             Close();
+        }
+
+        private void Principal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+           // conexion.RegistrarAuditoriaCierreSesion();
         }
     }
 }

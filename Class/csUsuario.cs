@@ -14,7 +14,7 @@ namespace TorneosFut
 {
     class csUsuario
     {
-        csConexion conexion;
+        static csConexion conexion;
         public csUsuario(string u, string c)
         {
             conexion = new csConexion(u, c);

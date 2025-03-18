@@ -93,9 +93,9 @@ namespace TorneosFut
         {
             dgv.DataSource = csAuditorias.ListaDeAuditoriaFiltro(audit, filtro);
         }
-        public void MostrarAuditoriaInicioSesion(DataGridView dgv)
+        public void MostrarAuditoriaSesion(DataGridView dgv)
         {
-            dgv.DataSource = csAuditorias.AuditoriaInicioSesion();
+            dgv.DataSource = csAuditorias.AuditoriaSesion();
         }
         public void MostrarAuditoriaCambios(DataGridView dgv)
         {

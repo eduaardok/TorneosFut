@@ -22,14 +22,14 @@ namespace TorneosFut
 
         private void Auditoria_Load(object sender, EventArgs e)
         {
-            csDGV.MostrarAuditoriaInicioSesion(dgvAuditoria);
+            csDGV.MostrarAuditoriaSesion(dgvAuditoria);
             csDGV.AdaptarDGV(dgvAuditoria);
             n=false;
         }
 
         private void btngMostrar_Click(object sender, EventArgs e)
         {
-            csDGV.MostrarAuditoriaInicioSesion(dgvAuditoria);
+            csDGV.MostrarAuditoriaSesion(dgvAuditoria);
             csDGV.AdaptarDGV(dgvAuditoria);
             n=false;
         }

@@ -1,6 +1,6 @@
 ﻿namespace Usuarios
 {
-    partial class AggUsuario
+    partial class AggEditUsuario
     {
         /// <summary>
         /// Required designer variable.

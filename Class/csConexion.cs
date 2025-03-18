@@ -16,9 +16,11 @@ namespace TorneosFut
         private SqlConnection conec;
         //Server VPN
         private string _server = "26.102.193.210";
-        //Server Local
-        //private string _server = ".";
         private string _database = "BDTorneosBetaV2";
+        //Server Local
+        /* private string _server = "(local)";
+         private string _database = "BDTorneosV3";*/
+
         private string _usuario;
         private string _clave;
         public string Server
@@ -51,13 +53,12 @@ namespace TorneosFut
         {
             _usuario = "UsuarioLectura";
             _clave = "usuario";
-            csDatos = new csDatos(Usuario, Clave);
         }
         public csConexion(string us, string cl)
         {
             _usuario = us;
             _clave = cl;
-            csDatos = new csDatos(Usuario, Clave);
+            //csDatos = new csDatos(Usuario, Clave);
         }
         void Conectar()
         {
@@ -90,24 +91,26 @@ namespace TorneosFut
 
         public void RegistrarAuditoriaInicioSesion()
         {
-            string query = "EXEC InsertarAuditoriaInicioSesion";
+            string query = "EXEC spRegistrarInicioDeSesion";
+            Consulta(query);
+        }
+        public void RegistrarAuditoriaCierreSesion()
+        {
+            string query = "EXEC spRegistrarCierreDeSesion";
             Consulta(query);
         }
 
-        public bool Login(string usuario, string clave)
-        {
-            if(clave == csDatos.ObtenerClaveUsuario(usuario))
-                    return true;
-            return false;
-        }
+        /*
         public string RetornaUser(string u)
         {
+            csDatos = new csDatos(Usuario, Clave);
             return csDatos.ObtenerUsuarioBD(u);
         }
         public string RetornaClave(string u)
         {
+            csDatos = new csDatos(Usuario, Clave);
             return csDatos.ObtenerClaveBD(u);
-        }
+        }*/
         public bool Consulta(string consul)
         {
             AbrirCon();

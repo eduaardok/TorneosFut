@@ -22,14 +22,14 @@ namespace TorneosFut
                 dt = csConexion.ListDGV($"Select * from AuditoriaCambios where IDUsuario like '%{filtro}%' or TipoCambio like '%{filtro}%'" +
                                          $" or TablaAfectada like '%{filtro}%'");
             else
-                dt = csConexion.ListDGV($"Select * from AuditoriaIniciosDeSesion where Usuario like '%{filtro}%'");
+                dt = csConexion.ListDGV($"Select * from AuditoriaSesion where Usuario like '%{filtro}%'");
 
             return dt;
         }
 
-        public DataTable AuditoriaInicioSesion()
+        public DataTable AuditoriaSesion()
         {
-            DataTable dt = csConexion.ListDGV("Select * from AuditoriaIniciosDeSesion");
+            DataTable dt = csConexion.ListDGV("Select * from AuditoriaSesion");
             return dt;
         }
         public DataTable AuditoriaCambios()

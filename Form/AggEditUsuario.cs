@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using TorneosFut;
 namespace Usuarios
 {
-    public partial class AggUsuario: Form
+    public partial class AggEditUsuario: Form
     {
         static bool agg = true;
         static string id;
@@ -19,7 +19,7 @@ namespace Usuarios
         csEncriptar encriptar;
         csDatos csDatos;
         csValidaciones csValidaciones;
-        public AggUsuario(bool a, string i, string u, string c)
+        public AggEditUsuario(bool a, string i, string u, string c)
         {
             conexion = new csConexion(u,c);
             csDatos = new csDatos(u, c);

@@ -15,8 +15,9 @@ namespace TorneosFut
 {
     public partial class Login : Form
     {
-        static csConexion conec = new csConexion();
-        static csEncriptar encrip = new csEncriptar();
+        static csConexion conec;
+        static csEncriptar encrip;
+        csDatos csDatos;
         int click;
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -30,6 +31,9 @@ namespace TorneosFut
           );
         public Login()
         {
+            conec = new csConexion();
+            encrip = new csEncriptar();
+            csDatos = new csDatos(conec.Usuario, conec.Clave);
             InitializeComponent();
         }
         private void X_Click(object sender, EventArgs e)
@@ -95,7 +99,7 @@ namespace TorneosFut
         void Logeo()
         {
             string password = encrip.Encriptar(Txtclave.Text, "futxpert");
-            if (!conec.Login(txtUsuario.Text, password))
+            if (!csDatos.Login(txtUsuario.Text, password))
             { 
                 MessageBox.Show("Credenciales incorrectas", "Inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -106,7 +110,7 @@ namespace TorneosFut
                 if (txtUsuario.Text == "admin")
                     admin = true; //para saber si el que ingresa es el admin*/
                 //Inicio n = new Inicio(admin);
-                Principal n = new Principal(conec.RetornaUser(txtUsuario.Text), encrip.Desencriptar(conec.RetornaClave(txtUsuario.Text), "futxpert"), txtUsuario.Text);
+                Principal n = new Principal(csDatos.ObtenerUsuarioBD(txtUsuario.Text), encrip.Desencriptar(csDatos.ObtenerClaveBD(txtUsuario.Text), "futxpert"), txtUsuario.Text);
                 this.Hide();
                 n.ShowDialog();
                 txtUsuario.Text = "";

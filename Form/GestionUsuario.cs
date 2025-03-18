@@ -45,7 +45,7 @@ namespace Usuarios
 
         private void btngCrear_Click(object sender, EventArgs e)
         {
-            AggUsuario a = new AggUsuario(true, "-1", conexion.Usuario, conexion.Clave);
+            AggEditUsuario a = new AggEditUsuario(true, "-1", conexion.Usuario, conexion.Clave);
             //AbrirFormEnPanel(panelDgv, a);
             a.ShowDialog();
             txtFiltro.Text = "";
@@ -59,7 +59,7 @@ namespace Usuarios
                 if (dgvUsuarios.CurrentRow.Index >= 0)
                 {
                     string id = csDatos.ObtenerIDUsuarioDesdeDGV(dgvUsuarios);
-                    AggUsuario a = new AggUsuario(false, id, conexion.Usuario, conexion.Clave);
+                    AggEditUsuario a = new AggEditUsuario(false, id, conexion.Usuario, conexion.Clave);
                     //AbrirFormEnPanel(panelDgv, a);
                     a.ShowDialog();
                 }
