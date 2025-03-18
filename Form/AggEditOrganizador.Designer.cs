@@ -1,6 +1,6 @@
 ﻿namespace TorneosFut
 {
-    partial class AggEditOrganizadorres
+    partial class AggEditOrganizador
     {
         /// <summary>
         /// Required designer variable.

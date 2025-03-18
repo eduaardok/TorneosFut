@@ -81,7 +81,7 @@
             // 
             this.X.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.X.BackgroundImage = global::TorneosFut.Properties.Resources.delete;
-            this.X.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.X.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.X.Cursor = System.Windows.Forms.Cursors.Hand;
             this.X.FlatAppearance.BorderSize = 0;
             this.X.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -173,7 +173,7 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.Transparent;
             this.panel4.BackgroundImage = global::TorneosFut.Properties.Resources.key__1_;
-            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel4.Location = new System.Drawing.Point(51, 197);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(38, 36);
@@ -183,7 +183,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.BackgroundImage = global::TorneosFut.Properties.Resources.userr;
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel3.Location = new System.Drawing.Point(51, 130);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(38, 36);
@@ -193,7 +193,7 @@
             // 
             this.Ptbhide.BackColor = System.Drawing.Color.Transparent;
             this.Ptbhide.BackgroundImage = global::TorneosFut.Properties.Resources.hide1;
-            this.Ptbhide.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Ptbhide.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Ptbhide.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Ptbhide.Location = new System.Drawing.Point(270, 211);
             this.Ptbhide.Name = "Ptbhide";

@@ -82,11 +82,11 @@
     <Compile Include="Form\Auditoria.Designer.cs">
       <DependentUpon>Auditoria.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\AggEditOrganizadorres.cs">
+    <Compile Include="Form\AggEditOrganizador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\AggEditOrganizadorres.Designer.cs">
-      <DependentUpon>AggEditOrganizadorres.cs</DependentUpon>
+    <Compile Include="Form\AggEditOrganizador.Designer.cs">
+      <DependentUpon>AggEditOrganizador.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\AggEditPatrocinador.cs">
       <SubType>Form</SubType>
@@ -241,8 +241,8 @@
     <EmbeddedResource Include="Form\AggEditEstadio.resx">
       <DependentUpon>AggEditEstadio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\AggEditOrganizadorres.resx">
-      <DependentUpon>AggEditOrganizadorres.cs</DependentUpon>
+    <EmbeddedResource Include="Form\AggEditOrganizador.resx">
+      <DependentUpon>AggEditOrganizador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\AggEditPatrocinador.resx">
       <DependentUpon>AggEditPatrocinador.cs</DependentUpon>

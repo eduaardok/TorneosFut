@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TorneosFut
 {
-    public partial class AggEditOrganizadorres: Form
+    public partial class AggEditOrganizador: Form
     {
-        public AggEditOrganizadorres()
+        public AggEditOrganizador()
         {
             InitializeComponent();
         }
