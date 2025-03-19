@@ -29,8 +29,6 @@ namespace Usuarios
         {
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
             csDGV.MostrarUsuarios(dgvUsuarios);
-            csDGV.AdaptarDGV(dgvUsuarios, panelDgv);
-
         }
         void ActualizarTabla()
         {
@@ -116,6 +114,12 @@ namespace Usuarios
 
         private void txtFiltro_TextAlignChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void GestionUsuario_Shown(object sender, EventArgs e)
+        {
+            csDGV.AdaptarDGV(dgvUsuarios, panelDgv);
 
         }
     }

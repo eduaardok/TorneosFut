@@ -23,10 +23,8 @@ namespace TorneosFut
                                          $" or TablaAfectada like '%{filtro}%'");
             else
                 dt = csConexion.ListDGV($"Select * from AuditoriaSesion where Usuario like '%{filtro}%'");
-
             return dt;
         }
-
         public DataTable AuditoriaSesion()
         {
             DataTable dt = csConexion.ListDGV("Select * from AuditoriaSesion");

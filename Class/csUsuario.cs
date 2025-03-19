@@ -87,7 +87,7 @@ namespace TorneosFut
         }
         public string NombreDeID(string id)
         {
-            DataTable dt = conexion.ListDGV($"select Nombre from Usuario where IDUsuario={id}");
+            DataTable dt = conexion.ListDGV($"select Nombres from Usuario where IDUsuario={id}");
             return dt.Rows[0][0].ToString();
         }
         public string UsuarioDeID(string id)
@@ -121,7 +121,7 @@ namespace TorneosFut
         #region ListasParaValidaciones
         public DataTable ListaNombres()
         {
-            return conexion.ListDGV("select Nombre from Usuario");
+            return conexion.ListDGV("select Nombres from Usuario");
         }
         public DataTable ListaUsuarios()
         {
@@ -140,7 +140,7 @@ namespace TorneosFut
         #region Listas
         public DataTable ListaDeUsuarios()
         {
-           DataTable dt = conexion.ListDGV("Select * from Usuario");
+           DataTable dt = conexion.ListDGV("Select IDUsuario, Nombres, NombreUsuario, Correo, NombreUsuarioBD from Usuario");
            return dt;
         }
         public DataTable ListaDeUsuariosFiltro(bool m, string filtro)

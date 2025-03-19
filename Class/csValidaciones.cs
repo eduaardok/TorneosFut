@@ -20,7 +20,7 @@ namespace TorneosFut
         public bool ValidarNombre(string nombre, string id="-1")
         {
             int cont = 0;
-            if (id == "-1")
+            if (id != "-1")
                 cont = -1;
             DataTable dt = csUsuario.ListaNombres();
             for(int i=0; i<dt.Rows.Count; i++)
@@ -35,7 +35,7 @@ namespace TorneosFut
         public bool ValidarUsuario(string nombreusuario, string id = "-1")
         {
             int cont = 0;
-            if (id == "-1")
+            if (id != "-1")
                 cont = -1;
             DataTable dt = csUsuario.ListaUsuarios();
             for (int i = 0; i < dt.Rows.Count; i++)
@@ -50,7 +50,7 @@ namespace TorneosFut
         public bool ValidarUsuarioBD(string nombreusuariobd, string id = "-1")
         {
             int cont = 0;
-            if (id == "-1")
+            if (id != "-1")
                 cont = -1;
             DataTable dt = csUsuario.ListaUsuariosBD();
             for (int i = 0; i < dt.Rows.Count; i++)
@@ -65,7 +65,7 @@ namespace TorneosFut
         public bool ValidarCorreo(string correo, string id = "-1")
         {
             int cont = 0;
-            if (id == "-1")
+            if (id != "-1")
                 cont = -1;
             DataTable dt = csUsuario.ListaUsuariosBD();
             for (int i = 0; i < dt.Rows.Count; i++)

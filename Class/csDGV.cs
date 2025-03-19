@@ -83,6 +83,7 @@ namespace TorneosFut
         public void MostrarUsuarios(DataGridView dgv)
         {
             dgv.DataSource = csUsuario.ListaDeUsuarios();
+            AdaptarDGV(dgv);
         }
         public void MostrarUsuariosFiltro(DataGridView dgv, bool mostrarClave, string filtro)
         {
