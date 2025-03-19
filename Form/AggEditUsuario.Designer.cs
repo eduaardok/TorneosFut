@@ -44,6 +44,7 @@
             this.txtClaveBD = new System.Windows.Forms.TextBox();
             this.txtUsuarioBD = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.btngEnviar = new Guna.UI2.WinForms.Guna2Button();
             this.cmbCorreos = new System.Windows.Forms.ComboBox();
             this.txtCorreo = new System.Windows.Forms.TextBox();
@@ -55,6 +56,7 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lbBorde = new System.Windows.Forms.Label();
             this.btngSalir = new Guna.UI2.WinForms.Guna2Button();
             this.lblEncabezado = new System.Windows.Forms.Label();
             this.panelOpc.SuspendLayout();
@@ -276,12 +278,26 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.btnCancelar);
             this.panel5.Controls.Add(this.btngEnviar);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel5.Location = new System.Drawing.Point(0, 392);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(829, 50);
             this.panel5.TabIndex = 33;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            this.btnCancelar.Font = new System.Drawing.Font("Onest Bold", 15.75F, System.Drawing.FontStyle.Bold);
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.Location = new System.Drawing.Point(533, 0);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(145, 50);
+            this.btnCancelar.TabIndex = 35;
+            this.btnCancelar.Text = "CANCELAR";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btngEnviar
             // 
@@ -302,9 +318,9 @@
             this.btngEnviar.ForeColor = System.Drawing.Color.Black;
             this.btngEnviar.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btngEnviar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
-            this.btngEnviar.Location = new System.Drawing.Point(695, 0);
+            this.btngEnviar.Location = new System.Drawing.Point(684, 0);
             this.btngEnviar.Name = "btngEnviar";
-            this.btngEnviar.Size = new System.Drawing.Size(134, 50);
+            this.btngEnviar.Size = new System.Drawing.Size(145, 50);
             this.btngEnviar.TabIndex = 34;
             this.btngEnviar.Text = "ENVIAR";
             this.btngEnviar.Click += new System.EventHandler(this.btngEnviar_Click);
@@ -421,6 +437,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.panel2.Controls.Add(this.lbBorde);
             this.panel2.Controls.Add(this.btngSalir);
             this.panel2.Controls.Add(this.lblEncabezado);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -428,6 +445,14 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(829, 50);
             this.panel2.TabIndex = 28;
+            // 
+            // lbBorde
+            // 
+            this.lbBorde.Location = new System.Drawing.Point(0, 0);
+            this.lbBorde.Name = "lbBorde";
+            this.lbBorde.Size = new System.Drawing.Size(829, 492);
+            this.lbBorde.TabIndex = 55;
+            this.lbBorde.Paint += new System.Windows.Forms.PaintEventHandler(this.lbBorde_Paint);
             // 
             // btngSalir
             // 
@@ -466,7 +491,7 @@
             this.lblEncabezado.TabIndex = 33;
             this.lblEncabezado.Text = "CREACIÓN DE USUARIO";
             // 
-            // AggUsuario
+            // AggEditUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -475,7 +500,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "AggUsuario";
+            this.Name = "AggEditUsuario";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -528,5 +553,7 @@
         private System.Windows.Forms.Label lblaNombre;
         private System.Windows.Forms.Label lblaClaveBD;
         private System.Windows.Forms.Label lblaUsuarioBD;
+        private System.Windows.Forms.Label lbBorde;
+        public System.Windows.Forms.Button btnCancelar;
     }
 }

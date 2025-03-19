@@ -40,6 +40,7 @@
             this.txtUbicacion = new System.Windows.Forms.TextBox();
             this.txtNombreEstadio = new System.Windows.Forms.TextBox();
             this.ptbImagen = new System.Windows.Forms.PictureBox();
+            this.lbBorde = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbImagen)).BeginInit();
             this.SuspendLayout();
@@ -189,6 +190,14 @@
             this.ptbImagen.TabIndex = 74;
             this.ptbImagen.TabStop = false;
             // 
+            // lbBorde
+            // 
+            this.lbBorde.Location = new System.Drawing.Point(0, 0);
+            this.lbBorde.Name = "lbBorde";
+            this.lbBorde.Size = new System.Drawing.Size(501, 405);
+            this.lbBorde.TabIndex = 77;
+            this.lbBorde.Paint += new System.Windows.Forms.PaintEventHandler(this.lbBorde_Paint);
+            // 
             // AggEditEstadio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -206,6 +215,7 @@
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.txtUbicacion);
             this.Controls.Add(this.txtNombreEstadio);
+            this.Controls.Add(this.lbBorde);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AggEditEstadio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -231,5 +241,6 @@
         private System.Windows.Forms.Label lblNombre;
         public System.Windows.Forms.TextBox txtUbicacion;
         public System.Windows.Forms.TextBox txtNombreEstadio;
+        private System.Windows.Forms.Label lbBorde;
     }
 }

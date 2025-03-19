@@ -41,6 +41,7 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.txtUbicacion = new System.Windows.Forms.TextBox();
             this.txtNombreEstadio = new System.Windows.Forms.TextBox();
+            this.lbBorde = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -200,7 +201,15 @@
             this.txtNombreEstadio.Size = new System.Drawing.Size(209, 28);
             this.txtNombreEstadio.TabIndex = 99;
             // 
-            // AggEditOrganizadorres
+            // lbBorde
+            // 
+            this.lbBorde.Location = new System.Drawing.Point(0, 0);
+            this.lbBorde.Name = "lbBorde";
+            this.lbBorde.Size = new System.Drawing.Size(802, 507);
+            this.lbBorde.TabIndex = 111;
+            this.lbBorde.Paint += new System.Windows.Forms.PaintEventHandler(this.lbBorde_Paint);
+            // 
+            // AggEditOrganizador
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
@@ -217,8 +226,9 @@
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.txtUbicacion);
             this.Controls.Add(this.txtNombreEstadio);
+            this.Controls.Add(this.lbBorde);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "AggEditOrganizadorres";
+            this.Name = "AggEditOrganizador";
             this.Text = "AggEditOrganizadorres";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -242,5 +252,6 @@
         private System.Windows.Forms.Label lblNombre;
         public System.Windows.Forms.TextBox txtUbicacion;
         public System.Windows.Forms.TextBox txtNombreEstadio;
+        private System.Windows.Forms.Label lbBorde;
     }
 }

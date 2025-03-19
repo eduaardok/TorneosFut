@@ -31,8 +31,6 @@
             this.btnguardar = new System.Windows.Forms.Button();
             this.tblequiposder = new System.Windows.Forms.DataGridView();
             this.btnnuevo = new System.Windows.Forms.Button();
-            this.btnagregar = new System.Windows.Forms.Button();
-            this.btnquitar = new System.Windows.Forms.Button();
             this.lbltotal = new System.Windows.Forms.Label();
             this.lblequipoder = new System.Windows.Forms.Label();
             this.lblequipoizq = new System.Windows.Forms.Label();
@@ -40,6 +38,9 @@
             this.btngCancelar = new Guna.UI2.WinForms.Guna2Button();
             this.lblDorsal = new System.Windows.Forms.Label();
             this.numDorsal = new System.Windows.Forms.NumericUpDown();
+            this.btnAgregar = new Guna.UI2.WinForms.Guna2Button();
+            this.btnQuitar = new Guna.UI2.WinForms.Guna2Button();
+            this.lbBorde = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tblequiposder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblequiposizq)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDorsal)).BeginInit();
@@ -47,15 +48,14 @@
             // 
             // btnguardar
             // 
-            this.btnguardar.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnguardar.Location = new System.Drawing.Point(32, 371);
+            this.btnguardar.Font = new System.Drawing.Font("Onest Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnguardar.Location = new System.Drawing.Point(290, 387);
             this.btnguardar.Margin = new System.Windows.Forms.Padding(2);
             this.btnguardar.Name = "btnguardar";
-            this.btnguardar.Size = new System.Drawing.Size(63, 27);
+            this.btnguardar.Size = new System.Drawing.Size(107, 52);
             this.btnguardar.TabIndex = 20;
             this.btnguardar.Text = "Guardar";
             this.btnguardar.UseVisualStyleBackColor = true;
-            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
             // 
             // tblequiposder
             // 
@@ -83,30 +83,6 @@
             this.btnnuevo.TabIndex = 17;
             this.btnnuevo.Text = "Nuevo equipo";
             this.btnnuevo.UseVisualStyleBackColor = true;
-            // 
-            // btnagregar
-            // 
-            this.btnagregar.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnagregar.Location = new System.Drawing.Point(305, 86);
-            this.btnagregar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnagregar.Name = "btnagregar";
-            this.btnagregar.Size = new System.Drawing.Size(63, 27);
-            this.btnagregar.TabIndex = 16;
-            this.btnagregar.Text = ">>";
-            this.btnagregar.UseVisualStyleBackColor = true;
-            this.btnagregar.Click += new System.EventHandler(this.btnagregar_Click);
-            // 
-            // btnquitar
-            // 
-            this.btnquitar.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnquitar.Location = new System.Drawing.Point(305, 117);
-            this.btnquitar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnquitar.Name = "btnquitar";
-            this.btnquitar.Size = new System.Drawing.Size(63, 27);
-            this.btnquitar.TabIndex = 15;
-            this.btnquitar.Text = "<<";
-            this.btnquitar.UseVisualStyleBackColor = true;
-            this.btnquitar.Click += new System.EventHandler(this.btnquitar_Click);
             // 
             // lbltotal
             // 
@@ -179,9 +155,9 @@
             this.btngCancelar.ForeColor = System.Drawing.Color.Black;
             this.btngCancelar.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btngCancelar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
-            this.btngCancelar.Location = new System.Drawing.Point(-1, 417);
+            this.btngCancelar.Location = new System.Drawing.Point(-1, 409);
             this.btngCancelar.Name = "btngCancelar";
-            this.btngCancelar.Size = new System.Drawing.Size(122, 33);
+            this.btngCancelar.Size = new System.Drawing.Size(132, 41);
             this.btngCancelar.TabIndex = 32;
             this.btngCancelar.Text = "CANCELAR";
             this.btngCancelar.Click += new System.EventHandler(this.btngCancelar_Click);
@@ -191,7 +167,7 @@
             this.lblDorsal.AutoSize = true;
             this.lblDorsal.BackColor = System.Drawing.Color.Transparent;
             this.lblDorsal.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDorsal.Location = new System.Drawing.Point(313, 175);
+            this.lblDorsal.Location = new System.Drawing.Point(319, 264);
             this.lblDorsal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDorsal.Name = "lblDorsal";
             this.lblDorsal.Size = new System.Drawing.Size(44, 16);
@@ -200,15 +176,63 @@
             // 
             // numDorsal
             // 
-            this.numDorsal.Location = new System.Drawing.Point(293, 194);
+            this.numDorsal.Location = new System.Drawing.Point(302, 293);
             this.numDorsal.Name = "numDorsal";
             this.numDorsal.Size = new System.Drawing.Size(84, 20);
             this.numDorsal.TabIndex = 35;
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAgregar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAgregar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAgregar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAgregar.FillColor = System.Drawing.Color.White;
+            this.btnAgregar.Font = new System.Drawing.Font("Onest Bold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.ForeColor = System.Drawing.Color.Black;
+            this.btnAgregar.HoverState.CustomBorderColor = System.Drawing.Color.White;
+            this.btnAgregar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.btnAgregar.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnAgregar.Location = new System.Drawing.Point(306, 121);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(72, 36);
+            this.btnAgregar.TabIndex = 54;
+            this.btnAgregar.Text = ">>";
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // btnQuitar
+            // 
+            this.btnQuitar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnQuitar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnQuitar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnQuitar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnQuitar.FillColor = System.Drawing.Color.White;
+            this.btnQuitar.Font = new System.Drawing.Font("Onest Bold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuitar.ForeColor = System.Drawing.Color.Black;
+            this.btnQuitar.HoverState.CustomBorderColor = System.Drawing.Color.White;
+            this.btnQuitar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.btnQuitar.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnQuitar.Location = new System.Drawing.Point(306, 182);
+            this.btnQuitar.Name = "btnQuitar";
+            this.btnQuitar.Size = new System.Drawing.Size(72, 36);
+            this.btnQuitar.TabIndex = 53;
+            this.btnQuitar.Text = "<<";
+            this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
+            // 
+            // lbBorde
+            // 
+            this.lbBorde.Location = new System.Drawing.Point(0, 0);
+            this.lbBorde.Name = "lbBorde";
+            this.lbBorde.Size = new System.Drawing.Size(684, 450);
+            this.lbBorde.TabIndex = 55;
+            this.lbBorde.Paint += new System.Windows.Forms.PaintEventHandler(this.lbBorde_Paint);
             // 
             // AgregarJugadorEquipo
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(684, 450);
+            this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.btnQuitar);
             this.Controls.Add(this.numDorsal);
             this.Controls.Add(this.lblDorsal);
             this.Controls.Add(this.btngCancelar);
@@ -216,11 +240,10 @@
             this.Controls.Add(this.btnguardar);
             this.Controls.Add(this.tblequiposder);
             this.Controls.Add(this.btnnuevo);
-            this.Controls.Add(this.btnagregar);
-            this.Controls.Add(this.btnquitar);
             this.Controls.Add(this.lbltotal);
             this.Controls.Add(this.lblequipoder);
             this.Controls.Add(this.lblequipoizq);
+            this.Controls.Add(this.lbBorde);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AgregarJugadorEquipo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -239,8 +262,6 @@
         private System.Windows.Forms.Button btnguardar;
         private System.Windows.Forms.DataGridView tblequiposder;
         private System.Windows.Forms.Button btnnuevo;
-        private System.Windows.Forms.Button btnagregar;
-        private System.Windows.Forms.Button btnquitar;
         private System.Windows.Forms.Label lbltotal;
         private System.Windows.Forms.Label lblequipoder;
         private System.Windows.Forms.Label lblequipoizq;
@@ -248,5 +269,8 @@
         private Guna.UI2.WinForms.Guna2Button btngCancelar;
         private System.Windows.Forms.Label lblDorsal;
         private System.Windows.Forms.NumericUpDown numDorsal;
+        private Guna.UI2.WinForms.Guna2Button btnAgregar;
+        private Guna.UI2.WinForms.Guna2Button btnQuitar;
+        private System.Windows.Forms.Label lbBorde;
     }
 }

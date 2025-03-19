@@ -21,6 +21,7 @@ namespace TorneosFut
         GestionarPartidos partidos;
         Principal T;
         csDGV csDGV;
+        InscripcionEquipo InspEquipo;
         string IDTorneo;
         string IDPartido;
 
@@ -31,6 +32,7 @@ namespace TorneosFut
             patro = new Patrocinadores(u,c);
             orga = new Organizadores(u,c);
             csDGV= new csDGV(u ,c);
+            InspEquipo = new InscripcionEquipo(u,c);
             T = r;
 
         }
@@ -133,6 +135,11 @@ namespace TorneosFut
         private void txtBuscarTorneo_TextChanged(object sender, EventArgs e)
         {
             csDGV.MostrarTorneoFiltro(dgvTorneo,  txtBuscarTorneo.Text);
+        }
+
+        private void btnInscripcionEquipos_Click(object sender, EventArgs e)
+        {
+            InspEquipo.ShowDialog();
         }
     }
 }

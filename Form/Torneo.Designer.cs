@@ -38,7 +38,7 @@
             this.btnOrganizador = new System.Windows.Forms.Button();
             this.btnCrear = new Guna.UI2.WinForms.Guna2Button();
             this.btnPatrocinadores = new Guna.UI2.WinForms.Guna2Button();
-            this.btnEquipos = new Guna.UI2.WinForms.Guna2Button();
+            this.btnInscripcionEquipos = new Guna.UI2.WinForms.Guna2Button();
             this.btnEditar = new Guna.UI2.WinForms.Guna2Button();
             this.btnPartidos = new Guna.UI2.WinForms.Guna2Button();
             this.txtBuscarTorneo = new System.Windows.Forms.TextBox();
@@ -181,31 +181,32 @@
             this.btnPatrocinadores.TabIndex = 63;
             this.btnPatrocinadores.Text = "ASIGNAR PATROCINADORES";
             // 
-            // btnEquipos
+            // btnInscripcionEquipos
             // 
-            this.btnEquipos.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEquipos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.btnEquipos.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnEquipos.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
-            this.btnEquipos.CheckedState.FillColor = System.Drawing.Color.Black;
-            this.btnEquipos.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.btnEquipos.CustomBorderColor = System.Drawing.Color.White;
-            this.btnEquipos.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 4);
-            this.btnEquipos.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnEquipos.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnEquipos.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnEquipos.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnEquipos.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.btnEquipos.Font = new System.Drawing.Font("Onest Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEquipos.ForeColor = System.Drawing.Color.White;
-            this.btnEquipos.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
-            this.btnEquipos.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.btnEquipos.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnEquipos.Location = new System.Drawing.Point(730, 211);
-            this.btnEquipos.Name = "btnEquipos";
-            this.btnEquipos.Size = new System.Drawing.Size(180, 59);
-            this.btnEquipos.TabIndex = 62;
-            this.btnEquipos.Text = "INSCRIBIR EQUIPOS";
+            this.btnInscripcionEquipos.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnInscripcionEquipos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            this.btnInscripcionEquipos.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnInscripcionEquipos.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.btnInscripcionEquipos.CheckedState.FillColor = System.Drawing.Color.Black;
+            this.btnInscripcionEquipos.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.btnInscripcionEquipos.CustomBorderColor = System.Drawing.Color.White;
+            this.btnInscripcionEquipos.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 4);
+            this.btnInscripcionEquipos.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnInscripcionEquipos.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnInscripcionEquipos.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnInscripcionEquipos.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnInscripcionEquipos.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            this.btnInscripcionEquipos.Font = new System.Drawing.Font("Onest Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInscripcionEquipos.ForeColor = System.Drawing.Color.White;
+            this.btnInscripcionEquipos.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.btnInscripcionEquipos.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            this.btnInscripcionEquipos.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnInscripcionEquipos.Location = new System.Drawing.Point(730, 211);
+            this.btnInscripcionEquipos.Name = "btnInscripcionEquipos";
+            this.btnInscripcionEquipos.Size = new System.Drawing.Size(180, 59);
+            this.btnInscripcionEquipos.TabIndex = 62;
+            this.btnInscripcionEquipos.Text = "INSCRIBIR EQUIPOS";
+            this.btnInscripcionEquipos.Click += new System.EventHandler(this.btnInscripcionEquipos_Click);
             // 
             // btnEditar
             // 
@@ -348,7 +349,7 @@
             this.Controls.Add(this.panelmodul);
             this.Controls.Add(this.btnCrear);
             this.Controls.Add(this.btnPatrocinadores);
-            this.Controls.Add(this.btnEquipos);
+            this.Controls.Add(this.btnInscripcionEquipos);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnPartidos);
             this.Controls.Add(this.pictureBox1);
@@ -380,7 +381,7 @@
         private System.Windows.Forms.Button button1;
         private Guna.UI2.WinForms.Guna2Button btnCrear;
         private Guna.UI2.WinForms.Guna2Button btnPatrocinadores;
-        private Guna.UI2.WinForms.Guna2Button btnEquipos;
+        private Guna.UI2.WinForms.Guna2Button btnInscripcionEquipos;
         private Guna.UI2.WinForms.Guna2Button btnEditar;
         private Guna.UI2.WinForms.Guna2Button btnPartidos;
         private System.Windows.Forms.PictureBox pictureBox1;

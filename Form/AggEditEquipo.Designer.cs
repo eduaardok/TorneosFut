@@ -48,6 +48,7 @@
             this.cmbequipacionvisitante = new System.Windows.Forms.ComboBox();
             this.Eq = new System.Windows.Forms.Label();
             this.cmbEquipacionLocal = new System.Windows.Forms.ComboBox();
+            this.lbBorde = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbImagen)).BeginInit();
             this.SuspendLayout();
@@ -90,7 +91,7 @@
             this.lblNombre.AutoSize = true;
             this.lblNombre.BackColor = System.Drawing.Color.White;
             this.lblNombre.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(56, 113);
+            this.lblNombre.Location = new System.Drawing.Point(56, 112);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(84, 24);
             this.lblNombre.TabIndex = 32;
@@ -422,6 +423,14 @@
             this.cmbEquipacionLocal.TabIndex = 60;
             this.cmbEquipacionLocal.TextChanged += new System.EventHandler(this.cmbEquipacionLocal_TextChanged);
             // 
+            // lbBorde
+            // 
+            this.lbBorde.Location = new System.Drawing.Point(0, 0);
+            this.lbBorde.Name = "lbBorde";
+            this.lbBorde.Size = new System.Drawing.Size(561, 470);
+            this.lbBorde.TabIndex = 62;
+            this.lbBorde.Paint += new System.Windows.Forms.PaintEventHandler(this.lbBorde_Paint);
+            // 
             // AggEditEquipo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -447,6 +456,7 @@
             this.Controls.Add(this.txtPresidente);
             this.Controls.Add(this.cmbGenero);
             this.Controls.Add(this.txtNombreClub);
+            this.Controls.Add(this.lbBorde);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -485,5 +495,6 @@
         public System.Windows.Forms.ComboBox cmbequipacionvisitante;
         private System.Windows.Forms.Label Eq;
         public System.Windows.Forms.ComboBox cmbEquipacionLocal;
+        private System.Windows.Forms.Label lbBorde;
     }
 }

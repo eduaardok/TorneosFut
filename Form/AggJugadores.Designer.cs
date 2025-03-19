@@ -55,6 +55,7 @@
             this.txtIDJugador = new System.Windows.Forms.TextBox();
             this.ptbImagen = new System.Windows.Forms.PictureBox();
             this.btnCargarimagen = new Guna.UI2.WinForms.Guna2Button();
+            this.lbBorde = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbImagen)).BeginInit();
             this.SuspendLayout();
@@ -368,6 +369,14 @@
             this.btnCargarimagen.Text = "CARGAR IMAGEN";
             this.btnCargarimagen.Click += new System.EventHandler(this.btnCargarimagen_Click);
             // 
+            // lbBorde
+            // 
+            this.lbBorde.Location = new System.Drawing.Point(0, 0);
+            this.lbBorde.Name = "lbBorde";
+            this.lbBorde.Size = new System.Drawing.Size(849, 557);
+            this.lbBorde.TabIndex = 54;
+            this.lbBorde.Paint += new System.Windows.Forms.PaintEventHandler(this.lbBorde_Paint);
+            // 
             // AggJugadores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -399,6 +408,7 @@
             this.Controls.Add(this.dtpNacimiento);
             this.Controls.Add(this.cmbsexo);
             this.Controls.Add(this.Txtnombre);
+            this.Controls.Add(this.lbBorde);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -445,6 +455,7 @@
         public System.Windows.Forms.TextBox txtIDJugador;
         public System.Windows.Forms.PictureBox ptbImagen;
         public Guna.UI2.WinForms.Guna2Button btnCargarimagen;
+        private System.Windows.Forms.Label lbBorde;
     }
 }
 

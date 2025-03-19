@@ -43,6 +43,7 @@
             this.lblEncabezado = new System.Windows.Forms.Label();
             this.lblfecha = new System.Windows.Forms.Label();
             this.dtpNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.lbBorde = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ptbImagen)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -55,7 +56,6 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 34);
             this.label1.TabIndex = 1;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtNombre
             // 
@@ -65,7 +65,6 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(225, 28);
             this.txtNombre.TabIndex = 5;
-            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // label2
             // 
@@ -76,7 +75,6 @@
             this.label2.Size = new System.Drawing.Size(84, 24);
             this.label2.TabIndex = 6;
             this.label2.Text = "Nombre";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -87,7 +85,6 @@
             this.label3.Size = new System.Drawing.Size(84, 24);
             this.label3.TabIndex = 8;
             this.label3.Text = "Apellido";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // txtApellido
             // 
@@ -97,7 +94,6 @@
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(225, 28);
             this.txtApellido.TabIndex = 7;
-            this.txtApellido.TextChanged += new System.EventHandler(this.txtApellido_TextChanged);
             // 
             // label4
             // 
@@ -108,7 +104,6 @@
             this.label4.Size = new System.Drawing.Size(54, 24);
             this.label4.TabIndex = 10;
             this.label4.Text = "Sexo";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // cmbSexo
             // 
@@ -120,9 +115,8 @@
             "Femenino"});
             this.cmbSexo.Location = new System.Drawing.Point(36, 223);
             this.cmbSexo.Name = "cmbSexo";
-            this.cmbSexo.Size = new System.Drawing.Size(225, 32);
+            this.cmbSexo.Size = new System.Drawing.Size(225, 29);
             this.cmbSexo.TabIndex = 11;
-            this.cmbSexo.SelectedIndexChanged += new System.EventHandler(this.cmbSexo_SelectedIndexChanged);
             // 
             // btnGuardar
             // 
@@ -159,7 +153,6 @@
             this.ptbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbImagen.TabIndex = 15;
             this.ptbImagen.TabStop = false;
-            this.ptbImagen.Click += new System.EventHandler(this.ptbImagen_Click);
             // 
             // btngCancelar
             // 
@@ -195,7 +188,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(498, 50);
             this.panel2.TabIndex = 50;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // lblEncabezado
             // 
@@ -217,7 +209,6 @@
             this.lblfecha.Size = new System.Drawing.Size(205, 24);
             this.lblfecha.TabIndex = 54;
             this.lblfecha.Text = "Fecha de Nacimiento\r\n";
-            this.lblfecha.Click += new System.EventHandler(this.lblfecha_Click);
             // 
             // dtpNacimiento
             // 
@@ -228,7 +219,14 @@
             this.dtpNacimiento.Size = new System.Drawing.Size(225, 20);
             this.dtpNacimiento.TabIndex = 53;
             this.dtpNacimiento.Value = new System.DateTime(2005, 6, 15, 0, 0, 0, 0);
-            this.dtpNacimiento.ValueChanged += new System.EventHandler(this.dtpNacimiento_ValueChanged);
+            // 
+            // lbBorde
+            // 
+            this.lbBorde.Location = new System.Drawing.Point(0, 0);
+            this.lbBorde.Name = "lbBorde";
+            this.lbBorde.Size = new System.Drawing.Size(498, 443);
+            this.lbBorde.TabIndex = 55;
+            this.lbBorde.Paint += new System.Windows.Forms.PaintEventHandler(this.lbBorde_Paint);
             // 
             // AggEditEntrenador
             // 
@@ -249,6 +247,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbBorde);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimizeBox = false;
             this.Name = "AggEditEntrenador";
@@ -282,5 +281,6 @@
         public System.Windows.Forms.Label lblEncabezado;
         public System.Windows.Forms.Label lblfecha;
         public System.Windows.Forms.DateTimePicker dtpNacimiento;
+        private System.Windows.Forms.Label lbBorde;
     }
 }
