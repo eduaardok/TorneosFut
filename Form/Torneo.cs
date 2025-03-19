@@ -19,9 +19,10 @@ namespace TorneosFut
         Patrocinadores patro;
         Organizadores orga;
         GestionarPartidos partidos;
+        InscripcionEquipo inscripcion;
         Principal T;
         csDGV csDGV;
-        InscripcionEquipo InspEquipo;
+        
         string IDTorneo;
         string IDPartido;
 
@@ -32,7 +33,6 @@ namespace TorneosFut
             patro = new Patrocinadores(u,c);
             orga = new Organizadores(u,c);
             csDGV= new csDGV(u ,c);
-            InspEquipo = new InscripcionEquipo(u,c);
             T = r;
 
         }
@@ -100,14 +100,19 @@ namespace TorneosFut
 
         private void btnPartidos_Click(object sender, EventArgs e)
         {
-
             partidos = new GestionarPartidos(IDTorneo,conexion.Usuario, conexion.Clave,this,T);
             panelmodul.Show();
             T.Hide();
             partidos.ShowDialog();
-           
         }
-        
+        private void btnInscripcionEquipos_Click(object sender, EventArgs e)
+        {
+            inscripcion = new InscripcionEquipo(IDTorneo, conexion.Usuario, conexion.Clave);
+            //panelmodul.Show();
+            //T.Hide();
+            inscripcion.ShowDialog();
+        }
+
         private void btnCrear_Click_1(object sender, EventArgs e)
         {
             AggTorneo aggTorneo = new AggTorneo(true, 1, conexion.Usuario, conexion.Clave);
@@ -135,11 +140,6 @@ namespace TorneosFut
         private void txtBuscarTorneo_TextChanged(object sender, EventArgs e)
         {
             csDGV.MostrarTorneoFiltro(dgvTorneo,  txtBuscarTorneo.Text);
-        }
-
-        private void btnInscripcionEquipos_Click(object sender, EventArgs e)
-        {
-            InspEquipo.ShowDialog();
         }
     }
 }

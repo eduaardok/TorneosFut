@@ -1,4 +1,5 @@
-﻿using System;
+﻿using pruebas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +13,15 @@ namespace TorneosFut
 {
     public partial class InscripcionEquipo: Form
     {
-        public InscripcionEquipo(string u, string c)
+        csConexion conexion;
+        string IDPartido;
+        csDGV csDGV;
+        string IdTorneo;
+        public InscripcionEquipo(string IDtorneo, string u, string c)
         {
+            conexion = new csConexion(u, c);
+            IdTorneo = IDtorneo;
+            csDGV = new csDGV(u, c, IdTorneo, IDPartido);
             InitializeComponent();
         }
 
@@ -24,9 +32,16 @@ namespace TorneosFut
 
         private void InscripcionEquipo_Load(object sender, EventArgs e)
         {
-            string[] items = { "barcelona", "emele3c", "liga", "independiente", "emelec", "liga de loja", "imbabura" };
+            DataTable torneo = conexion.ListDGV($"Select NombreTorneo from Torneo where IDTorneo = {IdTorneo}");
+            string Nametorneo = torneo.Rows[0]["NombreTorneo"].ToString();
+            lbNameTorneo.Text = Nametorneo;
 
-            cmbEquipos.Items.AddRange(items);
+            DataTable equipos = conexion.ListDGV($"select NombreEquipo from Equipo");
+            foreach (DataRow row in equipos.Rows)
+            {
+                string nombreEquipo = row["NombreEquipo"].ToString();
+                cmbEquipos.Items.Add(nombreEquipo);
+            }
             cmbEquipos.DropDownStyle = ComboBoxStyle.DropDown;
             cmbEquipos.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             cmbEquipos.AutoCompleteSource = AutoCompleteSource.ListItems;
