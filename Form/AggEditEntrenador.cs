@@ -22,12 +22,14 @@ namespace PruebasTorneos
         csConexion conexion;
         csDatos csDatos;
         static string nombreArchivo = "";
+        static string id;
         static bool agregar;
-        public AggEditEntrenador(string u, string c, bool n)
+        public AggEditEntrenador(string u, string c, bool n, string i)
         {
             conexion = new csConexion(u,c);
             csDatos = new csDatos(u, c);
             agregar = n;
+            id = i;
             InitializeComponent();
         }
 
@@ -38,7 +40,8 @@ namespace PruebasTorneos
             {
                 lblEncabezado.Text = "EDITAR ENTRENADOR";
                 btnGuardar.Text = "EDITAR";
-                txtID.Enabled= false;
+                Editar();
+                //txtID.Enabled= false;
             }
         }
 
@@ -46,7 +49,7 @@ namespace PruebasTorneos
         {
             if (agregar)
             {
-                if (csDatos.InsertarEntrenador(txtID.Text,txtNombre.Text, txtApellido.Text, cmbSexo.Text,dtpNacimiento.Value.ToString(), nombreArchivo, img.FileName))
+                if (csDatos.InsertarEntrenador(txtNombre.Text, txtApellido.Text, cmbSexo.Text,dtpNacimiento.Value.ToString(), nombreArchivo, img.FileName))
                 {
                     MessageBox.Show("insertado");
                 }
@@ -59,7 +62,7 @@ namespace PruebasTorneos
                                $"NombreEntrenador = '{txtNombre.Text}', " +
                                $"ApellidoEntrenador = '{txtApellido.Text}', " +
                                $"Sexo = '{cmbSexo.Text}', " +
-                               $"FechaNacimiento = '{dtpNacimiento.Value:yyyy-MM-dd}' where IDEntrenador = '{txtID.Text}' ";
+                               $"FechaNacimiento = '{dtpNacimiento.Value:yyyy-MM-dd}' where IDEntrenador = '{id}' ";
                 if (conexion.Consulta(query))
                 {
                     MessageBox.Show("Entrenador actualizado correctamente");
@@ -69,6 +72,15 @@ namespace PruebasTorneos
                     MessageBox.Show("Error al actualizar el entrenador");
                 }
             }
+        }
+        void Editar()
+        {
+            txtNombre.Text = csDatos.ObtenerNombreEntrenadorPorID(id);
+            txtApellido.Text = csDatos.ObtenerApellidoEntrenadorPorID(id);
+            if (cmbSexo.Items.Contains(csDatos.ObtenerSexoEntrenadorPorID(id)))
+                cmbSexo.SelectedItem = csDatos.ObtenerSexoEntrenadorPorID(id);
+            dtpNacimiento.Value = (DateTime.Parse(csDatos.ObtenerFechaNacEntrenadorPorID(id)).Date);
+            csDatos.MostrarImagenEntrenador(id, ptbImagen);
         }
         public string ObtenerNombreArchivo()
         {
@@ -99,10 +111,6 @@ namespace PruebasTorneos
 
         }
 
-        private void txtID_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void label5_Click(object sender, EventArgs e)
         {

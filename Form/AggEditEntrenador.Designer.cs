@@ -41,8 +41,6 @@
             this.btngCancelar = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblEncabezado = new System.Windows.Forms.Label();
-            this.lblID = new System.Windows.Forms.Label();
-            this.txtID = new System.Windows.Forms.TextBox();
             this.lblfecha = new System.Windows.Forms.Label();
             this.dtpNacimiento = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.ptbImagen)).BeginInit();
@@ -63,7 +61,7 @@
             // 
             this.txtNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtNombre.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(36, 139);
+            this.txtNombre.Location = new System.Drawing.Point(36, 118);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(225, 28);
             this.txtNombre.TabIndex = 5;
@@ -73,7 +71,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(32, 112);
+            this.label2.Location = new System.Drawing.Point(32, 91);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 24);
             this.label2.TabIndex = 6;
@@ -84,7 +82,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(32, 168);
+            this.label3.Location = new System.Drawing.Point(32, 147);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 24);
             this.label3.TabIndex = 8;
@@ -95,7 +93,7 @@
             // 
             this.txtApellido.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtApellido.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellido.Location = new System.Drawing.Point(36, 193);
+            this.txtApellido.Location = new System.Drawing.Point(36, 172);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(225, 28);
             this.txtApellido.TabIndex = 7;
@@ -105,7 +103,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(32, 224);
+            this.label4.Location = new System.Drawing.Point(32, 203);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(54, 24);
             this.label4.TabIndex = 10;
@@ -120,9 +118,9 @@
             this.cmbSexo.Items.AddRange(new object[] {
             "Masculino",
             "Femenino"});
-            this.cmbSexo.Location = new System.Drawing.Point(36, 244);
+            this.cmbSexo.Location = new System.Drawing.Point(36, 223);
             this.cmbSexo.Name = "cmbSexo";
-            this.cmbSexo.Size = new System.Drawing.Size(225, 29);
+            this.cmbSexo.Size = new System.Drawing.Size(225, 32);
             this.cmbSexo.TabIndex = 11;
             this.cmbSexo.SelectedIndexChanged += new System.EventHandler(this.cmbSexo_SelectedIndexChanged);
             // 
@@ -144,7 +142,7 @@
             // 
             this.btnImportar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
             this.btnImportar.Font = new System.Drawing.Font("Onest Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImportar.Location = new System.Drawing.Point(303, 270);
+            this.btnImportar.Location = new System.Drawing.Point(303, 274);
             this.btnImportar.Name = "btnImportar";
             this.btnImportar.Size = new System.Drawing.Size(166, 38);
             this.btnImportar.TabIndex = 16;
@@ -155,7 +153,7 @@
             // ptbImagen
             // 
             this.ptbImagen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ptbImagen.Location = new System.Drawing.Point(303, 81);
+            this.ptbImagen.Location = new System.Drawing.Point(303, 89);
             this.ptbImagen.Name = "ptbImagen";
             this.ptbImagen.Size = new System.Drawing.Size(166, 175);
             this.ptbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -210,32 +208,11 @@
             this.lblEncabezado.TabIndex = 33;
             this.lblEncabezado.Text = "AGREGAR ENTRENADOR";
             // 
-            // lblID
-            // 
-            this.lblID.AutoSize = true;
-            this.lblID.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblID.Location = new System.Drawing.Point(32, 53);
-            this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(30, 24);
-            this.lblID.TabIndex = 51;
-            this.lblID.Text = "ID";
-            this.lblID.Click += new System.EventHandler(this.label5_Click);
-            // 
-            // txtID
-            // 
-            this.txtID.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtID.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtID.Location = new System.Drawing.Point(36, 81);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(225, 28);
-            this.txtID.TabIndex = 52;
-            this.txtID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
-            // 
             // lblfecha
             // 
             this.lblfecha.AutoSize = true;
             this.lblfecha.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblfecha.Location = new System.Drawing.Point(32, 276);
+            this.lblfecha.Location = new System.Drawing.Point(32, 255);
             this.lblfecha.Name = "lblfecha";
             this.lblfecha.Size = new System.Drawing.Size(205, 24);
             this.lblfecha.TabIndex = 54;
@@ -244,13 +221,13 @@
             // 
             // dtpNacimiento
             // 
-            this.dtpNacimiento.Location = new System.Drawing.Point(36, 303);
-            this.dtpNacimiento.MaxDate = new System.DateTime(2017, 12, 31, 0, 0, 0, 0);
-            this.dtpNacimiento.MinDate = new System.DateTime(1983, 1, 1, 0, 0, 0, 0);
+            this.dtpNacimiento.Location = new System.Drawing.Point(36, 282);
+            this.dtpNacimiento.MaxDate = new System.DateTime(2005, 6, 15, 0, 0, 0, 0);
+            this.dtpNacimiento.MinDate = new System.DateTime(1929, 11, 29, 0, 0, 0, 0);
             this.dtpNacimiento.Name = "dtpNacimiento";
             this.dtpNacimiento.Size = new System.Drawing.Size(225, 20);
             this.dtpNacimiento.TabIndex = 53;
-            this.dtpNacimiento.Value = new System.DateTime(2017, 12, 31, 0, 0, 0, 0);
+            this.dtpNacimiento.Value = new System.DateTime(2005, 6, 15, 0, 0, 0, 0);
             this.dtpNacimiento.ValueChanged += new System.EventHandler(this.dtpNacimiento_ValueChanged);
             // 
             // AggEditEntrenador
@@ -260,8 +237,6 @@
             this.ControlBox = false;
             this.Controls.Add(this.lblfecha);
             this.Controls.Add(this.dtpNacimiento);
-            this.Controls.Add(this.txtID);
-            this.Controls.Add(this.lblID);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btngCancelar);
             this.Controls.Add(this.btnImportar);
@@ -305,8 +280,6 @@
         public Guna.UI2.WinForms.Guna2Button btngCancelar;
         public System.Windows.Forms.Panel panel2;
         public System.Windows.Forms.Label lblEncabezado;
-        public System.Windows.Forms.Label lblID;
-        public System.Windows.Forms.TextBox txtID;
         public System.Windows.Forms.Label lblfecha;
         public System.Windows.Forms.DateTimePicker dtpNacimiento;
     }

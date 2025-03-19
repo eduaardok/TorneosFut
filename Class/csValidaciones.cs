@@ -78,6 +78,9 @@ namespace TorneosFut
             return true;
         }
         #endregion
+        #region Validaciones Entrenador
+        
+        #endregion
 
     }
 }

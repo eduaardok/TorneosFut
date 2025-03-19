@@ -16,11 +16,13 @@ namespace PruebasTorneos
     {
         csConexion conexion;
         csDGV csDGV;
+        csDatos CsDatos;
         csEntrenador csEntrenador;
         public Entrenador(string u, string c)
         {
             conexion = new csConexion(u, c);
             csDGV= new csDGV(u, c);
+            CsDatos = new csDatos(u, c);
             csEntrenador = new csEntrenador(u, c);
             InitializeComponent();
         }
@@ -35,7 +37,7 @@ namespace PruebasTorneos
 
         private void btnAggDT_Click(object sender, EventArgs e)
         {
-            AggEditEntrenador agg = new AggEditEntrenador(conexion.Usuario, conexion.Clave, true);
+            AggEditEntrenador agg = new AggEditEntrenador(conexion.Usuario, conexion.Clave, true, "-1");
             agg.ShowDialog();
         }
 
@@ -50,9 +52,7 @@ namespace PruebasTorneos
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-
-            AggEditEntrenador edit = new AggEditEntrenador(conexion.Usuario, conexion.Clave, false);
-            edit.ShowDialog();
+            
         }
 
         private void btnEstadisticas_Click(object sender, EventArgs e)
@@ -82,42 +82,45 @@ namespace PruebasTorneos
 
         private void btnEditar_Click_1(object sender, EventArgs e)
         {
-            AggEditEntrenador ent = new AggEditEntrenador(conexion.Usuario, conexion.Clave, false);
-            ent.txtID.Text = dgvEntrenador[0, dgvEntrenador.CurrentRow.Index].Value.ToString();
-            ent.txtNombre.Text = dgvEntrenador[1, dgvEntrenador.CurrentRow.Index].Value.ToString();
-            ent.txtApellido.Text = dgvEntrenador[2, dgvEntrenador.CurrentRow.Index].Value.ToString();
-            ent.cmbSexo.Text = dgvEntrenador[3, dgvEntrenador.CurrentRow.Index].Value.ToString();
-            var fechaNacimiento = dgvEntrenador[4, dgvEntrenador.CurrentRow.Index].Value;
-            if (fechaNacimiento != DBNull.Value)
-            {
-                DateTime fecha;
-                if (DateTime.TryParse(fechaNacimiento.ToString(), out fecha))
-                {
-                    if (fecha >= ent.dtpNacimiento.MinDate && fecha <= ent.dtpNacimiento.MaxDate)
-                    {
-                        ent.dtpNacimiento.Value = fecha;
-                    }
-                    else
-                    {
-                        ent.dtpNacimiento.Value = ent.dtpNacimiento.MaxDate;
-                    }
-                }
-                else
-                {
-                    ent.dtpNacimiento.Value = DateTime.Today;
-                }
-            }
-            else
-            {
-                ent.dtpNacimiento.Value = DateTime.Today;
-            }
+            string id = CsDatos.ObtenerIDEntrenadorDesdeDGV(dgvEntrenador);
+            AggEditEntrenador edit = new AggEditEntrenador(conexion.Usuario, conexion.Clave, false, id);
+            edit.ShowDialog();
+            /* AggEditEntrenador ent = new AggEditEntrenador(conexion.Usuario, conexion.Clave, false);
+             ent.txtID.Text = dgvEntrenador[0, dgvEntrenador.CurrentRow.Index].Value.ToString();
+             ent.txtNombre.Text = dgvEntrenador[1, dgvEntrenador.CurrentRow.Index].Value.ToString();
+             ent.txtApellido.Text = dgvEntrenador[2, dgvEntrenador.CurrentRow.Index].Value.ToString();
+             ent.cmbSexo.Text = dgvEntrenador[3, dgvEntrenador.CurrentRow.Index].Value.ToString();
+             var fechaNacimiento = dgvEntrenador[4, dgvEntrenador.CurrentRow.Index].Value;
+             if (fechaNacimiento != DBNull.Value)
+             {
+                 DateTime fecha;
+                 if (DateTime.TryParse(fechaNacimiento.ToString(), out fecha))
+                 {
+                     if (fecha >= ent.dtpNacimiento.MinDate && fecha <= ent.dtpNacimiento.MaxDate)
+                     {
+                         ent.dtpNacimiento.Value = fecha;
+                     }
+                     else
+                     {
+                         ent.dtpNacimiento.Value = ent.dtpNacimiento.MaxDate;
+                     }
+                 }
+                 else
+                 {
+                     ent.dtpNacimiento.Value = DateTime.Today;
+                 }
+             }
+             else
+             {
+                 ent.dtpNacimiento.Value = DateTime.Today;
+             }
 
-            ent.ShowDialog();
+             ent.ShowDialog();*/
         }
 
         private void btnAggDT_Click_1(object sender, EventArgs e)
         {
-            AggEditEntrenador ent = new AggEditEntrenador(conexion.Usuario, conexion.Clave,true);
+            AggEditEntrenador ent = new AggEditEntrenador(conexion.Usuario, conexion.Clave,true, "-1");
             ent.ShowDialog();
         }
 
@@ -150,7 +153,7 @@ namespace PruebasTorneos
             if (dgvEntrenador.CurrentRow.Index >= 0)
             {
                 string id = dgvEntrenador.Rows[dgvEntrenador.CurrentRow.Index].Cells[0].Value.ToString();
-                csEntrenador.MostrarImagen(id, ptbIMG);
+                CsDatos.MostrarImagenEntrenador(id, ptbIMG);
             }
         }
     }
