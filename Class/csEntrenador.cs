@@ -14,11 +14,11 @@ namespace PruebasTorneos
 {
     internal class csEntrenador
     {
-        csConexion conexion;
+        csConexion csConexion;
         csImagenes csImagenes;
         public csEntrenador(string u, string c)
         {
-            conexion = new csConexion(u,c);
+            csConexion = new csConexion(u,c);
             csImagenes = new csImagenes();
         }
         
@@ -38,7 +38,7 @@ namespace PruebasTorneos
                 char numeroRandom = rnd.Next(0, 10).ToString()[0];
                 id = $"{primeraLetraNombre}{primeraLetraApellido}{letraAleatoriaNombre}{letraAleatoriaApellido}{numeroRandom}";
                 // Verificar si el ID ya existe en la base de datos
-                DataTable dt = conexion.ListDGV($"SELECT 1 FROM Entrenador WHERE IDEntrenador = '{id}'");
+                DataTable dt = csConexion.ListDGV($"SELECT 1 FROM Entrenador WHERE IDEntrenador = '{id}'");
                 repetir = (dt.Rows.Count > 0);
             } while (repetir); // Si ya existe, se repite el proceso
             return id;
@@ -50,29 +50,29 @@ namespace PruebasTorneos
         }
         public string NombreEntrenadorPorID(string id)
         {
-            DataTable dt = conexion.ListDGV($"select NombreEntrenador from Entrenador where IDEntrenador='{id}'");
+            DataTable dt = csConexion.ListDGV($"select NombreEntrenador from Entrenador where IDEntrenador='{id}'");
             return dt.Rows[0][0].ToString();
         }
         public string ApellidoEntrenadorPorID(string id)
         {
-            DataTable dt = conexion.ListDGV($"select ApellidoEntrenador from Entrenador where IDEntrenador='{id}'");
+            DataTable dt = csConexion.ListDGV($"select ApellidoEntrenador from Entrenador where IDEntrenador='{id}'");
             return dt.Rows[0][0].ToString();
         }
         public string SexoEntrenadorPorID(string id)
         {
-            DataTable dt = conexion.ListDGV($"select Sexo from Entrenador where IDEntrenador='{id}'");
+            DataTable dt = csConexion.ListDGV($"select Sexo from Entrenador where IDEntrenador='{id}'");
             return dt.Rows[0][0].ToString();
         }
         public string FechaNacEntrenadorPorID(string id)
         {
-            DataTable dt = conexion.ListDGV($"select FechaNacimiento from Entrenador where IDEntrenador='{id}'");
+            DataTable dt = csConexion.ListDGV($"select FechaNacimiento from Entrenador where IDEntrenador='{id}'");
             return dt.Rows[0][0].ToString();
         }
         public string ImagenEntrenador(string i)
         {
 
             DataGridView dt = new DataGridView();
-            dt.DataSource=    conexion.ListDGV($"Select ImagenEntrenador from Entrenador where IDEntrenador = '{i}'");
+            dt.DataSource=    csConexion.ListDGV($"Select ImagenEntrenador from Entrenador where IDEntrenador = '{i}'");
             string img = dt.Rows[0].Cells[0].Value.ToString(); 
             return img;
         }     
@@ -80,12 +80,12 @@ namespace PruebasTorneos
 
         public DataTable ListaIdEntrenadores()
         {
-            DataTable dt = conexion.ListDGV("Select IDEntrenador from Entrenador");
+            DataTable dt = csConexion.ListDGV("Select IDEntrenador from Entrenador");
             return dt;
         }
         public bool AgregarEntrenador(string nombre, string apellido, string sexo,string fecha , string imagen)
         {
-            if (conexion.Consulta($"insert into Entrenador (IDEntrenador, NombreEntrenador, ApellidoEntrenador, Sexo, FechaNacimiento, ImagenEntrenador)" +
+            if (csConexion.Consulta($"insert into Entrenador (IDEntrenador, NombreEntrenador, ApellidoEntrenador, Sexo, FechaNacimiento, ImagenEntrenador)" +
                 $" values ('{IDGeneradoEntrenador(nombre,apellido)}','{nombre}','{apellido}', '{sexo}', '{fecha}', '{imagen}')"))
                 return true;
             else
@@ -93,20 +93,20 @@ namespace PruebasTorneos
         }
         public DataTable ListaidEntrenador()
         {
-            DataTable dt = conexion.ListDGV("Select IDEntrenador from Entrenador");
+            DataTable dt = csConexion.ListDGV("Select IDEntrenador from Entrenador");
             return dt;
         }
         public void Cargar(DataGridView dgvEntrenador, PictureBox ptb)
         {
             string consul = "select IDEntrenador, NombreEntrenador, ApellidoEntrenador, Sexo, FechaNacimiento from Entrenador";
-            DataTable dt = conexion.ListDGV(consul);
+            DataTable dt = csConexion.ListDGV(consul);
             dgvEntrenador.DataSource = dt;
             MostrarImagen("10111", ptb);
         }
         
         public void MostrarImagen(string id,PictureBox ptb)
         {
-            DataTable datat = conexion.ListDGV($"Select ImagenEntrenador from Entrenador where IDEntrenador = '{id}'");
+            DataTable datat = csConexion.ListDGV($"Select ImagenEntrenador from Entrenador where IDEntrenador = '{id}'");
 
             if (datat != null && datat.Rows.Count > 0)
             {
@@ -117,13 +117,13 @@ namespace PruebasTorneos
         public DataTable ListadeEntrenadoresFiltro(string filtro)
         {
             DataTable dt;
-            dt = conexion.ListDGV($"select IDEntrenador, NombreEntrenador, ApellidoEntrenador, Sexo, FechaNacimiento FROM Entrenador where IDEntrenador like '%{filtro}%' " +
+            dt = csConexion.ListDGV($"select IDEntrenador, NombreEntrenador, ApellidoEntrenador, Sexo, FechaNacimiento FROM Entrenador where IDEntrenador like '%{filtro}%' " +
                 $"or NombreEntrenador like '%{filtro}%' or ApellidoEntrenador like '%{filtro}%' or FechaNacimiento like '%{filtro}%'");
             return dt;
         }
         public DataTable ListadeEntrenadores()
         {
-            DataTable dt = conexion.ListDGV("Select * from Entrenador");
+            DataTable dt = csConexion.ListDGV("Select * from Entrenador");
             return dt;
         }
     }

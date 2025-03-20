@@ -15,13 +15,13 @@ namespace Usuarios
     {
         static bool agg = true;
         static string id;
-        csConexion conexion;
-        csEncriptar encriptar;
+        //csConexion conexion;
+        csEncriptar csEncriptar;
         csDatos csDatos;
         csValidaciones csValidaciones;
         public AggEditUsuario(bool a, string i, string u, string c)
         {
-            conexion = new csConexion(u,c);
+            //conexion = new csConexion(u,c);
             csDatos = new csDatos(u, c);
             csValidaciones = new csValidaciones(u, c);
             agg = a;
@@ -43,8 +43,8 @@ namespace Usuarios
             txtClaveBD.Text = txtClaveBD.Text.Trim();
             if (Validaciones())
             {
-                string claveApp = encriptar.Encriptar(txtClaveApp.Text, "futxpert");
-                string claveBD = encriptar.Encriptar(txtClaveBD.Text, "futxpert");
+                string claveApp = csEncriptar.Encriptar(txtClaveApp.Text, "futxpert");
+                string claveBD = csEncriptar.Encriptar(txtClaveBD.Text, "futxpert");
                 if (agg)
                 {
                     if (csDatos.InsertarUsuario(txtNombre.Text, txtUsuarioApp.Text, claveApp, txtCorreo.Text + cmbCorreos.Text, txtUsuarioBD.Text, claveBD))
@@ -71,7 +71,7 @@ namespace Usuarios
         private void AgregarUsuario_Load(object sender, EventArgs e)
         {
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
-            encriptar = new csEncriptar();
+            csEncriptar = new csEncriptar();
             Editar();
         }
         void Editar()
@@ -83,7 +83,7 @@ namespace Usuarios
                 btngEnviar.Text = "EDITAR";
                 txtNombre.Text = csDatos.ObtenerNombrePorID(id);
                 txtUsuarioApp.Text = csDatos.ObtenerUsuarioPorID(id);
-                txtClaveApp.Text = encriptar.Desencriptar(csDatos.ObtenerClavePorID(id), "futxpert");
+                txtClaveApp.Text = csEncriptar.Desencriptar(csDatos.ObtenerClavePorID(id), "futxpert");
                 if (csDatos.ObtenerCorreoPorID(id).Contains('@'))
                 {
                     string[] c = csDatos.ObtenerCorreoPorID(id).Split('@');
@@ -95,7 +95,7 @@ namespace Usuarios
                         cmbCorreos.SelectedIndex = -1; // Deja en blanco si no está en la lista
                 }
                 txtUsuarioBD.Text = csDatos.ObtenerUsuarioBDPorID(id);
-                txtClaveBD.Text = encriptar.Desencriptar(csDatos.ObtenerClaveBDPorID(id), "futxpert");
+                txtClaveBD.Text = csEncriptar.Desencriptar(csDatos.ObtenerClaveBDPorID(id), "futxpert");
             }
         }
         bool Validaciones()
