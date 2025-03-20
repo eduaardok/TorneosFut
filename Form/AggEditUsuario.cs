@@ -49,7 +49,7 @@ namespace Usuarios
                 {
                     if (csDatos.InsertarUsuario(txtNombre.Text, txtUsuarioApp.Text, claveApp, txtCorreo.Text + cmbCorreos.Text, txtUsuarioBD.Text, claveBD))
                     {
-                        csDatos.CrearLoginBD(txtUsuarioBD.Text, txtClaveBD.Text);
+                        //csDatos.CrearLoginBD(txtUsuarioBD.Text, txtClaveBD.Text);
                         MessageBox.Show($"Usuario agregado");
                         this.Close();
                     }    
@@ -58,7 +58,7 @@ namespace Usuarios
                 {
                     if (csDatos.ActualizarUsuario(id, txtNombre.Text, txtUsuarioApp.Text, claveApp, txtCorreo.Text + cmbCorreos.Text, txtUsuarioBD.Text, claveBD))
                     {
-                        csDatos.ActualizarClaveBD(txtUsuarioBD.Text, txtClaveBD.Text);
+                        //csDatos.ActualizarClaveBD(txtUsuarioBD.Text, txtClaveBD.Text);
                         MessageBox.Show($"Usuario editado");
                         this.Close();
                     }

@@ -55,11 +55,11 @@ namespace TorneosFut
        
         public string ObtenerUsuarioBD(string usuario)
         {
-           return  csUsuario.UsuarioBD(usuario);
+           return  csUsuario.UsuarioBDDeNombreUsuario(usuario);
         }
         public string ObtenerClaveBD(string usuario)
         {
-            return csUsuario.ClaveBD(usuario);
+            return csUsuario.ClaveBDDeNombreUsuario(usuario);
         }
         #region DatosDeID
         public string ObtenerNombrePorID(string id)
@@ -125,10 +125,10 @@ namespace TorneosFut
         }
         #endregion
         #region Insertar
-        public bool CrearLoginBD(string u, string c)
+       /* public bool CrearLoginBD(string u, string c)
         {
             return csUsuario.NuevoLogin(u, c);
-        }
+        }*/
         public bool InsertarUsuario(string nombre, string nombreusuario, string clave, string correo, string nombreusuariobd, string clavebd)
         {
             if (csUsuario.AgregarUsuario(nombre, nombreusuario, clave, correo, nombreusuariobd, clavebd))
@@ -230,10 +230,10 @@ namespace TorneosFut
         {
             return csUsuario.NuevaClaveUsuario(clave, id);
         }
-        public bool ActualizarClaveBD(string u, string c)
+        /*public bool ActualizarClaveBD(string u, string c)
         {
             return csUsuario.NuevaClaveLogin(u, c);
-        }
+        }*/
         public bool ActualizarUsuario(string id, string nombre, string nombreusuario, string clave, string correo, string nombreusuariobd, string clavebd)
         {
             return csUsuario.ActualizarUsuario(id, nombre, nombreusuario, clave, correo, nombreusuariobd , clavebd);
