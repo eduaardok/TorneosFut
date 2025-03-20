@@ -58,7 +58,7 @@ namespace TorneosFut
                 $"        <Correo>{correo}</Correo>" +
                 "    </Organizador>" +
                 "</Organizadores>";
-            string consultaSQL = $"DECLARE  @cadenaa varchar(MAX)= '{xmlOrganizador}';'; EXEC spRegistrarOrganizador @cadenaa;";
+            string consultaSQL = $"DECLARE  @cadenaa varchar(MAX)= '{xmlOrganizador}'; EXEC spRegistrarOrganizador @cadenaa;";
             return csConexion.Consulta(consultaSQL);
         }
         #endregion
@@ -79,7 +79,7 @@ namespace TorneosFut
                 "    </Organizador>" +
                 "</Organizadores>";
 
-            string consultaSQL = $"DECLARE  @cadenaa varchar(MAX)= '{xmlOrganizador}';'; EXEC spEditarOrganizador @cadenaa;";
+            string consultaSQL = $"DECLARE  @cadenaa varchar(MAX)= '{xmlOrganizador}'; EXEC spEditarOrganizador @cadenaa;";
             return csConexion.Consulta(consultaSQL);
         }
         #endregion

@@ -70,7 +70,8 @@
     <Compile Include="Class\csAuditorias.cs" />
     <Compile Include="Class\csValidaciones.cs" />
     <Compile Include="Class\csArbitro.cs" />
-    <Compile Include="csOrganizador.cs" />
+    <Compile Include="Class\csOrganizador.cs" />
+    <Compile Include="Class\csPatrocinador.cs" />
     <Compile Include="Form\AgregarJugadorEquipo.cs">
       <SubType>Form</SubType>
     </Compile>
