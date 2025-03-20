@@ -139,14 +139,14 @@ namespace TorneosFut.Class
                 csImagenes.CargarImagen(nombreIMG, ptb);
             }
         }
-
+        #region Insertar
         public bool AgregarJugador(string idJugador, TextBox Txtnombre, TextBox txtapellido, ComboBox cmbsexo, DateTimePicker dtpNacimiento,
                                       ComboBox CmbPosicion, TextBox TxtNacionalidad, TextBox txtpeso, TextBox txtaltura, ComboBox cmbpierna, string imagen)
         {
             NombreJugador = Txtnombre.Text;
             ApellidoJugador = txtapellido.Text;
             Sexo = cmbsexo.Text;
-            FechaNacimiento = dtpNacimiento.Value.ToString();
+            FechaNacimiento = dtpNacimiento.Value.ToString("yyyy-MM-dd");
             MessageBox.Show(FechaNacimiento);
             Posicion = CmbPosicion.Text;
             Nacionalidad = TxtNacionalidad.Text;
@@ -176,6 +176,7 @@ namespace TorneosFut.Class
             else
                 return false;
         }
+        #endregion
         public bool AgregarJugadorEquipo(string IDJugador, string IDEquipo, int Dorsal)
         {
             if (csConexion.Consulta($"insert into Jugador_Equipo (IDJugador, IDEquipo, FechaEntrada, Dorsal)" +
