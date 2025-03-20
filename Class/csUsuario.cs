@@ -160,7 +160,7 @@ namespace TorneosFut
         #region Inserts
         public bool AgregarUsuario(string nombre, string nombreusuario, string clave, string correo, string nombreusuariobd, string clavebd)
         {
-            return conexion.Consulta($"insert into Usuario (IDUsuario, Nombres, NombreUsuario, ClaveUsuario, Correo, NombreUsuarioBD, ClaveBD) " +
+            return conexion.Consulta($"insert into Usuario (Nombres, NombreUsuario, ClaveUsuario, Correo, NombreUsuarioBD, ClaveBD) " +
                 $"values ('{nombre}','{nombreusuario}', '{clave}', '{correo}', '{nombreusuariobd}', '{clavebd}')");
         }
         #endregion
