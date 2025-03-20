@@ -114,7 +114,7 @@ namespace TorneosFut
         }
        public string ObtenerImagenEntrenadorPorID(string id)
         {
-            return csEntrenador.ImagenEntrenador(id);
+            return csEntrenador.ImagenEntrenadorPorID(id);
         }
         #endregion
 
