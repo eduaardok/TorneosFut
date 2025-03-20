@@ -56,7 +56,7 @@ namespace Usuarios
                 }
                 else
                 {
-                    if (csDatos.ActualizarUsuario(id, txtNombre.Text, txtUsuarioApp.Text, claveApp, txtCorreo.Text + cmbCorreos.Text, txtUsuarioBD.Text, claveBD))
+                    if (csDatos.EditarUsuario(id, txtNombre.Text, txtUsuarioApp.Text, claveApp, txtCorreo.Text + cmbCorreos.Text, txtUsuarioBD.Text, claveBD))
                     {
                         //csDatos.ActualizarClaveBD(txtUsuarioBD.Text, txtClaveBD.Text);
                         MessageBox.Show($"Usuario editado");

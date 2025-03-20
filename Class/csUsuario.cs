@@ -224,7 +224,7 @@ namespace TorneosFut
                 $"        <ClaveBD>{clavebd}</ClaveBD>" +
                 "    </Usuario>" +
                 "</Usuarios>";
-            string consultaSQL = $"DECLARE @Datos XML = '{xmlUsuario}'; EXEC spRegistrarUsuarioXML @Datos;";
+            string consultaSQL = $"DECLARE @Datos XML = '{xmlUsuario}'; EXEC spRegistrarUsuario @Datos;";
 
             return csConexion.Consulta(consultaSQL);
         }
@@ -252,7 +252,7 @@ namespace TorneosFut
             $"        <ClaveBD>{ClaveBD}</ClaveBD>" +
             "    </Usuario>" +
             "</Usuarios>";
-            string consultaSQL = $"DECLARE @Datos XML = '{xmlUsuario}'; EXEC spActualizarUsuarioXML @Datos;";
+            string consultaSQL = $"DECLARE @Datos XML = '{xmlUsuario}'; EXEC spEditarUsuario @Datos;";
             return csConexion.Consulta(consultaSQL);
         }
         public bool NuevaClaveUsuario(string clave, string id)

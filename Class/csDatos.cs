@@ -21,6 +21,7 @@ namespace TorneosFut
         csEquipo csEquipo;
         csJugador csJugador;
         csTorneo csTorneo;
+        csArbitro csArbitro;
         public csDatos(string u, string c)
         {
             //csConexion = new csConexion(u, c);
@@ -30,6 +31,7 @@ namespace TorneosFut
             csEquipo = new csEquipo(u, c);
             csJugador = new csJugador(u, c);
             csTorneo = new csTorneo(u, c);
+            csArbitro = new csArbitro(u, c);
         }
 
         public bool Login(string usuario, string clave)
@@ -140,7 +142,7 @@ namespace TorneosFut
 
         }
         
-        public bool InsertarEntrenador(string nombre, string apellido, string sexo,string fecha, string imagen, string filename)
+        public bool InsertarEntrenador(string nombre, string apellido, string sexo,DateTime fecha, string imagen, string filename)
         {
             if (csEntrenador.AgregarEntrenador(nombre, apellido, sexo, fecha, imagen + Path.GetExtension(filename)))
             {
@@ -223,8 +225,12 @@ namespace TorneosFut
                 return false;
             }
         }
+        public bool InsertarArbittro(string id, string nombre, string apellido, string correo)
+        {
+            return csArbitro.AgregarArbitro(id, nombre, apellido, correo);
+        }
         #endregion
-        
+
         #region Actualizar
         public bool ActualizarClaveUsuario(string clave, string id)
         {
@@ -234,14 +240,23 @@ namespace TorneosFut
         {
             return csUsuario.NuevaClaveLogin(u, c);
         }*/
-        public bool ActualizarUsuario(string id, string nombre, string nombreusuario, string clave, string correo, string nombreusuariobd, string clavebd)
+        public bool EditarUsuario(string id, string nombre, string nombreusuario, string clave, string correo, string nombreusuariobd, string clavebd)
         {
             return csUsuario.ActualizarUsuario(id, nombre, nombreusuario, clave, correo, nombreusuariobd , clavebd);
         }
+        public bool EditarEntrenador(string id, string nombre, string apellido, string sexo, DateTime fechaN, string imagen,string filename)
+        {
+            csImagenes.guardarIMG(filename, imagen);
+            return csEntrenador.ActualizarEntrenador(id, nombre, apellido, sexo, fechaN, imagen+Path.GetExtension(filename));
+        }
+        public bool EditarArbitro(string id, string nombre, string apellido, string correo)
+        {
+            return csArbitro.ActualizarArbitro(id, nombre, apellido, correo);
+        }
         #endregion
-        
+
         #region Validaciones (hay que moverlas)
-       
+
         public bool JugadorSinEquipo(string IdJugador, string IdEquipo)
         {
             if (csJugador.DejarJugadorSinEquipo(IdJugador, IdEquipo))

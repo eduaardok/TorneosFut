@@ -126,14 +126,7 @@ namespace PruebasTorneos
             DataTable dt = csConexion.ListDGV("Select IDEntrenador from Entrenador");
             return dt;
         }
-        public bool AgregarEntrenador(string nombre, string apellido, string sexo,string fecha , string imagen)
-        {
-            if (csConexion.Consulta($"insert into Entrenador (IDEntrenador, NombreEntrenador, ApellidoEntrenador, Sexo, FechaNacimiento, ImagenEntrenador)" +
-                $" values ('{IDGeneradoEntrenador(nombre,apellido)}','{nombre}','{apellido}', '{sexo}', '{fecha}', '{imagen}')"))
-                return true;
-            else
-                return false;
-        }
+        
         public DataTable ListaidEntrenador()
         {
             DataTable dt = csConexion.ListDGV("Select IDEntrenador from Entrenador");
@@ -170,9 +163,9 @@ namespace PruebasTorneos
             return dt;
         }
         #region Insertar
-        public bool AgregarEntrenador(string id, string nombre, string apellido, string sexo, DateTime fechaN, string imagen)
+        public bool AgregarEntrenador(string nombre, string apellido, string sexo, DateTime fechaN, string imagen)
         {
-            IDEntrenador = id;
+            IDEntrenador = IDGeneradoEntrenador(nombre, apellido);
             NombreEntrenador = nombre;
             ApellidoEntrenador = apellido;
             Sexo = sexo;
@@ -185,7 +178,7 @@ namespace PruebasTorneos
                $"        <NombreEntrenador>{NombreEntrenador}</NombreEntrenador>" +
                $"        <ApellidoEntrenador>{ApellidoEntrenador}</ApellidoEntrenador>" +
                $"        <Sexo>{Sexo}</Sexo>" +
-               $"        <FechaNacimiento>{FechaNacimiento.Date}</FechaNacimiento>" +
+               $"        <FechaNacimiento>{FechaNacimiento.ToString("yyyy-MM-dd")}</FechaNacimiento>" +
                $"        <ImagenEntrenador>{ImagenEntrenador}</ImagenEntrenador>" +
                "    </Entrenador>" +
                "</Entrenadores>";
@@ -210,12 +203,12 @@ namespace PruebasTorneos
                 $"        <NombreEntrenador>{NombreEntrenador}</NombreEntrenador>" +
                 $"        <ApellidoEntrenador>{ApellidoEntrenador}</ApellidoEntrenador>" +
                 $"        <Sexo>{Sexo}</Sexo>" +
-                $"        <FechaNacimiento>{FechaNacimiento.Date}</FechaNacimiento>" +
+                $"        <FechaNacimiento>{FechaNacimiento.ToString("yyyy-MM-dd")}</FechaNacimiento>" +
                 $"        <ImagenEntrenador>{ImagenEntrenador}</ImagenEntrenador>" +
                 "    </Entrenador>" +
                 "</Entrenadores>";
 
-            string consultaSQL = $"DECLARE @Datos XML = '{xmlEntrenador}'; EXEC spActualizarEntrenador @Datos;";
+            string consultaSQL = $"DECLARE @Datos XML = '{xmlEntrenador}'; EXEC spEditarEntrenador @Datos;";
             return csConexion.Consulta(consultaSQL);
         }
         #endregion

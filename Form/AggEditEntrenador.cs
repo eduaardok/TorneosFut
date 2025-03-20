@@ -49,21 +49,16 @@ namespace PruebasTorneos
         {
             if (agregar)
             {
-                if (csDatos.InsertarEntrenador(txtNombre.Text, txtApellido.Text, cmbSexo.Text,dtpNacimiento.Value.ToString(), nombreArchivo, img.FileName))
+                if (csDatos.InsertarEntrenador(txtNombre.Text, txtApellido.Text, cmbSexo.Text,dtpNacimiento.Value, nombreArchivo, img.FileName))
                 {
-                    MessageBox.Show("insertado");
+                    MessageBox.Show("Se registró el entrenador correctamente.");
                 }
                 else
                     MessageBox.Show("no insertado");
             }
             else
             {
-                string query = $"UPDATE Entrenador SET " +
-                               $"NombreEntrenador = '{txtNombre.Text}', " +
-                               $"ApellidoEntrenador = '{txtApellido.Text}', " +
-                               $"Sexo = '{cmbSexo.Text}', " +
-                               $"FechaNacimiento = '{dtpNacimiento.Value:yyyy-MM-dd}' where IDEntrenador = '{id}' ";
-                if (conexion.Consulta(query))
+               if(csDatos.EditarEntrenador(id, txtNombre.Text, txtApellido.Text, cmbSexo.Text, dtpNacimiento.Value, nombreArchivo, img.FileName))
                 {
                     MessageBox.Show("Entrenador actualizado correctamente");
                 }
