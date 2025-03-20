@@ -98,21 +98,29 @@ namespace TorneosFut
         }
         void Logeo()
         {
-            string password = encrip.Encriptar(Txtclave.Text, "futxpert");
-            if (!csDatos.Login(txtUsuario.Text, password))
-            { 
-                MessageBox.Show("Credenciales incorrectas", "Inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if(CamposVacios())
+            {
+                MessageBox.Show("Ingrese un usuario y contraseña para acceder");
             }
             else
             {
-                MessageBox.Show("Se inició sesión de forma correcta");
-                Principal n = new Principal(csDatos.ObtenerUsuarioBD(txtUsuario.Text), encrip.Desencriptar(csDatos.ObtenerClaveBD(txtUsuario.Text), "futxpert"), txtUsuario.Text);
-                this.Hide();
-                n.ShowDialog();
-                txtUsuario.Text = "";
-                Txtclave.Text = "";
-                this.Show();
+                string password = encrip.Encriptar(Txtclave.Text, "futxpert");
+                if (!csDatos.Login(txtUsuario.Text, password))
+                {
+                    MessageBox.Show("Credenciales incorrectas", "Inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("Se inició sesión de forma correcta");
+                    Principal n = new Principal(csDatos.ObtenerUsuarioBD(txtUsuario.Text), encrip.Desencriptar(csDatos.ObtenerClaveBD(txtUsuario.Text), "futxpert"), txtUsuario.Text);
+                    this.Hide();
+                    n.ShowDialog();
+                    txtUsuario.Text = "";
+                    Txtclave.Text = "";
+                    this.Show();
+                }
             }
+             
         }
 
         private void Txtclave_KeyUp(object sender, KeyEventArgs e)
@@ -166,9 +174,36 @@ namespace TorneosFut
                 Txtclave.PasswordChar = '*';
             }
         }
-
+        bool CamposVacios()
+        {
+            txtUsuario.Text = txtUsuario.Text.Trim();
+            Txtclave.Text = Txtclave.Text.Trim();
+            if (txtUsuario.Text == "" || txtUsuario.Text == "Usuario")
+                return true;
+            if (Txtclave.Text == "" || Txtclave.Text == "Contraseña")
+                return true;
+            return false;
+        }
         private void Login_Paint(object sender, PaintEventArgs e)
         {
+        }
+
+        private void Txtclave_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Txtclave_MouseClick(object sender, MouseEventArgs e)
+        {
+            click++;
+            if (click == 1)
+            {
+                label3.Visible = true;
+                label4.Visible = true;
+                txtUsuario.Clear();
+                Txtclave.Clear();
+                Txtclave.PasswordChar = '*';
+            }
         }
     }
 }

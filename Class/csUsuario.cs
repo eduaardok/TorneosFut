@@ -23,12 +23,12 @@ namespace TorneosFut
         public string UsuarioBD(string u)
         {
             DataTable dt = conexion.ListDGV($"select NombreUsuarioBD from Usuario where NombreUsuario='{u}'");
-            return $"{dt.Rows[0][0].ToString()}";
+               return $"{dt.Rows[0][0].ToString()}";
         }
         public string ClaveBD(string u)
         {
             DataTable dt = conexion.ListDGV($"select ClaveBD from Usuario where NombreUsuario='{u}'");
-            return $"{dt.Rows[0][0].ToString()}";
+                return $"{dt.Rows[0][0].ToString()}";
         }
         #endregion
 
@@ -83,7 +83,10 @@ namespace TorneosFut
         public string ClaveUsuarioDeNombreUsuario(string nombreusuario)
         {
             DataTable dt = conexion.ListDGV($"select ClaveUsuario from Usuario where NombreUsuario='{nombreusuario}'");
-            return dt.Rows[0][0].ToString();
+            if (dt.Rows.Count > 0)
+                return dt.Rows[0][0].ToString();
+            else
+                return " ";
         }
         public string NombreDeID(string id)
         {

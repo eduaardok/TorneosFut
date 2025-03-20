@@ -45,6 +45,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.guna2NotificationPaint1 = new Guna.UI2.WinForms.Guna2NotificationPaint(this.components);
+            this.llblRecuperarClave = new System.Windows.Forms.LinkLabel();
             this.c.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ptbhide)).BeginInit();
@@ -115,6 +116,8 @@
             this.Txtclave.Size = new System.Drawing.Size(169, 20);
             this.Txtclave.TabIndex = 12;
             this.Txtclave.Text = "Contraseña";
+            this.Txtclave.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Txtclave_MouseClick);
+            this.Txtclave.TextChanged += new System.EventHandler(this.Txtclave_TextChanged);
             this.Txtclave.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Txtclave_KeyUp);
             // 
             // label3
@@ -208,6 +211,17 @@
             this.timer1.Interval = 10;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // llblRecuperarClave
+            // 
+            this.llblRecuperarClave.AutoSize = true;
+            this.llblRecuperarClave.LinkColor = System.Drawing.Color.Silver;
+            this.llblRecuperarClave.Location = new System.Drawing.Point(48, 330);
+            this.llblRecuperarClave.Name = "llblRecuperarClave";
+            this.llblRecuperarClave.Size = new System.Drawing.Size(113, 13);
+            this.llblRecuperarClave.TabIndex = 17;
+            this.llblRecuperarClave.TabStop = true;
+            this.llblRecuperarClave.Text = "Recuperar contraseña";
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -215,6 +229,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(372, 352);
+            this.Controls.Add(this.llblRecuperarClave);
             this.Controls.Add(this.Ptbhide);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -260,6 +275,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Timer timer2;
         private Guna.UI2.WinForms.Guna2NotificationPaint guna2NotificationPaint1;
+        private System.Windows.Forms.LinkLabel llblRecuperarClave;
     }
 }
 
