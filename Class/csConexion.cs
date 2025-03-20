@@ -108,6 +108,12 @@ namespace TorneosFut
                 CerrarCon();
                 return true;
             }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Error de SQL Server: " + ex.Message);
+                CerrarCon();
+                return false;
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
