@@ -102,6 +102,7 @@ namespace TorneosFut
             panelmodul.Show();
             partidos.ShowDialog();
             panelmodul.Hide();
+
         }
         private void btnInscripcionEquipos_Click(object sender, EventArgs e)
         {
@@ -134,7 +135,6 @@ namespace TorneosFut
                 txtBuscarTorneo.ForeColor = Color.Black;
             }
         }
-
         private void txtBuscarTorneo_TextChanged(object sender, EventArgs e)
         {
             csDGV.MostrarTorneoFiltro(dgvTorneo,  txtBuscarTorneo.Text);

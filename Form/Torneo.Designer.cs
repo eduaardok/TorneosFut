@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnJugador = new System.Windows.Forms.Button();
+            this.btnArbitros = new System.Windows.Forms.Button();
+            this.btnOrganizador = new System.Windows.Forms.Button();
             this.btnCrear = new Guna.UI2.WinForms.Guna2Button();
             this.btnPatrocinadores = new Guna.UI2.WinForms.Guna2Button();
             this.btnInscripcionEquipos = new Guna.UI2.WinForms.Guna2Button();
@@ -42,9 +45,6 @@
             this.dgvTorneo = new System.Windows.Forms.DataGridView();
             this.panelmodul = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnJugador = new System.Windows.Forms.Button();
-            this.btnArbitros = new System.Windows.Forms.Button();
-            this.btnOrganizador = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTorneo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -77,6 +77,56 @@
             this.button1.Text = "<--";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnJugador
+            // 
+            this.btnJugador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            this.btnJugador.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnJugador.Font = new System.Drawing.Font("Onest Bold", 20F, System.Drawing.FontStyle.Bold);
+            this.btnJugador.ForeColor = System.Drawing.Color.White;
+            this.btnJugador.Image = global::TorneosFut.Properties.Resources.icons8_patrocinador_50;
+            this.btnJugador.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnJugador.Location = new System.Drawing.Point(312, 3);
+            this.btnJugador.Name = "btnJugador";
+            this.btnJugador.Size = new System.Drawing.Size(319, 85);
+            this.btnJugador.TabIndex = 3;
+            this.btnJugador.Text = "PATROCINADORES";
+            this.btnJugador.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnJugador.UseVisualStyleBackColor = false;
+            this.btnJugador.Click += new System.EventHandler(this.btnJugadores_Click);
+            // 
+            // btnArbitros
+            // 
+            this.btnArbitros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            this.btnArbitros.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnArbitros.Font = new System.Drawing.Font("Onest Bold", 20F, System.Drawing.FontStyle.Bold);
+            this.btnArbitros.ForeColor = System.Drawing.Color.White;
+            this.btnArbitros.Image = global::TorneosFut.Properties.Resources.icons8_silbato_50;
+            this.btnArbitros.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnArbitros.Location = new System.Drawing.Point(651, 3);
+            this.btnArbitros.Name = "btnArbitros";
+            this.btnArbitros.Size = new System.Drawing.Size(294, 85);
+            this.btnArbitros.TabIndex = 6;
+            this.btnArbitros.Text = "ÁRBITROS";
+            this.btnArbitros.UseVisualStyleBackColor = false;
+            this.btnArbitros.Click += new System.EventHandler(this.btnArbitros_Click);
+            // 
+            // btnOrganizador
+            // 
+            this.btnOrganizador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            this.btnOrganizador.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnOrganizador.Font = new System.Drawing.Font("Onest Bold", 20F, System.Drawing.FontStyle.Bold);
+            this.btnOrganizador.ForeColor = System.Drawing.Color.White;
+            this.btnOrganizador.Image = global::TorneosFut.Properties.Resources.icons8_organizador_80;
+            this.btnOrganizador.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOrganizador.Location = new System.Drawing.Point(966, 3);
+            this.btnOrganizador.Name = "btnOrganizador";
+            this.btnOrganizador.Size = new System.Drawing.Size(318, 85);
+            this.btnOrganizador.TabIndex = 5;
+            this.btnOrganizador.Text = "ORGANIZADORES";
+            this.btnOrganizador.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnOrganizador.UseVisualStyleBackColor = false;
+            this.btnOrganizador.Click += new System.EventHandler(this.btnEstadios_Click);
             // 
             // btnCrear
             // 
@@ -236,38 +286,38 @@
             this.dgvTorneo.BackgroundColor = System.Drawing.Color.White;
             this.dgvTorneo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvTorneo.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTorneo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTorneo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvTorneo.ColumnHeadersHeight = 40;
             this.dgvTorneo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTorneo.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTorneo.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvTorneo.EnableHeadersVisualStyles = false;
             this.dgvTorneo.Location = new System.Drawing.Point(150, 299);
             this.dgvTorneo.MultiSelect = false;
             this.dgvTorneo.Name = "dgvTorneo";
             this.dgvTorneo.ReadOnly = true;
             this.dgvTorneo.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTorneo.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTorneo.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvTorneo.RowHeadersVisible = false;
             this.dgvTorneo.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvTorneo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -294,56 +344,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(50, 49);
             this.pictureBox1.TabIndex = 59;
             this.pictureBox1.TabStop = false;
-            // 
-            // btnJugador
-            // 
-            this.btnJugador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.btnJugador.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnJugador.Font = new System.Drawing.Font("Onest Bold", 20F, System.Drawing.FontStyle.Bold);
-            this.btnJugador.ForeColor = System.Drawing.Color.White;
-            this.btnJugador.Image = global::TorneosFut.Properties.Resources.icons8_patrocinador_50;
-            this.btnJugador.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnJugador.Location = new System.Drawing.Point(312, 3);
-            this.btnJugador.Name = "btnJugador";
-            this.btnJugador.Size = new System.Drawing.Size(319, 85);
-            this.btnJugador.TabIndex = 3;
-            this.btnJugador.Text = "PATROCINADORES";
-            this.btnJugador.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnJugador.UseVisualStyleBackColor = false;
-            this.btnJugador.Click += new System.EventHandler(this.btnJugadores_Click);
-            // 
-            // btnArbitros
-            // 
-            this.btnArbitros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.btnArbitros.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnArbitros.Font = new System.Drawing.Font("Onest Bold", 20F, System.Drawing.FontStyle.Bold);
-            this.btnArbitros.ForeColor = System.Drawing.Color.White;
-            this.btnArbitros.Image = global::TorneosFut.Properties.Resources.icons8_silbato_50;
-            this.btnArbitros.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnArbitros.Location = new System.Drawing.Point(651, 3);
-            this.btnArbitros.Name = "btnArbitros";
-            this.btnArbitros.Size = new System.Drawing.Size(294, 85);
-            this.btnArbitros.TabIndex = 6;
-            this.btnArbitros.Text = "ÁRBITROS";
-            this.btnArbitros.UseVisualStyleBackColor = false;
-            this.btnArbitros.Click += new System.EventHandler(this.btnArbitros_Click);
-            // 
-            // btnOrganizador
-            // 
-            this.btnOrganizador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.btnOrganizador.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnOrganizador.Font = new System.Drawing.Font("Onest Bold", 20F, System.Drawing.FontStyle.Bold);
-            this.btnOrganizador.ForeColor = System.Drawing.Color.White;
-            this.btnOrganizador.Image = global::TorneosFut.Properties.Resources.icons8_organizador_80;
-            this.btnOrganizador.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOrganizador.Location = new System.Drawing.Point(966, 3);
-            this.btnOrganizador.Name = "btnOrganizador";
-            this.btnOrganizador.Size = new System.Drawing.Size(318, 85);
-            this.btnOrganizador.TabIndex = 5;
-            this.btnOrganizador.Text = "ORGANIZADORES";
-            this.btnOrganizador.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnOrganizador.UseVisualStyleBackColor = false;
-            this.btnOrganizador.Click += new System.EventHandler(this.btnEstadios_Click);
             // 
             // Torneo
             // 

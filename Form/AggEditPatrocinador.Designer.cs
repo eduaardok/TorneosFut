@@ -57,7 +57,7 @@
             this.lblEncabezado.AutoSize = true;
             this.lblEncabezado.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEncabezado.ForeColor = System.Drawing.Color.White;
-            this.lblEncabezado.Location = new System.Drawing.Point(3, 0);
+            this.lblEncabezado.Location = new System.Drawing.Point(3, 9);
             this.lblEncabezado.Name = "lblEncabezado";
             this.lblEncabezado.Size = new System.Drawing.Size(309, 25);
             this.lblEncabezado.TabIndex = 33;

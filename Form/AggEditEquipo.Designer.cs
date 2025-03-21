@@ -37,7 +37,6 @@
             this.cmbequipacionvisitante = new System.Windows.Forms.ComboBox();
             this.btnSeleccionarIMG = new Guna.UI2.WinForms.Guna2Button();
             this.lbl = new System.Windows.Forms.Label();
-            this.ptbImagen = new System.Windows.Forms.PictureBox();
             this.txtId = new System.Windows.Forms.TextBox();
             this.btnCancelar = new Guna.UI2.WinForms.Guna2Button();
             this.btnAgregar = new Guna.UI2.WinForms.Guna2Button();
@@ -49,6 +48,7 @@
             this.txtPresidente = new System.Windows.Forms.TextBox();
             this.cmbGenero = new System.Windows.Forms.ComboBox();
             this.txtNombreClub = new System.Windows.Forms.TextBox();
+            this.ptbImagen = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbImagen)).BeginInit();
             this.SuspendLayout();
@@ -69,7 +69,7 @@
             this.lblEncabezado.AutoSize = true;
             this.lblEncabezado.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEncabezado.ForeColor = System.Drawing.Color.White;
-            this.lblEncabezado.Location = new System.Drawing.Point(3, 0);
+            this.lblEncabezado.Location = new System.Drawing.Point(15, 9);
             this.lblEncabezado.Name = "lblEncabezado";
             this.lblEncabezado.Size = new System.Drawing.Size(216, 25);
             this.lblEncabezado.TabIndex = 33;
@@ -296,16 +296,6 @@
             this.lbl.TabIndex = 92;
             this.lbl.Text = "ID ";
             // 
-            // ptbImagen
-            // 
-            this.ptbImagen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ptbImagen.Location = new System.Drawing.Point(346, 56);
-            this.ptbImagen.Name = "ptbImagen";
-            this.ptbImagen.Size = new System.Drawing.Size(163, 180);
-            this.ptbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbImagen.TabIndex = 91;
-            this.ptbImagen.TabStop = false;
-            // 
             // txtId
             // 
             this.txtId.Location = new System.Drawing.Point(36, 93);
@@ -430,6 +420,16 @@
             this.txtNombreClub.Name = "txtNombreClub";
             this.txtNombreClub.Size = new System.Drawing.Size(178, 20);
             this.txtNombreClub.TabIndex = 80;
+            // 
+            // ptbImagen
+            // 
+            this.ptbImagen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ptbImagen.Location = new System.Drawing.Point(346, 56);
+            this.ptbImagen.Name = "ptbImagen";
+            this.ptbImagen.Size = new System.Drawing.Size(163, 180);
+            this.ptbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbImagen.TabIndex = 91;
+            this.ptbImagen.TabStop = false;
             // 
             // AggEditEquipo
             // 
