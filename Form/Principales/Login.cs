@@ -11,6 +11,9 @@ using System.Windows.Forms;
 using System.Media;
 using System.Xml.Linq;
 using System.Runtime.Remoting.Contexts;
+using Guna.UI2.WinForms;
+using System.Web.UI.WebControls;
+using TorneosFut.Class;
 namespace TorneosFut
 {
     public partial class Login : Form
@@ -42,6 +45,23 @@ namespace TorneosFut
         }
         private void Login_Load(object sender, EventArgs e)
         {
+            panel1.Tag = "NoCambiar";
+            panel2.Tag = "NoCambiar";
+            panel3.Tag = "NoCambiar";
+            panel4.Tag = "NoCambiar";
+            panel1.BackColor = Color.FromArgb(80, 0, 0, 0);
+            panel1.Location = new Point(
+                
+                (this.ClientSize.Width - panel1.Width) / 2,
+                (this.ClientSize.Height - panel1.Height) / 2
+            );
+            this.Resize += (s, ev) => {
+                panel1.Location = new Point(
+                    (this.ClientSize.Width - panel1.Width) / 2,
+                    (this.ClientSize.Height - panel1.Height) / 2
+                );
+            };
+            panel2.Region = Region.FromHrgn(CreateRoundRectRgn(1, 1, panel2.Width, panel2.Height, 5, 5));
             timer1.Start();
             System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath();
             int radius = 15;
@@ -58,13 +78,12 @@ namespace TorneosFut
             btnEntrar.Region = Region.FromHrgn(CreateRoundRectRgn(1, 1, btnEntrar.Width, btnEntrar.Height, 20, 20));
             this.Region= Region.FromHrgn(CreateRoundRectRgn(1, 1, this.Width, this.Height, 20, 20));
             Txtclave.PasswordChar = default;
-            c.Tag= "NoCambiar";
             this.Tag= "NoCambiar";
         }
 
         private void X_MouseLeave(object sender, EventArgs e)
         {
-            X.BackgroundImage = Properties.Resources.delete;
+            //X.BackgroundImage = Properties.Resources.delete;
         }
         private void pictureBox3_MouseClick(object sender, MouseEventArgs e)
         {
@@ -140,7 +159,7 @@ namespace TorneosFut
 
         private void X_MouseEnter(object sender, EventArgs e)
         {
-            X.BackgroundImage = Properties.Resources.multiply;
+            //X.BackgroundImage = Properties.Resources.multiply;
 
         }
 
@@ -151,13 +170,13 @@ namespace TorneosFut
 
         private void panel1_MouseMove(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left) // Verifica si el botón izquierdo del mouse está presionado
-            {
-                // Mueve el formulario a la nueva posición
-                this.Location = new Point(
-                    this.Location.X + e.X - (c.Width / 2),
-                    this.Location.Y + e.Y - (c.Height / 2));
-            }
+            //if (e.Button == MouseButtons.Left) // Verifica si el botón izquierdo del mouse está presionado
+            //{
+            //    // Mueve el formulario a la nueva posición
+            //    this.Location = new Point(
+            //        this.Location.X + e.X - (c.Width / 2),
+            //        this.Location.Y + e.Y - (c.Height / 2));
+            //}
         }
 
         private void txtUsuario_TextChanged(object sender, EventArgs e)
@@ -208,5 +227,20 @@ namespace TorneosFut
                 Txtclave.PasswordChar = '*';
             }
         }
+
+        private void llblRecuperarClave_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+            Color color = Color.FromArgb(80, 0, 0, 0);
+            using (SolidBrush brush = new SolidBrush(color))
+            {
+                e.Graphics.FillRectangle(brush, panel1.ClientRectangle);
+            }
+        }
+
     }
 }

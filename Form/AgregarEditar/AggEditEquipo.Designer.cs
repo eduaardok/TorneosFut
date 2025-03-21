@@ -265,7 +265,6 @@
             // btnSeleccionarIMG
             // 
             this.btnSeleccionarIMG.Animated = true;
-            this.btnSeleccionarIMG.BackColor = System.Drawing.Color.White;
             this.btnSeleccionarIMG.BorderRadius = 14;
             this.btnSeleccionarIMG.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnSeleccionarIMG.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -325,7 +324,6 @@
             // btnAgregar
             // 
             this.btnAgregar.Animated = true;
-            this.btnAgregar.BackColor = System.Drawing.SystemColors.Window;
             this.btnAgregar.BorderRadius = 20;
             this.btnAgregar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnAgregar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;

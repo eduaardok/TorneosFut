@@ -125,7 +125,6 @@
             // btnAgregar
             // 
             this.btnAgregar.Animated = true;
-            this.btnAgregar.BackColor = System.Drawing.SystemColors.Window;
             this.btnAgregar.BorderRadius = 20;
             this.btnAgregar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnAgregar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;

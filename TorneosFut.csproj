@@ -418,6 +418,7 @@
     <Content Include="media\door.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\futxpert-background.png" />
     <None Include="Resources\logoFXblanco.png" />
     <None Include="Resources\icons8-estadio-50.png" />
     <None Include="Resources\icons8-fútbol-64.png" />

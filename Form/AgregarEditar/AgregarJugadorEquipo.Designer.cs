@@ -133,7 +133,6 @@
             // btngCancelar
             // 
             this.btngCancelar.Animated = true;
-            this.btngCancelar.BackColor = System.Drawing.Color.White;
             this.btngCancelar.BorderRadius = 20;
             this.btngCancelar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btngCancelar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -145,7 +144,7 @@
             this.btngCancelar.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btngCancelar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btngCancelar.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btngCancelar.Location = new System.Drawing.Point(26, 393);
+            this.btngCancelar.Location = new System.Drawing.Point(38, 393);
             this.btngCancelar.Name = "btngCancelar";
             this.btngCancelar.Size = new System.Drawing.Size(141, 41);
             this.btngCancelar.TabIndex = 74;

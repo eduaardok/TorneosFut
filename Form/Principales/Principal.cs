@@ -26,6 +26,7 @@ namespace TorneosFut
           int nWidhtEllipse,
           int nHeightEllipse
         );
+      
         static csConexion conexion;
         static bool esAdmin;
         static csEncriptar encriptar;
@@ -54,6 +55,7 @@ namespace TorneosFut
             Orga = new Organizadores(u, c);
             auditoria = new Auditoria(u,c);
         }
+       
         public static void AbrirFormEnPanel(Panel panel, Form formHijo)
         {
             if (panel.Controls.Count > 0)

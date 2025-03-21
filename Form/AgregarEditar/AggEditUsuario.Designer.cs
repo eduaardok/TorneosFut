@@ -64,7 +64,6 @@
             // btngEnviar
             // 
             this.btngEnviar.Animated = true;
-            this.btngEnviar.BackColor = System.Drawing.Color.White;
             this.btngEnviar.BorderRadius = 20;
             this.btngEnviar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btngEnviar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;

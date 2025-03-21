@@ -257,7 +257,6 @@
             // btnImportar
             // 
             this.btnImportar.Animated = true;
-            this.btnImportar.BackColor = System.Drawing.Color.White;
             this.btnImportar.BorderRadius = 14;
             this.btnImportar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnImportar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
