@@ -20,13 +20,13 @@ namespace TorneosFut
         Organizadores orga;
         GestionarPartidos partidos;
         InscripcionEquipo inscripcion;
-        Principal T;
         csDGV csDGV;
         Arbitro arbi;
+        GestionInscripcion gestionInscripcion;
         string IDTorneo;
         string IDPartido;
 
-        public Torneo(string u, string c, Principal r)
+        public Torneo(string u, string c)
         {
             conexion = new csConexion(u,c);
             InitializeComponent();
@@ -34,8 +34,6 @@ namespace TorneosFut
             orga = new Organizadores(u,c);
             csDGV= new csDGV(u ,c);
             arbi = new Arbitro(u,c);
-            T = r;
-
         }
         public static void AbrirFormEnPanel(Panel panel, Form formHijo)
         {
@@ -100,17 +98,17 @@ namespace TorneosFut
 
         private void btnPartidos_Click(object sender, EventArgs e)
         {
-            partidos = new GestionarPartidos(IDTorneo,conexion.Usuario, conexion.Clave,this,T);
+            partidos = new GestionarPartidos(IDTorneo,conexion.Usuario, conexion.Clave);
             panelmodul.Show();
-            T.Hide();
             partidos.ShowDialog();
+            panelmodul.Hide();
         }
         private void btnInscripcionEquipos_Click(object sender, EventArgs e)
         {
-            inscripcion = new InscripcionEquipo(IDTorneo, conexion.Usuario, conexion.Clave, true);
-            //panelmodul.Show();
-            //T.Hide();
-            inscripcion.ShowDialog();
+            gestionInscripcion = new GestionInscripcion(IDTorneo, conexion.Usuario, conexion.Clave);
+            panelmodul.Show();
+            gestionInscripcion.ShowDialog();
+            panelmodul.Hide();
         }
 
         private void btnCrear_Click_1(object sender, EventArgs e)

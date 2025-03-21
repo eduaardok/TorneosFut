@@ -17,18 +17,14 @@ namespace pruebas
         csConexion conexion;
         Goles gol;
         string IDPartido;
-        Torneo tr;
-        Principal r;
         csDGV csDGV;
         string IdTorneo;
-        public GestionarPartidos(string IDtorneo,string u, string c, Torneo t, Principal te)
+        public GestionarPartidos(string IDtorneo,string u, string c)
         {
             conexion = new csConexion(u, c);
             IdTorneo = IDtorneo;
             csDGV = new csDGV(u,c, IdTorneo, IDPartido);
             InitializeComponent();
-            tr = t;
-            r = te;
         }
 
         private void txtBuscador_KeyUp(object sender, KeyEventArgs e)
@@ -104,8 +100,6 @@ namespace pruebas
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            tr.panelmodul.Hide();
-            r.Show();
             Close();
         }
 
