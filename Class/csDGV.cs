@@ -22,7 +22,7 @@ namespace TorneosFut
         csTorneo csTorneo;
         csPartido csPartido;
         csAuditorias csAuditorias;
-
+        csIncripcionEquipo csIncripcion;
         public csDGV(string u, string c, string IDTorneo = "0", string IDpartido = "0")
         {
             conexion = new csConexion(u, c);
@@ -34,6 +34,7 @@ namespace TorneosFut
             csTorneo = new csTorneo(u, c);
             csPartido = new csPartido(u, c, IDTorneo, IDpartido);
             csAuditorias = new csAuditorias(u, c);
+            csIncripcion = new csIncripcionEquipo(u, c);
         }
         //Adaptar DataGridView en panel
         public void AdaptarDGV(DataGridView dgv, Panel pnl)
@@ -121,9 +122,17 @@ namespace TorneosFut
         {
             dgv.DataSource = csEquipo.ListadeEquipos();
         }
+        public void MostrarNameEquipos(DataGridView dgv)
+        {
+            dgv.DataSource = csEquipo.ListadeNameEquipos();
+        }
         public void MostrarEquiposFiltro(DataGridView dgv, string filtro)
         {
             dgv.DataSource = csEquipo.ListadeEquiposFiltro(filtro);
+        }
+        public void MostrarNameEquiposFiltro(DataGridView dgv, string filtro)
+        {
+            dgv.DataSource = csEquipo.ListadeNameEquiposFiltro(filtro);
         }
         public void MostrarJugadoresEquipo(DataGridView dgv, string id)
         {
@@ -176,6 +185,11 @@ namespace TorneosFut
             cmbFormato.DataSource=csTorneo.LlenarFormato();
             cmbFormato.ValueMember = "IDFormato";
             cmbFormato.DisplayMember = "NombreFormato";
+        }
+        //INCRIPCIONES 
+        public void MostrarEquiposInc(string idTorneo, DataGridView dgv)
+        {
+            dgv.DataSource = csIncripcion.ListadeEquiposInc(idTorneo);
         }
     }
 }

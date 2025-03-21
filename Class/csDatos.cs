@@ -419,6 +419,15 @@ namespace TorneosFut
                 return false;
             }
         }
-    #endregion
+        #endregion
+        //INCRIPCIONES
+        public bool InsertarIncripcion(int IDTorneo, string IDEquipo, decimal montoAPagar, string fecha)
+        {
+            return csIncripcion.AgregarInscripcion(IDTorneo, IDEquipo, montoAPagar, fecha);
+        }
+        public bool QuitarIncripcion(string IDEquipo)
+        {
+            return csIncripcion.EliminarInscripcion(IDEquipo);
+        }
     }
 }

@@ -29,8 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dgvEquipos = new System.Windows.Forms.DataGridView();
-            this.dgvEquiposInscri = new System.Windows.Forms.DataGridView();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnIncribir = new Guna.UI2.WinForms.Guna2Button();
             this.btnQuitar = new Guna.UI2.WinForms.Guna2Button();
             this.btnAbonar = new Guna.UI2.WinForms.Guna2Button();
@@ -41,30 +43,19 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEquiposInscri)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtBuscarEquipo = new System.Windows.Forms.TextBox();
+            this.panelDgv = new System.Windows.Forms.Panel();
+            this.dgvEquipos = new System.Windows.Forms.DataGridView();
+            this.panelDgv2 = new System.Windows.Forms.Panel();
+            this.dgvEquiposIns = new System.Windows.Forms.DataGridView();
             this.c.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelDgv.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).BeginInit();
+            this.panelDgv2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEquiposIns)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgvEquipos
-            // 
-            this.dgvEquipos.BackgroundColor = System.Drawing.Color.White;
-            this.dgvEquipos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvEquipos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEquipos.Location = new System.Drawing.Point(74, 171);
-            this.dgvEquipos.Name = "dgvEquipos";
-            this.dgvEquipos.Size = new System.Drawing.Size(527, 508);
-            this.dgvEquipos.TabIndex = 0;
-            // 
-            // dgvEquiposInscri
-            // 
-            this.dgvEquiposInscri.BackgroundColor = System.Drawing.Color.White;
-            this.dgvEquiposInscri.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvEquiposInscri.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEquiposInscri.Location = new System.Drawing.Point(893, 171);
-            this.dgvEquiposInscri.Name = "dgvEquiposInscri";
-            this.dgvEquiposInscri.Size = new System.Drawing.Size(527, 508);
-            this.dgvEquiposInscri.TabIndex = 1;
             // 
             // btnIncribir
             // 
@@ -88,6 +79,7 @@
             this.btnIncribir.Size = new System.Drawing.Size(173, 54);
             this.btnIncribir.TabIndex = 90;
             this.btnIncribir.Text = "INSCRIBIR";
+            this.btnIncribir.Click += new System.EventHandler(this.btnIncribir_Click);
             // 
             // btnQuitar
             // 
@@ -110,6 +102,7 @@
             this.btnQuitar.Size = new System.Drawing.Size(173, 54);
             this.btnQuitar.TabIndex = 91;
             this.btnQuitar.Text = "QUITAR";
+            this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
             // 
             // btnAbonar
             // 
@@ -218,12 +211,136 @@
             this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
             this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.BackgroundImage = global::TorneosFut.Properties.Resources.IconoLupa;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(74, 139);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(28, 27);
+            this.pictureBox1.TabIndex = 140;
+            this.pictureBox1.TabStop = false;
+            // 
+            // txtBuscarEquipo
+            // 
+            this.txtBuscarEquipo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtBuscarEquipo.Font = new System.Drawing.Font("Onest Light", 12F);
+            this.txtBuscarEquipo.ForeColor = System.Drawing.Color.Gray;
+            this.txtBuscarEquipo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.txtBuscarEquipo.Location = new System.Drawing.Point(108, 139);
+            this.txtBuscarEquipo.Multiline = true;
+            this.txtBuscarEquipo.Name = "txtBuscarEquipo";
+            this.txtBuscarEquipo.Size = new System.Drawing.Size(493, 26);
+            this.txtBuscarEquipo.TabIndex = 139;
+            this.txtBuscarEquipo.Text = "Buscar por nombre del Equipo";
+            this.txtBuscarEquipo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtBuscarEquipo_MouseClick);
+            this.txtBuscarEquipo.TextChanged += new System.EventHandler(this.txtBuscarEquipo_TextChanged);
+            // 
+            // panelDgv
+            // 
+            this.panelDgv.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelDgv.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panelDgv.Controls.Add(this.dgvEquipos);
+            this.panelDgv.Location = new System.Drawing.Point(74, 171);
+            this.panelDgv.Name = "panelDgv";
+            this.panelDgv.Size = new System.Drawing.Size(527, 508);
+            this.panelDgv.TabIndex = 141;
+            // 
+            // dgvEquipos
+            // 
+            this.dgvEquipos.AllowUserToAddRows = false;
+            this.dgvEquipos.AllowUserToDeleteRows = false;
+            this.dgvEquipos.AllowUserToResizeColumns = false;
+            this.dgvEquipos.AllowUserToResizeRows = false;
+            this.dgvEquipos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvEquipos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvEquipos.BackgroundColor = System.Drawing.Color.White;
+            this.dgvEquipos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEquipos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            this.dgvEquipos.ColumnHeadersHeight = 40;
+            this.dgvEquipos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvEquipos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvEquipos.EnableHeadersVisualStyles = false;
+            this.dgvEquipos.Location = new System.Drawing.Point(0, 0);
+            this.dgvEquipos.MultiSelect = false;
+            this.dgvEquipos.Name = "dgvEquipos";
+            this.dgvEquipos.ReadOnly = true;
+            this.dgvEquipos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvEquipos.RowHeadersVisible = false;
+            this.dgvEquipos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.dgvEquipos.RowsDefaultCellStyle = dataGridViewCellStyle18;
+            this.dgvEquipos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvEquipos.ShowCellToolTips = false;
+            this.dgvEquipos.ShowEditingIcon = false;
+            this.dgvEquipos.Size = new System.Drawing.Size(527, 508);
+            this.dgvEquipos.TabIndex = 94;
+            // 
+            // panelDgv2
+            // 
+            this.panelDgv2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelDgv2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panelDgv2.Controls.Add(this.dgvEquiposIns);
+            this.panelDgv2.Location = new System.Drawing.Point(893, 171);
+            this.panelDgv2.Name = "panelDgv2";
+            this.panelDgv2.Size = new System.Drawing.Size(527, 508);
+            this.panelDgv2.TabIndex = 142;
+            // 
+            // dgvEquiposIns
+            // 
+            this.dgvEquiposIns.AllowUserToAddRows = false;
+            this.dgvEquiposIns.AllowUserToDeleteRows = false;
+            this.dgvEquiposIns.AllowUserToResizeColumns = false;
+            this.dgvEquiposIns.AllowUserToResizeRows = false;
+            this.dgvEquiposIns.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvEquiposIns.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvEquiposIns.BackgroundColor = System.Drawing.Color.White;
+            this.dgvEquiposIns.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEquiposIns.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            this.dgvEquiposIns.ColumnHeadersHeight = 40;
+            this.dgvEquiposIns.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvEquiposIns.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvEquiposIns.EnableHeadersVisualStyles = false;
+            this.dgvEquiposIns.Location = new System.Drawing.Point(0, 0);
+            this.dgvEquiposIns.MultiSelect = false;
+            this.dgvEquiposIns.Name = "dgvEquiposIns";
+            this.dgvEquiposIns.ReadOnly = true;
+            this.dgvEquiposIns.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvEquiposIns.RowHeadersVisible = false;
+            this.dgvEquiposIns.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.dgvEquiposIns.RowsDefaultCellStyle = dataGridViewCellStyle20;
+            this.dgvEquiposIns.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvEquiposIns.ShowCellToolTips = false;
+            this.dgvEquiposIns.ShowEditingIcon = false;
+            this.dgvEquiposIns.Size = new System.Drawing.Size(527, 508);
+            this.dgvEquiposIns.TabIndex = 95;
+            // 
             // GestionInscripcion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1465, 797);
+            this.Controls.Add(this.panelDgv2);
+            this.Controls.Add(this.panelDgv);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.txtBuscarEquipo);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
@@ -231,25 +348,24 @@
             this.Controls.Add(this.btnAbonar);
             this.Controls.Add(this.btnQuitar);
             this.Controls.Add(this.btnIncribir);
-            this.Controls.Add(this.dgvEquiposInscri);
-            this.Controls.Add(this.dgvEquipos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GestionInscripcion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GestionInscripcion";
             this.Load += new System.EventHandler(this.GestionInscripcion_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEquiposInscri)).EndInit();
             this.c.ResumeLayout(false);
             this.c.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelDgv.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).EndInit();
+            this.panelDgv2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEquiposIns)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvEquipos;
-        private System.Windows.Forms.DataGridView dgvEquiposInscri;
         private Guna.UI2.WinForms.Guna2Button btnIncribir;
         private Guna.UI2.WinForms.Guna2Button btnQuitar;
         public Guna.UI2.WinForms.Guna2Button btnAbonar;
@@ -260,5 +376,11 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox txtBuscarEquipo;
+        private System.Windows.Forms.Panel panelDgv2;
+        public System.Windows.Forms.DataGridView dgvEquiposIns;
+        private System.Windows.Forms.Panel panelDgv;
+        public System.Windows.Forms.DataGridView dgvEquipos;
     }
 }

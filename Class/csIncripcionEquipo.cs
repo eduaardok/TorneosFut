@@ -72,7 +72,12 @@ namespace TorneosFut.Class
             get => _estado;
             set => _estado = value;
         }
-
+        public DataTable ListadeEquiposInc(string IDTorneo)
+        {
+            DataTable dt = conexion.ListDGV("select I.IDEquipo, E.NombreEquipo, I.Estado from (select * from InscripcionEquipo) I " +
+                                            $"INNER JOIN (select IDEquipo, NombreEquipo from Equipo) E ON I.IDEquipo = E.IDEquipo where I.IDTorneo = {IDTorneo}");
+            return dt;
+        }
         public bool AgregarInscripcion(int IdTorneo, string IdEquipo, decimal abono, decimal saldo, decimal montoAPagar, DateTime fechaLimite, string estado)
         {
             IDInscripcion = GenerarIDInscripcion(IdTorneo, IdEquipo);
@@ -98,6 +103,38 @@ namespace TorneosFut.Class
                 "    </InscripcionEquipo>" +
                 "</InscripcionEquipos>";
             return conexion.Consulta($"DECLARE @cadenaa VARCHAR(MAX) = '{xmlInscripcion}'; EXEC spRegistraInscripcionEquipo @cadenaa;");
+        }
+
+        public bool AgregarInscripcion(int IdTorneo, string IdEquipo, decimal montoAPagar, string fecha)
+        {
+            IDInscripcion = GenerarIDInscripcion(IdTorneo, IdEquipo);
+            IDTorneo = IdTorneo.ToString().Trim();
+            IDEquipo = IdEquipo.ToString().Trim();
+            Abono = 0;
+            Saldo = montoAPagar;
+            MontoAPagar = montoAPagar;
+            FechaLimite = fecha;
+            Estado = "Pendiente";
+
+            string xmlInscripcion =
+                "<InscripcionEquipos>" +
+                "    <InscripcionEquipo>" +
+                $"        <IDInscripcion>{IDInscripcion}</IDInscripcion>" +
+                $"        <IDTorneo>{IDTorneo}</IDTorneo>" +
+                $"        <IDEquipo>{IDEquipo}</IDEquipo>" +
+                $"        <Abono>{Abono.ToString("N2").Trim()}</Abono>" +
+                $"        <Saldo>{Saldo.ToString("N2").Trim()}</Saldo>" +
+                $"        <MontoAPagar>{MontoAPagar.ToString("N2").Trim()}</MontoAPagar>" +
+                $"        <FechaLimite>{FechaLimite}</FechaLimite>" +
+                $"        <Estado>{Estado}</Estado>" +
+                "    </InscripcionEquipo>" +
+                "</InscripcionEquipos>";
+            return conexion.Consulta($"DECLARE @cadenaa VARCHAR(MAX) = '{xmlInscripcion}'; EXEC spRegistraInscripcionEquipo @cadenaa;");
+        }
+        public bool EliminarInscripcion(string IdEquipo)
+        {
+            IDEquipo = IdEquipo;
+            return conexion.Consulta($"DELETE FROM InscripcionEquipo WHERE IDEquipo = '{IDEquipo}';");
         }
         public string GenerarIDInscripcion(int idTorneo, string idEquipo)
         {
