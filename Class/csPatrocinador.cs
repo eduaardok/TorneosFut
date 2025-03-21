@@ -1,6 +1,7 @@
 ﻿using Guna.UI2.WinForms.Suite;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,6 +37,21 @@ namespace TorneosFut
             get => _descripcion;
             set => _descripcion = value;
         }
+        #region Listas
+        public DataTable ListaDePatrocinadoresFiltro(string filtro)
+        {
+            DataTable dt;
+            dt = csConexion.ListDGV($"select * from Patrocinador where IDPatrocinador like '%{filtro}%' or NombrePatrocinador like '%{filtro}%'");
+            return dt;
+        }
+        public DataTable ListaDePatrocinadores()
+        {
+            DataTable dt = csConexion.ListDGV("select * from Patrocinador");
+            return dt;
+        }
+        #endregion
+
+
         #region Insertar
         public bool AgregarPatrocinador(string id, string nombre, string descripcion)
         {

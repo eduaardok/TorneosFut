@@ -106,7 +106,7 @@
             this.llblRecuperarClave.LinkColor = System.Drawing.Color.Silver;
             this.llblRecuperarClave.Location = new System.Drawing.Point(123, 507);
             this.llblRecuperarClave.Name = "llblRecuperarClave";
-            this.llblRecuperarClave.Size = new System.Drawing.Size(120, 14);
+            this.llblRecuperarClave.Size = new System.Drawing.Size(122, 17);
             this.llblRecuperarClave.TabIndex = 27;
             this.llblRecuperarClave.TabStop = true;
             this.llblRecuperarClave.Text = "Recuperar contraseña";
@@ -251,7 +251,7 @@
             this.Name = "Login";
             this.Opacity = 0D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "LOGIN FUTXPERT";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Login_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Login_Paint);

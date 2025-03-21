@@ -128,6 +128,7 @@ namespace TorneosFut
             csEntrenador.MostrarImagen(id, ptb);
         }
         #endregion
+
         #region Insertar
        /* public bool CrearLoginBD(string u, string c)
         {

@@ -54,7 +54,7 @@ namespace TorneosFut
 
             csDGV.MostrarNameEquipos(dgvEquipos);
             AdaptarDGV();
-            csDGV.MostrarEquiposInc(IdTorneo, dgvEquiposIns);
+            csDGV.MostrarEquiposInsc(IdTorneo, dgvEquiposIns);
             AdaptarDGV();
 
 
@@ -119,7 +119,7 @@ namespace TorneosFut
         {
             csDGV.MostrarNameEquiposFiltro(dgvEquipos, txtBuscarEquipo.Text);
             csDGV.AdaptarDGV(dgvEquipos, panelDgv);
-            csDGV.MostrarEquiposInc(IdTorneo, dgvEquiposIns);
+            csDGV.MostrarEquiposInsc(IdTorneo, dgvEquiposIns);
             csDGV.AdaptarDGV(dgvEquiposIns, panelDgv2);
         }
 

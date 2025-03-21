@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.txtBuscarEntrenador = new System.Windows.Forms.TextBox();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.txtFiltro = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAggDT = new Guna.UI2.WinForms.Guna2Button();
             this.dgvPatrocinador = new System.Windows.Forms.DataGridView();
@@ -44,18 +44,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.ptbIMGPatrocinador)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtBuscarEntrenador
+            // txtFiltro
             // 
-            this.txtBuscarEntrenador.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtBuscarEntrenador.Font = new System.Drawing.Font("Onest Light", 20F);
-            this.txtBuscarEntrenador.ForeColor = System.Drawing.Color.Gray;
-            this.txtBuscarEntrenador.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtBuscarEntrenador.Location = new System.Drawing.Point(252, 102);
-            this.txtBuscarEntrenador.Multiline = true;
-            this.txtBuscarEntrenador.Name = "txtBuscarEntrenador";
-            this.txtBuscarEntrenador.Size = new System.Drawing.Size(633, 48);
-            this.txtBuscarEntrenador.TabIndex = 33;
-            this.txtBuscarEntrenador.Text = "Buscar por nombre del Entrenador";
+            this.txtFiltro.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtFiltro.Font = new System.Drawing.Font("Onest Light", 20F);
+            this.txtFiltro.ForeColor = System.Drawing.Color.Gray;
+            this.txtFiltro.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.txtFiltro.Location = new System.Drawing.Point(252, 102);
+            this.txtFiltro.Multiline = true;
+            this.txtFiltro.Name = "txtFiltro";
+            this.txtFiltro.Size = new System.Drawing.Size(633, 48);
+            this.txtFiltro.TabIndex = 33;
+            this.txtFiltro.Text = "Buscar por nombre de Patrocinador";
+            this.txtFiltro.Click += new System.EventHandler(this.txtFiltro_Click);
+            this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
             // 
             // label1
             // 
@@ -103,41 +105,41 @@
             this.dgvPatrocinador.BackgroundColor = System.Drawing.Color.White;
             this.dgvPatrocinador.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvPatrocinador.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPatrocinador.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPatrocinador.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.dgvPatrocinador.ColumnHeadersHeight = 40;
             this.dgvPatrocinador.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPatrocinador.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPatrocinador.DefaultCellStyle = dataGridViewCellStyle18;
             this.dgvPatrocinador.EnableHeadersVisualStyles = false;
             this.dgvPatrocinador.Location = new System.Drawing.Point(162, 279);
             this.dgvPatrocinador.Name = "dgvPatrocinador";
             this.dgvPatrocinador.ReadOnly = true;
             this.dgvPatrocinador.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPatrocinador.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPatrocinador.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.dgvPatrocinador.RowHeadersVisible = false;
             this.dgvPatrocinador.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
-            this.dgvPatrocinador.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.dgvPatrocinador.RowsDefaultCellStyle = dataGridViewCellStyle20;
             this.dgvPatrocinador.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPatrocinador.Size = new System.Drawing.Size(1186, 601);
             this.dgvPatrocinador.TabIndex = 31;
@@ -159,7 +161,7 @@
             this.btnEditarPatrocinador.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnEditarPatrocinador.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnEditarPatrocinador.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnEditarPatrocinador.Location = new System.Drawing.Point(391, 176);
+            this.btnEditarPatrocinador.Location = new System.Drawing.Point(386, 194);
             this.btnEditarPatrocinador.Name = "btnEditarPatrocinador";
             this.btnEditarPatrocinador.Size = new System.Drawing.Size(127, 52);
             this.btnEditarPatrocinador.TabIndex = 102;
@@ -196,7 +198,7 @@
             this.ControlBox = false;
             this.Controls.Add(this.btnEditarPatrocinador);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.txtBuscarEntrenador);
+            this.Controls.Add(this.txtFiltro);
             this.Controls.Add(this.ptbIMGPatrocinador);
             this.Controls.Add(this.dgvPatrocinador);
             this.Controls.Add(this.label1);
@@ -210,6 +212,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Patrocinadores";
             this.Load += new System.EventHandler(this.Patrocinadores_Load);
+            this.Shown += new System.EventHandler(this.Patrocinadores_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPatrocinador)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbIMGPatrocinador)).EndInit();
@@ -221,7 +224,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox txtBuscarEntrenador;
+        private System.Windows.Forms.TextBox txtFiltro;
         private System.Windows.Forms.PictureBox ptbIMGPatrocinador;
         public System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button btnAggDT;

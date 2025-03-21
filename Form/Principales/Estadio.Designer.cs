@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.txtBuscarJugador = new System.Windows.Forms.TextBox();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.txtFiltro = new System.Windows.Forms.TextBox();
             this.panelDgv = new System.Windows.Forms.Panel();
             this.dgvEstadio = new System.Windows.Forms.DataGridView();
             this.btnAgregar = new Guna.UI2.WinForms.Guna2Button();
@@ -44,18 +44,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtBuscarJugador
+            // txtFiltro
             // 
-            this.txtBuscarJugador.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtBuscarJugador.Font = new System.Drawing.Font("Onest Light", 20F);
-            this.txtBuscarJugador.ForeColor = System.Drawing.Color.Gray;
-            this.txtBuscarJugador.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtBuscarJugador.Location = new System.Drawing.Point(180, 63);
-            this.txtBuscarJugador.Multiline = true;
-            this.txtBuscarJugador.Name = "txtBuscarJugador";
-            this.txtBuscarJugador.Size = new System.Drawing.Size(463, 48);
-            this.txtBuscarJugador.TabIndex = 20;
-            this.txtBuscarJugador.Text = "Buscar por nombre del Estadio";
+            this.txtFiltro.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtFiltro.Font = new System.Drawing.Font("Onest Light", 20F);
+            this.txtFiltro.ForeColor = System.Drawing.Color.Gray;
+            this.txtFiltro.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.txtFiltro.Location = new System.Drawing.Point(180, 63);
+            this.txtFiltro.Multiline = true;
+            this.txtFiltro.Name = "txtFiltro";
+            this.txtFiltro.Size = new System.Drawing.Size(463, 48);
+            this.txtFiltro.TabIndex = 20;
+            this.txtFiltro.Text = "Buscar por nombre de Estadio";
+            this.txtFiltro.Click += new System.EventHandler(this.txtFiltro_Click);
+            this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
             // 
             // panelDgv
             // 
@@ -77,14 +79,14 @@
             this.dgvEstadio.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvEstadio.BackgroundColor = System.Drawing.Color.White;
             this.dgvEstadio.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEstadio.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEstadio.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvEstadio.ColumnHeadersHeight = 40;
             this.dgvEstadio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvEstadio.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -96,8 +98,8 @@
             this.dgvEstadio.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvEstadio.RowHeadersVisible = false;
             this.dgvEstadio.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
-            this.dgvEstadio.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.dgvEstadio.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvEstadio.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEstadio.ShowCellToolTips = false;
             this.dgvEstadio.ShowEditingIcon = false;
@@ -185,7 +187,7 @@
             this.ClientSize = new System.Drawing.Size(1386, 788);
             this.Controls.Add(this.ptbImagen);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.txtBuscarJugador);
+            this.Controls.Add(this.txtFiltro);
             this.Controls.Add(this.panelDgv);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnEditar);
@@ -195,6 +197,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Estadio";
             this.Load += new System.EventHandler(this.Estadio_Load);
+            this.Shown += new System.EventHandler(this.Estadio_Shown);
             this.panelDgv.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstadio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbImagen)).EndInit();
@@ -207,7 +210,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox txtBuscarJugador;
+        private System.Windows.Forms.TextBox txtFiltro;
         private System.Windows.Forms.Panel panelDgv;
         public System.Windows.Forms.DataGridView dgvEstadio;
         private Guna.UI2.WinForms.Guna2Button btnAgregar;

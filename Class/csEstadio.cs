@@ -43,11 +43,21 @@ namespace TorneosFut.Class
             get => _imagenEstadio;
             set => _imagenEstadio = value;
         }
-        public DataTable ListadeEstadio()
+        #region Listas
+        public DataTable ListaDeEstadiosFiltro(string filtro)
+        {
+            DataTable dt;
+            dt = csConexion.ListDGV($"select IDEstadio, NombreEstadio from Estadio where IDEstadio like '%{filtro}%' or NombreEstadio like '%{filtro}%'");
+            return dt;
+        }
+        public DataTable ListaDeEstadios()
         {
             DataTable dt = csConexion.ListDGV("select IDEstadio, NombreEstadio from Estadio");
             return dt;
         }
+
+        #endregion
+
         #region Insertar
         public bool AgregarEstadio(int id, string nombre, string ubicacion, string imagen)
         {

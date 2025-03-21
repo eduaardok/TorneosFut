@@ -23,6 +23,7 @@ namespace TorneosFut
         csPartido csPartido;
         csAuditorias csAuditorias;
         csIncripcionEquipo csIncripcion;
+        csPatrocinador csPatrocinador;
         public csDGV(string u, string c, string IDTorneo = "0", string IDpartido = "0")
         {
             conexion = new csConexion(u, c);
@@ -35,6 +36,7 @@ namespace TorneosFut
             csPartido = new csPartido(u, c, IDTorneo, IDpartido);
             csAuditorias = new csAuditorias(u, c);
             csIncripcion = new csIncripcionEquipo(u, c);
+            csPatrocinador = new csPatrocinador(u, c);
         }
         //Adaptar DataGridView en panel
         public void AdaptarDGV(DataGridView dgv, Panel pnl)
@@ -168,9 +170,38 @@ namespace TorneosFut
         {
             dgv.DataSource = csTorneo.ListadeTorneofiltro(Filtro);
         }
+
+        // ESTADIOS
+
+        public void MostrarEstadios(DataGridView dgv)
+        {
+            dgv.DataSource = csEstadio.ListaDeEstadios();
+        }
+        public void MostrarEstadiosFiltro(DataGridView dgv, string Filtro)
+        {
+            dgv.DataSource = csEstadio.ListaDeEstadiosFiltro(Filtro);
+        }
+        //PATROCINADORES
+        public void MostrarPatrocinadores(DataGridView dgv)
+        {
+            dgv.DataSource = csPatrocinador.ListaDePatrocinadores();
+        }
+        public void MostrarPatrocinadoresFiltro(DataGridView dgv, string Filtro)
+        {
+            dgv.DataSource = csPatrocinador.ListaDePatrocinadoresFiltro(Filtro);
+        }
+
+        //INSCRIPCIONES 
+        public void MostrarEquiposInsc(string idTorneo, DataGridView dgv)
+        {
+            dgv.DataSource = csIncripcion.ListadeEquiposInc(idTorneo);
+        }
+
+
+        #region cmb
         public void LlenarcmbEstadio(ComboBox cmbEstadio)
         {
-            cmbEstadio.DataSource = csEstadio.ListadeEstadio();
+            cmbEstadio.DataSource = csEstadio.ListaDeEstadios();
             cmbEstadio.ValueMember = "IDEstadio";
             cmbEstadio.DisplayMember = "NombreEstadio";
         }
@@ -186,10 +217,7 @@ namespace TorneosFut
             cmbFormato.ValueMember = "IDFormato";
             cmbFormato.DisplayMember = "NombreFormato";
         }
-        //INCRIPCIONES 
-        public void MostrarEquiposInc(string idTorneo, DataGridView dgv)
-        {
-            dgv.DataSource = csIncripcion.ListadeEquiposInc(idTorneo);
-        }
+        #endregion
+       
     }
 }
