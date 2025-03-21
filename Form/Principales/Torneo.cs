@@ -19,7 +19,7 @@ namespace TorneosFut
         Patrocinadores patro;
         Organizadores orga;
         GestionarPartidos partidos;
-        InscripcionEquipo inscripcion;
+        PagoInscripcion inscripcion;
         csDGV csDGV;
         Arbitro arbi;
         GestionInscripcion gestionInscripcion;

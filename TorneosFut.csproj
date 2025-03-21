@@ -234,11 +234,11 @@
     <Compile Include="Form\Principales\Patrocinadores.Designer.cs">
       <DependentUpon>Patrocinadores.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\AgregarEditar\IncripcionEquipo.cs">
+    <Compile Include="Form\AgregarEditar\PagoInscripcion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\AgregarEditar\IncripcionEquipo.Designer.cs">
-      <DependentUpon>IncripcionEquipo.cs</DependentUpon>
+    <Compile Include="Form\AgregarEditar\PagoInscripcion.Designer.cs">
+      <DependentUpon>PagoInscripcion.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\Principales\GestionInscripcion.cs">
       <SubType>Form</SubType>
@@ -323,8 +323,8 @@
     <EmbeddedResource Include="Form\AgregarEditar\Goles.resx">
       <DependentUpon>Goles.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\AgregarEditar\IncripcionEquipo.resx">
-      <DependentUpon>IncripcionEquipo.cs</DependentUpon>
+    <EmbeddedResource Include="Form\AgregarEditar\PagoInscripcion.resx">
+      <DependentUpon>PagoInscripcion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Principales\Jugador.resx">
       <DependentUpon>Jugador.cs</DependentUpon>

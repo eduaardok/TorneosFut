@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TorneosFut.Class;
 
 namespace TorneosFut
 {
@@ -15,11 +16,13 @@ namespace TorneosFut
         csDatos csDatos;
         csConexion conexion;
         csDGV csDGV;
+        PagoInscripcion PagoInscripcion;
         string IdTorneo;
         string fecha;
         decimal costo;
         public GestionInscripcion(string IDtorneo, string u, string c)
         {
+
             csDatos = new csDatos(u, c);
             IdTorneo = IDtorneo;
             csDGV = new csDGV(u, c);
@@ -170,6 +173,14 @@ namespace TorneosFut
                 MessageBox.Show("Por favor, seleccione un equipo.");
             }
             ActualizarTabla();
+        }
+
+        private void btnAbonar_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = dgvEquiposIns.SelectedRows[0];
+            string idequipo = row.Cells["IDEquipo"].Value.ToString();
+            PagoInscripcion = new PagoInscripcion(IdTorneo, idequipo, conexion.Usuario, conexion.Clave, true);
+            PagoInscripcion.ShowDialog();
         }
     }
 }
