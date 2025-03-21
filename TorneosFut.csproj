@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\csAuditorias.cs" />
+    <Compile Include="Class\csIncripcionEquipo.cs" />
     <Compile Include="Class\csValidaciones.cs" />
     <Compile Include="Class\csArbitro.cs" />
     <Compile Include="Class\csOrganizador.cs" />
