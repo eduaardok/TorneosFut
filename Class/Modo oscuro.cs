@@ -30,7 +30,7 @@ namespace TorneosFut
                 if (formulario.Tag != "NoCambiar")
                 {
 
-                    formulario.BackColor = Color.FromArgb(0, 0, 0);  // Fondo del formulario en modo oscuro
+                    formulario.BackColor = Color.FromArgb(18, 18, 18);  // Fondo del formulario en modo oscuro
                 }
             }
             foreach (Control control in formulario.Controls)
@@ -51,7 +51,7 @@ namespace TorneosFut
                 if (control is DataGridView )
                 {
                     DataGridView dgv = (DataGridView)control;
-                    dgv.BackgroundColor = Color.FromArgb(0, 0, 0);  // Fondo oscuro
+                    dgv.BackgroundColor = Color.FromArgb(18, 18, 18);  // Fondo oscuro
                     dgv.ForeColor = Color.White;  // Texto blanco
                     dgv.DefaultCellStyle.BackColor = Color.FromArgb(30, 35, 40);
                     dgv.DefaultCellStyle.ForeColor = Color.White;

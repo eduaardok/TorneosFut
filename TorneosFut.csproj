@@ -67,16 +67,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form\AggEditArbitro.cs">
+    <Compile Include="Form\AgregarEditar\AggEditArbitro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\AggEditArbitro.Designer.cs">
+    <Compile Include="Form\AgregarEditar\AggEditArbitro.Designer.cs">
       <DependentUpon>AggEditArbitro.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\Arbitro.cs">
+    <Compile Include="Form\Principales\Arbitro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Arbitro.Designer.cs">
+    <Compile Include="Form\Principales\Arbitro.Designer.cs">
       <DependentUpon>Arbitro.cs</DependentUpon>
     </Compile>
     <Compile Include="Class\csAuditorias.cs" />
@@ -85,35 +85,35 @@
     <Compile Include="Class\csArbitro.cs" />
     <Compile Include="Class\csOrganizador.cs" />
     <Compile Include="Class\csPatrocinador.cs" />
-    <Compile Include="Form\AgregarJugadorEquipo.cs">
+    <Compile Include="Form\AgregarEditar\AgregarJugadorEquipo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\AgregarJugadorEquipo.Designer.cs">
+    <Compile Include="Form\AgregarEditar\AgregarJugadorEquipo.Designer.cs">
       <DependentUpon>AgregarJugadorEquipo.cs</DependentUpon>
     </Compile>
     <Compile Include="Class\csPartido.cs" />
-    <Compile Include="Form\Auditoria.cs">
+    <Compile Include="Form\Principales\Auditoria.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Auditoria.Designer.cs">
+    <Compile Include="Form\Principales\Auditoria.Designer.cs">
       <DependentUpon>Auditoria.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\AggEditOrganizador.cs">
+    <Compile Include="Form\AgregarEditar\AggEditOrganizador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\AggEditOrganizador.Designer.cs">
+    <Compile Include="Form\AgregarEditar\AggEditOrganizador.Designer.cs">
       <DependentUpon>AggEditOrganizador.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\AggEditPatrocinador.cs">
+    <Compile Include="Form\AgregarEditar\AggEditPatrocinador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\AggEditPatrocinador.Designer.cs">
+    <Compile Include="Form\AgregarEditar\AggEditPatrocinador.Designer.cs">
       <DependentUpon>AggEditPatrocinador.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\AggEditEstadio.cs">
+    <Compile Include="Form\AgregarEditar\AggEditEstadio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\AggEditEstadio.Designer.cs">
+    <Compile Include="Form\AgregarEditar\AggEditEstadio.Designer.cs">
       <DependentUpon>AggEditEstadio.cs</DependentUpon>
     </Compile>
     <Compile Include="Class\csDGV.cs" />
@@ -121,149 +121,143 @@
     <Compile Include="Class\csEstadio.cs" />
     <Compile Include="Class\csImagenes.cs" />
     <Compile Include="Class\csTorneo.cs" />
-    <Compile Include="Form\Estadio.cs">
+    <Compile Include="Form\Principales\Estadio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Estadio.Designer.cs">
+    <Compile Include="Form\Principales\Estadio.Designer.cs">
       <DependentUpon>Estadio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\AggTorneo.cs">
+    <Compile Include="Form\AgregarEditar\AggTorneo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\AggTorneo.Designer.cs">
+    <Compile Include="Form\AgregarEditar\AggTorneo.Designer.cs">
       <DependentUpon>AggTorneo.cs</DependentUpon>
     </Compile>
     <Compile Include="Class\csEntrenador.cs" />
     <Compile Include="Class\csEquipo.cs" />
     <Compile Include="Class\csJugador.cs" />
     <Compile Include="Class\csUsuario.cs" />
-    <Compile Include="Form\AggEditEquipo.cs">
+    <Compile Include="Form\AgregarEditar\AggEditEquipo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\AggEditEquipo.Designer.cs">
+    <Compile Include="Form\AgregarEditar\AggEditEquipo.Designer.cs">
       <DependentUpon>AggEditEquipo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\AggJugadores.cs">
+    <Compile Include="Form\AgregarEditar\AggJugadores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\AggJugadores.Designer.cs">
+    <Compile Include="Form\AgregarEditar\AggJugadores.Designer.cs">
       <DependentUpon>AggJugadores.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\AggEditUsuario.cs">
+    <Compile Include="Form\AgregarEditar\AggEditUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\AggEditUsuario.Designer.cs">
+    <Compile Include="Form\AgregarEditar\AggEditUsuario.Designer.cs">
       <DependentUpon>AggEditUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Class\csConexion.cs" />
     <Compile Include="Class\csCorreo.cs" />
     <Compile Include="Class\csEncriptar.cs" />
-    <Compile Include="Form\Editjugador.cs">
+    <Compile Include="Form\Principales\Entrenador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Editjugador.Designer.cs">
-      <DependentUpon>Editjugador.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form\Entrenador.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\Entrenador.Designer.cs">
+    <Compile Include="Form\Principales\Entrenador.Designer.cs">
       <DependentUpon>Entrenador.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\Equipos.cs">
+    <Compile Include="Form\Principales\Equipos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Equipos.Designer.cs">
+    <Compile Include="Form\Principales\Equipos.Designer.cs">
       <DependentUpon>Equipos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\AggEditEntrenador.cs">
+    <Compile Include="Form\AgregarEditar\AggEditEntrenador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\AggEditEntrenador.Designer.cs">
+    <Compile Include="Form\AgregarEditar\AggEditEntrenador.Designer.cs">
       <DependentUpon>AggEditEntrenador.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\GestionarPartidos.cs">
+    <Compile Include="Form\Principales\GestionarPartidos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\GestionarPartidos.Designer.cs">
+    <Compile Include="Form\Principales\GestionarPartidos.Designer.cs">
       <DependentUpon>GestionarPartidos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\GestionUsuario.cs">
+    <Compile Include="Form\Principales\GestionUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\GestionUsuario.Designer.cs">
+    <Compile Include="Form\Principales\GestionUsuario.Designer.cs">
       <DependentUpon>GestionUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\Goles.cs">
+    <Compile Include="Form\AgregarEditar\Goles.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Goles.Designer.cs">
+    <Compile Include="Form\AgregarEditar\Goles.Designer.cs">
       <DependentUpon>Goles.cs</DependentUpon>
     </Compile>
     <Compile Include="Class\MenuColorTable.cs" />
     <Compile Include="Class\MenuRenderer.cs" />
-    <Compile Include="Form\Jugador.cs">
+    <Compile Include="Form\Principales\Jugador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Jugador.Designer.cs">
+    <Compile Include="Form\Principales\Jugador.Designer.cs">
       <DependentUpon>Jugador.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\Login.cs">
+    <Compile Include="Form\Principales\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Login.Designer.cs">
+    <Compile Include="Form\Principales\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\Principal.cs">
+    <Compile Include="Form\Principales\Principal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Principal.Designer.cs">
+    <Compile Include="Form\Principales\Principal.Designer.cs">
       <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\CambiarClave.cs">
+    <Compile Include="Form\Principales\CambiarClave.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\CambiarClave.Designer.cs">
+    <Compile Include="Form\Principales\CambiarClave.Designer.cs">
       <DependentUpon>CambiarClave.cs</DependentUpon>
     </Compile>
     <Compile Include="Class\Modo oscuro.cs" />
     <Compile Include="Class\GlobalSettings.cs" />
-    <Compile Include="Form\Organizadores.cs">
+    <Compile Include="Form\Principales\Organizadores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Organizadores.Designer.cs">
+    <Compile Include="Form\Principales\Organizadores.Designer.cs">
       <DependentUpon>Organizadores.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\Patrocinadores.cs">
+    <Compile Include="Form\Principales\Patrocinadores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Patrocinadores.Designer.cs">
+    <Compile Include="Form\Principales\Patrocinadores.Designer.cs">
       <DependentUpon>Patrocinadores.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\IncripcionEquipo.cs">
+    <Compile Include="Form\AgregarEditar\IncripcionEquipo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\IncripcionEquipo.Designer.cs">
+    <Compile Include="Form\AgregarEditar\IncripcionEquipo.Designer.cs">
       <DependentUpon>IncripcionEquipo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\GestionInscripcion.cs">
+    <Compile Include="Form\Principales\GestionInscripcion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\GestionInscripcion.Designer.cs">
+    <Compile Include="Form\Principales\GestionInscripcion.Designer.cs">
       <DependentUpon>GestionInscripcion.cs</DependentUpon>
     </Compile>
-    <Compile Include="PagoArbitro.cs">
+    <Compile Include="Form\AgregarEditar\PagoArbitro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PagoArbitro.Designer.cs">
+    <Compile Include="Form\AgregarEditar\PagoArbitro.Designer.cs">
       <DependentUpon>PagoArbitro.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Form\Torneo.cs">
+    <Compile Include="Form\Principales\Torneo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Torneo.Designer.cs">
+    <Compile Include="Form\Principales\Torneo.Designer.cs">
       <DependentUpon>Torneo.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
@@ -272,89 +266,89 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
-    <EmbeddedResource Include="Form\AggEditEstadio.resx">
+    <EmbeddedResource Include="Form\AgregarEditar\AggEditArbitro.resx">
+      <DependentUpon>AggEditArbitro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\AgregarEditar\AggEditEstadio.resx">
       <DependentUpon>AggEditEstadio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\AggEditOrganizador.resx">
+    <EmbeddedResource Include="Form\AgregarEditar\AggEditOrganizador.resx">
       <DependentUpon>AggEditOrganizador.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\AggEditPatrocinador.resx">
+    <EmbeddedResource Include="Form\AgregarEditar\AggEditPatrocinador.resx">
       <DependentUpon>AggEditPatrocinador.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\AgregarJugadorEquipo.resx">
+    <EmbeddedResource Include="Form\AgregarEditar\AgregarJugadorEquipo.resx">
       <DependentUpon>AgregarJugadorEquipo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Arbitro.resx">
+    <EmbeddedResource Include="Form\Principales\Arbitro.resx">
       <DependentUpon>Arbitro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Auditoria.resx">
+    <EmbeddedResource Include="Form\Principales\Auditoria.resx">
       <DependentUpon>Auditoria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Estadio.resx">
+    <EmbeddedResource Include="Form\Principales\Estadio.resx">
       <DependentUpon>Estadio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\AggEditEquipo.resx">
+    <EmbeddedResource Include="Form\AgregarEditar\AggEditEquipo.resx">
       <DependentUpon>AggEditEquipo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\AggJugadores.resx">
+    <EmbeddedResource Include="Form\AgregarEditar\AggJugadores.resx">
       <DependentUpon>AggJugadores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\AggTorneo.resx">
+    <EmbeddedResource Include="Form\AgregarEditar\AggTorneo.resx">
       <DependentUpon>AggTorneo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\AggEditUsuario.resx">
+    <EmbeddedResource Include="Form\AgregarEditar\AggEditUsuario.resx">
       <DependentUpon>AggEditUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Editjugador.resx">
-      <DependentUpon>Editjugador.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\Entrenador.resx">
+    <EmbeddedResource Include="Form\Principales\Entrenador.resx">
       <DependentUpon>Entrenador.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Equipos.resx">
+    <EmbeddedResource Include="Form\Principales\Equipos.resx">
       <DependentUpon>Equipos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\AggEditEntrenador.resx">
+    <EmbeddedResource Include="Form\AgregarEditar\AggEditEntrenador.resx">
       <DependentUpon>AggEditEntrenador.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\GestionarPartidos.resx">
+    <EmbeddedResource Include="Form\Principales\GestionarPartidos.resx">
       <DependentUpon>GestionarPartidos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\GestionInscripcion.resx">
+    <EmbeddedResource Include="Form\Principales\GestionInscripcion.resx">
       <DependentUpon>GestionInscripcion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\GestionUsuario.resx">
+    <EmbeddedResource Include="Form\Principales\GestionUsuario.resx">
       <DependentUpon>GestionUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Goles.resx">
+    <EmbeddedResource Include="Form\AgregarEditar\Goles.resx">
       <DependentUpon>Goles.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\IncripcionEquipo.resx">
+    <EmbeddedResource Include="Form\AgregarEditar\IncripcionEquipo.resx">
       <DependentUpon>IncripcionEquipo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Jugador.resx">
+    <EmbeddedResource Include="Form\Principales\Jugador.resx">
       <DependentUpon>Jugador.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Login.resx">
+    <EmbeddedResource Include="Form\Principales\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Organizadores.resx">
+    <EmbeddedResource Include="Form\Principales\Organizadores.resx">
       <DependentUpon>Organizadores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Patrocinadores.resx">
+    <EmbeddedResource Include="Form\AgregarEditar\PagoArbitro.resx">
+      <DependentUpon>PagoArbitro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Principales\Patrocinadores.resx">
       <DependentUpon>Patrocinadores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Principal.resx">
+    <EmbeddedResource Include="Form\Principales\Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\CambiarClave.resx">
+    <EmbeddedResource Include="Form\Principales\CambiarClave.resx">
       <DependentUpon>CambiarClave.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Torneo.resx">
+    <EmbeddedResource Include="Form\Principales\Torneo.resx">
       <DependentUpon>Torneo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PagoArbitro.resx">
-      <DependentUpon>PagoArbitro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -424,6 +418,7 @@
     <Content Include="media\door.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\logoFXblanco.png" />
     <None Include="Resources\icons8-estadio-50.png" />
     <None Include="Resources\icons8-fútbol-64.png" />
     <None Include="Resources\icons8-silbato-50.png" />
