@@ -51,5 +51,10 @@ namespace TorneosFut
                 }
             }
         }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

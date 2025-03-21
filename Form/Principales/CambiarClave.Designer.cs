@@ -41,6 +41,7 @@
             this.txtClaveApp = new System.Windows.Forms.TextBox();
             this.lblNueva = new System.Windows.Forms.Label();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+            this.btnCancelar = new Guna.UI2.WinForms.Guna2Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -69,6 +70,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.btnCancelar);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel5);
@@ -124,11 +126,12 @@
             this.btngEnviar.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btngEnviar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btngEnviar.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btngEnviar.Location = new System.Drawing.Point(252, 192);
+            this.btngEnviar.Location = new System.Drawing.Point(330, 194);
             this.btngEnviar.Name = "btngEnviar";
             this.btngEnviar.Size = new System.Drawing.Size(134, 50);
             this.btngEnviar.TabIndex = 45;
-            this.btngEnviar.Text = "ENVIAR";
+            this.btngEnviar.Text = "CAMBIAR";
+            this.btngEnviar.Click += new System.EventHandler(this.btngEnviar_Click);
             // 
             // lblClaveAct
             // 
@@ -184,6 +187,28 @@
             this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
             this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Animated = true;
+            this.btnCancelar.BorderColor = System.Drawing.Color.Empty;
+            this.btnCancelar.BorderRadius = 20;
+            this.btnCancelar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCancelar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCancelar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCancelar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCancelar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            this.btnCancelar.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.HoverState.BorderColor = System.Drawing.Color.Black;
+            this.btnCancelar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.btnCancelar.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.btnCancelar.Location = new System.Drawing.Point(142, 194);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(138, 52);
+            this.btnCancelar.TabIndex = 139;
+            this.btnCancelar.Text = "CANCELAR";
+            this.btnCancelar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
             // CambiarClave
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -221,5 +246,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel5;
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
+        public Guna.UI2.WinForms.Guna2Button btnCancelar;
     }
 }
