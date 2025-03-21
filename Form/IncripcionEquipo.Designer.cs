@@ -34,7 +34,7 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtApellido = new System.Windows.Forms.TextBox();
+            this.txtCosto = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lbBorde = new System.Windows.Forms.Label();
@@ -43,11 +43,11 @@
             this.cmbEquipos = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.lbNameTorneo = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtAbono = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtSaldo = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -109,6 +109,7 @@
             this.btnGuardar.TabIndex = 63;
             this.btnGuardar.Text = "INSCRIBIR";
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // label4
             // 
@@ -130,16 +131,16 @@
             this.label3.TabIndex = 60;
             this.label3.Text = "Costo de la Inscripción:";
             // 
-            // txtApellido
+            // txtCosto
             // 
-            this.txtApellido.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtApellido.Enabled = false;
-            this.txtApellido.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellido.Location = new System.Drawing.Point(284, 204);
-            this.txtApellido.Multiline = true;
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(94, 38);
-            this.txtApellido.TabIndex = 59;
+            this.txtCosto.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtCosto.Enabled = false;
+            this.txtCosto.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCosto.Location = new System.Drawing.Point(284, 215);
+            this.txtCosto.Multiline = true;
+            this.txtCosto.Name = "txtCosto";
+            this.txtCosto.Size = new System.Drawing.Size(94, 27);
+            this.txtCosto.TabIndex = 59;
             // 
             // label2
             // 
@@ -216,15 +217,16 @@
             this.lbNameTorneo.Size = new System.Drawing.Size(0, 24);
             this.lbNameTorneo.TabIndex = 73;
             // 
-            // textBox1
+            // txtAbono
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(107, 257);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(86, 38);
-            this.textBox1.TabIndex = 74;
+            this.txtAbono.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtAbono.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAbono.Location = new System.Drawing.Point(107, 269);
+            this.txtAbono.Multiline = true;
+            this.txtAbono.Name = "txtAbono";
+            this.txtAbono.Size = new System.Drawing.Size(86, 26);
+            this.txtAbono.TabIndex = 74;
+            this.txtAbono.TextChanged += new System.EventHandler(this.txtAbono_TextChanged_1);
             // 
             // label6
             // 
@@ -236,16 +238,16 @@
             this.label6.TabIndex = 75;
             this.label6.Text = "Saldo:";
             // 
-            // textBox2
+            // txtSaldo
             // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox2.Enabled = false;
-            this.textBox2.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(284, 257);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(94, 38);
-            this.textBox2.TabIndex = 76;
+            this.txtSaldo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtSaldo.Enabled = false;
+            this.txtSaldo.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSaldo.Location = new System.Drawing.Point(284, 269);
+            this.txtSaldo.Multiline = true;
+            this.txtSaldo.Name = "txtSaldo";
+            this.txtSaldo.Size = new System.Drawing.Size(94, 26);
+            this.txtSaldo.TabIndex = 76;
             // 
             // label7
             // 
@@ -253,28 +255,28 @@
             this.label7.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(22, 323);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(71, 24);
+            this.label7.Size = new System.Drawing.Size(127, 24);
             this.label7.TabIndex = 77;
-            this.label7.Text = "Fecha:";
+            this.label7.Text = "Fecha límite:";
             // 
-            // dateTimePicker1
+            // dtpFecha
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.dateTimePicker1.Location = new System.Drawing.Point(107, 324);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(271, 23);
-            this.dateTimePicker1.TabIndex = 78;
+            this.dtpFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.dtpFecha.Location = new System.Drawing.Point(155, 324);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(223, 23);
+            this.dtpFecha.TabIndex = 78;
             // 
             // InscripcionEquipo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(433, 450);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtSaldo);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtAbono);
             this.Controls.Add(this.lbNameTorneo);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cmbEquipos);
@@ -283,7 +285,7 @@
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtApellido);
+            this.Controls.Add(this.txtCosto);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbBorde);
@@ -309,7 +311,7 @@
         public System.Windows.Forms.Button btnGuardar;
         public System.Windows.Forms.Label label4;
         public System.Windows.Forms.Label label3;
-        public System.Windows.Forms.TextBox txtApellido;
+        public System.Windows.Forms.TextBox txtCosto;
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbBorde;
@@ -318,10 +320,10 @@
         private System.Windows.Forms.ComboBox cmbEquipos;
         public System.Windows.Forms.Label label5;
         public System.Windows.Forms.Label lbNameTorneo;
-        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.TextBox txtAbono;
         public System.Windows.Forms.Label label6;
-        public System.Windows.Forms.TextBox textBox2;
+        public System.Windows.Forms.TextBox txtSaldo;
         public System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpFecha;
     }
 }

@@ -107,7 +107,7 @@ namespace TorneosFut
         }
         private void btnInscripcionEquipos_Click(object sender, EventArgs e)
         {
-            inscripcion = new InscripcionEquipo(IDTorneo, conexion.Usuario, conexion.Clave);
+            inscripcion = new InscripcionEquipo(IDTorneo, conexion.Usuario, conexion.Clave, true);
             //panelmodul.Show();
             //T.Hide();
             inscripcion.ShowDialog();
