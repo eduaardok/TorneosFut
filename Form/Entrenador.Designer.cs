@@ -36,7 +36,6 @@
             this.ptbIMG = new System.Windows.Forms.PictureBox();
             this.dgvEntrenador = new System.Windows.Forms.DataGridView();
             this.btnEditar = new System.Windows.Forms.Button();
-            this.btnEstadisticas = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAggDT = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -49,7 +48,7 @@
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.BackgroundImage = global::TorneosFut.Properties.Resources.IconoLupa;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(141, 96);
+            this.pictureBox1.Location = new System.Drawing.Point(171, 103);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(50, 49);
             this.pictureBox1.TabIndex = 26;
@@ -61,7 +60,7 @@
             this.txtBuscarEntrenador.Font = new System.Drawing.Font("Onest Light", 20F);
             this.txtBuscarEntrenador.ForeColor = System.Drawing.Color.Gray;
             this.txtBuscarEntrenador.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtBuscarEntrenador.Location = new System.Drawing.Point(197, 96);
+            this.txtBuscarEntrenador.Location = new System.Drawing.Point(227, 103);
             this.txtBuscarEntrenador.Multiline = true;
             this.txtBuscarEntrenador.Name = "txtBuscarEntrenador";
             this.txtBuscarEntrenador.Size = new System.Drawing.Size(633, 48);
@@ -73,8 +72,8 @@
             // ptbIMG
             // 
             this.ptbIMG.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ptbIMG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ptbIMG.Location = new System.Drawing.Point(869, 38);
+            this.ptbIMG.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.ptbIMG.Location = new System.Drawing.Point(896, 53);
             this.ptbIMG.Name = "ptbIMG";
             this.ptbIMG.Size = new System.Drawing.Size(247, 202);
             this.ptbIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -89,7 +88,10 @@
             this.dgvEntrenador.AllowUserToResizeRows = false;
             this.dgvEntrenador.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvEntrenador.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvEntrenador.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvEntrenador.BackgroundColor = System.Drawing.Color.White;
+            this.dgvEntrenador.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvEntrenador.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -98,7 +100,8 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvEntrenador.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvEntrenador.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEntrenador.ColumnHeadersHeight = 40;
+            this.dgvEntrenador.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -108,9 +111,11 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvEntrenador.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvEntrenador.EnableHeadersVisualStyles = false;
-            this.dgvEntrenador.Location = new System.Drawing.Point(124, 273);
+            this.dgvEntrenador.Location = new System.Drawing.Point(151, 271);
+            this.dgvEntrenador.MultiSelect = false;
             this.dgvEntrenador.Name = "dgvEntrenador";
             this.dgvEntrenador.ReadOnly = true;
+            this.dgvEntrenador.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -134,27 +139,13 @@
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(395, 188);
+            this.btnEditar.Location = new System.Drawing.Point(519, 185);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(123, 52);
             this.btnEditar.TabIndex = 22;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click_1);
-            // 
-            // btnEstadisticas
-            // 
-            this.btnEstadisticas.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEstadisticas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
-            this.btnEstadisticas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEstadisticas.Font = new System.Drawing.Font("Onest Bold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEstadisticas.ForeColor = System.Drawing.Color.Black;
-            this.btnEstadisticas.Location = new System.Drawing.Point(141, 188);
-            this.btnEstadisticas.Name = "btnEstadisticas";
-            this.btnEstadisticas.Size = new System.Drawing.Size(123, 52);
-            this.btnEstadisticas.TabIndex = 21;
-            this.btnEstadisticas.Text = "Estadisticas";
-            this.btnEstadisticas.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -183,7 +174,7 @@
             this.btnAggDT.ForeColor = System.Drawing.Color.Black;
             this.btnAggDT.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnAggDT.HoverState.FillColor = System.Drawing.Color.White;
-            this.btnAggDT.Location = new System.Drawing.Point(646, 188);
+            this.btnAggDT.Location = new System.Drawing.Point(663, 185);
             this.btnAggDT.Name = "btnAggDT";
             this.btnAggDT.Size = new System.Drawing.Size(184, 52);
             this.btnAggDT.TabIndex = 19;
@@ -194,13 +185,12 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1386, 788);
+            this.ClientSize = new System.Drawing.Size(1447, 919);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtBuscarEntrenador);
             this.Controls.Add(this.ptbIMG);
             this.Controls.Add(this.dgvEntrenador);
             this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.btnEstadisticas);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAggDT);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -227,7 +217,6 @@
         private System.Windows.Forms.PictureBox ptbIMG;
         public System.Windows.Forms.DataGridView dgvEntrenador;
         private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.Button btnEstadisticas;
         public System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button btnAggDT;
     }

@@ -25,5 +25,15 @@ namespace TorneosFut
                 e.Graphics.DrawRectangle(pen, 0, 0, lbBorde.Width - 1, lbBorde.Height - 1);
             } 
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void AggEditOrganizador_Load(object sender, EventArgs e)
+        {
+            Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
+        }
     }
 }

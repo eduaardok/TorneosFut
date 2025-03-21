@@ -28,131 +28,76 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtApellido = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cmbSexo = new System.Windows.Forms.ComboBox();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnImportar = new System.Windows.Forms.Button();
-            this.ptbImagen = new System.Windows.Forms.PictureBox();
-            this.btngCancelar = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblEncabezado = new System.Windows.Forms.Label();
+            this.lbBorde = new System.Windows.Forms.Label();
             this.lblfecha = new System.Windows.Forms.Label();
             this.dtpNacimiento = new System.Windows.Forms.DateTimePicker();
-            this.lbBorde = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbImagen)).BeginInit();
+            this.btngCancelar = new Guna.UI2.WinForms.Guna2Button();
+            this.btnImportar = new System.Windows.Forms.Button();
+            this.ptbImagen = new System.Windows.Forms.PictureBox();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.cmbSexo = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtApellido = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbImagen)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // panel2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Onest Bold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(30, 53);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 34);
-            this.label1.TabIndex = 1;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.panel2.Controls.Add(this.lblEncabezado);
+            this.panel2.Controls.Add(this.lbBorde);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(498, 50);
+            this.panel2.TabIndex = 50;
             // 
-            // txtNombre
+            // lblEncabezado
             // 
-            this.txtNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtNombre.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(36, 118);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(225, 28);
-            this.txtNombre.TabIndex = 5;
+            this.lblEncabezado.AutoSize = true;
+            this.lblEncabezado.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEncabezado.ForeColor = System.Drawing.Color.White;
+            this.lblEncabezado.Location = new System.Drawing.Point(12, 8);
+            this.lblEncabezado.Name = "lblEncabezado";
+            this.lblEncabezado.Size = new System.Drawing.Size(286, 25);
+            this.lblEncabezado.TabIndex = 33;
+            this.lblEncabezado.Text = "AGREGAR ENTRENADOR";
             // 
-            // label2
+            // lbBorde
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(32, 91);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 24);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Nombre";
+            this.lbBorde.Location = new System.Drawing.Point(-3, 0);
+            this.lbBorde.Name = "lbBorde";
+            this.lbBorde.Size = new System.Drawing.Size(498, 443);
+            this.lbBorde.TabIndex = 55;
+            this.lbBorde.Paint += new System.Windows.Forms.PaintEventHandler(this.lbBorde_Paint);
             // 
-            // label3
+            // lblfecha
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(32, 147);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 24);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Apellido";
+            this.lblfecha.AutoSize = true;
+            this.lblfecha.BackColor = System.Drawing.Color.Transparent;
+            this.lblfecha.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblfecha.Location = new System.Drawing.Point(32, 238);
+            this.lblfecha.Name = "lblfecha";
+            this.lblfecha.Size = new System.Drawing.Size(205, 24);
+            this.lblfecha.TabIndex = 80;
+            this.lblfecha.Text = "Fecha de Nacimiento\r\n";
             // 
-            // txtApellido
+            // dtpNacimiento
             // 
-            this.txtApellido.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtApellido.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellido.Location = new System.Drawing.Point(36, 172);
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(225, 28);
-            this.txtApellido.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(32, 203);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 24);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Sexo";
-            // 
-            // cmbSexo
-            // 
-            this.cmbSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSexo.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbSexo.FormattingEnabled = true;
-            this.cmbSexo.Items.AddRange(new object[] {
-            "Masculino",
-            "Femenino"});
-            this.cmbSexo.Location = new System.Drawing.Point(36, 223);
-            this.cmbSexo.Name = "cmbSexo";
-            this.cmbSexo.Size = new System.Drawing.Size(225, 29);
-            this.cmbSexo.TabIndex = 11;
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.btnGuardar.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnGuardar.Location = new System.Drawing.Point(264, 371);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(123, 52);
-            this.btnGuardar.TabIndex = 14;
-            this.btnGuardar.Text = "AGREGAR";
-            this.btnGuardar.UseVisualStyleBackColor = false;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // btnImportar
-            // 
-            this.btnImportar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
-            this.btnImportar.Font = new System.Drawing.Font("Onest Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImportar.Location = new System.Drawing.Point(303, 274);
-            this.btnImportar.Name = "btnImportar";
-            this.btnImportar.Size = new System.Drawing.Size(166, 38);
-            this.btnImportar.TabIndex = 16;
-            this.btnImportar.Text = "IMPORTAR FOTO";
-            this.btnImportar.UseVisualStyleBackColor = false;
-            this.btnImportar.Click += new System.EventHandler(this.btnImportar_Click);
-            // 
-            // ptbImagen
-            // 
-            this.ptbImagen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ptbImagen.Location = new System.Drawing.Point(303, 89);
-            this.ptbImagen.Name = "ptbImagen";
-            this.ptbImagen.Size = new System.Drawing.Size(166, 175);
-            this.ptbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbImagen.TabIndex = 15;
-            this.ptbImagen.TabStop = false;
+            this.dtpNacimiento.Location = new System.Drawing.Point(36, 265);
+            this.dtpNacimiento.MaxDate = new System.DateTime(2005, 6, 15, 0, 0, 0, 0);
+            this.dtpNacimiento.MinDate = new System.DateTime(1929, 11, 29, 0, 0, 0, 0);
+            this.dtpNacimiento.Name = "dtpNacimiento";
+            this.dtpNacimiento.Size = new System.Drawing.Size(225, 20);
+            this.dtpNacimiento.TabIndex = 79;
+            this.dtpNacimiento.Value = new System.DateTime(2005, 6, 15, 0, 0, 0, 0);
             // 
             // btngCancelar
             // 
@@ -172,70 +117,130 @@
             this.btngCancelar.ForeColor = System.Drawing.Color.Black;
             this.btngCancelar.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btngCancelar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
-            this.btngCancelar.Location = new System.Drawing.Point(111, 371);
+            this.btngCancelar.Location = new System.Drawing.Point(111, 354);
             this.btngCancelar.Name = "btngCancelar";
             this.btngCancelar.Size = new System.Drawing.Size(127, 52);
-            this.btngCancelar.TabIndex = 31;
+            this.btngCancelar.TabIndex = 78;
             this.btngCancelar.Text = "CANCELAR";
             this.btngCancelar.Click += new System.EventHandler(this.btngCancelar_Click);
             // 
-            // panel2
+            // btnImportar
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
-            this.panel2.Controls.Add(this.lblEncabezado);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(498, 50);
-            this.panel2.TabIndex = 50;
+            this.btnImportar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
+            this.btnImportar.Font = new System.Drawing.Font("Onest Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImportar.Location = new System.Drawing.Point(303, 257);
+            this.btnImportar.Name = "btnImportar";
+            this.btnImportar.Size = new System.Drawing.Size(166, 38);
+            this.btnImportar.TabIndex = 77;
+            this.btnImportar.Text = "IMPORTAR FOTO";
+            this.btnImportar.UseVisualStyleBackColor = false;
+            this.btnImportar.Click += new System.EventHandler(this.btnImportar_Click);
             // 
-            // lblEncabezado
+            // ptbImagen
             // 
-            this.lblEncabezado.AutoSize = true;
-            this.lblEncabezado.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEncabezado.ForeColor = System.Drawing.Color.White;
-            this.lblEncabezado.Location = new System.Drawing.Point(12, 8);
-            this.lblEncabezado.Name = "lblEncabezado";
-            this.lblEncabezado.Size = new System.Drawing.Size(286, 25);
-            this.lblEncabezado.TabIndex = 33;
-            this.lblEncabezado.Text = "AGREGAR ENTRENADOR";
+            this.ptbImagen.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.ptbImagen.Location = new System.Drawing.Point(303, 72);
+            this.ptbImagen.Name = "ptbImagen";
+            this.ptbImagen.Size = new System.Drawing.Size(166, 175);
+            this.ptbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbImagen.TabIndex = 76;
+            this.ptbImagen.TabStop = false;
             // 
-            // lblfecha
+            // btnGuardar
             // 
-            this.lblfecha.AutoSize = true;
-            this.lblfecha.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblfecha.Location = new System.Drawing.Point(32, 255);
-            this.lblfecha.Name = "lblfecha";
-            this.lblfecha.Size = new System.Drawing.Size(205, 24);
-            this.lblfecha.TabIndex = 54;
-            this.lblfecha.Text = "Fecha de Nacimiento\r\n";
+            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            this.btnGuardar.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnGuardar.Location = new System.Drawing.Point(264, 354);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(123, 52);
+            this.btnGuardar.TabIndex = 75;
+            this.btnGuardar.Text = "AGREGAR";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // dtpNacimiento
+            // cmbSexo
             // 
-            this.dtpNacimiento.Location = new System.Drawing.Point(36, 282);
-            this.dtpNacimiento.MaxDate = new System.DateTime(2005, 6, 15, 0, 0, 0, 0);
-            this.dtpNacimiento.MinDate = new System.DateTime(1929, 11, 29, 0, 0, 0, 0);
-            this.dtpNacimiento.Name = "dtpNacimiento";
-            this.dtpNacimiento.Size = new System.Drawing.Size(225, 20);
-            this.dtpNacimiento.TabIndex = 53;
-            this.dtpNacimiento.Value = new System.DateTime(2005, 6, 15, 0, 0, 0, 0);
+            this.cmbSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSexo.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSexo.FormattingEnabled = true;
+            this.cmbSexo.Items.AddRange(new object[] {
+            "Masculino",
+            "Femenino"});
+            this.cmbSexo.Location = new System.Drawing.Point(36, 206);
+            this.cmbSexo.Name = "cmbSexo";
+            this.cmbSexo.Size = new System.Drawing.Size(225, 29);
+            this.cmbSexo.TabIndex = 74;
             // 
-            // lbBorde
+            // label4
             // 
-            this.lbBorde.Location = new System.Drawing.Point(0, 0);
-            this.lbBorde.Name = "lbBorde";
-            this.lbBorde.Size = new System.Drawing.Size(498, 443);
-            this.lbBorde.TabIndex = 55;
-            this.lbBorde.Paint += new System.Windows.Forms.PaintEventHandler(this.lbBorde_Paint);
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(32, 186);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(54, 24);
+            this.label4.TabIndex = 73;
+            this.label4.Text = "Sexo";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(32, 130);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(84, 24);
+            this.label3.TabIndex = 72;
+            this.label3.Text = "Apellido";
+            // 
+            // txtApellido
+            // 
+            this.txtApellido.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtApellido.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApellido.Location = new System.Drawing.Point(36, 155);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(225, 28);
+            this.txtApellido.TabIndex = 71;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(32, 74);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(84, 24);
+            this.label2.TabIndex = 70;
+            this.label2.Text = "Nombre";
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtNombre.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.Location = new System.Drawing.Point(36, 101);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(225, 28);
+            this.txtNombre.TabIndex = 69;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Onest Bold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(30, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 34);
+            this.label1.TabIndex = 68;
             // 
             // AggEditEntrenador
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(498, 443);
             this.ControlBox = false;
             this.Controls.Add(this.lblfecha);
             this.Controls.Add(this.dtpNacimiento);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.btngCancelar);
             this.Controls.Add(this.btnImportar);
             this.Controls.Add(this.ptbImagen);
@@ -247,7 +252,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lbBorde);
+            this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimizeBox = false;
             this.Name = "AggEditEntrenador";
@@ -256,31 +261,30 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmAggEntrenador";
             this.Load += new System.EventHandler(this.frmAggEntrenador_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.ptbImagen)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbImagen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        public System.Windows.Forms.Label label1;
-        public System.Windows.Forms.TextBox txtNombre;
-        public System.Windows.Forms.Label label2;
-        public System.Windows.Forms.Label label3;
-        public System.Windows.Forms.TextBox txtApellido;
-        public System.Windows.Forms.Label label4;
-        public System.Windows.Forms.ComboBox cmbSexo;
-        public System.Windows.Forms.Button btnGuardar;
-        public System.Windows.Forms.PictureBox ptbImagen;
-        public System.Windows.Forms.Button btnImportar;
-        public Guna.UI2.WinForms.Guna2Button btngCancelar;
         public System.Windows.Forms.Panel panel2;
         public System.Windows.Forms.Label lblEncabezado;
+        private System.Windows.Forms.Label lbBorde;
         public System.Windows.Forms.Label lblfecha;
         public System.Windows.Forms.DateTimePicker dtpNacimiento;
-        private System.Windows.Forms.Label lbBorde;
+        public Guna.UI2.WinForms.Guna2Button btngCancelar;
+        public System.Windows.Forms.Button btnImportar;
+        public System.Windows.Forms.PictureBox ptbImagen;
+        public System.Windows.Forms.Button btnGuardar;
+        public System.Windows.Forms.ComboBox cmbSexo;
+        public System.Windows.Forms.Label label4;
+        public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.TextBox txtApellido;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.TextBox txtNombre;
+        public System.Windows.Forms.Label label1;
     }
 }

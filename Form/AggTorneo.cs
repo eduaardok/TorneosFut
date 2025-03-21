@@ -38,11 +38,13 @@ namespace TorneosFut
         }
         private void AggTorneo_Load(object sender, EventArgs e)
         {
+            Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
             Editar();
             csDGV.llenarcmbOrganizador(cmbOrganizador);
             cmbOrganizador.SelectedIndex = -1;
             csDGV.llenarcmbFormato(cmbFormato);
             cmbFormato.SelectedIndex= -1;
+
         }
 
         private void btngSalir_Click(object sender, EventArgs e)

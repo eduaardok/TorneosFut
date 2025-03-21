@@ -81,6 +81,7 @@ namespace TorneosFut
         private void AgregarJugadorEquipo_Load(object sender, EventArgs e)
         {
             Actualizar();
+            Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
             //tblequiposizq.Columns["IDJugador"].Visible=false;
         }
 
@@ -96,6 +97,11 @@ namespace TorneosFut
             {
                 e.Graphics.DrawRectangle(pen, 0, 0, lbBorde.Width - 1, lbBorde.Height - 1);
             }
+        }
+
+        private void btnguardar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

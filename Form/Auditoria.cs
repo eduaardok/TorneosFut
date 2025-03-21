@@ -22,6 +22,7 @@ namespace TorneosFut
 
         private void Auditoria_Load(object sender, EventArgs e)
         {
+            Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
             csDGV.MostrarAuditoriaSesion(dgvAuditoria);
             csDGV.AdaptarDGV(dgvAuditoria);
             n=false;

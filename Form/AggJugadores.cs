@@ -33,6 +33,7 @@ namespace pruebas
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
             if (!agregar)
             {

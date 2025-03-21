@@ -67,6 +67,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form\AggEditArbitro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\AggEditArbitro.Designer.cs">
+      <DependentUpon>AggEditArbitro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Arbitro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Arbitro.Designer.cs">
+      <DependentUpon>Arbitro.cs</DependentUpon>
+    </Compile>
     <Compile Include="Class\csAuditorias.cs" />
     <Compile Include="Class\csIncripcionEquipo.cs" />
     <Compile Include="Class\csValidaciones.cs" />
@@ -259,6 +271,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\AgregarJugadorEquipo.resx">
       <DependentUpon>AgregarJugadorEquipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Arbitro.resx">
+      <DependentUpon>Arbitro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Auditoria.resx">
       <DependentUpon>Auditoria.cs</DependentUpon>

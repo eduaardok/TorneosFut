@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbl = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblEncabezado = new System.Windows.Forms.Label();
+            this.lbBorde = new System.Windows.Forms.Label();
+            this.lbl = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.btnCancelar = new Guna.UI2.WinForms.Guna2Button();
             this.btnAgregar = new Guna.UI2.WinForms.Guna2Button();
@@ -38,20 +39,8 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.txtUbicacion = new System.Windows.Forms.TextBox();
             this.txtNombreEstadio = new System.Windows.Forms.TextBox();
-            this.lbBorde = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lbl
-            // 
-            this.lbl.AutoSize = true;
-            this.lbl.BackColor = System.Drawing.Color.White;
-            this.lbl.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl.Location = new System.Drawing.Point(37, 81);
-            this.lbl.Name = "lbl";
-            this.lbl.Size = new System.Drawing.Size(35, 24);
-            this.lbl.TabIndex = 86;
-            this.lbl.Text = "ID ";
             // 
             // panel2
             // 
@@ -74,13 +63,32 @@
             this.lblEncabezado.TabIndex = 33;
             this.lblEncabezado.Text = "AGREGAR PATROCINADOR";
             // 
+            // lbBorde
+            // 
+            this.lbBorde.Location = new System.Drawing.Point(0, 0);
+            this.lbBorde.Name = "lbBorde";
+            this.lbBorde.Size = new System.Drawing.Size(435, 450);
+            this.lbBorde.TabIndex = 87;
+            this.lbBorde.Paint += new System.Windows.Forms.PaintEventHandler(this.lbBorde_Paint);
+            // 
+            // lbl
+            // 
+            this.lbl.AutoSize = true;
+            this.lbl.BackColor = System.Drawing.Color.Transparent;
+            this.lbl.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl.Location = new System.Drawing.Point(45, 58);
+            this.lbl.Name = "lbl";
+            this.lbl.Size = new System.Drawing.Size(35, 24);
+            this.lbl.TabIndex = 102;
+            this.lbl.Text = "ID ";
+            // 
             // txtId
             // 
             this.txtId.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtId.Location = new System.Drawing.Point(41, 108);
+            this.txtId.Location = new System.Drawing.Point(49, 85);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(121, 28);
-            this.txtId.TabIndex = 83;
+            this.txtId.TabIndex = 101;
             this.txtId.Visible = false;
             // 
             // btnCancelar
@@ -95,11 +103,12 @@
             this.btnCancelar.HoverState.CustomBorderColor = System.Drawing.Color.White;
             this.btnCancelar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnCancelar.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(72, 361);
+            this.btnCancelar.Location = new System.Drawing.Point(80, 338);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(147, 54);
-            this.btnCancelar.TabIndex = 82;
+            this.btnCancelar.TabIndex = 100;
             this.btnCancelar.Text = "CANCELAR";
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAgregar
             // 
@@ -114,58 +123,50 @@
             this.btnAgregar.HoverState.CustomBorderColor = System.Drawing.Color.White;
             this.btnAgregar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnAgregar.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnAgregar.Location = new System.Drawing.Point(241, 361);
+            this.btnAgregar.Location = new System.Drawing.Point(249, 338);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(138, 54);
-            this.btnAgregar.TabIndex = 81;
+            this.btnAgregar.TabIndex = 99;
             this.btnAgregar.Text = "AGREGAR";
             // 
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.BackColor = System.Drawing.Color.White;
+            this.lblDescripcion.BackColor = System.Drawing.Color.Transparent;
             this.lblDescripcion.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescripcion.Location = new System.Drawing.Point(37, 210);
+            this.lblDescripcion.Location = new System.Drawing.Point(45, 187);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(121, 24);
-            this.lblDescripcion.TabIndex = 80;
+            this.lblDescripcion.TabIndex = 98;
             this.lblDescripcion.Text = "Descripción";
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.BackColor = System.Drawing.Color.White;
+            this.lblNombre.BackColor = System.Drawing.Color.Transparent;
             this.lblNombre.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(37, 149);
+            this.lblNombre.Location = new System.Drawing.Point(45, 126);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(84, 24);
-            this.lblNombre.TabIndex = 79;
+            this.lblNombre.TabIndex = 97;
             this.lblNombre.Text = "Nombre";
             // 
             // txtUbicacion
             // 
             this.txtUbicacion.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUbicacion.Location = new System.Drawing.Point(41, 244);
+            this.txtUbicacion.Location = new System.Drawing.Point(49, 221);
             this.txtUbicacion.Multiline = true;
             this.txtUbicacion.Name = "txtUbicacion";
             this.txtUbicacion.Size = new System.Drawing.Size(340, 78);
-            this.txtUbicacion.TabIndex = 78;
+            this.txtUbicacion.TabIndex = 96;
             // 
             // txtNombreEstadio
             // 
             this.txtNombreEstadio.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreEstadio.Location = new System.Drawing.Point(41, 176);
+            this.txtNombreEstadio.Location = new System.Drawing.Point(49, 153);
             this.txtNombreEstadio.Name = "txtNombreEstadio";
             this.txtNombreEstadio.Size = new System.Drawing.Size(178, 28);
-            this.txtNombreEstadio.TabIndex = 77;
-            // 
-            // lbBorde
-            // 
-            this.lbBorde.Location = new System.Drawing.Point(0, 0);
-            this.lbBorde.Name = "lbBorde";
-            this.lbBorde.Size = new System.Drawing.Size(435, 450);
-            this.lbBorde.TabIndex = 87;
-            this.lbBorde.Paint += new System.Windows.Forms.PaintEventHandler(this.lbBorde_Paint);
+            this.txtNombreEstadio.TabIndex = 95;
             // 
             // AggEditPatrocinador
             // 
@@ -173,7 +174,6 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(435, 450);
             this.Controls.Add(this.lbl);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAgregar);
@@ -181,10 +181,12 @@
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.txtUbicacion);
             this.Controls.Add(this.txtNombreEstadio);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.lbBorde);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AggEditPatrocinador";
             this.Text = "AggEditPatrocinador";
+            this.Load += new System.EventHandler(this.AggEditPatrocinador_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -193,9 +195,10 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label lbl;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblEncabezado;
+        private System.Windows.Forms.Label lbBorde;
+        private System.Windows.Forms.Label lbl;
         public System.Windows.Forms.TextBox txtId;
         private Guna.UI2.WinForms.Guna2Button btnCancelar;
         private Guna.UI2.WinForms.Guna2Button btnAgregar;
@@ -203,6 +206,5 @@
         private System.Windows.Forms.Label lblNombre;
         public System.Windows.Forms.TextBox txtUbicacion;
         public System.Windows.Forms.TextBox txtNombreEstadio;
-        private System.Windows.Forms.Label lbBorde;
     }
 }

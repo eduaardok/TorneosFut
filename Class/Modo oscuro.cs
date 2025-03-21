@@ -27,7 +27,11 @@ namespace TorneosFut
             // Aplicar el fondo del formulario y paneles solo si no son botones específicos
             if (formulario is Form)
             {
-                formulario.BackColor = Color.FromArgb(20, 25, 29);  // Fondo del formulario en modo oscuro
+                if (formulario.Tag != "NoCambiar")
+                {
+
+                    formulario.BackColor = Color.FromArgb(0, 0, 0);  // Fondo del formulario en modo oscuro
+                }
             }
             foreach (Control control in formulario.Controls)
             {
@@ -44,17 +48,25 @@ namespace TorneosFut
                 }
 
                 // Cambiar el estilo de los DataGridViews
-                if (control is DataGridView)
+                if (control is DataGridView )
                 {
                     DataGridView dgv = (DataGridView)control;
-                    dgv.BackgroundColor = Color.FromArgb(20, 25, 29);  // Fondo oscuro
+                    dgv.BackgroundColor = Color.FromArgb(0, 0, 0);  // Fondo oscuro
                     dgv.ForeColor = Color.White;  // Texto blanco
                     dgv.DefaultCellStyle.BackColor = Color.FromArgb(30, 35, 40);
                     dgv.DefaultCellStyle.ForeColor = Color.White;
                     dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(50, 55, 60);
                     dgv.DefaultCellStyle.SelectionForeColor = Color.White;
-                }
 
+                }
+                if(control is Panel)
+                {
+                    Panel panel = (Panel)control;
+                    if (panel.Tag!= "NoCambiar")
+                    {
+                        panel.BackColor = Color.FromArgb(40, 45, 50);
+                    }
+                }
                 // Llamamos recursivamente a los controles hijos
                 AplicarTemaOscuro(control);
             }
@@ -65,7 +77,12 @@ namespace TorneosFut
             // Aplicar el fondo del formulario y paneles en modo claro
             if (formulario is Form)
             {
-                formulario.BackColor = Color.White;  // Fondo del formulario en modo claro
+                if (formulario.Tag != "NoCambiar")
+                {
+
+
+                    formulario.BackColor = Color.White;  // Fondo del formulario en modo claro
+                }
             }
 
             // Recorrer los controles del formulario
@@ -87,12 +104,21 @@ namespace TorneosFut
                 if (control is DataGridView)
                 {
                     DataGridView dgv = (DataGridView)control;
+
                     dgv.BackgroundColor = Color.White; 
                     dgv.ForeColor = Color.Black; 
                     dgv.DefaultCellStyle.BackColor = Color.White;
                     dgv.DefaultCellStyle.ForeColor = Color.Black;
                     dgv.DefaultCellStyle.SelectionBackColor = Color.LightGray;
                     dgv.DefaultCellStyle.SelectionForeColor = Color.Black;
+                }
+                if(control is Panel)
+                {
+                    Panel panel = (Panel)control;
+                    if (panel.Tag != "NoCambiar")
+                    {
+                        panel.BackColor = Color.FromArgb(217, 200, 209);
+                    }
                 }
                 // Llamamos recursivamente a los controles hijos
                 AplicarTemaClaro(control);

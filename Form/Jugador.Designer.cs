@@ -74,7 +74,7 @@
             this.guna2Button1.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
             this.guna2Button1.HoverState.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(531, 179);
+            this.guna2Button1.Location = new System.Drawing.Point(536, 196);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(214, 59);
             this.guna2Button1.TabIndex = 11;
@@ -100,7 +100,7 @@
             this.btnAgregarJugador.ForeColor = System.Drawing.Color.Black;
             this.btnAgregarJugador.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnAgregarJugador.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
-            this.btnAgregarJugador.Location = new System.Drawing.Point(278, 179);
+            this.btnAgregarJugador.Location = new System.Drawing.Point(292, 196);
             this.btnAgregarJugador.Name = "btnAgregarJugador";
             this.btnAgregarJugador.Size = new System.Drawing.Size(222, 59);
             this.btnAgregarJugador.TabIndex = 12;
@@ -112,7 +112,7 @@
             this.panelDgv.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelDgv.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panelDgv.Controls.Add(this.dgvJugador);
-            this.panelDgv.Location = new System.Drawing.Point(154, 244);
+            this.panelDgv.Location = new System.Drawing.Point(109, 261);
             this.panelDgv.Name = "panelDgv";
             this.panelDgv.Size = new System.Drawing.Size(1186, 601);
             this.panelDgv.TabIndex = 13;
@@ -124,7 +124,9 @@
             this.dgvJugador.AllowUserToResizeColumns = false;
             this.dgvJugador.AllowUserToResizeRows = false;
             this.dgvJugador.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvJugador.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvJugador.BackgroundColor = System.Drawing.Color.White;
+            this.dgvJugador.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -133,6 +135,7 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvJugador.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvJugador.ColumnHeadersHeight = 40;
             this.dgvJugador.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvJugador.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvJugador.EnableHeadersVisualStyles = false;
@@ -140,6 +143,7 @@
             this.dgvJugador.MultiSelect = false;
             this.dgvJugador.Name = "dgvJugador";
             this.dgvJugador.ReadOnly = true;
+            this.dgvJugador.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvJugador.RowHeadersVisible = false;
             this.dgvJugador.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
@@ -156,7 +160,7 @@
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.BackgroundImage = global::TorneosFut.Properties.Resources.IconoLupa;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(62, 103);
+            this.pictureBox1.Location = new System.Drawing.Point(65, 114);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(50, 49);
             this.pictureBox1.TabIndex = 15;
@@ -168,7 +172,7 @@
             this.txtBuscarJugador.Font = new System.Drawing.Font("Onest Light", 20F);
             this.txtBuscarJugador.ForeColor = System.Drawing.Color.Gray;
             this.txtBuscarJugador.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtBuscarJugador.Location = new System.Drawing.Point(109, 104);
+            this.txtBuscarJugador.Location = new System.Drawing.Point(121, 115);
             this.txtBuscarJugador.Multiline = true;
             this.txtBuscarJugador.Name = "txtBuscarJugador";
             this.txtBuscarJugador.Size = new System.Drawing.Size(841, 48);
@@ -180,7 +184,7 @@
             // 
             // ptbImagen
             // 
-            this.ptbImagen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ptbImagen.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.ptbImagen.Location = new System.Drawing.Point(1009, 45);
             this.ptbImagen.Name = "ptbImagen";
             this.ptbImagen.Size = new System.Drawing.Size(207, 193);
@@ -192,7 +196,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1386, 788);
+            this.ClientSize = new System.Drawing.Size(1414, 920);
             this.Controls.Add(this.ptbImagen);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtBuscarJugador);

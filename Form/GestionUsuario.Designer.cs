@@ -62,7 +62,9 @@
             this.dgvUsuarios.AllowUserToResizeColumns = false;
             this.dgvUsuarios.AllowUserToResizeRows = false;
             this.dgvUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvUsuarios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvUsuarios.BackgroundColor = System.Drawing.Color.White;
+            this.dgvUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -71,6 +73,7 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvUsuarios.ColumnHeadersHeight = 40;
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvUsuarios.EnableHeadersVisualStyles = false;
@@ -78,6 +81,8 @@
             this.dgvUsuarios.MultiSelect = false;
             this.dgvUsuarios.Name = "dgvUsuarios";
             this.dgvUsuarios.ReadOnly = true;
+            this.dgvUsuarios.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dgvUsuarios.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvUsuarios.RowHeadersVisible = false;
             this.dgvUsuarios.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
@@ -122,10 +127,6 @@
             this.btngCrear.BackColor = System.Drawing.Color.White;
             this.btngCrear.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btngCrear.CheckedState.CustomBorderColor = System.Drawing.Color.Black;
-            this.btngCrear.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
-            this.btngCrear.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.btngCrear.CustomBorderColor = System.Drawing.Color.White;
-            this.btngCrear.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 4);
             this.btngCrear.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btngCrear.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btngCrear.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -161,10 +162,6 @@
             this.btngEditar.BackColor = System.Drawing.Color.White;
             this.btngEditar.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btngEditar.CheckedState.CustomBorderColor = System.Drawing.Color.Black;
-            this.btngEditar.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
-            this.btngEditar.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.btngEditar.CustomBorderColor = System.Drawing.Color.White;
-            this.btngEditar.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 4);
             this.btngEditar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btngEditar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btngEditar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));

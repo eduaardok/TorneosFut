@@ -20,6 +20,7 @@ namespace TorneosFut
         Jugador ju;
         Entrenador entre;
         csDGV csDGV;
+        Estadio esta;
         AgregarJugadorEquipo aggjugadorEquipo;
         public Equipos(string u, string c)
         {
@@ -28,6 +29,7 @@ namespace TorneosFut
             ju = new Jugador(u, c);
             entre = new Entrenador(u, c);
             csDGV = new csDGV(u, c);
+            esta = new Estadio(u, c);
             InitializeComponent();
         }
         private void addUserControl(UserControl userControll)
@@ -148,7 +150,7 @@ namespace TorneosFut
 
         private void btnEstadio_Click(object sender, EventArgs e)
         {
-
+            AbrirFormEnPanel(panelmodul, esta);
         }
         void ActualizarTabla()
         {

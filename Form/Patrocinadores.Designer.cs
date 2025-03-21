@@ -35,7 +35,6 @@
             this.txtBuscarEntrenador = new System.Windows.Forms.TextBox();
             this.ptbIMGPatrocinador = new System.Windows.Forms.PictureBox();
             this.btnEditarPatrocinador = new System.Windows.Forms.Button();
-            this.btnEstadisticas = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAggDT = new Guna.UI2.WinForms.Guna2Button();
             this.dgvPatrocinador = new System.Windows.Forms.DataGridView();
@@ -71,7 +70,7 @@
             // ptbIMGPatrocinador
             // 
             this.ptbIMGPatrocinador.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ptbIMGPatrocinador.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ptbIMGPatrocinador.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.ptbIMGPatrocinador.Location = new System.Drawing.Point(926, 132);
             this.ptbIMGPatrocinador.Name = "ptbIMGPatrocinador";
             this.ptbIMGPatrocinador.Size = new System.Drawing.Size(166, 141);
@@ -92,20 +91,6 @@
             this.btnEditarPatrocinador.TabIndex = 30;
             this.btnEditarPatrocinador.Text = "Editar";
             this.btnEditarPatrocinador.UseVisualStyleBackColor = false;
-            // 
-            // btnEstadisticas
-            // 
-            this.btnEstadisticas.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEstadisticas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
-            this.btnEstadisticas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEstadisticas.Font = new System.Drawing.Font("Onest Bold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEstadisticas.ForeColor = System.Drawing.Color.Black;
-            this.btnEstadisticas.Location = new System.Drawing.Point(196, 194);
-            this.btnEstadisticas.Name = "btnEstadisticas";
-            this.btnEstadisticas.Size = new System.Drawing.Size(123, 52);
-            this.btnEstadisticas.TabIndex = 29;
-            this.btnEstadisticas.Text = "Estadisticas";
-            this.btnEstadisticas.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -148,7 +133,10 @@
             this.dgvPatrocinador.AllowUserToResizeRows = false;
             this.dgvPatrocinador.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvPatrocinador.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPatrocinador.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvPatrocinador.BackgroundColor = System.Drawing.Color.White;
+            this.dgvPatrocinador.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvPatrocinador.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -157,7 +145,8 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvPatrocinador.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvPatrocinador.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPatrocinador.ColumnHeadersHeight = 40;
+            this.dgvPatrocinador.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -167,9 +156,10 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPatrocinador.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPatrocinador.EnableHeadersVisualStyles = false;
-            this.dgvPatrocinador.Location = new System.Drawing.Point(179, 279);
+            this.dgvPatrocinador.Location = new System.Drawing.Point(162, 279);
             this.dgvPatrocinador.Name = "dgvPatrocinador";
             this.dgvPatrocinador.ReadOnly = true;
+            this.dgvPatrocinador.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -195,7 +185,6 @@
             this.Controls.Add(this.ptbIMGPatrocinador);
             this.Controls.Add(this.dgvPatrocinador);
             this.Controls.Add(this.btnEditarPatrocinador);
-            this.Controls.Add(this.btnEstadisticas);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAggDT);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -221,7 +210,6 @@
         private System.Windows.Forms.TextBox txtBuscarEntrenador;
         private System.Windows.Forms.PictureBox ptbIMGPatrocinador;
         private System.Windows.Forms.Button btnEditarPatrocinador;
-        private System.Windows.Forms.Button btnEstadisticas;
         public System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button btnAggDT;
         public System.Windows.Forms.DataGridView dgvPatrocinador;

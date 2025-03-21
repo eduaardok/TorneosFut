@@ -25,7 +25,7 @@ namespace TorneosFut
           int nBottom,
           int nWidhtEllipse,
           int nHeightEllipse
-        ); 
+        );
         static csConexion conexion;
         static bool esAdmin;
         static csEncriptar encriptar;
@@ -100,6 +100,8 @@ namespace TorneosFut
             this.Bounds = Screen.PrimaryScreen.WorkingArea;
             AccesoAdmin();
             this.Text = $"FUTXPERT - Conectado a la base de datos como: {conexion.Usuario}";
+            panel1.Tag = "NoCambiar";
+            panelModulos.Tag= "NoCambiar";
         }
         void AccesoAdmin()
         {
@@ -210,6 +212,7 @@ namespace TorneosFut
         }
         private void button1_Click(object sender, EventArgs e)
         {
+
                 if (tor.panelmodul.BackColor == Color.White)
                 {
                 panelModulos.BackColor = Color.Black;
@@ -236,6 +239,8 @@ namespace TorneosFut
                 tor.BackColor = Color.White;
                     tor.panelmodul.BackColor = Color.White;
                 }
+            panel1.Tag = "NoCambiar";
+            panelModulos.Tag = "NoCambiar";
             // Cambiar el estado del modo oscuro (activar o desactivar)
             GlobalSettings.ModoOscuro = !GlobalSettings.ModoOscuro;
             // Guardar el estado en los settings para que persista entre sesiones
@@ -247,6 +252,7 @@ namespace TorneosFut
                 // Aplicar el modo oscuro o claro a cada formulario
                 Modo_oscuro.AplicarModoOscuro(form, GlobalSettings.ModoOscuro);
             }
+      
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -265,7 +271,7 @@ namespace TorneosFut
 
         private void button3_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(panelModulos,auditoria);
+            AbrirFormEnPanel(panelModulos, auditoria);
         }
 
         private void ttmiCambiarClave_Click(object sender, EventArgs e)
@@ -284,6 +290,16 @@ namespace TorneosFut
         private void Principal_FormClosed(object sender, FormClosedEventArgs e)
         {
             conexion.RegistrarAuditoriaCierreSesion();
+        }
+
+        private void btnAuditorias_MouseEnter(object sender, EventArgs e)
+        {
+            btnAuditorias.BackColor = ColorTranslator.FromHtml("#FB038C");
+        }
+
+        private void btnAuditorias_MouseLeave(object sender, EventArgs e)
+        {
+            btnAuditorias.BackColor = Color.FromArgb(20, 25, 29);
         }
     }
 }

@@ -36,7 +36,6 @@
             this.ptbIMGOrganizador = new System.Windows.Forms.PictureBox();
             this.dgvOrganizador = new System.Windows.Forms.DataGridView();
             this.btnEditar = new System.Windows.Forms.Button();
-            this.btnEstadisticas = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAggOrganizador = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -71,7 +70,7 @@
             // ptbIMGOrganizador
             // 
             this.ptbIMGOrganizador.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ptbIMGOrganizador.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ptbIMGOrganizador.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.ptbIMGOrganizador.Location = new System.Drawing.Point(926, 131);
             this.ptbIMGOrganizador.Name = "ptbIMGOrganizador";
             this.ptbIMGOrganizador.Size = new System.Drawing.Size(166, 141);
@@ -87,7 +86,10 @@
             this.dgvOrganizador.AllowUserToResizeRows = false;
             this.dgvOrganizador.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvOrganizador.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvOrganizador.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvOrganizador.BackgroundColor = System.Drawing.Color.White;
+            this.dgvOrganizador.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvOrganizador.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -109,6 +111,7 @@
             this.dgvOrganizador.Location = new System.Drawing.Point(179, 278);
             this.dgvOrganizador.Name = "dgvOrganizador";
             this.dgvOrganizador.ReadOnly = true;
+            this.dgvOrganizador.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -136,20 +139,6 @@
             this.btnEditar.TabIndex = 38;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
-            // 
-            // btnEstadisticas
-            // 
-            this.btnEstadisticas.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEstadisticas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
-            this.btnEstadisticas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEstadisticas.Font = new System.Drawing.Font("Onest Bold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEstadisticas.ForeColor = System.Drawing.Color.Black;
-            this.btnEstadisticas.Location = new System.Drawing.Point(196, 193);
-            this.btnEstadisticas.Name = "btnEstadisticas";
-            this.btnEstadisticas.Size = new System.Drawing.Size(123, 52);
-            this.btnEstadisticas.TabIndex = 37;
-            this.btnEstadisticas.Text = "Estadisticas";
-            this.btnEstadisticas.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -195,7 +184,6 @@
             this.Controls.Add(this.ptbIMGOrganizador);
             this.Controls.Add(this.dgvOrganizador);
             this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.btnEstadisticas);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAggOrganizador);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -222,7 +210,6 @@
         private System.Windows.Forms.PictureBox ptbIMGOrganizador;
         public System.Windows.Forms.DataGridView dgvOrganizador;
         private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.Button btnEstadisticas;
         public System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button btnAggOrganizador;
     }

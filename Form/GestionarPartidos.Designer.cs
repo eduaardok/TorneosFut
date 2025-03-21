@@ -154,7 +154,9 @@
             this.dgvPartido.AllowUserToResizeRows = false;
             this.dgvPartido.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvPartido.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPartido.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvPartido.BackgroundColor = System.Drawing.Color.White;
+            this.dgvPartido.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvPartido.CausesValidation = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
@@ -164,7 +166,8 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPartido.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvPartido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPartido.ColumnHeadersHeight = 40;
+            this.dgvPartido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -175,8 +178,10 @@
             this.dgvPartido.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPartido.EnableHeadersVisualStyles = false;
             this.dgvPartido.Location = new System.Drawing.Point(27, 207);
+            this.dgvPartido.MultiSelect = false;
             this.dgvPartido.Name = "dgvPartido";
             this.dgvPartido.ReadOnly = true;
+            this.dgvPartido.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

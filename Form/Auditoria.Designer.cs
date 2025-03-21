@@ -119,7 +119,9 @@
             this.dgvAuditoria.AllowUserToResizeColumns = false;
             this.dgvAuditoria.AllowUserToResizeRows = false;
             this.dgvAuditoria.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvAuditoria.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvAuditoria.BackgroundColor = System.Drawing.Color.White;
+            this.dgvAuditoria.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -128,6 +130,7 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvAuditoria.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvAuditoria.ColumnHeadersHeight = 40;
             this.dgvAuditoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvAuditoria.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvAuditoria.EnableHeadersVisualStyles = false;
@@ -135,6 +138,7 @@
             this.dgvAuditoria.MultiSelect = false;
             this.dgvAuditoria.Name = "dgvAuditoria";
             this.dgvAuditoria.ReadOnly = true;
+            this.dgvAuditoria.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvAuditoria.RowHeadersVisible = false;
             this.dgvAuditoria.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));

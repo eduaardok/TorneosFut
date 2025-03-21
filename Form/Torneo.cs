@@ -22,7 +22,7 @@ namespace TorneosFut
         InscripcionEquipo inscripcion;
         Principal T;
         csDGV csDGV;
-        
+        Arbitro arbi;
         string IDTorneo;
         string IDPartido;
 
@@ -33,6 +33,7 @@ namespace TorneosFut
             patro = new Patrocinadores(u,c);
             orga = new Organizadores(u,c);
             csDGV= new csDGV(u ,c);
+            arbi = new Arbitro(u,c);
             T = r;
 
         }
@@ -56,7 +57,7 @@ namespace TorneosFut
 
         private void btnArbitros_Click(object sender, EventArgs e)
         {
-
+            AbrirFormEnPanel(panelmodul, arbi);
         }
 
         private void btnEstadios_Click(object sender, EventArgs e)
@@ -68,7 +69,6 @@ namespace TorneosFut
         {
             panelmodul.Hide();
             csDGV.MostrarTorneo(dgvTorneo);
-           
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
         }
 

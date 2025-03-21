@@ -1,6 +1,6 @@
 ﻿namespace TorneosFut
 {
-    partial class Estadio
+    partial class Arbitro
     {
         /// <summary>
         /// Required designer variable.
@@ -30,53 +30,74 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.txtBuscarJugador = new System.Windows.Forms.TextBox();
+            this.ptbImagen = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtBuscarArbitro = new System.Windows.Forms.TextBox();
             this.panelDgv = new System.Windows.Forms.Panel();
-            this.dgvEstadio = new System.Windows.Forms.DataGridView();
+            this.dgvArbitro = new System.Windows.Forms.DataGridView();
             this.btnAgregar = new Guna.UI2.WinForms.Guna2Button();
             this.btnEditar = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.ptbImagen = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panelDgv.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEstadio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbImagen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelDgv.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvArbitro)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtBuscarJugador
+            // ptbImagen
             // 
-            this.txtBuscarJugador.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtBuscarJugador.Font = new System.Drawing.Font("Onest Light", 20F);
-            this.txtBuscarJugador.ForeColor = System.Drawing.Color.Gray;
-            this.txtBuscarJugador.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtBuscarJugador.Location = new System.Drawing.Point(180, 63);
-            this.txtBuscarJugador.Multiline = true;
-            this.txtBuscarJugador.Name = "txtBuscarJugador";
-            this.txtBuscarJugador.Size = new System.Drawing.Size(463, 48);
-            this.txtBuscarJugador.TabIndex = 20;
-            this.txtBuscarJugador.Text = "Buscar por nombre del Estadio";
+            this.ptbImagen.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.ptbImagen.Location = new System.Drawing.Point(1056, 70);
+            this.ptbImagen.Name = "ptbImagen";
+            this.ptbImagen.Size = new System.Drawing.Size(207, 193);
+            this.ptbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbImagen.TabIndex = 23;
+            this.ptbImagen.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.BackgroundImage = global::TorneosFut.Properties.Resources.IconoLupa;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(112, 139);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 49);
+            this.pictureBox1.TabIndex = 22;
+            this.pictureBox1.TabStop = false;
+            // 
+            // txtBuscarArbitro
+            // 
+            this.txtBuscarArbitro.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtBuscarArbitro.Font = new System.Drawing.Font("Onest Light", 20F);
+            this.txtBuscarArbitro.ForeColor = System.Drawing.Color.Gray;
+            this.txtBuscarArbitro.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.txtBuscarArbitro.Location = new System.Drawing.Point(168, 140);
+            this.txtBuscarArbitro.Multiline = true;
+            this.txtBuscarArbitro.Name = "txtBuscarArbitro";
+            this.txtBuscarArbitro.Size = new System.Drawing.Size(841, 48);
+            this.txtBuscarArbitro.TabIndex = 21;
+            this.txtBuscarArbitro.Text = "Buscar por nombre del Arbitro";
             // 
             // panelDgv
             // 
             this.panelDgv.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelDgv.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panelDgv.Controls.Add(this.dgvEstadio);
-            this.panelDgv.Location = new System.Drawing.Point(124, 211);
+            this.panelDgv.Controls.Add(this.dgvArbitro);
+            this.panelDgv.Location = new System.Drawing.Point(156, 286);
             this.panelDgv.Name = "panelDgv";
             this.panelDgv.Size = new System.Drawing.Size(1186, 601);
-            this.panelDgv.TabIndex = 19;
+            this.panelDgv.TabIndex = 20;
             // 
-            // dgvEstadio
+            // dgvArbitro
             // 
-            this.dgvEstadio.AllowUserToAddRows = false;
-            this.dgvEstadio.AllowUserToDeleteRows = false;
-            this.dgvEstadio.AllowUserToResizeColumns = false;
-            this.dgvEstadio.AllowUserToResizeRows = false;
-            this.dgvEstadio.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvEstadio.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvEstadio.BackgroundColor = System.Drawing.Color.White;
-            this.dgvEstadio.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvArbitro.AllowUserToAddRows = false;
+            this.dgvArbitro.AllowUserToDeleteRows = false;
+            this.dgvArbitro.AllowUserToResizeColumns = false;
+            this.dgvArbitro.AllowUserToResizeRows = false;
+            this.dgvArbitro.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvArbitro.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvArbitro.BackgroundColor = System.Drawing.Color.White;
+            this.dgvArbitro.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -84,25 +105,25 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEstadio.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvEstadio.ColumnHeadersHeight = 40;
-            this.dgvEstadio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvEstadio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvEstadio.EnableHeadersVisualStyles = false;
-            this.dgvEstadio.Location = new System.Drawing.Point(0, 0);
-            this.dgvEstadio.MultiSelect = false;
-            this.dgvEstadio.Name = "dgvEstadio";
-            this.dgvEstadio.ReadOnly = true;
-            this.dgvEstadio.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dgvEstadio.RowHeadersVisible = false;
-            this.dgvEstadio.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvArbitro.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvArbitro.ColumnHeadersHeight = 40;
+            this.dgvArbitro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvArbitro.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvArbitro.EnableHeadersVisualStyles = false;
+            this.dgvArbitro.Location = new System.Drawing.Point(0, 0);
+            this.dgvArbitro.MultiSelect = false;
+            this.dgvArbitro.Name = "dgvArbitro";
+            this.dgvArbitro.ReadOnly = true;
+            this.dgvArbitro.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvArbitro.RowHeadersVisible = false;
+            this.dgvArbitro.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
-            this.dgvEstadio.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvEstadio.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEstadio.ShowCellToolTips = false;
-            this.dgvEstadio.ShowEditingIcon = false;
-            this.dgvEstadio.Size = new System.Drawing.Size(1186, 601);
-            this.dgvEstadio.TabIndex = 5;
+            this.dgvArbitro.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvArbitro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvArbitro.ShowCellToolTips = false;
+            this.dgvArbitro.ShowEditingIcon = false;
+            this.dgvArbitro.Size = new System.Drawing.Size(1186, 601);
+            this.dgvArbitro.TabIndex = 5;
             // 
             // btnAgregar
             // 
@@ -123,12 +144,11 @@
             this.btnAgregar.ForeColor = System.Drawing.Color.Black;
             this.btnAgregar.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnAgregar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
-            this.btnAgregar.Location = new System.Drawing.Point(195, 117);
+            this.btnAgregar.Location = new System.Drawing.Point(339, 221);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(222, 59);
-            this.btnAgregar.TabIndex = 18;
-            this.btnAgregar.Text = "AGREGAR ESTADIO";
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            this.btnAgregar.TabIndex = 19;
+            this.btnAgregar.Text = "AGREGAR ARBITRO";
             // 
             // btnEditar
             // 
@@ -150,12 +170,11 @@
             this.btnEditar.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnEditar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
             this.btnEditar.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(429, 117);
+            this.btnEditar.Location = new System.Drawing.Point(583, 221);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(214, 59);
-            this.btnEditar.TabIndex = 17;
-            this.btnEditar.Text = "EDITAR  ESTADIO";
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            this.btnEditar.TabIndex = 18;
+            this.btnEditar.Text = "EDITAR ARBITRO";
             // 
             // label2
             // 
@@ -163,51 +182,30 @@
             this.label2.Font = new System.Drawing.Font("Onest Bold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(12, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(238, 34);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Lista de Estadios";
+            this.label2.Size = new System.Drawing.Size(231, 34);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Lista de Arbitros";
             // 
-            // ptbImagen
-            // 
-            this.ptbImagen.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.ptbImagen.Location = new System.Drawing.Point(1136, 41);
-            this.ptbImagen.Name = "ptbImagen";
-            this.ptbImagen.Size = new System.Drawing.Size(174, 164);
-            this.ptbImagen.TabIndex = 22;
-            this.ptbImagen.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.BackgroundImage = global::TorneosFut.Properties.Resources.IconoLupa;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(124, 62);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 49);
-            this.pictureBox1.TabIndex = 21;
-            this.pictureBox1.TabStop = false;
-            // 
-            // Estadio
+            // Arbitro
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1386, 788);
+            this.ClientSize = new System.Drawing.Size(1414, 920);
             this.Controls.Add(this.ptbImagen);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.txtBuscarJugador);
+            this.Controls.Add(this.txtBuscarArbitro);
             this.Controls.Add(this.panelDgv);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Estadio";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Estadio";
-            this.Load += new System.EventHandler(this.Estadio_Load);
-            this.panelDgv.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEstadio)).EndInit();
+            this.Name = "Arbitro";
+            this.Text = "Arbitro";
+            this.Load += new System.EventHandler(this.Arbitro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ptbImagen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelDgv.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvArbitro)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -215,13 +213,13 @@
 
         #endregion
 
+        private System.Windows.Forms.PictureBox ptbImagen;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox txtBuscarJugador;
+        private System.Windows.Forms.TextBox txtBuscarArbitro;
         private System.Windows.Forms.Panel panelDgv;
-        public System.Windows.Forms.DataGridView dgvEstadio;
+        public System.Windows.Forms.DataGridView dgvArbitro;
         private Guna.UI2.WinForms.Guna2Button btnAgregar;
         private Guna.UI2.WinForms.Guna2Button btnEditar;
         public System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox ptbImagen;
     }
 }
