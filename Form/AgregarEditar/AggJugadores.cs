@@ -71,26 +71,15 @@ namespace pruebas
             }
             else
             {
-                string query = $"UPDATE Jugador SET " +
-                               $"NombreJugador = '{Txtnombre.Text}', " +
-                               $"ApellidoJugador = '{txtapellido.Text}', " +
-                               $"Sexo = '{cmbsexo.Text}', " +
-                               $"FechaNacimiento = '{dtpNacimiento.Value:yyyy-MM-dd}', " +
-                               $"Posicion = '{CmbPosicion.Text}', " +
-                               $"Nacionalidad = '{TxtNacionalidad.Text}', " +
-                               $"Peso = '{txtpeso.Text}', " +
-                               $"Altura = '{txtaltura.Text}', " +
-                               $"PiernaHabil = '{cmbpierna.Text}', " +
-                               $"ImagenJugador = '{nombreArchivo}' " +
-                               $"WHERE IDJugador = '{txtIDJugador.Text}';";
-
-                if (conexion.Consulta(query))
+                if (csDatos.EditarJugador(txtIDJugador.Text, Txtnombre, txtapellido, cmbsexo, dtpNacimiento,
+                                            CmbPosicion, TxtNacionalidad, txtpeso, txtaltura,
+                                            cmbpierna, nombreArchivo, img.FileName))
                 {
-                    MessageBox.Show("Jugador actualizado correctamente");
+                    MessageBox.Show("Jugador editado correctamente");
                 }
                 else
                 {
-                    MessageBox.Show("Error al actualizar el jugador");
+                    MessageBox.Show("Error al editar el jugador");
                 }
             }
         }

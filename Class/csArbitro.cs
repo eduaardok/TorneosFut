@@ -46,7 +46,9 @@ namespace TorneosFut
         {
             Random rnd = new Random();
             string id;
-            return id = $"ARB{rnd.Next(1000000, 10000000)}";
+            id = $"ARB{rnd.Next(1000000, 10000000)}";
+            bool existe = false;
+            while()
         }
         public DataTable ListaArbitros()
         {

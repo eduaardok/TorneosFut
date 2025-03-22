@@ -176,6 +176,45 @@ namespace TorneosFut.Class
                 return false;
         }
         #endregion
+        #region Actualizar
+
+        #endregion 
+        public bool ActualizarJugador(string idJugador, TextBox Txtnombre, TextBox txtapellido, ComboBox cmbsexo, DateTimePicker dtpNacimiento,
+        ComboBox CmbPosicion, TextBox TxtNacionalidad, TextBox txtpeso, TextBox txtaltura, ComboBox cmbpierna, string imagen)
+        {
+            NombreJugador = Txtnombre.Text;
+            ApellidoJugador = txtapellido.Text;
+            Sexo = cmbsexo.Text;
+            FechaNacimiento = dtpNacimiento.Value.ToString("yyyy-MM-dd");
+            MessageBox.Show(FechaNacimiento);
+            Posicion = CmbPosicion.Text;
+            Nacionalidad = TxtNacionalidad.Text;
+            Peso = txtpeso.Text;
+            Altura = txtaltura.Text;
+            PiernaHabil = cmbpierna.Text;
+            IDJugador = idJugador;
+            ImagenJugador = imagen;
+            string xmlJugador =
+                "<Jugadores>" +
+                "    <Jugador>" +
+                $"        <IDJugador>{IDJugador}</IDJugador>" +
+                $"        <NombreJugador>{NombreJugador}</NombreJugador>" +
+                $"        <ApellidoJugador>{ApellidoJugador}</ApellidoJugador>" +
+                $"        <Sexo>{Sexo}</Sexo>" +
+                $"        <FechaNacimiento>{FechaNacimiento}</FechaNacimiento>" +
+                $"        <Posicion>{Posicion}</Posicion>" +
+                $"        <Nacionalidad>{Nacionalidad}</Nacionalidad>" +
+                $"        <Peso>{Peso}</Peso>" +
+                $"        <Altura>{Altura}</Altura>" +
+                $"        <PiernaHabil>{PiernaHabil}</PiernaHabil>" +
+                $"        <ImagenJugador>{ImagenJugador}</ImagenJugador>" +
+                "    </Jugador>" +
+                "</Jugadores>";
+            if (csConexion.Consulta($"DECLARE @cadenaa VARCHAR(MAX) = '{xmlJugador}'; EXEC spEditarJugador @cadenaa;"))
+                return true;
+            else
+                return false;
+        }
         public bool AgregarJugadorEquipo(string IDJugador, string IDEquipo, int Dorsal)
         {
             if (csConexion.Consulta($"insert into Jugador_Equipo (IDJugador, IDEquipo, FechaEntrada, Dorsal)" +

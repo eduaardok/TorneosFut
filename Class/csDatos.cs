@@ -329,6 +329,12 @@ namespace TorneosFut
         {
             return csTorneo.ActualizarTorneo(id, Txtnombre, formato, ModoFutbol, Organizador, te);
         }
+        public bool EditarJugador(string idJugador, TextBox Txtnombre, TextBox txtapellido, ComboBox cmbsexo, DateTimePicker dtpNacimiento,
+        ComboBox CmbPosicion, TextBox TxtNacionalidad, TextBox txtpeso, TextBox txtaltura, ComboBox cmbpierna, string imagen, string filename)
+        {
+            csImagenes.guardarIMG(filename, imagen);
+            return csJugador.ActualizarJugador(idJugador, Txtnombre, txtapellido, cmbsexo, dtpNacimiento, CmbPosicion, TxtNacionalidad, txtpeso, txtaltura, cmbpierna,imagen + Path.GetExtension(filename));
+        }
         #endregion
 
         #region Validaciones (hay que moverlas)
