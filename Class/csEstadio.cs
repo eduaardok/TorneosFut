@@ -63,8 +63,8 @@ namespace TorneosFut.Class
         public void Cargar(DataGridView dgvEntrenador, PictureBox ptb)
         {
             string consul = "select IDEstadio, NombreEstadio, Ubicacion from Estadio";
-        DataTable dt = csConexion.ListDGV(consul);
-        dgvEntrenador.DataSource = dt;
+            DataTable dt = csConexion.ListDGV(consul);
+            dgvEntrenador.DataSource = dt;
             MostrarImagen(dt.Rows[0]["IDEstadio"].ToString(), ptb);
         }
         

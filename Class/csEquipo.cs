@@ -11,6 +11,8 @@ namespace TorneosFut.Class
     class csEquipo
     {
         csConexion conexion;
+        csImagenes img; 
+
         private string _idEquipo;
         private string _idEstadio;
         private string _nombreEquipo;
@@ -134,6 +136,17 @@ namespace TorneosFut.Class
                 return true;
             else
                 return false;
+        }
+
+        public void MostrarIMG(string id, PictureBox ptb)
+        {
+            DataTable datat = conexion.ListDGV($"Select ImagenEscudo from Equipo where IDEquipo = '{id}'");
+
+            if(datat != null && datat.Rows.Count > 0)
+            {
+                string nombreIMG = datat.Rows[0]["ImagenEscudo"].ToString();
+                img.CargarImagen(nombreIMG, ptb);
+            }
         }
     }
 }

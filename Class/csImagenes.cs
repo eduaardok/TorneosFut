@@ -66,6 +66,5 @@ namespace TorneosFut.Class
                 MessageBox.Show($"Error al cargar la imagen: {ex.Message}");
             }
         }
-
     }
 }

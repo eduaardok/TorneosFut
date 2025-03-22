@@ -169,7 +169,19 @@ namespace TorneosFut
             aggjugadorEquipo = new AgregarJugadorEquipo(conexion.Usuario, conexion.Clave, dgvEquipos.CurrentRow.Cells[0].Value.ToString());
             aggjugadorEquipo.ShowDialog();
         }
+
+        private void dgvEquipos_SelectionChanged(object sender, EventArgs e)
+        {
+            if(dgvEquipos.CurrentRow.Index >= 0)
+            {
+                string id = dgvEquipos.Rows[dgvEquipos.CurrentRow.Index].Cells[0].Value.ToString();
+                equipo.MostrarIMG(id, ptbIMG);
+            }
+        }
+
+        private void panelmodul_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
-
 }
-

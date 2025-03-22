@@ -28,7 +28,6 @@ namespace TorneosFut.Class
         {
             csConexion = new csConexion(u,c);
             csImagenes = new csImagenes();
-            
         }
 
         public string IDJugador
