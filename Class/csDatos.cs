@@ -471,13 +471,19 @@ namespace TorneosFut
         {
             return csIncripcion.AgregarInscripcion(IDTorneo, IDEquipo, montoAPagar, fecha);
         }
+        public bool ModificarIncripcion(string idInscripcion, decimal abono, decimal saldo, decimal montoAPagar, string estado)
+        {
+            return csIncripcion.EditarInscripcion(idInscripcion, abono, saldo, montoAPagar, estado);
+        }
         public bool QuitarIncripcion(string IDEquipo)
         {
             return csIncripcion.EliminarInscripcion(IDEquipo);
         }
-        public bool InsertarMovimientoInscripcion(int IDTorneo, decimal Monto, string Descripciopn)
+        public bool InsertarMovimientoInscripcion(int IDTorneo, decimal abonoMo, string Descripciopn, string iDInscripcion, decimal monto, decimal saldo, string estado)
         {
-            return csMovimiento.AgregarMovimientoInscripcion(IDTorneo, Monto, Descripciopn);
+            if (ModificarIncripcion(iDInscripcion, abonoMo, saldo, monto, estado))
+                return csMovimiento.AgregarMovimientoInscripcion(IDTorneo, abonoMo, Descripciopn);
+            return false;
         }
         //GENERAR TORNEO
         public bool GenerarPartidos(string torneo)

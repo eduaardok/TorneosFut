@@ -67,11 +67,6 @@ namespace TorneosFut
             IDTorneo = iDTorneo;
             Monto = monto;
             Descripcion = descripcion;
-            MessageBox.Show(IDTorneo.ToString());
-            MessageBox.Show(Monto.ToString("N2").Trim());
-            MessageBox.Show(DateTime.Now.ToString("yyyy-MM-dd"));
-            MessageBox.Show(Descripcion);
-            MessageBox.Show(DineroActual.ToString("N2").Trim());
             string xmlMovimiento =
                 "<MovimientosFinancieros>" +
                 "    <MovimientoFinanciero>" +

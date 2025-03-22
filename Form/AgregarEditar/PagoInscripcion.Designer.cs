@@ -113,9 +113,9 @@
             this.label3.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(32, 205);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(226, 24);
+            this.label3.Size = new System.Drawing.Size(198, 24);
             this.label3.TabIndex = 60;
-            this.label3.Text = "Costo de la Inscripción:";
+            this.label3.Text = "Saldo de Inscripción";
             // 
             // label2
             // 
