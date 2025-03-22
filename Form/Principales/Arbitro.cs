@@ -46,5 +46,28 @@ namespace TorneosFut
             AggEditArbitro AggEditArbitro = new AggEditArbitro(csConexion.Usuario, csConexion.Clave, true);
             AggEditArbitro.ShowDialog();
         }
+
+        private void txtFiltro_TextChanged(object sender, EventArgs e)
+        {
+            ActualizarTabla();
+        }
+        void ActualizarTabla()
+        {
+            csDGV.MostrarArbitrosFiltro(dgvArbitro, txtFiltro.Text);
+            csDGV.AdaptarDGV(dgvArbitro);
+        }
+        private void txtFiltro_Click(object sender, EventArgs e)
+        {
+            if (txtFiltro.Text == "Buscar por nombre del Arbitro")
+            {
+                txtFiltro.Text = "";
+                txtFiltro.ForeColor = Color.Black;
+            }
+        }
+
+        private void Arbitro_Shown(object sender, EventArgs e)
+        {
+            csDGV.MostrarArbitros(dgvArbitro);
+        }
     }
 }

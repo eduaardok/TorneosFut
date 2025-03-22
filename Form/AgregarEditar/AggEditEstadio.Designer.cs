@@ -31,9 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblEncabezado = new System.Windows.Forms.Label();
-            this.lbl = new System.Windows.Forms.Label();
             this.ptbImagen = new System.Windows.Forms.PictureBox();
-            this.txtId = new System.Windows.Forms.TextBox();
             this.btnCancelar = new Guna.UI2.WinForms.Guna2Button();
             this.btnAgregar = new Guna.UI2.WinForms.Guna2Button();
             this.lblapellido = new System.Windows.Forms.Label();
@@ -70,35 +68,15 @@
             this.lblEncabezado.TabIndex = 33;
             this.lblEncabezado.Text = "AGREGAR ESTADIO";
             // 
-            // lbl
-            // 
-            this.lbl.AutoSize = true;
-            this.lbl.BackColor = System.Drawing.Color.Transparent;
-            this.lbl.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl.Location = new System.Drawing.Point(37, 52);
-            this.lbl.Name = "lbl";
-            this.lbl.Size = new System.Drawing.Size(35, 24);
-            this.lbl.TabIndex = 95;
-            this.lbl.Text = "ID ";
-            // 
             // ptbImagen
             // 
             this.ptbImagen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ptbImagen.Location = new System.Drawing.Point(274, 52);
+            this.ptbImagen.Location = new System.Drawing.Point(289, 56);
             this.ptbImagen.Name = "ptbImagen";
             this.ptbImagen.Size = new System.Drawing.Size(189, 138);
             this.ptbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbImagen.TabIndex = 94;
             this.ptbImagen.TabStop = false;
-            // 
-            // txtId
-            // 
-            this.txtId.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtId.Location = new System.Drawing.Point(41, 79);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(121, 28);
-            this.txtId.TabIndex = 93;
-            this.txtId.Visible = false;
             // 
             // btnCancelar
             // 
@@ -142,13 +120,14 @@
             this.btnAgregar.Size = new System.Drawing.Size(138, 80);
             this.btnAgregar.TabIndex = 91;
             this.btnAgregar.Text = "AGREGAR";
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // lblapellido
             // 
             this.lblapellido.AutoSize = true;
             this.lblapellido.BackColor = System.Drawing.Color.Transparent;
             this.lblapellido.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblapellido.Location = new System.Drawing.Point(37, 181);
+            this.lblapellido.Location = new System.Drawing.Point(37, 166);
             this.lblapellido.Name = "lblapellido";
             this.lblapellido.Size = new System.Drawing.Size(108, 24);
             this.lblapellido.TabIndex = 90;
@@ -159,7 +138,7 @@
             this.lblNombre.AutoSize = true;
             this.lblNombre.BackColor = System.Drawing.Color.Transparent;
             this.lblNombre.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(37, 120);
+            this.lblNombre.Location = new System.Drawing.Point(37, 73);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(84, 24);
             this.lblNombre.TabIndex = 89;
@@ -168,7 +147,7 @@
             // txtUbicacion
             // 
             this.txtUbicacion.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUbicacion.Location = new System.Drawing.Point(41, 215);
+            this.txtUbicacion.Location = new System.Drawing.Point(41, 196);
             this.txtUbicacion.Name = "txtUbicacion";
             this.txtUbicacion.Size = new System.Drawing.Size(178, 28);
             this.txtUbicacion.TabIndex = 88;
@@ -176,7 +155,7 @@
             // txtNombreEstadio
             // 
             this.txtNombreEstadio.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreEstadio.Location = new System.Drawing.Point(41, 147);
+            this.txtNombreEstadio.Location = new System.Drawing.Point(41, 100);
             this.txtNombreEstadio.Name = "txtNombreEstadio";
             this.txtNombreEstadio.Size = new System.Drawing.Size(178, 28);
             this.txtNombreEstadio.TabIndex = 87;
@@ -231,11 +210,12 @@
             this.btnImportar.HoverState.CustomBorderColor = System.Drawing.Color.Black;
             this.btnImportar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnImportar.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnImportar.Location = new System.Drawing.Point(289, 196);
+            this.btnImportar.Location = new System.Drawing.Point(289, 200);
             this.btnImportar.Name = "btnImportar";
-            this.btnImportar.Size = new System.Drawing.Size(163, 25);
+            this.btnImportar.Size = new System.Drawing.Size(189, 34);
             this.btnImportar.TabIndex = 104;
-            this.btnImportar.Text = "Selccionar imagen";
+            this.btnImportar.Text = "SELECCIONAR IMAGEN";
+            this.btnImportar.Click += new System.EventHandler(this.btnImportar_Click);
             // 
             // AggEditEstadio
             // 
@@ -247,9 +227,7 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.lbl);
             this.Controls.Add(this.ptbImagen);
-            this.Controls.Add(this.txtId);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.lblapellido);
@@ -273,9 +251,7 @@
         #endregion
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblEncabezado;
-        private System.Windows.Forms.Label lbl;
         private System.Windows.Forms.PictureBox ptbImagen;
-        public System.Windows.Forms.TextBox txtId;
         private Guna.UI2.WinForms.Guna2Button btnCancelar;
         private Guna.UI2.WinForms.Guna2Button btnAgregar;
         private System.Windows.Forms.Label lblapellido;

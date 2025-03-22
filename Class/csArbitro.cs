@@ -42,9 +42,15 @@ namespace TorneosFut
             get => _correo;
             set => _correo = value;
         }
-        public DataTable ListaIdArbitros()
+        public DataTable ListaArbitros()
         {
             DataTable dt = csConexion.ListDGV("Select * from Arbitro");
+            return dt;
+        }
+        public DataTable ListaDeArbitrosFiltro(string filtro)
+        {
+            DataTable dt; 
+            dt = csConexion.ListDGV($"select * from Arbitro where IDArbitro like '%{filtro}%' or NombreArbitro like '%{filtro}%' or ApellidoArbitro like '%{filtro}%'");
             return dt;
         }
 

@@ -26,6 +26,7 @@ namespace TorneosFut
         csArbitro csArbitro;
         csIncripcionEquipo csIncripcion;
         csMovimientoFinanciero csMovimiento;
+        csEstadio csEstadio;
         public csDatos(string u, string c)
         {
             //csConexion = new csConexion(u, c);
@@ -39,6 +40,7 @@ namespace TorneosFut
             csArbitro = new csArbitro(u, c);
             csIncripcion = new csIncripcionEquipo(u, c);
             csMovimiento = new csMovimientoFinanciero(u, c);
+            csEstadio = new csEstadio(u, c);
         }
         #region Login
         public bool Login(string usuario, string clave)
@@ -147,18 +149,38 @@ namespace TorneosFut
         }
         #endregion
 
+        #region Estadio
+        public string ObtenerIDEstadioDesdeDGV(DataGridView dgv)
+        {
+            return csEstadio.IDEstadioSeleccionado(dgv);
+        }
+        public string ObtenerNombreEstadio(string id)
+        {
+            return csEstadio.NombreEstadioDeID(id);
+        }
+        public string ObtenerUbicacionEstadio(string id)
+        {
+            return csEstadio.UbicacionEstadioDeID(id);
+        }
+        #endregion
+
         #region MostrarImagenes
         public void MostrarImagenEntrenador(string id, PictureBox ptb)
         {
             csEntrenador.MostrarImagen(id, ptb);
         }
+
+        public void MostrarImagenEstadio(string id, PictureBox ptb)
+        {
+            csEstadio.MostrarImagen(id, ptb);
+        }
         #endregion
 
         #region Insertar
-       /* public bool CrearLoginBD(string u, string c)
-        {
-            return csUsuario.NuevoLogin(u, c);
-        }*/
+        /* public bool CrearLoginBD(string u, string c)
+         {
+             return csUsuario.NuevoLogin(u, c);
+         }*/
         public bool InsertarUsuario(string nombre, string nombreusuario, string clave, string correo, string nombreusuariobd, string clavebd)
         {
             if (csUsuario.AgregarUsuario(nombre, nombreusuario, clave, correo, nombreusuariobd, clavebd))
@@ -236,11 +258,11 @@ namespace TorneosFut
                 return false;
             }
         }
-        public bool InsertarTorneo(int idTorneo, string Txtnombre, string formato, string ModoFutbol, int IdUsuario, string Organizador, string te)
+        public bool InsertarTorneo(string idTorneo, string Txtnombre, string formato, string ModoFutbol, string Organizador, string te)
         {
             if (validarIDTorneo(idTorneo.ToString()))
             {
-                if (csTorneo.AgregarTorneo(idTorneo, Txtnombre, formato, ModoFutbol, IdUsuario, Organizador, te))
+                if (csTorneo.AgregarTorneo(idTorneo, Txtnombre, formato, ModoFutbol, Organizador, te))
                 {
                     MessageBox.Show("Torneo registrado correctamente");
                     return true;
@@ -252,6 +274,16 @@ namespace TorneosFut
             {
                 return false;
             }
+        }
+        public bool InsertarEstadio(string id, string nombre, string ubicacion, string imagen, string filename)
+        {
+                if (csEstadio.AgregarEstadio(id, nombre, ubicacion, imagen + Path.GetExtension(filename)))
+                {
+                   csImagenes.guardarIMG(filename, imagen);
+                  return true;
+                }
+                else
+                    return false;
         }
         public bool InsertarArbittro(string id, string nombre, string apellido, string correo)
         {
@@ -276,6 +308,12 @@ namespace TorneosFut
         {
             csImagenes.guardarIMG(filename, imagen);
             return csEntrenador.ActualizarEntrenador(id, nombre, apellido, sexo, fechaN, imagen+Path.GetExtension(filename));
+        }
+        public bool EditarEstadio(string id, string nombre, string ubicacion, string imagen, string filename)
+        {
+            csImagenes.guardarIMG(filename, imagen);
+
+            return csEstadio.ActualizarEstadio(id, nombre, ubicacion, imagen + Path.GetExtension(filename));
         }
         public bool EditarArbitro(string id, string nombre, string apellido, string correo)
         {

@@ -4,23 +4,25 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace TorneosFut.Class
 {
     class csEstadio
     {
         csConexion csConexion;
-
+        csImagenes csImagenes;
         public csEstadio(string u, string c)
         {
+            csImagenes = new csImagenes();
             csConexion = new csConexion(u, c);
         }
-        private int _idEstadio;
+        private string _idEstadio;
         private string _nombreEstadio;
         private string _ubicacion;
         private string _imagenEstadio;
 
-        public int IDEstadio
+        public string IDEstadio
         {
             get => _idEstadio;
             set => _idEstadio = value;
@@ -47,19 +49,52 @@ namespace TorneosFut.Class
         public DataTable ListaDeEstadiosFiltro(string filtro)
         {
             DataTable dt;
-            dt = csConexion.ListDGV($"select IDEstadio, NombreEstadio from Estadio where IDEstadio like '%{filtro}%' or NombreEstadio like '%{filtro}%'");
+            dt = csConexion.ListDGV($"select IDEstadio, NombreEstadio, Ubicacion from Estadio where IDEstadio like '%{filtro}%' or NombreEstadio like '%{filtro}%'");
             return dt;
         }
         public DataTable ListaDeEstadios()
         {
-            DataTable dt = csConexion.ListDGV("select IDEstadio, NombreEstadio from Estadio");
+            DataTable dt = csConexion.ListDGV("select IDEstadio, NombreEstadio, Ubicacion from Estadio");
             return dt;
         }
 
         #endregion
+        #region ObtenerDatos
+        public void Cargar(DataGridView dgvEntrenador, PictureBox ptb)
+        {
+            string consul = "select IDEstadio, NombreEstadio, Ubicacion from Estadio";
+        DataTable dt = csConexion.ListDGV(consul);
+        dgvEntrenador.DataSource = dt;
+            MostrarImagen(dt.Rows[0]["IDEstadio"].ToString(), ptb);
+        }
+        
+        public void MostrarImagen(string id, PictureBox ptb)
+        {
+            DataTable datat = csConexion.ListDGV($"select ImagenEstadio from Estadio where IDEstadio = {id}");
 
+            if (datat != null && datat.Rows.Count > 0)
+            {
+                string nombreIMG = datat.Rows[0]["ImagenEstadio"].ToString();
+                csImagenes.CargarImagen(nombreIMG, ptb);
+            }
+        }
+        public string IDEstadioSeleccionado(DataGridView dgv)
+        {
+            return dgv.Rows[dgv.CurrentRow.Index].Cells["IDEstadio"].Value.ToString();
+        }
+        public string NombreEstadioDeID(string id)
+        {
+            DataTable dt = csConexion.ListDGV($"select NombreEstadio from Estadio where IDEstadio={id}");
+            return dt.Rows[0][0].ToString();
+        }
+        public string UbicacionEstadioDeID(string id)
+        {
+            DataTable dt = csConexion.ListDGV($"select Ubicacion from Estadio where IDEstadio={id}");
+            return dt.Rows[0][0].ToString();
+        }
+        #endregion
         #region Insertar
-        public bool AgregarEstadio(int id, string nombre, string ubicacion, string imagen)
+        public bool AgregarEstadio(string id, string nombre, string ubicacion, string imagen)
         {
             IDEstadio = id;
             NombreEstadio = nombre;
@@ -82,7 +117,7 @@ namespace TorneosFut.Class
         }
         #endregion
         #region Actualizar
-        public bool ActualizarEstadio(int id, string nombre, string ubicacion, string imagen)
+        public bool ActualizarEstadio(string id, string nombre, string ubicacion, string imagen)
         {
             IDEstadio = id;
             NombreEstadio = nombre;

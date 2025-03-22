@@ -48,22 +48,18 @@ namespace TorneosFut
             cmbOrganizador.SelectedIndex = -1;
             csDGV.llenarcmbFormato(cmbFormato);
             cmbFormato.SelectedIndex= -1;
-
+            csDGV.llenarcmbModo(cmbModoFutbol);
+            cmbModoFutbol.SelectedIndex = -1;
         }
 
         private void btngSalir_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        int GenerarIDRandom()
-        {
-            Random rnd = new Random(DateTime.Now.Millisecond);
-            return rnd.Next(0, 100);
-        }
         private void btngEnviar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Inhabilitado por el momento");
-            //csDatos.InsertarTorneo(GenerarIDRandom(), txtNombre.Text, cmbFormato.SelectedValue.ToString(), cmbModoFutbol.SelectedValue.ToString(), id, cmbOrganizador.SelectedValue.ToString(), dtpInicio.Value.ToString()) ;
+            //MessageBox.Show("Inhabilitado por el momento");
+            csDatos.InsertarTorneo("6", txtNombre.Text, cmbFormato.SelectedValue.ToString(), cmbModoFutbol.SelectedValue.ToString(), cmbOrganizador.SelectedValue.ToString(), dtpInicio.Value.ToString()) ;
         }
     }
 }

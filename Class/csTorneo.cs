@@ -26,7 +26,7 @@ namespace TorneosFut.Class
             int inscritos;
             DataTable dt1 = csConexion.ListDGV($"select count(*) from Torneo T inner join InscripcionEquipo I on T.IDTorneo = I.IDTorneo where T.IDTorneo = {torneo}");
             inscritos = int.Parse(dt1.Rows[0][0].ToString());
-            if(participantes==inscritos)
+            if (participantes == inscritos)
             {
                 return true;
             }
@@ -86,10 +86,10 @@ namespace TorneosFut.Class
 
             return dt;
         }
-        public bool AgregarTorneo(int idTorneo, string Txtnombre, string formato, string ModoFutbol, int IdUsuario, string Organizador, string te)
+        public bool AgregarTorneo(string idTorneo, string Txtnombre, string formato, string ModoFutbol, string Organizador, string te)
         {
-            if (csConexion.Consulta($"insert into Torneo (IDTorneo, NombreTorneo, IDFormato, IDModoFutbol, IDOrganizador, FechaInicio, IDUsuario, Usuario, Estado)" +
-                $" values ({idTorneo}, '{Txtnombre}', {formato}, {ModoFutbol}, '{Organizador}','{te}' ,{IdUsuario}, system_user, 'PENDIENTE')"))
+            if (csConexion.Consulta($"insert into Torneo (IDTorneo, NombreTorneo, IDFormato, IDModoFutbol, IDOrganizador, FechaInicio, Usuario, Estado)" +
+                $" values ({idTorneo}, '{Txtnombre}', {formato}, {ModoFutbol}, '{Organizador}','{te}' , system_user, 'PENDIENTE')"))
                 return true;
             else
                 return false;
@@ -97,13 +97,19 @@ namespace TorneosFut.Class
         }
         public DataTable LlenarOrganizadores()
         {
-            DataTable dt = csConexion.ListDGV("Select* from Organizador");
+            DataTable dt = csConexion.ListDGV("Select * from Organizador");
             return dt;
         }
         public DataTable LlenarFormato()
         {
-            DataTable dt = csConexion.ListDGV("Select* from Formato");
+            DataTable dt = csConexion.ListDGV("Select * from Formato");
+            return dt;
+        }
+        public DataTable LlenarModo()
+        {
+            DataTable dt = csConexion.ListDGV("Select * from ModoFutbol");
             return dt;
         }
     }
 }
+

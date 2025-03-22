@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.txtBuscarArbitro = new System.Windows.Forms.TextBox();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.txtFiltro = new System.Windows.Forms.TextBox();
             this.panelDgv = new System.Windows.Forms.Panel();
             this.dgvArbitro = new System.Windows.Forms.DataGridView();
             this.btnAgregar = new Guna.UI2.WinForms.Guna2Button();
@@ -43,18 +43,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtBuscarArbitro
+            // txtFiltro
             // 
-            this.txtBuscarArbitro.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtBuscarArbitro.Font = new System.Drawing.Font("Onest Light", 20F);
-            this.txtBuscarArbitro.ForeColor = System.Drawing.Color.Gray;
-            this.txtBuscarArbitro.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtBuscarArbitro.Location = new System.Drawing.Point(342, 139);
-            this.txtBuscarArbitro.Multiline = true;
-            this.txtBuscarArbitro.Name = "txtBuscarArbitro";
-            this.txtBuscarArbitro.Size = new System.Drawing.Size(795, 48);
-            this.txtBuscarArbitro.TabIndex = 21;
-            this.txtBuscarArbitro.Text = "Buscar por nombre del Arbitro";
+            this.txtFiltro.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtFiltro.Font = new System.Drawing.Font("Onest Light", 20F);
+            this.txtFiltro.ForeColor = System.Drawing.Color.Gray;
+            this.txtFiltro.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.txtFiltro.Location = new System.Drawing.Point(342, 139);
+            this.txtFiltro.Multiline = true;
+            this.txtFiltro.Name = "txtFiltro";
+            this.txtFiltro.Size = new System.Drawing.Size(795, 48);
+            this.txtFiltro.TabIndex = 21;
+            this.txtFiltro.Text = "Buscar por nombre del Arbitro";
+            this.txtFiltro.Click += new System.EventHandler(this.txtFiltro_Click);
+            this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
             // 
             // panelDgv
             // 
@@ -76,14 +78,14 @@
             this.dgvArbitro.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvArbitro.BackgroundColor = System.Drawing.Color.White;
             this.dgvArbitro.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Onest Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvArbitro.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Onest Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvArbitro.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvArbitro.ColumnHeadersHeight = 40;
             this.dgvArbitro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvArbitro.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -95,8 +97,8 @@
             this.dgvArbitro.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvArbitro.RowHeadersVisible = false;
             this.dgvArbitro.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
-            this.dgvArbitro.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.dgvArbitro.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvArbitro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvArbitro.ShowCellToolTips = false;
             this.dgvArbitro.ShowEditingIcon = false;
@@ -196,7 +198,7 @@
             this.ClientSize = new System.Drawing.Size(1414, 920);
             this.Controls.Add(this.btnPagoArbitro);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.txtBuscarArbitro);
+            this.Controls.Add(this.txtFiltro);
             this.Controls.Add(this.panelDgv);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnEditar);
@@ -205,6 +207,7 @@
             this.Name = "Arbitro";
             this.Text = "Arbitro";
             this.Load += new System.EventHandler(this.Arbitro_Load);
+            this.Shown += new System.EventHandler(this.Arbitro_Shown);
             this.panelDgv.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArbitro)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -215,7 +218,7 @@
 
         #endregion
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox txtBuscarArbitro;
+        private System.Windows.Forms.TextBox txtFiltro;
         private System.Windows.Forms.Panel panelDgv;
         public System.Windows.Forms.DataGridView dgvArbitro;
         private Guna.UI2.WinForms.Guna2Button btnAgregar;

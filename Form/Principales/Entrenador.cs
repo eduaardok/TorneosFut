@@ -156,5 +156,10 @@ namespace PruebasTorneos
                 CsDatos.MostrarImagenEntrenador(id, ptbIMG);
             }
         }
+
+        private void Entrenador_Shown(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -203,7 +203,11 @@ namespace TorneosFut
         //ARBITROS
         public void MostrarArbitros(DataGridView dgv)
         {
-            dgv.DataSource = csArbitro.ListaIdArbitros();
+            dgv.DataSource = csArbitro.ListaArbitros();
+        } 
+        public void MostrarArbitrosFiltro(DataGridView dgv, string Filtro)
+        {
+            dgv.DataSource = csArbitro.ListaDeArbitrosFiltro(Filtro);
         }
         //ORGANIZADORES
         public void MostrarOrganizadores(DataGridView dgv)
@@ -231,7 +235,13 @@ namespace TorneosFut
             cmbFormato.ValueMember = "IDFormato";
             cmbFormato.DisplayMember = "NombreFormato";
         }
+        public void llenarcmbModo(ComboBox cmbFormato)
+        {
+            cmbFormato.DataSource = csTorneo.LlenarModo();
+            cmbFormato.ValueMember = "IDModoFutbol";
+            cmbFormato.DisplayMember = "NombreModo";
+        }
         #endregion
-       
+
     }
 }
