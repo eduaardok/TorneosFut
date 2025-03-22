@@ -31,6 +31,7 @@ namespace TorneosFut
         {
             if (agregar)
             {
+
                 if (csDatos.InsertarEquipo(txtId.Text, cmbEstadio.SelectedValue.ToString(), txtNombreClub.Text, cmbGenero.Text, cmbEquipacionLocal.Text, cmbequipacionvisitante.Text, nombreArchivo, txtPresidente.Text, img.FileName))
                 {
                     MessageBox.Show("Equipo Agregado Correctamente");

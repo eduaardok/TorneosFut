@@ -48,7 +48,7 @@ namespace TorneosFut.Class
         {
             try
             {
-                rutIMG = Path.Combine(Application.StartupPath, "Imagenes",
+                rutIMG = Path.Combine(Application.StartupPath, "Imagenes", nomIMG);
 
                 if (File.Exists(rutIMG) && !string.IsNullOrEmpty(nomIMG))
                 {
