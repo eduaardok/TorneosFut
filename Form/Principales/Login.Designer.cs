@@ -46,8 +46,10 @@
             this.btnEntrar = new System.Windows.Forms.Button();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.btnCerrar = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Ptbhide)).BeginInit();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer1
@@ -106,7 +108,7 @@
             this.llblRecuperarClave.LinkColor = System.Drawing.Color.Silver;
             this.llblRecuperarClave.Location = new System.Drawing.Point(123, 507);
             this.llblRecuperarClave.Name = "llblRecuperarClave";
-            this.llblRecuperarClave.Size = new System.Drawing.Size(122, 17);
+            this.llblRecuperarClave.Size = new System.Drawing.Size(120, 14);
             this.llblRecuperarClave.TabIndex = 27;
             this.llblRecuperarClave.TabStop = true;
             this.llblRecuperarClave.Text = "Recuperar contraseña";
@@ -222,17 +224,28 @@
             // btnCerrar
             // 
             this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnCerrar.FlatAppearance.BorderSize = 0;
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrar.Font = new System.Drawing.Font("Onest Bold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrar.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnCerrar.Location = new System.Drawing.Point(-9, -13);
+            this.btnCerrar.Location = new System.Drawing.Point(864, 0);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(60, 59);
+            this.btnCerrar.Size = new System.Drawing.Size(60, 60);
             this.btnCerrar.TabIndex = 2;
             this.btnCerrar.Text = "X";
             this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.Transparent;
+            this.panel5.Controls.Add(this.btnCerrar);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(924, 60);
+            this.panel5.TabIndex = 82;
             // 
             // Login
             // 
@@ -241,7 +254,7 @@
             this.BackgroundImage = global::TorneosFut.Properties.Resources.futxpert_background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(924, 698);
-            this.Controls.Add(this.btnCerrar);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Black;
@@ -258,6 +271,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Ptbhide)).EndInit();
+            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -279,6 +293,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCerrar;
+        public System.Windows.Forms.Panel panel5;
     }
 }
 

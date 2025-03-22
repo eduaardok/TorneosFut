@@ -49,6 +49,7 @@ namespace TorneosFut
             panel2.Tag = "NoCambiar";
             panel3.Tag = "NoCambiar";
             panel4.Tag = "NoCambiar";
+            panel5.Tag = "NoCambiar";
             panel1.BackColor = Color.FromArgb(80, 0, 0, 0);
             panel1.Location = new Point(
                 
