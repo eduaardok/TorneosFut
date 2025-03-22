@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TorneosFut.Class;
 
 namespace TorneosFut
 {
@@ -11,10 +12,12 @@ namespace TorneosFut
     {
         csDGV csDGV;
         csUsuario csUsuario;
+        csTorneo csTorneo;
         public csValidaciones(string u, string c)
         {
             csDGV = new csDGV(u, c);
             csUsuario= new csUsuario(u, c);
+            csTorneo = new csTorneo(u, c);
         }
         #region ValidacionesUsuario
         public bool ValidarNombre(string nombre, string id="-1")
@@ -79,8 +82,19 @@ namespace TorneosFut
         }
         #endregion
         #region Validaciones Entrenador
-        
+
         #endregion
 
+
+        #region Validaciones Inscripciones
+
+        public bool ValidarEquiposInscritos(string torneo)
+        {
+            if (csTorneo.TotalEquiposInscritos(torneo) && csTorneo.TotalEquiposPagados(torneo))
+                return true;
+            else
+                return false;
+        }
+        #endregion
     }
 }

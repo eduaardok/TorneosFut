@@ -25,7 +25,7 @@ namespace TorneosFut
         GestionInscripcion gestionInscripcion;
         string IDTorneo;
         string IDPartido;
-
+        csValidaciones csValidaciones;
         public Torneo(string u, string c)
         {
             conexion = new csConexion(u,c);
@@ -34,6 +34,7 @@ namespace TorneosFut
             orga = new Organizadores(u,c);
             csDGV= new csDGV(u ,c);
             arbi = new Arbitro(u,c);
+            csValidaciones = new csValidaciones(u, c);
         }
         public static void AbrirFormEnPanel(Panel panel, Form formHijo)
         {
@@ -97,8 +98,11 @@ namespace TorneosFut
 
         private void btnPartidos_Click(object sender, EventArgs e)
         {
-            partidos = new GestionarPartidos(IDTorneo,conexion.Usuario, conexion.Clave);
-            partidos.ShowDialog();
+            if(csValidaciones.ValidarEquiposInscritos(IDTorneo))
+            {
+                partidos = new GestionarPartidos(IDTorneo, conexion.Usuario, conexion.Clave);
+                partidos.ShowDialog();
+            }
 
         }
         private void btnInscripcionEquipos_Click(object sender, EventArgs e)

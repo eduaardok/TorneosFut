@@ -444,7 +444,7 @@ namespace TorneosFut
             }
         }
         #endregion
-        //INCRIPCIONES
+        //INSCRIPCIONES
         public bool InsertarIncripcion(int IDTorneo, string IDEquipo, decimal montoAPagar, string fecha)
         {
             return csIncripcion.AgregarInscripcion(IDTorneo, IDEquipo, montoAPagar, fecha);
@@ -452,6 +452,11 @@ namespace TorneosFut
         public bool QuitarIncripcion(string IDEquipo)
         {
             return csIncripcion.EliminarInscripcion(IDEquipo);
+        }
+        //GENERAR TORNEO
+        public bool GenerarPartidos(string torneo)
+        {
+            return csTorneo.GenerarTorneo(torneo);
         }
     }
 }

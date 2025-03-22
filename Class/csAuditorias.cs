@@ -19,20 +19,50 @@ namespace TorneosFut
         {
             DataTable dt;
             if (audCambios)
-                dt = csConexion.ListDGV($"Select * from AuditoriaCambios where IDUsuario like '%{filtro}%' or TipoCambio like '%{filtro}%'" +
+            {
+                if (csConexion.Usuario == "FutXpert")
+                {
+                    dt = csConexion.ListDGV($"Select * from AuditoriaCambios where IDUsuario like '%{filtro}%' or TipoCambio like '%{filtro}%'" +
                                          $" or TablaAfectada like '%{filtro}%'");
+                }
+                else
+                {
+                    dt = csConexion.ListDGV($"Select * from AuditoriaCambios where IDUsuario like '%{csConexion.Usuario}%' or TipoCambio like '%{filtro}%'" +
+                                        $" or TablaAfectada like '%{filtro}%'");
+                }
+
+            }
             else
-                dt = csConexion.ListDGV($"Select * from AuditoriaSesion where Usuario like '%{filtro}%'");
+            {
+                if (csConexion.Usuario == "FutXpert")
+                {
+                    dt = csConexion.ListDGV($"Select * from AuditoriaSesion where Usuario like '%{filtro}%'");
+                }
+                else
+                {
+                    dt = csConexion.ListDGV($"Select * from AuditoriaSesion where Usuario like '%{csConexion.Usuario}%'");
+                }
+            }
             return dt;
         }
         public DataTable AuditoriaSesion()
         {
-            DataTable dt = csConexion.ListDGV("Select * from AuditoriaSesion");
+            DataTable dt;
+            if (csConexion.Usuario == "FutXpert")
+                dt = csConexion.ListDGV("Select * from AuditoriaSesion");
+            else
+                dt = csConexion.ListDGV($"Select * from AuditoriaSesion where Usuario like '%{csConexion.Usuario}%'");
+
             return dt;
         }
         public DataTable AuditoriaCambios()
         {
-            DataTable dt = csConexion.ListDGV("Select * from AuditoriaCambios");
+            DataTable dt;
+            if (csConexion.Usuario == "FutXpert")
+                dt = csConexion.ListDGV("Select * from AuditoriaCambios");
+            else
+                dt = csConexion.ListDGV($"Select * from AuditoriaCambios where IDUsuario like '%{csConexion.Usuario}%'");
+
             return dt;
         }
     }

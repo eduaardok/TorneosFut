@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Reflection;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +17,57 @@ namespace TorneosFut.Class
         {
             csConexion = new csConexion(u, c);
         }
+        #region ValidarInscripciones
+        public bool TotalEquiposInscritos(string torneo)
+        {
+            int participantes;
+            DataTable dt = csConexion.ListDGV($"select F.CantidadEquipos from Formato F inner join Torneo T on F.IDFormato = T.IDFormato where T.IDTorneo ={torneo}");
+            participantes = int.Parse(dt.Rows[0][0].ToString());
+            int inscritos;
+            DataTable dt1 = csConexion.ListDGV($"select count(*) from Torneo T inner join InscripcionEquipo I on T.IDTorneo = I.IDTorneo where T.IDTorneo = {torneo}");
+            inscritos = int.Parse(dt1.Rows[0][0].ToString());
+            if(participantes==inscritos)
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Cantidad de equipos inscritos inferior a cantidad de equipos participantes (requeridos)");
+                return false;
+            }
+        }
+        public bool TotalEquiposPagados(string torneo)
+        {
+            int participantes;
+            DataTable dt = csConexion.ListDGV($"select F.CantidadEquipos from Formato F inner join Torneo T on F.IDFormato = T.IDFormato where T.IDTorneo ={torneo}");
+            participantes = int.Parse(dt.Rows[0][0].ToString());
+            int pagados;
+            DataTable dt1 = csConexion.ListDGV($"select count(*) from Torneo T inner join InscripcionEquipo I on T.IDTorneo = I.IDTorneo where T.IDTorneo = {torneo} and  I.Estado = 'Pagado'");
+            pagados = int.Parse(dt1.Rows[0][0].ToString());
+            if (participantes == pagados)
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Todos los equipos deben pagar completamente su inscripción para iniciar el torneo");
+                return false;
+            }
+        }
+        #endregion
 
+        #region Generar Torneo
+        public bool GenerarTorneo(string torneo)
+        {
+            DataTable dt = csConexion.ListDGV($"select count(*) from Torneo T inner join Partido P on T.IDTorneo = P.IDTorneo where T.IDTorneo ={torneo}");
+            if (int.Parse(dt.Rows[0][0].ToString()) < 0)
+            {
+                return csConexion.Consulta("EJECUTAR PARA CREAR TORNEO"); //falta
+            }
+            else
+                return true;
+        }
+        #endregion
         public DataTable ListadeTorneo()
         {
             DataTable dt = csConexion.ListDGV("Select * from Torneo");
