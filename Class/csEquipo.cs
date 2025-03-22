@@ -76,7 +76,7 @@ namespace TorneosFut.Class
         }
         public DataTable ListadeNameEquipos()
         {
-            DataTable dt = conexion.ListDGV("select IDEquipo,NombreEquipo,Genero from Equipo");
+            DataTable dt = conexion.ListDGV("select IDEquipo,NombreEquipo,Presidente from Equipo");
             return dt;
         }
         public DataTable ListaDeJugadoresEquipo(string id)
@@ -95,7 +95,7 @@ namespace TorneosFut.Class
         public DataTable ListadeNameEquiposFiltro(string filtro)
         {
             DataTable dt;
-            dt = conexion.ListDGV($"select IDEquipo,NombreEquipo,Genero from Equipo where IDEquipo like '%{filtro}%' " +
+            dt = conexion.ListDGV($"select IDEquipo,NombreEquipo,Presidente from Equipo where IDEquipo like '%{filtro}%' " +
                                  $"or NombreEquipo like '%{filtro}%'");
             return dt;
         }

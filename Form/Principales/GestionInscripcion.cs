@@ -136,19 +136,29 @@ namespace TorneosFut
             {
                 DataGridViewRow row = dgvEquipos.SelectedRows[0];
                 string idequipo = row.Cells["IDEquipo"].Value.ToString();
-                if (csDatos.InsertarIncripcion(int.Parse(IdTorneo), idequipo, costo, fecha))
+                bool equipoInscrito = VerificarInscripcion(int.Parse(IdTorneo), idequipo);
+
+                if (equipoInscrito)
                 {
-                    MessageBox.Show("Se inscribió el equipo correctamente");
+                    MessageBox.Show("Este equipo ya está inscrito en el torneo.");
                 }
                 else
                 {
-                    MessageBox.Show("Error al inscribir el equipo");
+                    if (csDatos.InsertarIncripcion(int.Parse(IdTorneo), idequipo, costo, fecha))
+                    {
+                        MessageBox.Show("Se inscribió el equipo correctamente");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al inscribir el equipo");
+                    }
                 }
             }
             else
             {
                 MessageBox.Show("Por favor, seleccione un equipo.");
             }
+
             ActualizarTabla();
         }
 
@@ -157,7 +167,6 @@ namespace TorneosFut
             if (dgvEquiposIns.SelectedRows.Count > 0)
             {
                 DataGridViewRow row = dgvEquiposIns.SelectedRows[0];
-
                 string idequipo = row.Cells["IDEquipo"].Value.ToString();
                 if (csDatos.QuitarIncripcion(idequipo))
                 {
@@ -174,6 +183,13 @@ namespace TorneosFut
             }
             ActualizarTabla();
         }
+        public bool VerificarInscripcion(int idTorneo, string idEquipo)
+        {
+            string query = $"select * from InscripcionEquipo where IDTorneo = {idTorneo} and IDEquipo = '{idEquipo}'";
+            DataTable dt = conexion.ListDGV(query);
+            return dt.Rows.Count > 0;
+        }
+
 
         private void btnAbonar_Click(object sender, EventArgs e)
         {
