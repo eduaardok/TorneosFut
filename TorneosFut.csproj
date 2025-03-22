@@ -67,6 +67,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\csMovimientoFinanciero.cs" />
     <Compile Include="Form\AgregarEditar\AggEditArbitro.cs">
       <SubType>Form</SubType>
     </Compile>

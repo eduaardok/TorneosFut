@@ -50,6 +50,8 @@
             this.lblCosto = new System.Windows.Forms.Label();
             this.lblSaldo = new System.Windows.Forms.Label();
             this.lblEquipo = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,7 +62,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(433, 50);
+            this.panel2.Size = new System.Drawing.Size(647, 50);
             this.panel2.TabIndex = 67;
             // 
             // lblEncabezado
@@ -88,7 +90,7 @@
             this.btngCancelar.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btngCancelar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btngCancelar.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btngCancelar.Location = new System.Drawing.Point(55, 365);
+            this.btngCancelar.Location = new System.Drawing.Point(147, 365);
             this.btngCancelar.Name = "btngCancelar";
             this.btngCancelar.Size = new System.Drawing.Size(155, 52);
             this.btngCancelar.TabIndex = 66;
@@ -147,17 +149,17 @@
             // lbNameTorneo
             // 
             this.lbNameTorneo.AutoSize = true;
-            this.lbNameTorneo.Font = new System.Drawing.Font("Onest Bold", 16.25F, System.Drawing.FontStyle.Bold);
-            this.lbNameTorneo.Location = new System.Drawing.Point(106, 83);
+            this.lbNameTorneo.Font = new System.Drawing.Font("Onest Bold", 18.25F, System.Drawing.FontStyle.Bold);
+            this.lbNameTorneo.Location = new System.Drawing.Point(106, 73);
             this.lbNameTorneo.Name = "lbNameTorneo";
-            this.lbNameTorneo.Size = new System.Drawing.Size(0, 28);
+            this.lbNameTorneo.Size = new System.Drawing.Size(0, 32);
             this.lbNameTorneo.TabIndex = 73;
             // 
             // txtAbono
             // 
             this.txtAbono.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtAbono.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAbono.Location = new System.Drawing.Point(116, 254);
+            this.txtAbono.Location = new System.Drawing.Point(110, 254);
             this.txtAbono.Multiline = true;
             this.txtAbono.Name = "txtAbono";
             this.txtAbono.Size = new System.Drawing.Size(86, 26);
@@ -188,9 +190,9 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(430, 50);
+            this.panel4.Location = new System.Drawing.Point(637, 50);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(3, 390);
+            this.panel4.Size = new System.Drawing.Size(10, 390);
             this.panel4.TabIndex = 138;
             // 
             // panel3
@@ -199,7 +201,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(3, 440);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(430, 10);
+            this.panel3.Size = new System.Drawing.Size(644, 10);
             this.panel3.TabIndex = 137;
             // 
             // panel1
@@ -233,11 +235,11 @@
             this.btnGuardar.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnGuardar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnGuardar.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnGuardar.Location = new System.Drawing.Point(243, 365);
+            this.btnGuardar.Location = new System.Drawing.Point(337, 365);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(140, 52);
             this.btnGuardar.TabIndex = 139;
-            this.btnGuardar.Text = "AGREGAR";
+            this.btnGuardar.Text = "PAGAR";
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // lblFechaLimite
@@ -276,16 +278,36 @@
             this.lblEquipo.Font = new System.Drawing.Font("Onest Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEquipo.Location = new System.Drawing.Point(110, 150);
             this.lblEquipo.Name = "lblEquipo";
-            this.lblEquipo.Size = new System.Drawing.Size(267, 24);
+            this.lblEquipo.Size = new System.Drawing.Size(273, 24);
             this.lblEquipo.TabIndex = 143;
             this.lblEquipo.Text = "NombreEquipo";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(400, 205);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(126, 24);
+            this.label8.TabIndex = 144;
+            this.label8.Text = "Descripción:";
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Location = new System.Drawing.Point(404, 232);
+            this.txtDescripcion.Multiline = true;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(217, 101);
+            this.txtDescripcion.TabIndex = 145;
             // 
             // PagoInscripcion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(433, 450);
+            this.ClientSize = new System.Drawing.Size(647, 450);
+            this.Controls.Add(this.txtDescripcion);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.lblEquipo);
             this.Controls.Add(this.lblSaldo);
             this.Controls.Add(this.lblCosto);
@@ -340,5 +362,7 @@
         public System.Windows.Forms.Label lblSaldo;
         public System.Windows.Forms.Label lblCosto;
         public System.Windows.Forms.Label lblEquipo;
+        private System.Windows.Forms.TextBox txtDescripcion;
+        public System.Windows.Forms.Label label8;
     }
 }

@@ -80,7 +80,6 @@ namespace TorneosFut.Class
 
             return csConexion.Consulta(consultaSQL);
         }
-
         #endregion
         #region Actualizar
         public bool ActualizarEstadio(int id, string nombre, string ubicacion, string imagen)

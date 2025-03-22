@@ -195,7 +195,7 @@ namespace TorneosFut
         {
             DataGridViewRow row = dgvEquiposIns.SelectedRows[0];
             string idequipo = row.Cells["IDEquipo"].Value.ToString();
-            PagoInscripcion = new PagoInscripcion(IdTorneo, idequipo, conexion.Usuario, conexion.Clave, true);
+            PagoInscripcion = new PagoInscripcion(IdTorneo, idequipo, conexion.Usuario, conexion.Clave);
             PagoInscripcion.ShowDialog();
         }
     }

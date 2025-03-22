@@ -27,10 +27,9 @@ namespace TorneosFut
                 }
                 else
                 {
-                    dt = csConexion.ListDGV($"Select * from AuditoriaCambios where IDUsuario like '%{csConexion.Usuario}%' or TipoCambio like '%{filtro}%'" +
-                                        $" or TablaAfectada like '%{filtro}%'");
+                    dt = csConexion.ListDGV($"Select * from AuditoriaCambios where IDUsuario like '%{csConexion.Usuario}%' and (TipoCambio like '%{filtro}%'" +
+                                        $" or TablaAfectada like '%{filtro}%')");
                 }
-
             }
             else
             {
@@ -62,7 +61,6 @@ namespace TorneosFut
                 dt = csConexion.ListDGV("Select * from AuditoriaCambios");
             else
                 dt = csConexion.ListDGV($"Select * from AuditoriaCambios where IDUsuario like '%{csConexion.Usuario}%'");
-
             return dt;
         }
     }

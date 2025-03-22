@@ -25,6 +25,7 @@ namespace TorneosFut
         csTorneo csTorneo;
         csArbitro csArbitro;
         csIncripcionEquipo csIncripcion;
+        csMovimientoFinanciero csMovimiento;
         public csDatos(string u, string c)
         {
             //csConexion = new csConexion(u, c);
@@ -37,6 +38,7 @@ namespace TorneosFut
             csTorneo = new csTorneo(u, c);
             csArbitro = new csArbitro(u, c);
             csIncripcion = new csIncripcionEquipo(u, c);
+            csMovimiento = new csMovimientoFinanciero(u, c);
         }
         #region Login
         public bool Login(string usuario, string clave)
@@ -255,11 +257,6 @@ namespace TorneosFut
         {
             return csArbitro.AgregarArbitro(id, nombre, apellido, correo);
         }
-
-        public bool InsertarIncripcion(int IDTorneo, string IDEquipo, decimal Abono, decimal Saldo, decimal MontoAPagar, DateTime FechaLimite, string Estado)
-        {
-            return csIncripcion.AgregarInscripcion(IDTorneo, IDEquipo, Abono, Saldo, MontoAPagar, FechaLimite, Estado);
-        }
         #endregion
 
         #region Actualizar
@@ -452,6 +449,10 @@ namespace TorneosFut
         public bool QuitarIncripcion(string IDEquipo)
         {
             return csIncripcion.EliminarInscripcion(IDEquipo);
+        }
+        public bool InsertarMovimientoInscripcion(int IDTorneo, decimal Monto, string Descripciopn)
+        {
+            return csMovimiento.AgregarMovimientoInscripcion(IDTorneo, Monto, Descripciopn);
         }
         //GENERAR TORNEO
         public bool GenerarPartidos(string torneo)
