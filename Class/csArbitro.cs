@@ -18,7 +18,7 @@ namespace TorneosFut
         private string _nombreArbitro;
         private string _apellidoArbitro;
         private string _correo;
-
+        
         public string IDArbitro
         {
             get => _idArbitro;
@@ -41,6 +41,12 @@ namespace TorneosFut
         {
             get => _correo;
             set => _correo = value;
+        }
+        public string GeneraIDArbitro()
+        {
+            Random rnd = new Random();
+            string id;
+            return id = $"ARB{rnd.Next(1000000, 10000000)}";
         }
         public DataTable ListaArbitros()
         {

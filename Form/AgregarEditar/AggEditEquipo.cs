@@ -16,12 +16,14 @@ namespace TorneosFut
         OpenFileDialog img = new OpenFileDialog();
         static bool agregar;
         csDatos csDatos;
+        csDGV csDGV;
         static string nombreArchivo = "";
         public AggEditEquipo(string u, string c, bool n)
         {
             conexion = new csConexion(u,c);
             csDatos = new csDatos(u,c);
             agregar = n;
+            csDGV = new csDGV(u, c);
             InitializeComponent();
         }
         public void lblEntregarVisi(bool visble, bool novisble)
@@ -89,6 +91,7 @@ namespace TorneosFut
             panel3.Tag = "NoCambiar";
             panel4.Tag = "NoCambiar";
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
+            csDGV.LlenarcmbEstadio(cmbEstadio);
             if (!agregar)
             {
                 txtId.Enabled = false;
