@@ -315,6 +315,12 @@ namespace TorneosFut
 
             return csEstadio.ActualizarEstadio(id, nombre, ubicacion, imagen + Path.GetExtension(filename));
         }
+        public bool EditarEquipo(string IdEquipo, string IdEstadio, string nombre, string genero, string Eqlocal, string Eqvisitante, string imagen, string presidente, string filename)
+        {
+            csImagenes.guardarIMG(filename, imagen);
+
+            return csEquipo.ActualizarEquipo(IdEquipo, IdEstadio, nombre, genero, Eqlocal, Eqvisitante, imagen + Path.GetExtension(filename), presidente);
+        }
         public bool EditarArbitro(string id, string nombre, string apellido, string correo)
         {
             return csArbitro.ActualizarArbitro(id, nombre, apellido, correo);

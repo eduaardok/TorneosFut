@@ -35,6 +35,7 @@ namespace TorneosFut
                 if (csDatos.InsertarEquipo(txtId.Text, cmbEstadio.SelectedValue.ToString(), txtNombreClub.Text, cmbGenero.Text, cmbEquipacionLocal.Text, cmbequipacionvisitante.Text, nombreArchivo, txtPresidente.Text, img.FileName))
                 {
                     MessageBox.Show("Equipo Agregado Correctamente");
+                    Close();
                 }
                 else
                 {
@@ -43,22 +44,15 @@ namespace TorneosFut
             }
             else
             {
-                string query = $"UPDATE Equipo SET " +
-                               $"NombreEquipo = '{txtNombreClub.Text}', " +
-                               $"Genero = '{cmbGenero.Text}', " +
-                               $"EquipacionLocal = '{cmbEquipacionLocal.Text}', " +
-                               $"EquipacionVisitante = '{cmbequipacionvisitante.Text}', " +
-                               $"ImagenEscudo = '{nombreArchivo}', " +
-                               $"Presidente = '{txtPresidente.Text}' " +
-                               $"WHERE IDEquipo = '{txtId.Text}';";
-
-                if (conexion.Consulta(query))
+                if(csDatos.EditarEquipo(txtId.Text, cmbEstadio.SelectedValue.ToString(), txtNombreClub.Text, cmbGenero.Text, cmbEquipacionLocal.Text, cmbequipacionvisitante.Text, nombreArchivo, txtPresidente.Text, img.FileName))
                 {
-                    MessageBox.Show("Equipo actualizado correctamente");
+                    MessageBox.Show("Equipo Editado Correctamente");
+                    Close();
+
                 }
                 else
                 {
-                    MessageBox.Show("Error al actualizar el equipo");
+                    MessageBox.Show("Equipo no editado");
                 }
             }
 

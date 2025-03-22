@@ -148,5 +148,37 @@ namespace TorneosFut.Class
                 img.CargarImagen(nombreIMG, ptb);
             }
         }
+        #region Actualizar
+        public bool ActualizarEquipo(string idEquipo, string idEstadio, string nombre, string genero, string equipacionLocal, string equipacionVisitante, string imagen, string presidente)
+        {
+            IDEquipo = idEquipo.Trim();
+            IDEstadio = idEstadio.Trim();
+            NombreEquipo = nombre.Trim();
+            Genero = genero.Trim();
+            EquipacionLocal = equipacionLocal.Trim();
+            EquipacionVisitante = equipacionVisitante.Trim();
+            ImagenEscudo = imagen.Trim();
+            Presidente = presidente.Trim();
+
+            string xmlEquipo =
+                "<Equipos>" +
+                "    <Equipo>" +
+                $"        <IDEquipo>{IDEquipo}</IDEquipo>" +
+                $"        <IDEstadio>{IDEstadio}</IDEstadio>" +
+                $"        <NombreEquipo>{NombreEquipo}</NombreEquipo>" +
+                $"        <Genero>{Genero}</Genero>" +
+                $"        <EquipacionLocal>{EquipacionLocal}</EquipacionLocal>" +
+                $"        <EquipacionVisitante>{EquipacionVisitante}</EquipacionVisitante>" +
+                $"        <ImagenEscudo>{ImagenEscudo}</ImagenEscudo>" +
+                $"        <Presidente>{Presidente}</Presidente>" +
+                "    </Equipo>" +
+                "</Equipos>";
+            if (conexion.Consulta($"declare @cadenaa varchar(MAX) = '{xmlEquipo}'; exec spEditarEquipo @cadenaa;"))
+                return true;
+            else
+                return false;
+        }
+
+        #endregion
     }
 }
