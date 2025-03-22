@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,7 +42,11 @@ namespace TorneosFut
             get => _correo;
             set => _correo = value;
         }
-
+        public DataTable Listaorganizadores()
+        {
+            DataTable dt = csConexion.ListDGV("Select * from Organizador");
+            return dt;
+        }
         #region Insertar
         public bool AgregarOrganizador(string id, string nombreEmpresa, string telefono, string correo)
         {

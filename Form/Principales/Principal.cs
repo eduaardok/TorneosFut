@@ -215,7 +215,7 @@ namespace TorneosFut
         private void button1_Click(object sender, EventArgs e)
         {
 
-                if (tor.panelmodul.BackColor == Color.White)
+                if (this.BackColor == Color.White)
                 {
                 panelModulos.BackColor = Color.Black;
                 panelModulos.BackgroundImage = Resources.fxfutxpertblanco;
@@ -261,17 +261,14 @@ namespace TorneosFut
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            // Cerrar (ocultar) todos los formularios abiertos
             foreach (Form form in Application.OpenForms)
             {
-                // Solo ocultar los formularios secundarios, no el formulario principal
                 if (form != this)
                 {
-                    form.Hide();  // Esto oculta el formulario
+                    form.Hide(); 
                 }
             }
-            // Mostrar solo el panel (si no está ya visible)
-            panelModulos.BringToFront();  // Asegura que el panel sea el que se muestre
+            panelModulos.BringToFront();  
         }
 
         private void button3_Click(object sender, EventArgs e)

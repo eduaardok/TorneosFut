@@ -14,18 +14,20 @@ namespace TorneosFut
     public partial class Arbitro: Form
     {
         PagoArbitro PagoArbitro;
-      
+        csDGV csDGV;
         csConexion csConexion;
         public Arbitro(string u, string c)
         {
             PagoArbitro = new PagoArbitro(u, c);
             csConexion = new csConexion(u,c);
+            csDGV = new csDGV(u,c);
             InitializeComponent();
         }
 
         private void Arbitro_Load(object sender, EventArgs e)
         {
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
+            csDGV.MostrarArbitros(dgvArbitro);
         }
 
         private void btnPagoArbitro_Click(object sender, EventArgs e)

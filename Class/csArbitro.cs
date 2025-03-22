@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,6 +42,12 @@ namespace TorneosFut
             get => _correo;
             set => _correo = value;
         }
+        public DataTable ListaIdArbitros()
+        {
+            DataTable dt = csConexion.ListDGV("Select * from Arbitro");
+            return dt;
+        }
+
         #region Insertar
         public bool AgregarArbitro(string id, string nombre, string apellido, string correo)
         {

@@ -127,7 +127,9 @@ namespace TorneosFut
         }
         void Logeo()
         {
-            if(CamposVacios())
+            msg.Buttons = MessageDialogButtons.OK;
+            msg.Icon = MessageDialogIcon.Information;
+            if (CamposVacios())
             {
 
                 msg.Caption = "FALTA DE CREDENCIALES";
@@ -247,7 +249,13 @@ namespace TorneosFut
 
         private void llblRecuperarClave_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            DialogResult r = MessageBox.Show("¿Desea enviar un correo electrónico de recuperación?", "RECUPERAR CREDENCIALES", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            msg.Caption = "RECUPERAR CREDENCIALES";
+            msg.Text = "¿Desea enviar un correo electrónico de recuperación?";
+            msg.Parent = this;
+            msg.Buttons = MessageDialogButtons.YesNo;
+            msg.Icon = MessageDialogIcon.Question;
+            DialogResult r = msg.Show();
+
             if (r == DialogResult.Yes)
             {
                 IngresarCorreoRecuperacion i = new IngresarCorreoRecuperacion();

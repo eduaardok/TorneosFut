@@ -37,11 +37,9 @@
             this.btnEditar = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
             this.btnPagoArbitro = new Guna.UI2.WinForms.Guna2Button();
-            this.ptbImagen = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelDgv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArbitro)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbImagen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,7 +49,7 @@
             this.txtBuscarArbitro.Font = new System.Drawing.Font("Onest Light", 20F);
             this.txtBuscarArbitro.ForeColor = System.Drawing.Color.Gray;
             this.txtBuscarArbitro.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtBuscarArbitro.Location = new System.Drawing.Point(288, 140);
+            this.txtBuscarArbitro.Location = new System.Drawing.Point(342, 139);
             this.txtBuscarArbitro.Multiline = true;
             this.txtBuscarArbitro.Name = "txtBuscarArbitro";
             this.txtBuscarArbitro.Size = new System.Drawing.Size(795, 48);
@@ -79,10 +77,10 @@
             this.dgvArbitro.BackgroundColor = System.Drawing.Color.White;
             this.dgvArbitro.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Onest Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvArbitro.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
@@ -120,7 +118,7 @@
             this.btnAgregar.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnAgregar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnAgregar.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnAgregar.Location = new System.Drawing.Point(200, 221);
+            this.btnAgregar.Location = new System.Drawing.Point(519, 193);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(222, 59);
             this.btnAgregar.TabIndex = 19;
@@ -142,7 +140,7 @@
             this.btnEditar.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnEditar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnEditar.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnEditar.Location = new System.Drawing.Point(459, 221);
+            this.btnEditar.Location = new System.Drawing.Point(747, 193);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(214, 59);
             this.btnEditar.TabIndex = 18;
@@ -180,22 +178,12 @@
             this.btnPagoArbitro.Text = "Pagar Arbitro";
             this.btnPagoArbitro.Click += new System.EventHandler(this.btnPagoArbitro_Click);
             // 
-            // ptbImagen
-            // 
-            this.ptbImagen.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.ptbImagen.Location = new System.Drawing.Point(1105, 48);
-            this.ptbImagen.Name = "ptbImagen";
-            this.ptbImagen.Size = new System.Drawing.Size(207, 193);
-            this.ptbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbImagen.TabIndex = 23;
-            this.ptbImagen.TabStop = false;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.BackgroundImage = global::TorneosFut.Properties.Resources.IconoLupa;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(200, 139);
+            this.pictureBox1.Location = new System.Drawing.Point(277, 139);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(50, 49);
             this.pictureBox1.TabIndex = 22;
@@ -207,7 +195,6 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1414, 920);
             this.Controls.Add(this.btnPagoArbitro);
-            this.Controls.Add(this.ptbImagen);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtBuscarArbitro);
             this.Controls.Add(this.panelDgv);
@@ -220,7 +207,6 @@
             this.Load += new System.EventHandler(this.Arbitro_Load);
             this.panelDgv.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArbitro)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbImagen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -228,8 +214,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox ptbImagen;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtBuscarArbitro;
         private System.Windows.Forms.Panel panelDgv;

@@ -34,13 +34,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtBuscarEntrenador = new System.Windows.Forms.TextBox();
-            this.ptbIMGOrganizador = new System.Windows.Forms.PictureBox();
             this.dgvOrganizador = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAggOrganizador = new Guna.UI2.WinForms.Guna2Button();
             this.btnEditar = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbIMGOrganizador)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrganizador)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,17 +65,6 @@
             this.txtBuscarEntrenador.Size = new System.Drawing.Size(633, 48);
             this.txtBuscarEntrenador.TabIndex = 41;
             this.txtBuscarEntrenador.Text = "Buscar por nombre del Entrenador";
-            // 
-            // ptbIMGOrganizador
-            // 
-            this.ptbIMGOrganizador.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ptbIMGOrganizador.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.ptbIMGOrganizador.Location = new System.Drawing.Point(926, 131);
-            this.ptbIMGOrganizador.Name = "ptbIMGOrganizador";
-            this.ptbIMGOrganizador.Size = new System.Drawing.Size(166, 141);
-            this.ptbIMGOrganizador.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbIMGOrganizador.TabIndex = 40;
-            this.ptbIMGOrganizador.TabStop = false;
             // 
             // dgvOrganizador
             // 
@@ -192,7 +179,6 @@
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtBuscarEntrenador);
-            this.Controls.Add(this.ptbIMGOrganizador);
             this.Controls.Add(this.dgvOrganizador);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAggOrganizador);
@@ -206,7 +192,6 @@
             this.Text = "Organizadores";
             this.Load += new System.EventHandler(this.Organizadores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbIMGOrganizador)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrganizador)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -217,7 +202,6 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtBuscarEntrenador;
-        private System.Windows.Forms.PictureBox ptbIMGOrganizador;
         public System.Windows.Forms.DataGridView dgvOrganizador;
         public System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button btnAggOrganizador;

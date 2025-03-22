@@ -121,11 +121,6 @@ namespace PruebasTorneos
         }     
         #endregion
 
-        public DataTable ListaIdEntrenadores()
-        {
-            DataTable dt = csConexion.ListDGV("Select IDEntrenador from Entrenador");
-            return dt;
-        }
         
         public DataTable ListaidEntrenador()
         {

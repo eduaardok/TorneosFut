@@ -14,9 +14,11 @@ namespace TorneosFut
     public partial class Organizadores: Form
     {
         csConexion conexion;
+        csDGV csDGV;
         public Organizadores(string u, string c)
         {
             conexion = new csConexion(u,c);
+            csDGV= new csDGV(u,c);
             InitializeComponent();
             
         }
@@ -24,6 +26,7 @@ namespace TorneosFut
         private void Organizadores_Load(object sender, EventArgs e)
         {
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
+            csDGV.MostrarOrganizadores(dgvOrganizador);
         }
 
         private void btnAggOrganizador_Click(object sender, EventArgs e)
