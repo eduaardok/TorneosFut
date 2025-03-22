@@ -84,8 +84,13 @@ namespace TorneosFut.Class
         }
         public string NombreEstadioDeID(string id)
         {
+            
             DataTable dt = csConexion.ListDGV($"select NombreEstadio from Estadio where IDEstadio={id}");
-            return dt.Rows[0][0].ToString();
+            if (dt.Rows.Count > 0)
+            {
+                return dt.Rows[0][0].ToString();
+            }
+            else return "";
         }
         public string UbicacionEstadioDeID(string id)
         {
