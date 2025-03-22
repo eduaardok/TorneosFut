@@ -136,6 +136,17 @@ namespace TorneosFut.Class
             IDEquipo = IdEquipo;
             return conexion.Consulta($"DELETE FROM InscripcionEquipo WHERE IDEquipo = '{IDEquipo}';");
         }
+        public bool EditarInscripcion(string idInscripcion, decimal abono, decimal saldo, decimal montoAPagar, string estado)
+        {
+            string consultaSQL = $@"
+            EXEC spEditarInscripcionEquipo
+                @IDInscripcion = '{idInscripcion}',
+                @Abono = {abono},
+                @Saldo = {saldo},
+                @MontoAPagar = {montoAPagar},
+                @Estado = '{estado}'";
+            return conexion.Consulta(consultaSQL);
+        }
         public string GenerarIDInscripcion(int idTorneo, string idEquipo)
         {
             string idInscripcion;
