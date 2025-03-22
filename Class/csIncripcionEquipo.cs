@@ -114,7 +114,7 @@ namespace TorneosFut.Class
             Saldo = montoAPagar;
             MontoAPagar = montoAPagar;
             FechaLimite = fecha;
-            Estado = "Pendiente";
+            Estado = "PENDIENTE";
 
             string xmlInscripcion =
                 "<InscripcionEquipos>" +
