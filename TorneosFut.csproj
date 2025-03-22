@@ -252,10 +252,10 @@
     <Compile Include="Form\AgregarEditar\PagoArbitro.Designer.cs">
       <DependentUpon>PagoArbitro.cs</DependentUpon>
     </Compile>
-    <Compile Include="IngresarCorreoRecuperacion.cs">
+    <Compile Include="Form\Principales\IngresarCorreoRecuperacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="IngresarCorreoRecuperacion.Designer.cs">
+    <Compile Include="Form\Principales\IngresarCorreoRecuperacion.Designer.cs">
       <DependentUpon>IngresarCorreoRecuperacion.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -356,7 +356,7 @@
     <EmbeddedResource Include="Form\Principales\Torneo.resx">
       <DependentUpon>Torneo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="IngresarCorreoRecuperacion.resx">
+    <EmbeddedResource Include="Form\Principales\IngresarCorreoRecuperacion.resx">
       <DependentUpon>IngresarCorreoRecuperacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

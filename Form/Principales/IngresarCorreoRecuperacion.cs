@@ -15,13 +15,13 @@ namespace TorneosFut
         csDatos csDatos;
         public IngresarCorreoRecuperacion()
         {
-            csDatos = new csDatos("u", "c");
+            csDatos = new csDatos("UsuarioLectura", "usuario");
             InitializeComponent();
         }
 
         private void btnEnviar_Click(object sender, EventArgs e)
         {
-            if (csDatos.EnviarCorreoRecuperacion("Su contraseña es", txtCorreo.Text))
+            if (csDatos.EnviarCorreoRecuperacion(txtCorreo.Text))
                 this.Close();
         }
     }
