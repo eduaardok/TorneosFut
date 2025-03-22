@@ -24,6 +24,7 @@ namespace TorneosFut.Class
         public csEquipo(string u, string c)
         {
             conexion = new csConexion(u,c);
+            img = new csImagenes();
         }
         public string IDEquipo
         {
