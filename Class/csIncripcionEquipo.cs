@@ -131,18 +131,6 @@ namespace TorneosFut.Class
                 "</InscripcionEquipos>";
             return conexion.Consulta($"DECLARE @cadenaa VARCHAR(MAX) = '{xmlInscripcion}'; EXEC spRegistraInscripcionEquipo @cadenaa;");
         }
-
-        public bool EditarInscripcion(string idInscripcion, decimal abono, decimal saldo, decimal montoAPagar, string estado)
-        {
-            string consultaSQL = $@"
-            EXEC spEditarInscripcionEquipo
-                @IDInscripcion = '{idInscripcion}',
-                @Abono = {abono},
-                @Saldo = {saldo},
-                @MontoAPagar = {montoAPagar},
-                @Estado = '{estado}'";
-            return conexion.Consulta(consultaSQL);
-        }
         public bool EliminarInscripcion(string IdEquipo)
         {
             IDEquipo = IdEquipo;

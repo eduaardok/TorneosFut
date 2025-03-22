@@ -34,22 +34,17 @@ namespace TorneosFut
         }
         private void PagoInscripcion_Load(object sender, EventArgs e)
         {
-            DataTable torneoo = conexion.ListDGV($"select IDInscripcion, Estado, Saldo, MontoAPagar from InscripcionEquipo where IDTorneo = {IdTorneo} and IDEquipo = '{IdEquipo}'");
-            lblCosto.Text = Convert.ToDecimal(torneoo.Rows[0]["Saldo"].ToString()).ToString("F2");
-
-
             DataTable equipos = conexion.ListDGV($"select NombreEquipo from Equipo where IDEquipo = '{IdEquipo}'");
             string nameEquipo = equipos.Rows[0]["NombreEquipo"].ToString();
             lblEquipo.Text = nameEquipo;
 
             DataTable torneo = conexion.ListDGV($"Select NombreTorneo, CostoInscripcion, FechaInicio from Torneo where IDTorneo = {IdTorneo}");
             string Nametorneo = torneo.Rows[0]["NombreTorneo"].ToString();
-            //lblCosto.Text = Convert.ToDecimal(torneo.Rows[0]["CostoInscripcion"].ToString()).ToString("F2");
+            lblCosto.Text = torneo.Rows[0]["CostoInscripcion"].ToString();
             lblSaldo.Text = lblCosto.Text;
             lblFechaLimite.Text = Convert.ToDateTime(torneo.Rows[0]["FechaInicio"]).ToString("yyyy-MM-dd");
             lbNameTorneo.Text = Nametorneo;
             costo = decimal.Parse(lblCosto.Text);
-
         }
 
         private void btngCancelar_Click(object sender, EventArgs e)
@@ -72,21 +67,15 @@ namespace TorneosFut
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            DataTable torneo = conexion.ListDGV($"select IDInscripcion, Estado, Saldo, MontoAPagar from InscripcionEquipo where IDTorneo = {IdTorneo} and IDEquipo = '{IdEquipo}'");
-            string idInscripcion = torneo.Rows[0]["IDInscripcion"].ToString();
-            string estadoo = torneo.Rows[0]["Estado"].ToString();
-            decimal saldoo = decimal.Parse(torneo.Rows[0]["Saldo"].ToString());
-            decimal montoo = decimal.Parse(torneo.Rows[0]["MontoAPagar"].ToString());
-            
             if (decimal.TryParse(txtAbono.Text, out abono))
             {
-                if (csDatos.InsertarMovimientoInscripcion(int.Parse(IdTorneo), abono, txtDescripcion.Text, idInscripcion, montoo, saldoo, estadoo))
+                if (csDatos.InsertarMovimientoInscripcion(int.Parse(IdTorneo), abono, txtDescripcion.Text))
                 {
-                    MessageBox.Show("Se abono correctamente");
+                    MessageBox.Show("Se inscribió el equipo correctamente");
                 }
                 else
                 {
-                    MessageBox.Show("Error al abonar");
+                    MessageBox.Show("Error al inscribir el equipo");
                 }
             }
             else
