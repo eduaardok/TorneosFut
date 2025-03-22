@@ -59,11 +59,13 @@ namespace TorneosFut
         {
             DatosCorreo("futxpertbd@gmail.com", "ixtj ykue mdry tygb", "smtp.gmail.com", 587); //correo del futxpert
         }
-        public Boolean Enviar()
+        public Boolean EnviarCorreo(string mensaje)
         {
             SmtpClient cliente = new SmtpClient(servidor, puerto);
             cliente.Credentials = new NetworkCredential(usuario, clave);
             cliente.EnableSsl = true;
+            email.Body = mensaje;
+
             try
             {
                 cliente.Send(email);

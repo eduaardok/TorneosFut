@@ -230,7 +230,12 @@ namespace TorneosFut
 
         private void llblRecuperarClave_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            DialogResult r = MessageBox.Show("¿Desea enviar un correo electrónico de recuperación?", "RECUPERAR CREDENCIALES", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (r == DialogResult.Yes)
+            {
+                IngresarCorreoRecuperacion i = new IngresarCorreoRecuperacion();
+                i.ShowDialog();
+            }
         }
 
         private void panel1_Paint_1(object sender, PaintEventArgs e)

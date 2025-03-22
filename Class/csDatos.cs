@@ -10,11 +10,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TorneosFut.Class;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 namespace TorneosFut
 {
     class csDatos
     {
         //csConexion csConexion;
+        csCorreo csCorreo;
         csUsuario csUsuario;
         csEntrenador csEntrenador;
         csImagenes csImagenes;
@@ -26,6 +28,7 @@ namespace TorneosFut
         public csDatos(string u, string c)
         {
             //csConexion = new csConexion(u, c);
+            csCorreo = new csCorreo();
             csUsuario = new csUsuario(u, c);
             csEntrenador = new csEntrenador(u, c);
             csImagenes = new csImagenes();
@@ -35,13 +38,29 @@ namespace TorneosFut
             csArbitro = new csArbitro(u, c);
             csIncripcion = new csIncripcionEquipo(u, c);
         }
-
+        #region Login
         public bool Login(string usuario, string clave)
         {
             if (clave == ObtenerClaveUsuario(usuario))
                 return true;
             return false;
         }
+        public bool EnviarCorreoRecuperacion(string mensaje, string destino)
+        {
+            DialogResult r = MessageBox.Show("¿Desea enviar un correo electrónico de recuperación?", "RECUPERAR CREDENCIALES", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (r == DialogResult.Yes)
+            {                
+                csCorreo.Destinatario = destino;
+                if (csCorreo.EnviarCorreo(mensaje))
+                {
+                    MessageBox.Show($"Correo de recuperación enviado exitosamente, revise su bandeja de entrada.");
+                    return true;
+                }
+            }
+            return false;
+            
+        }
+        #endregion
 
         #region Usuario
         public string ObtenerIDUsuarioDesdeDGV(DataGridView dgv)
