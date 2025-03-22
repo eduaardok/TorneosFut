@@ -70,7 +70,6 @@ namespace TorneosFut
         }
         private void Principal_Resize(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
             this.StartPosition = FormStartPosition.Manual;
             this.Bounds = Screen.PrimaryScreen.WorkingArea;
         }
@@ -97,7 +96,6 @@ namespace TorneosFut
         {
             timer1.Start();
             this.Dock= DockStyle.Fill;
-            this.WindowState = FormWindowState.Maximized;
             this.StartPosition = FormStartPosition.Manual;
             this.Bounds = Screen.PrimaryScreen.WorkingArea;
             AccesoAdmin();
