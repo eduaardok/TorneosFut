@@ -162,7 +162,22 @@ namespace TorneosFut
             DataTable dt = csConexion.ListDGV($"select ClaveBD from Usuario where IDUsuario={id}");
             return dt.Rows[0][0].ToString();
         }
-
+        public string UsuarioDeCorreo(string correo)
+        {
+            DataTable dt = csConexion.ListDGV($"select NombreUsuario from Usuario where Correo='{correo}'");
+            if (dt.Rows.Count > 0)
+                return dt.Rows[0][0].ToString();
+            else
+                return "UsuarioNoExistente";
+        }
+        public string ClaveoDeCorreo(string correo)
+        {
+            DataTable dt = csConexion.ListDGV($"select ClaveUsuario from Usuario where Correo='{correo}'");
+            if (dt.Rows.Count > 0)
+                return dt.Rows[0][0].ToString();
+            else
+                return "UsuarioNoExistente";
+        }
         #endregion
 
         #region ListasParaValidaciones

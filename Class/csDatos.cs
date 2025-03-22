@@ -45,20 +45,24 @@ namespace TorneosFut
                 return true;
             return false;
         }
-        public bool EnviarCorreoRecuperacion(string mensaje, string destino)
+        public bool EnviarCorreoRecuperacion(string destino)
         {
-            DialogResult r = MessageBox.Show("¿Desea enviar un correo electrónico de recuperación?", "RECUPERAR CREDENCIALES", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (r == DialogResult.Yes)
-            {                
-                csCorreo.Destinatario = destino;
-                if (csCorreo.EnviarCorreo(mensaje))
-                {
-                    MessageBox.Show($"Correo de recuperación enviado exitosamente, revise su bandeja de entrada.");
-                    return true;
-                }
+            csCorreo.Destinatario = destino;
+            string mensaje = $"CREDENCIALES: Usuario:'{ObtenerUsuarioDeCorreo(destino)}', Clave: {ObtenerClaveDeCorreo(destino)}";
+            if (csCorreo.EnviarCorreo(mensaje))
+            {
+                MessageBox.Show($"Correo de recuperación enviado exitosamente, revise su bandeja de entrada.");
+                return true;
             }
             return false;
-            
+        }
+        public string ObtenerUsuarioDeCorreo(string correo)
+        {
+            return csUsuario.UsuarioDeCorreo(correo);
+        }
+        public string ObtenerClaveDeCorreo(string correo)
+        {
+            return csUsuario.ClaveoDeCorreo(correo);
         }
         #endregion
 
