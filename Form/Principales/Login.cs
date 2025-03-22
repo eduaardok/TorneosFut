@@ -21,6 +21,8 @@ namespace TorneosFut
         static csConexion conec;
         static csEncriptar encrip;
         csDatos csDatos;
+        Guna.UI2.WinForms.Guna2MessageDialog msg = new Guna.UI2.WinForms.Guna2MessageDialog();
+
         int click;
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -80,6 +82,9 @@ namespace TorneosFut
             this.Region= Region.FromHrgn(CreateRoundRectRgn(1, 1, this.Width, this.Height, 20, 20));
             Txtclave.PasswordChar = default;
             this.Tag= "NoCambiar";
+            msg.Buttons = MessageDialogButtons.OK;
+            msg.Icon = MessageDialogIcon.Information;
+            msg.Style = MessageDialogStyle.Dark;
         }
 
         private void X_MouseLeave(object sender, EventArgs e)
@@ -117,24 +122,35 @@ namespace TorneosFut
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
+
             Logeo();
         }
         void Logeo()
         {
             if(CamposVacios())
             {
-                MessageBox.Show("Ingrese un usuario y contraseña para acceder");
+
+                msg.Caption = "FALTA DE CREDENCIALES";
+                msg.Text = "Ingrese un usuario y contraseña para acceder.";
+                msg.Parent= this;
+                msg.Show();
             }
             else
             {
                 string password = encrip.Encriptar(Txtclave.Text, "futxpert");
                 if (!csDatos.Login(txtUsuario.Text, password))
                 {
-                    MessageBox.Show("Credenciales incorrectas", "Inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    msg.Caption = "CREDENCIALES INCORRECTAS";
+                    msg.Text = "Credenciales incorrectas.";
+                    msg.Parent = this;
+                    msg.Show();
                 }
                 else
                 {
-                    MessageBox.Show("Se inició sesión de forma correcta");
+                    msg.Caption = "INICIO DE SESION EXITOSO";
+                    msg.Text = "Se inició sesión de forma correcta.";
+                    msg.Parent = this;
+                    msg.Show();
                     Principal n = new Principal(csDatos.ObtenerUsuarioBD(txtUsuario.Text), encrip.Desencriptar(csDatos.ObtenerClaveBD(txtUsuario.Text), "futxpert"), txtUsuario.Text);
                     this.Hide();
                     n.ShowDialog();
