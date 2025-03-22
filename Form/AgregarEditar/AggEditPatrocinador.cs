@@ -13,10 +13,12 @@ namespace TorneosFut
     public partial class AggEditPatrocinador: Form
     {
         bool N;
+        string f;
         public AggEditPatrocinador(string u, string c, bool n)
         {
             bool N = n;
             InitializeComponent();
+
         }
 
 
