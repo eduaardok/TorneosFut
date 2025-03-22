@@ -163,7 +163,12 @@ namespace TorneosFut
             return csEstadio.UbicacionEstadioDeID(id);
         }
         #endregion
-
+        #region Torneo
+        public string ObtenerIDTorneoDesdeDGV(DataGridView dgv)
+        {
+            return csTorneo.IDTorneoSeleccionado(dgv);
+        }
+        #endregion
         #region MostrarImagenes
         public void MostrarImagenEntrenador(string id, PictureBox ptb)
         {
@@ -258,22 +263,17 @@ namespace TorneosFut
                 return false;
             }
         }
-        public bool InsertarTorneo(string idTorneo, string Txtnombre, string formato, string ModoFutbol, string Organizador, string te)
+        public bool InsertarTorneo(string Txtnombre, string formato, string ModoFutbol, string Organizador, string te)
         {
-            if (validarIDTorneo(idTorneo.ToString()))
-            {
-                if (csTorneo.AgregarTorneo(idTorneo, Txtnombre, formato, ModoFutbol, Organizador, te))
+        
+            
+               if (csTorneo.AgregarTorneo( Txtnombre, formato, ModoFutbol, Organizador, te))
                 {
                     MessageBox.Show("Torneo registrado correctamente");
                     return true;
                 }
                 else
                     return false;
-            }
-            else
-            {
-                return false;
-            }
         }
         public bool InsertarEstadio(string id, string nombre, string ubicacion, string imagen, string filename)
         {
@@ -318,6 +318,10 @@ namespace TorneosFut
         public bool EditarArbitro(string id, string nombre, string apellido, string correo)
         {
             return csArbitro.ActualizarArbitro(id, nombre, apellido, correo);
+        }
+        public bool EditarTorneo(string id, string Txtnombre, string formato, string ModoFutbol, string Organizador, string te)
+        {
+            return csTorneo.ActualizarTorneo(id, Txtnombre, formato, ModoFutbol, Organizador, te);
         }
         #endregion
 
@@ -375,35 +379,6 @@ namespace TorneosFut
             return false;
         }
         
-        public bool IDTorneoRepetido(string id)
-        {
-            DataTable dt = csTorneo.ListaIDTorneo();
-
-            string[] IDS = new string[dt.Rows.Count];
-
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                IDS[i] = dt.Rows[i][0].ToString();
-            }
-            for (int i = 0; i < IDS.Length; i++)
-            {
-
-                if (IDS[i] == id)
-                {
-                    MessageBox.Show($"Ya existe un torneo registrado con el ID: {id}");
-                    return true;
-                }
-            }
-            return false;
-        }
-        public bool validarIDTorneo(string id)
-        {
-            if (validarSoloNumeros(id) && !(IDTorneoRepetido(id)))
-            {
-                return true;
-            }
-            return false;
-        }
         public bool DorsalJugadorRepetido(string id, string dorsal)
         {
             DataTable dt = csJugador.ListaDorsalesJugadores(id);

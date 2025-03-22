@@ -17,6 +17,16 @@ namespace TorneosFut.Class
         {
             csConexion = new csConexion(u, c);
         }
+        public string IDTorneoSeleccionado(DataGridView dgv)
+        {
+            return dgv.Rows[dgv.CurrentRow.Index].Cells["IDTorneo"].Value.ToString();
+        }
+        public string GenerarNuevoIDTorneo()
+        {
+            string query = "SELECT ISNULL(MAX(IDTorneo), 0) + 1 FROM Torneos";
+            DataTable dt = csConexion.ListDGV(query);
+            return dt.Rows[0][0].ToString();
+        }
         #region ValidarInscripciones
         public bool TotalEquiposInscritos(string torneo)
         {
@@ -86,10 +96,19 @@ namespace TorneosFut.Class
 
             return dt;
         }
-        public bool AgregarTorneo(string idTorneo, string Txtnombre, string formato, string ModoFutbol, string Organizador, string te)
+        public bool AgregarTorneo( string Txtnombre, string formato, string ModoFutbol, string Organizador, string te)
         {
             if (csConexion.Consulta($"insert into Torneo (IDTorneo, NombreTorneo, IDFormato, IDModoFutbol, IDOrganizador, FechaInicio, Usuario, Estado)" +
-                $" values ({idTorneo}, '{Txtnombre}', {formato}, {ModoFutbol}, '{Organizador}','{te}' , system_user, 'PENDIENTE')"))
+                $" values ({GenerarNuevoIDTorneo()}, '{Txtnombre}', {formato}, {ModoFutbol}, '{Organizador}','{te}' , system_user, 'PENDIENTE')"))
+                return true;
+            else
+                return false;
+
+        }
+        public bool ActualizarTorneo(string id, string Txtnombre, string formato, string ModoFutbol, string Organizador, string te)
+        {
+            if (csConexion.Consulta($"update Torneo set NombreTorneo = '{Txtnombre}', IDFormato={formato}, IDModoFutbol = {ModoFutbol}, IDOrganizador= '{Organizador}'," +
+                $" FechaInicio ='{te}' where IDTorneo = {id}"))
                 return true;
             else
                 return false;

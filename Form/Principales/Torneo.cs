@@ -26,9 +26,11 @@ namespace TorneosFut
         string IDTorneo;
         string IDPartido;
         csValidaciones csValidaciones;
+        csDatos csDatos;
         public Torneo(string u, string c)
         {
             conexion = new csConexion(u,c);
+            csDatos = new csDatos(u, c);
             InitializeComponent();
             patro = new Patrocinadores(u,c);
             orga = new Organizadores(u,c);
@@ -83,7 +85,7 @@ namespace TorneosFut
 
         private void btnCrear_Click(object sender, EventArgs e)
         {
-            int id = -1;
+            string id = "-1";
             AggTorneo a = new AggTorneo(true, id, conexion.Usuario, conexion.Clave);
             //AbrirFormEnPanel(panelDgv, a);
             a.ShowDialog();
@@ -91,7 +93,7 @@ namespace TorneosFut
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            int id = 1;
+            string id = csDatos.ObtenerIDTorneoDesdeDGV(dgvTorneo);
             AggTorneo a = new AggTorneo(false, id, conexion.Usuario, conexion.Clave);
             a.ShowDialog();
         }
@@ -114,7 +116,7 @@ namespace TorneosFut
 
         private void btnCrear_Click_1(object sender, EventArgs e)
         {
-            AggTorneo aggTorneo = new AggTorneo(true, 1, conexion.Usuario, conexion.Clave);
+            AggTorneo aggTorneo = new AggTorneo(true, "-1", conexion.Usuario, conexion.Clave);
             aggTorneo.ShowDialog();
             
         }

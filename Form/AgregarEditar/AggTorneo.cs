@@ -13,11 +13,11 @@ namespace TorneosFut
     public partial class AggTorneo : Form
     {
         csConexion conexion;
-        static int id;
+        static string id;
         static bool agg = true;
         csDatos csDatos;
         csDGV csDGV;
-        public AggTorneo(bool a, int i, string u, string c)
+        public AggTorneo(bool a, string i, string u, string c)
         {
             conexion = new csConexion(u, c);
             agg = a;
@@ -59,7 +59,15 @@ namespace TorneosFut
         private void btngEnviar_Click(object sender, EventArgs e)
         {
             //MessageBox.Show("Inhabilitado por el momento");
-            csDatos.InsertarTorneo("6", txtNombre.Text, cmbFormato.SelectedValue.ToString(), cmbModoFutbol.SelectedValue.ToString(), cmbOrganizador.SelectedValue.ToString(), dtpInicio.Value.ToString()) ;
+            if (!agg)
+            {
+                csDatos.EditarTorneo(id, txtNombre.Text, cmbFormato.SelectedValue.ToString(), cmbModoFutbol.SelectedValue.ToString(), cmbOrganizador.SelectedValue.ToString(), dtpInicio.Value.ToString());
+            }
+            else
+            {
+                csDatos.InsertarTorneo(txtNombre.Text, cmbFormato.SelectedValue.ToString(), cmbModoFutbol.SelectedValue.ToString(), cmbOrganizador.SelectedValue.ToString(), dtpInicio.Value.ToString());
+
+            }
         }
     }
 }
