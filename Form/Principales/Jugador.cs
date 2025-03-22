@@ -89,7 +89,9 @@ namespace pruebas
                         agregaJu.txtpeso.Text = dgvJugador.Rows[dgvJugador.CurrentRow.Index].Cells[7].Value.ToString();
                         agregaJu.txtaltura.Text = dgvJugador.Rows[dgvJugador.CurrentRow.Index].Cells[8].Value.ToString();
                         agregaJu.cmbpierna.Text = dgvJugador.Rows[dgvJugador.CurrentRow.Index].Cells[9].Value.ToString();
-                        agregaJu.ShowDialog();
+                        agregaJu.ShowDialog(); 
+                        ActualizarTabla();
+
                     }
                     else
                     {
@@ -111,14 +113,21 @@ namespace pruebas
         {
             AggJugadores aggju = new AggJugadores(conexion.Usuario, conexion.Clave,true);
             aggju.ShowDialog();
+            ActualizarTabla();
+
         }
-      
+
         private void txtBuscarMisEquipos_KeyUp(object sender, KeyEventArgs e)
         {
             ActualizarTabla();
         }
         void ActualizarTabla()
         {
+            if (txtBuscarJugador.Text == "Buscar por nombre del Jugador")
+            {
+                txtBuscarJugador.Text = "";
+                txtBuscarJugador.ForeColor = Color.Black;
+            }
             csDGV.MostrarJugadoresFiltro(dgvJugador, txtBuscarJugador.Text);
             csDGV.AdaptarDGV(dgvJugador, panelDgv);
         }

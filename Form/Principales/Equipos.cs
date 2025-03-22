@@ -87,6 +87,8 @@ namespace TorneosFut
         {
             aggEquipo = new AggEditEquipo(conexion.Usuario, conexion.Clave,true);
             aggEquipo.ShowDialog();
+            ActualizarTabla();
+
         }
 
         private void btngEditar_Click(object sender, EventArgs e)
@@ -102,6 +104,8 @@ namespace TorneosFut
             aggEquipo.cmbequipacionvisitante.Text = dgvEquipos[6, dgvEquipos.CurrentRow.Index].Value.ToString();
             aggEquipo.txtPresidente.Text= dgvEquipos[3, dgvEquipos.CurrentRow.Index].Value.ToString();
             aggEquipo.ShowDialog();
+            ActualizarTabla();
+
         }
         public static void AbrirFormEnPanel(Panel panel, Form formHijo)
         {
@@ -154,6 +158,8 @@ namespace TorneosFut
         }
         void ActualizarTabla()
         {
+            if (txtBuscarEquipo.Text == "Buscar por nombre del Equipo")
+                txtBuscarEquipo.Text = "";
             csDGV.MostrarEquiposFiltro(dgvEquipos, txtBuscarEquipo.Text);
             csDGV.AdaptarDGV(dgvEquipos, panelDgv);
         }
@@ -168,6 +174,7 @@ namespace TorneosFut
         {
             aggjugadorEquipo = new AgregarJugadorEquipo(conexion.Usuario, conexion.Clave, dgvEquipos.CurrentRow.Cells[0].Value.ToString());
             aggjugadorEquipo.ShowDialog();
+            ActualizarTabla();
         }
 
         private void dgvEquipos_SelectionChanged(object sender, EventArgs e)

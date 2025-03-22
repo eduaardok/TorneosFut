@@ -41,6 +41,8 @@ namespace TorneosFut
                 {
                     AggEditEstadio agg = new AggEditEstadio(conexion.Usuario, conexion.Clave, false, csDatos.ObtenerIDEstadioDesdeDGV(dgvEstadio));
                     agg.ShowDialog();
+                    ActualizarTabla();
+
                 }
                 else
                 {
@@ -59,7 +61,9 @@ namespace TorneosFut
         {
             AggEditEstadio agg = new AggEditEstadio(conexion.Usuario, conexion.Clave, true, "-1");
             agg.ShowDialog();
-        
+            ActualizarTabla();
+
+
         }
 
         private void Estadio_Shown(object sender, EventArgs e)
@@ -68,6 +72,11 @@ namespace TorneosFut
         }
         void ActualizarTabla()
         {
+            if (txtFiltro.Text == "Buscar por nombre de Estadio")
+            {
+                txtFiltro.Text = "";
+                txtFiltro.ForeColor = Color.Black;
+            }
             csDGV.MostrarEstadiosFiltro(dgvEstadio, txtFiltro.Text);
             csDGV.AdaptarDGV(dgvEstadio, panelDgv);
         }

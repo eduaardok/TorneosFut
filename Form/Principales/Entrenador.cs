@@ -85,6 +85,8 @@ namespace PruebasTorneos
             string id = CsDatos.ObtenerIDEntrenadorDesdeDGV(dgvEntrenador);
             AggEditEntrenador edit = new AggEditEntrenador(conexion.Usuario, conexion.Clave, false, id);
             edit.ShowDialog();
+            ActualizarTabla();
+
             /* AggEditEntrenador ent = new AggEditEntrenador(conexion.Usuario, conexion.Clave, false);
              ent.txtID.Text = dgvEntrenador[0, dgvEntrenador.CurrentRow.Index].Value.ToString();
              ent.txtNombre.Text = dgvEntrenador[1, dgvEntrenador.CurrentRow.Index].Value.ToString();
@@ -122,6 +124,7 @@ namespace PruebasTorneos
         {
             AggEditEntrenador ent = new AggEditEntrenador(conexion.Usuario, conexion.Clave,true, "-1");
             ent.ShowDialog();
+            ActualizarTabla();
         }
 
         private void dgvEntrenador_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -136,6 +139,11 @@ namespace PruebasTorneos
         }
         void ActualizarTabla()
         {
+            if (txtBuscarEntrenador.Text == "Buscar por nombre del Entrenador")
+            {
+                txtBuscarEntrenador.Text = "";
+                txtBuscarEntrenador.ForeColor = Color.Black;
+            }
             csDGV.MostrarEntrenadoresFiltro(dgvEntrenador, txtBuscarEntrenador.Text);
             csDGV.AdaptarDGV(dgvEntrenador);
         }

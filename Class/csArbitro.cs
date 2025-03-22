@@ -63,7 +63,7 @@ namespace TorneosFut
         #region Insertar
         public bool AgregarArbitro(string id, string nombre, string apellido, string correo)
         {
-            IDArbitro = id;
+            IDArbitro = GeneraIDArbitro();
             NombreArbitro = nombre;
             ApellidoArbitro = apellido;
             Correo = correo;
