@@ -29,7 +29,7 @@ namespace TorneosFut
         private void Estadio_Load(object sender, EventArgs e)
         {
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
-            csEstadio.Cargar(dgvEstadio, pictureBox1);
+            csEstadio.Cargar(dgvEstadio, ptbImagen);
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -100,7 +100,7 @@ namespace TorneosFut
             if (dgvEstadio.CurrentRow.Index >= 0)
             {
                 string id = dgvEstadio.Rows[dgvEstadio.CurrentRow.Index].Cells[0].Value.ToString();
-                csDatos.MostrarImagenEstadio(id, pictureBox1);
+                csDatos.MostrarImagenEstadio(id, ptbImagen);
             }
         }
     }
