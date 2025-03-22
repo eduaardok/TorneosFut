@@ -141,5 +141,17 @@ namespace TorneosFut
         {
             csDGV.MostrarTorneoFiltro(dgvTorneo,  txtBuscarTorneo.Text);
         }
+
+        private void btngoleadores_Click(object sender, EventArgs e)
+        {
+            frmEstadisticasGol frmEstadisticasGol = new frmEstadisticasGol();
+            frmEstadisticasGol.ShowDialog();
+        }
+
+        private void btnasistidores_Click(object sender, EventArgs e)
+        {
+            frmEstadisticasAsistencias frmEstadisticasAsistencias = new frmEstadisticasAsistencias();
+            frmEstadisticasAsistencias.ShowDialog();
+        }
     }
 }
