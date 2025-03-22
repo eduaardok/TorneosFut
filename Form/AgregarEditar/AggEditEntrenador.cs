@@ -56,6 +56,7 @@ namespace PruebasTorneos
                 if (csDatos.InsertarEntrenador(txtNombre.Text, txtApellido.Text, cmbSexo.Text,dtpNacimiento.Value, nombreArchivo, img.FileName))
                 {
                     MessageBox.Show("Se registró el entrenador correctamente.");
+                    Close();
                 }
                 else
                     MessageBox.Show("no insertado");
@@ -65,6 +66,7 @@ namespace PruebasTorneos
                if(csDatos.EditarEntrenador(id, txtNombre.Text, txtApellido.Text, cmbSexo.Text, dtpNacimiento.Value, nombreArchivo, img.FileName))
                 {
                     MessageBox.Show("Entrenador actualizado correctamente");
+                    Close();
                 }
                 else
                 {
