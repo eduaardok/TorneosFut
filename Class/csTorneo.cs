@@ -23,7 +23,7 @@ namespace TorneosFut.Class
         }
         public string GenerarNuevoIDTorneo()
         {
-            string query = "SELECT ISNULL(MAX(IDTorneo), 0) + 1 FROM Torneos";
+            string query = "SELECT ISNULL(MAX(IDTorneo), 0) + 1 FROM Torneo";
             DataTable dt = csConexion.ListDGV(query);
             return dt.Rows[0][0].ToString();
         }

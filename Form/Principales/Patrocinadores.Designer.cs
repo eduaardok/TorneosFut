@@ -159,7 +159,7 @@
             this.btnEditarPatrocinador.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnEditarPatrocinador.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnEditarPatrocinador.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnEditarPatrocinador.Location = new System.Drawing.Point(162, 194);
+            this.btnEditarPatrocinador.Location = new System.Drawing.Point(162, 185);
             this.btnEditarPatrocinador.Name = "btnEditarPatrocinador";
             this.btnEditarPatrocinador.Size = new System.Drawing.Size(127, 52);
             this.btnEditarPatrocinador.TabIndex = 102;

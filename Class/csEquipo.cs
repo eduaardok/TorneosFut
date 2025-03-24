@@ -84,8 +84,7 @@ namespace TorneosFut.Class
         }
         public DataTable ListaDeJugadoresEquipo(string id)
         {
-            DataTable dt = conexion.ListDGV($"Select JE.IDJugador,JE.IDEquipo, J.NombreJugador from Jugador_Equipo JE " +
-                $"inner join Jugador J on JE.IDJugador=J.IDJugador where JE.IDEquipo='{id}' and FechaSalida is null");
+            DataTable dt = conexion.ListDGV($"select JE.IDJugador, JE.IDEquipo, J.NombreJugador from Jugador_Equipo JE inner join Jugador J on JE.IDJugador = J.IDJugador where JE.IDEquipo = '{id}' and JE.FechaSalida is null");
             return dt;
         }
         public DataTable ListadeEquiposFiltro(string filtro)

@@ -33,8 +33,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblEncabezado = new System.Windows.Forms.Label();
             this.ptbImagen = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtIDJugador = new System.Windows.Forms.TextBox();
             this.btngCancelar = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
             this.TxtNacionalidad = new System.Windows.Forms.TextBox();
@@ -95,25 +93,6 @@
             this.ptbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbImagen.TabIndex = 100;
             this.ptbImagen.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(77, 53);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 24);
-            this.label2.TabIndex = 99;
-            this.label2.Text = "ID";
-            // 
-            // txtIDJugador
-            // 
-            this.txtIDJugador.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIDJugador.Location = new System.Drawing.Point(77, 80);
-            this.txtIDJugador.Name = "txtIDJugador";
-            this.txtIDJugador.Size = new System.Drawing.Size(178, 28);
-            this.txtIDJugador.TabIndex = 98;
             // 
             // btngCancelar
             // 
@@ -432,8 +411,6 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ptbImagen);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtIDJugador);
             this.Controls.Add(this.btngCancelar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TxtNacionalidad);
@@ -476,8 +453,6 @@
         public System.Windows.Forms.Panel panel2;
         public System.Windows.Forms.Label lblEncabezado;
         public System.Windows.Forms.PictureBox ptbImagen;
-        public System.Windows.Forms.Label label2;
-        public System.Windows.Forms.TextBox txtIDJugador;
         public Guna.UI2.WinForms.Guna2Button btngCancelar;
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.TextBox TxtNacionalidad;

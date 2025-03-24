@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -97,7 +98,7 @@ namespace TorneosFut.Class
         public DataTable mostrarJugador()
         {
             return csConexion.ListDGV("select IDJugador,NombreJugador,ApellidoJugador,Sexo,FechaNacimiento,"
-                                   + "Posicion,Nacionalidad,Peso,Altura,PiernaHabil from Jugador");
+                                   + "Posicion,Nacionalidad,Peso,Altura,PiernaHabil,ImagenJugador from Jugador");
         }
         public DataTable ListaidJugadores()
         {
@@ -116,14 +117,13 @@ namespace TorneosFut.Class
         }
         public DataTable ListadeJugadoresSinEquipo()
         {
-            DataTable dt = csConexion.ListDGV("select j.IDJugador,NombreJugador,ApellidoJugador from Jugador j  left join Jugador_Equipo e " +
-                "on j.IDJugador=e.IDJugador where e.IDEquipo is null or e.FechaSalida is not null");
+            DataTable dt = csConexion.ListDGV("select j.IDJugador, NombreJugador, ApellidoJugador from Jugador j left join Jugador_Equipo e on j.IDJugador = e.IDJugador where e.IDEquipo is null or e.FechaSalida is not null");
             return dt;
         }
         public DataTable ListadeJugadoresFiltro(string filtro)
         {
             DataTable dt;
-            dt = csConexion.ListDGV($"select IDJugador,NombreJugador,ApellidoJugador,Sexo,FechaNacimiento, Posicion,Nacionalidad,Peso,Altura,PiernaHabil from Jugador where IDJugador like '%{filtro}%' " +
+            dt = csConexion.ListDGV($"select IDJugador,NombreJugador,ApellidoJugador,Sexo,FechaNacimiento, Posicion,Nacionalidad,Peso,Altura,PiernaHabil,ImagenJugador from Jugador where IDJugador like '%{filtro}%' " +
                     $"or NombreJugador like '%{filtro}%' or ApellidoJugador like '%{filtro}%' or Posicion like '%{filtro}%'");
             return dt;
         }
@@ -139,20 +139,19 @@ namespace TorneosFut.Class
             }
         }
         #region Insertar
-        public bool AgregarJugador(string idJugador, TextBox Txtnombre, TextBox txtapellido, ComboBox cmbsexo, DateTimePicker dtpNacimiento,
+        public bool AgregarJugador( TextBox Txtnombre, TextBox txtapellido, ComboBox cmbsexo, DateTimePicker dtpNacimiento,
                                       ComboBox CmbPosicion, TextBox TxtNacionalidad, TextBox txtpeso, TextBox txtaltura, ComboBox cmbpierna, string imagen)
         {
             NombreJugador = Txtnombre.Text;
             ApellidoJugador = txtapellido.Text;
             Sexo = cmbsexo.Text;
             FechaNacimiento = dtpNacimiento.Value.ToString("yyyy-MM-dd");
-            MessageBox.Show(FechaNacimiento);
             Posicion = CmbPosicion.Text;
             Nacionalidad = TxtNacionalidad.Text;
             Peso = txtpeso.Text;
             Altura = txtaltura.Text;
             PiernaHabil = cmbpierna.Text;
-            IDJugador = idJugador;
+            IDJugador = IDGeneradoIDJugador(NombreJugador,ApellidoJugador);
             ImagenJugador = imagen;
             string xmlJugador =
                 "<Jugadores>" +
@@ -175,18 +174,38 @@ namespace TorneosFut.Class
             else
                 return false;
         }
+        public string IDGeneradoIDJugador(string nombre, string apellido)
+        {
+            nombre = nombre.ToUpper();
+            apellido = apellido.ToUpper();
+            string id = "";
+            Random rnd = new Random();
+            bool repetir = false;
+            do
+            {
+                char primeraLetraNombre = nombre[0];
+                char primeraLetraApellido = apellido[0];
+                char letraAleatoriaNombre = nombre[rnd.Next(1, nombre.Length)];
+                char letraAleatoriaApellido = apellido[rnd.Next(1, apellido.Length)];
+                char numeroRandom = rnd.Next(0, 10).ToString()[0];
+                id = $"{primeraLetraNombre}{primeraLetraApellido}{letraAleatoriaNombre}{letraAleatoriaApellido}{numeroRandom}";
+                // Verificar si el ID ya existe en la base de datos
+                DataTable dt = csConexion.ListDGV($"SELECT 1 FROM Jugador WHERE IDJugador= '{id}'");
+                repetir = (dt.Rows.Count > 0);
+            } while (repetir); // Si ya existe, se repite el proceso
+            return id;
+        }
         #endregion
         #region Actualizar
 
         #endregion 
-        public bool ActualizarJugador(string idJugador, TextBox Txtnombre, TextBox txtapellido, ComboBox cmbsexo, DateTimePicker dtpNacimiento,
+        public bool ActualizarJugador(string idJugador,TextBox Txtnombre, TextBox txtapellido, ComboBox cmbsexo, DateTimePicker dtpNacimiento,
         ComboBox CmbPosicion, TextBox TxtNacionalidad, TextBox txtpeso, TextBox txtaltura, ComboBox cmbpierna, string imagen)
         {
             NombreJugador = Txtnombre.Text;
             ApellidoJugador = txtapellido.Text;
             Sexo = cmbsexo.Text;
             FechaNacimiento = dtpNacimiento.Value.ToString("yyyy-MM-dd");
-            MessageBox.Show(FechaNacimiento);
             Posicion = CmbPosicion.Text;
             Nacionalidad = TxtNacionalidad.Text;
             Peso = txtpeso.Text;
@@ -217,15 +236,26 @@ namespace TorneosFut.Class
         }
         public bool AgregarJugadorEquipo(string IDJugador, string IDEquipo, int Dorsal)
         {
-            if (csConexion.Consulta($"insert into Jugador_Equipo (IDJugador, IDEquipo, FechaEntrada, Dorsal)" +
-                $" values ('{IDJugador}', '{IDEquipo}', GETDATE(), {Dorsal})"))
-                return true;
-            else
+            try
+            {
+
+                csConexion.Consulta($"update Jugador_Equipo set FechaSalida = null where IDJugador = '{IDJugador}' and FechaSalida is not null ");
+                if (csConexion.Consulta($"exec spRegistraJugadorEquipo '{IDJugador}', '{IDEquipo}', {Dorsal}"))
+                    return true;
+                else return false;
+            }
+            catch(SqlException ex)
+            {
+                if (ex.Message.Contains("El dorsal"))
+                {
+                    MessageBox.Show(ex.Message); 
+                }
                 return false;
+            }
         }
         public bool DejarJugadorSinEquipo(string IDJugador, string IDEquipo)
         {
-            if (csConexion.Consulta($"update Jugador_Equipo set FechaSalida= getdate() where IDJugador='{IDJugador}' and IDEquipo='{IDEquipo}'"))
+            if (csConexion.Consulta($"exec spQuitarJugadorEquipo '{IDJugador}', '{IDEquipo}'"))
                 return true;
             else
                 return false;

@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblEncabezado = new System.Windows.Forms.Label();
             this.btnAgregar = new Guna.UI2.WinForms.Guna2Button();
@@ -36,9 +40,6 @@
             this.numDorsal = new System.Windows.Forms.NumericUpDown();
             this.lblDorsal = new System.Windows.Forms.Label();
             this.btngCancelar = new Guna.UI2.WinForms.Guna2Button();
-            this.tblequiposizq = new System.Windows.Forms.DataGridView();
-            this.btnguardar = new System.Windows.Forms.Button();
-            this.tblequiposder = new System.Windows.Forms.DataGridView();
             this.lbltotal = new System.Windows.Forms.Label();
             this.lblequipoder = new System.Windows.Forms.Label();
             this.lblequipoizq = new System.Windows.Forms.Label();
@@ -46,6 +47,9 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+            this.To = new System.Windows.Forms.Label();
+            this.tblequiposizq = new System.Windows.Forms.DataGridView();
+            this.tblequiposder = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numDorsal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblequiposizq)).BeginInit();
@@ -85,7 +89,7 @@
             this.btnAgregar.HoverState.CustomBorderColor = System.Drawing.Color.White;
             this.btnAgregar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnAgregar.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnAgregar.Location = new System.Drawing.Point(321, 99);
+            this.btnAgregar.Location = new System.Drawing.Point(301, 99);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(72, 36);
             this.btnAgregar.TabIndex = 78;
@@ -104,7 +108,7 @@
             this.btnQuitar.HoverState.CustomBorderColor = System.Drawing.Color.White;
             this.btnQuitar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnQuitar.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnQuitar.Location = new System.Drawing.Point(321, 160);
+            this.btnQuitar.Location = new System.Drawing.Point(301, 160);
             this.btnQuitar.Name = "btnQuitar";
             this.btnQuitar.Size = new System.Drawing.Size(72, 36);
             this.btnQuitar.TabIndex = 77;
@@ -113,7 +117,7 @@
             // 
             // numDorsal
             // 
-            this.numDorsal.Location = new System.Drawing.Point(321, 283);
+            this.numDorsal.Location = new System.Drawing.Point(301, 283);
             this.numDorsal.Name = "numDorsal";
             this.numDorsal.Size = new System.Drawing.Size(84, 20);
             this.numDorsal.TabIndex = 76;
@@ -123,7 +127,7 @@
             this.lblDorsal.AutoSize = true;
             this.lblDorsal.BackColor = System.Drawing.Color.Transparent;
             this.lblDorsal.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold);
-            this.lblDorsal.Location = new System.Drawing.Point(317, 256);
+            this.lblDorsal.Location = new System.Drawing.Point(297, 256);
             this.lblDorsal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDorsal.Name = "lblDorsal";
             this.lblDorsal.Size = new System.Drawing.Size(74, 24);
@@ -151,64 +155,11 @@
             this.btngCancelar.Text = "CANCELAR";
             this.btngCancelar.Click += new System.EventHandler(this.btngCancelar_Click);
             // 
-            // tblequiposizq
-            // 
-            this.tblequiposizq.AllowUserToAddRows = false;
-            this.tblequiposizq.AllowUserToDeleteRows = false;
-            this.tblequiposizq.AllowUserToResizeColumns = false;
-            this.tblequiposizq.AllowUserToResizeRows = false;
-            this.tblequiposizq.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.tblequiposizq.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.tblequiposizq.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.tblequiposizq.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.tblequiposizq.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.tblequiposizq.Location = new System.Drawing.Point(69, 61);
-            this.tblequiposizq.Margin = new System.Windows.Forms.Padding(2);
-            this.tblequiposizq.Name = "tblequiposizq";
-            this.tblequiposizq.ReadOnly = true;
-            this.tblequiposizq.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.tblequiposizq.RowHeadersVisible = false;
-            this.tblequiposizq.RowTemplate.Height = 24;
-            this.tblequiposizq.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tblequiposizq.Size = new System.Drawing.Size(180, 317);
-            this.tblequiposizq.TabIndex = 73;
-            // 
-            // btnguardar
-            // 
-            this.btnguardar.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnguardar.Location = new System.Drawing.Point(298, 382);
-            this.btnguardar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnguardar.Name = "btnguardar";
-            this.btnguardar.Size = new System.Drawing.Size(107, 52);
-            this.btnguardar.TabIndex = 72;
-            this.btnguardar.Text = "Guardar";
-            this.btnguardar.UseVisualStyleBackColor = true;
-            // 
-            // tblequiposder
-            // 
-            this.tblequiposder.AllowUserToAddRows = false;
-            this.tblequiposder.AllowUserToDeleteRows = false;
-            this.tblequiposder.AllowUserToResizeColumns = false;
-            this.tblequiposder.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.tblequiposder.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.tblequiposder.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.tblequiposder.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.tblequiposder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.tblequiposder.Location = new System.Drawing.Point(451, 61);
-            this.tblequiposder.Margin = new System.Windows.Forms.Padding(2);
-            this.tblequiposder.Name = "tblequiposder";
-            this.tblequiposder.ReadOnly = true;
-            this.tblequiposder.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.tblequiposder.RowHeadersVisible = false;
-            this.tblequiposder.RowTemplate.Height = 24;
-            this.tblequiposder.Size = new System.Drawing.Size(180, 317);
-            this.tblequiposder.TabIndex = 71;
-            // 
             // lbltotal
             // 
             this.lbltotal.AutoSize = true;
             this.lbltotal.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold);
-            this.lbltotal.Location = new System.Drawing.Point(447, 380);
+            this.lbltotal.Location = new System.Drawing.Point(395, 380);
             this.lbltotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbltotal.Name = "lbltotal";
             this.lbltotal.Size = new System.Drawing.Size(65, 24);
@@ -220,7 +171,7 @@
             this.lblequipoder.AutoSize = true;
             this.lblequipoder.BackColor = System.Drawing.Color.Transparent;
             this.lblequipoder.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold);
-            this.lblequipoder.Location = new System.Drawing.Point(434, 35);
+            this.lblequipoder.Location = new System.Drawing.Point(428, 35);
             this.lblequipoder.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblequipoder.Name = "lblequipoder";
             this.lblequipoder.Size = new System.Drawing.Size(224, 24);
@@ -232,7 +183,7 @@
             this.lblequipoizq.AutoSize = true;
             this.lblequipoizq.BackColor = System.Drawing.Color.Transparent;
             this.lblequipoizq.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold);
-            this.lblequipoizq.Location = new System.Drawing.Point(65, 35);
+            this.lblequipoizq.Location = new System.Drawing.Point(59, 35);
             this.lblequipoizq.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblequipoizq.Name = "lblequipoizq";
             this.lblequipoizq.Size = new System.Drawing.Size(206, 24);
@@ -273,26 +224,108 @@
             this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
             this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
+            // To
+            // 
+            this.To.AutoSize = true;
+            this.To.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.To.Location = new System.Drawing.Point(479, 380);
+            this.To.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.To.Name = "To";
+            this.To.Size = new System.Drawing.Size(0, 24);
+            this.To.TabIndex = 101;
+            // 
+            // tblequiposizq
+            // 
+            this.tblequiposizq.AllowUserToAddRows = false;
+            this.tblequiposizq.AllowUserToDeleteRows = false;
+            this.tblequiposizq.AllowUserToResizeColumns = false;
+            this.tblequiposizq.AllowUserToResizeRows = false;
+            this.tblequiposizq.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tblequiposizq.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.tblequiposizq.BackgroundColor = System.Drawing.Color.White;
+            this.tblequiposizq.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tblequiposizq.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.tblequiposizq.ColumnHeadersHeight = 40;
+            this.tblequiposizq.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.tblequiposizq.EnableHeadersVisualStyles = false;
+            this.tblequiposizq.Location = new System.Drawing.Point(6, 62);
+            this.tblequiposizq.MultiSelect = false;
+            this.tblequiposizq.Name = "tblequiposizq";
+            this.tblequiposizq.ReadOnly = true;
+            this.tblequiposizq.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.tblequiposizq.RowHeadersVisible = false;
+            this.tblequiposizq.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.tblequiposizq.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.tblequiposizq.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.tblequiposizq.ShowCellToolTips = false;
+            this.tblequiposizq.ShowEditingIcon = false;
+            this.tblequiposizq.Size = new System.Drawing.Size(279, 317);
+            this.tblequiposizq.TabIndex = 102;
+            // 
+            // tblequiposder
+            // 
+            this.tblequiposder.AllowUserToAddRows = false;
+            this.tblequiposder.AllowUserToDeleteRows = false;
+            this.tblequiposder.AllowUserToResizeColumns = false;
+            this.tblequiposder.AllowUserToResizeRows = false;
+            this.tblequiposder.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tblequiposder.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.tblequiposder.BackgroundColor = System.Drawing.Color.White;
+            this.tblequiposder.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tblequiposder.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.tblequiposder.ColumnHeadersHeight = 40;
+            this.tblequiposder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.tblequiposder.EnableHeadersVisualStyles = false;
+            this.tblequiposder.Location = new System.Drawing.Point(399, 62);
+            this.tblequiposder.MultiSelect = false;
+            this.tblequiposder.Name = "tblequiposder";
+            this.tblequiposder.ReadOnly = true;
+            this.tblequiposder.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.tblequiposder.RowHeadersVisible = false;
+            this.tblequiposder.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.tblequiposder.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.tblequiposder.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.tblequiposder.ShowCellToolTips = false;
+            this.tblequiposder.ShowEditingIcon = false;
+            this.tblequiposder.Size = new System.Drawing.Size(279, 317);
+            this.tblequiposder.TabIndex = 103;
+            // 
             // AgregarJugadorEquipo
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(684, 450);
+            this.Controls.Add(this.tblequiposder);
+            this.Controls.Add(this.tblequiposizq);
+            this.Controls.Add(this.To);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnQuitar);
-            this.Controls.Add(this.tblequiposizq);
             this.Controls.Add(this.numDorsal);
             this.Controls.Add(this.lblequipoizq);
             this.Controls.Add(this.lblDorsal);
             this.Controls.Add(this.lblequipoder);
             this.Controls.Add(this.btngCancelar);
             this.Controls.Add(this.lbltotal);
-            this.Controls.Add(this.btnguardar);
-            this.Controls.Add(this.tblequiposder);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AgregarJugadorEquipo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -316,9 +349,6 @@
         private System.Windows.Forms.NumericUpDown numDorsal;
         private System.Windows.Forms.Label lblDorsal;
         private Guna.UI2.WinForms.Guna2Button btngCancelar;
-        private System.Windows.Forms.DataGridView tblequiposizq;
-        private System.Windows.Forms.Button btnguardar;
-        private System.Windows.Forms.DataGridView tblequiposder;
         private System.Windows.Forms.Label lbltotal;
         private System.Windows.Forms.Label lblequipoder;
         private System.Windows.Forms.Label lblequipoizq;
@@ -326,5 +356,8 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
+        private System.Windows.Forms.Label To;
+        public System.Windows.Forms.DataGridView tblequiposizq;
+        public System.Windows.Forms.DataGridView tblequiposder;
     }
 }

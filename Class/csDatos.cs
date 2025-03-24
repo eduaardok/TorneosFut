@@ -227,24 +227,18 @@ namespace TorneosFut
                 return true;
             }
         }
-        public bool InsertarJugador(string idJugador, TextBox Txtnombre, TextBox txtapellido, ComboBox cmbsexo, DateTimePicker dtpNacimiento,
+        public bool InsertarJugador( TextBox Txtnombre, TextBox txtapellido, ComboBox cmbsexo, DateTimePicker dtpNacimiento,
                                       ComboBox CmbPosicion, TextBox TxtNacionalidad, TextBox txtpeso, TextBox txtaltura, ComboBox cmbpierna, string imagen, string filename)
         {
-            if (validarIDJugador(idJugador))
-            {
-                if (csJugador.AgregarJugador(idJugador, Txtnombre, txtapellido, cmbsexo, dtpNacimiento, CmbPosicion, TxtNacionalidad, txtpeso, txtaltura, cmbpierna, imagen + Path.GetExtension(filename)))
+
+                if (csJugador.AgregarJugador(Txtnombre, txtapellido, cmbsexo, dtpNacimiento, CmbPosicion, TxtNacionalidad, txtpeso, txtaltura, cmbpierna, imagen + Path.GetExtension(filename)))
                 {
                     csImagenes.guardarIMG(filename, imagen);
-                    MessageBox.Show("Jugador registrado correctamente");
                     return true;
                 }
                 else
                     return false;
-            }
-            else
-            {
-                return false;
-            }
+          
         }
         public bool InsertarJugadorEquipo(string IDJugador, string IDEquipo, int Dorsal)
         {
@@ -329,11 +323,11 @@ namespace TorneosFut
         {
             return csTorneo.ActualizarTorneo(id, Txtnombre, formato, ModoFutbol, Organizador, te);
         }
-        public bool EditarJugador(string idJugador, TextBox Txtnombre, TextBox txtapellido, ComboBox cmbsexo, DateTimePicker dtpNacimiento,
+        public bool EditarJugador( string idJugadorr,TextBox Txtnombre, TextBox txtapellido, ComboBox cmbsexo, DateTimePicker dtpNacimiento,
         ComboBox CmbPosicion, TextBox TxtNacionalidad, TextBox txtpeso, TextBox txtaltura, ComboBox cmbpierna, string imagen, string filename)
         {
             csImagenes.guardarIMG(filename, imagen);
-            return csJugador.ActualizarJugador(idJugador, Txtnombre, txtapellido, cmbsexo, dtpNacimiento, CmbPosicion, TxtNacionalidad, txtpeso, txtaltura, cmbpierna,imagen + Path.GetExtension(filename));
+            return csJugador.ActualizarJugador( idJugadorr,Txtnombre, txtapellido, cmbsexo, dtpNacimiento, CmbPosicion, TxtNacionalidad, txtpeso, txtaltura, cmbpierna,imagen + Path.GetExtension(filename));
         }
         #endregion
 
@@ -430,15 +424,7 @@ namespace TorneosFut
             return true;
         }
 
-        public bool validarIDJugador(string ID)
-        {
-
-            if (validarSoloNumeros(ID) && validarlongitud(ID,10)&& !(IDJugadorRepetido(ID)))
-            {
-                return true;
-            }
-            return false;
-        }
+     
         public bool validarSoloNumeros(string ID) 
         {
             string numero = "1234567890";

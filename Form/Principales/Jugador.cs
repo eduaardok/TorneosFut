@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -50,8 +51,9 @@ namespace pruebas
             //dgvJugador.DataSource = csJugador.mostrarJugador();
             csDGV.MostrarJugadores(dgvJugador);
             csDGV.AdaptarDGV(dgvJugador, panelDgv);
+            dgvJugador.Columns["ImagenJugador"].Visible = false;
         }
-       
+
 
         private void gnjugadores_Click(object sender, EventArgs e)
         {
@@ -70,25 +72,25 @@ namespace pruebas
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            AggJugadores agregaJu = new AggJugadores(conexion.Usuario, conexion.Clave, false);
             try
             {
                 if (dgvJugador.RowCount > 0)
                 {
                     if (dgvJugador.CurrentRow.Index >= 0)
                     {
-                        string id = dgvJugador.Rows[dgvJugador.CurrentRow.Index].Cells[0].Value.ToString();
 
-                        agregaJu.txtIDJugador.Text = dgvJugador.Rows[dgvJugador.CurrentRow.Index].Cells[0].Value.ToString();
+                        string id = dgvJugador.Rows[dgvJugador.CurrentRow.Index].Cells[0].Value.ToString();
+                        AggJugadores agregaJu = new AggJugadores(id,conexion.Usuario, conexion.Clave, false);
                         agregaJu.Txtnombre.Text = dgvJugador.Rows[dgvJugador.CurrentRow.Index].Cells[1].Value.ToString();
                         agregaJu.txtapellido.Text = dgvJugador.Rows[dgvJugador.CurrentRow.Index].Cells[2].Value.ToString();
                         agregaJu.cmbsexo.Text = dgvJugador.Rows[dgvJugador.CurrentRow.Index].Cells[3].Value.ToString();
-                        agregaJu.dtpNacimiento.Value.ToString(dgvJugador.Rows[dgvJugador.CurrentRow.Index].Cells[4].Value.ToString());
+                        agregaJu.dtpNacimiento.Value = Convert.ToDateTime(dgvJugador.Rows[dgvJugador.CurrentRow.Index].Cells[4].Value);
                         agregaJu.CmbPosicion.Text = dgvJugador.Rows[dgvJugador.CurrentRow.Index].Cells[5].Value.ToString();
                         agregaJu.TxtNacionalidad.Text = dgvJugador.Rows[dgvJugador.CurrentRow.Index].Cells[6].Value.ToString();
                         agregaJu.txtpeso.Text = dgvJugador.Rows[dgvJugador.CurrentRow.Index].Cells[7].Value.ToString();
                         agregaJu.txtaltura.Text = dgvJugador.Rows[dgvJugador.CurrentRow.Index].Cells[8].Value.ToString();
                         agregaJu.cmbpierna.Text = dgvJugador.Rows[dgvJugador.CurrentRow.Index].Cells[9].Value.ToString();
+                        agregaJu.ptbImagen.ImageLocation= Path.Combine(Application.StartupPath, "Imagenes", dgvJugador.Rows[dgvJugador.CurrentRow.Index].Cells["ImagenJugador"].Value.ToString());
                         agregaJu.ShowDialog(); 
                         ActualizarTabla();
 
@@ -111,7 +113,7 @@ namespace pruebas
 
         private void btnAgregarJugador_Click(object sender, EventArgs e)
         {
-            AggJugadores aggju = new AggJugadores(conexion.Usuario, conexion.Clave,true);
+            AggJugadores aggju = new AggJugadores("",conexion.Usuario, conexion.Clave,true);
             aggju.ShowDialog();
             ActualizarTabla();
 
@@ -130,6 +132,8 @@ namespace pruebas
             }
             csDGV.MostrarJugadoresFiltro(dgvJugador, txtBuscarJugador.Text);
             csDGV.AdaptarDGV(dgvJugador, panelDgv);
+            dgvJugador.Columns["ImagenJugador"].Visible = false;
+
         }
         private void txtBuscarJugador_Click(object sender, EventArgs e)
         {
