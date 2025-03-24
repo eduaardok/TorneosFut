@@ -69,7 +69,7 @@ namespace TorneosFut.Class
         public DataTable ListaIDEquipo()
         {
             DataTable dt = conexion.ListDGV("select IDEquipo from Equipo");
-            return dt; 
+            return dt;  
         }
 
         public DataTable ListadeEquipos()
