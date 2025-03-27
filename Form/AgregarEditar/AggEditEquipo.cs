@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace TorneosFut
 {
-    public partial class AggEditEquipo: Form
+    public partial class AggEditEquipo : Form
     {
         csConexion conexion;
         OpenFileDialog img = new OpenFileDialog();
@@ -20,8 +20,8 @@ namespace TorneosFut
         static string nombreArchivo = "";
         public AggEditEquipo(string u, string c, bool n)
         {
-            conexion = new csConexion(u,c);
-            csDatos = new csDatos(u,c);
+            conexion = new csConexion(u, c);
+            csDatos = new csDatos(u, c);
             agregar = n;
             csDGV = new csDGV(u, c);
             InitializeComponent();
@@ -31,59 +31,54 @@ namespace TorneosFut
         }
         private void btnAgregar_Click_1(object sender, EventArgs e)
         {
-            if (agregar)
+            if (CamposVacios())
             {
+                try
+                {
+                    if (agregar)
+                    {
 
-                if (csDatos.InsertarEquipo(txtId.Text, cmbEstadio.SelectedValue.ToString(), txtNombreClub.Text, cmbGenero.Text, cmbEquipacionLocal.Text, cmbequipacionvisitante.Text, nombreArchivo, txtPresidente.Text, img.FileName))
-                {
-                    MessageBox.Show("Equipo Agregado Correctamente");
-                    Close();
+                        if (csDatos.InsertarEquipo(txtId.Text, cmbEstadio.SelectedValue.ToString(), txtNombreClub.Text, cmbGenero.Text, cmbEquipacionLocal.Text, cmbequipacionvisitante.Text, nombreArchivo, txtPresidente.Text, img.FileName))
+                        {
+                            Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Equipo no Agregado");
+                        }
+                    }
+                    else
+                    {
+                        if (csDatos.EditarEquipo(txtId.Text, cmbEstadio.SelectedValue.ToString(), txtNombreClub.Text, cmbGenero.Text, cmbEquipacionLocal.Text, cmbequipacionvisitante.Text, nombreArchivo, txtPresidente.Text, img.FileName))
+                        {
+                            MessageBox.Show("Equipo Editado Correctamente");
+                            Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Equipo no editado");
+                        }
+                    }
                 }
-                else
+                catch (Exception)
                 {
-                    MessageBox.Show("Equipo no Agregado");
+                    MessageBox.Show("Datos invalidos");
                 }
             }
-            else
-            {
-                if(csDatos.EditarEquipo(txtId.Text, cmbEstadio.SelectedValue.ToString(), txtNombreClub.Text, cmbGenero.Text, cmbEquipacionLocal.Text, cmbequipacionvisitante.Text, nombreArchivo, txtPresidente.Text, img.FileName))
-                {
-                    MessageBox.Show("Equipo Editado Correctamente");
-                    Close();
-
-                }
-                else
-                {
-                    MessageBox.Show("Equipo no editado");
-                }
-            }
-
         }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
         }
-
-        private void lblBodr2_Paint(object sender, PaintEventArgs e)
+        bool CamposVacios()
         {
+            if (txtId.Text == "" || cmbEstadio.Text == "" || txtNombreClub.Text == "" || cmbGenero.Text == "" || cmbEquipacionLocal.Text == "" || cmbequipacionvisitante.Text == "" || txtPresidente.Text == "")
+            {
+                MessageBox.Show("Faltan datos por llenar");
+                return false;
+            }
+            else return true;
         }
-
-        private void lblBorde1_Paint(object sender, PaintEventArgs e)
-        {
-        }
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-        private void Form2_Load(object sender, EventArgs e)
-        {
-        }
-
-        private void lblBorde1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void AggEquipo_Load(object sender, EventArgs e)
         {
             panel2.Tag = "NoCambiar";
@@ -117,10 +112,5 @@ namespace TorneosFut
                 nombreArchivo = ObtenerNombreArchivo();
             }
         }
-
-        private void cmbEquipacionLocal_TextChanged(object sender, EventArgs e)
-        {
-        }
-
     }
 }

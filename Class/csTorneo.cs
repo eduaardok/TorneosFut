@@ -66,6 +66,23 @@ namespace TorneosFut.Class
         }
         #endregion
 
+        public int PartidosGenerados(string id)
+        {
+           DataTable dt = csConexion.ListDGV($"select count(*) from Partido where IDTorneo = {id}");
+            return int.Parse(dt.Rows[0][0].ToString());
+        }
+        public List<string> ListEquiposTorneo(string id)
+        {
+            List<string> listaequipos = new List<string>();
+            DataTable dt = csConexion.ListDGV($"select IDEquipo from InscripcionEquipo where IDTorneo = {id}");
+            for (int i = 0; i<dt.Rows.Count; i++)
+            {
+                listaequipos.Add(dt.Rows[i][0].ToString());
+            }
+            return listaequipos;
+        }
+        
+        
         #region Generar Torneo
         public bool GenerarTorneo(string torneo)
         {

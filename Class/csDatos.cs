@@ -155,6 +155,14 @@ namespace TorneosFut
         {
             return csTorneo.IDTorneoSeleccionado(dgv);
         }
+        public int ObtenerCantidadPartidosGenerados(string id)
+        {
+            return csTorneo.PartidosGenerados(id);
+        }
+        public List<string> ObtenerListaEquiposTorneo(string id)
+        {
+            return csTorneo.ListEquiposTorneo(id);
+        }
         #endregion
         #region MostrarImagenes
         public void MostrarImagenEntrenador(string id, PictureBox ptb)
@@ -463,9 +471,9 @@ namespace TorneosFut
             return false;
         }
         //GENERAR TORNEO
-        public bool GenerarPartidos(string torneo)
+       /* public bool GenerarPartidos(string torneo)
         {
             return csTorneo.GenerarTorneo(torneo);
-        }
+        }*/
     }
 }

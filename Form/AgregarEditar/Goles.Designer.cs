@@ -155,7 +155,7 @@
             this.CmbEquipo.FormattingEnabled = true;
             this.CmbEquipo.Location = new System.Drawing.Point(34, 105);
             this.CmbEquipo.Name = "CmbEquipo";
-            this.CmbEquipo.Size = new System.Drawing.Size(175, 29);
+            this.CmbEquipo.Size = new System.Drawing.Size(175, 32);
             this.CmbEquipo.TabIndex = 64;
             this.CmbEquipo.SelectedIndexChanged += new System.EventHandler(this.CmbEquipo_SelectedIndexChanged);
             // 
@@ -166,7 +166,7 @@
             this.CMBJugador.FormattingEnabled = true;
             this.CMBJugador.Location = new System.Drawing.Point(295, 105);
             this.CMBJugador.Name = "CMBJugador";
-            this.CMBJugador.Size = new System.Drawing.Size(189, 29);
+            this.CMBJugador.Size = new System.Drawing.Size(189, 32);
             this.CMBJugador.TabIndex = 65;
             // 
             // textBox1
@@ -252,6 +252,7 @@
             this.btnAgregar.Size = new System.Drawing.Size(138, 52);
             this.btnAgregar.TabIndex = 101;
             this.btnAgregar.Text = "AGREGAR";
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click_1);
             // 
             // Goles
             // 

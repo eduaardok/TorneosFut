@@ -155,13 +155,17 @@ namespace TorneosFut
         }
         
         //PARTIDOS
-        public void MostrarPartidos(DataGridView dgv)
+        public void MostrarPartidos(DataGridView dgv, string idtorneo)
         {
-            dgv.DataSource = csPartido.ListadePartido();
+            dgv.DataSource = csPartido.ListadePartido(idtorneo);
         }
-        public void MostrarEquiposCMB(ComboBox cmbEquipo)
+        public void MostrarPartidosFiltro(DataGridView dgv, string filtro ,string idtorneo)
         {
-            cmbEquipo.DataSource = csPartido.ListaDeEquipos();
+            dgv.DataSource = csPartido.ListadePartidoFiltro(filtro, idtorneo);
+        }
+        public void MostrarEquiposCMB(ComboBox cmbEquipo, string idPartido)
+        {
+            cmbEquipo.DataSource = csPartido.ListaDeEquipos(idPartido);
             cmbEquipo.ValueMember = "IDPartido";
             cmbEquipo.DisplayMember = "Equipo";
         }

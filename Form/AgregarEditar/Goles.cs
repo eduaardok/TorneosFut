@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.AnimatorNS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,13 +26,13 @@ namespace pruebas
         {
             conexion = new csConexion(u, c);
             Id = ID;
-            csDGV= new csDGV(u,c,"0",Id);
+            csDGV= new csDGV(u,c);
             InitializeComponent(); 
 
         }
         private void editarjugador_Load(object sender, EventArgs e)
         {
-            csDGV.MostrarEquiposCMB(CmbEquipo);
+            csDGV.MostrarEquiposCMB(CmbEquipo, Id);
             
         }
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -100,7 +101,7 @@ namespace pruebas
 
         private void CmbEquipo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            csPartido = null;
+          
            csPartido= new csPartido(conexion.Usuario,conexion.Clave,CmbEquipo.Text);
             CMBJugador.DataSource = csPartido.ListaDeJugadoresEquipo(CmbEquipo.Text);
             CMBJugador.ValueMember = "IDJugador";
@@ -115,6 +116,24 @@ namespace pruebas
         private void btngCancelar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnAgregar_Click_1(object sender, EventArgs e)
+        {
+            bool local;
+            DataTable dt = conexion.ListDGV($"select count(*) from Partido where EquipoLocal = '{CmbEquipo.SelectedItem.ToString()}' and IDPartido = {Id}");
+            if (dt.Rows[0][0].ToString() == "1")
+            {
+                local = true;
+            }
+            else
+                local = false;
+            if(local)
+            {
+                int golesact = int.Parse(conexion.ListDGV($"select count(*) from Gol G inner join Partido P on G.IDPartido=P.IDPartido where P.IDPartido = {Id}"));
+
+            }
+            conexion.Consulta("update Partido");
         }
     }
 }

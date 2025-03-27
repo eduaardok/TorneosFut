@@ -20,14 +20,20 @@ namespace TorneosFut.Class
             IDTorneo = iDtorneo;
             IDPartido = Idpartido;
         }
-        public DataTable ListadePartido()
+        public DataTable ListadePartidoFiltro(string filtro, string id)
         {
-            DataTable dt = csConexion.ListDGV($"select IDPartido, IDTorneo,CONCAT(EquipoLocal, '  vs  ', EquipoVisitante)as Partido, Fecha, EstadoPartido from  Partido where IDTorneo={IDTorneo}");
+            DataTable dt = csConexion.ListDGV($"select IDPartido, Jornada, CONCAT(EquipoLocal, '  vs  ', EquipoVisitante) as Enfrentamiento, GolesLocal, GolesVisitante, Fecha, EstadoPartido from  Partido where IDTorneo={id} " +
+                $"and EquipoLocal like '%{filtro}%' or EquipoVisitante like '%{filtro}%'");
             return dt;
         }
-        public DataTable ListaDeEquipos()
+        public DataTable ListadePartido(string id)
         {
-            DataTable dt = csConexion.ListDGV($"SELECT IDPartido, EquipoLocal AS Equipo FROM Partido where IDPartido={IDPartido} UNION ALL SELECT  IDPartido, EquipoVisitante AS Equipo FROM Partido where IDPartido={IDPartido} ");
+            DataTable dt = csConexion.ListDGV($"select IDPartido, Jornada, CONCAT(EquipoLocal, '  vs  ', EquipoVisitante)as Enfrentamiento, GolesLocal, GolesVisitante, Fecha, EstadoPartido from  Partido where IDTorneo={id}");
+            return dt;
+        }
+        public DataTable ListaDeEquipos(string id)
+        {
+            DataTable dt = csConexion.ListDGV($"SELECT IDPartido, EquipoLocal AS Equipo FROM Partido where IDPartido={id} UNION ALL SELECT  IDPartido, EquipoVisitante AS Equipo FROM Partido where IDPartido={id} ");
             return dt;
         }
         public DataTable ListaJugador()
@@ -50,6 +56,11 @@ namespace TorneosFut.Class
         {
             DataTable dt = csConexion.ListDGV($"select EquipoVisitante from  Partido where IDPartido={IDPartido}");
             return dt.Rows[0][0].ToString();
+        }
+        public DataTable ListaEquiposDelPartido(string id)
+        {
+            DataTable dt = csConexion.ListDGV($"select EquipoLocal, EquipoVisitante from Partido where IDPartido={id}");
+            return dt;
         }
     }
 }

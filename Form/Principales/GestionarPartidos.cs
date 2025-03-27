@@ -18,10 +18,12 @@ namespace pruebas
         Goles gol;
         string IDPartido;
         csDGV csDGV;
+        csDatos csDatos;
         string IdTorneo;
         public GestionarPartidos(string IDtorneo,string u, string c)
         {
             conexion = new csConexion(u, c);
+            csDatos = new csDatos(u, c);
             IdTorneo = IDtorneo;
             csDGV = new csDGV(u,c, IdTorneo, IDPartido);
             InitializeComponent();
@@ -29,19 +31,19 @@ namespace pruebas
 
         private void txtBuscador_KeyUp(object sender, KeyEventArgs e)
         {
-            string filtro = txtBuscarPartido.Text.Trim().ToString();
+            /*string filtro = txtBuscarPartido.Text.Trim().ToString();
             if (string.IsNullOrWhiteSpace(filtro))
             {
                 dgvPartido.DataSource = conexion.ListDGV("select * from Partido");
             }
             else
             {
-                string consulta = $"select * from Jugador where " +
+                string consulta = $"select * from Partido where " +
                     $"EquipoLocal like '%{filtro}%' or EquipoVisitante like '%{filtro}%' or Jornada like '%{filtro}%'";
 
                 DataTable dt = conexion.ListDGV(consulta);
                 dgvPartido.DataSource = dt;
-            }
+            }*/
         }
         public static void AbrirFormEnPanel(Panel panel, Form formHijo)
         {
@@ -67,15 +69,22 @@ namespace pruebas
             panel3.Tag = "NoCambiar";
             panel4.Tag = "NoCambiar";
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
-            csDGV.MostrarPartidos(dgvPartido);
+            csDGV.MostrarPartidos(dgvPartido, IdTorneo);
             csDGV.AdaptarDGV(dgvPartido);
-            dgvPartido.Columns["IDPartido"].Visible = false;
-            dgvPartido.Columns["IDTorneo"].Visible = false;
+            //dgvPartido.Columns["IDPartido"].Visible = false;
+           // dgvPartido.Columns["IDTorneo"].Visible = false;
             dgvPartido.ColumnHeaderMouseClick += dgvPartido_ColumnHeaderMouseClick;
             foreach (DataGridViewColumn column in dgvPartido.Columns)
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
+        }
+        void ActualizarTabla()
+        {
+            if (txtBuscarPartido.Text == "Buscar por nombre de Equipo")
+                txtBuscarPartido.Text = "";
+            csDGV.MostrarPartidosFiltro(dgvPartido,txtBuscarPartido.Text, IdTorneo);
+            csDGV.AdaptarDGV(dgvPartido, pnlDgvPartido);
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -89,10 +98,14 @@ namespace pruebas
 
         private void btnGol_Click(object sender, EventArgs e)
         {
-            csDGV = null;
-            csDGV = new csDGV(conexion.Usuario, conexion.Clave, IdTorneo, IDPartido);
-            gol = new Goles(conexion.Usuario,conexion.Clave,IDPartido);
-            gol.ShowDialog();
+            //csDGV = null;
+            //csDGV = new csDGV(conexion.Usuario, conexion.Clave, IdTorneo, IDPartido);
+            if (dgvPartido.CurrentRow != null && dgvPartido.CurrentRow.Index >= 0)
+            {
+                gol = new Goles(conexion.Usuario, conexion.Clave, IDPartido);
+                gol.ShowDialog();
+            }
+            
         }
 
         private void dgvPartido_SelectionChanged(object sender, EventArgs e)
@@ -121,6 +134,132 @@ namespace pruebas
 
         private void dgvPartido_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+        }
+
+        private void btnGenerarPartidos_Click(object sender, EventArgs e)
+        {
+            if(csDatos.ObtenerCantidadPartidosGenerados(IdTorneo) == 0)
+            {
+                List<string> equipos = csDatos.ObtenerListaEquiposTorneo(IdTorneo);
+                GenerarFixture(equipos);
+            }
+            ActualizarTabla();
+        }
+        void GenerarFixture(List<string> equipos)
+        {
+            DataGridView dgvPartidos = new DataGridView();
+            dgvPartidos.Columns.Add("Jornada", "Jornada");
+            dgvPartidos.Columns.Add("EquipoLocal", "EquipoLocal");
+            dgvPartidos.Columns.Add("EquipoVisitante", "EquipoVisitante");
+
+            int numJornadas = equipos.Count - 1;
+            int partido = 0;
+
+            // Crear un patrón para alternar local y visitante
+            List<bool> alternarLocalidad = new List<bool>();
+
+            // Generamos el patrón de local/visitante para todas las jornadas
+            for (int i = 0; i < numJornadas; i++)
+            {
+                // Alternamos el rol entre Local y Visitante
+                for (int j = 0; j < equipos.Count / 2; j++)
+                {
+                    alternarLocalidad.Add(j % 2 == 0); // Los partidos alternan entre local (true) y visitante (false)
+                }
+            }
+
+            // Crear partidos jornada por jornada
+            for (int jornada = 1; jornada <= numJornadas; jornada++)
+            {
+                // Generar partidos (simplificado)
+                for (int i = 0; i < equipos.Count / 2; i++)
+                {
+                    dgvPartidos.Rows.Add();
+                    string equipoLocal, equipoVisitante;
+
+                    // Dependiendo de si es Local o Visitante en la jornada, asignamos los equipos
+                    if (alternarLocalidad[partido])
+                    {
+                        equipoLocal = equipos[i];
+                        equipoVisitante = equipos[equipos.Count - 1 - i];
+                    }
+                    else
+                    {
+                        equipoLocal = equipos[equipos.Count - 1 - i];
+                        equipoVisitante = equipos[i];
+                    }
+
+                    // Asignar valores a las celdas del DataGridView
+                    dgvPartidos.Rows[partido].Cells["Jornada"].Value = jornada.ToString();
+                    dgvPartidos.Rows[partido].Cells["EquipoLocal"].Value = equipoLocal;
+                    dgvPartidos.Rows[partido].Cells["EquipoVisitante"].Value = equipoVisitante;
+
+                    partido++;
+                }
+
+                // Rotar equipos para la siguiente jornada después de haber generado los partidos
+                equipos = RotarEquipos(equipos);
+            }
+            for (int i = 0; i < dgvPartidos.Rows.Count-1; i++)
+            {
+                if (!conexion.Consulta($"insert into Partido (IDTorneo, IDEstadio, Jornada, EquipoLocal, EquipoVisitante, EstadoPartido) " +
+                     $"values ({IdTorneo},1, {dgvPartidos.Rows[i].Cells["Jornada"].Value}, '{dgvPartidos.Rows[i].Cells["EquipoLocal"].Value}'," +
+                     $"'{dgvPartidos.Rows[i].Cells["EquipoVisitante"].Value}', 'PROGRAMADO')"))
+                    return;
+
+            }
+            MessageBox.Show("Partidos generados correctamente");
+        }
+
+
+        List<string> RotarEquipos(List<string> equipos)
+        {
+            if (equipos.Count < 2) return equipos; // Sin rotación si hay menos de 2 equipos
+
+            // Fijar el primer equipo y rotar el resto
+            string equipoFijo = equipos[0]; // Fijar el primer equipo
+            List<string> resto = equipos.GetRange(1, equipos.Count - 1); // Tomar los demás
+            string ultimo = resto[resto.Count - 1]; // Guardar el último
+            resto.RemoveAt(resto.Count - 1); // Quitar el último
+            resto.Insert(0, ultimo); // Insertarlo al inicio
+
+            List<string> resultado = new List<string> { equipoFijo }; // Iniciar con el fijo
+            resultado.AddRange(resto); // Agregar los rotados
+            return resultado;
+        }
+
+        private void txtBuscarPartido_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBuscarPartido.Text == "Buscar por nombre de Equipo")
+                txtBuscarPartido.Text = "";
+            ActualizarTabla();
+        }
+
+        private void txtBuscarPartido_Click(object sender, EventArgs e)
+        {
+            if (txtBuscarPartido.Text == "Buscar por nombre de Equipo")
+                txtBuscarPartido.Text = "";
+        }
+
+        private void btnEstadoPartido_Click(object sender, EventArgs e)
+        {
+            if(dgvPartido.Rows.Count>0)
+            {
+                if (dgvPartido.Rows[dgvPartido.CurrentCell.RowIndex].Cells["GolesLocal"].Value == null || dgvPartido.Rows[dgvPartido.CurrentCell.RowIndex].Cells["GolesLocal"].Value.ToString() == "")
+                {
+                    conexion.Consulta($"update Partido set GolesLocal=0 where IDPartido={dgvPartido.Rows[dgvPartido.CurrentCell.RowIndex].Cells["IDPartido"].Value.ToString()}");
+                }
+                if(dgvPartido.Rows[dgvPartido.CurrentCell.RowIndex].Cells["GolesVisitante"].Value == null || dgvPartido.Rows[dgvPartido.CurrentCell.RowIndex].Cells["GolesVisitante"].Value.ToString() == "")
+                {
+                    conexion.Consulta($"update Partido set GolesVisitante=0 where IDPartido={dgvPartido.Rows[dgvPartido.CurrentCell.RowIndex].Cells["IDPartido"].Value.ToString()}");
+
+                }
+                if(dgvPartido.Rows[dgvPartido.CurrentCell.RowIndex].Cells["EstadoPartido"].Value.ToString() == "PROGRAMADO" )
+                {
+                    conexion.Consulta($"update Partido set EstadoPartido = 'FINALIZADO' where IDPartido={dgvPartido.Rows[dgvPartido.CurrentCell.RowIndex].Cells["IDPartido"].Value.ToString()}");
+                }
+            }
+            ActualizarTabla();
         }
     }
 }

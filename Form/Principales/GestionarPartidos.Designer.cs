@@ -29,24 +29,29 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnAmonestaciones = new Guna.UI2.WinForms.Guna2Button();
             this.btnSalir = new Guna.UI2.WinForms.Guna2Button();
             this.btnGol = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtBuscarPartido = new System.Windows.Forms.TextBox();
-            this.dgvPartido = new System.Windows.Forms.DataGridView();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.c = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+            this.btnGenerarPartidos = new Guna.UI2.WinForms.Guna2Button();
+            this.pnlDgvPartido = new System.Windows.Forms.Panel();
+            this.dgvPartido = new System.Windows.Forms.DataGridView();
+            this.btnAsignarFechas = new Guna.UI2.WinForms.Guna2Button();
+            this.btnEstadoPartido = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPartido)).BeginInit();
             this.c.SuspendLayout();
+            this.pnlDgvPartido.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPartido)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAmonestaciones
@@ -58,17 +63,19 @@
             this.btnAmonestaciones.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnAmonestaciones.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnAmonestaciones.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAmonestaciones.Enabled = false;
             this.btnAmonestaciones.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
             this.btnAmonestaciones.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAmonestaciones.ForeColor = System.Drawing.Color.White;
             this.btnAmonestaciones.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnAmonestaciones.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnAmonestaciones.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnAmonestaciones.Location = new System.Drawing.Point(817, 114);
+            this.btnAmonestaciones.Location = new System.Drawing.Point(817, 139);
             this.btnAmonestaciones.Name = "btnAmonestaciones";
             this.btnAmonestaciones.Size = new System.Drawing.Size(213, 59);
             this.btnAmonestaciones.TabIndex = 63;
             this.btnAmonestaciones.Text = "AGREGAR AMONESTACIÓN";
+            this.btnAmonestaciones.Visible = false;
             // 
             // btnSalir
             // 
@@ -111,7 +118,7 @@
             this.btnGol.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnGol.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnGol.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnGol.Location = new System.Drawing.Point(1036, 114);
+            this.btnGol.Location = new System.Drawing.Point(1036, 139);
             this.btnGol.Name = "btnGol";
             this.btnGol.Size = new System.Drawing.Size(180, 59);
             this.btnGol.TabIndex = 60;
@@ -140,62 +147,8 @@
             this.txtBuscarPartido.Size = new System.Drawing.Size(452, 48);
             this.txtBuscarPartido.TabIndex = 58;
             this.txtBuscarPartido.Text = "Buscar por nombre de Equipo";
-            // 
-            // dgvPartido
-            // 
-            this.dgvPartido.AllowUserToAddRows = false;
-            this.dgvPartido.AllowUserToDeleteRows = false;
-            this.dgvPartido.AllowUserToResizeColumns = false;
-            this.dgvPartido.AllowUserToResizeRows = false;
-            this.dgvPartido.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dgvPartido.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvPartido.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvPartido.BackgroundColor = System.Drawing.Color.White;
-            this.dgvPartido.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvPartido.CausesValidation = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPartido.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvPartido.ColumnHeadersHeight = 40;
-            this.dgvPartido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPartido.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvPartido.EnableHeadersVisualStyles = false;
-            this.dgvPartido.Location = new System.Drawing.Point(27, 207);
-            this.dgvPartido.MultiSelect = false;
-            this.dgvPartido.Name = "dgvPartido";
-            this.dgvPartido.ReadOnly = true;
-            this.dgvPartido.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPartido.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvPartido.RowHeadersVisible = false;
-            this.dgvPartido.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvPartido.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPartido.ShowCellErrors = false;
-            this.dgvPartido.ShowCellToolTips = false;
-            this.dgvPartido.ShowEditingIcon = false;
-            this.dgvPartido.ShowRowErrors = false;
-            this.dgvPartido.Size = new System.Drawing.Size(1189, 501);
-            this.dgvPartido.TabIndex = 57;
-            this.dgvPartido.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvPartido_ColumnHeaderMouseClick);
-            this.dgvPartido.SelectionChanged += new System.EventHandler(this.dgvPartido_SelectionChanged);
+            this.txtBuscarPartido.Click += new System.EventHandler(this.txtBuscarPartido_Click);
+            this.txtBuscarPartido.TextChanged += new System.EventHandler(this.txtBuscarPartido_TextChanged);
             // 
             // guna2Button1
             // 
@@ -206,17 +159,19 @@
             this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.Enabled = false;
             this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
             this.guna2Button1.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.HoverState.BorderColor = System.Drawing.Color.Black;
             this.guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.guna2Button1.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button1.Location = new System.Drawing.Point(598, 114);
+            this.guna2Button1.Location = new System.Drawing.Point(598, 139);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(213, 59);
             this.guna2Button1.TabIndex = 64;
             this.guna2Button1.Text = "AGREGAR SUSTITUCIÓN";
+            this.guna2Button1.Visible = false;
             // 
             // c
             // 
@@ -263,11 +218,144 @@
             this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
             this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
+            // btnGenerarPartidos
+            // 
+            this.btnGenerarPartidos.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnGenerarPartidos.Animated = true;
+            this.btnGenerarPartidos.BorderRadius = 20;
+            this.btnGenerarPartidos.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnGenerarPartidos.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnGenerarPartidos.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnGenerarPartidos.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnGenerarPartidos.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            this.btnGenerarPartidos.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerarPartidos.ForeColor = System.Drawing.Color.White;
+            this.btnGenerarPartidos.HoverState.BorderColor = System.Drawing.Color.Black;
+            this.btnGenerarPartidos.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.btnGenerarPartidos.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.btnGenerarPartidos.Location = new System.Drawing.Point(1036, 68);
+            this.btnGenerarPartidos.Name = "btnGenerarPartidos";
+            this.btnGenerarPartidos.Size = new System.Drawing.Size(180, 59);
+            this.btnGenerarPartidos.TabIndex = 139;
+            this.btnGenerarPartidos.Text = "GENERAR PARTIDOS";
+            this.btnGenerarPartidos.Click += new System.EventHandler(this.btnGenerarPartidos_Click);
+            // 
+            // pnlDgvPartido
+            // 
+            this.pnlDgvPartido.Controls.Add(this.dgvPartido);
+            this.pnlDgvPartido.Location = new System.Drawing.Point(27, 224);
+            this.pnlDgvPartido.Name = "pnlDgvPartido";
+            this.pnlDgvPartido.Size = new System.Drawing.Size(1189, 438);
+            this.pnlDgvPartido.TabIndex = 140;
+            // 
+            // dgvPartido
+            // 
+            this.dgvPartido.AllowUserToAddRows = false;
+            this.dgvPartido.AllowUserToDeleteRows = false;
+            this.dgvPartido.AllowUserToResizeColumns = false;
+            this.dgvPartido.AllowUserToResizeRows = false;
+            this.dgvPartido.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPartido.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvPartido.BackgroundColor = System.Drawing.Color.White;
+            this.dgvPartido.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvPartido.CausesValidation = false;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPartido.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvPartido.ColumnHeadersHeight = 40;
+            this.dgvPartido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPartido.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvPartido.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvPartido.EnableHeadersVisualStyles = false;
+            this.dgvPartido.Location = new System.Drawing.Point(0, 0);
+            this.dgvPartido.MultiSelect = false;
+            this.dgvPartido.Name = "dgvPartido";
+            this.dgvPartido.ReadOnly = true;
+            this.dgvPartido.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPartido.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvPartido.RowHeadersVisible = false;
+            this.dgvPartido.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvPartido.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPartido.ShowCellErrors = false;
+            this.dgvPartido.ShowCellToolTips = false;
+            this.dgvPartido.ShowEditingIcon = false;
+            this.dgvPartido.ShowRowErrors = false;
+            this.dgvPartido.Size = new System.Drawing.Size(1189, 438);
+            this.dgvPartido.TabIndex = 1;
+            // 
+            // btnAsignarFechas
+            // 
+            this.btnAsignarFechas.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAsignarFechas.Animated = true;
+            this.btnAsignarFechas.BorderRadius = 20;
+            this.btnAsignarFechas.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAsignarFechas.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAsignarFechas.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAsignarFechas.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAsignarFechas.Enabled = false;
+            this.btnAsignarFechas.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            this.btnAsignarFechas.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAsignarFechas.ForeColor = System.Drawing.Color.White;
+            this.btnAsignarFechas.HoverState.BorderColor = System.Drawing.Color.Black;
+            this.btnAsignarFechas.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.btnAsignarFechas.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.btnAsignarFechas.Location = new System.Drawing.Point(598, 68);
+            this.btnAsignarFechas.Name = "btnAsignarFechas";
+            this.btnAsignarFechas.Size = new System.Drawing.Size(213, 59);
+            this.btnAsignarFechas.TabIndex = 141;
+            this.btnAsignarFechas.Text = "ASIGNAR FECHAS";
+            this.btnAsignarFechas.Visible = false;
+            // 
+            // btnEstadoPartido
+            // 
+            this.btnEstadoPartido.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnEstadoPartido.Animated = true;
+            this.btnEstadoPartido.BorderRadius = 20;
+            this.btnEstadoPartido.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnEstadoPartido.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnEstadoPartido.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnEstadoPartido.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnEstadoPartido.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            this.btnEstadoPartido.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEstadoPartido.ForeColor = System.Drawing.Color.White;
+            this.btnEstadoPartido.HoverState.BorderColor = System.Drawing.Color.Black;
+            this.btnEstadoPartido.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.btnEstadoPartido.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.btnEstadoPartido.Location = new System.Drawing.Point(817, 68);
+            this.btnEstadoPartido.Name = "btnEstadoPartido";
+            this.btnEstadoPartido.Size = new System.Drawing.Size(213, 59);
+            this.btnEstadoPartido.TabIndex = 142;
+            this.btnEstadoPartido.Text = "CAMBIAR ESTADO DEL PARTIDO";
+            this.btnEstadoPartido.Click += new System.EventHandler(this.btnEstadoPartido_Click);
+            // 
             // GestionarPartidos
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1240, 716);
+            this.Controls.Add(this.btnEstadoPartido);
+            this.Controls.Add(this.btnAsignarFechas);
+            this.Controls.Add(this.pnlDgvPartido);
+            this.Controls.Add(this.btnGenerarPartidos);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
@@ -277,7 +365,6 @@
             this.Controls.Add(this.btnGol);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtBuscarPartido);
-            this.Controls.Add(this.dgvPartido);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GestionarPartidos";
             this.ShowIcon = false;
@@ -286,8 +373,9 @@
             this.Text = "verjugadores";
             this.Load += new System.EventHandler(this.verjugadores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPartido)).EndInit();
             this.c.ResumeLayout(false);
+            this.pnlDgvPartido.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPartido)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -300,12 +388,16 @@
         private Guna.UI2.WinForms.Guna2Button btnGol;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtBuscarPartido;
-        public System.Windows.Forms.DataGridView dgvPartido;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private System.Windows.Forms.Panel c;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
+        private Guna.UI2.WinForms.Guna2Button btnGenerarPartidos;
+        private System.Windows.Forms.Panel pnlDgvPartido;
+        public System.Windows.Forms.DataGridView dgvPartido;
+        private Guna.UI2.WinForms.Guna2Button btnEstadoPartido;
+        private Guna.UI2.WinForms.Guna2Button btnAsignarFechas;
     }
 }
