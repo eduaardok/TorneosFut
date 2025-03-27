@@ -31,9 +31,9 @@ namespace TorneosFut.Class
             DataTable dt = csConexion.ListDGV($"select IDPartido, Jornada, CONCAT(EquipoLocal, '  vs  ', EquipoVisitante)as Enfrentamiento, GolesLocal, GolesVisitante, Fecha, EstadoPartido from  Partido where IDTorneo={id}");
             return dt;
         }
-        public DataTable ListaDeEquipos(string id)
+        public DataTable ListaDeEquipos(string idpartido)
         {
-            DataTable dt = csConexion.ListDGV($"SELECT IDPartido, EquipoLocal AS Equipo FROM Partido where IDPartido={id} UNION ALL SELECT  IDPartido, EquipoVisitante AS Equipo FROM Partido where IDPartido={id} ");
+            DataTable dt = csConexion.ListDGV($"SELECT IDPartido, EquipoLocal AS Equipo FROM Partido where IDPartido={idpartido} UNION ALL SELECT  IDPartido, EquipoVisitante AS Equipo FROM Partido where IDPartido={idpartido}");
             return dt;
         }
         public DataTable ListaJugador()

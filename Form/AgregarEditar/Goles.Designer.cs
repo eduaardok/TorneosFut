@@ -37,11 +37,11 @@
             this.lblPosicion = new System.Windows.Forms.Label();
             this.lblapellido = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.txtaltura = new System.Windows.Forms.TextBox();
-            this.txtpeso = new System.Windows.Forms.TextBox();
+            this.txtTipo = new System.Windows.Forms.TextBox();
+            this.txtAsistencia = new System.Windows.Forms.TextBox();
             this.CmbEquipo = new System.Windows.Forms.ComboBox();
             this.CMBJugador = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtMinuto = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -132,21 +132,23 @@
             this.lblNombre.TabIndex = 54;
             this.lblNombre.Text = "Equipo que Anota *";
             // 
-            // txtaltura
+            // txtTipo
             // 
-            this.txtaltura.Font = new System.Drawing.Font("Onest Light", 12F);
-            this.txtaltura.Location = new System.Drawing.Point(36, 228);
-            this.txtaltura.Name = "txtaltura";
-            this.txtaltura.Size = new System.Drawing.Size(151, 28);
-            this.txtaltura.TabIndex = 53;
+            this.txtTipo.Font = new System.Drawing.Font("Onest Light", 12F);
+            this.txtTipo.Location = new System.Drawing.Point(36, 228);
+            this.txtTipo.Name = "txtTipo";
+            this.txtTipo.Size = new System.Drawing.Size(151, 28);
+            this.txtTipo.TabIndex = 53;
+            this.txtTipo.Visible = false;
             // 
-            // txtpeso
+            // txtAsistencia
             // 
-            this.txtpeso.Font = new System.Drawing.Font("Onest Light", 12F);
-            this.txtpeso.Location = new System.Drawing.Point(303, 170);
-            this.txtpeso.Name = "txtpeso";
-            this.txtpeso.Size = new System.Drawing.Size(181, 28);
-            this.txtpeso.TabIndex = 52;
+            this.txtAsistencia.Font = new System.Drawing.Font("Onest Light", 12F);
+            this.txtAsistencia.Location = new System.Drawing.Point(303, 170);
+            this.txtAsistencia.Name = "txtAsistencia";
+            this.txtAsistencia.Size = new System.Drawing.Size(181, 28);
+            this.txtAsistencia.TabIndex = 52;
+            this.txtAsistencia.Visible = false;
             // 
             // CmbEquipo
             // 
@@ -169,13 +171,13 @@
             this.CMBJugador.Size = new System.Drawing.Size(189, 32);
             this.CMBJugador.TabIndex = 65;
             // 
-            // textBox1
+            // txtMinuto
             // 
-            this.textBox1.Font = new System.Drawing.Font("Onest Light", 12F);
-            this.textBox1.Location = new System.Drawing.Point(31, 170);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(111, 28);
-            this.textBox1.TabIndex = 66;
+            this.txtMinuto.Font = new System.Drawing.Font("Onest Light", 12F);
+            this.txtMinuto.Location = new System.Drawing.Point(31, 170);
+            this.txtMinuto.Name = "txtMinuto";
+            this.txtMinuto.Size = new System.Drawing.Size(111, 28);
+            this.txtMinuto.TabIndex = 66;
             // 
             // panel4
             // 
@@ -266,7 +268,7 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtMinuto);
             this.Controls.Add(this.CMBJugador);
             this.Controls.Add(this.CmbEquipo);
             this.Controls.Add(this.panel2);
@@ -275,8 +277,8 @@
             this.Controls.Add(this.lblPosicion);
             this.Controls.Add(this.lblapellido);
             this.Controls.Add(this.lblNombre);
-            this.Controls.Add(this.txtaltura);
-            this.Controls.Add(this.txtpeso);
+            this.Controls.Add(this.txtTipo);
+            this.Controls.Add(this.txtAsistencia);
             this.Controls.Add(this.dgvDatos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -304,11 +306,11 @@
         private System.Windows.Forms.Label lblPosicion;
         private System.Windows.Forms.Label lblapellido;
         private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.TextBox txtaltura;
-        private System.Windows.Forms.TextBox txtpeso;
+        private System.Windows.Forms.TextBox txtTipo;
+        private System.Windows.Forms.TextBox txtAsistencia;
         private System.Windows.Forms.ComboBox CmbEquipo;
         private System.Windows.Forms.ComboBox CMBJugador;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtMinuto;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel1;

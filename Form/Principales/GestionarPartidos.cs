@@ -105,15 +105,12 @@ namespace pruebas
                 gol = new Goles(conexion.Usuario, conexion.Clave, IDPartido);
                 gol.ShowDialog();
             }
-            
+            ActualizarTabla();
         }
 
         private void dgvPartido_SelectionChanged(object sender, EventArgs e)
         {
-            if (dgvPartido.CurrentRow != null && dgvPartido.CurrentRow.Index >= 0)
-            {
-                 IDPartido = dgvPartido.Rows[dgvPartido.CurrentRow.Index].Cells[0].Value.ToString();
-            }
+           
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -132,9 +129,7 @@ namespace pruebas
             }
         }
 
-        private void dgvPartido_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-        }
+       
 
         private void btnGenerarPartidos_Click(object sender, EventArgs e)
         {
@@ -260,6 +255,20 @@ namespace pruebas
                 }
             }
             ActualizarTabla();
+        }
+
+        private void dgvPartido_SelectionChanged_1(object sender, EventArgs e)
+        {
+            if (dgvPartido.CurrentRow != null && dgvPartido.CurrentRow.Index >= 0)
+            {
+                IDPartido = dgvPartido.Rows[dgvPartido.CurrentRow.Index].Cells["IDPartido"].Value.ToString();
+               // MessageBox.Show(IDPartido);
+            }
+        }
+
+        private void dgvPartido_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
         }
     }
 }

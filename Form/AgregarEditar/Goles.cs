@@ -19,7 +19,7 @@ namespace pruebas
         //int IDJugador;
         csConexion conexion ;
         GestionarPartidos f;
-        string Id;
+        static string Id;
         csDGV csDGV;
         csPartido csPartido;
         public Goles(string u, string c, string ID)
@@ -121,19 +121,27 @@ namespace pruebas
         private void btnAgregar_Click_1(object sender, EventArgs e)
         {
             bool local;
-            DataTable dt = conexion.ListDGV($"select count(*) from Partido where EquipoLocal = '{CmbEquipo.SelectedItem.ToString()}' and IDPartido = {Id}");
+            DataTable dt = conexion.ListDGV($"select count(*) from Partido where EquipoLocal = '{CmbEquipo.Text}' and IDPartido = {Id}");
             if (dt.Rows[0][0].ToString() == "1")
-            {
                 local = true;
-            }
             else
                 local = false;
-            if(local)
+           // MessageBox.Show(dt.Rows[0][0].ToString() + CmbEquipo.SelectedValue);
+            if (local)
             {
-                int golesact = int.Parse(conexion.ListDGV($"select count(*) from Gol G inner join Partido P on G.IDPartido=P.IDPartido where P.IDPartido = {Id}"));
-
+                dt = conexion.ListDGV($"select count(*) from Gol G inner join Partido P on G.IDPartido=P.IDPartido where P.IDPartido = {Id} and P.EquipoLocal = '{CmbEquipo.Text}'");
+                int golesact = int.Parse(dt.Rows[0][0].ToString());
+                conexion.Consulta($"update Partido set GolesLocal = {golesact+1} where IDPartido = {Id}; "+
+                    $"insert into Gol (IDPartido, IDJugador, Minuto) values ({Id}, '{CMBJugador.SelectedValue}', {txtMinuto.Text})");
             }
-            conexion.Consulta("update Partido");
+            else
+            {
+                dt = conexion.ListDGV($"select count(*) from Gol G inner join Partido P on G.IDPartido=P.IDPartido where P.IDPartido = {Id} and P.EquipoVisitante = '{CmbEquipo.Text}'");
+                int golesact = int.Parse(dt.Rows[0][0].ToString());
+                conexion.Consulta($"update Partido set GolesVisitante = {golesact + 1} where IDPartido = {Id}; " +
+                    $"insert into Gol (IDPartido, IDJugador, Minuto) values ({Id}, '{CMBJugador.SelectedValue}', {txtMinuto.Text})"); 
+            }
+            Close();
         }
     }
 }
