@@ -36,7 +36,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.llblRecuperarClave = new System.Windows.Forms.LinkLabel();
             this.Ptbhide = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -62,7 +61,6 @@
             this.panel1.BackColor = System.Drawing.Color.Silver;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.llblRecuperarClave);
             this.panel1.Controls.Add(this.Ptbhide);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
@@ -98,21 +96,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(302, 296);
             this.panel2.TabIndex = 28;
-            // 
-            // llblRecuperarClave
-            // 
-            this.llblRecuperarClave.AutoSize = true;
-            this.llblRecuperarClave.BackColor = System.Drawing.Color.Transparent;
-            this.llblRecuperarClave.Font = new System.Drawing.Font("Onest Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.llblRecuperarClave.ForeColor = System.Drawing.Color.Black;
-            this.llblRecuperarClave.LinkColor = System.Drawing.Color.Silver;
-            this.llblRecuperarClave.Location = new System.Drawing.Point(123, 507);
-            this.llblRecuperarClave.Name = "llblRecuperarClave";
-            this.llblRecuperarClave.Size = new System.Drawing.Size(120, 14);
-            this.llblRecuperarClave.TabIndex = 27;
-            this.llblRecuperarClave.TabStop = true;
-            this.llblRecuperarClave.Text = "Recuperar contraseña";
-            this.llblRecuperarClave.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblRecuperarClave_LinkClicked);
             // 
             // Ptbhide
             // 
@@ -281,7 +264,6 @@
         private System.Windows.Forms.Timer timer2;
         private Guna.UI2.WinForms.Guna2NotificationPaint guna2NotificationPaint1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.LinkLabel llblRecuperarClave;
         private System.Windows.Forms.PictureBox Ptbhide;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;

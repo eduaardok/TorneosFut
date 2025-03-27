@@ -181,7 +181,6 @@
       <DependentUpon>AggEditUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Class\csConexion.cs" />
-    <Compile Include="Class\csCorreo.cs" />
     <Compile Include="Class\csEncriptar.cs" />
     <Compile Include="Form\Principales\Entrenador.cs">
       <SubType>Form</SubType>
@@ -276,12 +275,6 @@
     </Compile>
     <Compile Include="Form\AgregarEditar\PagoArbitro.Designer.cs">
       <DependentUpon>PagoArbitro.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form\Principales\IngresarCorreoRecuperacion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\Principales\IngresarCorreoRecuperacion.Designer.cs">
-      <DependentUpon>IngresarCorreoRecuperacion.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\Reportes\frmEstadisticasGol.cs">
       <SubType>Form</SubType>
@@ -393,9 +386,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Principales\Torneo.resx">
       <DependentUpon>Torneo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\Principales\IngresarCorreoRecuperacion.resx">
-      <DependentUpon>IngresarCorreoRecuperacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Reportes\frmEstadisticasAsistencias.resx">
       <DependentUpon>frmEstadisticasAsistencias.cs</DependentUpon>
