@@ -89,9 +89,9 @@ namespace TorneosFut
                         csDatos.InsertarTorneo(txtNombre.Text, cmbFormato.SelectedValue.ToString(), cmbModoFutbol.SelectedValue.ToString(), cmbOrganizador.SelectedValue.ToString(), dtpInicio.Value.ToString(), dtpFin.Value.ToString(), decimal.Parse(txtCosto.Text));
                     }
                 }
-                catch(Exception ex)
+                catch(Exception)
                 {
-                    MessageBox.Show(ex + "Datos invalidos");
+                    MessageBox.Show("Datos invalidos");
                 }
             }
         }
