@@ -96,19 +96,19 @@ namespace TorneosFut.Class
 
             return dt;
         }
-        public bool AgregarTorneo( string Txtnombre, string formato, string ModoFutbol, string Organizador, string te)
+        public bool AgregarTorneo(string Txtnombre, string formato, string ModoFutbol, string Organizador, string te, string fin, decimal costo)
         {
-            if (csConexion.Consulta($"insert into Torneo (IDTorneo, NombreTorneo, IDFormato, IDModoFutbol, IDOrganizador, FechaInicio, Usuario, Estado)" +
-                $" values ({GenerarNuevoIDTorneo()}, '{Txtnombre}', {formato}, {ModoFutbol}, '{Organizador}','{te}' , system_user, 'PENDIENTE')"))
+            if (csConexion.Consulta($"insert into Torneo (IDTorneo, NombreTorneo, IDModoFutbol, IDOrganizador, FechaInicio, FechaFin, Usuario, Estado, CostoInscripcion, IDFormato)" +
+                $" values ({GenerarNuevoIDTorneo()}, '{Txtnombre}', {ModoFutbol}, '{Organizador}','{te}','{fin}', system_user, 'PENDIENTE', {costo}, {formato})"))
                 return true;
             else
                 return false;
 
         }
-        public bool ActualizarTorneo(string id, string Txtnombre, string formato, string ModoFutbol, string Organizador, string te)
+        public bool ActualizarTorneo(string id, string Txtnombre, string formato, string ModoFutbol, string Organizador, string te, string fin, decimal costo)
         {
             if (csConexion.Consulta($"update Torneo set NombreTorneo = '{Txtnombre}', IDFormato={formato}, IDModoFutbol = {ModoFutbol}, IDOrganizador= '{Organizador}'," +
-                $" FechaInicio ='{te}' where IDTorneo = {id}"))
+                $" FechaInicio ='{te}', FechaFin = '{fin}', CostoInscripcion = {costo} where IDTorneo = {id}"))
                 return true;
             else
                 return false;
@@ -124,9 +124,19 @@ namespace TorneosFut.Class
             DataTable dt = csConexion.ListDGV("Select * from Formato");
             return dt;
         }
+        public DataTable LlenarFormatoID(string name)
+        {
+            DataTable dt = csConexion.ListDGV($"Select * from Formato where NombreFormato = '{name}'");
+            return dt;
+        }
         public DataTable LlenarModo()
         {
             DataTable dt = csConexion.ListDGV("Select * from ModoFutbol");
+            return dt;
+        }
+        public DataTable LlenarModoID(string name)
+        {
+            DataTable dt = csConexion.ListDGV($"Select * from ModoFutbol where NombreModo = '{name}'");
             return dt;
         }
     }

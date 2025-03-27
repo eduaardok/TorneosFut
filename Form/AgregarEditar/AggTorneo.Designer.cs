@@ -42,7 +42,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btngEnviar = new Guna.UI2.WinForms.Guna2Button();
+            this.btnCrear = new Guna.UI2.WinForms.Guna2Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -133,7 +133,7 @@
             this.cmbOrganizador.FormattingEnabled = true;
             this.cmbOrganizador.Location = new System.Drawing.Point(328, 135);
             this.cmbOrganizador.Name = "cmbOrganizador";
-            this.cmbOrganizador.Size = new System.Drawing.Size(231, 32);
+            this.cmbOrganizador.Size = new System.Drawing.Size(231, 29);
             this.cmbOrganizador.TabIndex = 57;
             // 
             // cmbModoFutbol
@@ -150,7 +150,7 @@
             "Fútbol sala"});
             this.cmbModoFutbol.Location = new System.Drawing.Point(328, 229);
             this.cmbModoFutbol.Name = "cmbModoFutbol";
-            this.cmbModoFutbol.Size = new System.Drawing.Size(231, 32);
+            this.cmbModoFutbol.Size = new System.Drawing.Size(231, 29);
             this.cmbModoFutbol.TabIndex = 56;
             // 
             // label1
@@ -175,7 +175,7 @@
             this.cmbFormato.FormattingEnabled = true;
             this.cmbFormato.Location = new System.Drawing.Point(52, 229);
             this.cmbFormato.Name = "cmbFormato";
-            this.cmbFormato.Size = new System.Drawing.Size(231, 32);
+            this.cmbFormato.Size = new System.Drawing.Size(231, 29);
             this.cmbFormato.TabIndex = 53;
             // 
             // label4
@@ -227,27 +227,27 @@
             this.label2.TabIndex = 49;
             this.label2.Text = "Nombre:";
             // 
-            // btngEnviar
+            // btnCrear
             // 
-            this.btngEnviar.Animated = true;
-            this.btngEnviar.BackColor = System.Drawing.Color.White;
-            this.btngEnviar.BorderRadius = 20;
-            this.btngEnviar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btngEnviar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btngEnviar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btngEnviar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btngEnviar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
-            this.btngEnviar.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btngEnviar.ForeColor = System.Drawing.Color.Black;
-            this.btngEnviar.HoverState.BorderColor = System.Drawing.Color.Black;
-            this.btngEnviar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
-            this.btngEnviar.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btngEnviar.Location = new System.Drawing.Point(491, 421);
-            this.btngEnviar.Name = "btngEnviar";
-            this.btngEnviar.Size = new System.Drawing.Size(134, 55);
-            this.btngEnviar.TabIndex = 60;
-            this.btngEnviar.Text = "ENVIAR";
-            this.btngEnviar.Click += new System.EventHandler(this.btngEnviar_Click);
+            this.btnCrear.Animated = true;
+            this.btnCrear.BackColor = System.Drawing.Color.White;
+            this.btnCrear.BorderRadius = 20;
+            this.btnCrear.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCrear.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCrear.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCrear.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCrear.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
+            this.btnCrear.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnCrear.ForeColor = System.Drawing.Color.Black;
+            this.btnCrear.HoverState.BorderColor = System.Drawing.Color.Black;
+            this.btnCrear.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.btnCrear.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.btnCrear.Location = new System.Drawing.Point(491, 421);
+            this.btnCrear.Name = "btnCrear";
+            this.btnCrear.Size = new System.Drawing.Size(134, 55);
+            this.btnCrear.TabIndex = 60;
+            this.btnCrear.Text = "CREAR";
+            this.btnCrear.Click += new System.EventHandler(this.btngEnviar_Click);
             // 
             // panel4
             // 
@@ -289,9 +289,9 @@
             this.label5.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(48, 359);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(149, 24);
+            this.label5.Size = new System.Drawing.Size(127, 24);
             this.label5.TabIndex = 102;
-            this.label5.Text = "Fecha de Inicio";
+            this.label5.Text = "Fecha de Fin";
             // 
             // dtpFin
             // 
@@ -340,7 +340,7 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btngEnviar);
+            this.Controls.Add(this.btnCrear);
             this.Controls.Add(this.lblfecha);
             this.Controls.Add(this.dtpInicio);
             this.Controls.Add(this.cmbOrganizador);
@@ -383,7 +383,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2Button btngEnviar;
+        private Guna.UI2.WinForms.Guna2Button btnCrear;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel1;

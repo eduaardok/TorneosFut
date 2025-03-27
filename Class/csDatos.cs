@@ -16,7 +16,6 @@ namespace TorneosFut
     class csDatos
     {
         //csConexion csConexion;
-        csCorreo csCorreo;
         csUsuario csUsuario;
         csEntrenador csEntrenador;
         csImagenes csImagenes;
@@ -30,7 +29,6 @@ namespace TorneosFut
         public csDatos(string u, string c)
         {
             //csConexion = new csConexion(u, c);
-            csCorreo = new csCorreo();
             csUsuario = new csUsuario(u, c);
             csEntrenador = new csEntrenador(u, c);
             csImagenes = new csImagenes();
@@ -47,17 +45,6 @@ namespace TorneosFut
         {
             if (clave == ObtenerClaveUsuario(usuario))
                 return true;
-            return false;
-        }
-        public bool EnviarCorreoRecuperacion(string destino)
-        {
-            csCorreo.Destinatario = destino;
-            string mensaje = $"CREDENCIALES: Usuario:'{ObtenerUsuarioDeCorreo(destino)}', Clave: {ObtenerClaveDeCorreo(destino)}";
-            if (csCorreo.EnviarCorreo(mensaje))
-            {
-                MessageBox.Show($"Correo de recuperación enviado exitosamente, revise su bandeja de entrada.");
-                return true;
-            }
             return false;
         }
         public string ObtenerUsuarioDeCorreo(string correo)
@@ -257,17 +244,15 @@ namespace TorneosFut
                 return false;
             }
         }
-        public bool InsertarTorneo(string Txtnombre, string formato, string ModoFutbol, string Organizador, string te)
+        public bool InsertarTorneo(string Txtnombre, string formato, string ModoFutbol, string Organizador, string te, string fin, decimal costo)
         {
-        
-            
-               if (csTorneo.AgregarTorneo( Txtnombre, formato, ModoFutbol, Organizador, te))
-                {
-                    MessageBox.Show("Torneo registrado correctamente");
-                    return true;
-                }
-                else
-                    return false;
+            if (csTorneo.AgregarTorneo(Txtnombre, formato, ModoFutbol, Organizador, te, fin, costo))
+            {
+                MessageBox.Show("Torneo registrado correctamente");
+                return true;
+            }
+            else
+                return false;
         }
         public bool InsertarEstadio(string id, string nombre, string ubicacion, string imagen, string filename)
         {
@@ -319,9 +304,15 @@ namespace TorneosFut
         {
             return csArbitro.ActualizarArbitro(id, nombre, apellido, correo);
         }
-        public bool EditarTorneo(string id, string Txtnombre, string formato, string ModoFutbol, string Organizador, string te)
+        public bool EditarTorneo(string id, string Txtnombre, string formato, string ModoFutbol, string Organizador, string te, string fin, decimal costo)
         {
-            return csTorneo.ActualizarTorneo(id, Txtnombre, formato, ModoFutbol, Organizador, te);
+            if (csTorneo.ActualizarTorneo(id, Txtnombre, formato, ModoFutbol, Organizador, te, fin, costo))
+            {
+                MessageBox.Show("Torneo actualizado correctamente");
+                return true;
+            }
+            else
+                return false;
         }
         public bool EditarJugador( string idJugadorr,TextBox Txtnombre, TextBox txtapellido, ComboBox cmbsexo, DateTimePicker dtpNacimiento,
         ComboBox CmbPosicion, TextBox TxtNacionalidad, TextBox txtpeso, TextBox txtaltura, ComboBox cmbpierna, string imagen, string filename)

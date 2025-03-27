@@ -122,7 +122,6 @@ namespace TorneosFut
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-
             Logeo();
         }
         void Logeo()
@@ -247,21 +246,6 @@ namespace TorneosFut
             }
         }
 
-        private void llblRecuperarClave_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            msg.Caption = "RECUPERAR CREDENCIALES";
-            msg.Text = "¿Desea enviar un correo electrónico de recuperación?";
-            msg.Parent = this;
-            msg.Buttons = MessageDialogButtons.YesNo;
-            msg.Icon = MessageDialogIcon.Question;
-            DialogResult r = msg.Show();
-
-            if (r == DialogResult.Yes)
-            {
-                IngresarCorreoRecuperacion i = new IngresarCorreoRecuperacion();
-                i.ShowDialog();
-            }
-        }
 
         private void panel1_Paint_1(object sender, PaintEventArgs e)
         {
