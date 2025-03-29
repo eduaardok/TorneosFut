@@ -108,11 +108,6 @@ namespace pruebas
             CMBJugador.DisplayMember = "NombreJugador";
         }
 
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btngCancelar_Click(object sender, EventArgs e)
         {
             Close();

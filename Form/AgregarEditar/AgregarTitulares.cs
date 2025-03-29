@@ -78,6 +78,7 @@ namespace TorneosFut
                         {
                             MessageBox.Show($"No se pudo agregar al jugador {IDJugador}.");
                         }
+                        else listBox1.Items.Clear();
 
                     }
 
