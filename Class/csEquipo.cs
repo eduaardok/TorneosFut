@@ -77,9 +77,9 @@ namespace TorneosFut.Class
             DataTable dt = conexion.ListDGV("select IDEquipo,IDEstadio,NombreEquipo,Presidente,Genero,EquipacionLocal,EquipacionVisitante from Equipo");
             return dt;
         }
-        public DataTable ListadeNameEquipos()
+        public DataTable ListadeNameEquipos(string IdTorneo)
         {
-            DataTable dt = conexion.ListDGV("select IDEquipo,NombreEquipo,Presidente from Equipo");
+            DataTable dt = conexion.ListDGV($"select E.IDEquipo, E.NombreEquipo as Nombre, E.Presidente from Equipo E left join InscripcionEquipo I on E.IDEquipo = I.IDEquipo and I.IDTorneo = {IdTorneo} where I.IDEquipo is null;");
             return dt;
         }
         public DataTable ListaDeJugadoresEquipo(string id)
@@ -108,11 +108,10 @@ namespace TorneosFut.Class
                                  $"or NombreEquipo like '%{filtro}%'");
             return dt;
         }
-        public DataTable ListadeNameEquiposFiltro(string filtro)
+        public DataTable ListadeNameEquiposFiltro(string filtro, string idTorneo)
         {
             DataTable dt;
-            dt = conexion.ListDGV($"select IDEquipo,NombreEquipo,Presidente from Equipo where IDEquipo like '%{filtro}%' " +
-                                 $"or NombreEquipo like '%{filtro}%'");
+            dt = conexion.ListDGV($"select * from (select E.IDEquipo, E.NombreEquipo as Nombre, E.Presidente from Equipo E left join InscripcionEquipo I on E.IDEquipo = I.IDEquipo and I.IDTorneo = {idTorneo} where I.IDEquipo is null) x where IDEquipo like '%{filtro}%' or Nombre like '%{filtro}%'");
             return dt;
         }
         public string Imagen(string i)

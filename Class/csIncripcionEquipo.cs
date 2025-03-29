@@ -78,58 +78,33 @@ namespace TorneosFut.Class
                                             $"INNER JOIN (select IDEquipo, NombreEquipo from Equipo) E ON I.IDEquipo = E.IDEquipo where I.IDTorneo = {IDTorneo}");
             return dt;
         }
-        public bool AgregarInscripcion(int IdTorneo, string IdEquipo, decimal abono, decimal saldo, decimal montoAPagar, DateTime fechaLimite, string estado)
+        public bool AgregarInscripcion(int IdTorneo, List<string> listaEquipos, decimal montoAPagar, string fecha)
         {
-            IDInscripcion = GenerarIDInscripcion(IdTorneo, IdEquipo);
-            IDTorneo = IdTorneo.ToString().Trim();
-            IDEquipo = IdEquipo.ToString().Trim();
-            Abono = abono;
-            Saldo = saldo;
-            MontoAPagar = montoAPagar;
-            FechaLimite = fechaLimite.ToString("yyyy-MM-dd").Trim();
-            Estado = estado.ToString().Trim();
+            string xmlInscripciones = "<InscripcionEquipos>";
 
-            string xmlInscripcion =
-                "<InscripcionEquipos>" +
-                "    <InscripcionEquipo>" +
-                $"        <IDInscripcion>{IDInscripcion}</IDInscripcion>" +
-                $"        <IDTorneo>{IDTorneo}</IDTorneo>" +
-                $"        <IDEquipo>{IDEquipo}</IDEquipo>" +
-                $"        <Abono>{Abono.ToString("N2").Trim()}</Abono>" +
-                $"        <Saldo>{Saldo.ToString("N2").Trim()}</Saldo>" +
-                $"        <MontoAPagar>{MontoAPagar.ToString("N2").Trim()}</MontoAPagar>" +
-                $"        <FechaLimite>{FechaLimite}</FechaLimite>" +
-                $"        <Estado>{Estado}</Estado>" +
-                "    </InscripcionEquipo>" +
-                "</InscripcionEquipos>";
-            return conexion.Consulta($"DECLARE @cadenaa VARCHAR(MAX) = '{xmlInscripcion}'; EXEC spRegistraInscripcionEquipo @cadenaa;");
-        }
+            foreach (string IDEquipo in listaEquipos)
+            {
+                string IDInscripcion = GenerarIDInscripcion(IdTorneo, IDEquipo);
+                string Estado = "PENDIENTE";
+                decimal Abono = 0;
+                decimal Saldo = montoAPagar;
 
-        public bool AgregarInscripcion(int IdTorneo, string IdEquipo, decimal montoAPagar, string fecha)
-        {
-            IDInscripcion = GenerarIDInscripcion(IdTorneo, IdEquipo);
-            IDTorneo = IdTorneo.ToString().Trim();
-            IDEquipo = IdEquipo.ToString().Trim();
-            Abono = 0;
-            Saldo = montoAPagar;
-            MontoAPagar = montoAPagar;
-            FechaLimite = fecha;
-            Estado = "PENDIENTE";
+                xmlInscripciones +=
+                    $"    <InscripcionEquipo>" +
+                    $"        <IDInscripcion>{IDInscripcion}</IDInscripcion>" +
+                    $"        <IDTorneo>{IdTorneo}</IDTorneo>" +
+                    $"        <IDEquipo>{IDEquipo}</IDEquipo>" +
+                    $"        <Abono>{Abono.ToString("N2").Trim()}</Abono>" +
+                    $"        <Saldo>{Saldo.ToString("N2").Trim()}</Saldo>" +
+                    $"        <MontoAPagar>{montoAPagar.ToString("N2").Trim()}</MontoAPagar>" +
+                    $"        <FechaLimite>{fecha}</FechaLimite>" +
+                    $"        <Estado>{Estado}</Estado>" +
+                    "    </InscripcionEquipo>";
+            }
 
-            string xmlInscripcion =
-                "<InscripcionEquipos>" +
-                "    <InscripcionEquipo>" +
-                $"        <IDInscripcion>{IDInscripcion}</IDInscripcion>" +
-                $"        <IDTorneo>{IDTorneo}</IDTorneo>" +
-                $"        <IDEquipo>{IDEquipo}</IDEquipo>" +
-                $"        <Abono>{Abono.ToString("N2").Trim()}</Abono>" +
-                $"        <Saldo>{Saldo.ToString("N2").Trim()}</Saldo>" +
-                $"        <MontoAPagar>{MontoAPagar.ToString("N2").Trim()}</MontoAPagar>" +
-                $"        <FechaLimite>{FechaLimite}</FechaLimite>" +
-                $"        <Estado>{Estado}</Estado>" +
-                "    </InscripcionEquipo>" +
-                "</InscripcionEquipos>";
-            return conexion.Consulta($"DECLARE @cadenaa VARCHAR(MAX) = '{xmlInscripcion}'; EXEC spRegistraInscripcionEquipo @cadenaa;");
+            xmlInscripciones += "</InscripcionEquipos>";
+
+            return conexion.Consulta($"declare @cadenaa VARCHAR(MAX) = '{xmlInscripciones}'; exec spRegistraInscripcionEquipo @cadenaa;");
         }
         public bool EliminarInscripcion(string IdEquipo)
         {

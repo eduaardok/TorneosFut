@@ -528,9 +528,9 @@ namespace TorneosFut
         #endregion
 
         //INSCRIPCIONES
-        public bool InsertarIncripcion(int IDTorneo, string IDEquipo, decimal montoAPagar, string fecha)
+        public bool InsertarIncripcion(int IDTorneo, List<string> listaEquipos, decimal montoAPagar, string fecha)
         {
-            return csIncripcion.AgregarInscripcion(IDTorneo, IDEquipo, montoAPagar, fecha);
+            return csIncripcion.AgregarInscripcion(IDTorneo, listaEquipos, montoAPagar, fecha);
         }
         public bool QuitarIncripcion(string IDEquipo)
         {

@@ -128,17 +128,17 @@ namespace TorneosFut
         {
             dgv.DataSource = csEquipo.ListadeEquipos();
         }
-        public void MostrarNameEquipos(DataGridView dgv)
+        public void MostrarNameEquipos(string IdTorneo, DataGridView dgv)
         {
-            dgv.DataSource = csEquipo.ListadeNameEquipos();
+            dgv.DataSource = csEquipo.ListadeNameEquipos(IdTorneo);
         }
         public void MostrarEquiposFiltro(DataGridView dgv, string filtro)
         {
             dgv.DataSource = csEquipo.ListadeEquiposFiltro(filtro);
         }
-        public void MostrarNameEquiposFiltro(DataGridView dgv, string filtro)
+        public void MostrarNameEquiposFiltro(DataGridView dgv, string filtro, string idTorneo)
         {
-            dgv.DataSource = csEquipo.ListadeNameEquiposFiltro(filtro);
+            dgv.DataSource = csEquipo.ListadeNameEquiposFiltro(filtro, idTorneo);
         }
         public void MostrarJugadoresEquipo(DataGridView dgv, string id)
         {

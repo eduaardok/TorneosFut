@@ -11,7 +11,7 @@ using TorneosFut.Class;
 
 namespace TorneosFut
 {
-    public partial class GestionInscripcion: Form
+    public partial class GestionInscripcion : Form
     {
         csDatos csDatos;
         csConexion conexion;
@@ -22,7 +22,6 @@ namespace TorneosFut
         decimal costo;
         public GestionInscripcion(string IDtorneo, string u, string c)
         {
-
             csDatos = new csDatos(u, c);
             IdTorneo = IDtorneo;
             csDGV = new csDGV(u, c);
@@ -37,9 +36,8 @@ namespace TorneosFut
 
         private void panel2_MouseMove(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left) // Verifica si el botón izquierdo del mouse está presionado
+            if (e.Button == MouseButtons.Left)
             {
-                // Mueve el formulario a la nueva posición
                 this.Location = new Point(
                     this.Location.X + e.X - (c.Width / 2),
                     this.Location.Y + e.Y - (c.Height / 2));
@@ -48,64 +46,75 @@ namespace TorneosFut
 
         private void GestionInscripcion_Load(object sender, EventArgs e)
         {
+            dgvEquipos.ClearSelection();
+            dgvEquipos.CurrentCell = null;
+            dgvEquiposIns.ClearSelection();
+            dgvEquiposIns.CurrentCell = null;
+
+            dgvEquipos.GridColor = Color.FromArgb(251, 3, 140);
+            dgvEquiposIns.GridColor = Color.FromArgb(251, 3, 140);
+
             DataTable torneo = conexion.ListDGV($"Select FechaInicio, CostoInscripcion from Torneo where IDTorneo = {IdTorneo}");
             fecha = torneo.Rows[0]["FechaInicio"].ToString();
             costo = decimal.Parse(torneo.Rows[0]["CostoInscripcion"].ToString());
 
-            csDGV.MostrarNameEquipos(dgvEquipos);
+            csDGV.MostrarNameEquipos(IdTorneo, dgvEquipos);
             AdaptarDGV();
             csDGV.MostrarEquiposInsc(IdTorneo, dgvEquiposIns);
             AdaptarDGV();
-
 
             c.Tag = "NoCambiar";
             panel1.Tag = "NoCambiar";
             panel3.Tag = "NoCambiar";
             panel4.Tag = "NoCambiar";
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
+
         }
         void AdaptarDGV()
         {
             dgvEquipos.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#14191D");
             dgvEquipos.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dgvEquipos.EnableHeadersVisualStyles = false;
-            //ActualizarTabla();
             dgvEquipos.Width = panelDgv.Width;
             dgvEquipos.Height = panelDgv.Height;
 
-            int filas, columnas;
-            filas = dgvEquipos.RowCount;
-            columnas = dgvEquipos.ColumnCount;
-            dgvEquipos.ColumnHeadersHeight = 50;//dgvUsuarios.Height / (1+filas);
-            for (int i = 0; i < filas; i++)
+            if (dgvEquipos.RowCount > 0)
             {
-                dgvEquipos.Rows[i].Height = 60;//dgvUsuarios.Height / (1+filas);
+                dgvEquipos.ColumnHeadersHeight = 50;
+
+                for (int i = 0; i < dgvEquipos.RowCount; i++)
+                {
+                    dgvEquipos.Rows[i].Height = 35;
+                }
             }
-            for (int i = 0; i < columnas; i++)
+
+            for (int i = 0; i < dgvEquipos.ColumnCount; i++)
             {
-                dgvEquipos.Columns[i].Width = dgvEquipos.Width / columnas;
+                dgvEquipos.Columns[i].Width = dgvEquipos.Width / dgvEquipos.ColumnCount;
             }
 
             dgvEquiposIns.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#14191D");
             dgvEquiposIns.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dgvEquiposIns.EnableHeadersVisualStyles = false;
-            //ActualizarTabla();
             dgvEquiposIns.Width = panelDgv2.Width;
             dgvEquiposIns.Height = panelDgv2.Height;
 
-            int filas1, columnas1;
-            filas1 = dgvEquiposIns.RowCount;
-            columnas1 = dgvEquiposIns.ColumnCount;
-            dgvEquiposIns.ColumnHeadersHeight = 50;//dgvUsuarios.Height / (1+filas);
-            for (int i = 0; i < filas1; i++)
+            if (dgvEquiposIns.RowCount > 0)
             {
-                dgvEquiposIns.Rows[i].Height = 60;//dgvUsuarios.Height / (1+filas);
+                dgvEquiposIns.ColumnHeadersHeight = 50;
+
+                for (int i = 0; i < dgvEquiposIns.RowCount; i++)
+                {
+                    dgvEquiposIns.Rows[i].Height = 35;
+                }
             }
-            for (int i = 0; i < columnas1; i++)
+
+            for (int i = 0; i < dgvEquiposIns.ColumnCount; i++)
             {
-                dgvEquiposIns.Columns[i].Width = dgvEquiposIns.Width / columnas1;
+                dgvEquiposIns.Columns[i].Width = dgvEquiposIns.Width / dgvEquiposIns.ColumnCount;
             }
         }
+
 
         private void txtBuscarEquipo_MouseClick(object sender, MouseEventArgs e)
         {
@@ -114,10 +123,11 @@ namespace TorneosFut
                 txtBuscarEquipo.Text = "";
                 txtBuscarEquipo.ForeColor = Color.Black;
             }
+            AdaptarDGV();
         }
         void ActualizarTabla()
         {
-            csDGV.MostrarNameEquiposFiltro(dgvEquipos, txtBuscarEquipo.Text);
+            csDGV.MostrarNameEquiposFiltro(dgvEquipos, txtBuscarEquipo.Text, IdTorneo);
             csDGV.AdaptarDGV(dgvEquipos, panelDgv);
             csDGV.MostrarEquiposInsc(IdTorneo, dgvEquiposIns);
             csDGV.AdaptarDGV(dgvEquiposIns, panelDgv2);
@@ -129,74 +139,73 @@ namespace TorneosFut
                 txtBuscarEquipo.Text = "";
             ActualizarTabla();
         }
-
         private void btnIncribir_Click(object sender, EventArgs e)
         {
             if (dgvEquipos.SelectedRows.Count > 0)
             {
-                DataGridViewRow row = dgvEquipos.SelectedRows[0];
-                string idequipo = row.Cells["IDEquipo"].Value.ToString();
-                bool equipoInscrito = VerificarInscripcion(int.Parse(IdTorneo), idequipo);
+                List<string> listaEquipos = new List<string>();
 
-                if (equipoInscrito)
+                foreach (DataGridViewRow row in dgvEquipos.SelectedRows)
                 {
-                    MessageBox.Show("Este equipo ya está inscrito en el torneo.");
+                    string idequipo = row.Cells["IDEquipo"].Value.ToString();
+                    listaEquipos.Add(idequipo);
+                }
+                if (csDatos.InsertarIncripcion(int.Parse(IdTorneo), listaEquipos, costo, fecha))
+                {
+                    MessageBox.Show($"Se inscribieron correctamente {listaEquipos.Count} equipos.");
+                    ActualizarTabla();
                 }
                 else
                 {
-                    if (csDatos.InsertarIncripcion(int.Parse(IdTorneo), idequipo, costo, fecha))
-                    {
-                        MessageBox.Show("Se inscribió el equipo correctamente");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error al inscribir el equipo");
-                    }
+                    MessageBox.Show("Hubo un error al inscribir algunos equipos.");
                 }
             }
             else
             {
-                MessageBox.Show("Por favor, seleccione un equipo.");
+                MessageBox.Show("Por favor, seleccione al menos un equipo.");
             }
-
-            ActualizarTabla();
         }
 
         private void btnQuitar_Click(object sender, EventArgs e)
         {
             if (dgvEquiposIns.SelectedRows.Count > 0)
             {
-                DataGridViewRow row = dgvEquiposIns.SelectedRows[0];
-                string idequipo = row.Cells["IDEquipo"].Value.ToString();
-                if (csDatos.QuitarIncripcion(idequipo))
+                int equiposQuitados = 0;
+                foreach (DataGridViewRow row in dgvEquiposIns.SelectedRows)
                 {
-                    MessageBox.Show("Se quito el equipo correctamente");
+                    string idequipo = row.Cells["IDEquipo"].Value.ToString();
+
+                    if (csDatos.QuitarIncripcion(idequipo))
+                    {
+                        equiposQuitados++;
+                    }
+                    else
+                    {
+                        //errores++;
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Error al quitar el equipo");
-                }
+                MessageBox.Show($"Se quitaron {equiposQuitados} equipos correctamente.");
+                ActualizarTabla();
             }
             else
             {
-                MessageBox.Show("Por favor, seleccione un equipo.");
+                MessageBox.Show("Por favor, seleccione al menos un equipo.");
             }
-            ActualizarTabla();
         }
+
         public bool VerificarInscripcion(int idTorneo, string idEquipo)
         {
             string query = $"select * from InscripcionEquipo where IDTorneo = {idTorneo} and IDEquipo = '{idEquipo}'";
             DataTable dt = conexion.ListDGV(query);
             return dt.Rows.Count > 0;
         }
-
-
         private void btnAbonar_Click(object sender, EventArgs e)
         {
-            DataGridViewRow row = dgvEquiposIns.SelectedRows[0];
-            string idequipo = row.Cells["IDEquipo"].Value.ToString();
-            PagoInscripcion = new PagoInscripcion(IdTorneo, idequipo, conexion.Usuario, conexion.Clave);
-            PagoInscripcion.ShowDialog();
+
+            //DataGridViewRow row = dgvEquiposIns.SelectedRows[0];
+            //string idequipo = row.Cells["IDEquipo"].Value.ToString();
+            //PagoInscripcion = new PagoInscripcion(IdTorneo, idequipo, conexion.Usuario, conexion.Clave);
+            //PagoInscripcion.ShowDialog();
         }
     }
 }
