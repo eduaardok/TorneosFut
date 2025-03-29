@@ -21,7 +21,9 @@ namespace pruebas
         GestionarPartidos f;
         static string Id;
         csDGV csDGV;
-        csPartido csPartido;
+        csPartido csPartido; 
+        private DataGridView dgvSeleccionado;
+
         public Goles(string u, string c, string ID)
         {
             conexion = new csConexion(u, c);
@@ -42,7 +44,6 @@ namespace pruebas
         }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            Close();
         }
         private void btnEditar_Click(object sender, EventArgs e)
         {
@@ -122,6 +123,79 @@ namespace pruebas
         private void guna2Button5_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void dgvjugadoresLocales_SelectionChanged(object sender, EventArgs e)
+        {
+            dgvSeleccionado = dgvjugadoresLocales;
+
+        }
+
+        private void dgvjugadoresVisitantes_SelectionChanged(object sender, EventArgs e)
+        {
+            dgvSeleccionado = dgvjugadoresVisitantes;
+
+        }
+
+        private void btngGol_Click(object sender, EventArgs e)
+        {
+            if (dgvSeleccionado != null && dgvSeleccionado.SelectedRows.Count > 0)
+            {
+                DataGridViewRow filaSeleccionada = dgvSeleccionado.SelectedRows[0];
+
+                // Ejemplo: Agregar jugador y equipo a la tabla de abajo
+                string idJugador = filaSeleccionada.Cells["IDJugador"].Value.ToString();
+                string idEquipo = filaSeleccionada.Cells["IDEquipo"].Value.ToString();
+
+                // Aquí decides en qué tabla agregarlo (puedes tener un dgvEventos)
+                dgvgoles.Rows.Add(idJugador, idEquipo, (Convert.ToInt32(numEquipos.Value)).ToString());
+            }
+        }
+
+        private void btnQuitarAsistencia_Click(object sender, EventArgs e)
+        {
+            EliminarFilaSeleccionada(dgvasistencia);
+        }
+
+        private void btnQuitarGol_Click(object sender, EventArgs e)
+        {
+            EliminarFilaSeleccionada(dgvgoles);
+        }
+
+        private void btngAsistencia_Click(object sender, EventArgs e)
+        {
+            if (dgvSeleccionado != null && dgvSeleccionado.SelectedRows.Count > 0)
+            {
+                DataGridViewRow filaSeleccionada = dgvSeleccionado.SelectedRows[0];
+
+                // Ejemplo: Agregar jugador y equipo a la tabla de abajo
+                string idJugador = filaSeleccionada.Cells["IDJugador"].Value.ToString();
+                string idEquipo = filaSeleccionada.Cells["IDEquipo"].Value.ToString();
+
+                // Aquí decides en qué tabla agregarlo (puedes tener un dgvEventos)
+                dgvasistencia.Rows.Add(idJugador, idEquipo, (Convert.ToInt32(numEquipos.Value)).ToString());
+            }
+        }
+        private void EliminarFilaSeleccionada(DataGridView dgv)
+        {
+            if (dgv.SelectedRows.Count > 0) // Verifica si hay una fila seleccionada
+            {
+                int rowIndex = dgv.SelectedRows[0].Index;
+
+                if (!dgv.Rows[rowIndex].IsNewRow) // Evita eliminar una fila nueva vacía
+                {
+                    dgv.Rows.RemoveAt(rowIndex);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una fila para eliminar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnConfirmar_Click(object sender, EventArgs e)
+        {
+            //
         }
     }
 }

@@ -29,16 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvDatos = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -53,20 +51,26 @@
             this.lblEncabezado = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvgoles = new System.Windows.Forms.DataGridView();
-            this.dgvasistencias = new System.Windows.Forms.DataGridView();
-            this.dgvtarjetas = new System.Windows.Forms.DataGridView();
-            this.btngTarjeta = new Guna.UI2.WinForms.Guna2Button();
             this.btngGol = new Guna.UI2.WinForms.Guna2Button();
             this.numEquipos = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
+            this.IDJugador = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Minuto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvasistencia = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnQuitarGol = new Guna.UI2.WinForms.Guna2Button();
+            this.btnQuitarAsistencia = new Guna.UI2.WinForms.Guna2Button();
+            this.btnConfirmar = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvjugadoresVisitantes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvjugadoresLocales)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvgoles)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvasistencias)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvtarjetas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numEquipos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvasistencia)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvDatos
@@ -126,12 +130,12 @@
             this.btngAsistencia.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btngAsistencia.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btngAsistencia.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btngAsistencia.Location = new System.Drawing.Point(443, 612);
+            this.btngAsistencia.Location = new System.Drawing.Point(695, 560);
             this.btngAsistencia.Name = "btngAsistencia";
             this.btngAsistencia.Size = new System.Drawing.Size(163, 52);
             this.btngAsistencia.TabIndex = 94;
             this.btngAsistencia.Text = "AGREGAR ASISTENCIA";
-            this.btngAsistencia.Click += new System.EventHandler(this.btngCancelar_Click);
+            this.btngAsistencia.Click += new System.EventHandler(this.btngAsistencia_Click);
             // 
             // dgvjugadoresVisitantes
             // 
@@ -143,14 +147,14 @@
             this.dgvjugadoresVisitantes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvjugadoresVisitantes.BackgroundColor = System.Drawing.Color.White;
             this.dgvjugadoresVisitantes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvjugadoresVisitantes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvjugadoresVisitantes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.dgvjugadoresVisitantes.ColumnHeadersHeight = 40;
             this.dgvjugadoresVisitantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvjugadoresVisitantes.EnableHeadersVisualStyles = false;
@@ -161,13 +165,14 @@
             this.dgvjugadoresVisitantes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvjugadoresVisitantes.RowHeadersVisible = false;
             this.dgvjugadoresVisitantes.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
-            this.dgvjugadoresVisitantes.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.dgvjugadoresVisitantes.RowsDefaultCellStyle = dataGridViewCellStyle14;
             this.dgvjugadoresVisitantes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvjugadoresVisitantes.ShowCellToolTips = false;
             this.dgvjugadoresVisitantes.ShowEditingIcon = false;
-            this.dgvjugadoresVisitantes.Size = new System.Drawing.Size(279, 317);
+            this.dgvjugadoresVisitantes.Size = new System.Drawing.Size(279, 219);
             this.dgvjugadoresVisitantes.TabIndex = 134;
+            this.dgvjugadoresVisitantes.SelectionChanged += new System.EventHandler(this.dgvjugadoresVisitantes_SelectionChanged);
             // 
             // dgvjugadoresLocales
             // 
@@ -179,14 +184,14 @@
             this.dgvjugadoresLocales.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvjugadoresLocales.BackgroundColor = System.Drawing.Color.White;
             this.dgvjugadoresLocales.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvjugadoresLocales.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvjugadoresLocales.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvjugadoresLocales.ColumnHeadersHeight = 40;
             this.dgvjugadoresLocales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvjugadoresLocales.EnableHeadersVisualStyles = false;
@@ -197,20 +202,21 @@
             this.dgvjugadoresLocales.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvjugadoresLocales.RowHeadersVisible = false;
             this.dgvjugadoresLocales.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
-            this.dgvjugadoresLocales.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.dgvjugadoresLocales.RowsDefaultCellStyle = dataGridViewCellStyle16;
             this.dgvjugadoresLocales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvjugadoresLocales.ShowCellToolTips = false;
             this.dgvjugadoresLocales.ShowEditingIcon = false;
-            this.dgvjugadoresLocales.Size = new System.Drawing.Size(279, 317);
+            this.dgvjugadoresLocales.Size = new System.Drawing.Size(279, 219);
             this.dgvjugadoresLocales.TabIndex = 133;
+            this.dgvjugadoresLocales.SelectionChanged += new System.EventHandler(this.dgvjugadoresLocales_SelectionChanged);
             // 
             // lblequipoizq
             // 
             this.lblequipoizq.AutoSize = true;
             this.lblequipoizq.BackColor = System.Drawing.Color.Transparent;
             this.lblequipoizq.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold);
-            this.lblequipoizq.Location = new System.Drawing.Point(172, 50);
+            this.lblequipoizq.Location = new System.Drawing.Point(200, 50);
             this.lblequipoizq.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblequipoizq.Name = "lblequipoizq";
             this.lblequipoizq.Size = new System.Drawing.Size(182, 24);
@@ -231,9 +237,9 @@
             this.guna2Button5.HoverState.BorderColor = System.Drawing.Color.Black;
             this.guna2Button5.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.guna2Button5.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button5.Location = new System.Drawing.Point(9, 678);
+            this.guna2Button5.Location = new System.Drawing.Point(32, 655);
             this.guna2Button5.Name = "guna2Button5";
-            this.guna2Button5.Size = new System.Drawing.Size(141, 41);
+            this.guna2Button5.Size = new System.Drawing.Size(141, 52);
             this.guna2Button5.TabIndex = 129;
             this.guna2Button5.Text = "CANCELAR";
             this.guna2Button5.Click += new System.EventHandler(this.guna2Button5_Click);
@@ -243,7 +249,7 @@
             this.lblequipoder.AutoSize = true;
             this.lblequipoder.BackColor = System.Drawing.Color.Transparent;
             this.lblequipoder.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold);
-            this.lblequipoder.Location = new System.Drawing.Point(630, 50);
+            this.lblequipoder.Location = new System.Drawing.Point(655, 50);
             this.lblequipoder.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblequipoder.Name = "lblequipoder";
             this.lblequipoder.Size = new System.Drawing.Size(203, 24);
@@ -257,9 +263,9 @@
             this.lblEncabezado.ForeColor = System.Drawing.Color.White;
             this.lblEncabezado.Location = new System.Drawing.Point(12, 8);
             this.lblEncabezado.Name = "lblEncabezado";
-            this.lblEncabezado.Size = new System.Drawing.Size(240, 26);
+            this.lblEncabezado.Size = new System.Drawing.Size(384, 26);
             this.lblEncabezado.TabIndex = 33;
-            this.lblEncabezado.Text = "GESTIONAR EVENTOS";
+            this.lblEncabezado.Text = "GESTIONAR EVENTOS DEL PARTIDO";
             // 
             // panel2
             // 
@@ -281,124 +287,35 @@
             this.dgvgoles.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvgoles.BackgroundColor = System.Drawing.Color.White;
             this.dgvgoles.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvgoles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvgoles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvgoles.ColumnHeadersHeight = 40;
             this.dgvgoles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvgoles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IDJugador,
+            this.IDEquipo,
+            this.Minuto});
             this.dgvgoles.EnableHeadersVisualStyles = false;
-            this.dgvgoles.Location = new System.Drawing.Point(274, 433);
+            this.dgvgoles.Location = new System.Drawing.Point(153, 381);
             this.dgvgoles.MultiSelect = false;
             this.dgvgoles.Name = "dgvgoles";
             this.dgvgoles.ReadOnly = true;
             this.dgvgoles.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvgoles.RowHeadersVisible = false;
             this.dgvgoles.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
-            this.dgvgoles.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.dgvgoles.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvgoles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvgoles.ShowCellToolTips = false;
             this.dgvgoles.ShowEditingIcon = false;
-            this.dgvgoles.Size = new System.Drawing.Size(136, 160);
+            this.dgvgoles.Size = new System.Drawing.Size(279, 160);
             this.dgvgoles.TabIndex = 135;
-            // 
-            // dgvasistencias
-            // 
-            this.dgvasistencias.AllowUserToAddRows = false;
-            this.dgvasistencias.AllowUserToDeleteRows = false;
-            this.dgvasistencias.AllowUserToResizeColumns = false;
-            this.dgvasistencias.AllowUserToResizeRows = false;
-            this.dgvasistencias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvasistencias.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvasistencias.BackgroundColor = System.Drawing.Color.White;
-            this.dgvasistencias.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvasistencias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvasistencias.ColumnHeadersHeight = 40;
-            this.dgvasistencias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvasistencias.EnableHeadersVisualStyles = false;
-            this.dgvasistencias.Location = new System.Drawing.Point(452, 433);
-            this.dgvasistencias.MultiSelect = false;
-            this.dgvasistencias.Name = "dgvasistencias";
-            this.dgvasistencias.ReadOnly = true;
-            this.dgvasistencias.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dgvasistencias.RowHeadersVisible = false;
-            this.dgvasistencias.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
-            this.dgvasistencias.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvasistencias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvasistencias.ShowCellToolTips = false;
-            this.dgvasistencias.ShowEditingIcon = false;
-            this.dgvasistencias.Size = new System.Drawing.Size(136, 160);
-            this.dgvasistencias.TabIndex = 136;
-            // 
-            // dgvtarjetas
-            // 
-            this.dgvtarjetas.AllowUserToAddRows = false;
-            this.dgvtarjetas.AllowUserToDeleteRows = false;
-            this.dgvtarjetas.AllowUserToResizeColumns = false;
-            this.dgvtarjetas.AllowUserToResizeRows = false;
-            this.dgvtarjetas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvtarjetas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvtarjetas.BackgroundColor = System.Drawing.Color.White;
-            this.dgvtarjetas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvtarjetas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvtarjetas.ColumnHeadersHeight = 40;
-            this.dgvtarjetas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvtarjetas.EnableHeadersVisualStyles = false;
-            this.dgvtarjetas.Location = new System.Drawing.Point(634, 433);
-            this.dgvtarjetas.MultiSelect = false;
-            this.dgvtarjetas.Name = "dgvtarjetas";
-            this.dgvtarjetas.ReadOnly = true;
-            this.dgvtarjetas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dgvtarjetas.RowHeadersVisible = false;
-            this.dgvtarjetas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
-            this.dgvtarjetas.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvtarjetas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvtarjetas.ShowCellToolTips = false;
-            this.dgvtarjetas.ShowEditingIcon = false;
-            this.dgvtarjetas.Size = new System.Drawing.Size(136, 160);
-            this.dgvtarjetas.TabIndex = 137;
-            // 
-            // btngTarjeta
-            // 
-            this.btngTarjeta.Animated = true;
-            this.btngTarjeta.BorderColor = System.Drawing.Color.Empty;
-            this.btngTarjeta.BorderRadius = 20;
-            this.btngTarjeta.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btngTarjeta.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btngTarjeta.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btngTarjeta.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btngTarjeta.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.btngTarjeta.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btngTarjeta.ForeColor = System.Drawing.Color.White;
-            this.btngTarjeta.HoverState.BorderColor = System.Drawing.Color.Black;
-            this.btngTarjeta.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
-            this.btngTarjeta.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btngTarjeta.Location = new System.Drawing.Point(634, 612);
-            this.btngTarjeta.Name = "btngTarjeta";
-            this.btngTarjeta.Size = new System.Drawing.Size(138, 52);
-            this.btngTarjeta.TabIndex = 138;
-            this.btngTarjeta.Text = "AGREGAR TARJETAS";
             // 
             // btngGol
             // 
@@ -415,16 +332,17 @@
             this.btngGol.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btngGol.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btngGol.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btngGol.Location = new System.Drawing.Point(272, 612);
+            this.btngGol.Location = new System.Drawing.Point(233, 560);
             this.btngGol.Name = "btngGol";
             this.btngGol.Size = new System.Drawing.Size(138, 52);
             this.btngGol.TabIndex = 139;
             this.btngGol.Text = "AGREGAR GOL";
+            this.btngGol.Click += new System.EventHandler(this.btngGol_Click);
             // 
             // numEquipos
             // 
             this.numEquipos.Font = new System.Drawing.Font("Onest Bold", 10.25F, System.Drawing.FontStyle.Bold);
-            this.numEquipos.Location = new System.Drawing.Point(461, 402);
+            this.numEquipos.Location = new System.Drawing.Point(461, 289);
             this.numEquipos.Maximum = new decimal(new int[] {
             90,
             0,
@@ -439,12 +357,152 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(448, 370);
+            this.label1.Location = new System.Drawing.Point(448, 257);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 24);
             this.label1.TabIndex = 141;
             this.label1.Text = "Minuto:";
+            // 
+            // IDJugador
+            // 
+            this.IDJugador.HeaderText = "IDJugador";
+            this.IDJugador.Name = "IDJugador";
+            this.IDJugador.ReadOnly = true;
+            // 
+            // IDEquipo
+            // 
+            this.IDEquipo.HeaderText = "IDEquipo";
+            this.IDEquipo.Name = "IDEquipo";
+            this.IDEquipo.ReadOnly = true;
+            // 
+            // Minuto
+            // 
+            this.Minuto.HeaderText = "Minuto";
+            this.Minuto.Name = "Minuto";
+            this.Minuto.ReadOnly = true;
+            // 
+            // dgvasistencia
+            // 
+            this.dgvasistencia.AllowUserToAddRows = false;
+            this.dgvasistencia.AllowUserToDeleteRows = false;
+            this.dgvasistencia.AllowUserToResizeColumns = false;
+            this.dgvasistencia.AllowUserToResizeRows = false;
+            this.dgvasistencia.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvasistencia.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvasistencia.BackgroundColor = System.Drawing.Color.White;
+            this.dgvasistencia.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvasistencia.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvasistencia.ColumnHeadersHeight = 40;
+            this.dgvasistencia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvasistencia.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3});
+            this.dgvasistencia.EnableHeadersVisualStyles = false;
+            this.dgvasistencia.Location = new System.Drawing.Point(610, 381);
+            this.dgvasistencia.MultiSelect = false;
+            this.dgvasistencia.Name = "dgvasistencia";
+            this.dgvasistencia.ReadOnly = true;
+            this.dgvasistencia.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvasistencia.RowHeadersVisible = false;
+            this.dgvasistencia.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.dgvasistencia.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.dgvasistencia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvasistencia.ShowCellToolTips = false;
+            this.dgvasistencia.ShowEditingIcon = false;
+            this.dgvasistencia.Size = new System.Drawing.Size(279, 160);
+            this.dgvasistencia.TabIndex = 142;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "IDJugador";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "IDEquipo";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Minuto";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // btnQuitarGol
+            // 
+            this.btnQuitarGol.Animated = true;
+            this.btnQuitarGol.BorderRadius = 20;
+            this.btnQuitarGol.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnQuitarGol.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnQuitarGol.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnQuitarGol.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnQuitarGol.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
+            this.btnQuitarGol.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnQuitarGol.ForeColor = System.Drawing.Color.Black;
+            this.btnQuitarGol.HoverState.BorderColor = System.Drawing.Color.Black;
+            this.btnQuitarGol.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.btnQuitarGol.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.btnQuitarGol.Location = new System.Drawing.Point(81, 381);
+            this.btnQuitarGol.Name = "btnQuitarGol";
+            this.btnQuitarGol.Size = new System.Drawing.Size(66, 30);
+            this.btnQuitarGol.TabIndex = 144;
+            this.btnQuitarGol.Text = "x";
+            this.btnQuitarGol.Click += new System.EventHandler(this.btnQuitarGol_Click);
+            // 
+            // btnQuitarAsistencia
+            // 
+            this.btnQuitarAsistencia.Animated = true;
+            this.btnQuitarAsistencia.BorderRadius = 20;
+            this.btnQuitarAsistencia.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnQuitarAsistencia.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnQuitarAsistencia.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnQuitarAsistencia.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnQuitarAsistencia.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
+            this.btnQuitarAsistencia.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnQuitarAsistencia.ForeColor = System.Drawing.Color.Black;
+            this.btnQuitarAsistencia.HoverState.BorderColor = System.Drawing.Color.Black;
+            this.btnQuitarAsistencia.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.btnQuitarAsistencia.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.btnQuitarAsistencia.Location = new System.Drawing.Point(538, 381);
+            this.btnQuitarAsistencia.Name = "btnQuitarAsistencia";
+            this.btnQuitarAsistencia.Size = new System.Drawing.Size(66, 30);
+            this.btnQuitarAsistencia.TabIndex = 145;
+            this.btnQuitarAsistencia.Text = "x";
+            this.btnQuitarAsistencia.Click += new System.EventHandler(this.btnQuitarAsistencia_Click);
+            // 
+            // btnConfirmar
+            // 
+            this.btnConfirmar.Animated = true;
+            this.btnConfirmar.BorderColor = System.Drawing.Color.Empty;
+            this.btnConfirmar.BorderRadius = 20;
+            this.btnConfirmar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnConfirmar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnConfirmar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnConfirmar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnConfirmar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            this.btnConfirmar.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnConfirmar.ForeColor = System.Drawing.Color.White;
+            this.btnConfirmar.HoverState.BorderColor = System.Drawing.Color.Black;
+            this.btnConfirmar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.btnConfirmar.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.btnConfirmar.Location = new System.Drawing.Point(789, 655);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.Size = new System.Drawing.Size(241, 52);
+            this.btnConfirmar.TabIndex = 146;
+            this.btnConfirmar.Text = "CONFIRMAR";
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
             // Goles
             // 
@@ -453,12 +511,13 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1042, 735);
             this.ControlBox = false;
+            this.Controls.Add(this.btnConfirmar);
+            this.Controls.Add(this.btnQuitarAsistencia);
+            this.Controls.Add(this.btnQuitarGol);
+            this.Controls.Add(this.dgvasistencia);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.numEquipos);
             this.Controls.Add(this.btngGol);
-            this.Controls.Add(this.btngTarjeta);
-            this.Controls.Add(this.dgvtarjetas);
-            this.Controls.Add(this.dgvasistencias);
             this.Controls.Add(this.dgvgoles);
             this.Controls.Add(this.dgvjugadoresVisitantes);
             this.Controls.Add(this.dgvjugadoresLocales);
@@ -486,9 +545,8 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvgoles)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvasistencias)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvtarjetas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numEquipos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvasistencia)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -508,12 +566,19 @@
         private System.Windows.Forms.Label lblequipoder;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblEncabezado;
-        public System.Windows.Forms.DataGridView dgvtarjetas;
-        public System.Windows.Forms.DataGridView dgvasistencias;
         public System.Windows.Forms.DataGridView dgvgoles;
         public Guna.UI2.WinForms.Guna2Button btngGol;
-        public Guna.UI2.WinForms.Guna2Button btngTarjeta;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown numEquipos;
+        public System.Windows.Forms.DataGridView dgvasistencia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDJugador;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDEquipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Minuto;
+        private Guna.UI2.WinForms.Guna2Button btnQuitarAsistencia;
+        private Guna.UI2.WinForms.Guna2Button btnQuitarGol;
+        public Guna.UI2.WinForms.Guna2Button btnConfirmar;
     }
 }
