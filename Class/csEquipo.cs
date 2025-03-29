@@ -77,7 +77,7 @@ namespace TorneosFut.Class
 
         public DataTable ListadeEquipos()
         {
-            DataTable dt = conexion.ListDGV("select IDEquipo,IDEstadio,NombreEquipo,Presidente,Genero,EquipacionLocal,EquipacionVisitante from Equipo");
+            DataTable dt = conexion.ListDGV("select IDEquipo,IDEstadio,NombreEquipo,Presidente,Genero,EquipacionLocal,EquipacionVisitante, ImagenEscudo from Equipo");
             return dt;
         }
         public DataTable ListadeNameEquipos(string IdTorneo)

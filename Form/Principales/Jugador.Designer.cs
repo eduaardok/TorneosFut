@@ -38,6 +38,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtBuscarJugador = new System.Windows.Forms.TextBox();
             this.ptbImagen = new System.Windows.Forms.PictureBox();
+            this.btnEstadistica = new Guna.UI2.WinForms.Guna2Button();
             this.panelDgv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJugador)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -69,7 +70,7 @@
             this.guna2Button1.HoverState.BorderColor = System.Drawing.Color.Black;
             this.guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.guna2Button1.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button1.Location = new System.Drawing.Point(536, 196);
+            this.guna2Button1.Location = new System.Drawing.Point(353, 196);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(214, 59);
             this.guna2Button1.TabIndex = 11;
@@ -92,7 +93,7 @@
             this.btnAgregarJugador.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnAgregarJugador.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnAgregarJugador.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnAgregarJugador.Location = new System.Drawing.Point(292, 196);
+            this.btnAgregarJugador.Location = new System.Drawing.Point(109, 196);
             this.btnAgregarJugador.Name = "btnAgregarJugador";
             this.btnAgregarJugador.Size = new System.Drawing.Size(222, 59);
             this.btnAgregarJugador.TabIndex = 12;
@@ -184,11 +185,34 @@
             this.ptbImagen.TabIndex = 16;
             this.ptbImagen.TabStop = false;
             // 
+            // btnEstadistica
+            // 
+            this.btnEstadistica.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnEstadistica.Animated = true;
+            this.btnEstadistica.BorderRadius = 20;
+            this.btnEstadistica.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnEstadistica.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnEstadistica.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnEstadistica.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnEstadistica.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            this.btnEstadistica.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEstadistica.ForeColor = System.Drawing.Color.White;
+            this.btnEstadistica.HoverState.BorderColor = System.Drawing.Color.Black;
+            this.btnEstadistica.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.btnEstadistica.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.btnEstadistica.Location = new System.Drawing.Point(693, 196);
+            this.btnEstadistica.Name = "btnEstadistica";
+            this.btnEstadistica.Size = new System.Drawing.Size(214, 59);
+            this.btnEstadistica.TabIndex = 17;
+            this.btnEstadistica.Text = "ESTADISTICAS";
+            this.btnEstadistica.Click += new System.EventHandler(this.btnEstadistica_Click);
+            // 
             // Jugador
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1414, 920);
+            this.Controls.Add(this.btnEstadistica);
             this.Controls.Add(this.ptbImagen);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtBuscarJugador);
@@ -222,5 +246,6 @@
         private System.Windows.Forms.TextBox txtBuscarJugador;
         public System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox ptbImagen;
+        private Guna.UI2.WinForms.Guna2Button btnEstadistica;
     }
 }

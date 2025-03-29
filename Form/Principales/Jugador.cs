@@ -22,6 +22,8 @@ namespace pruebas
         AggJugadores agregaJu;
         csJugador csJugador;
         csDGV csDGV;
+        frmEstatsGenerales estadistica;
+        frmEquiposEstadisticas equipo;
         public Jugador(string u, string c)
         {
             conexion = new csConexion(u,c);
@@ -156,6 +158,14 @@ namespace pruebas
                 string id = dgvJugador.Rows[dgvJugador.CurrentRow.Index].Cells[0].Value.ToString();
                 csJugador.MostrarImagen(id, ptbImagen);
             }
+        }
+
+        private void btnEstadistica_Click(object sender, EventArgs e)
+        {
+            string IDJugador = dgvJugador.SelectedRows[0].Cells["IDEJugador"].Value.ToString();
+            string imagen = dgvJugador.SelectedRows[0].Cells["ImagenJugador"].Value.ToString();
+            equipo = new frmEquiposEstadisticas(IDJugador, imagen);
+            equipo.Show();
         }
     }
 }

@@ -227,15 +227,15 @@ namespace pruebas
                         // Guardar Asistencias
                         foreach (DataGridViewRow row in dgvasistencia.Rows)
                         {
-                            if (row.Cells["IDJugador"].Value != null) // Verifica que la fila tenga datos
+                            if (row.Cells["IDJugador1"].Value != null) // Verifica que la fila tenga datos
                             {
                                 using (SqlCommand cmd = new SqlCommand("spInsertarAsistencia", conexion.Conexion, transaccion))
                                 {
                                     cmd.CommandType = CommandType.StoredProcedure;
                                     cmd.Parameters.AddWithValue("@IDPartido", int.Parse(Id));
-                                    cmd.Parameters.AddWithValue("@IDJugador", (row.Cells["IDJugador"].Value));
-                                    cmd.Parameters.AddWithValue("@IDEquipo", (row.Cells["IDEquipo"].Value));
-                                    cmd.Parameters.AddWithValue("@Minuto", Convert.ToInt32(row.Cells["Minuto"].Value));
+                                    cmd.Parameters.AddWithValue("@IDJugador", (row.Cells["IDJugador1"].Value));
+                                    cmd.Parameters.AddWithValue("@IDEquipo", (row.Cells["IDEquipo1"].Value));
+                                    cmd.Parameters.AddWithValue("@Minuto", Convert.ToInt32(row.Cells["Minuto1"].Value));
 
                                     cmd.ExecuteNonQuery();
                                 }

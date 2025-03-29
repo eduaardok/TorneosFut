@@ -22,6 +22,8 @@ namespace TorneosFut
         csDGV csDGV;
         Estadio esta;
         AgregarJugadorEquipo aggjugadorEquipo;
+        frmEstatsGenerales estadistica;
+        frmEquiposEstadisticas equipos;
         public Equipos(string u, string c)
         {
             conexion = new csConexion(u,c);
@@ -189,6 +191,14 @@ namespace TorneosFut
         private void panelmodul_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnEquipos_Click(object sender, EventArgs e)
+        {
+            string IDEquipo = dgvEquipos.SelectedRows[0].Cells["IDEquipo"].Value.ToString();
+            string imagen = dgvEquipos.SelectedRows[0].Cells["ImagenEscudo"].Value.ToString();
+            equipos = new frmEquiposEstadisticas(IDEquipo, imagen);
+            equipos.Show();
         }
     }
 }
