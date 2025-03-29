@@ -239,7 +239,7 @@ namespace TorneosFut
                 $"        <ClaveBD>{clavebd}</ClaveBD>" +
                 "    </Usuario>" +
                 "</Usuarios>";
-            string consultaSQL = $"DECLARE @Datos XML = '{xmlUsuario}'; EXEC spRegistrarUsuario @Datos;";
+            string consultaSQL = $"DECLARE @Datos varchar(MAX) = '{xmlUsuario}'; EXEC spRegistrarUsuario @Datos;";
 
             return csConexion.Consulta(consultaSQL);
         }

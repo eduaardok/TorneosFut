@@ -85,6 +85,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form\Principales\Formato.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Principales\Formato.Designer.cs">
+      <DependentUpon>Formato.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\AgregarEditar\AggFormato.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\AgregarEditar\AggFormato.Designer.cs">
+      <DependentUpon>AggFormato.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\AgregarEditar\AgregarTitulares.cs">
       <SubType>Form</SubType>
     </Compile>
