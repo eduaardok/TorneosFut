@@ -132,100 +132,274 @@ namespace pruebas
             }
         }
 
-       
+        private int ObtenerCantidadGrupos(string idTorneo)
+        {
+            DataTable dt = conexion.ListDGV($"SELECT F.CantidadGrupos FROM Formato F INNER JOIN Torneo T ON F.IDFormato = T.IDFormato WHERE T.IDTorneo = {idTorneo}");
+            if (dt.Rows.Count > 0)
+            {
+                return Convert.ToInt32(dt.Rows[0]["CantidadGrupos"]);
+            }
+            return 1; // Valor por defecto si no se encuentra el formato
+        }
 
         private void btnGenerarPartidos_Click(object sender, EventArgs e)
-        {
-            if(csDatos.ObtenerCantidadPartidosGenerados(IdTorneo) == 0)
-            {
-                List<string> equipos = csDatos.ObtenerListaEquiposTorneo(IdTorneo);
-                GenerarFixture(equipos);
-            }
-            ActualizarTabla();
-        }
-        void GenerarFixture(List<string> equipos)
         {
             DataGridView dgvPartidos = new DataGridView();
             dgvPartidos.Columns.Add("Jornada", "Jornada");
             dgvPartidos.Columns.Add("EquipoLocal", "EquipoLocal");
             dgvPartidos.Columns.Add("EquipoVisitante", "EquipoVisitante");
-
-            int numJornadas = equipos.Count - 1;
-            int partido = 0;
-
-            // Crear un patrón para alternar local y visitante
-            List<bool> alternarLocalidad = new List<bool>();
-
-            // Generamos el patrón de local/visitante para todas las jornadas
-            for (int i = 0; i < numJornadas; i++)
+            dgvPartidos.Columns.Add("Grupo", "Grupo");
+            if (csDatos.ObtenerCantidadPartidosGenerados(IdTorneo) == 0)
             {
-                // Alternamos el rol entre Local y Visitante
-                for (int j = 0; j < equipos.Count / 2; j++)
+                List<string> equipos = csDatos.ObtenerListaEquiposTorneo(IdTorneo);
+                GenerarFixtureGrupos(equipos);
+                for (int i = 0; i < dgvPartidos.Rows.Count - 1; i++)
                 {
-                    alternarLocalidad.Add(j % 2 == 0); // Los partidos alternan entre local (true) y visitante (false)
+                    if (!conexion.Consulta($"insert into Partido (IDTorneo, IDEstadio, Jornada, EquipoLocal, EquipoVisitante, EstadoPartido) " +
+                         $"values ({IdTorneo},1, {dgvPartidos.Rows[i].Cells["Jornada"].Value}, '{dgvPartidos.Rows[i].Cells["EquipoLocal"].Value}'," +
+                         $"'{dgvPartidos.Rows[i].Cells["EquipoVisitante"].Value}', 'PROGRAMADO')"))
+                        return;
+                }
+                ActualizarTabla();
+            }
+            void GenerarFixtureIda(List<string> equipos, int grupo)
+            {
+                // DataGridView dgvPartidos = new DataGridView();
+                dgvPartidos.Columns.Add("Jornada", "Jornada");
+                dgvPartidos.Columns.Add("EquipoLocal", "EquipoLocal");
+                dgvPartidos.Columns.Add("EquipoVisitante", "EquipoVisitante");
+                dgvPartidos.Columns.Add("Grupo", "Grupo");
+                int numEquipos = equipos.Count;
+                int numJornadas = numEquipos - 1;
+                List<(string, string)> partidos = new List<(string, string)>();
+
+                // Generar jornadas de ida
+                for (int jornada = 1; jornada <= numJornadas; jornada++)
+                {
+                    List<(string, string)> partidosJornada = new List<(string, string)>();
+
+                    for (int i = 0; i < numEquipos / 2; i++)
+                    {
+                        string equipoLocal = (i % 2 == 0) ? equipos[i] : equipos[numEquipos - 1 - i];
+                        string equipoVisitante = (i % 2 == 0) ? equipos[numEquipos - 1 - i] : equipos[i];
+                        partidosJornada.Add((equipoLocal, equipoVisitante));
+                    }
+
+                    partidos.AddRange(partidosJornada);
+
+                    // Rotar los equipos para la siguiente jornada
+                    equipos = RotarEquipos(equipos);
+                }
+
+                // Asignar partidos a las filas de dgvPartidos
+                int partidoIndex = 0;
+                for (int jornada = 1; jornada <= numJornadas; jornada++)
+                {
+                    for (int i = 0; i < numEquipos / 2; i++)
+                    {
+                        dgvPartidos.Rows.Add();
+                        dgvPartidos.Rows[partidoIndex].Cells["Jornada"].Value = jornada.ToString();
+                        dgvPartidos.Rows[partidoIndex].Cells["EquipoLocal"].Value = partidos[partidoIndex].Item1;
+                        dgvPartidos.Rows[partidoIndex].Cells["EquipoVisitante"].Value = partidos[partidoIndex].Item2;
+                        dgvPartidos.Rows[partidoIndex].Cells["Grupo"].Value = grupo.ToString();
+                        partidoIndex++;
+                    }
                 }
             }
-
-            // Crear partidos jornada por jornada
-            for (int jornada = 1; jornada <= numJornadas; jornada++)
+            /*
+            void GenerarFixture(List<string> equipos)
             {
-                // Generar partidos (simplificado)
-                for (int i = 0; i < equipos.Count / 2; i++)
-                {
-                    dgvPartidos.Rows.Add();
-                    string equipoLocal, equipoVisitante;
+                DataGridView dgvPartidos = new DataGridView();
+                dgvPartidos.Columns.Add("Jornada", "Jornada");
+                dgvPartidos.Columns.Add("EquipoLocal", "EquipoLocal");
+                dgvPartidos.Columns.Add("EquipoVisitante", "EquipoVisitante");
 
-                    // Dependiendo de si es Local o Visitante en la jornada, asignamos los equipos
-                    if (alternarLocalidad[partido])
+                int numJornadas = equipos.Count - 1;
+                int partido = 0;
+
+                // Crear un patrón para alternar local y visitante
+                List<bool> alternarLocalidad = new List<bool>();
+
+                // Generamos el patrón de local/visitante para todas las jornadas
+                for (int i = 0; i < numJornadas; i++)
+                {
+                    // Alternamos el rol entre Local y Visitante
+                    for (int j = 0; j < equipos.Count / 2; j++)
                     {
-                        equipoLocal = equipos[i];
-                        equipoVisitante = equipos[equipos.Count - 1 - i];
+                        alternarLocalidad.Add(j % 2 == 0); // Los partidos alternan entre local (true) y visitante (false)
+                    }
+                }
+
+                // Crear partidos jornada por jornada
+                for (int jornada = 1; jornada <= numJornadas; jornada++)
+                {
+                    // Generar partidos (simplificado)
+                    for (int i = 0; i < equipos.Count / 2; i++)
+                    {
+                        dgvPartidos.Rows.Add();
+                        string equipoLocal, equipoVisitante;
+
+                        // Dependiendo de si es Local o Visitante en la jornada, asignamos los equipos
+                        if (alternarLocalidad[partido])
+                        {
+                            equipoLocal = equipos[i];
+                            equipoVisitante = equipos[equipos.Count - 1 - i];
+                        }
+                        else
+                        {
+                            equipoLocal = equipos[equipos.Count - 1 - i];
+                            equipoVisitante = equipos[i];
+                        }
+
+                        // Asignar valores a las celdas del DataGridView
+                        dgvPartidos.Rows[partido].Cells["Jornada"].Value = jornada.ToString();
+                        dgvPartidos.Rows[partido].Cells["EquipoLocal"].Value = equipoLocal;
+                        dgvPartidos.Rows[partido].Cells["EquipoVisitante"].Value = equipoVisitante;
+
+                        partido++;
+                    }
+
+                    // Rotar equipos para la siguiente jornada después de haber generado los partidos
+                    equipos = RotarEquipos(equipos);
+                }
+                for (int i = 0; i < dgvPartidos.Rows.Count-1; i++)
+                {
+                    if (!conexion.Consulta($"insert into Partido (IDTorneo, IDEstadio, Jornada, EquipoLocal, EquipoVisitante, EstadoPartido) " +
+                         $"values ({IdTorneo},1, {dgvPartidos.Rows[i].Cells["Jornada"].Value}, '{dgvPartidos.Rows[i].Cells["EquipoLocal"].Value}'," +
+                         $"'{dgvPartidos.Rows[i].Cells["EquipoVisitante"].Value}', 'PROGRAMADO')"))
+                        return;
+
+                }
+                MessageBox.Show("Partidos generados correctamente");
+            }*/
+            void GenerarFixtureIdaVuelta(List<string> equipos, int grupo)
+            {
+                int cantidadGrupos = ObtenerCantidadGrupos(IdTorneo);
+                int equiposPorGrupo = equipos.Count / cantidadGrupos;
+
+                //DataGridView dgvPartidos = new DataGridView();
+                dgvPartidos.Columns.Add("Jornada", "Jornada");
+                dgvPartidos.Columns.Add("EquipoLocal", "EquipoLocal");
+                dgvPartidos.Columns.Add("EquipoVisitante", "EquipoVisitante");
+                dgvPartidos.Columns.Add("Grupo", "Grupo");
+
+                for (int grupoo = 1; grupoo <= cantidadGrupos; grupoo++)
+                {
+                    List<string> equiposGrupo = equipos.Skip((grupoo - 1) * equiposPorGrupo).Take(equiposPorGrupo).ToList();
+                    bool esIdaVuelta = EsIdaVuelta(); // Método que determina si el torneo es de ida y vuelta
+
+                    if (esIdaVuelta)
+                    {
+                        GenerarFixtureIdaVuelta(equiposGrupo, grupo);
                     }
                     else
                     {
-                        equipoLocal = equipos[equipos.Count - 1 - i];
-                        equipoVisitante = equipos[i];
+                        GenerarFixtureIda(equiposGrupo, grupo);
                     }
-
-                    // Asignar valores a las celdas del DataGridView
-                    dgvPartidos.Rows[partido].Cells["Jornada"].Value = jornada.ToString();
-                    dgvPartidos.Rows[partido].Cells["EquipoLocal"].Value = equipoLocal;
-                    dgvPartidos.Rows[partido].Cells["EquipoVisitante"].Value = equipoVisitante;
-
-                    partido++;
                 }
 
-                // Rotar equipos para la siguiente jornada después de haber generado los partidos
-                equipos = RotarEquipos(equipos);
             }
-            for (int i = 0; i < dgvPartidos.Rows.Count-1; i++)
+            bool EsIdaVuelta()
             {
-                if (!conexion.Consulta($"insert into Partido (IDTorneo, IDEstadio, Jornada, EquipoLocal, EquipoVisitante, EstadoPartido) " +
-                     $"values ({IdTorneo},1, {dgvPartidos.Rows[i].Cells["Jornada"].Value}, '{dgvPartidos.Rows[i].Cells["EquipoLocal"].Value}'," +
-                     $"'{dgvPartidos.Rows[i].Cells["EquipoVisitante"].Value}', 'PROGRAMADO')"))
-                    return;
+                DataTable dt = conexion.ListDGV("select F.IdaVueltaGrupo from Formato F inner join Torneos T on F.IDFormato = T.IDFormato where T.IDTorneo = " + IdTorneo);
+                if (dt.Rows[0][0].ToString() == "Si")
+                    return true;
+                return false; // Cambia esto según tu lógica
+            }
+            void GenerarFixtureGrupos(List<string> equipos)
+            {
+                int cantidadGrupos = ObtenerCantidadGrupos(IdTorneo);
+                int equiposPorGrupo = equipos.Count / cantidadGrupos;
+
+                //  DataGridView dgvPartidos = new DataGridView();
+                dgvPartidos.Columns.Add("Jornada", "Jornada");
+                dgvPartidos.Columns.Add("EquipoLocal", "EquipoLocal");
+                dgvPartidos.Columns.Add("EquipoVisitante", "EquipoVisitante");
+                dgvPartidos.Columns.Add("Grupo", "Grupo");
+
+                int partido = 0;
+
+                for (int grupo = 1; grupo <= cantidadGrupos; grupo++)
+                {
+                    List<string> equiposGrupo = equipos.Skip((grupo - 1) * equiposPorGrupo).Take(equiposPorGrupo).ToList();
+                    int numJornadas = equiposGrupo.Count - 1;
+
+                    // Crear un patrón para alternar local y visitante
+                    List<bool> alternarLocalidad = new List<bool>();
+
+                    // Generamos el patrón de local/visitante para todas las jornadas
+                    for (int i = 0; i < numJornadas; i++)
+                    {
+                        // Alternamos el rol entre Local y Visitante
+                        for (int j = 0; j < equiposGrupo.Count / 2; j++)
+                        {
+                            alternarLocalidad.Add(j % 2 == 0); // Los partidos alternan entre local (true) y visitante (false)
+                        }
+                    }
+
+                    // Crear partidos jornada por jornada
+                    for (int jornada = 1; jornada <= numJornadas; jornada++)
+                    {
+                        // Generar partidos (simplificado)
+                        for (int i = 0; i < equiposGrupo.Count / 2; i++)
+                        {
+                            dgvPartidos.Rows.Add();
+                            string equipoLocal, equipoVisitante;
+
+                            // Dependiendo de si es Local o Visitante en la jornada, asignamos los equipos
+                            if (alternarLocalidad[partido])
+                            {
+                                equipoLocal = equiposGrupo[i];
+                                equipoVisitante = equiposGrupo[equiposGrupo.Count - 1 - i];
+                            }
+                            else
+                            {
+                                equipoLocal = equiposGrupo[equiposGrupo.Count - 1 - i];
+                                equipoVisitante = equiposGrupo[i];
+                            }
+
+                            // Asignar valores a las celdas del DataGridView
+                            dgvPartidos.Rows[partido].Cells["Jornada"].Value = jornada.ToString();
+                            dgvPartidos.Rows[partido].Cells["EquipoLocal"].Value = equipoLocal;
+                            dgvPartidos.Rows[partido].Cells["EquipoVisitante"].Value = equipoVisitante;
+                            dgvPartidos.Rows[partido].Cells["Grupo"].Value = grupo.ToString();
+
+                            partido++;
+                        }
+
+                        // Rotar equipos para la siguiente jornada después de haber generado los partidos
+                        equiposGrupo = RotarEquipos(equiposGrupo);
+                    }
+                }
+
+                for (int i = 0; i < dgvPartidos.Rows.Count - 1; i++)
+                {
+                    if (!conexion.Consulta($"insert into Partido (IDTorneo, IDEstadio, Jornada, EquipoLocal, EquipoVisitante, EstadoPartido, Grupo) " +
+                         $"values ({IdTorneo}, 1, {dgvPartidos.Rows[i].Cells["Jornada"].Value}, '{dgvPartidos.Rows[i].Cells["EquipoLocal"].Value}'," +
+                         $"'{dgvPartidos.Rows[i].Cells["EquipoVisitante"].Value}', 'PROGRAMADO', {dgvPartidos.Rows[i].Cells["Grupo"].Value})"))
+                        return;
+                }
+                MessageBox.Show("Partidos generados correctamente");
 
             }
-            MessageBox.Show("Partidos generados correctamente");
+
+            List<string> RotarEquipos(List<string> equipos)
+            {
+                if (equipos.Count < 2)
+                    return equipos; // Sin rotación si hay menos de 2 equipos
+                                    // Fijar el primer equipo y rotar el resto
+                string equipoFijo = equipos[0]; // Fijar el primer equipo
+                List<string> resto = equipos.GetRange(1, equipos.Count - 1); // Tomar los demás
+                string ultimo = resto[resto.Count - 1]; // Guardar el último
+                resto.RemoveAt(resto.Count - 1); // Quitar el último
+                resto.Insert(0, ultimo); // Insertarlo al inicio
+
+                List<string> resultado = new List<string> { equipoFijo }; // Iniciar con el fijo
+                resultado.AddRange(resto); // Agregar los rotados
+                return resultado;
+            }
         }
-
-
-        List<string> RotarEquipos(List<string> equipos)
-        {
-            if (equipos.Count < 2) return equipos; // Sin rotación si hay menos de 2 equipos
-
-            // Fijar el primer equipo y rotar el resto
-            string equipoFijo = equipos[0]; // Fijar el primer equipo
-            List<string> resto = equipos.GetRange(1, equipos.Count - 1); // Tomar los demás
-            string ultimo = resto[resto.Count - 1]; // Guardar el último
-            resto.RemoveAt(resto.Count - 1); // Quitar el último
-            resto.Insert(0, ultimo); // Insertarlo al inicio
-
-            List<string> resultado = new List<string> { equipoFijo }; // Iniciar con el fijo
-            resultado.AddRange(resto); // Agregar los rotados
-            return resultado;
-        }
-
+     
         private void txtBuscarPartido_TextChanged(object sender, EventArgs e)
         {
             if (txtBuscarPartido.Text == "Buscar por nombre de Equipo")
@@ -292,6 +466,28 @@ namespace pruebas
                 agregarTitulares.ShowDialog(); 
             }
             
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAmonestaciones_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAsignarFechas_Click(object sender, EventArgs e)
+        {
+            if (conexion.Consulta($"exec spAsignarFechasPartidos {IdTorneo}"))
+            {
+                MessageBox.Show("Fechas asignadas correctamente");
+            }
+            else
+            {
+                MessageBox.Show("Error al asignar fechas");
+            }
         }
     }
 }

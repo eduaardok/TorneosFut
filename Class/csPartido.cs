@@ -23,7 +23,7 @@ namespace TorneosFut.Class
         public DataTable ListadePartidoFiltro(string filtro, string id)
         {
             DataTable dt = csConexion.ListDGV($"select IDPartido, Jornada, CONCAT(EquipoLocal, '  vs  ', EquipoVisitante) as Enfrentamiento, GolesLocal, GolesVisitante, Fecha, EstadoPartido from  Partido where IDTorneo={id} " +
-                $"and EquipoLocal like '%{filtro}%' or EquipoVisitante like '%{filtro}%'");
+                $"and (EquipoLocal like '%{filtro}%' or EquipoVisitante like '%{filtro}%')");
             return dt;
         }
         public DataTable ListadePartido(string id)

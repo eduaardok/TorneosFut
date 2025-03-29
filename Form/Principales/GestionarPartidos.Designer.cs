@@ -29,15 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btnAmonestaciones = new Guna.UI2.WinForms.Guna2Button();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnSalir = new Guna.UI2.WinForms.Guna2Button();
-            this.btnGol = new Guna.UI2.WinForms.Guna2Button();
+            this.btnGolAsisTarjetas = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtBuscarPartido = new System.Windows.Forms.TextBox();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.c = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -55,29 +53,6 @@
             this.pnlDgvPartido.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPartido)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnAmonestaciones
-            // 
-            this.btnAmonestaciones.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAmonestaciones.Animated = true;
-            this.btnAmonestaciones.BorderRadius = 20;
-            this.btnAmonestaciones.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAmonestaciones.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAmonestaciones.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAmonestaciones.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAmonestaciones.Enabled = false;
-            this.btnAmonestaciones.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.btnAmonestaciones.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAmonestaciones.ForeColor = System.Drawing.Color.White;
-            this.btnAmonestaciones.HoverState.BorderColor = System.Drawing.Color.Black;
-            this.btnAmonestaciones.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
-            this.btnAmonestaciones.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnAmonestaciones.Location = new System.Drawing.Point(817, 139);
-            this.btnAmonestaciones.Name = "btnAmonestaciones";
-            this.btnAmonestaciones.Size = new System.Drawing.Size(213, 59);
-            this.btnAmonestaciones.TabIndex = 63;
-            this.btnAmonestaciones.Text = "AGREGAR AMONESTACIÓN";
-            this.btnAmonestaciones.Visible = false;
             // 
             // btnSalir
             // 
@@ -105,27 +80,27 @@
             this.btnSalir.Text = "X";
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // btnGol
+            // btnGolAsisTarjetas
             // 
-            this.btnGol.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnGol.Animated = true;
-            this.btnGol.BorderRadius = 20;
-            this.btnGol.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnGol.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnGol.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnGol.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnGol.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.btnGol.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGol.ForeColor = System.Drawing.Color.White;
-            this.btnGol.HoverState.BorderColor = System.Drawing.Color.Black;
-            this.btnGol.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
-            this.btnGol.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnGol.Location = new System.Drawing.Point(1036, 139);
-            this.btnGol.Name = "btnGol";
-            this.btnGol.Size = new System.Drawing.Size(180, 59);
-            this.btnGol.TabIndex = 60;
-            this.btnGol.Text = "AGREGAR GOLES";
-            this.btnGol.Click += new System.EventHandler(this.btnGol_Click);
+            this.btnGolAsisTarjetas.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnGolAsisTarjetas.Animated = true;
+            this.btnGolAsisTarjetas.BorderRadius = 20;
+            this.btnGolAsisTarjetas.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnGolAsisTarjetas.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnGolAsisTarjetas.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnGolAsisTarjetas.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnGolAsisTarjetas.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            this.btnGolAsisTarjetas.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGolAsisTarjetas.ForeColor = System.Drawing.Color.White;
+            this.btnGolAsisTarjetas.HoverState.BorderColor = System.Drawing.Color.Black;
+            this.btnGolAsisTarjetas.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.btnGolAsisTarjetas.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.btnGolAsisTarjetas.Location = new System.Drawing.Point(817, 139);
+            this.btnGolAsisTarjetas.Name = "btnGolAsisTarjetas";
+            this.btnGolAsisTarjetas.Size = new System.Drawing.Size(399, 59);
+            this.btnGolAsisTarjetas.TabIndex = 60;
+            this.btnGolAsisTarjetas.Text = "GESTIONAR EVENTOS DEL PARTIDO";
+            this.btnGolAsisTarjetas.Click += new System.EventHandler(this.btnGol_Click);
             // 
             // pictureBox1
             // 
@@ -151,29 +126,6 @@
             this.txtBuscarPartido.Text = "Buscar por nombre de Equipo";
             this.txtBuscarPartido.Click += new System.EventHandler(this.txtBuscarPartido_Click);
             this.txtBuscarPartido.TextChanged += new System.EventHandler(this.txtBuscarPartido_TextChanged);
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2Button1.Animated = true;
-            this.guna2Button1.BorderRadius = 20;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.Enabled = false;
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.BorderColor = System.Drawing.Color.Black;
-            this.guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
-            this.guna2Button1.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button1.Location = new System.Drawing.Point(598, 139);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(213, 59);
-            this.guna2Button1.TabIndex = 64;
-            this.guna2Button1.Text = "AGREGAR SUSTITUCIÓN";
-            this.guna2Button1.Visible = false;
             // 
             // c
             // 
@@ -261,24 +213,24 @@
             this.dgvPartido.BackgroundColor = System.Drawing.Color.White;
             this.dgvPartido.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvPartido.CausesValidation = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPartido.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPartido.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvPartido.ColumnHeadersHeight = 40;
             this.dgvPartido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPartido.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPartido.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvPartido.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPartido.EnableHeadersVisualStyles = false;
             this.dgvPartido.Location = new System.Drawing.Point(0, 0);
@@ -286,14 +238,14 @@
             this.dgvPartido.Name = "dgvPartido";
             this.dgvPartido.ReadOnly = true;
             this.dgvPartido.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPartido.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPartido.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvPartido.RowHeadersVisible = false;
             this.dgvPartido.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvPartido.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -315,7 +267,6 @@
             this.btnAsignarFechas.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnAsignarFechas.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnAsignarFechas.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAsignarFechas.Enabled = false;
             this.btnAsignarFechas.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
             this.btnAsignarFechas.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAsignarFechas.ForeColor = System.Drawing.Color.White;
@@ -327,7 +278,7 @@
             this.btnAsignarFechas.Size = new System.Drawing.Size(213, 59);
             this.btnAsignarFechas.TabIndex = 141;
             this.btnAsignarFechas.Text = "ASIGNAR FECHAS";
-            this.btnAsignarFechas.Visible = false;
+            this.btnAsignarFechas.Click += new System.EventHandler(this.btnAsignarFechas_Click);
             // 
             // btnEstadoPartido
             // 
@@ -410,9 +361,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.c);
-            this.Controls.Add(this.guna2Button1);
-            this.Controls.Add(this.btnAmonestaciones);
-            this.Controls.Add(this.btnGol);
+            this.Controls.Add(this.btnGolAsisTarjetas);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtBuscarPartido);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -432,13 +381,10 @@
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2Button btnAmonestaciones;
         private Guna.UI2.WinForms.Guna2Button btnSalir;
-        private Guna.UI2.WinForms.Guna2Button btnGol;
+        private Guna.UI2.WinForms.Guna2Button btnGolAsisTarjetas;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtBuscarPartido;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private System.Windows.Forms.Panel c;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;

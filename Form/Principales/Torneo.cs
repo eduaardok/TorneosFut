@@ -118,9 +118,17 @@ namespace TorneosFut
         {
             AggTorneo aggTorneo = new AggTorneo(true, "-1", conexion.Usuario, conexion.Clave);
             aggTorneo.ShowDialog();
+            ActualizarTabla();
             
         }
+        void ActualizarTabla()
 
+        {
+            if (txtBuscarTorneo.Text == "BBuscar por nombre del Torneo")
+                csDGV.MostrarTorneoFiltro(dgvTorneo, txtBuscarTorneo.Text);
+
+
+        }
         private void dgvTorneo_SelectionChanged(object sender, EventArgs e)
         {
             if (dgvTorneo.CurrentRow != null && dgvTorneo.CurrentRow.Index >= 0)
