@@ -16,10 +16,13 @@ namespace pruebas
     {
         csConexion conexion;
         Goles gol;
+        Plantilla plan;
         string IDPartido;
         csDGV csDGV;
         csDatos csDatos;
         string IdTorneo;
+        AgregarTitulares agregarTitulares;
+
         public GestionarPartidos(string IDtorneo,string u, string c)
         {
             conexion = new csConexion(u, c);
@@ -269,6 +272,26 @@ namespace pruebas
         private void dgvPartido_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
 
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            if (dgvPartido.CurrentRow != null && dgvPartido.CurrentRow.Index >= 0)
+            {
+                plan = new Plantilla(IDPartido,conexion.Usuario, conexion.Clave);
+                plan.ShowDialog();
+            }
+            ActualizarTabla();
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            if (dgvPartido.CurrentRow != null && dgvPartido.CurrentRow.Index >= 0)
+            {
+                agregarTitulares = new AgregarTitulares(IDPartido, conexion.Usuario, conexion.Clave);
+                agregarTitulares.ShowDialog(); 
+            }
+            
         }
     }
 }

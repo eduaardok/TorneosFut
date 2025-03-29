@@ -144,6 +144,14 @@ namespace TorneosFut
         {
             dgv.DataSource = csEquipo.ListaDeJugadoresEquipo(id);
         }
+        public void mostrarJugadoresTitulares(DataGridView dgv, string idE, string idP)
+        {
+            dgv.DataSource = csEquipo.ListaDeJugadoresTitulares(idE,int.Parse(idP));
+        }
+        public void mostrarJugadoresnoTitulares(DataGridView dgv, string idE, string idP)
+        {
+            dgv.DataSource = csEquipo.ListaDeJugadoresNoTitulares(idE, int.Parse(idP));
+        }
         //ENTRENADORES
         public void MostrarEntrenadores(DataGridView dgv)
         {
@@ -167,6 +175,12 @@ namespace TorneosFut
         {
             cmbEquipo.DataSource = csPartido.ListaDeEquipos(idPartido);
             cmbEquipo.ValueMember = "IDPartido";
+            cmbEquipo.DisplayMember = "Equipo";
+        }
+        public void MostrarEquiposCMBID(ComboBox cmbEquipo, string idPartido)
+        {
+            cmbEquipo.DataSource = csPartido.ListaDeEquipos(idPartido);
+            cmbEquipo.ValueMember = "Equipo";
             cmbEquipo.DisplayMember = "Equipo";
         }
         //TORNEOS

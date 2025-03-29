@@ -85,6 +85,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form\AgregarEditar\AgregarTitulares.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\AgregarEditar\AgregarTitulares.Designer.cs">
+      <DependentUpon>AgregarTitulares.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class\csModoFutbol.cs" />
     <Compile Include="Class\csMovimientoFinanciero.cs" />
     <Compile Include="Class\dsDataGame.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -288,6 +295,18 @@
     <Compile Include="Form\Reportes\frmEstadisticasAsistencias.Designer.cs">
       <DependentUpon>frmEstadisticasAsistencias.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\Principales\Plantilla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Principales\Plantilla.Designer.cs">
+      <DependentUpon>Plantilla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Principales\GestionFinanciera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Principales\GestionFinanciera.Designer.cs">
+      <DependentUpon>GestionFinanciera.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Form\Principales\Torneo.cs">
@@ -317,6 +336,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\AgregarEditar\AgregarJugadorEquipo.resx">
       <DependentUpon>AgregarJugadorEquipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\AgregarEditar\AgregarTitulares.resx">
+      <DependentUpon>AgregarTitulares.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Principales\Arbitro.resx">
       <DependentUpon>Arbitro.cs</DependentUpon>
@@ -351,6 +373,9 @@
     <EmbeddedResource Include="Form\Principales\GestionarPartidos.resx">
       <DependentUpon>GestionarPartidos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\Principales\GestionFinanciera.resx">
+      <DependentUpon>GestionFinanciera.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\Principales\GestionInscripcion.resx">
       <DependentUpon>GestionInscripcion.cs</DependentUpon>
     </EmbeddedResource>
@@ -377,6 +402,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Principales\Patrocinadores.resx">
       <DependentUpon>Patrocinadores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Principales\Plantilla.resx">
+      <DependentUpon>Plantilla.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Principales\Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
@@ -481,6 +509,7 @@
     <Content Include="media\door.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\soccer-field-background %281%29.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

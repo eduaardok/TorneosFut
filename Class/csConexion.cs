@@ -121,6 +121,7 @@ namespace TorneosFut
                 return false;
             }
         }
+       
         public bool CerrarCon()
         {
             conec.Close();

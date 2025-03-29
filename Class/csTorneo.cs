@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Reflection;
 using System.Security.Policy;
@@ -81,8 +82,25 @@ namespace TorneosFut.Class
             }
             return listaequipos;
         }
-        
-        
+
+        public DataTable ObtenerModoFutbolPorPartido(int idPartido)
+        {
+            string query = $@"select mf.* from Partido p join Torneo t on p.IDTorneo = t.IDTorneo 
+                                join ModoFutbol mf on t.IDModoFutbol = mf.IDModoFutbol where p.IDPartido = {idPartido}";
+            DataTable dt = csConexion.ListDGV(query);
+            return dt;
+        }
+
+        public DataTable ObtenerEquiposDelPartido(int idPartido)
+        {
+
+            string query = $@" select EquipoLocal, EquipoVisitante from Partido  where IDPartido = {idPartido}";
+            DataTable dt = csConexion.ListDGV(query);
+            return dt;
+
+        }
+
+
         #region Generar Torneo
         public bool GenerarTorneo(string torneo)
         {
@@ -140,6 +158,18 @@ namespace TorneosFut.Class
         {
             DataTable dt = csConexion.ListDGV("Select * from Formato");
             return dt;
+        }
+        public int LimitedeJugador(string IdTorneo)
+        {
+            DataTable dt = csConexion.ListDGV($"select JugadoresEnJuego from Torneo t inner join ModoFutbol M on t.IDModoFutbol=m.IDModoFutbol where t.IDTorneo= {IdTorneo}");
+            if (dt.Rows.Count > 0)
+            {
+                return Convert.ToInt32(dt.Rows[0][0]);
+            }
+            else
+            {
+                return 0;
+            }
         }
         public DataTable LlenarFormatoID(string name)
         {

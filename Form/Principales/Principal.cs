@@ -38,6 +38,7 @@ namespace TorneosFut
         Organizadores Orga;
         Auditoria auditoria;
         csDatos csDatos;
+        GestionFinanciera financiera;
         public Principal(string u, string c,string name)
         {
             esAdmin =(u == "FutXpert");
@@ -54,6 +55,7 @@ namespace TorneosFut
             Patro = new Patrocinadores(u, c);
             Orga = new Organizadores(u, c);
             auditoria = new Auditoria(u,c);
+            financiera = new GestionFinanciera(u,c);
         }
        
         public static void AbrirFormEnPanel(Panel panel, Form formHijo)
@@ -300,6 +302,11 @@ namespace TorneosFut
         private void btnAuditorias_MouseLeave(object sender, EventArgs e)
         {
             btnAuditorias.BackColor = Color.FromArgb(20, 25, 29);
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(panelModulos,financiera);
         }
     }
 }

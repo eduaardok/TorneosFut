@@ -260,5 +260,51 @@ namespace TorneosFut.Class
             else
                 return false;
         }
+        public DataTable ObtenerTitularesPorPartido(int idPartido, string idEquipo)
+        {
+            string query = $@" select j.IDJugador, j.NombreJugador + ' ' + j.ApellidoJugador as NombreCompleto, j.Posicion, je.Dorsal, j.ImagenJugador as ImagenUrl
+                            from JugadorPartido jp join Jugador j on jp.IDJugador = j.IDJugador join Jugador_Equipo je on j.IDJugador = je.IDJugador and je.IDEquipo = '{idEquipo}'
+                             where jp.IDPartido = {idPartido} and jp.EsTitular = 1 order by case  when j.Posicion like '%PORTERO%' then 1 when j.Posicion like '%DEFENSA%' then 2
+                             when j.Posicion like '%MEDIO%' then 3 when j.Posicion like '%DELANTERO%' then 4 else 5 end,  je.Dorsal";
+            DataTable dt = csConexion.ListDGV(query);
+            return dt;
+        }
+        public bool AgregarTitulares(string IDJugador, int IDPartido)
+        {
+            try
+            {
+                if (csConexion.Consulta($"exec spRegistraTitulares '{IDJugador}', {IDPartido}"))
+                    return true;
+                else
+                    return false;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show($"Error al registrar jugador: {ex.Message}");
+                return false;
+            }
+        }
+        public bool QuitarTitulares(string IDJugador, int IDPartido)
+        {
+            try
+            {
+                // Ejecuta el procedimiento almacenado para quitar al jugador de los titulares
+                if (csConexion.Consulta($"exec spQuitarTitular '{IDJugador}', {IDPartido}"))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (SqlException ex)
+            {
+                // Maneja los errores y muestra un mensaje en caso de excepciones
+                MessageBox.Show($"Error al quitar jugador de titulares: {ex.Message}");
+                return false;
+            }
+        }
+
     }
 }

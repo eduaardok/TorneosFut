@@ -15,7 +15,7 @@ namespace TorneosFut
 {
     class csDatos
     {
-        //csConexion csConexion;
+        csConexion csConexion;
         csUsuario csUsuario;
         csEntrenador csEntrenador;
         csImagenes csImagenes;
@@ -28,7 +28,7 @@ namespace TorneosFut
         csEstadio csEstadio;
         public csDatos(string u, string c)
         {
-            //csConexion = new csConexion(u, c);
+            csConexion = new csConexion(u, c);
             csUsuario = new csUsuario(u, c);
             csEntrenador = new csEntrenador(u, c);
             csImagenes = new csImagenes();
@@ -252,6 +252,59 @@ namespace TorneosFut
                 return false;
             }
         }
+        public bool InsertarJugadorTitular(string IDJugador, int IDPartido)
+        {
+            if (!JugadorYaRegistrado(IDJugador, IDPartido)) // Verifica si ya está registrado
+            {
+                if (csJugador.AgregarTitulares(IDJugador, IDPartido)) // Llama al método que ejecuta el SP
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool QuitarJugadorTitular(string IDJugador, int IDPartido)
+        {
+            if (JugadorYaEsTitular(IDJugador, IDPartido)) // Verifica si es titular en el partido
+            {
+                if (csJugador.QuitarTitulares(IDJugador, IDPartido)) // Llama al método que ejecuta el SP para quitar la titularidad
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("El jugador no está registrado como titular en este partido.");
+                return false;
+            }
+        }
+        public bool JugadorYaEsTitular(string IDJugador, int IDPartido)
+        {
+            // Aquí llamamos a un método que consulta la base de datos si el jugador ya es titular
+            DataTable dt = csConexion.ListDGV($"SELECT COUNT(1) FROM JugadorPartido WHERE IDJugador = '{IDJugador}' AND IDPartido = {IDPartido} AND esTitular = 1");
+
+            return dt.Rows.Count > 0;
+        }
+
+
+        public bool JugadorYaRegistrado(string IDJugador, int IDPartido)
+        {
+            DataTable dt = csConexion.ListDGV($"SELECT 1 FROM JugadorPartido WHERE IDJugador = '{IDJugador}' AND IDPartido = {IDPartido}");
+            return dt.Rows.Count > 0;
+        }
+
+
         public bool InsertarTorneo(string Txtnombre, string formato, string ModoFutbol, string Organizador, string te, string fin, decimal costo)
         {
             if (csTorneo.AgregarTorneo(Txtnombre, formato, ModoFutbol, Organizador, te, fin, costo))
@@ -271,6 +324,10 @@ namespace TorneosFut
                 }
                 else
                     return false;
+        }
+        public int LimiteJugador(string idTorneo)
+        {
+            return csTorneo.LimitedeJugador(idTorneo);
         }
         public bool InsertarArbittro(string id, string nombre, string apellido, string correo)
         {
@@ -330,6 +387,24 @@ namespace TorneosFut
         }
         #endregion
 
+        #region Métodos para Alineaciones
+
+        public DataTable ObtenerTitularesPorPartido(int idPartido, string idEquipo)
+        {
+            return csJugador.ObtenerTitularesPorPartido(idPartido, idEquipo);
+        }
+
+        public DataTable ObtenerModoFutbolPorPartido(int idPartido)
+        {
+            return csTorneo.ObtenerModoFutbolPorPartido(idPartido);
+        }
+
+        public DataTable ObtenerEquiposDelPartido(int idPartido)
+        {
+            return csTorneo.ObtenerEquiposDelPartido(idPartido);
+        }
+
+        #endregion
         #region Validaciones (hay que moverlas)
 
         public bool JugadorSinEquipo(string IdJugador, string IdEquipo)
@@ -451,6 +526,7 @@ namespace TorneosFut
             }
         }
         #endregion
+
         //INSCRIPCIONES
         public bool InsertarIncripcion(int IDTorneo, string IDEquipo, decimal montoAPagar, string fecha)
         {

@@ -48,6 +48,8 @@
             this.dgvPartido = new System.Windows.Forms.DataGridView();
             this.btnAsignarFechas = new Guna.UI2.WinForms.Guna2Button();
             this.btnEstadoPartido = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.c.SuspendLayout();
             this.pnlDgvPartido.SuspendLayout();
@@ -129,7 +131,7 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(27, 112);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 62);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(50, 49);
             this.pictureBox1.TabIndex = 59;
@@ -141,7 +143,7 @@
             this.txtBuscarPartido.Font = new System.Drawing.Font("Onest Light", 20F);
             this.txtBuscarPartido.ForeColor = System.Drawing.Color.Gray;
             this.txtBuscarPartido.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtBuscarPartido.Location = new System.Drawing.Point(83, 113);
+            this.txtBuscarPartido.Location = new System.Drawing.Point(68, 63);
             this.txtBuscarPartido.Multiline = true;
             this.txtBuscarPartido.Name = "txtBuscarPartido";
             this.txtBuscarPartido.Size = new System.Drawing.Size(452, 48);
@@ -349,11 +351,57 @@
             this.btnEstadoPartido.Text = "CAMBIAR ESTADO DEL PARTIDO";
             this.btnEstadoPartido.Click += new System.EventHandler(this.btnEstadoPartido_Click);
             // 
+            // guna2Button2
+            // 
+            this.guna2Button2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.guna2Button2.Animated = true;
+            this.guna2Button2.BorderRadius = 20;
+            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            this.guna2Button2.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button2.ForeColor = System.Drawing.Color.White;
+            this.guna2Button2.HoverState.BorderColor = System.Drawing.Color.Black;
+            this.guna2Button2.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.guna2Button2.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button2.Location = new System.Drawing.Point(359, 139);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.Size = new System.Drawing.Size(213, 59);
+            this.guna2Button2.TabIndex = 143;
+            this.guna2Button2.Text = "PLANTILLA";
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
+            // 
+            // guna2Button3
+            // 
+            this.guna2Button3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.guna2Button3.Animated = true;
+            this.guna2Button3.BorderRadius = 20;
+            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            this.guna2Button3.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button3.ForeColor = System.Drawing.Color.White;
+            this.guna2Button3.HoverState.BorderColor = System.Drawing.Color.Black;
+            this.guna2Button3.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.guna2Button3.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button3.Location = new System.Drawing.Point(140, 139);
+            this.guna2Button3.Name = "guna2Button3";
+            this.guna2Button3.Size = new System.Drawing.Size(213, 59);
+            this.guna2Button3.TabIndex = 144;
+            this.guna2Button3.Text = "AGREGAR TITULARES";
+            this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
+            // 
             // GestionarPartidos
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1240, 716);
+            this.Controls.Add(this.guna2Button3);
+            this.Controls.Add(this.guna2Button2);
             this.Controls.Add(this.btnEstadoPartido);
             this.Controls.Add(this.btnAsignarFechas);
             this.Controls.Add(this.pnlDgvPartido);
@@ -401,5 +449,7 @@
         public System.Windows.Forms.DataGridView dgvPartido;
         private Guna.UI2.WinForms.Guna2Button btnEstadoPartido;
         private Guna.UI2.WinForms.Guna2Button btnAsignarFechas;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button guna2Button3;
     }
 }

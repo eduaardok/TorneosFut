@@ -228,7 +228,7 @@
             // 
             this.To.AutoSize = true;
             this.To.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold);
-            this.To.Location = new System.Drawing.Point(479, 380);
+            this.To.Location = new System.Drawing.Point(460, 382);
             this.To.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.To.Name = "To";
             this.To.Size = new System.Drawing.Size(0, 24);

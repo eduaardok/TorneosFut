@@ -87,6 +87,20 @@ namespace TorneosFut.Class
             DataTable dt = conexion.ListDGV($"select JE.IDJugador, JE.IDEquipo, J.NombreJugador from Jugador_Equipo JE inner join Jugador J on JE.IDJugador = J.IDJugador where JE.IDEquipo = '{id}' and JE.FechaSalida is null");
             return dt;
         }
+        public DataTable ListaDeJugadoresNoTitulares(string idEquipo, int idPartido)
+        {
+            DataTable dt = conexion.ListDGV($@" select JE.IDJugador, JE.IDEquipo, J.NombreJugador  from Jugador_Equipo JE  inner join Jugador J on JE.IDJugador = J.IDJugador  left join 
+                                            JugadorPartido JP on JE.IDJugador = JP.IDJugador and JP.IDPartido = {idPartido} WHERE JE.IDEquipo = '{idEquipo}' and JE.FechaSalida is null
+                                            AND (JP.IDJugador is null or JP.esTitular = 0)");
+            return dt;
+        }
+        public DataTable ListaDeJugadoresTitulares(string idEquipo, int idPartido)
+        {
+            DataTable dt = conexion.ListDGV($@"select JE.IDJugador, JE.IDEquipo, J.NombreJugador from Jugador_Equipo JE inner join Jugador J ON JE.IDJugador = J.IDJugador 
+                                             inner join JugadorPartido JP ON JE.IDJugador = JP.IDJugador where JE.IDEquipo = '{idEquipo}' and JE.FechaSalida IS NULL
+                                               AND JP.IDPartido = {idPartido} AND JP.esTitular = 1");
+            return dt;
+        }
         public DataTable ListadeEquiposFiltro(string filtro)
         {
             DataTable dt;
