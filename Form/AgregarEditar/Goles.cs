@@ -32,8 +32,13 @@ namespace pruebas
         }
         private void editarjugador_Load(object sender, EventArgs e)
         {
-            csDGV.MostrarEquiposCMB(CmbEquipo, Id);
-            
+            dgvjugadoresLocales.DataSource = conexion.ListDGV($"select J.IDJugador, JE.IDEquipo  from Jugador_Equipo JE inner join " +
+                $"Jugador J on JE.IDJugador = J.IDJugador inner join Partido P on P.EquipoLocal = JE.IDEquipo" +
+                $" where JE.IDEquipo = P.EquipoLocal and JE.FechaSalida is null and P.IDPartido = {Id}");
+            dgvjugadoresVisitantes.DataSource = conexion.ListDGV($"select J.IDJugador, JE.IDEquipo  from Jugador_Equipo JE inner join " +
+                $"Jugador J on JE.IDJugador = J.IDJugador inner join Partido P on P.EquipoVisitante = JE.IDEquipo" +
+                $" where JE.IDEquipo = P.EquipoVisitante and JE.FechaSalida is null and P.IDPartido = {Id}");
+
         }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -102,40 +107,20 @@ namespace pruebas
         private void CmbEquipo_SelectedIndexChanged(object sender, EventArgs e)
         {
           
-           csPartido= new csPartido(conexion.Usuario,conexion.Clave,CmbEquipo.Text);
-            CMBJugador.DataSource = csPartido.ListaDeJugadoresEquipo(CmbEquipo.Text);
-            CMBJugador.ValueMember = "IDJugador";
-            CMBJugador.DisplayMember = "NombreJugador";
+           
         }
 
         private void btngCancelar_Click(object sender, EventArgs e)
         {
-            Close();
         }
 
         private void btnAgregar_Click_1(object sender, EventArgs e)
         {
-            bool local;
-            DataTable dt = conexion.ListDGV($"select count(*) from Partido where EquipoLocal = '{CmbEquipo.Text}' and IDPartido = {Id}");
-            if (dt.Rows[0][0].ToString() == "1")
-                local = true;
-            else
-                local = false;
-           // MessageBox.Show(dt.Rows[0][0].ToString() + CmbEquipo.SelectedValue);
-            if (local)
-            {
-                dt = conexion.ListDGV($"select count(*) from Gol G inner join Partido P on G.IDPartido=P.IDPartido where P.IDPartido = {Id} and P.EquipoLocal = '{CmbEquipo.Text}'");
-                int golesact = int.Parse(dt.Rows[0][0].ToString());
-                conexion.Consulta($"update Partido set GolesLocal = {golesact+1} where IDPartido = {Id}; "+
-                    $"insert into Gol (IDPartido, IDJugador, Minuto) values ({Id}, '{CMBJugador.SelectedValue}', {txtMinuto.Text})");
-            }
-            else
-            {
-                dt = conexion.ListDGV($"select count(*) from Gol G inner join Partido P on G.IDPartido=P.IDPartido where P.IDPartido = {Id} and P.EquipoVisitante = '{CmbEquipo.Text}'");
-                int golesact = int.Parse(dt.Rows[0][0].ToString());
-                conexion.Consulta($"update Partido set GolesVisitante = {golesact + 1} where IDPartido = {Id}; " +
-                    $"insert into Gol (IDPartido, IDJugador, Minuto) values ({Id}, '{CMBJugador.SelectedValue}', {txtMinuto.Text})"); 
-            }
+            
+        }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
             Close();
         }
     }
