@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -195,7 +196,146 @@ namespace pruebas
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            //
+            using (conexion.Conexion)
+            {
+                try
+                {
+                    conexion.Conexion.Open();
+
+                    SqlTransaction transaccion = conexion.Conexion.BeginTransaction();
+
+                    try
+                    {
+                        // Guardar Goles
+                        foreach (DataGridViewRow row in dgvgoles.Rows)
+                        {
+                            if (row.Cells["IDJugador"].Value != null) // Verifica que la fila tenga datos
+                            {
+                                using (SqlCommand cmd = new SqlCommand("spInsertarGol", conexion.Conexion, transaccion))
+                                {
+                                    cmd.CommandType = CommandType.StoredProcedure;
+                                    cmd.Parameters.AddWithValue("@IDPartido", int.Parse(Id));
+                                    cmd.Parameters.AddWithValue("@IDJugador", (row.Cells["IDJugador"].Value));
+                                    cmd.Parameters.AddWithValue("@IDEquipo",(row.Cells["IDEquipo"].Value));
+                                    cmd.Parameters.AddWithValue("@Minuto", Convert.ToInt32(row.Cells["Minuto"].Value));
+
+                                    cmd.ExecuteNonQuery();
+                                }
+                            }
+                        }
+
+                        // Guardar Asistencias
+                        foreach (DataGridViewRow row in dgvasistencia.Rows)
+                        {
+                            if (row.Cells["IDJugador"].Value != null) // Verifica que la fila tenga datos
+                            {
+                                using (SqlCommand cmd = new SqlCommand("spInsertarAsistencia", conexion.Conexion, transaccion))
+                                {
+                                    cmd.CommandType = CommandType.StoredProcedure;
+                                    cmd.Parameters.AddWithValue("@IDPartido", int.Parse(Id));
+                                    cmd.Parameters.AddWithValue("@IDJugador", (row.Cells["IDJugador"].Value));
+                                    cmd.Parameters.AddWithValue("@IDEquipo", (row.Cells["IDEquipo"].Value));
+                                    cmd.Parameters.AddWithValue("@Minuto", Convert.ToInt32(row.Cells["Minuto"].Value));
+
+                                    cmd.ExecuteNonQuery();
+                                }
+                            }
+                        }
+
+                        // Si todo salió bien, se confirma la transacción
+                        transaccion.Commit();
+                        MessageBox.Show("Datos guardados correctamente.");
+                        conexion.Conexion.Close();
+                        Close();
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show("Error de SQL Server: " + ex.Message);
+                        conexion.Conexion.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        transaccion.Rollback();
+                        MessageBox.Show("Error al guardar datos: " + ex.Message);
+                        conexion.Conexion.Close();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error de conexión: " + ex.Message);
+                    conexion.Conexion.Close();
+                }
+            }
         }
+        public bool InsertarGol(int idPartido, int idJugador, int idEquipo, int minuto)
+        {
+            using (conexion.Conexion)
+            {
+                try
+                {
+                    conexion.Conexion.Open();
+                    using (SqlCommand cmd = new SqlCommand("spInsertarGol", conexion.Conexion))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@IDPartido", idPartido);
+                        cmd.Parameters.AddWithValue("@IDJugador", idJugador);
+                        cmd.Parameters.AddWithValue("@IDEquipo", idEquipo);
+                        cmd.Parameters.AddWithValue("@Minuto", minuto);
+
+                        int resultado = (int)cmd.ExecuteScalar(); // Ejecuta y obtiene el código de retorno
+                        conexion.Conexion.Close();
+                        return resultado == 0; // Retorna true si no hubo error
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("Error de SQL Server: " + ex.Message);
+                    conexion.Conexion.Close();
+                    return false;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al insertar gol: " + ex.Message);
+                    conexion.Conexion.Close();
+                    return false;
+                }
+            }
+        }
+        public bool InsertarAsistencia(int idPartido, int idJugador, int idEquipo, int minuto)
+        {
+            using (conexion.Conexion)
+            {
+                try
+                {
+                    conexion.Conexion.Open();
+
+                    using (SqlCommand cmd = new SqlCommand("spInsertarAsistencia", conexion.Conexion))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@IDPartido", idPartido);
+                        cmd.Parameters.AddWithValue("@IDJugador", idJugador);
+                        cmd.Parameters.AddWithValue("@IDEquipo", idEquipo);
+                        cmd.Parameters.AddWithValue("@Minuto", minuto);
+
+                        int resultado = (int)cmd.ExecuteScalar(); // Ejecuta y obtiene el código de retorno
+
+                        return resultado == 0; // Retorna true si no hubo error
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("Error de SQL Server: " + ex.Message);
+                    conexion.Conexion.Close();
+                    return false;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al insertar asistencia: " + ex.Message);
+                    conexion.Conexion.Close();
+                    return false;
+                }
+            }
+        }
+
     }
 }
