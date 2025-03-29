@@ -27,6 +27,7 @@ namespace TorneosFut
         string IDPartido;
         csValidaciones csValidaciones;
         csDatos csDatos;
+        Formato formato;
         public Torneo(string u, string c)
         {
             conexion = new csConexion(u,c);
@@ -36,6 +37,7 @@ namespace TorneosFut
             orga = new Organizadores(u,c);
             csDGV= new csDGV(u ,c);
             arbi = new Arbitro(u,c);
+            formato = new Formato();
             csValidaciones = new csValidaciones(u, c);
         }
         public static void AbrirFormEnPanel(Panel panel, Form formHijo)
@@ -160,6 +162,12 @@ namespace TorneosFut
         {
             frmEstadisticasAsistencias frmEstadisticasAsistencias = new frmEstadisticasAsistencias();
             frmEstadisticasAsistencias.ShowDialog();
+        }
+
+        private void btnReglas_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(panelmodul, formato);
+
         }
     }
 }

@@ -75,16 +75,16 @@
             this.btnReglas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReglas.Font = new System.Drawing.Font("Onest Bold", 20F, System.Drawing.FontStyle.Bold);
             this.btnReglas.ForeColor = System.Drawing.Color.White;
-            this.btnReglas.Image = global::TorneosFut.Properties.Resources.icons8_patrocinador_50;
             this.btnReglas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReglas.Location = new System.Drawing.Point(1275, 9);
             this.btnReglas.Name = "btnReglas";
             this.btnReglas.Size = new System.Drawing.Size(183, 85);
             this.btnReglas.TabIndex = 8;
-            this.btnReglas.Text = "REGLAS";
+            this.btnReglas.Text = "FORMATO";
             this.btnReglas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnReglas.UseVisualStyleBackColor = false;
             this.btnReglas.Visible = false;
+            this.btnReglas.Click += new System.EventHandler(this.btnReglas_Click);
             // 
             // button1
             // 
