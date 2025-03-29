@@ -318,10 +318,20 @@ namespace pruebas
         {
             if (dgvPartido.CurrentRow != null && dgvPartido.CurrentRow.Index >= 0)
             {
-                agregarTitulares = new AgregarTitulares(IDPartido, IdTorneo, conexion.Usuario, conexion.Clave); 
-                agregarTitulares.ShowDialog(); 
+                string estadoPartido = dgvPartido.CurrentRow.Cells["EstadoPartido"].Value?.ToString() ?? "";
+                if (estadoPartido.ToUpper() == "FINALIZADO")
+                {
+                    MessageBox.Show("No se pueden modificar los titulares de un partido finalizado",
+                                  "Partido Finalizado",
+                                  MessageBoxButtons.OK,
+                                  MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    agregarTitulares = new AgregarTitulares(IDPartido, IdTorneo, conexion.Usuario, conexion.Clave);
+                    agregarTitulares.ShowDialog();
+                }
             }
-            
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)

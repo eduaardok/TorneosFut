@@ -21,13 +21,11 @@ namespace TorneosFut
         public AgregarTitulares(string idP, string idt, string u, string c)
         {
             InitializeComponent();
-
             csDGV = new csDGV(u, c);
             csDatos = new csDatos(u, c);
             IDPartid = idP;
             IdTorneo = idt;
             limit = csDatos.LimiteJugador(IdTorneo);
-            MessageBox.Show(limit.ToString());
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)

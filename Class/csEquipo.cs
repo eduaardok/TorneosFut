@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +23,7 @@ namespace TorneosFut.Class
         private string _equipacionVisitante;
         private string _imagenEscudo;
         private string _presidente;
+        
         public csEquipo(string u, string c)
         {
             conexion = new csConexion(u,c);
@@ -94,7 +97,31 @@ namespace TorneosFut.Class
                                             AND (JP.IDJugador is null or JP.esTitular = 0)");
             return dt;
         }
-
+        public bool GuardarFormacion(int IDPartido, string IDEquipo, string Formacion)
+        {
+            try
+            {
+                return conexion.Consulta(
+                    $"exec sp_GuardarFormacionPartido {IDPartido}, '{IDEquipo}', '{Formacion}'");
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show($"Error al guardar formación: {ex.Message}");
+                return false;
+            }
+        }
+        public string CargarFormacion(int IDPartido, string IDEquipo)
+        {
+            try
+            {
+                DataTable dt = conexion.ListDGV($"exec sp_ObtenerFormacionPartido {IDPartido}, '{IDEquipo}'");
+                return dt.Rows.Count > 0 ? dt.Rows[0]["Formacion"].ToString() : "4-4-2";
+            }
+            catch
+            {
+                return "4-4-2"; // Formación por defecto en cualquier caso de error
+            }
+        }
         public DataTable ListaDeJugadoresTitulares(string idEquipo, int idPartido)
         {
             DataTable dt = conexion.ListDGV($@"select JE.IDJugador, JE.IDEquipo, J.NombreJugador from Jugador_Equipo JE inner join Jugador J ON JE.IDJugador = J.IDJugador 
