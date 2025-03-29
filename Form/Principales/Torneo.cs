@@ -100,11 +100,11 @@ namespace TorneosFut
 
         private void btnPartidos_Click(object sender, EventArgs e)
         {
-            if(csValidaciones.ValidarEquiposInscritos(IDTorneo))
-            {
+            //if(csValidaciones.ValidarEquiposInscritos(IDTorneo))
+            //{
                 partidos = new GestionarPartidos(IDTorneo, conexion.Usuario, conexion.Clave);
                 partidos.ShowDialog();
-            }
+            //}
 
         }
         private void btnInscripcionEquipos_Click(object sender, EventArgs e)

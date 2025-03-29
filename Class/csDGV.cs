@@ -1,6 +1,7 @@
 ﻿using PruebasTorneos;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -147,6 +148,15 @@ namespace TorneosFut
         public void mostrarJugadoresTitulares(DataGridView dgv, string idE, string idP)
         {
             dgv.DataSource = csEquipo.ListaDeJugadoresTitulares(idE,int.Parse(idP));
+        }
+        public DataTable mostrarJugadoresTitularesP(string idP)
+        {
+            return csEquipo.ListaDeJugadoresTitularesP(int.Parse(idP));
+        }
+        public DataTable EjecutarConsulta(string query)
+        {
+            DataTable dt = conexion.ListDGV(query);
+            return dt;
         }
         public void mostrarJugadoresnoTitulares(DataGridView dgv, string idE, string idP)
         {

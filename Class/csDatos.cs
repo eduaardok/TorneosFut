@@ -270,6 +270,10 @@ namespace TorneosFut
                 return false;
             }
         }
+        public void EjecutarConsulta(string query)
+        {
+            csConexion.Consulta(query);
+        }
         public bool QuitarJugadorTitular(string IDJugador, int IDPartido)
         {
             if (JugadorYaEsTitular(IDJugador, IDPartido)) // Verifica si es titular en el partido
@@ -296,7 +300,10 @@ namespace TorneosFut
 
             return dt.Rows.Count > 0;
         }
-
+        public List<string> ObtenerListaEquiposGrupoTorneo(string grupo)
+        {
+            return csTorneo.ListEquiposTorneoGrupo(grupo);
+        }
 
         public bool JugadorYaRegistrado(string IDJugador, int IDPartido)
         {

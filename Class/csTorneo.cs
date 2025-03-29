@@ -53,7 +53,7 @@ namespace TorneosFut.Class
             DataTable dt = csConexion.ListDGV($"select F.CantidadEquipos from Formato F inner join Torneo T on F.IDFormato = T.IDFormato where T.IDTorneo ={torneo}");
             participantes = int.Parse(dt.Rows[0][0].ToString());
             int pagados;
-            DataTable dt1 = csConexion.ListDGV($"select count(*) from Torneo T inner join InscripcionEquipo I on T.IDTorneo = I.IDTorneo where T.IDTorneo = {torneo} and  I.Estado = 'Pagado'");
+            DataTable dt1 = csConexion.ListDGV($"select count(*) from Torneo T inner join InscripcionEquipo I on T.IDTorneo = I.IDTorneo where T.IDTorneo = {torneo} and  I.Estado = 'PAGADO'");
             pagados = int.Parse(dt1.Rows[0][0].ToString());
             if (participantes == pagados)
             {
@@ -170,6 +170,16 @@ namespace TorneosFut.Class
             {
                 return 0;
             }
+        }
+        public List<string> ListEquiposTorneoGrupo(string grupo)
+        {
+            List<string> listaequipos = new List<string>();
+            DataTable dt = csConexion.ListDGV($"select IDEquipo from GrupoEquipo where IDGrupo = {grupo}");
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                listaequipos.Add(dt.Rows[i][0].ToString());
+            }
+            return listaequipos;
         }
         public DataTable LlenarFormatoID(string name)
         {

@@ -11,142 +11,168 @@ namespace TorneosFut
     public partial class Plantilla : Form
     {
         private csDatos _datos;
-        private List<Guna2PictureBox> _controlesJugadores = new List<Guna2PictureBox>();
-        private const int TAMANO_JUGADOR = 70;
+        private csDGV csDGV;
+        private List<Guna2CirclePictureBox> _controlesJugadores = new List<Guna2CirclePictureBox>();
+        private const int TAMANO_JUGADOR = 50; // Reducimos el tamaño
+        private int _limit;
+        private int _idPartido;
+        private string _equipoLocal;
+        private string _equipoVisitante;
 
-        public Plantilla(string idPartido, string usuario, string clave)
+        public Plantilla(string idPartido, string idTorneo, string usuario, string clave)
         {
             InitializeComponent();
+
+            // Configuración inicial
+            this.Text = "Alineación del Partido";
+            this.BackColor = Color.FromArgb(240, 240, 240);
+
             _datos = new csDatos(usuario, clave);
-            
-            MostrarAlineacionEnCancha(int.Parse(idPartido));
-        }
-        
-        private void MostrarAlineacionEnCancha(int idPartido)
-        {
-            LimpiarCancha();
+            csDGV = new csDGV(usuario, clave);
+            _limit = _datos.LimiteJugador(idTorneo);
+            _idPartido = int.Parse(idPartido);
 
-            var (modo, equipoLocal, equipoVisitante) = ObtenerDatosPartido(idPartido);
-            if (modo == null) return;
+            var equipos = ObtenerEquipos(_idPartido);
+            _equipoLocal = equipos.local;
+            _equipoVisitante = equipos.visitante;
 
-            var titularesLocal = _datos.ObtenerTitularesPorPartido(idPartido, equipoLocal);
-            var titularesVisitante = _datos.ObtenerTitularesPorPartido(idPartido, equipoVisitante);
-
-            MostrarEquipoEnCancha(titularesLocal, true, modo);
-            MostrarEquipoEnCancha(titularesVisitante, false, modo);
+            CargarAlineacion();
         }
 
-        private (string modo, string local, string visitante) ObtenerDatosPartido(int idPartido)
+        private void CargarAlineacion()
         {
-            DataTable dtEquipos = _datos.ObtenerEquiposDelPartido(idPartido);
-            DataTable dtModo = _datos.ObtenerModoFutbolPorPartido(idPartido);
-
-            if (dtEquipos.Rows.Count == 0 || dtModo.Rows.Count == 0)
+            try
             {
-                MessageBox.Show("No se encontraron datos del partido");
-                return (null, null, null);
+                LimpiarCancha();
+
+                DataTable jugadoresLocal = ObtenerJugadoresTitulares(_idPartido, _equipoLocal);
+                DataTable jugadoresVisitante = ObtenerJugadoresTitulares(_idPartido, _equipoVisitante);
+
+                MostrarEquipoEnCancha(jugadoresLocal, true);
+                MostrarEquipoEnCancha(jugadoresVisitante, false);
             }
-
-            return (
-                dtModo.Rows[0]["NombreModo"].ToString(),
-                dtEquipos.Rows[0]["EquipoLocal"].ToString(),
-                dtEquipos.Rows[0]["EquipoVisitante"].ToString()
-            );
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar alineación: {ex.Message}", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void MostrarEquipoEnCancha(DataTable jugadores, bool esLocal, string modo)
+        private DataTable ObtenerJugadoresTitulares(int idPartido, string idEquipo)
         {
-            var posiciones = ObtenerPosicionesParaModo(modo, esLocal);
-            int index = 0;
+            string query = $@"SELECT j.IDJugador, 
+                            j.NombreJugador + ' ' + j.ApellidoJugador AS NombreCompleto,
+                            je.Dorsal, j.Posicion
+                            FROM JugadorPartido jp
+                            JOIN Jugador j ON jp.IDJugador = j.IDJugador
+                            JOIN Jugador_Equipo je ON j.IDJugador = je.IDJugador AND je.IDEquipo = '{idEquipo}'
+                            WHERE jp.IDPartido = {idPartido} AND jp.EsTitular = 1
+                            ORDER BY j.Posicion, je.Dorsal";
 
-            foreach (DataRow jugador in jugadores.Rows)
+            return csDGV.EjecutarConsulta(query);
+        }
+
+        private (string local, string visitante) ObtenerEquipos(int idPartido)
+        {
+            DataTable dt = _datos.ObtenerEquiposDelPartido(idPartido);
+            if (dt.Rows.Count == 0)
+                throw new Exception("No se encontró información del partido");
+
+            return (dt.Rows[0]["EquipoLocal"].ToString(),
+                   dt.Rows[0]["EquipoVisitante"].ToString());
+        }
+
+        private void MostrarEquipoEnCancha(DataTable jugadores, bool esLocal)
+        {
+            if (jugadores.Rows.Count == 0) return;
+
+            string formacion = ObtenerFormacion(jugadores.Rows.Count);
+            Point[] posiciones = CalcularPosiciones(formacion, esLocal, jugadores.Rows.Count);
+
+            for (int i = 0; i < jugadores.Rows.Count && i < posiciones.Length; i++)
             {
-                string posicion = jugador["Posicion"].ToString().ToUpper();
-                string clave = $"{posicion}_{index}";
+                DataRow jugador = jugadores.Rows[i];
+                CrearJugadorGuna2(
+                    jugador["IDJugador"].ToString(),
+                    jugador["NombreCompleto"].ToString(),
+                    jugador["Dorsal"].ToString(),
+                    posiciones[i],
+                    esLocal
+                );
+            }
+        }
 
-                if (posiciones.ContainsKey(clave))
+        private string ObtenerFormacion(int cantidadJugadores)
+        {
+            switch (cantidadJugadores)
+            {
+                case 5: return "2-2-1";
+                case 6: return "2-3-1";
+                case 7: return "3-3-1";
+                case 8: return "3-4-1";
+                case 9: return "3-4-2";
+                case 10: return "4-4-2";
+                case 11: return "4-4-2";
+                default: return "1-1-1";
+            }
+        }
+
+        private Point[] CalcularPosiciones(string formacion, bool esLocal, int totalJugadores)
+        {
+            List<Point> posiciones = new List<Point>();
+            int anchoCancha = 865; // Tamaño del formulario
+            int altoCancha = 941; // Tamaño del formulario
+            // Reducir márgenes al mínimo para maximizar el espacio
+            int margenHorizontal = 20; // Márgenes más pequeños para aprovechar el espacio
+            int margenVertical = 50;   // Márgenes verticales más pequeños
+            int ajusteLocalY = 10; // Ajuste de posición en Y para los jugadores locales
+            int ajusteVisitanteY = -10; // Ajuste de posición en Y para los visitantes
+            // Reducir espacio vertical y horizontal entre jugadores
+            int espacioVertical = (altoCancha - 2 * margenVertical) / 4; // Reducir aún más el espacio entre filas
+            int espacioHorizontal = (anchoCancha - 2 * margenHorizontal) / 5; // Reducir espacio horizontal por jugador
+            // Portero (ubicación centrada en Y)
+            int yPortero = esLocal ? margenVertical + ajusteLocalY : altoCancha - margenVertical + ajusteVisitanteY;
+            posiciones.Add(new Point(anchoCancha / 2, yPortero));
+            // Distribución por formación
+            string[] lineas = formacion.Split('-');
+            int filaActual = 1;
+            foreach (string linea in lineas)
+            {
+                int cantidad = int.Parse(linea);
+                int ajusteY = esLocal ? ajusteLocalY : ajusteVisitanteY;
+                int y = (esLocal ? margenVertical + (filaActual * espacioVertical) : altoCancha - margenVertical - (filaActual * espacioVertical)) + ajusteY;
+                // Ajustamos el espacio entre jugadores al reducir aún más el divisor
+                int espacioX = (anchoCancha - 2 * margenHorizontal) / (cantidad + 1); // Ajustamos para no dejar tanto espacio
+                for (int i = 0; i < cantidad; i++)
                 {
-                    CrearJugadorGuna2(
-                        jugador["IDJugador"].ToString(),
-                        jugador["NombreCompleto"].ToString(),
-                        posicion,
-                        jugador["Dorsal"].ToString(),
-                        posiciones[clave],
-                        esLocal
-                    );
-                    index++;
+                    int x = margenHorizontal + (i + 1) * espacioX;
+                    posiciones.Add(new Point(x, y));
                 }
+                filaActual++;
             }
+            return posiciones.ToArray();
         }
-
-        private void CrearJugadorGuna2(string idJugador, string nombreCompleto, string posicion, string dorsal, Point ubicacion, bool esLocal)
+        private void CrearJugadorGuna2(string idJugador, string nombre, string dorsal, Point ubicacion, bool esLocal)
         {
-            // Crear PictureBox de Guna2
-            var picJugador = new Guna2PictureBox
+            var picJugador = new Guna2CirclePictureBox
             {
                 Size = new Size(TAMANO_JUGADOR, TAMANO_JUGADOR),
                 Location = new Point(ubicacion.X - TAMANO_JUGADOR / 2, ubicacion.Y - TAMANO_JUGADOR / 2),
-                SizeMode = PictureBoxSizeMode.StretchImage,
-                BorderRadius = TAMANO_JUGADOR / 2,
+                SizeMode = PictureBoxSizeMode.Zoom, // Mejor uso de espacio sin distorsión
                 Cursor = Cursors.Hand,
-                Tag = idJugador
+                Tag = new { ID = idJugador, Nombre = nombre, Dorsal = dorsal },
+                FillColor = esLocal ? Color.Blue : Color.Red,
+                BackColor = Color.Transparent, // Evitar superposiciones de color
+                Anchor = AnchorStyles.None
             };
-
-          
-
-            // Configurar sombra
-            picJugador.ShadowDecoration.BorderRadius = TAMANO_JUGADOR / 2;
-            picJugador.ShadowDecoration.Depth = 10;
-            picJugador.ShadowDecoration.Enabled = true;
-            picJugador.ShadowDecoration.Color = Color.FromArgb(100, 0, 0, 0);
-
-            // Usar tu método para cargar la imagen
-
-
-
-            // Si no hay imagen, mostrar dorsal
-            if (picJugador.Image == null)
-            {
-                picJugador.Image = CrearImagenDorsal(dorsal, esLocal ? Color.Blue : Color.Red);
-            }
-
-            // Configurar tooltip
-            var toolTip = new Guna2HtmlToolTip();
-            toolTip.SetToolTip(picJugador, $"<b>{nombreCompleto}</b><br>Posición: {posicion}<br>Dorsal: {dorsal}");
-            toolTip.BackColor = Color.White;
-            toolTip.ForeColor = Color.Black;
-
-            // Label para el dorsal (opcional)
-            var lblDorsal = new Label
-            {
-                Text = dorsal,
-                ForeColor = Color.White,
-                BackColor = Color.Black,
-                Font = new Font("Segoe UI", 10, FontStyle.Bold),
-                Location = new Point(ubicacion.X - 10, ubicacion.Y + TAMANO_JUGADOR / 2 + 5),
-                AutoSize = false,
-                Size = new Size(30, 20),
-                TextAlign = ContentAlignment.MiddleCenter
-            };
-
-            pnlCancha.Controls.Add(picJugador);
-            pnlCancha.Controls.Add(lblDorsal);
-            _controlesJugadores.Add(picJugador);
-
-            // Evento para mostrar detalles
-            picJugador.Click += (sender, e) => MostrarDetallesJugador(idJugador);
-        }
-
-        private Bitmap CrearImagenDorsal(string dorsal, Color color)
-        {
-            var bmp = new Bitmap(TAMANO_JUGADOR, TAMANO_JUGADOR);
+            // Dibujar dorsal
+            using (var bmp = new Bitmap(TAMANO_JUGADOR, TAMANO_JUGADOR))
             using (var g = Graphics.FromImage(bmp))
             {
-                // Fondo circular
-                g.FillEllipse(new SolidBrush(color), 0, 0, TAMANO_JUGADOR, TAMANO_JUGADOR);
+                g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+                g.Clear(picJugador.FillColor); // Fondo del color del equipo
 
-                // Texto del dorsal
-                using (var font = new Font("Arial", 16, FontStyle.Bold))
+                using (var font = new Font("Arial", 12, FontStyle.Bold))
                 using (var brush = new SolidBrush(Color.White))
                 {
                     var format = new StringFormat
@@ -154,79 +180,80 @@ namespace TorneosFut
                         Alignment = StringAlignment.Center,
                         LineAlignment = StringAlignment.Center
                     };
-                    g.DrawString(dorsal, font, brush,
-                        new RectangleF(0, 0, TAMANO_JUGADOR, TAMANO_JUGADOR),
-                        format);
+                    g.DrawString(dorsal, font, brush, new RectangleF(0, 0, TAMANO_JUGADOR, TAMANO_JUGADOR), format);
                 }
+                picJugador.Image = (Bitmap)bmp.Clone();
             }
-            return bmp;
+
+            // Tooltip
+            var toolTip = new Guna2HtmlToolTip
+            {
+                BackColor = Color.White,
+                ForeColor = Color.Black
+            };
+            toolTip.SetToolTip(picJugador, $"<b>{nombre}</b><br>Dorsal: {dorsal}");
+
+            pnlCancha.Controls.Add(picJugador);
+            _controlesJugadores.Add(picJugador);
+
+            picJugador.Click += (sender, e) => MostrarDetallesJugador(picJugador.Tag);
         }
 
-        private Dictionary<string, Point> ObtenerPosicionesParaModo(string modo, bool esLocal)
+        private void MostrarDetallesJugador(object tag)
         {
-            var posiciones = new Dictionary<string, Point>();
-            int centroX = esLocal ? pnlCancha.Width / 3 : pnlCancha.Width * 2 / 3;
-            int centroY = pnlCancha.Height / 2;
-
-            switch (modo.ToUpper())
-            {
-                case "5V5":
-                case "FUTSAL":
-                case "BEACH":
-                    posiciones.Add("PORTERO_0", new Point(centroX, centroY));
-                    posiciones.Add("DEFENSA_0", new Point(centroX + 100, centroY - 80));
-                    posiciones.Add("DEFENSA_1", new Point(centroX + 100, centroY + 80));
-                    posiciones.Add("DELANTERO_0", new Point(centroX + 200, centroY - 80));
-                    posiciones.Add("DELANTERO_1", new Point(centroX + 200, centroY + 80));
-                    break;
-
-                case "11V11":
-                    posiciones.Add("PORTERO_0", new Point(centroX, centroY));
-                    posiciones.Add("DEFENSA_0", new Point(centroX + 80, centroY - 120));
-                    posiciones.Add("DEFENSA_1", new Point(centroX + 80, centroY - 60));
-                    posiciones.Add("DEFENSA_2", new Point(centroX + 80, centroY));
-                    posiciones.Add("DEFENSA_3", new Point(centroX + 80, centroY + 60));
-                    posiciones.Add("MEDIO_0", new Point(centroX + 160, centroY - 100));
-                    posiciones.Add("MEDIO_1", new Point(centroX + 160, centroY - 30));
-                    posiciones.Add("MEDIO_2", new Point(centroX + 160, centroY + 30));
-                    posiciones.Add("MEDIO_3", new Point(centroX + 160, centroY + 100));
-                    posiciones.Add("DELANTERO_0", new Point(centroX + 240, centroY - 70));
-                    posiciones.Add("DELANTERO_1", new Point(centroX + 240, centroY));
-                    posiciones.Add("DELANTERO_2", new Point(centroX + 240, centroY + 70));
-                    break;
-            }
-
-            if (!esLocal)
-            {
-                var newPositions = new Dictionary<string, Point>();
-                foreach (var pos in posiciones)
-                {
-                    newPositions.Add(pos.Key, new Point(pnlCancha.Width - pos.Value.X, pos.Value.Y));
-                }
-                return newPositions;
-            }
-
-            return posiciones;
-        }
-
-        private void MostrarDetallesJugador(string idJugador)
-        {
-            // Implementa la lógica para mostrar detalles del jugador
-            MessageBox.Show($"Detalles del jugador {idJugador}");
+            dynamic info = tag;
+            MessageBox.Show($"Nombre: {info.Nombre}\nDorsal: {info.Dorsal}",
+                          $"Jugador #{info.ID}",
+                          MessageBoxButtons.OK,
+                          MessageBoxIcon.Information);
         }
 
         private void LimpiarCancha()
         {
             foreach (var control in _controlesJugadores)
             {
-                pnlCancha.Controls.Remove(control);
+                if (control != null && !control.IsDisposed)
+                {
+                    pnlCancha.Controls.Remove(control);
+                    control.Dispose();
+                }
             }
             _controlesJugadores.Clear();
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            Close();
+            this.Close();
         }
+
+        protected override void OnResize(EventArgs e)
+        {
+            base.OnResize(e);
+            RedibujarCancha();
+        }
+
+        private void RedibujarCancha()
+        {
+            if (_idPartido > 0 && _limit > 0)
+                CargarAlineacion();
+        }
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+
+            // Configurar panel de cancha
+            const int margin = 20;
+            pnlCancha.Size = new Size(
+                this.ClientSize.Width - (margin * 2),
+                this.ClientSize.Height - (margin * 2) - btnCerrar.Height - 10);
+            pnlCancha.Location = new Point(margin, margin);
+
+            // Configurar botón de cerrar
+            btnCerrar.Location = new Point(
+                this.ClientSize.Width - btnCerrar.Width - margin,
+                this.ClientSize.Height - btnCerrar.Height - margin);
+        }
+
     }
 }

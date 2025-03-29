@@ -17,14 +17,16 @@ namespace TorneosFut
         csDatos csDatos;
         string IDPartid;
         int limit;
-        public AgregarTitulares(string idt,string u, string c)
+        string IdTorneo;
+        public AgregarTitulares(string idP, string idt, string u, string c)
         {
             InitializeComponent();
 
-            csDGV = new csDGV(u,c);
-            csDatos = new csDatos(u,c);
-            IDPartid = idt;
-            limit = csDatos.LimiteJugador(idt);
+            csDGV = new csDGV(u, c);
+            csDatos = new csDatos(u, c);
+            IDPartid = idP;
+            IdTorneo = idt;
+            limit = csDatos.LimiteJugador(IdTorneo);
             MessageBox.Show(limit.ToString());
         }
 
