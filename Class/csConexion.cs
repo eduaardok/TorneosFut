@@ -15,7 +15,7 @@ namespace TorneosFut
         csDatos csDatos;
         private SqlConnection conec;
         //Server VPN
-        private string _server = "26.102.193.210";
+        private string _server = "26.76.4.61";
         private string _database = "BDTorneosBetaV2";
         //Server Local
         /* private string _server = "(local)";
