@@ -346,6 +346,9 @@
     <EmbeddedResource Include="Form\AgregarEditar\AggEditPatrocinador.resx">
       <DependentUpon>AggEditPatrocinador.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\AgregarEditar\AggFormato.resx">
+      <DependentUpon>AggFormato.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\AgregarEditar\AgregarJugadorEquipo.resx">
       <DependentUpon>AgregarJugadorEquipo.cs</DependentUpon>
     </EmbeddedResource>
