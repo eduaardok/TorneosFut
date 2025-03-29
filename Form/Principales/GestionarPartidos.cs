@@ -273,18 +273,39 @@ namespace pruebas
         {
             if(dgvPartido.Rows.Count>0)
             {
-                if (dgvPartido.Rows[dgvPartido.CurrentCell.RowIndex].Cells["GolesLocal"].Value == null || dgvPartido.Rows[dgvPartido.CurrentCell.RowIndex].Cells["GolesLocal"].Value.ToString() == "")
-                {
-                    conexion.Consulta($"update Partido set GolesLocal=0 where IDPartido={dgvPartido.Rows[dgvPartido.CurrentCell.RowIndex].Cells["IDPartido"].Value.ToString()}");
-                }
-                if(dgvPartido.Rows[dgvPartido.CurrentCell.RowIndex].Cells["GolesVisitante"].Value == null || dgvPartido.Rows[dgvPartido.CurrentCell.RowIndex].Cells["GolesVisitante"].Value.ToString() == "")
-                {
-                    conexion.Consulta($"update Partido set GolesVisitante=0 where IDPartido={dgvPartido.Rows[dgvPartido.CurrentCell.RowIndex].Cells["IDPartido"].Value.ToString()}");
+                // Confirmación antes de ejecutar el procedimiento
+                DialogResult resultado = MessageBox.Show(
+                    "¿Está seguro de que desea finalizar este partido? No podrá volver a editarlo.",
+                    "Confirmación",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning
+                );
 
-                }
-                if(dgvPartido.Rows[dgvPartido.CurrentCell.RowIndex].Cells["EstadoPartido"].Value.ToString() == "PROGRAMADO" )
+                if (resultado == DialogResult.Yes)
                 {
-                    conexion.Consulta($"update Partido set EstadoPartido = 'FINALIZADO' where IDPartido={dgvPartido.Rows[dgvPartido.CurrentCell.RowIndex].Cells["IDPartido"].Value.ToString()}");
+                    try
+                    {
+                        // Ejecutar el procedimiento almacenado
+                        conexion.Consulta($"EXEC spFinalizarPartido @IDPartido = {IDPartido}");
+
+                        // Mostrar mensaje de éxito
+                        MessageBox.Show(
+                            "El partido ha sido finalizado correctamente.",
+                            "Éxito",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information
+                        );
+                    }
+                    catch (Exception ex)
+                    {
+                        // Manejo de errores
+                        MessageBox.Show(
+                            "Error al finalizar el partido: " + ex.Message,
+                            "Error",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error
+                        );
+                    }
                 }
             }
             ActualizarTabla();
@@ -354,6 +375,7 @@ namespace pruebas
             {
                 MessageBox.Show("Error al asignar fechas");
             }
+            ActualizarTabla();
         }
     }
 }
