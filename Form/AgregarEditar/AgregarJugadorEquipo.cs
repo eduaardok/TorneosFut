@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,7 @@ namespace TorneosFut
         csDGV csDGV;
         csDatos csDatos;
         static string id;
+        Guna.UI2.WinForms.Guna2MessageDialog msg = new Guna.UI2.WinForms.Guna2MessageDialog();
         public AgregarJugadorEquipo(string u, string c, string i)
         {
             csDGV= new csDGV(u,c);
@@ -50,6 +52,14 @@ namespace TorneosFut
             panel3.Tag = "NoCambiar";
             panel4.Tag = "NoCambiar";
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
+            msg.Buttons = MessageDialogButtons.OK;
+            msg.Icon = MessageDialogIcon.Information;
+            msg.Style = MessageDialogStyle.Light;
+            if (GlobalSettings.ModoOscuro)
+            {
+                msg.Style = MessageDialogStyle.Dark;
+
+            }
         }
 
         private void btngCancelar_Click(object sender, EventArgs e)

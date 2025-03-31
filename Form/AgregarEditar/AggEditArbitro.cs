@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,9 +15,14 @@ namespace TorneosFut
     public partial class AggEditArbitro: Form
     {
         bool N;
-        public AggEditArbitro(string u, string c, bool n)
+        csDatos csDatos;
+        string ID;
+        Guna.UI2.WinForms.Guna2MessageDialog msg = new Guna.UI2.WinForms.Guna2MessageDialog();
+        public AggEditArbitro(string u, string c, bool n, string id)
         {
             N = n;
+            ID = id;
+            csDatos= new csDatos(u,c);
             InitializeComponent();
         }
 
@@ -32,16 +38,42 @@ namespace TorneosFut
             panel3.Tag = "NoCambiar";
             panel4.Tag = "NoCambiar";
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
+            msg.Buttons = MessageDialogButtons.OK;
+            msg.Icon = MessageDialogIcon.Information;
+            msg.Style = MessageDialogStyle.Light;
+            msg.Parent = this;
+            if (GlobalSettings.ModoOscuro)
+            {
+                msg.Style = MessageDialogStyle.Dark;
+
+            }
             if (!N)
             {
                 lblEncabezado.Text = "EDITAR ARBITRO";
                 btnGuardar.Text = "EDITAR";
+                txtNombre.Text = csDatos.NombreArbitro(ID);
+                txtApellido.Text=csDatos.apellidoArbitro(ID);
+                txtCorreo.Text = csDatos.CorreoArbitro(ID);
             }
         }
 
-        private void panel4_Paint(object sender, PaintEventArgs e)
+        private void btnGuardar_Click(object sender, EventArgs e)
         {
-
+            if (!N)
+            {
+                if(csDatos.EditarArbitro(ID, txtNombre.Text, txtApellido.Text, txtCorreo.Text))
+                {
+                    msg.Text = "Se Edito Correctamente";
+                    msg.Parent = this;
+                    msg.Show();
+                }
+            }
+            else if(csDatos.AgregarArbitro("", txtNombre.Text, txtApellido.Text, txtCorreo.Text))
+            {
+                msg.Text = "Se Agrego Correctamente";
+                msg.Parent = this;
+                msg.Show();
+            }
         }
     }
 }

@@ -2,9 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace TorneosFut
 {
@@ -37,6 +39,32 @@ namespace TorneosFut
             get => _descripcion;
             set => _descripcion = value;
         }
+        public string GenerarNuevoIDPatrocinador()
+        {
+            string nuevoID = "PAT1"; // Valor inicial
+            string consulta = "SELECT MAX(IDPatrocinador) FROM Patrocinador WHERE IDPatrocinador LIKE 'PAT%'";
+            DataTable dt = csConexion.ListDGV(consulta);
+            string resultado = dt.Rows[0][0].ToString();
+            try
+            {
+                if (!string.IsNullOrEmpty(resultado) && resultado != DBNull.Value.ToString())
+                {
+                    string ultimoID = resultado; 
+                    if (int.TryParse(ultimoID.Substring(3), out int numero))
+                    {
+                        nuevoID = "PAT" + (numero + 1);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al generar ID: " + ex.Message);
+            }
+
+            return nuevoID;
+        }
+
+
         #region Listas
         public DataTable ListaDePatrocinadoresFiltro(string filtro)
         {
@@ -55,7 +83,7 @@ namespace TorneosFut
         #region Insertar
         public bool AgregarPatrocinador(string id, string nombre, string descripcion)
         {
-            IDPatrocinador = id;
+            IDPatrocinador = GenerarNuevoIDPatrocinador();
             NombrePatrocinador = nombre;
             Descripcion = descripcion;
             string xmlPatrocinador =

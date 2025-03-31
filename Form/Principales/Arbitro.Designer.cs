@@ -28,15 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.panelDgv = new System.Windows.Forms.Panel();
             this.dgvArbitro = new System.Windows.Forms.DataGridView();
             this.btnAgregar = new Guna.UI2.WinForms.Guna2Button();
             this.btnEditar = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnPagoArbitro = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelDgv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArbitro)).BeginInit();
@@ -78,14 +77,14 @@
             this.dgvArbitro.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvArbitro.BackgroundColor = System.Drawing.Color.White;
             this.dgvArbitro.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Onest Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvArbitro.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Onest Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvArbitro.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvArbitro.ColumnHeadersHeight = 40;
             this.dgvArbitro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvArbitro.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -97,8 +96,8 @@
             this.dgvArbitro.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvArbitro.RowHeadersVisible = false;
             this.dgvArbitro.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
-            this.dgvArbitro.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.dgvArbitro.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvArbitro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvArbitro.ShowCellToolTips = false;
             this.dgvArbitro.ShowEditingIcon = false;
@@ -159,27 +158,6 @@
             this.label2.TabIndex = 17;
             this.label2.Text = "Lista de Arbitros";
             // 
-            // btnPagoArbitro
-            // 
-            this.btnPagoArbitro.Animated = true;
-            this.btnPagoArbitro.BorderRadius = 20;
-            this.btnPagoArbitro.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnPagoArbitro.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnPagoArbitro.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnPagoArbitro.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnPagoArbitro.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.btnPagoArbitro.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPagoArbitro.ForeColor = System.Drawing.Color.White;
-            this.btnPagoArbitro.HoverState.CustomBorderColor = System.Drawing.Color.White;
-            this.btnPagoArbitro.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
-            this.btnPagoArbitro.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnPagoArbitro.Location = new System.Drawing.Point(12, 758);
-            this.btnPagoArbitro.Name = "btnPagoArbitro";
-            this.btnPagoArbitro.Size = new System.Drawing.Size(176, 84);
-            this.btnPagoArbitro.TabIndex = 89;
-            this.btnPagoArbitro.Text = "Pagar Arbitro";
-            this.btnPagoArbitro.Click += new System.EventHandler(this.btnPagoArbitro_Click);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -196,7 +174,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1414, 920);
-            this.Controls.Add(this.btnPagoArbitro);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtFiltro);
             this.Controls.Add(this.panelDgv);
@@ -224,6 +201,5 @@
         private Guna.UI2.WinForms.Guna2Button btnAgregar;
         private Guna.UI2.WinForms.Guna2Button btnEditar;
         public System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2Button btnPagoArbitro;
     }
 }

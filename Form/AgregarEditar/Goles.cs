@@ -1,4 +1,5 @@
 ﻿using Guna.UI2.AnimatorNS;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,7 +25,7 @@ namespace pruebas
         csDGV csDGV;
         csPartido csPartido; 
         private DataGridView dgvSeleccionado;
-
+        Guna.UI2.WinForms.Guna2MessageDialog msg = new Guna.UI2.WinForms.Guna2MessageDialog();
         public Goles(string u, string c, string ID)
         {
             conexion = new csConexion(u, c);
@@ -41,6 +42,15 @@ namespace pruebas
             dgvjugadoresVisitantes.DataSource = conexion.ListDGV($"select J.IDJugador, JE.IDEquipo  from Jugador_Equipo JE inner join " +
                 $"Jugador J on JE.IDJugador = J.IDJugador inner join Partido P on P.EquipoVisitante = JE.IDEquipo" +
                 $" where JE.IDEquipo = P.EquipoVisitante and JE.FechaSalida is null and P.IDPartido = {Id}");
+            msg.Buttons = MessageDialogButtons.OK;
+            msg.Icon = MessageDialogIcon.Information;
+            msg.Style = MessageDialogStyle.Light;
+            msg.Parent = this;
+            if (GlobalSettings.ModoOscuro)
+            {
+                msg.Style = MessageDialogStyle.Dark;
+
+            }
 
         }
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -190,7 +200,8 @@ namespace pruebas
             }
             else
             {
-                MessageBox.Show("Seleccione una fila para eliminar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                msg.Text="Seleccione una fila para eliminar.";
+                msg.Show();
             }
         }
 
@@ -244,25 +255,29 @@ namespace pruebas
 
                         // Si todo salió bien, se confirma la transacción
                         transaccion.Commit();
-                        MessageBox.Show("Datos guardados correctamente.");
+                        msg.Text = "Datos guardados correctamente.";
+                        msg.Show();
                         conexion.Conexion.Close();
                         Close();
                     }
                     catch (SqlException ex)
                     {
-                        MessageBox.Show("Error de SQL Server: " + ex.Message);
+                        msg.Text="Error de SQL Server: " + ex.Message;
+                        msg.Show();
                         conexion.Conexion.Close();
                     }
                     catch (Exception ex)
                     {
                         transaccion.Rollback();
-                        MessageBox.Show("Error al guardar datos: " + ex.Message);
+                        msg.Text = "Error al guardar datos: " + ex.Message;
+                        msg.Show();
                         conexion.Conexion.Close();
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error de conexión: " + ex.Message);
+                    msg.Text = "Error de conexión: " + ex.Message;
+                    msg.Show();
                     conexion.Conexion.Close();
                 }
             }
@@ -289,13 +304,15 @@ namespace pruebas
                 }
                 catch (SqlException ex)
                 {
-                    MessageBox.Show("Error de SQL Server: " + ex.Message);
+                    msg.Text = "Error de SQL Server: " + ex.Message;
+                    msg.Show();
                     conexion.Conexion.Close();
                     return false;
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al insertar gol: " + ex.Message);
+                    msg.Text = "Error al insertar gol: " + ex.Message;
+                    msg.Show();
                     conexion.Conexion.Close();
                     return false;
                 }
@@ -324,13 +341,15 @@ namespace pruebas
                 }
                 catch (SqlException ex)
                 {
-                    MessageBox.Show("Error de SQL Server: " + ex.Message);
+                    msg.Text = "Error de SQL Server: " + ex.Message;
+                    msg.Show();
                     conexion.Conexion.Close();
                     return false;
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al insertar asistencia: " + ex.Message);
+                    msg.Text = "Error al insertar asistencia: " + ex.Message;
+                    msg.Show();
                     conexion.Conexion.Close();
                     return false;
                 }

@@ -34,8 +34,7 @@
             this.lblfecha = new System.Windows.Forms.Label();
             this.dtpNacimiento = new System.Windows.Forms.DateTimePicker();
             this.btngCancelar = new Guna.UI2.WinForms.Guna2Button();
-            this.cmbSexo = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.Correo = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,6 +47,7 @@
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.btnGuardar = new Guna.UI2.WinForms.Guna2Button();
             this.btnImportar = new Guna.UI2.WinForms.Guna2Button();
+            this.txtCorreo = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbImagen)).BeginInit();
             this.SuspendLayout();
@@ -115,29 +115,16 @@
             this.btngCancelar.Text = "CANCELAR";
             this.btngCancelar.Click += new System.EventHandler(this.btngCancelar_Click);
             // 
-            // cmbSexo
+            // Correo
             // 
-            this.cmbSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSexo.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbSexo.FormattingEnabled = true;
-            this.cmbSexo.Items.AddRange(new object[] {
-            "Masculino",
-            "Femenino"});
-            this.cmbSexo.Location = new System.Drawing.Point(36, 228);
-            this.cmbSexo.Name = "cmbSexo";
-            this.cmbSexo.Size = new System.Drawing.Size(225, 29);
-            this.cmbSexo.TabIndex = 88;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(32, 208);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 24);
-            this.label4.TabIndex = 87;
-            this.label4.Text = "Sexo";
+            this.Correo.AutoSize = true;
+            this.Correo.BackColor = System.Drawing.Color.Transparent;
+            this.Correo.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Correo.Location = new System.Drawing.Point(32, 208);
+            this.Correo.Name = "Correo";
+            this.Correo.Size = new System.Drawing.Size(72, 24);
+            this.Correo.TabIndex = 87;
+            this.Correo.Text = "Correo";
             // 
             // label3
             // 
@@ -224,7 +211,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(3, 396);
             this.panel4.TabIndex = 97;
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // guna2BorderlessForm1
             // 
@@ -253,6 +239,7 @@
             this.btnGuardar.Size = new System.Drawing.Size(127, 52);
             this.btnGuardar.TabIndex = 98;
             this.btnGuardar.Text = "AGREGAR";
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnImportar
             // 
@@ -275,12 +262,22 @@
             this.btnImportar.TabIndex = 104;
             this.btnImportar.Text = "Selccionar imagen";
             // 
+            // txtCorreo
+            // 
+            this.txtCorreo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtCorreo.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCorreo.Location = new System.Drawing.Point(36, 235);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(225, 28);
+            this.txtCorreo.TabIndex = 105;
+            // 
             // AggEditArbitro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(494, 450);
+            this.Controls.Add(this.txtCorreo);
             this.Controls.Add(this.btnImportar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.panel4);
@@ -291,8 +288,7 @@
             this.Controls.Add(this.dtpNacimiento);
             this.Controls.Add(this.btngCancelar);
             this.Controls.Add(this.ptbImagen);
-            this.Controls.Add(this.cmbSexo);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.Correo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.label2);
@@ -319,8 +315,7 @@
         public System.Windows.Forms.DateTimePicker dtpNacimiento;
         public Guna.UI2.WinForms.Guna2Button btngCancelar;
         public System.Windows.Forms.PictureBox ptbImagen;
-        public System.Windows.Forms.ComboBox cmbSexo;
-        public System.Windows.Forms.Label label4;
+        public System.Windows.Forms.Label Correo;
         public System.Windows.Forms.Label label3;
         public System.Windows.Forms.TextBox txtApellido;
         public System.Windows.Forms.Label label2;
@@ -332,5 +327,6 @@
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
         public Guna.UI2.WinForms.Guna2Button btnGuardar;
         private Guna.UI2.WinForms.Guna2Button btnImportar;
+        public System.Windows.Forms.TextBox txtCorreo;
     }
 }

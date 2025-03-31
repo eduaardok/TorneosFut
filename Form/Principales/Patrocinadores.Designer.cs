@@ -84,7 +84,7 @@
             this.btnAggPatrocinador.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnAggPatrocinador.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnAggPatrocinador.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnAggPatrocinador.Location = new System.Drawing.Point(362, 194);
+            this.btnAggPatrocinador.Location = new System.Drawing.Point(715, 176);
             this.btnAggPatrocinador.Name = "btnAggPatrocinador";
             this.btnAggPatrocinador.Size = new System.Drawing.Size(184, 52);
             this.btnAggPatrocinador.TabIndex = 27;
@@ -159,7 +159,7 @@
             this.btnEditarPatrocinador.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnEditarPatrocinador.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnEditarPatrocinador.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnEditarPatrocinador.Location = new System.Drawing.Point(162, 185);
+            this.btnEditarPatrocinador.Location = new System.Drawing.Point(571, 176);
             this.btnEditarPatrocinador.Name = "btnEditarPatrocinador";
             this.btnEditarPatrocinador.Size = new System.Drawing.Size(127, 52);
             this.btnEditarPatrocinador.TabIndex = 102;

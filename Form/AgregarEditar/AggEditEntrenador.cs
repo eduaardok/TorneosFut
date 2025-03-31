@@ -12,6 +12,7 @@ using System.Drawing.Imaging;
 using TorneosFut;
 using TorneosFut.Class;
 using System.Web.ModelBinding;
+using Guna.UI2.WinForms;
 
 namespace PruebasTorneos
 {
@@ -24,6 +25,7 @@ namespace PruebasTorneos
         static string nombreArchivo = "";
         static string id;
         static bool agregar;
+        Guna.UI2.WinForms.Guna2MessageDialog msg = new Guna.UI2.WinForms.Guna2MessageDialog();
         public AggEditEntrenador(string u, string c, bool n, string i)
         {
             conexion = new csConexion(u,c);
@@ -40,6 +42,15 @@ namespace PruebasTorneos
             panel3.Tag = "NoCambiar";
             panel4.Tag = "NoCambiar";
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
+            msg.Buttons = MessageDialogButtons.OK;
+            msg.Icon = MessageDialogIcon.Information;
+            msg.Style = MessageDialogStyle.Light;
+            msg.Parent = this;
+            if (GlobalSettings.ModoOscuro)
+            {
+                msg.Style = MessageDialogStyle.Dark;
+
+            }
             if (!agregar)
             {
                 lblEncabezado.Text = "EDITAR ENTRENADOR";
@@ -55,23 +66,21 @@ namespace PruebasTorneos
             {
                 if (csDatos.InsertarEntrenador(txtNombre.Text, txtApellido.Text, cmbSexo.Text,dtpNacimiento.Value, nombreArchivo, img.FileName))
                 {
-                    MessageBox.Show("Se registró el entrenador correctamente.");
+                    msg.Text = "Se registró el entrenador correctamente.";
+                    msg.Show();
                     Close();
                 }
-                else
-                    MessageBox.Show("no insertado");
+              
             }
             else
             {
                if(csDatos.EditarEntrenador(id, txtNombre.Text, txtApellido.Text, cmbSexo.Text, dtpNacimiento.Value, nombreArchivo, img.FileName))
                 {
-                    MessageBox.Show("Entrenador actualizado correctamente");
+                    msg.Text = "Entrenador actualizado correctamente";
+                    msg.Show();
                     Close();
                 }
-                else
-                {
-                    MessageBox.Show("Error al actualizar el entrenador");
-                }
+                
             }
         }
         void Editar()

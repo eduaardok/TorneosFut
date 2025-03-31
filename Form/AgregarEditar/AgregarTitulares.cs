@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,6 +19,7 @@ namespace TorneosFut
         string IDPartid;
         int limit;
         string IdTorneo;
+        Guna.UI2.WinForms.Guna2MessageDialog msg = new Guna.UI2.WinForms.Guna2MessageDialog();
         public AgregarTitulares(string idP, string idt, string u, string c)
         {
             InitializeComponent();
@@ -48,6 +50,15 @@ namespace TorneosFut
         {
             csDGV.MostrarEquiposCMBID(cmbModoFutbol, IDPartid);
             To.Text = dgvtitulares.Rows.Count.ToString();
+            msg.Buttons = MessageDialogButtons.OK;
+            msg.Icon = MessageDialogIcon.Information;
+            msg.Style = MessageDialogStyle.Light;
+            msg.Parent = this;
+            if (GlobalSettings.ModoOscuro)
+            {
+                msg.Style = MessageDialogStyle.Dark;
+
+            }
         }
 
         private void btngCancelar_Click(object sender, EventArgs e)
@@ -74,7 +85,9 @@ namespace TorneosFut
 
                         if (!csDatos.InsertarJugadorTitular(IDJugador, int.Parse(IDPartid)))
                         {
-                            MessageBox.Show($"No se pudo agregar al jugador {IDJugador}.");
+                            msg.Text=$"No se pudo agregar al jugador {IDJugador}.";
+                            msg.Show();
+
                         }
                         else listBox1.Items.Clear();
 
@@ -83,12 +96,15 @@ namespace TorneosFut
                 }
                 else
                 {
-                    MessageBox.Show($"No se pueden agregar más jugadores. El límite es {limit}.");
+                    msg.Text = $"No se pueden agregar más jugadores. El límite es {limit}.";
+                    msg.Show();
+
                 }
             }
             else
             {
-                MessageBox.Show($"No se pueden agregar más jugadores. El límite es {limit}.");
+                msg.Text="No se pueden agregar más jugadores. El límite es {limit}.";
+                        msg.Show();
             }
             csDGV.mostrarJugadoresTitulares(dgvtitulares, cmbModoFutbol.SelectedValue.ToString(), IDPartid);
             csDGV.mostrarJugadoresnoTitulares(dgvjugadores, cmbModoFutbol.SelectedValue.ToString(), IDPartid);
@@ -105,7 +121,8 @@ namespace TorneosFut
 
                     if (!csDatos.QuitarJugadorTitular(IDJugador, int.Parse(IDPartid)))
                     {
-                        MessageBox.Show($"No se pudo actualizar al jugador {IDJugador}.");
+                        msg.Text = $"No se pudo actualizar al jugador {IDJugador}.";
+                        msg.Show();
                     }
                 }
                 listBox1.Items.Clear();
@@ -115,9 +132,13 @@ namespace TorneosFut
             }
             else
             {
-                MessageBox.Show("No hay jugadores en la lista para quitar.");
+                msg.Text = "No hay jugadores en la lista para quitar.";
+                msg.Show();
+
             }
-                MessageBox.Show("Jugadores actualizados como no titulares.");
+            msg.Text="Jugadores actualizados como no titulares.";
+            msg.Show();
+
 
         }
 
@@ -144,13 +165,15 @@ namespace TorneosFut
             }
             else
             {
-                MessageBox.Show("Seleccione un jugador para quitar del ListBox.");
+                msg.Text = "Seleccione un jugador para quitar del ListBox.";
+                msg.Caption = "Error";
+                msg.Icon = Guna.UI2.WinForms.MessageDialogIcon.Error;
+                msg.Show();
             }
         }
 
         private void btnQuitar_Click(object sender, EventArgs e)
         {
-            // Crear una lista para almacenar las filas a eliminar
             List<DataGridViewRow> filasAEliminar = new List<DataGridViewRow>();
 
             // Verificar si se ha seleccionado alguna fila en el DataGridView
@@ -177,7 +200,10 @@ namespace TorneosFut
             }
             else
             {
-                MessageBox.Show("Seleccione al menos un jugador para quitar.");
+                msg.Text = "Seleccione al menos un jugador para quitar.";
+                msg.Caption = "Error";
+                msg.Icon = Guna.UI2.WinForms.MessageDialogIcon.Error;
+                msg.Show();
             }
         }
     }

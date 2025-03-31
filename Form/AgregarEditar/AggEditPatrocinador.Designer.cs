@@ -31,14 +31,12 @@
             this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblEncabezado = new System.Windows.Forms.Label();
-            this.lbl = new System.Windows.Forms.Label();
-            this.txtId = new System.Windows.Forms.TextBox();
             this.btnCancelar = new Guna.UI2.WinForms.Guna2Button();
             this.btnAgregar = new Guna.UI2.WinForms.Guna2Button();
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.txtUbicacion = new System.Windows.Forms.TextBox();
-            this.txtNombreEstadio = new System.Windows.Forms.TextBox();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.txtNombrePatrocinador = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -66,26 +64,6 @@
             this.lblEncabezado.Size = new System.Drawing.Size(286, 26);
             this.lblEncabezado.TabIndex = 33;
             this.lblEncabezado.Text = "AGREGAR PATROCINADOR";
-            // 
-            // lbl
-            // 
-            this.lbl.AutoSize = true;
-            this.lbl.BackColor = System.Drawing.Color.Transparent;
-            this.lbl.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl.Location = new System.Drawing.Point(45, 58);
-            this.lbl.Name = "lbl";
-            this.lbl.Size = new System.Drawing.Size(35, 24);
-            this.lbl.TabIndex = 102;
-            this.lbl.Text = "ID ";
-            // 
-            // txtId
-            // 
-            this.txtId.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtId.Location = new System.Drawing.Point(49, 85);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(121, 28);
-            this.txtId.TabIndex = 101;
-            this.txtId.Visible = false;
             // 
             // btnCancelar
             // 
@@ -127,6 +105,7 @@
             this.btnAgregar.Size = new System.Drawing.Size(138, 54);
             this.btnAgregar.TabIndex = 99;
             this.btnAgregar.Text = "AGREGAR";
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // lblDescripcion
             // 
@@ -150,22 +129,22 @@
             this.lblNombre.TabIndex = 97;
             this.lblNombre.Text = "Nombre";
             // 
-            // txtUbicacion
+            // txtDescripcion
             // 
-            this.txtUbicacion.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUbicacion.Location = new System.Drawing.Point(49, 221);
-            this.txtUbicacion.Multiline = true;
-            this.txtUbicacion.Name = "txtUbicacion";
-            this.txtUbicacion.Size = new System.Drawing.Size(340, 78);
-            this.txtUbicacion.TabIndex = 96;
+            this.txtDescripcion.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescripcion.Location = new System.Drawing.Point(49, 221);
+            this.txtDescripcion.Multiline = true;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(340, 78);
+            this.txtDescripcion.TabIndex = 96;
             // 
-            // txtNombreEstadio
+            // txtNombrePatrocinador
             // 
-            this.txtNombreEstadio.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreEstadio.Location = new System.Drawing.Point(49, 153);
-            this.txtNombreEstadio.Name = "txtNombreEstadio";
-            this.txtNombreEstadio.Size = new System.Drawing.Size(178, 28);
-            this.txtNombreEstadio.TabIndex = 95;
+            this.txtNombrePatrocinador.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombrePatrocinador.Location = new System.Drawing.Point(49, 153);
+            this.txtNombrePatrocinador.Name = "txtNombrePatrocinador";
+            this.txtNombrePatrocinador.Size = new System.Drawing.Size(178, 28);
+            this.txtNombrePatrocinador.TabIndex = 95;
             // 
             // panel4
             // 
@@ -209,14 +188,12 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.lbl);
-            this.Controls.Add(this.txtId);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.lblDescripcion);
             this.Controls.Add(this.lblNombre);
-            this.Controls.Add(this.txtUbicacion);
-            this.Controls.Add(this.txtNombreEstadio);
+            this.Controls.Add(this.txtDescripcion);
+            this.Controls.Add(this.txtNombrePatrocinador);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AggEditPatrocinador";
@@ -233,14 +210,12 @@
         #endregion
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblEncabezado;
-        private System.Windows.Forms.Label lbl;
-        public System.Windows.Forms.TextBox txtId;
         private Guna.UI2.WinForms.Guna2Button btnCancelar;
         private Guna.UI2.WinForms.Guna2Button btnAgregar;
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.Label lblNombre;
-        public System.Windows.Forms.TextBox txtUbicacion;
-        public System.Windows.Forms.TextBox txtNombreEstadio;
+        public System.Windows.Forms.TextBox txtDescripcion;
+        public System.Windows.Forms.TextBox txtNombrePatrocinador;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel1;

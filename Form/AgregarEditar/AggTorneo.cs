@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,6 +22,7 @@ namespace TorneosFut
         string form;
         string tipo;
         csDatos csDatos;
+        Guna.UI2.WinForms.Guna2MessageDialog msg = new Guna.UI2.WinForms.Guna2MessageDialog();
         csDGV csDGV;
         public AggTorneo(bool a, string i, string u, string c)
         {
@@ -59,11 +61,20 @@ namespace TorneosFut
             panel3.Tag = "NoCambiar";
             panel4.Tag = "NoCambiar";
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
+            msg.Buttons = MessageDialogButtons.OK;
+            msg.Icon = MessageDialogIcon.Information;
+            msg.Style = MessageDialogStyle.Light;
+            msg.Parent = this;
+            if (GlobalSettings.ModoOscuro)
+            {
+                msg.Style = MessageDialogStyle.Dark;
+
+            }
             Editar();
             csDGV.llenarcmbOrganizador(cmbOrganizador);
             cmbOrganizador.SelectedIndex = -1;
             csDGV.llenarcmbFormato(cmbFormato);
-            cmbFormato.SelectedIndex= -1;
+            cmbFormato.SelectedIndex = -1;
             csDGV.llenarcmbModo(cmbModoFutbol);
             cmbModoFutbol.SelectedIndex = -1;
 
@@ -83,15 +94,19 @@ namespace TorneosFut
                     if (!agg)
                     {
                         csDatos.EditarTorneo(id, txtNombre.Text, cmbFormato.SelectedValue.ToString(), cmbModoFutbol.SelectedValue.ToString(), cmbOrganizador.SelectedValue.ToString(), dtpInicio.Value.ToString(), dtpFin.Value.ToString(), decimal.Parse(txtCosto.Text));
+                        msg.Text = "Se Creo Correctamente";
+                        msg.Show();
                     }
                     else
                     {
                         csDatos.InsertarTorneo(txtNombre.Text, cmbFormato.SelectedValue.ToString(), cmbModoFutbol.SelectedValue.ToString(), cmbOrganizador.SelectedValue.ToString(), dtpInicio.Value.ToString(), dtpFin.Value.ToString(), decimal.Parse(txtCosto.Text));
                     }
                 }
-                catch(Exception)
+                catch (Exception)
                 {
-                    MessageBox.Show("Datos invalidos");
+                    msg.Text = "Datos invalidos";
+                    msg.Show();
+
                 }
             }
         }
@@ -99,10 +114,11 @@ namespace TorneosFut
         {
             if (txtNombre.Text == "" || txtCosto.Text == "" || cmbFormato.Text == "" || cmbModoFutbol.Text == "" || cmbOrganizador.Text == "" || dtpFin.Text == "" || dtpInicio.Text == "")
             {
-                MessageBox.Show("Faltan datos por llenar");
+                msg.Text = "Faltan datos por llenar";
+                msg.Show();
                 return false;
             }
-            else return true;  
+            else return true;
         }
     }
 }

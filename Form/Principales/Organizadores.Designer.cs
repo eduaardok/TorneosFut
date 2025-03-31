@@ -163,7 +163,7 @@
             this.btnEditar.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnEditar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnEditar.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnEditar.Location = new System.Drawing.Point(425, 175);
+            this.btnEditar.Location = new System.Drawing.Point(425, 193);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(127, 52);
             this.btnEditar.TabIndex = 102;

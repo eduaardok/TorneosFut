@@ -31,17 +31,14 @@
             this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblEncabezado = new System.Windows.Forms.Label();
-            this.cmbCorreos = new System.Windows.Forms.ComboBox();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.lbl = new System.Windows.Forms.Label();
-            this.txtId = new System.Windows.Forms.TextBox();
             this.btnCancelar = new Guna.UI2.WinForms.Guna2Button();
             this.btnAgregar = new Guna.UI2.WinForms.Guna2Button();
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.txtUbicacion = new System.Windows.Forms.TextBox();
-            this.txtNombreEstadio = new System.Windows.Forms.TextBox();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.txtNombreOrganizador = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -70,29 +67,12 @@
             this.lblEncabezado.TabIndex = 33;
             this.lblEncabezado.Text = "AGREGAR ORGANIZADOR";
             // 
-            // cmbCorreos
-            // 
-            this.cmbCorreos.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.cmbCorreos.BackColor = System.Drawing.Color.White;
-            this.cmbCorreos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCorreos.Font = new System.Drawing.Font("Onest Light", 12F);
-            this.cmbCorreos.FormattingEnabled = true;
-            this.cmbCorreos.Items.AddRange(new object[] {
-            "@gmail.com",
-            "@outlook.com",
-            "@yahoo.com",
-            "@hotmail.com"});
-            this.cmbCorreos.Location = new System.Drawing.Point(550, 115);
-            this.cmbCorreos.Name = "cmbCorreos";
-            this.cmbCorreos.Size = new System.Drawing.Size(231, 29);
-            this.cmbCorreos.TabIndex = 132;
-            // 
             // txtCorreo
             // 
             this.txtCorreo.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtCorreo.BackColor = System.Drawing.Color.White;
             this.txtCorreo.Font = new System.Drawing.Font("Onest Light", 12F);
-            this.txtCorreo.Location = new System.Drawing.Point(265, 116);
+            this.txtCorreo.Location = new System.Drawing.Point(26, 117);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(279, 28);
             this.txtCorreo.TabIndex = 131;
@@ -104,31 +84,11 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Onest Bold", 15.75F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
-            this.label4.Location = new System.Drawing.Point(260, 81);
+            this.label4.Location = new System.Drawing.Point(21, 82);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 26);
             this.label4.TabIndex = 130;
             this.label4.Text = "Correo:";
-            // 
-            // lbl
-            // 
-            this.lbl.AutoSize = true;
-            this.lbl.BackColor = System.Drawing.Color.Transparent;
-            this.lbl.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl.Location = new System.Drawing.Point(22, 81);
-            this.lbl.Name = "lbl";
-            this.lbl.Size = new System.Drawing.Size(35, 24);
-            this.lbl.TabIndex = 129;
-            this.lbl.Text = "ID ";
-            // 
-            // txtId
-            // 
-            this.txtId.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtId.Location = new System.Drawing.Point(22, 118);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(213, 28);
-            this.txtId.TabIndex = 128;
-            this.txtId.Visible = false;
             // 
             // btnCancelar
             // 
@@ -172,6 +132,7 @@
             this.btnAgregar.Size = new System.Drawing.Size(138, 54);
             this.btnAgregar.TabIndex = 126;
             this.btnAgregar.Text = "AGREGAR";
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // lblDescripcion
             // 
@@ -195,21 +156,21 @@
             this.lblNombre.TabIndex = 124;
             this.lblNombre.Text = "Nombre";
             // 
-            // txtUbicacion
+            // txtTelefono
             // 
-            this.txtUbicacion.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUbicacion.Location = new System.Drawing.Point(26, 254);
-            this.txtUbicacion.Name = "txtUbicacion";
-            this.txtUbicacion.Size = new System.Drawing.Size(209, 28);
-            this.txtUbicacion.TabIndex = 123;
+            this.txtTelefono.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefono.Location = new System.Drawing.Point(26, 254);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(209, 28);
+            this.txtTelefono.TabIndex = 123;
             // 
-            // txtNombreEstadio
+            // txtNombreOrganizador
             // 
-            this.txtNombreEstadio.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreEstadio.Location = new System.Drawing.Point(26, 186);
-            this.txtNombreEstadio.Name = "txtNombreEstadio";
-            this.txtNombreEstadio.Size = new System.Drawing.Size(209, 28);
-            this.txtNombreEstadio.TabIndex = 122;
+            this.txtNombreOrganizador.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreOrganizador.Location = new System.Drawing.Point(26, 186);
+            this.txtNombreOrganizador.Name = "txtNombreOrganizador";
+            this.txtNombreOrganizador.Size = new System.Drawing.Size(209, 28);
+            this.txtNombreOrganizador.TabIndex = 122;
             // 
             // panel4
             // 
@@ -253,17 +214,14 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.cmbCorreos);
             this.Controls.Add(this.txtCorreo);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.lbl);
-            this.Controls.Add(this.txtId);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.lblDescripcion);
             this.Controls.Add(this.lblNombre);
-            this.Controls.Add(this.txtUbicacion);
-            this.Controls.Add(this.txtNombreEstadio);
+            this.Controls.Add(this.txtTelefono);
+            this.Controls.Add(this.txtNombreOrganizador);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AggEditOrganizador";
@@ -280,17 +238,14 @@
         #endregion
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblEncabezado;
-        private System.Windows.Forms.ComboBox cmbCorreos;
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label lbl;
-        public System.Windows.Forms.TextBox txtId;
         private Guna.UI2.WinForms.Guna2Button btnCancelar;
         private Guna.UI2.WinForms.Guna2Button btnAgregar;
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.Label lblNombre;
-        public System.Windows.Forms.TextBox txtUbicacion;
-        public System.Windows.Forms.TextBox txtNombreEstadio;
+        public System.Windows.Forms.TextBox txtTelefono;
+        public System.Windows.Forms.TextBox txtNombreOrganizador;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel1;

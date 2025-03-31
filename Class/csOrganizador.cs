@@ -47,10 +47,31 @@ namespace TorneosFut
             DataTable dt = csConexion.ListDGV("Select * from Organizador");
             return dt;
         }
-        #region Insertar
-        public bool AgregarOrganizador(string id, string nombreEmpresa, string telefono, string correo)
+        public string GenerarNuevoIDOrganizador()
         {
-            IDOrganizador = id;
+            string nuevoID = "ORG1"; // Valor inicial
+            string consulta = "SELECT MAX(IDOrganizador) FROM Organizador WHERE IDOrganizador LIKE 'ORG%'";
+
+            DataTable dt = csConexion.ListDGV(consulta);
+
+            if (dt.Rows.Count > 0 && dt.Rows[0][0] != DBNull.Value)
+            {
+                string ultimoID = dt.Rows[0][0].ToString(); // Último ID obtenido (ej. "ORG5")
+
+                // Extraer número y generar el siguiente
+                if (int.TryParse(ultimoID.Substring(3), out int numero))
+                {
+                    nuevoID = "ORG" + (numero + 1); // Formato "ORGX"
+                }
+            }
+
+            return nuevoID;
+        }
+
+        #region Insertar
+        public bool AgregarOrganizador(string nombreEmpresa, string telefono, string correo)
+        {
+            IDOrganizador = GenerarNuevoIDOrganizador();
             NombreEmpresa = nombreEmpresa;
             Telefono = telefono;
             Correo = correo;
@@ -88,5 +109,32 @@ namespace TorneosFut
             return csConexion.Consulta(consultaSQL);
         }
         #endregion
+        public string NombreOrganizador(string ID)
+        {
+            DataTable dt = csConexion.ListDGV($"select NombreEmpresa from Organizador where IDOrganizador='{ID}'");
+            if (dt.Rows.Count > 0)
+            {
+                return dt.Rows[0][0].ToString();
+            }
+            else return "";
+        }
+        public string TelefonoOrganizador(string ID)
+        {
+            DataTable dt = csConexion.ListDGV($"select Telefono from Organizador where IDOrganizador='{ID}'");
+            if (dt.Rows.Count > 0)
+            {
+                return dt.Rows[0][0].ToString();
+            }
+            else return "";
+        }
+        public string CorreoOrganizador(string ID)
+        {
+            DataTable dt = csConexion.ListDGV($"select Correo from Organizador where IDOrganizador='{ID}'");
+            if (dt.Rows.Count > 0)
+            {
+                return dt.Rows[0][0].ToString();
+            }
+            else return "";
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using pruebas;
+﻿using Guna.UI2.WinForms;
+using pruebas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,6 +24,7 @@ namespace TorneosFut
         decimal abono;
         decimal saldo;
         string IdEquipo;
+        Guna.UI2.WinForms.Guna2MessageDialog msg = new Guna.UI2.WinForms.Guna2MessageDialog();
         public PagoInscripcion(string IDtorneo, string IDEquipo, string u, string c)
         {
             conexion = new csConexion(u, c);
@@ -48,6 +50,15 @@ namespace TorneosFut
             lblFechaLimite.Text = Convert.ToDateTime(torneo.Rows[0]["FechaInicio"]).ToString("yyyy-MM-dd");
             lbNameTorneo.Text = Nametorneo;
             costo = decimal.Parse(lblCosto.Text);
+            msg.Buttons = MessageDialogButtons.OK;
+            msg.Icon = MessageDialogIcon.Information;
+            msg.Style = MessageDialogStyle.Light;
+            msg.Parent = this;
+            if (GlobalSettings.ModoOscuro)
+            {
+                msg.Style = MessageDialogStyle.Dark;
+
+            }
 
         }
 
@@ -81,16 +92,18 @@ namespace TorneosFut
             {
                 if (csDatos.InsertarMovimientoInscripcion(int.Parse(IdTorneo), abono, txtDescripcion.Text, idInscripcion, montoo, saldoo, estadoo))
                 {
-                    MessageBox.Show("Se abono correctamente");
+                    msg.Text="Se abono correctamente";
+                    msg.Show();
                 }
                 else
                 {
-                    MessageBox.Show("Error al abonar");
+                    msg.Text="Error al abonar";
+                    msg.Show();
                 }
             }
             else
             {
-                MessageBox.Show("Por favor ingresa un abono válido.");
+                msg.Text = "Por favor ingresa un abono válido.";            msg.Show();
             }
         }
     }

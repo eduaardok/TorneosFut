@@ -29,14 +29,16 @@ namespace TorneosFut
 
         private void btnAggDT_Click(object sender, EventArgs e)
         {
-            AggEditPatrocinador aggEditPatrocinador= new AggEditPatrocinador(conexion.Usuario,conexion.Clave,true);
+            AggEditPatrocinador aggEditPatrocinador= new AggEditPatrocinador(conexion.Usuario,conexion.Clave,true,"");
             aggEditPatrocinador.ShowDialog();
+            csDGV.MostrarPatrocinadores(dgvPatrocinador);
         }
 
         private void btnEditarPatrocinador_Click(object sender, EventArgs e)
         {
-            AggEditPatrocinador aggEditPatrocinador = new AggEditPatrocinador(conexion.Usuario, conexion.Clave, false);
+            AggEditPatrocinador aggEditPatrocinador = new AggEditPatrocinador(conexion.Usuario, conexion.Clave, false, dgvPatrocinador.Rows[dgvPatrocinador.CurrentRow.Index].Cells["IDPatrocinador"].Value.ToString());
             aggEditPatrocinador.ShowDialog();
+            csDGV.MostrarPatrocinadores(dgvPatrocinador);
         }
         void ActualizarTabla()
         {

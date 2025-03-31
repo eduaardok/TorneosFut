@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Net.Http.Headers;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -42,15 +44,6 @@ namespace TorneosFut
             get => _correo;
             set => _correo = value;
         }
-        public string GeneraIDArbitro()
-        {
-            Random rnd = new Random();
-            string id;
-            id = $"ARB{rnd.Next(1000000, 10000000)}";
-            /*bool existe = false;
-            while()*/
-            return "";
-        }
         public DataTable ListaArbitros()
         {
             DataTable dt = csConexion.ListDGV("Select * from Arbitro");
@@ -62,11 +55,30 @@ namespace TorneosFut
             dt = csConexion.ListDGV($"select * from Arbitro where IDArbitro like '%{filtro}%' or NombreArbitro like '%{filtro}%' or ApellidoArbitro like '%{filtro}%'");
             return dt;
         }
+        public string GenerarNuevoIDArbitro()
+        {
+            string nuevoID = "ARB01";
+            string consulta = "SELECT MAX(IDArbitro) FROM Arbitro WHERE IDArbitro LIKE 'ARB%'";
+
+            DataTable dt = csConexion.ListDGV(consulta);
+
+            if (dt.Rows.Count > 0 && dt.Rows[0][0] != DBNull.Value)
+            {
+                string ultimoID = dt.Rows[0][0].ToString(); 
+
+                if (int.TryParse(ultimoID.Substring(3), out int numero))
+                {
+                    nuevoID = "ARB" + (numero + 1).ToString("D2"); 
+                }
+            }
+
+            return nuevoID;
+        }
 
         #region Insertar
         public bool AgregarArbitro(string id, string nombre, string apellido, string correo)
         {
-            IDArbitro = GeneraIDArbitro();
+            IDArbitro = GenerarNuevoIDArbitro();
             NombreArbitro = nombre;
             ApellidoArbitro = apellido;
             Correo = correo;
@@ -110,5 +122,33 @@ namespace TorneosFut
         }
 
         #endregion
+        public string nombrearbitro(string id )
+        {
+            DataTable dt = csConexion.ListDGV($"select NombreArbitro from Arbitro where IDArbitro='{id}'");
+            if (dt.Rows.Count > 0)
+            {
+                return dt.Rows[0][0].ToString();
+            }
+            else return "";
+        }
+        public string apellidoarbitro(string id)
+        {
+            DataTable dt = csConexion.ListDGV($"select ApellidoArbitro from Arbitro where IDArbitro='{id}'");
+            if (dt.Rows.Count > 0)
+            {
+                return dt.Rows[0][0].ToString();
+            }
+            else return "";
+        }
+        public string correo(string id)
+        {
+
+            DataTable dt = csConexion.ListDGV($"select Correo from Arbitro where IDArbitro='{id}'");
+            if (dt.Rows.Count > 0)
+            {
+                return dt.Rows[0][0].ToString();
+            }
+            else return "";
+        }
     }
 }

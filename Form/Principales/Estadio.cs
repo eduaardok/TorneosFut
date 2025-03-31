@@ -59,7 +59,7 @@ namespace TorneosFut
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            AggEditEstadio agg = new AggEditEstadio(conexion.Usuario, conexion.Clave, true, "-1");
+            AggEditEstadio agg = new AggEditEstadio(conexion.Usuario, conexion.Clave, true, dgvEstadio.Rows[dgvEstadio.CurrentRow.Index].Cells[0].Value.ToString());
             agg.ShowDialog();
             ActualizarTabla();
 

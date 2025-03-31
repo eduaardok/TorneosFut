@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,6 +24,7 @@ namespace pruebas
         static string nombreArchivo = "";
         string ID;
         static string rutaArchivoOrigen;
+        Guna.UI2.WinForms.Guna2MessageDialog msg = new Guna.UI2.WinForms.Guna2MessageDialog();
         public AggJugadores(string id, string u, string c, bool n)
         {
             img = new OpenFileDialog();
@@ -44,6 +46,15 @@ namespace pruebas
             panel3.Tag = "NoCambiar";
             panel4.Tag = "NoCambiar";
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
+            msg.Buttons = MessageDialogButtons.OK;
+            msg.Icon = MessageDialogIcon.Information;
+            msg.Style = MessageDialogStyle.Light;
+            msg.Parent = this;
+            if (GlobalSettings.ModoOscuro)
+            {
+                msg.Style = MessageDialogStyle.Dark;
+
+            }
             if (!agregar)
             {
                 lblEncabezado.Text = "EDITAR JUGADOR";
@@ -68,14 +79,11 @@ namespace pruebas
                                             CmbPosicion, TxtNacionalidad, txtpeso, txtaltura,
                                             cmbpierna, nombreArchivo, img.FileName))
                 {
-                    MessageBox.Show("Jugador agregado correctamente");
+                    msg.Text = "Jugador agregado correctamente";
+                    msg.Show();
                      Txtnombre.Clear(); txtapellido.Clear(); cmbsexo.SelectedIndex = -1; dtpNacimiento.ResetText();
                     CmbPosicion.SelectedIndex = -1; TxtNacionalidad.Clear(); txtpeso.Clear(); txtaltura.Clear();
                     cmbpierna.SelectedIndex = -1;  ptbImagen.BackgroundImage = null;
-                }
-                else
-                {
-                    MessageBox.Show("Error al agregar el jugador");
                 }
             }
             else
@@ -84,7 +92,8 @@ namespace pruebas
                                             CmbPosicion, TxtNacionalidad, txtpeso, txtaltura,
                                             cmbpierna, nombreArchivo, img.FileName))
                 {
-                    MessageBox.Show("Jugador editado correctamente");
+                    msg.Text="Jugador editado correctamente";
+                    msg.Show();
                 }
                 else
                 {

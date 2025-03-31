@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,6 +19,7 @@ namespace TorneosFut
         csDatos csDatos;
         csDGV csDGV;
         static string nombreArchivo = "";
+        Guna.UI2.WinForms.Guna2MessageDialog msg = new Guna.UI2.WinForms.Guna2MessageDialog();
         public AggEditEquipo(string u, string c, bool n)
         {
             conexion = new csConexion(u, c);
@@ -40,29 +42,30 @@ namespace TorneosFut
 
                         if (csDatos.InsertarEquipo(txtId.Text, cmbEstadio.SelectedValue.ToString(), txtNombreClub.Text, cmbGenero.Text, cmbEquipacionLocal.Text, cmbequipacionvisitante.Text, nombreArchivo, txtPresidente.Text, img.FileName))
                         {
+                            msg.Text = "Equipo Agregado";
+                            msg.Show();
+
                             Close();
                         }
                         else
                         {
-                            MessageBox.Show("Equipo no Agregado");
                         }
                     }
                     else
                     {
                         if (csDatos.EditarEquipo(txtId.Text, cmbEstadio.SelectedValue.ToString(), txtNombreClub.Text, cmbGenero.Text, cmbEquipacionLocal.Text, cmbequipacionvisitante.Text, nombreArchivo, txtPresidente.Text, img.FileName))
                         {
-                            MessageBox.Show("Equipo Editado Correctamente");
+                            msg.Text = "Equipo Editado";
+                            msg.Show();
+
                             Close();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Equipo no editado");
                         }
                     }
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Datos invalidos");
+                    msg.Text = "Datos invalidos";
+                    msg.Show();
                 }
             }
         }
@@ -74,7 +77,7 @@ namespace TorneosFut
         {
             if (txtId.Text == "" || cmbEstadio.Text == "" || txtNombreClub.Text == "" || cmbGenero.Text == "" || cmbEquipacionLocal.Text == "" || cmbequipacionvisitante.Text == "" || txtPresidente.Text == "")
             {
-                MessageBox.Show("Faltan datos por llenar");
+                msg.Text="Faltan datos por llenar";
                 return false;
             }
             else return true;
@@ -87,6 +90,15 @@ namespace TorneosFut
             panel4.Tag = "NoCambiar";
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
             csDGV.LlenarcmbEstadio(cmbEstadio);
+            msg.Buttons = MessageDialogButtons.OK;
+            msg.Icon = MessageDialogIcon.Information;
+            msg.Style = MessageDialogStyle.Light;
+            msg.Parent = this;
+            if (GlobalSettings.ModoOscuro)
+            {
+                msg.Style = MessageDialogStyle.Dark;
+
+            }
             if (!agregar)
             {
                 txtId.Enabled = false;

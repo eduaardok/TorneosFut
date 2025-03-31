@@ -117,7 +117,7 @@ namespace TorneosFut.Class
         }
         public DataTable ListadeJugadoresSinEquipo()
         {
-            DataTable dt = csConexion.ListDGV("select j.IDJugador, NombreJugador, ApellidoJugador from Jugador j left join Jugador_Equipo e on j.IDJugador = e.IDJugador where e.IDEquipo is null or e.FechaSalida is not null");
+            DataTable dt = csConexion.ListDGV("SELECT J.IDJugador, J.NombreJugador,  CASE   WHEN JE.IDJugador IS NULL THEN 'Sin equipo'    WHEN JE.FechaSalida IS NOT NULL THEN 'Inactivo'    ELSE 'Activo'      END AS Estado FROM     Jugador J LEFT JOIN    Jugador_Equipo JE    ON JE.IDJugador = J.IDJugador AND JE.FechaSalida IS NULL WHERE  JE.IDJugador IS NULL   OR JE.FechaSalida IS NOT NULL  ORDER BY J.IDJugador;");
             return dt;
         }
         public DataTable ListadeJugadoresFiltro(string filtro)

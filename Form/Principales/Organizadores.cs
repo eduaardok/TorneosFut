@@ -31,13 +31,13 @@ namespace TorneosFut
 
         private void btnAggOrganizador_Click(object sender, EventArgs e)
         {
-            AggEditOrganizador aggEditOrganizador = new AggEditOrganizador(conexion.Usuario, conexion.Clave, true);
+            AggEditOrganizador aggEditOrganizador = new AggEditOrganizador(dgvOrganizador.Rows[dgvOrganizador.CurrentRow.Index].Cells["IDOrganizador"].Value.ToString(), conexion.Usuario, conexion.Clave, true);
             aggEditOrganizador.ShowDialog();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            AggEditOrganizador aggEditOrganizador = new AggEditOrganizador(conexion.Usuario, conexion.Clave, false);
+            AggEditOrganizador aggEditOrganizador = new AggEditOrganizador(dgvOrganizador.Rows[dgvOrganizador.CurrentRow.Index].Cells["IDOrganizador"].Value.ToString(), conexion.Usuario, conexion.Clave, false);
             aggEditOrganizador.ShowDialog();
         }
     }

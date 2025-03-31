@@ -13,12 +13,10 @@ namespace TorneosFut
     
     public partial class Arbitro: Form
     {
-        PagoArbitro PagoArbitro;
         csDGV csDGV;
         csConexion csConexion;
         public Arbitro(string u, string c)
         {
-            PagoArbitro = new PagoArbitro(u, c);
             csConexion = new csConexion(u,c);
             csDGV = new csDGV(u,c);
             InitializeComponent();
@@ -30,20 +28,16 @@ namespace TorneosFut
             csDGV.MostrarArbitros(dgvArbitro);
         }
 
-        private void btnPagoArbitro_Click(object sender, EventArgs e)
-        {
-            PagoArbitro.ShowDialog();
-        }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            AggEditArbitro AggEditArbitro = new AggEditArbitro(csConexion.Usuario,csConexion.Clave,true);
+            AggEditArbitro AggEditArbitro = new AggEditArbitro(csConexion.Usuario,csConexion.Clave,true, dgvArbitro.Rows[dgvArbitro.CurrentRow.Index].Cells[0].Value.ToString());
             AggEditArbitro.ShowDialog();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            AggEditArbitro AggEditArbitro = new AggEditArbitro(csConexion.Usuario, csConexion.Clave, true);
+            AggEditArbitro AggEditArbitro = new AggEditArbitro(csConexion.Usuario, csConexion.Clave, false, dgvArbitro.Rows[dgvArbitro.CurrentRow.Index].Cells[0].Value.ToString());
             AggEditArbitro.ShowDialog();
         }
 

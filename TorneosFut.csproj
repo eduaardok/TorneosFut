@@ -289,12 +289,6 @@
     <Compile Include="Form\Principales\GestionInscripcion.Designer.cs">
       <DependentUpon>GestionInscripcion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\AgregarEditar\PagoArbitro.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\AgregarEditar\PagoArbitro.Designer.cs">
-      <DependentUpon>PagoArbitro.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form\Reportes\frmEstadisticasGol.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -432,9 +426,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Principales\Organizadores.resx">
       <DependentUpon>Organizadores.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\AgregarEditar\PagoArbitro.resx">
-      <DependentUpon>PagoArbitro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Principales\Patrocinadores.resx">
       <DependentUpon>Patrocinadores.cs</DependentUpon>

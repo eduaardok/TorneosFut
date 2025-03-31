@@ -188,7 +188,7 @@
             "No"});
             this.cmbIdaVuelta.Location = new System.Drawing.Point(324, 165);
             this.cmbIdaVuelta.Name = "cmbIdaVuelta";
-            this.cmbIdaVuelta.Size = new System.Drawing.Size(120, 31);
+            this.cmbIdaVuelta.Size = new System.Drawing.Size(120, 28);
             this.cmbIdaVuelta.TabIndex = 92;
             // 
             // label4
@@ -257,7 +257,7 @@
             "No"});
             this.cmbIdaVueltaPlayoff.Location = new System.Drawing.Point(324, 250);
             this.cmbIdaVueltaPlayoff.Name = "cmbIdaVueltaPlayoff";
-            this.cmbIdaVueltaPlayoff.Size = new System.Drawing.Size(120, 31);
+            this.cmbIdaVueltaPlayoff.Size = new System.Drawing.Size(120, 28);
             this.cmbIdaVueltaPlayoff.TabIndex = 101;
             this.cmbIdaVueltaPlayoff.SelectedIndexChanged += new System.EventHandler(this.cmbIdaVueltaPlayoff_SelectedIndexChanged);
             // 
@@ -274,7 +274,7 @@
             "Final"});
             this.cmbPlayoff.Location = new System.Drawing.Point(20, 250);
             this.cmbPlayoff.Name = "cmbPlayoff";
-            this.cmbPlayoff.Size = new System.Drawing.Size(178, 31);
+            this.cmbPlayoff.Size = new System.Drawing.Size(178, 28);
             this.cmbPlayoff.TabIndex = 102;
             this.cmbPlayoff.SelectedIndexChanged += new System.EventHandler(this.cmbPlayoff_SelectedIndexChanged);
             // 
@@ -323,6 +323,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(625, 420);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAgregar);
@@ -344,6 +345,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AggFormato";
             this.Text = "AggFormato";
+            this.Load += new System.EventHandler(this.AggFormato_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numGrupos)).EndInit();

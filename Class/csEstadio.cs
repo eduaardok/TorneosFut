@@ -97,6 +97,26 @@ namespace TorneosFut.Class
             DataTable dt = csConexion.ListDGV($"select Ubicacion from Estadio where IDEstadio={id}");
             return dt.Rows[0][0].ToString();
         }
+        public string NombrePatrocinador(string id)
+        {
+
+            DataTable dt = csConexion.ListDGV($"select NombrePatrocinador from Patrocinador where IDPatrocinador='{id}'");
+            if (dt.Rows.Count > 0)
+            {
+                return dt.Rows[0][0].ToString();
+            }
+            else return "";
+        }
+        public string DescripcionPatrocinador(string id)
+        {
+
+            DataTable dt = csConexion.ListDGV($"select Descripcion from Patrocinador where IDPatrocinador='{id}'");
+            if (dt.Rows.Count > 0)
+            {
+                return dt.Rows[0][0].ToString();
+            }
+            else return "";
+        }
         #endregion
         #region Insertar
         public bool AgregarEstadio(string id, string nombre, string ubicacion, string imagen)

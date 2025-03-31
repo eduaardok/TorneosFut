@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,7 @@ namespace TorneosFut
     public partial class AggFormato : Form
     {
         csConexion csConexion;
+        Guna.UI2.WinForms.Guna2MessageDialog msg = new Guna.UI2.WinForms.Guna2MessageDialog();
         public AggFormato(string u, string c)
         {
             csConexion = new csConexion(u, c);
@@ -72,12 +74,18 @@ namespace TorneosFut
                 if (csConexion.Consulta("INSERT INTO FORMATO (NombreFormato, IdaVueltaGrupos, IdaVueltaPlayoff, RondasPlayoff, CantidadGrupos, CantidadEquipos) VALUES" +
                      " ('" + txtNombre.Text + "', " + idaVuelta + ", " + idaVueltaPlayoff + ", " + rondasPlayoff + ", " + Convert.ToInt32(numGrupos.Value) + ", " + Convert.ToInt32(numEquipos.Value) + ")"))
                 {
-                    MessageBox.Show("Formato agregado correctamente", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    msg.Text = "Formato agregado correctamente";
+                    msg.Caption = "Correcto";
+                    msg.Icon = MessageDialogIcon.Information;
+                    msg.Show();
                     Close();
                 }
                 else
                 {
-                    MessageBox.Show("Error al agregar el formato", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    msg.Text = "Error al agregar el formato";
+                    msg.Caption = "Error";
+                    msg.Icon = MessageDialogIcon.Error;
+                    msg.Show();
                 }
             }
         }
@@ -85,61 +93,92 @@ namespace TorneosFut
         {
             if (txtNombre.Text.Length < 1)
             {
-                MessageBox.Show("Debe ingresar un nombre para el formato", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                msg.Text = "Debe ingresar un nombre para el formato";
+                msg.Caption = "Error";
+                msg.Icon = MessageDialogIcon.Error;
+                msg.Show();
                 return false;
             }
             if (cmbIdaVuelta.SelectedIndex < 0)
             {
-                MessageBox.Show("Debe seleccionar si el formato es de ida y vuelta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                msg.Text = "Debe seleccionar si el formato es de ida y vuelta";
+                msg.Caption = "Error";
+                msg.Icon = MessageDialogIcon.Error;
+                msg.Show();
+
                 return false;
             }
             if (cmbIdaVueltaPlayoff.SelectedIndex < 0)
             {
-                MessageBox.Show("Debe seleccionar si el formato es de ida y vuelta en playoff", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                msg.Text = "Debe seleccionar si el formato es de ida y vuelta en playoff";
+                msg.Caption = "Error";
+                msg.Icon = MessageDialogIcon.Error;
+                msg.Show();
+
                 return false;
             }
             if (cmbPlayoff.SelectedIndex < 0)
             {
-                MessageBox.Show("Debe seleccionar si el formato es de playoff", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                msg.Text = "Debe seleccionar si el formato es de playoff";
+                msg.Caption = "Error";
+                msg.Icon = MessageDialogIcon.Error;
+                msg.Show();
                 return false;
             }
             if (numGrupos.Value == numEquipos.Value || numEquipos.Value < numGrupos.Value)
             {
-                MessageBox.Show("El número de grupos no puede ser mayor o igual al número de equipos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                msg.Text = "El número de grupos no puede ser mayor o igual al número de equipos";
+                msg.Caption = "Error";
+                msg.Icon = MessageDialogIcon.Error;
+                msg.Show();
                 numGrupos.Value = 1;
                 return false;
             }
             if (numEquipos.Value % 2 != 0)
             {
-                MessageBox.Show("El número de equipos debe ser par", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                msg.Text = "El número de equipos debe ser par";
+                msg.Caption = "Error";
+                msg.Icon = MessageDialogIcon.Error;
+                msg.Show();
                 numEquipos.Value = 2;
                 return false;
             }
             if (cmbPlayoff.Text == "Final" && numGrupos.Value > 2)
             {
-                MessageBox.Show("El formato de playoff final solo puede tener máximo 2 grupos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                msg.Text = "El formato de playoff final solo puede tener máximo 2 grupos";
+                msg.Caption = "Error";
+                msg.Icon = MessageDialogIcon.Error;
+                msg.Show();
                 cmbPlayoff.SelectedIndex = -1;
                 return false;
             }
             if (cmbPlayoff.Text == "Semifinal" && numGrupos.Value > 4)
             {
-                MessageBox.Show("El formato de playoff semifinal solo puede tener máximo 4 grupos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                msg.Text = "El formato de playoff semifinal solo puede tener máximo 4 grupos";
+                msg.Caption = "Error";
+                msg.Icon = MessageDialogIcon.Error;
+                msg.Show();
                 cmbPlayoff.SelectedIndex = -1;
                 return false;
             }
             if (cmbPlayoff.Text == "Cuartos de final" && numGrupos.Value > 8)
             {
-                MessageBox.Show("El formato de playoff cuartos de final solo puede tener máximo 8 grupos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                msg.Text = "El formato de playoff cuartos de final solo puede tener máximo 8 grupos";
+                msg.Caption = "Error";
+                msg.Icon = MessageDialogIcon.Error;
+                msg.Show();
                 cmbPlayoff.SelectedIndex = -1;
                 return false;
             }
             if (cmbPlayoff.Text == "Octavos de final" && numGrupos.Value > 16)
             {
-                MessageBox.Show("El formato de playoff octavos de final solo puede tener máximo 16 grupos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                msg.Text = "El formato de playoff octavos de final solo puede tener máximo 16 grupos";
+                msg.Caption = "Error";
+                msg.Icon = MessageDialogIcon.Error;
+                msg.Show();
                 cmbPlayoff.SelectedIndex = -1;
                 return false;
             }
-
 
             return true;
         }
@@ -187,6 +226,20 @@ namespace TorneosFut
         {
             AjustarGrupos();
 
+        }
+
+        private void AggFormato_Load(object sender, EventArgs e)
+        {
+            Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
+            msg.Buttons = MessageDialogButtons.OK;
+            msg.Icon = MessageDialogIcon.Information;
+            msg.Style = MessageDialogStyle.Light;
+            msg.Parent = this;
+            if (GlobalSettings.ModoOscuro)
+            {
+                msg.Style = MessageDialogStyle.Dark;
+
+            }
         }
     }
 }

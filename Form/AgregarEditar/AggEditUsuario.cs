@@ -1,4 +1,5 @@
 ﻿
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +20,7 @@ namespace Usuarios
         csEncriptar csEncriptar;
         csDatos csDatos;
         csValidaciones csValidaciones;
+        Guna.UI2.WinForms.Guna2MessageDialog msg = new Guna.UI2.WinForms.Guna2MessageDialog();
         public AggEditUsuario(bool a, string i, string u, string c)
         {
             //conexion = new csConexion(u,c);
@@ -50,24 +52,28 @@ namespace Usuarios
                     if (csDatos.InsertarUsuario(txtNombre.Text, txtUsuarioApp.Text, claveApp, txtCorreo.Text + cmbCorreos.Text, txtUsuarioBD.Text, claveBD))
                     {
                         //csDatos.CrearLoginBD(txtUsuarioBD.Text, txtClaveBD.Text);
-                        MessageBox.Show($"Usuario agregado");
+                        msg.Text = "Usuario agregado";
+                        msg.Show();
                         this.Close();
-                    }    
+                    }
                 }
                 else
                 {
                     if (csDatos.EditarUsuario(id, txtNombre.Text, txtUsuarioApp.Text, claveApp, txtCorreo.Text + cmbCorreos.Text, txtUsuarioBD.Text, claveBD))
                     {
                         //csDatos.ActualizarClaveBD(txtUsuarioBD.Text, txtClaveBD.Text);
-                        MessageBox.Show($"Usuario editado");
+                        msg.Text = "Usuario editado";
+                        msg.Show();
                         this.Close();
                     }
                 }
             }
             else
-                MessageBox.Show("Verifique los campos ingresados");
+            {
+                msg.Text = "Verifique los campos ingresados";
+                msg.Show();
+            }
         }
-
         private void AgregarUsuario_Load(object sender, EventArgs e)
         {
             panel2.Tag = "NoCambiar";
@@ -75,6 +81,15 @@ namespace Usuarios
             panel3.Tag = "NoCambiar";
             panel4.Tag = "NoCambiar";
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
+            msg.Buttons = MessageDialogButtons.OK;
+            msg.Icon = MessageDialogIcon.Information;
+            msg.Style = MessageDialogStyle.Light;
+            msg.Parent = this;
+            if (GlobalSettings.ModoOscuro)
+            {
+                msg.Style = MessageDialogStyle.Dark;
+
+            }
             csEncriptar = new csEncriptar();
             Editar();
         }

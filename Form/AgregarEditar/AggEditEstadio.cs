@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,7 @@ namespace TorneosFut
 {
     public partial class AggEditEstadio: Form
     {
+        Guna.UI2.WinForms.Guna2MessageDialog msg = new Guna.UI2.WinForms.Guna2MessageDialog();
         string id; OpenFileDialog img = new OpenFileDialog();
 
         bool agg;
@@ -23,7 +25,7 @@ namespace TorneosFut
             csDatos = new csDatos(u, c);
             csImagenes = new csImagenes();
             id = i;
-            t = agg;
+            agg=t;
             InitializeComponent();
         }
 
@@ -45,9 +47,19 @@ namespace TorneosFut
             panel3.Tag = "NoCambiar";
             panel4.Tag = "NoCambiar";
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
+            msg.Buttons = MessageDialogButtons.OK;
+            msg.Icon = MessageDialogIcon.Information;
+            msg.Style = MessageDialogStyle.Light;
+            msg.Parent = this;
+            if (GlobalSettings.ModoOscuro)
+            {
+                msg.Style = MessageDialogStyle.Dark;
+
+            }
             if (agg == false)
             {
-                btnAgregar.Text = "EDITAR ESTADIO";
+                btnAgregar.Text = "EDITAR";
+                lblEncabezado.Text = "EDITAR ESTADIO";
                 Editar();
             }
             else
@@ -67,7 +79,9 @@ namespace TorneosFut
             {
                 if (csDatos.EditarEstadio(id, txtNombreEstadio.Text, txtUbicacion.Text, nombreArchivo, img.FileName))
                 {
-                    MessageBox.Show("Estadio editado correctamente");
+                    msg.Text = "Estadio Agregado Correctamente";
+                    msg.Parent = this;
+                    msg.Show();
                     Close();
                 }
             }
@@ -75,7 +89,9 @@ namespace TorneosFut
             {
                 if (csDatos.InsertarEstadio(id, txtNombreEstadio.Text, txtUbicacion.Text, nombreArchivo, img.FileName))
                 {
-                    MessageBox.Show("Estadio registrado correctamente");
+                    msg.Text=("Estadio registrado correctamente");
+                    msg.Parent = this;
+                    msg.Show();
                     Close();
                 }
             }

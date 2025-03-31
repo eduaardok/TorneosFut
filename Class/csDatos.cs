@@ -6,6 +6,7 @@ using System.Data;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -26,6 +27,8 @@ namespace TorneosFut
         csIncripcionEquipo csIncripcion;
         csMovimientoFinanciero csMovimiento;
         csEstadio csEstadio;
+        csPatrocinador csPatrocinador;
+        csOrganizador csOrganizador;
         public csDatos(string u, string c)
         {
             csConexion = new csConexion(u, c);
@@ -39,6 +42,8 @@ namespace TorneosFut
             csIncripcion = new csIncripcionEquipo(u, c);
             csMovimiento = new csMovimientoFinanciero(u, c);
             csEstadio = new csEstadio(u, c);
+            csPatrocinador = new csPatrocinador(u, c);
+            csOrganizador = new csOrganizador(u, c);
         }
         #region Login
         public bool Login(string usuario, string clave)
@@ -141,6 +146,7 @@ namespace TorneosFut
         {
             return csEstadio.IDEstadioSeleccionado(dgv);
         }
+
         public string ObtenerNombreEstadio(string id)
         {
             return csEstadio.NombreEstadioDeID(id);
@@ -376,6 +382,10 @@ namespace TorneosFut
         {
             return csArbitro.ActualizarArbitro(id, nombre, apellido, correo);
         }
+        public bool AgregarArbitro(string id, string nombre, string apellido, string correo)
+        {
+            return csArbitro.AgregarArbitro(id, nombre, apellido, correo);
+        }
         public bool EditarTorneo(string id, string Txtnombre, string formato, string ModoFutbol, string Organizador, string te, string fin, decimal costo)
         {
             if (csTorneo.ActualizarTorneo(id, Txtnombre, formato, ModoFutbol, Organizador, te, fin, costo))
@@ -392,7 +402,23 @@ namespace TorneosFut
             csImagenes.guardarIMG(filename, imagen);
             return csJugador.ActualizarJugador( idJugadorr,Txtnombre, txtapellido, cmbsexo, dtpNacimiento, CmbPosicion, TxtNacionalidad, txtpeso, txtaltura, cmbpierna,imagen + Path.GetExtension(filename));
         }
+        public bool EditarPatrocinador(string ID,string NombrePatrocinador, string Descripcion)
+        {
+            return csPatrocinador.EditarPatrocinador(ID,NombrePatrocinador,Descripcion);
+        }
+        public bool AgregarPatrocinador(string ID, string NombrePatrocinador, string Descripcion)
+        {
+            return csPatrocinador.AgregarPatrocinador(ID,NombrePatrocinador,Descripcion);
+        }
         #endregion
+        public bool AgreegarOrganizador(string NombreEmpresa, string Telefono, string Correo)
+        {
+            return csOrganizador.AgregarOrganizador(NombreEmpresa,Telefono,Correo);
+        }
+        public bool EditarOrganizador(string ID, string NombreEmpresa, string Telefono, string Correo)
+        {
+            return csOrganizador.EditarOrganizador(ID,NombreEmpresa,Telefono,Correo);
+        }
 
         #region Métodos para Alineaciones
 
@@ -558,5 +584,39 @@ namespace TorneosFut
         {
             return csTorneo.GenerarTorneo(torneo);
         }*/
+        public string NombrePatrocinador(string ID)
+        {
+            return csEstadio.NombrePatrocinador(ID);
+        }
+        public string DescripcionPatrocinador(String ID)
+        {
+            return csEstadio.DescripcionPatrocinador(ID);
+        }
+        public string NombreArbitro(string id)
+        {
+            return csArbitro.nombrearbitro(id);
+        }
+        public string apellidoArbitro(string id)
+        {
+            return csArbitro.apellidoarbitro(id);
+        }
+        public string CorreoArbitro(string id)
+        {
+            return csArbitro.correo(id);
+        }
+        public string CorreoOrganizador(string id)
+        {
+            return csOrganizador.CorreoOrganizador(id);
+        }
+        public string NombreOrganizador(string id)
+        {
+            return csOrganizador.NombreOrganizador(id);
+        }
+        public string TelefonoOrganizador(string id)
+        {
+            return csOrganizador.TelefonoOrganizador(id);
+        }
+
+
     }
 }
