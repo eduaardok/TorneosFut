@@ -59,9 +59,44 @@ namespace TorneosFut
             get => _dineroDisponible;
             set => _dineroDisponible = value;
         }
+        public DataTable ListaMovimiento(int id)
+        {
+            if (id > 0)
+            {
+                DataTable dt = conexion.ListDGV($"select * from MovimientoFinanciero where IDTorneo = {id}");
+                return dt;
+            }
+            DataTable dts = conexion.ListDGV("select * from MovimientoFinanciero");
+            return dts;
+        }
+        public DataTable ListaMovimientoE(int id)
+        {
+            if (id > 0)
+            {
+                DataTable dt = conexion.ListDGV($"select * from InscripcionEquipo where IDTorneo = {id}");
+                return dt;
+            }
+            DataTable dts = conexion.ListDGV("select * from InscripcionEquipo");
+            return dts;
+        }
+        public DataTable ListaMovimientoA(int id)
+        {
+            DataTable dt = conexion.ListDGV("select * from TernaArbitral");
+            return dt;
+        }
+        public DataTable ListaMovimientoP(int id)
+        {
+            if (id > 0)
+            {
+                DataTable dt = conexion.ListDGV($"select * from Patrocinador_Torneo where IDTorneo = {id}");
+                return dt;
+            }
+            DataTable dts = conexion.ListDGV("select * from Patrocinador_Torneo");
+            return dts;
+        }
         public bool AgregarMovimientoInscripcion(int iDTorneo, decimal monto, string descripcion)
         {
-            DataTable torneo = conexion.ListDGV($"SELECT TOP 1 DineroDisponible FROM MovimientoFinanciero ORDER BY Fecha DESC;");
+            DataTable torneo = conexion.ListDGV($"SELECT TOP 1 DineroDisponible \r\nFROM MovimientoFinanciero \r\nORDER BY Fecha DESC, IDMovimiento DESC;;");
             DineroDisponible = decimal.Parse(torneo.Rows[0]["DineroDisponible"].ToString());
             decimal DineroActual = DineroDisponible + monto;
             IDTorneo = iDTorneo;

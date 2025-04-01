@@ -27,6 +27,7 @@ namespace TorneosFut
         csPatrocinador csPatrocinador;
         csArbitro csArbitro;
         csOrganizador csOrganizador;
+        csMovimientoFinanciero csMovimiento;
         public csDGV(string u, string c, string IDTorneo = "0", string IDpartido = "0")
         {
             conexion = new csConexion(u, c);
@@ -42,6 +43,7 @@ namespace TorneosFut
             csPatrocinador = new csPatrocinador(u, c);
             csArbitro= new csArbitro(u, c);
             csOrganizador=new csOrganizador(u,c);
+            csMovimiento = new csMovimientoFinanciero(u, c);
         }
         //Adaptar DataGridView en panel
         public void AdaptarDGV(DataGridView dgv, Panel pnl)
@@ -242,8 +244,23 @@ namespace TorneosFut
         {
             dgv.DataSource = csOrganizador.Listaorganizadores();
         }
-
-
+        //MOVIMIENTO FINANCIERO
+        public void MostrarMovimieentos(DataGridView dgv, int id)
+        {
+            dgv.DataSource = csMovimiento.ListaMovimiento(id);
+        }
+        public void MostrarMovimieentosE(DataGridView dgv, int id)
+        {
+            dgv.DataSource = csMovimiento.ListaMovimientoE(id);
+        }
+        public void MostrarMovimieentosA(DataGridView dgv, int id)
+        {
+            dgv.DataSource = csMovimiento.ListaMovimientoA(id);
+        }
+        public void MostrarMovimieentosP(DataGridView dgv, int id)
+        {
+            dgv.DataSource = csMovimiento.ListaMovimientoP(id);
+        }
         #region cmb
         public void LlenarcmbEstadio(ComboBox cmbEstadio)
         {
