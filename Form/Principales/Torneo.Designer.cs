@@ -48,6 +48,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnasistidores = new Guna.UI2.WinForms.Guna2Button();
             this.btngoleadores = new Guna.UI2.WinForms.Guna2Button();
+            this.btnGanador = new Guna.UI2.WinForms.Guna2Button();
             this.panelmodul = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTorneo)).BeginInit();
@@ -386,6 +387,28 @@
             this.btngoleadores.Visible = false;
             this.btngoleadores.Click += new System.EventHandler(this.btngoleadores_Click);
             // 
+            // btnGanador
+            // 
+            this.btnGanador.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnGanador.Animated = true;
+            this.btnGanador.BorderRadius = 20;
+            this.btnGanador.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnGanador.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnGanador.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnGanador.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnGanador.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
+            this.btnGanador.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGanador.ForeColor = System.Drawing.Color.Black;
+            this.btnGanador.HoverState.CustomBorderColor = System.Drawing.Color.Black;
+            this.btnGanador.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.btnGanador.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.btnGanador.Location = new System.Drawing.Point(1161, 130);
+            this.btnGanador.Name = "btnGanador";
+            this.btnGanador.Size = new System.Drawing.Size(180, 59);
+            this.btnGanador.TabIndex = 69;
+            this.btnGanador.Text = "GANADOR";
+            this.btnGanador.Click += new System.EventHandler(this.btnGanador_Click);
+            // 
             // panelmodul
             // 
             this.panelmodul.BackColor = System.Drawing.Color.White;
@@ -393,7 +416,7 @@
             this.panelmodul.Location = new System.Drawing.Point(0, 100);
             this.panelmodul.Name = "panelmodul";
             this.panelmodul.Size = new System.Drawing.Size(1490, 811);
-            this.panelmodul.TabIndex = 68;
+            this.panelmodul.TabIndex = 70;
             // 
             // Torneo
             // 
@@ -402,6 +425,7 @@
             this.ClientSize = new System.Drawing.Size(1490, 911);
             this.ControlBox = false;
             this.Controls.Add(this.panelmodul);
+            this.Controls.Add(this.btnGanador);
             this.Controls.Add(this.btngoleadores);
             this.Controls.Add(this.btnasistidores);
             this.Controls.Add(this.btnCrear);
@@ -447,6 +471,7 @@
         private System.Windows.Forms.Button btnReglas;
         private Guna.UI2.WinForms.Guna2Button btnasistidores;
         private Guna.UI2.WinForms.Guna2Button btngoleadores;
+        private Guna.UI2.WinForms.Guna2Button btnGanador;
         public System.Windows.Forms.Panel panelmodul;
     }
 }

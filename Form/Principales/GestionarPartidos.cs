@@ -22,6 +22,8 @@ namespace pruebas
         csDatos csDatos;
         string IdTorneo;
         AgregarTitulares agregarTitulares;
+        TablaDePosiciones tbl;
+
 
         public GestionarPartidos(string IDtorneo,string u, string c)
         {
@@ -29,6 +31,7 @@ namespace pruebas
             csDatos = new csDatos(u, c);
             IdTorneo = IDtorneo;
             csDGV = new csDGV(u,c, IdTorneo, IDPartido);
+            tbl = new TablaDePosiciones(u, c, IdTorneo);
             InitializeComponent();
         }
 
@@ -376,6 +379,11 @@ namespace pruebas
                 MessageBox.Show("Error al asignar fechas");
             }
             ActualizarTabla();
+        }
+
+        private void btnTabla_Click(object sender, EventArgs e)
+        {
+            tbl.ShowDialog();
         }
     }
 }

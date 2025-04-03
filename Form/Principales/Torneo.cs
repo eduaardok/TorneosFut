@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ using Usuarios;
 
 namespace TorneosFut
 {
-    public partial class Torneo: Form
+    public partial class Torneo : Form
     {
         csConexion conexion;
         Patrocinadores patro;
@@ -30,13 +31,13 @@ namespace TorneosFut
         Formato formato;
         public Torneo(string u, string c)
         {
-            conexion = new csConexion(u,c);
+            conexion = new csConexion(u, c);
             csDatos = new csDatos(u, c);
             InitializeComponent();
-            patro = new Patrocinadores(u,c);
-            orga = new Organizadores(u,c);
-            csDGV= new csDGV(u ,c);
-            arbi = new Arbitro(u,c);
+            patro = new Patrocinadores(u, c);
+            orga = new Organizadores(u, c);
+            csDGV = new csDGV(u, c);
+            arbi = new Arbitro(u, c);
             formato = new Formato();
             csValidaciones = new csValidaciones(u, c);
         }
@@ -55,7 +56,7 @@ namespace TorneosFut
         }
         private void btnJugadores_Click(object sender, EventArgs e)
         {
-               AbrirFormEnPanel(panelmodul, patro);
+            AbrirFormEnPanel(panelmodul, patro);
         }
 
         private void btnArbitros_Click(object sender, EventArgs e)
@@ -65,7 +66,7 @@ namespace TorneosFut
 
         private void btnEstadios_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(panelmodul,orga);
+            AbrirFormEnPanel(panelmodul, orga);
         }
 
         private void Torneo_Load(object sender, EventArgs e)
@@ -121,7 +122,7 @@ namespace TorneosFut
             AggTorneo aggTorneo = new AggTorneo(true, "-1", conexion.Usuario, conexion.Clave);
             aggTorneo.ShowDialog();
             ActualizarTabla();
-            
+
         }
         void ActualizarTabla()
 
@@ -149,7 +150,7 @@ namespace TorneosFut
         }
         private void txtBuscarTorneo_TextChanged(object sender, EventArgs e)
         {
-            csDGV.MostrarTorneoFiltro(dgvTorneo,  txtBuscarTorneo.Text);
+            csDGV.MostrarTorneoFiltro(dgvTorneo, txtBuscarTorneo.Text);
         }
 
         private void btngoleadores_Click(object sender, EventArgs e)
@@ -168,6 +169,56 @@ namespace TorneosFut
         {
             AbrirFormEnPanel(panelmodul, formato);
 
+        }
+
+        private void btnGanador_Click(object sender, EventArgs e)
+        {
+            ObtenerGanadorTorneo(int.Parse(IDTorneo));
+        }
+        private void ObtenerGanadorTorneo(int torneoID)
+        {
+            using (SqlConnection conn = new SqlConnection(conexion.Conexion.ToString()))
+            {
+                try
+                {
+                    conn.Open();
+
+                    // Crear el comando para ejecutar el procedimiento almacenado
+                    using (SqlCommand cmd = new SqlCommand("ObtenerGanadorTorneo", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        // Agregar el parámetro de entrada
+                        cmd.Parameters.AddWithValue("@torneoID", torneoID);
+
+                        // Ejecutar el comando y leer el resultado
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.HasRows)
+                            {
+                                reader.Read();
+
+                                // Leer el resultado
+                                if (reader["GanadorID"] != DBNull.Value)
+                                {
+                                    int ganadorID = (int)reader["GanadorID"];
+                                    int puntos = (int)reader["Puntos"];
+                                    MessageBox.Show($"El ganador del torneo es el equipo con ID: {ganadorID} con {puntos} puntos.");
+                                }
+                                else
+                                {
+                                    string mensaje = (string)reader["Mensaje"];
+                                    MessageBox.Show(mensaje);
+                                }
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
         }
     }
 }
