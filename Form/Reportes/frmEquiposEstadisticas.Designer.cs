@@ -38,18 +38,21 @@
             this.rvwEquipos.Location = new System.Drawing.Point(0, 0);
             this.rvwEquipos.Name = "rvwEquipos";
             this.rvwEquipos.ServerReport.BearerToken = null;
-            this.rvwEquipos.Size = new System.Drawing.Size(800, 450);
+            this.rvwEquipos.Size = new System.Drawing.Size(1184, 679);
             this.rvwEquipos.TabIndex = 0;
+            this.rvwEquipos.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             // 
             // frmEquiposEstadisticas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1184, 679);
             this.Controls.Add(this.rvwEquipos);
+            this.MaximumSize = new System.Drawing.Size(1200, 718);
+            this.MinimumSize = new System.Drawing.Size(1200, 718);
             this.Name = "frmEquiposEstadisticas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmEquiposEstadisticas";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmEquiposEstadisticas_Load);
             this.ResumeLayout(false);
 

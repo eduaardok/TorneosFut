@@ -355,9 +355,6 @@
     <EmbeddedResource Include="Form\Reportes\frmEstatsGenerales.resx">
       <DependentUpon>frmEstatsGenerales.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Reportes\rptDatos.rdlc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form\AgregarEditar\AggEditArbitro.resx">
       <DependentUpon>AggEditArbitro.cs</DependentUpon>
     </EmbeddedResource>
@@ -457,9 +454,6 @@
     <EmbeddedResource Include="Form\Reportes\frmEstadisticasGol.resx">
       <DependentUpon>frmEstadisticasGol.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Reportes\rptEquipos.rdlc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -470,12 +464,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Form\Reportes\rptGoleador.rdlc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\Reportes\rptAsistidor.rdlc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
     <None Include="Class\dsDataGame.xsc">
       <DependentUpon>dsDataGame.xsd</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

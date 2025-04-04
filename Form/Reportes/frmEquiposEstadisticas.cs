@@ -118,19 +118,19 @@ namespace TorneosFut
                     string rutaImagen = Path.Combine(Application.StartupPath, "Imagenes", Imagen);
                     if (string.IsNullOrEmpty(Imagen))
                     {
-                        MessageBox.Show("No se proporcionó un nombre de imagen válido.",
+                        MessageBox.Show("No se proporcionó un nombre de imagen válido.\nIngrese una o actualice la actual para poder visualizarla en el reporte.",
                                         "Advertencia",
                                         MessageBoxButtons.OK,
                                         MessageBoxIcon.Warning);
-                        rutaImagen = Path.Combine(Application.StartupPath, "Imagenes", "default.png");
+                        rutaImagen = Path.Combine(Application.StartupPath, "Imagenes", "defaultE.png");
                     }
                     if (!File.Exists(rutaImagen))
                     {
-                        MessageBox.Show($"No se encontró la imagen: {rutaImagen}\nSe usará una imagen predeterminada.",
+                        MessageBox.Show($"No se encontró la imagen: {rutaImagen}\nIngrese una o actualice la actual para poder visualizarla en el reporte.",
                                         "Advertencia",
                                         MessageBoxButtons.OK,
                                         MessageBoxIcon.Warning);
-                        rutaImagen = Path.Combine(Application.StartupPath, "Imagenes", "default.png");
+                        rutaImagen = Path.Combine(Application.StartupPath, "Imagenes", "defaultE.png");
                     }
 
                     ReportParameter paramImagen = new ReportParameter("ImagenEquipo", "file://" + rutaImagen);
