@@ -39,7 +39,6 @@ namespace TorneosFut
                                 "Error",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
-                this.Close();
             }
         }
         void CargarDatos(string IDEquipo, string Imagen)
@@ -105,11 +104,10 @@ namespace TorneosFut
                                     "Advertencia",
                                     MessageBoxButtons.OK,
                                     MessageBoxIcon.Warning);
-                    this.Close();
                     return;
                 }
 
-                rvwEquipos.LocalReport.ReportPath = @"rptEquipos.rdlc";
+                rvwEquipos.LocalReport.ReportPath = Path.Combine(Application.StartupPath, "rptEquipos.rdlc");
 
                 try
                 {
@@ -148,7 +146,6 @@ namespace TorneosFut
                                     MessageBoxIcon.Error);
                     System.Diagnostics.Debug.WriteLine($"Error en configuración de reporte: {ex.Message}");
                     System.Diagnostics.Debug.WriteLine($"Stack Trace: {ex.StackTrace}");
-                    this.Close();
                 }
 
                 rvwEquipos.LocalReport.Refresh();
@@ -161,7 +158,6 @@ namespace TorneosFut
                                 MessageBoxIcon.Error);
                 System.Diagnostics.Debug.WriteLine($"Error en CargarDatos: {ex.Message}");
                 System.Diagnostics.Debug.WriteLine($"Stack Trace: {ex.StackTrace}");
-                this.Close();
             }
         }
     }

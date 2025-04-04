@@ -161,7 +161,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>="Presidente del equipo: " + Fields!Presidente.Value</Value>
+                    <Value>="Presidente: " + Fields!Presidente.Value</Value>
                     <Style>
                       <FontFamily>onest</FontFamily>
                       <FontSize>14pt</FontSize>
