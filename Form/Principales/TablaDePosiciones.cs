@@ -25,8 +25,9 @@ namespace TorneosFut
 
         private void TablaDePosiciones_Load(object sender, EventArgs e)
         {
-            dgvPosiciones.DataSource = csConexion.ListDGV($"SELECT * FROM TablaDePosiciones" +
-                $"WHERE IDTorneo = {Torneo} ORDER BY Grupo asc , Puntos DESC, DiferenciaGoles DESC, GolesAFavor DESC");
+            DataTable dt = csConexion.ListDGV($"SELECT * FROM TablaDePosiciones" +
+                $" WHERE IDTorneo = {Torneo} ORDER BY Grupo asc , Puntos DESC, DiferenciaGoles DESC, GolesAFavor DESC");
+            dgvPosiciones.DataSource = dt;
             csDGV.AdaptarDGV(dgvPosiciones);
         }
 

@@ -177,47 +177,60 @@ namespace TorneosFut
         }
         private void ObtenerGanadorTorneo(int torneoID)
         {
-            using (SqlConnection conn = new SqlConnection(conexion.Conexion.ToString()))
+            try
             {
-                try
+                // Abrir la conexión
+                conexion.AbrirCon();
+
+                // Crear el comando para ejecutar el procedimiento almacenado
+                using (SqlCommand cmd = new SqlCommand("ObtenerGanadorTorneo", conexion.Conexion))
                 {
-                    conn.Open();
+                    cmd.CommandType = CommandType.StoredProcedure;
 
-                    // Crear el comando para ejecutar el procedimiento almacenado
-                    using (SqlCommand cmd = new SqlCommand("ObtenerGanadorTorneo", conn))
+                    // Agregar el parámetro de entrada
+                    cmd.Parameters.AddWithValue("@torneoID", torneoID);
+
+                    // Ejecutar el comando y leer el resultado
+                    using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        cmd.CommandType = CommandType.StoredProcedure;
-
-                        // Agregar el parámetro de entrada
-                        cmd.Parameters.AddWithValue("@torneoID", torneoID);
-
-                        // Ejecutar el comando y leer el resultado
-                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        // Verificar si hay resultados
+                        if (reader.HasRows)
                         {
-                            if (reader.HasRows)
-                            {
-                                reader.Read();
+                            reader.Read();
 
-                                // Leer el resultado
-                                if (reader["GanadorID"] != DBNull.Value)
-                                {
-                                    int ganadorID = (int)reader["GanadorID"];
-                                    int puntos = (int)reader["Puntos"];
-                                    MessageBox.Show($"El ganador del torneo es el equipo con ID: {ganadorID} con {puntos} puntos.");
-                                }
-                                else
-                                {
-                                    string mensaje = (string)reader["Mensaje"];
-                                    MessageBox.Show(mensaje);
-                                }
+                            // Verificar si la columna Mensaje tiene un valor
+                            if (reader["Mensaje"] != DBNull.Value)
+                            {
+                                string mensaje = (string)reader["Mensaje"];
+                                MessageBox.Show(mensaje);
                             }
+                            else
+                            {
+                                // Si no hay mensaje, puedes hacer otro tipo de manejo, por ejemplo:
+                                MessageBox.Show("No se ha devuelto ningún mensaje.");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se pudo obtener el mensaje del torneo.");
                         }
                     }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: " + ex.Message);
-                }
+            }
+            catch (SqlException sqlex)
+            {
+                // Manejo de errores SQL
+                MessageBox.Show("Error SQL: " + sqlex.Message);
+            }
+            catch (Exception ex)
+            {
+                // Manejo de otros errores
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                // Asegúrate de cerrar la conexión siempre
+                conexion.CerrarCon();
             }
         }
     }
