@@ -220,7 +220,7 @@ namespace TorneosFut
         #endregion
 
         #region Inserts
-        public bool AgregarUsuario(string nombre, string nombreusuario, string clave, string correo, string nombreusuariobd, string clavebd, string bdNoEnc)
+        public bool AgregarUsuario(string nombre, string nombreusuario, string clave, string correo, string nombreusuariobd, string clavebd)
         {
             Nombres = nombre;
             NombreUsuario = nombreusuario;
@@ -237,7 +237,6 @@ namespace TorneosFut
                 $"        <Correo>{correo}</Correo>" +
                 $"        <NombreUsuarioBD>{nombreusuariobd}</NombreUsuarioBD>" +
                 $"        <ClaveBD>{clavebd}</ClaveBD>" +
-                $"        <BD>{bdNoEnc}</BD>" +
                 "    </Usuario>" +
                 "</Usuarios>";
             string consultaSQL = $"DECLARE @Datos varchar(MAX) = '{xmlUsuario}'; EXEC spRegistrarUsuario @Datos;";

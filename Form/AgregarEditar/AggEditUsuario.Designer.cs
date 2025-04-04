@@ -243,7 +243,7 @@
             "@hotmail.com"});
             this.cmbCorreos.Location = new System.Drawing.Point(572, 148);
             this.cmbCorreos.Name = "cmbCorreos";
-            this.cmbCorreos.Size = new System.Drawing.Size(231, 32);
+            this.cmbCorreos.Size = new System.Drawing.Size(231, 29);
             this.cmbCorreos.TabIndex = 104;
             // 
             // txtCorreo

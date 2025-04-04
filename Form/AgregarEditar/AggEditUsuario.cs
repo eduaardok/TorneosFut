@@ -49,7 +49,7 @@ namespace Usuarios
                 string claveBD = csEncriptar.Encriptar(txtClaveBD.Text, "futxpert");
                 if (agg)
                 {
-                    if (csDatos.InsertarUsuario(txtNombre.Text, txtUsuarioApp.Text, claveApp, txtCorreo.Text + cmbCorreos.Text, txtUsuarioBD.Text, claveBD, txtClaveBD.Text))
+                    if (csDatos.InsertarUsuario(txtNombre.Text, txtUsuarioApp.Text, claveApp, txtCorreo.Text + cmbCorreos.Text, txtUsuarioBD.Text, claveBD))
                     {
                         //csDatos.CrearLoginBD(txtUsuarioBD.Text, txtClaveBD.Text);
                         msg.Text = "Usuario agregado";

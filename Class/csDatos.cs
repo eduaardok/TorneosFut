@@ -187,9 +187,9 @@ namespace TorneosFut
          {
              return csUsuario.NuevoLogin(u, c);
          }*/
-        public bool InsertarUsuario(string nombre, string nombreusuario, string clave, string correo, string nombreusuariobd, string clavebd, string bdNoEnc)
+        public bool InsertarUsuario(string nombre, string nombreusuario, string clave, string correo, string nombreusuariobd, string clavebd)
         {
-            if (csUsuario.AgregarUsuario(nombre, nombreusuario, clave, correo, nombreusuariobd, clavebd, bdNoEnc))
+            if (csUsuario.AgregarUsuario(nombre, nombreusuario, clave, correo, nombreusuariobd, clavebd))
             {
                 return true;
             }
