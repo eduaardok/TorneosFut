@@ -39,6 +39,7 @@
             this.rvwEstadisticas.ServerReport.BearerToken = null;
             this.rvwEstadisticas.Size = new System.Drawing.Size(1184, 679);
             this.rvwEstadisticas.TabIndex = 0;
+            this.rvwEstadisticas.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             // 
             // frmEstatsGenerales
             // 
@@ -49,8 +50,8 @@
             this.MaximumSize = new System.Drawing.Size(1200, 718);
             this.MinimumSize = new System.Drawing.Size(1200, 718);
             this.Name = "frmEstatsGenerales";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmEstatsGenerales";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmEstatsGenerales_Load);
             this.ResumeLayout(false);
 

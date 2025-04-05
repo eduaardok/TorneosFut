@@ -85,6 +85,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\dsDataGame.cs">
+      <DependentUpon>dsDataGame.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form\AgregarEditar\AsignarPatrocinio.cs">
       <SubType>Form</SubType>
     </Compile>

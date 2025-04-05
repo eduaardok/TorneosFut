@@ -28,9 +28,9 @@ namespace TorneosFut.Class {
         
         private dtAsistidoresDataTable tabledtAsistidores;
         
-        private dtDatosGeneralesDataTable tabledtDatosGenerales;
-        
         private dtDatosEquiposDataTable tabledtDatosEquipos;
+        
+        private dtDatosGeneralesDataTable tabledtDatosGenerales;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -66,11 +66,11 @@ namespace TorneosFut.Class {
                 if ((ds.Tables["dtAsistidores"] != null)) {
                     base.Tables.Add(new dtAsistidoresDataTable(ds.Tables["dtAsistidores"]));
                 }
-                if ((ds.Tables["dtDatosGenerales"] != null)) {
-                    base.Tables.Add(new dtDatosGeneralesDataTable(ds.Tables["dtDatosGenerales"]));
-                }
                 if ((ds.Tables["dtDatosEquipos"] != null)) {
                     base.Tables.Add(new dtDatosEquiposDataTable(ds.Tables["dtDatosEquipos"]));
+                }
+                if ((ds.Tables["dtDatosGenerales"] != null)) {
+                    base.Tables.Add(new dtDatosGeneralesDataTable(ds.Tables["dtDatosGenerales"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -114,9 +114,9 @@ namespace TorneosFut.Class {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public dtDatosGeneralesDataTable dtDatosGenerales {
+        public dtDatosEquiposDataTable dtDatosEquipos {
             get {
-                return this.tabledtDatosGenerales;
+                return this.tabledtDatosEquipos;
             }
         }
         
@@ -124,9 +124,9 @@ namespace TorneosFut.Class {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public dtDatosEquiposDataTable dtDatosEquipos {
+        public dtDatosGeneralesDataTable dtDatosGenerales {
             get {
-                return this.tabledtDatosEquipos;
+                return this.tabledtDatosGenerales;
             }
         }
         
@@ -203,11 +203,11 @@ namespace TorneosFut.Class {
                 if ((ds.Tables["dtAsistidores"] != null)) {
                     base.Tables.Add(new dtAsistidoresDataTable(ds.Tables["dtAsistidores"]));
                 }
-                if ((ds.Tables["dtDatosGenerales"] != null)) {
-                    base.Tables.Add(new dtDatosGeneralesDataTable(ds.Tables["dtDatosGenerales"]));
-                }
                 if ((ds.Tables["dtDatosEquipos"] != null)) {
                     base.Tables.Add(new dtDatosEquiposDataTable(ds.Tables["dtDatosEquipos"]));
+                }
+                if ((ds.Tables["dtDatosGenerales"] != null)) {
+                    base.Tables.Add(new dtDatosGeneralesDataTable(ds.Tables["dtDatosGenerales"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -254,16 +254,16 @@ namespace TorneosFut.Class {
                     this.tabledtAsistidores.InitVars();
                 }
             }
-            this.tabledtDatosGenerales = ((dtDatosGeneralesDataTable)(base.Tables["dtDatosGenerales"]));
-            if ((initTable == true)) {
-                if ((this.tabledtDatosGenerales != null)) {
-                    this.tabledtDatosGenerales.InitVars();
-                }
-            }
             this.tabledtDatosEquipos = ((dtDatosEquiposDataTable)(base.Tables["dtDatosEquipos"]));
             if ((initTable == true)) {
                 if ((this.tabledtDatosEquipos != null)) {
                     this.tabledtDatosEquipos.InitVars();
+                }
+            }
+            this.tabledtDatosGenerales = ((dtDatosGeneralesDataTable)(base.Tables["dtDatosGenerales"]));
+            if ((initTable == true)) {
+                if ((this.tabledtDatosGenerales != null)) {
+                    this.tabledtDatosGenerales.InitVars();
                 }
             }
         }
@@ -280,10 +280,10 @@ namespace TorneosFut.Class {
             base.Tables.Add(this.tabledtGoleadores);
             this.tabledtAsistidores = new dtAsistidoresDataTable();
             base.Tables.Add(this.tabledtAsistidores);
-            this.tabledtDatosGenerales = new dtDatosGeneralesDataTable();
-            base.Tables.Add(this.tabledtDatosGenerales);
             this.tabledtDatosEquipos = new dtDatosEquiposDataTable();
             base.Tables.Add(this.tabledtDatosEquipos);
+            this.tabledtDatosGenerales = new dtDatosGeneralesDataTable();
+            base.Tables.Add(this.tabledtDatosGenerales);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -300,13 +300,13 @@ namespace TorneosFut.Class {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializedtDatosGenerales() {
+        private bool ShouldSerializedtDatosEquipos() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializedtDatosEquipos() {
+        private bool ShouldSerializedtDatosGenerales() {
             return false;
         }
         
@@ -372,10 +372,10 @@ namespace TorneosFut.Class {
         public delegate void dtAsistidoresRowChangeEventHandler(object sender, dtAsistidoresRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void dtDatosGeneralesRowChangeEventHandler(object sender, dtDatosGeneralesRowChangeEvent e);
+        public delegate void dtDatosEquiposRowChangeEventHandler(object sender, dtDatosEquiposRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void dtDatosEquiposRowChangeEventHandler(object sender, dtDatosEquiposRowChangeEvent e);
+        public delegate void dtDatosGeneralesRowChangeEventHandler(object sender, dtDatosGeneralesRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1114,659 +1114,6 @@ namespace TorneosFut.Class {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class dtDatosGeneralesDataTable : global::System.Data.TypedTableBase<dtDatosGeneralesRow> {
-            
-            private global::System.Data.DataColumn columnNombreJugador;
-            
-            private global::System.Data.DataColumn columnApellidoJugador;
-            
-            private global::System.Data.DataColumn columnNombreEquipo;
-            
-            private global::System.Data.DataColumn columnSexo;
-            
-            private global::System.Data.DataColumn columnPosicion;
-            
-            private global::System.Data.DataColumn columnAsistencias;
-            
-            private global::System.Data.DataColumn columnGoles;
-            
-            private global::System.Data.DataColumn columnPartidosJugados;
-            
-            private global::System.Data.DataColumn columnProbabilidadGol;
-            
-            private global::System.Data.DataColumn columnProbabilidadNoGol;
-            
-            private global::System.Data.DataColumn columnGolesAsistencias;
-            
-            private global::System.Data.DataColumn columnPromedioGol;
-            
-            private global::System.Data.DataColumn columnPromedioAsistencias;
-            
-            private global::System.Data.DataColumn columnEficienciaTitular;
-            
-            private global::System.Data.DataColumn columnImpactoPor90Min;
-            
-            private global::System.Data.DataColumn columnContribucionesLocal;
-            
-            private global::System.Data.DataColumn columnContribucionesVisitante;
-            
-            private global::System.Data.DataColumn columnGolesLocal;
-            
-            private global::System.Data.DataColumn columnGolesVisitante;
-            
-            private global::System.Data.DataColumn columnAsistenciasLocal;
-            
-            private global::System.Data.DataColumn columnAsistenciasVisitantes;
-            
-            private global::System.Data.DataColumn columnImagenJugador;
-            
-            private global::System.Data.DataColumn columnIDJugador;
-            
-            private global::System.Data.DataColumn columnEdad;
-            
-            private global::System.Data.DataColumn columnNacionalidad;
-            
-            private global::System.Data.DataColumn columnPeso;
-            
-            private global::System.Data.DataColumn columnAltura;
-            
-            private global::System.Data.DataColumn columnPiernaHabil;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public dtDatosGeneralesDataTable() {
-                this.TableName = "dtDatosGenerales";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal dtDatosGeneralesDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected dtDatosGeneralesDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn NombreJugadorColumn {
-                get {
-                    return this.columnNombreJugador;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ApellidoJugadorColumn {
-                get {
-                    return this.columnApellidoJugador;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn NombreEquipoColumn {
-                get {
-                    return this.columnNombreEquipo;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn SexoColumn {
-                get {
-                    return this.columnSexo;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn PosicionColumn {
-                get {
-                    return this.columnPosicion;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn AsistenciasColumn {
-                get {
-                    return this.columnAsistencias;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn GolesColumn {
-                get {
-                    return this.columnGoles;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn PartidosJugadosColumn {
-                get {
-                    return this.columnPartidosJugados;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ProbabilidadGolColumn {
-                get {
-                    return this.columnProbabilidadGol;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ProbabilidadNoGolColumn {
-                get {
-                    return this.columnProbabilidadNoGol;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn GolesAsistenciasColumn {
-                get {
-                    return this.columnGolesAsistencias;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn PromedioGolColumn {
-                get {
-                    return this.columnPromedioGol;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn PromedioAsistenciasColumn {
-                get {
-                    return this.columnPromedioAsistencias;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn EficienciaTitularColumn {
-                get {
-                    return this.columnEficienciaTitular;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ImpactoPor90MinColumn {
-                get {
-                    return this.columnImpactoPor90Min;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ContribucionesLocalColumn {
-                get {
-                    return this.columnContribucionesLocal;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ContribucionesVisitanteColumn {
-                get {
-                    return this.columnContribucionesVisitante;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn GolesLocalColumn {
-                get {
-                    return this.columnGolesLocal;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn GolesVisitanteColumn {
-                get {
-                    return this.columnGolesVisitante;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn AsistenciasLocalColumn {
-                get {
-                    return this.columnAsistenciasLocal;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn AsistenciasVisitantesColumn {
-                get {
-                    return this.columnAsistenciasVisitantes;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ImagenJugadorColumn {
-                get {
-                    return this.columnImagenJugador;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn IDJugadorColumn {
-                get {
-                    return this.columnIDJugador;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn EdadColumn {
-                get {
-                    return this.columnEdad;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn NacionalidadColumn {
-                get {
-                    return this.columnNacionalidad;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn PesoColumn {
-                get {
-                    return this.columnPeso;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn AlturaColumn {
-                get {
-                    return this.columnAltura;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn PiernaHabilColumn {
-                get {
-                    return this.columnPiernaHabil;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public dtDatosGeneralesRow this[int index] {
-                get {
-                    return ((dtDatosGeneralesRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event dtDatosGeneralesRowChangeEventHandler dtDatosGeneralesRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event dtDatosGeneralesRowChangeEventHandler dtDatosGeneralesRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event dtDatosGeneralesRowChangeEventHandler dtDatosGeneralesRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event dtDatosGeneralesRowChangeEventHandler dtDatosGeneralesRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AdddtDatosGeneralesRow(dtDatosGeneralesRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public dtDatosGeneralesRow AdddtDatosGeneralesRow(
-                        string NombreJugador, 
-                        string ApellidoJugador, 
-                        string NombreEquipo, 
-                        string Sexo, 
-                        string Posicion, 
-                        string Asistencias, 
-                        string Goles, 
-                        string PartidosJugados, 
-                        string ProbabilidadGol, 
-                        string ProbabilidadNoGol, 
-                        string GolesAsistencias, 
-                        string PromedioGol, 
-                        string PromedioAsistencias, 
-                        string EficienciaTitular, 
-                        string ImpactoPor90Min, 
-                        string ContribucionesLocal, 
-                        string ContribucionesVisitante, 
-                        string GolesLocal, 
-                        string GolesVisitante, 
-                        string AsistenciasLocal, 
-                        string AsistenciasVisitantes, 
-                        string ImagenJugador, 
-                        string IDJugador, 
-                        string Edad, 
-                        string Nacionalidad, 
-                        string Peso, 
-                        string Altura, 
-                        string PiernaHabil) {
-                dtDatosGeneralesRow rowdtDatosGeneralesRow = ((dtDatosGeneralesRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        NombreJugador,
-                        ApellidoJugador,
-                        NombreEquipo,
-                        Sexo,
-                        Posicion,
-                        Asistencias,
-                        Goles,
-                        PartidosJugados,
-                        ProbabilidadGol,
-                        ProbabilidadNoGol,
-                        GolesAsistencias,
-                        PromedioGol,
-                        PromedioAsistencias,
-                        EficienciaTitular,
-                        ImpactoPor90Min,
-                        ContribucionesLocal,
-                        ContribucionesVisitante,
-                        GolesLocal,
-                        GolesVisitante,
-                        AsistenciasLocal,
-                        AsistenciasVisitantes,
-                        ImagenJugador,
-                        IDJugador,
-                        Edad,
-                        Nacionalidad,
-                        Peso,
-                        Altura,
-                        PiernaHabil};
-                rowdtDatosGeneralesRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowdtDatosGeneralesRow);
-                return rowdtDatosGeneralesRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                dtDatosGeneralesDataTable cln = ((dtDatosGeneralesDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new dtDatosGeneralesDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal void InitVars() {
-                this.columnNombreJugador = base.Columns["NombreJugador"];
-                this.columnApellidoJugador = base.Columns["ApellidoJugador"];
-                this.columnNombreEquipo = base.Columns["NombreEquipo"];
-                this.columnSexo = base.Columns["Sexo"];
-                this.columnPosicion = base.Columns["Posicion"];
-                this.columnAsistencias = base.Columns["Asistencias"];
-                this.columnGoles = base.Columns["Goles"];
-                this.columnPartidosJugados = base.Columns["PartidosJugados"];
-                this.columnProbabilidadGol = base.Columns["ProbabilidadGol"];
-                this.columnProbabilidadNoGol = base.Columns["ProbabilidadNoGol"];
-                this.columnGolesAsistencias = base.Columns["GolesAsistencias"];
-                this.columnPromedioGol = base.Columns["PromedioGol"];
-                this.columnPromedioAsistencias = base.Columns["PromedioAsistencias"];
-                this.columnEficienciaTitular = base.Columns["EficienciaTitular"];
-                this.columnImpactoPor90Min = base.Columns["ImpactoPor90Min"];
-                this.columnContribucionesLocal = base.Columns["ContribucionesLocal"];
-                this.columnContribucionesVisitante = base.Columns["ContribucionesVisitante"];
-                this.columnGolesLocal = base.Columns["GolesLocal"];
-                this.columnGolesVisitante = base.Columns["GolesVisitante"];
-                this.columnAsistenciasLocal = base.Columns["AsistenciasLocal"];
-                this.columnAsistenciasVisitantes = base.Columns["AsistenciasVisitantes"];
-                this.columnImagenJugador = base.Columns["ImagenJugador"];
-                this.columnIDJugador = base.Columns["IDJugador"];
-                this.columnEdad = base.Columns["Edad"];
-                this.columnNacionalidad = base.Columns["Nacionalidad"];
-                this.columnPeso = base.Columns["Peso"];
-                this.columnAltura = base.Columns["Altura"];
-                this.columnPiernaHabil = base.Columns["PiernaHabil"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            private void InitClass() {
-                this.columnNombreJugador = new global::System.Data.DataColumn("NombreJugador", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNombreJugador);
-                this.columnApellidoJugador = new global::System.Data.DataColumn("ApellidoJugador", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnApellidoJugador);
-                this.columnNombreEquipo = new global::System.Data.DataColumn("NombreEquipo", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNombreEquipo);
-                this.columnSexo = new global::System.Data.DataColumn("Sexo", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSexo);
-                this.columnPosicion = new global::System.Data.DataColumn("Posicion", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPosicion);
-                this.columnAsistencias = new global::System.Data.DataColumn("Asistencias", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAsistencias);
-                this.columnGoles = new global::System.Data.DataColumn("Goles", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnGoles);
-                this.columnPartidosJugados = new global::System.Data.DataColumn("PartidosJugados", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPartidosJugados);
-                this.columnProbabilidadGol = new global::System.Data.DataColumn("ProbabilidadGol", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnProbabilidadGol);
-                this.columnProbabilidadNoGol = new global::System.Data.DataColumn("ProbabilidadNoGol", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnProbabilidadNoGol);
-                this.columnGolesAsistencias = new global::System.Data.DataColumn("GolesAsistencias", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnGolesAsistencias);
-                this.columnPromedioGol = new global::System.Data.DataColumn("PromedioGol", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPromedioGol);
-                this.columnPromedioAsistencias = new global::System.Data.DataColumn("PromedioAsistencias", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPromedioAsistencias);
-                this.columnEficienciaTitular = new global::System.Data.DataColumn("EficienciaTitular", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEficienciaTitular);
-                this.columnImpactoPor90Min = new global::System.Data.DataColumn("ImpactoPor90Min", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnImpactoPor90Min);
-                this.columnContribucionesLocal = new global::System.Data.DataColumn("ContribucionesLocal", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnContribucionesLocal);
-                this.columnContribucionesVisitante = new global::System.Data.DataColumn("ContribucionesVisitante", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnContribucionesVisitante);
-                this.columnGolesLocal = new global::System.Data.DataColumn("GolesLocal", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnGolesLocal);
-                this.columnGolesVisitante = new global::System.Data.DataColumn("GolesVisitante", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnGolesVisitante);
-                this.columnAsistenciasLocal = new global::System.Data.DataColumn("AsistenciasLocal", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAsistenciasLocal);
-                this.columnAsistenciasVisitantes = new global::System.Data.DataColumn("AsistenciasVisitantes", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAsistenciasVisitantes);
-                this.columnImagenJugador = new global::System.Data.DataColumn("ImagenJugador", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnImagenJugador);
-                this.columnIDJugador = new global::System.Data.DataColumn("IDJugador", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnIDJugador);
-                this.columnEdad = new global::System.Data.DataColumn("Edad", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEdad);
-                this.columnNacionalidad = new global::System.Data.DataColumn("Nacionalidad", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNacionalidad);
-                this.columnPeso = new global::System.Data.DataColumn("Peso", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPeso);
-                this.columnAltura = new global::System.Data.DataColumn("Altura", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAltura);
-                this.columnPiernaHabil = new global::System.Data.DataColumn("PiernaHabil", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPiernaHabil);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public dtDatosGeneralesRow NewdtDatosGeneralesRow() {
-                return ((dtDatosGeneralesRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new dtDatosGeneralesRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(dtDatosGeneralesRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.dtDatosGeneralesRowChanged != null)) {
-                    this.dtDatosGeneralesRowChanged(this, new dtDatosGeneralesRowChangeEvent(((dtDatosGeneralesRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.dtDatosGeneralesRowChanging != null)) {
-                    this.dtDatosGeneralesRowChanging(this, new dtDatosGeneralesRowChangeEvent(((dtDatosGeneralesRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.dtDatosGeneralesRowDeleted != null)) {
-                    this.dtDatosGeneralesRowDeleted(this, new dtDatosGeneralesRowChangeEvent(((dtDatosGeneralesRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.dtDatosGeneralesRowDeleting != null)) {
-                    this.dtDatosGeneralesRowDeleting(this, new dtDatosGeneralesRowChangeEvent(((dtDatosGeneralesRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemovedtDatosGeneralesRow(dtDatosGeneralesRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                dsDataGame ds = new dsDataGame();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "dtDatosGeneralesDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class dtDatosEquiposDataTable : global::System.Data.TypedTableBase<dtDatosEquiposRow> {
             
             private global::System.Data.DataColumn columnNombreEquipo;
@@ -2210,6 +1557,393 @@ namespace TorneosFut.Class {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "dtDatosEquiposDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class dtDatosGeneralesDataTable : global::System.Data.TypedTableBase<dtDatosGeneralesRow> {
+            
+            private global::System.Data.DataColumn columnIDJugador;
+            
+            private global::System.Data.DataColumn columnNombreCompleto;
+            
+            private global::System.Data.DataColumn columnNombreEquipo;
+            
+            private global::System.Data.DataColumn columnDorsal;
+            
+            private global::System.Data.DataColumn columnPartidosJugados;
+            
+            private global::System.Data.DataColumn columnGoles;
+            
+            private global::System.Data.DataColumn columnAsistencias;
+            
+            private global::System.Data.DataColumn columnPromedioGoles;
+            
+            private global::System.Data.DataColumn columnPromedioAsistencias;
+            
+            private global::System.Data.DataColumn columnPartidosTotalesEquipo;
+            
+            private global::System.Data.DataColumn columnPorcentajeParticipacion;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public dtDatosGeneralesDataTable() {
+                this.TableName = "dtDatosGenerales";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal dtDatosGeneralesDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected dtDatosGeneralesDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn IDJugadorColumn {
+                get {
+                    return this.columnIDJugador;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn NombreCompletoColumn {
+                get {
+                    return this.columnNombreCompleto;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn NombreEquipoColumn {
+                get {
+                    return this.columnNombreEquipo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn DorsalColumn {
+                get {
+                    return this.columnDorsal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PartidosJugadosColumn {
+                get {
+                    return this.columnPartidosJugados;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn GolesColumn {
+                get {
+                    return this.columnGoles;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn AsistenciasColumn {
+                get {
+                    return this.columnAsistencias;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PromedioGolesColumn {
+                get {
+                    return this.columnPromedioGoles;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PromedioAsistenciasColumn {
+                get {
+                    return this.columnPromedioAsistencias;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PartidosTotalesEquipoColumn {
+                get {
+                    return this.columnPartidosTotalesEquipo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PorcentajeParticipacionColumn {
+                get {
+                    return this.columnPorcentajeParticipacion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public dtDatosGeneralesRow this[int index] {
+                get {
+                    return ((dtDatosGeneralesRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event dtDatosGeneralesRowChangeEventHandler dtDatosGeneralesRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event dtDatosGeneralesRowChangeEventHandler dtDatosGeneralesRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event dtDatosGeneralesRowChangeEventHandler dtDatosGeneralesRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event dtDatosGeneralesRowChangeEventHandler dtDatosGeneralesRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void AdddtDatosGeneralesRow(dtDatosGeneralesRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public dtDatosGeneralesRow AdddtDatosGeneralesRow(string IDJugador, string NombreCompleto, string NombreEquipo, string Dorsal, string PartidosJugados, string Goles, string Asistencias, string PromedioGoles, string PromedioAsistencias, string PartidosTotalesEquipo, string PorcentajeParticipacion) {
+                dtDatosGeneralesRow rowdtDatosGeneralesRow = ((dtDatosGeneralesRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        IDJugador,
+                        NombreCompleto,
+                        NombreEquipo,
+                        Dorsal,
+                        PartidosJugados,
+                        Goles,
+                        Asistencias,
+                        PromedioGoles,
+                        PromedioAsistencias,
+                        PartidosTotalesEquipo,
+                        PorcentajeParticipacion};
+                rowdtDatosGeneralesRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowdtDatosGeneralesRow);
+                return rowdtDatosGeneralesRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                dtDatosGeneralesDataTable cln = ((dtDatosGeneralesDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new dtDatosGeneralesDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columnIDJugador = base.Columns["IDJugador"];
+                this.columnNombreCompleto = base.Columns["NombreCompleto"];
+                this.columnNombreEquipo = base.Columns["NombreEquipo"];
+                this.columnDorsal = base.Columns["Dorsal"];
+                this.columnPartidosJugados = base.Columns["PartidosJugados"];
+                this.columnGoles = base.Columns["Goles"];
+                this.columnAsistencias = base.Columns["Asistencias"];
+                this.columnPromedioGoles = base.Columns["PromedioGoles"];
+                this.columnPromedioAsistencias = base.Columns["PromedioAsistencias"];
+                this.columnPartidosTotalesEquipo = base.Columns["PartidosTotalesEquipo"];
+                this.columnPorcentajeParticipacion = base.Columns["PorcentajeParticipacion"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columnIDJugador = new global::System.Data.DataColumn("IDJugador", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIDJugador);
+                this.columnNombreCompleto = new global::System.Data.DataColumn("NombreCompleto", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNombreCompleto);
+                this.columnNombreEquipo = new global::System.Data.DataColumn("NombreEquipo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNombreEquipo);
+                this.columnDorsal = new global::System.Data.DataColumn("Dorsal", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDorsal);
+                this.columnPartidosJugados = new global::System.Data.DataColumn("PartidosJugados", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPartidosJugados);
+                this.columnGoles = new global::System.Data.DataColumn("Goles", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGoles);
+                this.columnAsistencias = new global::System.Data.DataColumn("Asistencias", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAsistencias);
+                this.columnPromedioGoles = new global::System.Data.DataColumn("PromedioGoles", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPromedioGoles);
+                this.columnPromedioAsistencias = new global::System.Data.DataColumn("PromedioAsistencias", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPromedioAsistencias);
+                this.columnPartidosTotalesEquipo = new global::System.Data.DataColumn("PartidosTotalesEquipo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPartidosTotalesEquipo);
+                this.columnPorcentajeParticipacion = new global::System.Data.DataColumn("PorcentajeParticipacion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPorcentajeParticipacion);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public dtDatosGeneralesRow NewdtDatosGeneralesRow() {
+                return ((dtDatosGeneralesRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new dtDatosGeneralesRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(dtDatosGeneralesRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.dtDatosGeneralesRowChanged != null)) {
+                    this.dtDatosGeneralesRowChanged(this, new dtDatosGeneralesRowChangeEvent(((dtDatosGeneralesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.dtDatosGeneralesRowChanging != null)) {
+                    this.dtDatosGeneralesRowChanging(this, new dtDatosGeneralesRowChangeEvent(((dtDatosGeneralesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.dtDatosGeneralesRowDeleted != null)) {
+                    this.dtDatosGeneralesRowDeleted(this, new dtDatosGeneralesRowChangeEvent(((dtDatosGeneralesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.dtDatosGeneralesRowDeleting != null)) {
+                    this.dtDatosGeneralesRowDeleting(this, new dtDatosGeneralesRowChangeEvent(((dtDatosGeneralesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void RemovedtDatosGeneralesRow(dtDatosGeneralesRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dsDataGame ds = new dsDataGame();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "dtDatosGeneralesDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -2816,818 +2550,6 @@ namespace TorneosFut.Class {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class dtDatosGeneralesRow : global::System.Data.DataRow {
-            
-            private dtDatosGeneralesDataTable tabledtDatosGenerales;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal dtDatosGeneralesRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tabledtDatosGenerales = ((dtDatosGeneralesDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string NombreJugador {
-                get {
-                    try {
-                        return ((string)(this[this.tabledtDatosGenerales.NombreJugadorColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'NombreJugador\' de la tabla \'dtDatosGenerales\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtDatosGenerales.NombreJugadorColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string ApellidoJugador {
-                get {
-                    try {
-                        return ((string)(this[this.tabledtDatosGenerales.ApellidoJugadorColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ApellidoJugador\' de la tabla \'dtDatosGenerales\' es DBNull" +
-                                ".", e);
-                    }
-                }
-                set {
-                    this[this.tabledtDatosGenerales.ApellidoJugadorColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string NombreEquipo {
-                get {
-                    try {
-                        return ((string)(this[this.tabledtDatosGenerales.NombreEquipoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'NombreEquipo\' de la tabla \'dtDatosGenerales\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtDatosGenerales.NombreEquipoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Sexo {
-                get {
-                    try {
-                        return ((string)(this[this.tabledtDatosGenerales.SexoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Sexo\' de la tabla \'dtDatosGenerales\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtDatosGenerales.SexoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Posicion {
-                get {
-                    try {
-                        return ((string)(this[this.tabledtDatosGenerales.PosicionColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Posicion\' de la tabla \'dtDatosGenerales\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtDatosGenerales.PosicionColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Asistencias {
-                get {
-                    try {
-                        return ((string)(this[this.tabledtDatosGenerales.AsistenciasColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Asistencias\' de la tabla \'dtDatosGenerales\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtDatosGenerales.AsistenciasColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Goles {
-                get {
-                    try {
-                        return ((string)(this[this.tabledtDatosGenerales.GolesColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Goles\' de la tabla \'dtDatosGenerales\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtDatosGenerales.GolesColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string PartidosJugados {
-                get {
-                    try {
-                        return ((string)(this[this.tabledtDatosGenerales.PartidosJugadosColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'PartidosJugados\' de la tabla \'dtDatosGenerales\' es DBNull" +
-                                ".", e);
-                    }
-                }
-                set {
-                    this[this.tabledtDatosGenerales.PartidosJugadosColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string ProbabilidadGol {
-                get {
-                    try {
-                        return ((string)(this[this.tabledtDatosGenerales.ProbabilidadGolColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ProbabilidadGol\' de la tabla \'dtDatosGenerales\' es DBNull" +
-                                ".", e);
-                    }
-                }
-                set {
-                    this[this.tabledtDatosGenerales.ProbabilidadGolColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string ProbabilidadNoGol {
-                get {
-                    try {
-                        return ((string)(this[this.tabledtDatosGenerales.ProbabilidadNoGolColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ProbabilidadNoGol\' de la tabla \'dtDatosGenerales\' es DBNu" +
-                                "ll.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtDatosGenerales.ProbabilidadNoGolColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string GolesAsistencias {
-                get {
-                    try {
-                        return ((string)(this[this.tabledtDatosGenerales.GolesAsistenciasColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'GolesAsistencias\' de la tabla \'dtDatosGenerales\' es DBNul" +
-                                "l.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtDatosGenerales.GolesAsistenciasColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string PromedioGol {
-                get {
-                    try {
-                        return ((string)(this[this.tabledtDatosGenerales.PromedioGolColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'PromedioGol\' de la tabla \'dtDatosGenerales\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtDatosGenerales.PromedioGolColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string PromedioAsistencias {
-                get {
-                    try {
-                        return ((string)(this[this.tabledtDatosGenerales.PromedioAsistenciasColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'PromedioAsistencias\' de la tabla \'dtDatosGenerales\' es DB" +
-                                "Null.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtDatosGenerales.PromedioAsistenciasColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string EficienciaTitular {
-                get {
-                    try {
-                        return ((string)(this[this.tabledtDatosGenerales.EficienciaTitularColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'EficienciaTitular\' de la tabla \'dtDatosGenerales\' es DBNu" +
-                                "ll.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtDatosGenerales.EficienciaTitularColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string ImpactoPor90Min {
-                get {
-                    try {
-                        return ((string)(this[this.tabledtDatosGenerales.ImpactoPor90MinColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ImpactoPor90Min\' de la tabla \'dtDatosGenerales\' es DBNull" +
-                                ".", e);
-                    }
-                }
-                set {
-                    this[this.tabledtDatosGenerales.ImpactoPor90MinColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string ContribucionesLocal {
-                get {
-                    try {
-                        return ((string)(this[this.tabledtDatosGenerales.ContribucionesLocalColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ContribucionesLocal\' de la tabla \'dtDatosGenerales\' es DB" +
-                                "Null.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtDatosGenerales.ContribucionesLocalColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string ContribucionesVisitante {
-                get {
-                    try {
-                        return ((string)(this[this.tabledtDatosGenerales.ContribucionesVisitanteColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ContribucionesVisitante\' de la tabla \'dtDatosGenerales\' e" +
-                                "s DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtDatosGenerales.ContribucionesVisitanteColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string GolesLocal {
-                get {
-                    try {
-                        return ((string)(this[this.tabledtDatosGenerales.GolesLocalColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'GolesLocal\' de la tabla \'dtDatosGenerales\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtDatosGenerales.GolesLocalColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string GolesVisitante {
-                get {
-                    try {
-                        return ((string)(this[this.tabledtDatosGenerales.GolesVisitanteColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'GolesVisitante\' de la tabla \'dtDatosGenerales\' es DBNull." +
-                                "", e);
-                    }
-                }
-                set {
-                    this[this.tabledtDatosGenerales.GolesVisitanteColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string AsistenciasLocal {
-                get {
-                    try {
-                        return ((string)(this[this.tabledtDatosGenerales.AsistenciasLocalColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'AsistenciasLocal\' de la tabla \'dtDatosGenerales\' es DBNul" +
-                                "l.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtDatosGenerales.AsistenciasLocalColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string AsistenciasVisitantes {
-                get {
-                    try {
-                        return ((string)(this[this.tabledtDatosGenerales.AsistenciasVisitantesColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'AsistenciasVisitantes\' de la tabla \'dtDatosGenerales\' es " +
-                                "DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtDatosGenerales.AsistenciasVisitantesColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string ImagenJugador {
-                get {
-                    try {
-                        return ((string)(this[this.tabledtDatosGenerales.ImagenJugadorColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ImagenJugador\' de la tabla \'dtDatosGenerales\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtDatosGenerales.ImagenJugadorColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string IDJugador {
-                get {
-                    try {
-                        return ((string)(this[this.tabledtDatosGenerales.IDJugadorColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'IDJugador\' de la tabla \'dtDatosGenerales\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtDatosGenerales.IDJugadorColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Edad {
-                get {
-                    try {
-                        return ((string)(this[this.tabledtDatosGenerales.EdadColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Edad\' de la tabla \'dtDatosGenerales\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtDatosGenerales.EdadColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Nacionalidad {
-                get {
-                    try {
-                        return ((string)(this[this.tabledtDatosGenerales.NacionalidadColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Nacionalidad\' de la tabla \'dtDatosGenerales\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtDatosGenerales.NacionalidadColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Peso {
-                get {
-                    try {
-                        return ((string)(this[this.tabledtDatosGenerales.PesoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Peso\' de la tabla \'dtDatosGenerales\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtDatosGenerales.PesoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Altura {
-                get {
-                    try {
-                        return ((string)(this[this.tabledtDatosGenerales.AlturaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Altura\' de la tabla \'dtDatosGenerales\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtDatosGenerales.AlturaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string PiernaHabil {
-                get {
-                    try {
-                        return ((string)(this[this.tabledtDatosGenerales.PiernaHabilColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'PiernaHabil\' de la tabla \'dtDatosGenerales\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtDatosGenerales.PiernaHabilColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsNombreJugadorNull() {
-                return this.IsNull(this.tabledtDatosGenerales.NombreJugadorColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetNombreJugadorNull() {
-                this[this.tabledtDatosGenerales.NombreJugadorColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsApellidoJugadorNull() {
-                return this.IsNull(this.tabledtDatosGenerales.ApellidoJugadorColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetApellidoJugadorNull() {
-                this[this.tabledtDatosGenerales.ApellidoJugadorColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsNombreEquipoNull() {
-                return this.IsNull(this.tabledtDatosGenerales.NombreEquipoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetNombreEquipoNull() {
-                this[this.tabledtDatosGenerales.NombreEquipoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsSexoNull() {
-                return this.IsNull(this.tabledtDatosGenerales.SexoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetSexoNull() {
-                this[this.tabledtDatosGenerales.SexoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsPosicionNull() {
-                return this.IsNull(this.tabledtDatosGenerales.PosicionColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetPosicionNull() {
-                this[this.tabledtDatosGenerales.PosicionColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsAsistenciasNull() {
-                return this.IsNull(this.tabledtDatosGenerales.AsistenciasColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetAsistenciasNull() {
-                this[this.tabledtDatosGenerales.AsistenciasColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsGolesNull() {
-                return this.IsNull(this.tabledtDatosGenerales.GolesColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetGolesNull() {
-                this[this.tabledtDatosGenerales.GolesColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsPartidosJugadosNull() {
-                return this.IsNull(this.tabledtDatosGenerales.PartidosJugadosColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetPartidosJugadosNull() {
-                this[this.tabledtDatosGenerales.PartidosJugadosColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsProbabilidadGolNull() {
-                return this.IsNull(this.tabledtDatosGenerales.ProbabilidadGolColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetProbabilidadGolNull() {
-                this[this.tabledtDatosGenerales.ProbabilidadGolColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsProbabilidadNoGolNull() {
-                return this.IsNull(this.tabledtDatosGenerales.ProbabilidadNoGolColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetProbabilidadNoGolNull() {
-                this[this.tabledtDatosGenerales.ProbabilidadNoGolColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsGolesAsistenciasNull() {
-                return this.IsNull(this.tabledtDatosGenerales.GolesAsistenciasColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetGolesAsistenciasNull() {
-                this[this.tabledtDatosGenerales.GolesAsistenciasColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsPromedioGolNull() {
-                return this.IsNull(this.tabledtDatosGenerales.PromedioGolColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetPromedioGolNull() {
-                this[this.tabledtDatosGenerales.PromedioGolColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsPromedioAsistenciasNull() {
-                return this.IsNull(this.tabledtDatosGenerales.PromedioAsistenciasColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetPromedioAsistenciasNull() {
-                this[this.tabledtDatosGenerales.PromedioAsistenciasColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsEficienciaTitularNull() {
-                return this.IsNull(this.tabledtDatosGenerales.EficienciaTitularColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetEficienciaTitularNull() {
-                this[this.tabledtDatosGenerales.EficienciaTitularColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsImpactoPor90MinNull() {
-                return this.IsNull(this.tabledtDatosGenerales.ImpactoPor90MinColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetImpactoPor90MinNull() {
-                this[this.tabledtDatosGenerales.ImpactoPor90MinColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsContribucionesLocalNull() {
-                return this.IsNull(this.tabledtDatosGenerales.ContribucionesLocalColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetContribucionesLocalNull() {
-                this[this.tabledtDatosGenerales.ContribucionesLocalColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsContribucionesVisitanteNull() {
-                return this.IsNull(this.tabledtDatosGenerales.ContribucionesVisitanteColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetContribucionesVisitanteNull() {
-                this[this.tabledtDatosGenerales.ContribucionesVisitanteColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsGolesLocalNull() {
-                return this.IsNull(this.tabledtDatosGenerales.GolesLocalColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetGolesLocalNull() {
-                this[this.tabledtDatosGenerales.GolesLocalColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsGolesVisitanteNull() {
-                return this.IsNull(this.tabledtDatosGenerales.GolesVisitanteColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetGolesVisitanteNull() {
-                this[this.tabledtDatosGenerales.GolesVisitanteColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsAsistenciasLocalNull() {
-                return this.IsNull(this.tabledtDatosGenerales.AsistenciasLocalColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetAsistenciasLocalNull() {
-                this[this.tabledtDatosGenerales.AsistenciasLocalColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsAsistenciasVisitantesNull() {
-                return this.IsNull(this.tabledtDatosGenerales.AsistenciasVisitantesColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetAsistenciasVisitantesNull() {
-                this[this.tabledtDatosGenerales.AsistenciasVisitantesColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsImagenJugadorNull() {
-                return this.IsNull(this.tabledtDatosGenerales.ImagenJugadorColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetImagenJugadorNull() {
-                this[this.tabledtDatosGenerales.ImagenJugadorColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsIDJugadorNull() {
-                return this.IsNull(this.tabledtDatosGenerales.IDJugadorColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetIDJugadorNull() {
-                this[this.tabledtDatosGenerales.IDJugadorColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsEdadNull() {
-                return this.IsNull(this.tabledtDatosGenerales.EdadColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetEdadNull() {
-                this[this.tabledtDatosGenerales.EdadColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsNacionalidadNull() {
-                return this.IsNull(this.tabledtDatosGenerales.NacionalidadColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetNacionalidadNull() {
-                this[this.tabledtDatosGenerales.NacionalidadColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsPesoNull() {
-                return this.IsNull(this.tabledtDatosGenerales.PesoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetPesoNull() {
-                this[this.tabledtDatosGenerales.PesoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsAlturaNull() {
-                return this.IsNull(this.tabledtDatosGenerales.AlturaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetAlturaNull() {
-                this[this.tabledtDatosGenerales.AlturaColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsPiernaHabilNull() {
-                return this.IsNull(this.tabledtDatosGenerales.PiernaHabilColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetPiernaHabilNull() {
-                this[this.tabledtDatosGenerales.PiernaHabilColumn] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
         public partial class dtDatosEquiposRow : global::System.Data.DataRow {
             
             private dtDatosEquiposDataTable tabledtDatosEquipos;
@@ -4123,6 +3045,334 @@ namespace TorneosFut.Class {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class dtDatosGeneralesRow : global::System.Data.DataRow {
+            
+            private dtDatosGeneralesDataTable tabledtDatosGenerales;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal dtDatosGeneralesRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tabledtDatosGenerales = ((dtDatosGeneralesDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string IDJugador {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtDatosGenerales.IDJugadorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'IDJugador\' de la tabla \'dtDatosGenerales\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtDatosGenerales.IDJugadorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string NombreCompleto {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtDatosGenerales.NombreCompletoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'NombreCompleto\' de la tabla \'dtDatosGenerales\' es DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tabledtDatosGenerales.NombreCompletoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string NombreEquipo {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtDatosGenerales.NombreEquipoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'NombreEquipo\' de la tabla \'dtDatosGenerales\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtDatosGenerales.NombreEquipoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Dorsal {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtDatosGenerales.DorsalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Dorsal\' de la tabla \'dtDatosGenerales\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtDatosGenerales.DorsalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string PartidosJugados {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtDatosGenerales.PartidosJugadosColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'PartidosJugados\' de la tabla \'dtDatosGenerales\' es DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tabledtDatosGenerales.PartidosJugadosColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Goles {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtDatosGenerales.GolesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Goles\' de la tabla \'dtDatosGenerales\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtDatosGenerales.GolesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Asistencias {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtDatosGenerales.AsistenciasColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Asistencias\' de la tabla \'dtDatosGenerales\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtDatosGenerales.AsistenciasColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string PromedioGoles {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtDatosGenerales.PromedioGolesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'PromedioGoles\' de la tabla \'dtDatosGenerales\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtDatosGenerales.PromedioGolesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string PromedioAsistencias {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtDatosGenerales.PromedioAsistenciasColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'PromedioAsistencias\' de la tabla \'dtDatosGenerales\' es DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtDatosGenerales.PromedioAsistenciasColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string PartidosTotalesEquipo {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtDatosGenerales.PartidosTotalesEquipoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'PartidosTotalesEquipo\' de la tabla \'dtDatosGenerales\' es " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtDatosGenerales.PartidosTotalesEquipoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string PorcentajeParticipacion {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtDatosGenerales.PorcentajeParticipacionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'PorcentajeParticipacion\' de la tabla \'dtDatosGenerales\' e" +
+                                "s DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtDatosGenerales.PorcentajeParticipacionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsIDJugadorNull() {
+                return this.IsNull(this.tabledtDatosGenerales.IDJugadorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetIDJugadorNull() {
+                this[this.tabledtDatosGenerales.IDJugadorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsNombreCompletoNull() {
+                return this.IsNull(this.tabledtDatosGenerales.NombreCompletoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetNombreCompletoNull() {
+                this[this.tabledtDatosGenerales.NombreCompletoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsNombreEquipoNull() {
+                return this.IsNull(this.tabledtDatosGenerales.NombreEquipoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetNombreEquipoNull() {
+                this[this.tabledtDatosGenerales.NombreEquipoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsDorsalNull() {
+                return this.IsNull(this.tabledtDatosGenerales.DorsalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetDorsalNull() {
+                this[this.tabledtDatosGenerales.DorsalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPartidosJugadosNull() {
+                return this.IsNull(this.tabledtDatosGenerales.PartidosJugadosColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPartidosJugadosNull() {
+                this[this.tabledtDatosGenerales.PartidosJugadosColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsGolesNull() {
+                return this.IsNull(this.tabledtDatosGenerales.GolesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetGolesNull() {
+                this[this.tabledtDatosGenerales.GolesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsAsistenciasNull() {
+                return this.IsNull(this.tabledtDatosGenerales.AsistenciasColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetAsistenciasNull() {
+                this[this.tabledtDatosGenerales.AsistenciasColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPromedioGolesNull() {
+                return this.IsNull(this.tabledtDatosGenerales.PromedioGolesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPromedioGolesNull() {
+                this[this.tabledtDatosGenerales.PromedioGolesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPromedioAsistenciasNull() {
+                return this.IsNull(this.tabledtDatosGenerales.PromedioAsistenciasColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPromedioAsistenciasNull() {
+                this[this.tabledtDatosGenerales.PromedioAsistenciasColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPartidosTotalesEquipoNull() {
+                return this.IsNull(this.tabledtDatosGenerales.PartidosTotalesEquipoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPartidosTotalesEquipoNull() {
+                this[this.tabledtDatosGenerales.PartidosTotalesEquipoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPorcentajeParticipacionNull() {
+                return this.IsNull(this.tabledtDatosGenerales.PorcentajeParticipacionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPorcentajeParticipacionNull() {
+                this[this.tabledtDatosGenerales.PorcentajeParticipacionColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -4194,22 +3444,22 @@ namespace TorneosFut.Class {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class dtDatosGeneralesRowChangeEvent : global::System.EventArgs {
+        public class dtDatosEquiposRowChangeEvent : global::System.EventArgs {
             
-            private dtDatosGeneralesRow eventRow;
+            private dtDatosEquiposRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public dtDatosGeneralesRowChangeEvent(dtDatosGeneralesRow row, global::System.Data.DataRowAction action) {
+            public dtDatosEquiposRowChangeEvent(dtDatosEquiposRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public dtDatosGeneralesRow Row {
+            public dtDatosEquiposRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -4228,22 +3478,22 @@ namespace TorneosFut.Class {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class dtDatosEquiposRowChangeEvent : global::System.EventArgs {
+        public class dtDatosGeneralesRowChangeEvent : global::System.EventArgs {
             
-            private dtDatosEquiposRow eventRow;
+            private dtDatosGeneralesRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public dtDatosEquiposRowChangeEvent(dtDatosEquiposRow row, global::System.Data.DataRowAction action) {
+            public dtDatosGeneralesRowChangeEvent(dtDatosGeneralesRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public dtDatosEquiposRow Row {
+            public dtDatosGeneralesRow Row {
                 get {
                     return this.eventRow;
                 }
