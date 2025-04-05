@@ -404,13 +404,13 @@ namespace TorneosFut
             csImagenes.guardarIMG(filename, imagen);
             return csJugador.ActualizarJugador( idJugadorr,Txtnombre, txtapellido, cmbsexo, dtpNacimiento, CmbPosicion, TxtNacionalidad, txtpeso, txtaltura, cmbpierna,imagen + Path.GetExtension(filename));
         }
-        public bool EditarPatrocinador(string ID,string NombrePatrocinador, string Descripcion)
+        public bool EditarPatrocinador(string id, string nombre, string contacto, string telefono)
         {
-            return csPatrocinador.EditarPatrocinador(ID,NombrePatrocinador,Descripcion);
+            return csPatrocinador.EditarPatrocinador(id, nombre, contacto, telefono);
         }
-        public bool AgregarPatrocinador(string ID, string NombrePatrocinador, string Descripcion)
+        public bool AgregarPatrocinador(string id, string nombre, string contacto, string telefono)
         {
-            return csPatrocinador.AgregarPatrocinador(ID,NombrePatrocinador,Descripcion);
+            return csPatrocinador.AgregarPatrocinador(id, nombre, contacto, telefono);
         }
         #endregion
         public bool AgreegarOrganizador(string NombreEmpresa, string Telefono, string Correo)
@@ -618,7 +618,13 @@ namespace TorneosFut
         {
             return csOrganizador.TelefonoOrganizador(id);
         }
-
-
+        public bool AsignarPatrocinio(string idPatrocinaddor, int IDTorneo, string tipoPatrocinio, decimal precioPatrocinio, string estado)
+        {
+            return csPatrocinador.AsignarPatrocinador(idPatrocinaddor, IDTorneo, tipoPatrocinio, precioPatrocinio, estado);
+        }
+        public bool PagoPatrocinador(int IDTorneo, string IDPatrocinador, string estado)
+        {
+            return csIncripcion.PagarPatroci(IDTorneo, IDPatrocinador, estado);
+        }
     }
 }

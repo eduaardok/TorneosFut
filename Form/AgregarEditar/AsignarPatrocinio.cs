@@ -7,14 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TorneosFut.Class;
 
 namespace TorneosFut
 {
-    public partial class AsignarPatrocinio: Form
+    public partial class AsignarPatrocinio : Form
     {
+        csDatos datos;
         csConexion conexion;
+        string idPatrocinaddor;
+        int IDTorneo;
         public AsignarPatrocinio(string u, string c)
         {
+            datos = new csDatos(u, c);
             conexion = new csConexion(u, c);
             InitializeComponent();
         }
@@ -30,7 +35,6 @@ namespace TorneosFut
             cmbTorneos.Items.Clear();
             foreach (DataRow row in torneooo.Rows)
             {
-                int idTorneo = Convert.ToInt32(row["IDTorneo"]);
                 string nombreTorneo = row["NombreTorneo"].ToString();
                 cmbTorneos.Items.Add(nombreTorneo);
             }
@@ -38,7 +42,6 @@ namespace TorneosFut
             cmbPatrocinadores.Items.Clear();
             foreach (DataRow row in patro.Rows)
             {
-                string idPatro = row["IDPatrocinador"].ToString();
                 string nombreEmpresa = row["NombreEmpresa"].ToString();
                 cmbPatrocinadores.Items.Add(nombreEmpresa);
             }
@@ -54,13 +57,25 @@ namespace TorneosFut
             panelOro.CustomBorderColor = Color.White; // Tu color rosa
             panelOro.CustomBorderThickness = new Padding(2); // Grosor del borde
         }
+        private void cmbTorneos_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            string nombreTorneo = cmbTorneos.SelectedItem.ToString();
+            DataTable dt = conexion.ListDGV(
+                $"SELECT * FROM Torneo WHERE NombreTorneo = '{nombreTorneo.Replace("'", "''")}'"
+            );
+            if (dt.Rows.Count > 0)
+            {
+                DataRow row = dt.Rows[0];
+                IDTorneo = Convert.ToInt32(row["IDTorneo"].ToString());
+            }
+        }
 
         private void cmbPatrocinadores_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string nombreEmpresaSeleccionada = cmbPatrocinadores.SelectedItem.ToString();
+            string nombreEmpresa = cmbPatrocinadores.SelectedItem.ToString();
 
             DataTable dt = conexion.ListDGV(
-                $"SELECT * FROM Patrocinador WHERE NombreEmpresa = '{nombreEmpresaSeleccionada.Replace("'", "''")}'"
+                $"SELECT * FROM Patrocinador WHERE NombreEmpresa = '{nombreEmpresa.Replace("'", "''")}'"
             );
 
             if (dt.Rows.Count > 0)
@@ -69,6 +84,7 @@ namespace TorneosFut
                 txtNameEmpresa.Text = row["NombreEmpresa"].ToString();
                 txtNameContacto.Text = row["NombreContacto"].ToString();
                 txtTelefono.Text = row["Telefono"].ToString();
+                idPatrocinaddor = row["IDPatrocinador"].ToString();
             }
         }
 
@@ -106,6 +122,42 @@ namespace TorneosFut
             panelOro.CustomBorderColor = Color.FromArgb(251, 3, 140);
             panelPlata.CustomBorderColor = Color.White;
             panelBronce.CustomBorderColor = Color.White;
+        }
+
+        private void btnEquipos_Click(object sender, EventArgs e)
+        {
+            string tipoPatrocinio = "";
+            decimal precioPatrocinio = 0;
+
+            if (btnBronce.Checked)
+            {
+                tipoPatrocinio = "Bronce";
+                precioPatrocinio = 10.00m;
+            }
+            else if (btnPlata.Checked)
+            {
+                tipoPatrocinio = "Plata";
+                precioPatrocinio = 20.00m;
+            }
+            else if (btnOro.Checked)
+            {
+                tipoPatrocinio = "Oro";
+                precioPatrocinio = 30.00m;
+            }
+            else
+            {
+                MessageBox.Show("Debes seleccionar un nivel de patrocinio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (datos.AsignarPatrocinio(idPatrocinaddor, IDTorneo, tipoPatrocinio, precioPatrocinio, "PENDIENTE"))
+            {
+                MessageBox.Show("¡Patrocinador asignado correctamente!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Hubo un error al asignar el patrocinador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

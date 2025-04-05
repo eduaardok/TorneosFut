@@ -46,19 +46,19 @@
             this.txtNameEmpresa = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnBronce = new System.Windows.Forms.RadioButton();
             this.panelBronce = new Guna.UI2.WinForms.Guna2Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.btnOro = new System.Windows.Forms.RadioButton();
             this.panelOro = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnPlata = new System.Windows.Forms.RadioButton();
-            this.panelPlata = new Guna.UI2.WinForms.Guna2Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
+            this.btnPlata = new System.Windows.Forms.RadioButton();
+            this.panelPlata = new Guna.UI2.WinForms.Guna2Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.btnEquipos = new Guna.UI2.WinForms.Guna2Button();
             this.panel2.SuspendLayout();
             this.panelBronce.SuspendLayout();
@@ -219,6 +219,7 @@
             this.cmbTorneos.Name = "cmbTorneos";
             this.cmbTorneos.Size = new System.Drawing.Size(320, 36);
             this.cmbTorneos.TabIndex = 165;
+            this.cmbTorneos.SelectedIndexChanged += new System.EventHandler(this.cmbTorneos_SelectedIndexChanged_1);
             // 
             // cmbPatrocinadores
             // 
@@ -251,7 +252,7 @@
             this.txtNameContacto.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.txtNameContacto.ForeColor = System.Drawing.Color.Black;
             this.txtNameContacto.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNameContacto.Location = new System.Drawing.Point(395, 374);
+            this.txtNameContacto.Location = new System.Drawing.Point(46, 374);
             this.txtNameContacto.Margin = new System.Windows.Forms.Padding(6);
             this.txtNameContacto.Name = "txtNameContacto";
             this.txtNameContacto.PlaceholderText = "";
@@ -273,7 +274,7 @@
             this.txtTelefono.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.txtTelefono.ForeColor = System.Drawing.Color.Black;
             this.txtTelefono.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTelefono.Location = new System.Drawing.Point(46, 374);
+            this.txtTelefono.Location = new System.Drawing.Point(395, 374);
             this.txtTelefono.Margin = new System.Windows.Forms.Padding(6);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.PlaceholderText = "";
@@ -329,6 +330,38 @@
             this.panelBronce.Size = new System.Drawing.Size(211, 210);
             this.panelBronce.TabIndex = 173;
             // 
+            // label11
+            // 
+            this.label11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.DimGray;
+            this.label11.Location = new System.Drawing.Point(10, 81);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(195, 72);
+            this.label11.TabIndex = 175;
+            this.label11.Text = "- Mención en redes           - 2 entradas por evento";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Onest Light", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.Location = new System.Drawing.Point(8, 38);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(103, 34);
+            this.label10.TabIndex = 176;
+            this.label10.Text = "$10.00";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Onest Bold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(9, 7);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(85, 26);
+            this.label9.TabIndex = 175;
+            this.label9.Text = "Bronce";
+            // 
             // btnOro
             // 
             this.btnOro.AutoSize = true;
@@ -353,95 +386,6 @@
             this.panelOro.Name = "panelOro";
             this.panelOro.Size = new System.Drawing.Size(211, 210);
             this.panelOro.TabIndex = 174;
-            // 
-            // btnPlata
-            // 
-            this.btnPlata.AutoSize = true;
-            this.btnPlata.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPlata.Location = new System.Drawing.Point(54, 177);
-            this.btnPlata.Name = "btnPlata";
-            this.btnPlata.Size = new System.Drawing.Size(103, 21);
-            this.btnPlata.TabIndex = 0;
-            this.btnPlata.TabStop = true;
-            this.btnPlata.Text = "Seleccionar";
-            this.btnPlata.UseVisualStyleBackColor = true;
-            this.btnPlata.CheckedChanged += new System.EventHandler(this.btnPlata_CheckedChanged);
-            // 
-            // panelPlata
-            // 
-            this.panelPlata.BackColor = System.Drawing.Color.White;
-            this.panelPlata.Controls.Add(this.label12);
-            this.panelPlata.Controls.Add(this.label13);
-            this.panelPlata.Controls.Add(this.btnPlata);
-            this.panelPlata.Controls.Add(this.label14);
-            this.panelPlata.Location = new System.Drawing.Point(274, 475);
-            this.panelPlata.Name = "panelPlata";
-            this.panelPlata.Size = new System.Drawing.Size(211, 210);
-            this.panelPlata.TabIndex = 174;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Onest Bold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(9, 7);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(85, 26);
-            this.label9.TabIndex = 175;
-            this.label9.Text = "Bronce";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Onest Light", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(8, 38);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(103, 34);
-            this.label10.TabIndex = 176;
-            this.label10.Text = "$10.00";
-            // 
-            // label11
-            // 
-            this.label11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.DimGray;
-            this.label11.Location = new System.Drawing.Point(10, 81);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(195, 72);
-            this.label11.TabIndex = 175;
-            this.label11.Text = "- Mención en redes           - 2 entradas por evento";
-            // 
-            // label12
-            // 
-            this.label12.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.DimGray;
-            this.label12.Location = new System.Drawing.Point(9, 81);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(195, 72);
-            this.label12.TabIndex = 177;
-            this.label12.Text = "- Mención en redes           - 5 entradas por evento  - Banner en el campo";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Onest Light", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(7, 38);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(109, 34);
-            this.label13.TabIndex = 179;
-            this.label13.Text = "$20.00";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Onest Bold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(8, 7);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(64, 26);
-            this.label14.TabIndex = 178;
-            this.label14.Text = "Plata";
             // 
             // label15
             // 
@@ -475,6 +419,63 @@
             this.label17.TabIndex = 181;
             this.label17.Text = "Oro";
             // 
+            // btnPlata
+            // 
+            this.btnPlata.AutoSize = true;
+            this.btnPlata.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPlata.Location = new System.Drawing.Point(54, 177);
+            this.btnPlata.Name = "btnPlata";
+            this.btnPlata.Size = new System.Drawing.Size(103, 21);
+            this.btnPlata.TabIndex = 0;
+            this.btnPlata.TabStop = true;
+            this.btnPlata.Text = "Seleccionar";
+            this.btnPlata.UseVisualStyleBackColor = true;
+            this.btnPlata.CheckedChanged += new System.EventHandler(this.btnPlata_CheckedChanged);
+            // 
+            // panelPlata
+            // 
+            this.panelPlata.BackColor = System.Drawing.Color.White;
+            this.panelPlata.Controls.Add(this.label12);
+            this.panelPlata.Controls.Add(this.label13);
+            this.panelPlata.Controls.Add(this.btnPlata);
+            this.panelPlata.Controls.Add(this.label14);
+            this.panelPlata.Location = new System.Drawing.Point(274, 475);
+            this.panelPlata.Name = "panelPlata";
+            this.panelPlata.Size = new System.Drawing.Size(211, 210);
+            this.panelPlata.TabIndex = 174;
+            // 
+            // label12
+            // 
+            this.label12.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.DimGray;
+            this.label12.Location = new System.Drawing.Point(9, 81);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(195, 72);
+            this.label12.TabIndex = 177;
+            this.label12.Text = "- Mención en redes           - 5 entradas por evento  - Banner en el campo";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Onest Light", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Black;
+            this.label13.Location = new System.Drawing.Point(7, 38);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(109, 34);
+            this.label13.TabIndex = 179;
+            this.label13.Text = "$20.00";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Onest Bold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.Black;
+            this.label14.Location = new System.Drawing.Point(8, 7);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(64, 26);
+            this.label14.TabIndex = 178;
+            this.label14.Text = "Plata";
+            // 
             // btnEquipos
             // 
             this.btnEquipos.Animated = true;
@@ -497,6 +498,7 @@
             this.btnEquipos.Size = new System.Drawing.Size(121, 44);
             this.btnEquipos.TabIndex = 175;
             this.btnEquipos.Text = "Asignar";
+            this.btnEquipos.Click += new System.EventHandler(this.btnEquipos_Click);
             // 
             // AsignarPatrocinio
             // 
@@ -507,8 +509,8 @@
             this.Controls.Add(this.panelPlata);
             this.Controls.Add(this.panelOro);
             this.Controls.Add(this.panelBronce);
-            this.Controls.Add(this.txtNameContacto);
             this.Controls.Add(this.txtTelefono);
+            this.Controls.Add(this.txtNameContacto);
             this.Controls.Add(this.txtNameEmpresa);
             this.Controls.Add(this.cmbPatrocinadores);
             this.Controls.Add(this.cmbTorneos);

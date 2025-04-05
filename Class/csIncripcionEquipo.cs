@@ -137,5 +137,14 @@ namespace TorneosFut.Class
 
             return idInscripcion;
         }
+        public bool PagarPatroci(int IDTorneo, string IDPatrocinador, string estado)
+        {
+            string consultaSQL = $@"
+            EXEC spEditarPatrocinador_Torneo
+                @IDTorneo = {IDTorneo},
+                @IDPatrocinador = {IDPatrocinador},
+                @Estado = '{estado}'";
+            return conexion.Consulta(consultaSQL);
+        }
     }
 }

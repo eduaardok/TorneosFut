@@ -67,7 +67,7 @@ namespace TorneosFut.Class
             dgvEntrenador.DataSource = dt;
             MostrarImagen(dt.Rows[0]["IDEstadio"].ToString(), ptb);
         }
-        
+
         public void MostrarImagen(string id, PictureBox ptb)
         {
             DataTable datat = csConexion.ListDGV($"select ImagenEstadio from Estadio where IDEstadio = {id}");
@@ -84,7 +84,7 @@ namespace TorneosFut.Class
         }
         public string NombreEstadioDeID(string id)
         {
-            
+
             DataTable dt = csConexion.ListDGV($"select NombreEstadio from Estadio where IDEstadio={id}");
             if (dt.Rows.Count > 0)
             {
@@ -100,7 +100,7 @@ namespace TorneosFut.Class
         public string NombrePatrocinador(string id)
         {
 
-            DataTable dt = csConexion.ListDGV($"select NombrePatrocinador from Patrocinador where IDPatrocinador='{id}'");
+            DataTable dt = csConexion.ListDGV($"select NombreEmpresa from Patrocinador where IDPatrocinador='{id}'");
             if (dt.Rows.Count > 0)
             {
                 return dt.Rows[0][0].ToString();
@@ -110,7 +110,7 @@ namespace TorneosFut.Class
         public string DescripcionPatrocinador(string id)
         {
 
-            DataTable dt = csConexion.ListDGV($"select Descripcion from Patrocinador where IDPatrocinador='{id}'");
+            DataTable dt = csConexion.ListDGV($"select NombreContacto from Patrocinador where IDPatrocinador='{id}'");
             if (dt.Rows.Count > 0)
             {
                 return dt.Rows[0][0].ToString();

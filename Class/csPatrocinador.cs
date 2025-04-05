@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TorneosFut.Class;
 
 namespace TorneosFut
 {
@@ -19,8 +20,8 @@ namespace TorneosFut
             csConexion = new csConexion(u, c);
         }
         private string _idPatrocinador;
-        private string _nombrePatrocinador;
-        private string _descripcion;
+        private string _nombreEmpresa;
+        private string _nombreContacto;
 
         public string IDPatrocinador
         {
@@ -28,16 +29,16 @@ namespace TorneosFut
             set => _idPatrocinador = value;
         }
 
-        public string NombrePatrocinador
+        public string NombreEmpresa
         {
-            get => _nombrePatrocinador;
-            set => _nombrePatrocinador = value;
+            get => _nombreEmpresa;
+            set => _nombreEmpresa = value;
         }
 
-        public string Descripcion
+        public string Contacto
         {
-            get => _descripcion;
-            set => _descripcion = value;
+            get => _nombreContacto;
+            set => _nombreContacto = value;
         }
         public string GenerarNuevoIDPatrocinador()
         {
@@ -69,7 +70,7 @@ namespace TorneosFut
         public DataTable ListaDePatrocinadoresFiltro(string filtro)
         {
             DataTable dt;
-            dt = csConexion.ListDGV($"select * from Patrocinador where IDPatrocinador like '%{filtro}%' or NombrePatrocinador like '%{filtro}%'");
+            dt = csConexion.ListDGV($"select * from Patrocinador where IDPatrocinador like '%{filtro}%' or NombreEmpresa like '%{filtro}%'");
             return dt;
         }
         public DataTable ListaDePatrocinadores()
@@ -81,17 +82,18 @@ namespace TorneosFut
 
 
         #region Insertar
-        public bool AgregarPatrocinador(string id, string nombre, string descripcion)
+        public bool AgregarPatrocinador(string id, string nombre, string contacto, string telefono)
         {
             IDPatrocinador = GenerarNuevoIDPatrocinador();
-            NombrePatrocinador = nombre;
-            Descripcion = descripcion;
+            NombreEmpresa = nombre;
+            Contacto = contacto;
             string xmlPatrocinador =
                 "<Patrocinadores>" +
                 "    <Patrocinador>" +
                 $"        <IDPatrocinador>{IDPatrocinador}</IDPatrocinador>" +
-                $"        <NombrePatrocinador>{NombrePatrocinador}</NombrePatrocinador>" +
-                $"        <Descripcion>{Descripcion}</Descripcion>" +
+                $"        <NombreEmpresa>{NombreEmpresa}</NombreEmpresa>" +
+                $"        <NombreContacto>{Contacto}</NombreContacto>" +
+                $"        <Telefono>{telefono}</Telefono>" +
                 "    </Patrocinador>" +
                 "</Patrocinadores>";
             string consultaSQL = $"DECLARE  @cadenaa varchar(MAX)= '{xmlPatrocinador}'; EXEC spRegistrarPatrocinador @cadenaa;";
@@ -100,22 +102,41 @@ namespace TorneosFut
 
         #endregion
         #region Actualizar
-        public bool EditarPatrocinador(string id, string nombre, string descripcion)
+        public bool EditarPatrocinador(string id, string nombre, string contacto, string telefono)
         {
             IDPatrocinador = id;
-            NombrePatrocinador = nombre;
-            Descripcion = descripcion;
+            NombreEmpresa = nombre;
+            Contacto = contacto;
             string xmlPatrocinador =
                 "<Patrocinadores>" +
                 "    <Patrocinador>" +
                 $"        <IDPatrocinador>{IDPatrocinador}</IDPatrocinador>" +
-                $"        <NombrePatrocinador>{NombrePatrocinador}</NombrePatrocinador>" +
-                $"        <Descripcion>{Descripcion}</Descripcion>" +
+                $"        <NombreEmpresa>{NombreEmpresa}</NombreEmpresa>" +
+                $"        <NombreContacto>{Contacto}</NombreContacto>" +
+                $"        <Telefono>{telefono}</Telefono>" +
                 "    </Patrocinador>" +
                 "</Patrocinadores>";
             string consultaSQL = $"DECLARE  @cadenaa varchar(MAX)= '{xmlPatrocinador}'; EXEC spEditarPatrocinador @cadenaa;";
             return csConexion.Consulta(consultaSQL);
         }
+        public bool AsignarPatrocinador(string idPatrocinaddor, int IDTorneo, string tipoPatrocinio, decimal precioPatrocinio, string estado)
+        {
+            string xmlPatrocinio =
+                "<PatrocinadorTorneos>" +
+                "    <PatrocinadorTorneo>" +
+                $"        <IDPatrocinador>{idPatrocinaddor}</IDPatrocinador>" +
+                $"        <IDTorneo>{IDTorneo}</IDTorneo>" +
+                $"        <TipoPatrocinio>{tipoPatrocinio}</TipoPatrocinio>" +
+                $"        <PrecioPatrocinio>{precioPatrocinio.ToString("F2").Trim()}</PrecioPatrocinio>" +
+                $"        <Estado>{estado}</Estado>" +
+                "    </PatrocinadorTorneo>" +
+                "</PatrocinadorTorneos>";
+
+            string consultaSQL = $"DECLARE @cadenaa VARCHAR(MAX) = '{xmlPatrocinio}'; EXEC spRegistraPatrocinadorTorneo @cadenaa;";
+
+            return csConexion.Consulta(consultaSQL);
+        }
+
         #endregion
     }
 }

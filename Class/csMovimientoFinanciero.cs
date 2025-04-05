@@ -79,7 +79,7 @@ namespace TorneosFut
             DataTable dts = conexion.ListDGV("select * from InscripcionEquipo");
             return dts;
         }
-        public DataTable ListaMovimientoA(int id)
+        public DataTable ListaMovimientoA(int id) 
         {
             DataTable dt = conexion.ListDGV("select * from TernaArbitral");
             return dt;
@@ -88,10 +88,10 @@ namespace TorneosFut
         {
             if (id > 0)
             {
-                DataTable dt = conexion.ListDGV($"select Pt.IDPatrocinador, Pt.IDTorneo, NombreEmpresa, Pt.TipoPatrocinio, Pt.PrecioPatrocinio from Patrocinador P\r\ninner join\r\n(select IDPatrocinador, IDTorneo, TipoPatrocinio, PrecioPatrocinio from Patrocinador_Torneo) Pt on P.IDPatrocinador = Pt.IDPatrocinador where Pt.IDTorneo ={id}");
+                DataTable dt = conexion.ListDGV($"select Pt.IDPatrocinador, Pt.IDTorneo, NombreEmpresa, Pt.TipoPatrocinio, Pt.PrecioPatrocinio, Pt.Estado from Patrocinador P\r\ninner join\r\n(select IDPatrocinador, IDTorneo, TipoPatrocinio, PrecioPatrocinio, Estado from Patrocinador_Torneo) Pt on P.IDPatrocinador = Pt.IDPatrocinador where Pt.IDTorneo ={id}");
                 return dt;
             }
-            DataTable dts = conexion.ListDGV("select Pt.IDPatrocinador, Pt.IDTorneo, NombreEmpresa, Pt.TipoPatrocinio, Pt.PrecioPatrocinio from Patrocinador P\r\ninner join\r\n(select IDPatrocinador, IDTorneo, TipoPatrocinio, PrecioPatrocinio from Patrocinador_Torneo) Pt on P.IDPatrocinador = Pt.IDPatrocinador ");
+            DataTable dts = conexion.ListDGV("select Pt.IDPatrocinador, Pt.IDTorneo, NombreEmpresa, Pt.TipoPatrocinio, Pt.PrecioPatrocinio, Pt.Estado from Patrocinador P\r\ninner join\r\n(select IDPatrocinador, IDTorneo, TipoPatrocinio, PrecioPatrocinio, Estado from Patrocinador_Torneo) Pt on P.IDPatrocinador = Pt.IDPatrocinador ");
             return dts;
         }
         public bool AgregarMovimientoInscripcion(int iDTorneo, decimal monto, string descripcion)

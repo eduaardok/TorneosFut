@@ -14,31 +14,19 @@ namespace TorneosFut
     {
         csConexion conexion;
         csDGV csDGV;
+        AsignarPatrocinio asignarPatrocinio;
 
         public Patrocinadores(string u, string c)
         {
             conexion = new csConexion(u,c);
             csDGV = new csDGV(u, c);
+            asignarPatrocinio = new AsignarPatrocinio(u, c);
             InitializeComponent();
         }
 
         private void Patrocinadores_Load(object sender, EventArgs e)
         {
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
-        }
-
-        private void btnAggDT_Click(object sender, EventArgs e)
-        {
-            AggEditPatrocinador aggEditPatrocinador= new AggEditPatrocinador(conexion.Usuario,conexion.Clave,true,"");
-            aggEditPatrocinador.ShowDialog();
-            csDGV.MostrarPatrocinadores(dgvPatrocinador);
-        }
-
-        private void btnEditarPatrocinador_Click(object sender, EventArgs e)
-        {
-            AggEditPatrocinador aggEditPatrocinador = new AggEditPatrocinador(conexion.Usuario, conexion.Clave, false, dgvPatrocinador.Rows[dgvPatrocinador.CurrentRow.Index].Cells["IDPatrocinador"].Value.ToString());
-            aggEditPatrocinador.ShowDialog();
-            csDGV.MostrarPatrocinadores(dgvPatrocinador);
         }
         void ActualizarTabla()
         {
@@ -63,6 +51,25 @@ namespace TorneosFut
         private void Patrocinadores_Shown(object sender, EventArgs e)
         {
             csDGV.MostrarPatrocinadores(dgvPatrocinador);
+        }
+
+        private void btnAggPatrocinador_Click(object sender, EventArgs e)
+        {
+            AggEditPatrocinador aggEditPatrocinador = new AggEditPatrocinador(conexion.Usuario, conexion.Clave, true, "");
+            aggEditPatrocinador.ShowDialog();
+            csDGV.MostrarPatrocinadores(dgvPatrocinador);
+        }
+
+        private void btnEditarPatrocinador_Click_1(object sender, EventArgs e)
+        {
+            AggEditPatrocinador aggEditPatrocinador = new AggEditPatrocinador(conexion.Usuario, conexion.Clave, false, dgvPatrocinador.Rows[dgvPatrocinador.CurrentRow.Index].Cells["IDPatrocinador"].Value.ToString());
+            aggEditPatrocinador.ShowDialog();
+            csDGV.MostrarPatrocinadores(dgvPatrocinador);
+        }
+
+        private void btnPatrocinador_Click(object sender, EventArgs e)
+        {
+            asignarPatrocinio.ShowDialog();
         }
     }
 }

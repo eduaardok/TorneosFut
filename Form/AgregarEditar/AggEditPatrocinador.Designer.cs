@@ -35,12 +35,14 @@
             this.btnAgregar = new Guna.UI2.WinForms.Guna2Button();
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.txtDescripcion = new System.Windows.Forms.TextBox();
-            this.txtNombrePatrocinador = new System.Windows.Forms.TextBox();
+            this.txtNombreContacto = new System.Windows.Forms.TextBox();
+            this.txtNombreEmpresa = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,9 +81,9 @@
             this.btnCancelar.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnCancelar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnCancelar.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnCancelar.Location = new System.Drawing.Point(80, 338);
+            this.btnCancelar.Location = new System.Drawing.Point(251, 365);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(147, 54);
+            this.btnCancelar.Size = new System.Drawing.Size(138, 54);
             this.btnCancelar.TabIndex = 100;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -100,7 +102,7 @@
             this.btnAgregar.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnAgregar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnAgregar.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnAgregar.Location = new System.Drawing.Point(249, 338);
+            this.btnAgregar.Location = new System.Drawing.Point(251, 305);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(138, 54);
             this.btnAgregar.TabIndex = 99;
@@ -112,39 +114,39 @@
             this.lblDescripcion.AutoSize = true;
             this.lblDescripcion.BackColor = System.Drawing.Color.Transparent;
             this.lblDescripcion.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescripcion.Location = new System.Drawing.Point(45, 187);
+            this.lblDescripcion.Location = new System.Drawing.Point(45, 168);
             this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(121, 24);
+            this.lblDescripcion.Size = new System.Drawing.Size(174, 24);
             this.lblDescripcion.TabIndex = 98;
-            this.lblDescripcion.Text = "Descripción";
+            this.lblDescripcion.Text = "Nombre Contacto";
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.BackColor = System.Drawing.Color.Transparent;
             this.lblNombre.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(45, 126);
+            this.lblNombre.Location = new System.Drawing.Point(45, 91);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(84, 24);
+            this.lblNombre.Size = new System.Drawing.Size(170, 24);
             this.lblNombre.TabIndex = 97;
-            this.lblNombre.Text = "Nombre";
+            this.lblNombre.Text = "Nombre Empresa";
             // 
-            // txtDescripcion
+            // txtNombreContacto
             // 
-            this.txtDescripcion.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescripcion.Location = new System.Drawing.Point(49, 221);
-            this.txtDescripcion.Multiline = true;
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(340, 78);
-            this.txtDescripcion.TabIndex = 96;
+            this.txtNombreContacto.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreContacto.Location = new System.Drawing.Point(49, 195);
+            this.txtNombreContacto.Multiline = true;
+            this.txtNombreContacto.Name = "txtNombreContacto";
+            this.txtNombreContacto.Size = new System.Drawing.Size(178, 28);
+            this.txtNombreContacto.TabIndex = 96;
             // 
-            // txtNombrePatrocinador
+            // txtNombreEmpresa
             // 
-            this.txtNombrePatrocinador.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombrePatrocinador.Location = new System.Drawing.Point(49, 153);
-            this.txtNombrePatrocinador.Name = "txtNombrePatrocinador";
-            this.txtNombrePatrocinador.Size = new System.Drawing.Size(178, 28);
-            this.txtNombrePatrocinador.TabIndex = 95;
+            this.txtNombreEmpresa.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreEmpresa.Location = new System.Drawing.Point(49, 118);
+            this.txtNombreEmpresa.Name = "txtNombreEmpresa";
+            this.txtNombreEmpresa.Size = new System.Drawing.Size(178, 28);
+            this.txtNombreEmpresa.TabIndex = 95;
             // 
             // panel4
             // 
@@ -180,11 +182,33 @@
             this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
             this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(45, 250);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(89, 24);
+            this.label1.TabIndex = 109;
+            this.label1.Text = "Teléfono";
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefono.Location = new System.Drawing.Point(49, 277);
+            this.txtTelefono.Multiline = true;
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(178, 31);
+            this.txtTelefono.TabIndex = 108;
+            // 
             // AggEditPatrocinador
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(435, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
@@ -192,8 +216,8 @@
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.lblDescripcion);
             this.Controls.Add(this.lblNombre);
-            this.Controls.Add(this.txtDescripcion);
-            this.Controls.Add(this.txtNombrePatrocinador);
+            this.Controls.Add(this.txtNombreContacto);
+            this.Controls.Add(this.txtNombreEmpresa);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AggEditPatrocinador";
@@ -214,11 +238,13 @@
         private Guna.UI2.WinForms.Guna2Button btnAgregar;
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.Label lblNombre;
-        public System.Windows.Forms.TextBox txtDescripcion;
-        public System.Windows.Forms.TextBox txtNombrePatrocinador;
+        public System.Windows.Forms.TextBox txtNombreContacto;
+        public System.Windows.Forms.TextBox txtNombreEmpresa;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
+        private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.TextBox txtTelefono;
     }
 }

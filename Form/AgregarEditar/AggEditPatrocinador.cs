@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace TorneosFut
 {
-    public partial class AggEditPatrocinador: Form
+    public partial class AggEditPatrocinador : Form
     {
         bool t;
         string f;
@@ -21,7 +21,7 @@ namespace TorneosFut
 
         public AggEditPatrocinador(string u, string c, bool n, string ID)
         {
-            csDatos= new csDatos(u,c);
+            csDatos = new csDatos(u, c);
             id = ID;
             InitializeComponent();
             t = n;
@@ -56,21 +56,21 @@ namespace TorneosFut
         }
         void editar()
         {
-            txtNombrePatrocinador.Text = csDatos.NombrePatrocinador(id);
-            txtDescripcion.Text = csDatos.DescripcionPatrocinador(id);
+            txtNombreEmpresa.Text = csDatos.NombrePatrocinador(id);
+            txtNombreContacto.Text = csDatos.DescripcionPatrocinador(id);
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             if (t == false)
             {
-                if(csDatos.EditarPatrocinador(id, txtNombrePatrocinador.Text, txtDescripcion.Text))
+                if (csDatos.EditarPatrocinador(id, txtNombreEmpresa.Text, txtNombreContacto.Text, txtTelefono.Text))
                 {
                     msg.Text = "Patrocinador Editado";
                     msg.Show();
                 }
             }
-            else if(csDatos.AgregarPatrocinador(id, txtNombrePatrocinador.Text, txtDescripcion.Text))
+            else if (csDatos.AgregarPatrocinador(id, txtNombreEmpresa.Text, txtNombreContacto.Text, txtTelefono.Text))
             {
                 msg.Text = "Patrocinador Agregado";
                 msg.Show();

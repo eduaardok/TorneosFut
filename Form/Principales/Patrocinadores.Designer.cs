@@ -35,9 +35,10 @@
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvPatrocinador = new System.Windows.Forms.DataGridView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnAggPatrocinador = new Guna.UI2.WinForms.Guna2Button();
             this.btnEditarPatrocinador = new Guna.UI2.WinForms.Guna2Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnPatrocinador = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPatrocinador)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -118,17 +119,6 @@
             this.dgvPatrocinador.Size = new System.Drawing.Size(1186, 601);
             this.dgvPatrocinador.TabIndex = 31;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.BackgroundImage = global::TorneosFut.Properties.Resources.IconoLupa;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(196, 102);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 49);
-            this.pictureBox1.TabIndex = 34;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnAggPatrocinador
             // 
             this.btnAggPatrocinador.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -151,6 +141,7 @@
             this.btnAggPatrocinador.Size = new System.Drawing.Size(184, 52);
             this.btnAggPatrocinador.TabIndex = 103;
             this.btnAggPatrocinador.Text = "Agregar Patrocinador";
+            this.btnAggPatrocinador.Click += new System.EventHandler(this.btnAggPatrocinador_Click);
             // 
             // btnEditarPatrocinador
             // 
@@ -174,6 +165,42 @@
             this.btnEditarPatrocinador.Size = new System.Drawing.Size(184, 52);
             this.btnEditarPatrocinador.TabIndex = 104;
             this.btnEditarPatrocinador.Text = "EDITAR";
+            this.btnEditarPatrocinador.Click += new System.EventHandler(this.btnEditarPatrocinador_Click_1);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.BackgroundImage = global::TorneosFut.Properties.Resources.IconoLupa;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(196, 102);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 49);
+            this.pictureBox1.TabIndex = 34;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnPatrocinador
+            // 
+            this.btnPatrocinador.Animated = true;
+            this.btnPatrocinador.BackColor = System.Drawing.Color.White;
+            this.btnPatrocinador.BorderColor = System.Drawing.Color.Empty;
+            this.btnPatrocinador.BorderRadius = 20;
+            this.btnPatrocinador.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnPatrocinador.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnPatrocinador.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnPatrocinador.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnPatrocinador.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
+            this.btnPatrocinador.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnPatrocinador.ForeColor = System.Drawing.Color.Black;
+            this.btnPatrocinador.HoverState.BorderColor = System.Drawing.Color.Black;
+            this.btnPatrocinador.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.btnPatrocinador.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.btnPatrocinador.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.btnPatrocinador.Location = new System.Drawing.Point(698, 182);
+            this.btnPatrocinador.Name = "btnPatrocinador";
+            this.btnPatrocinador.Size = new System.Drawing.Size(263, 52);
+            this.btnPatrocinador.TabIndex = 146;
+            this.btnPatrocinador.Text = "Asignar patrocinador a Torneo";
+            this.btnPatrocinador.Click += new System.EventHandler(this.btnPatrocinador_Click);
             // 
             // Patrocinadores
             // 
@@ -181,6 +208,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1490, 911);
             this.ControlBox = false;
+            this.Controls.Add(this.btnPatrocinador);
             this.Controls.Add(this.btnEditarPatrocinador);
             this.Controls.Add(this.btnAggPatrocinador);
             this.Controls.Add(this.pictureBox1);
@@ -212,5 +240,6 @@
         public System.Windows.Forms.DataGridView dgvPatrocinador;
         private Guna.UI2.WinForms.Guna2Button btnAggPatrocinador;
         public Guna.UI2.WinForms.Guna2Button btnEditarPatrocinador;
+        public Guna.UI2.WinForms.Guna2Button btnPatrocinador;
     }
 }
