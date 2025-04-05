@@ -62,22 +62,42 @@ namespace TorneosFut
                         je.PartidosJugados,
                         je.Goles,
                         je.Asistencias,
-                        CASE WHEN je.PartidosJugados > 0 THEN CAST(je.Goles AS DECIMAL(10,2)) / je.PartidosJugados ELSE 0 END AS PromedioGoles,
-                        CASE WHEN je.PartidosJugados > 0 THEN CAST(je.Asistencias AS DECIMAL(10,2)) / je.PartidosJugados ELSE 0 END AS PromedioAsistencias,
+                        CAST(
+                            ROUND(
+                                CASE 
+                                    WHEN je.PartidosJugados > 0 
+                                    THEN CAST(je.Goles AS DECIMAL(10,2)) / je.PartidosJugados 
+                                    ELSE 0 
+                                END, 
+                            2)
+                        AS DECIMAL(10,2)) AS PromedioGoles,
+                        CAST(
+                            ROUND(
+                                CASE 
+                                    WHEN je.PartidosJugados > 0 
+                                    THEN CAST(je.Asistencias AS DECIMAL(10,2)) / je.PartidosJugados 
+                                    ELSE 0 
+                                END, 
+                            2)
+                        AS DECIMAL(10,2)) AS PromedioAsistencias,
                         (SELECT COUNT(*) FROM Partido p 
                          WHERE (p.EquipoLocal = je.IDEquipo OR p.EquipoVisitante = je.IDEquipo)
                          AND p.EstadoPartido = 'Finalizado') AS PartidosTotalesEquipo,
-                        CASE 
-                            WHEN je.PartidosJugados > 0 AND 
-                                 (SELECT COUNT(*) FROM Partido p 
-                                  WHERE (p.EquipoLocal = je.IDEquipo OR p.EquipoVisitante = je.IDEquipo)
-                                  AND p.EstadoPartido = 'Finalizado') > 0 
-                            THEN CAST(je.PartidosJugados AS DECIMAL(10,2)) / 
-                                 (SELECT COUNT(*) FROM Partido p 
-                                  WHERE (p.EquipoLocal = je.IDEquipo OR p.EquipoVisitante = je.IDEquipo)
-                                  AND p.EstadoPartido = 'Finalizado') * 100
-                            ELSE 0 
-                        END AS PorcentajeParticipacion,
+                        CAST(
+                            ROUND(
+                                CASE 
+                                    WHEN je.PartidosJugados > 0 
+                                        AND (SELECT COUNT(*) FROM Partido p 
+                                             WHERE (p.EquipoLocal = je.IDEquipo OR p.EquipoVisitante = je.IDEquipo)
+                                             AND p.EstadoPartido = 'Finalizado') > 0 
+                                    THEN CAST(je.PartidosJugados AS DECIMAL(10,2)) / 
+                                         (SELECT COUNT(*) FROM Partido p 
+                                          WHERE (p.EquipoLocal = je.IDEquipo OR p.EquipoVisitante = je.IDEquipo)
+                                          AND p.EstadoPartido = 'Finalizado') * 100
+                                    ELSE 0 
+                                END, 
+                            2)
+                        AS DECIMAL(10,2)) AS PorcentajeParticipacion,
                         (SELECT COUNT(g.IDGol) FROM Gol g WHERE g.IDJugador = j.IDJugador) AS GolesEnTorneos,
                         (SELECT COUNT(a.IDAsistencia) FROM Asistencia a WHERE a.IDJugador = j.IDJugador) AS AsistenciasEnTorneos
                     FROM 
