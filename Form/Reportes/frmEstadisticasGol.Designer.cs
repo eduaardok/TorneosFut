@@ -29,48 +29,46 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.rvwGoleadores = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dsDataGame = new TorneosFut.Class.dsDataGame();
             this.dtGoleadoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dsDataGame)).BeginInit();
+            this.dsDataGame = new TorneosFut.Class.dsDataGame();
+            this.rvwGoleadores = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.dtGoleadoresBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsDataGame)).BeginInit();
             this.SuspendLayout();
-            // 
-            // rvwGoleadores
-            // 
-            this.rvwGoleadores.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "dsGol";
-            reportDataSource1.Value = this.dtGoleadoresBindingSource;
-            this.rvwGoleadores.LocalReport.DataSources.Add(reportDataSource1);
-            this.rvwGoleadores.LocalReport.ReportEmbeddedResource = "TorneosFut.Form.Reportes.rptGoleador.rdlc";
-            this.rvwGoleadores.Location = new System.Drawing.Point(0, 0);
-            this.rvwGoleadores.Name = "rvwGoleadores";
-            this.rvwGoleadores.ServerReport.BearerToken = null;
-            this.rvwGoleadores.Size = new System.Drawing.Size(1030, 492);
-            this.rvwGoleadores.TabIndex = 0;
-            // 
-            // dsDataGame
-            // 
-            this.dsDataGame.DataSetName = "dsDataGame";
-            this.dsDataGame.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // dtGoleadoresBindingSource
             // 
             this.dtGoleadoresBindingSource.DataMember = "dtGoleadores";
             this.dtGoleadoresBindingSource.DataSource = this.dsDataGame;
             // 
+            // dsDataGame
+            // 
+            this.dsDataGame.DataSetName = "dsDataGame";
+            this.dsDataGame.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // rvwGoleadores
+            // 
+            this.rvwGoleadores.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rvwGoleadores.LocalReport.ReportEmbeddedResource = "TorneosFut.Form.Reportes.rptGoleador.rdlc";
+            this.rvwGoleadores.Location = new System.Drawing.Point(0, 0);
+            this.rvwGoleadores.Name = "rvwGoleadores";
+            this.rvwGoleadores.ServerReport.BearerToken = null;
+            this.rvwGoleadores.Size = new System.Drawing.Size(1184, 679);
+            this.rvwGoleadores.TabIndex = 0;
+            // 
             // frmEstadisticasGol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1030, 492);
+            this.ClientSize = new System.Drawing.Size(1184, 679);
             this.Controls.Add(this.rvwGoleadores);
+            this.MaximumSize = new System.Drawing.Size(1200, 718);
+            this.MinimumSize = new System.Drawing.Size(1200, 718);
             this.Name = "frmEstadisticasGol";
             this.Text = "frmEstadisticasGol";
             this.Load += new System.EventHandler(this.frmEstadisticasGol_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dsDataGame)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtGoleadoresBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsDataGame)).EndInit();
             this.ResumeLayout(false);
 
         }

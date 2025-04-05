@@ -400,6 +400,8 @@ namespace TorneosFut.Class {
             
             private global::System.Data.DataColumn columnPos;
             
+            private global::System.Data.DataColumn columnTotalGoles;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public dtGoleadoresDataTable() {
@@ -499,6 +501,14 @@ namespace TorneosFut.Class {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn TotalGolesColumn {
+                get {
+                    return this.columnTotalGoles;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -534,7 +544,7 @@ namespace TorneosFut.Class {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public dtGoleadoresRow AdddtGoleadoresRow(string NombreJugador, string ApellidoJugador, string NombreEquipo, string Sexo, string Posicion, string PartidosJugados, string PromedioGol, string Pos) {
+            public dtGoleadoresRow AdddtGoleadoresRow(string NombreJugador, string ApellidoJugador, string NombreEquipo, string Sexo, string Posicion, string PartidosJugados, string PromedioGol, string Pos, string TotalGoles) {
                 dtGoleadoresRow rowdtGoleadoresRow = ((dtGoleadoresRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         NombreJugador,
@@ -544,7 +554,8 @@ namespace TorneosFut.Class {
                         Posicion,
                         PartidosJugados,
                         PromedioGol,
-                        Pos};
+                        Pos,
+                        TotalGoles};
                 rowdtGoleadoresRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdtGoleadoresRow);
                 return rowdtGoleadoresRow;
@@ -575,6 +586,7 @@ namespace TorneosFut.Class {
                 this.columnPartidosJugados = base.Columns["PartidosJugados"];
                 this.columnPromedioGol = base.Columns["PromedioGol"];
                 this.columnPos = base.Columns["Pos"];
+                this.columnTotalGoles = base.Columns["TotalGoles"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -596,6 +608,8 @@ namespace TorneosFut.Class {
                 base.Columns.Add(this.columnPromedioGol);
                 this.columnPos = new global::System.Data.DataColumn("Pos", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPos);
+                this.columnTotalGoles = new global::System.Data.DataColumn("TotalGoles", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotalGoles);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -747,6 +761,8 @@ namespace TorneosFut.Class {
             
             private global::System.Data.DataColumn columnPos;
             
+            private global::System.Data.DataColumn columnTotalAsistencias;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public dtAsistidoresDataTable() {
@@ -854,6 +870,14 @@ namespace TorneosFut.Class {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn TotalAsistenciasColumn {
+                get {
+                    return this.columnTotalAsistencias;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -889,7 +913,7 @@ namespace TorneosFut.Class {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public dtAsistidoresRow AdddtAsistidoresRow(string NombreJugador, string ApellidoJugador, string NombreEquipo, string Sexo, string Posicion, string Asistencias, string PartidosJugados, string PromedioAsistencias, string Pos) {
+            public dtAsistidoresRow AdddtAsistidoresRow(string NombreJugador, string ApellidoJugador, string NombreEquipo, string Sexo, string Posicion, string Asistencias, string PartidosJugados, string PromedioAsistencias, string Pos, string TotalAsistencias) {
                 dtAsistidoresRow rowdtAsistidoresRow = ((dtAsistidoresRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         NombreJugador,
@@ -900,7 +924,8 @@ namespace TorneosFut.Class {
                         Asistencias,
                         PartidosJugados,
                         PromedioAsistencias,
-                        Pos};
+                        Pos,
+                        TotalAsistencias};
                 rowdtAsistidoresRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdtAsistidoresRow);
                 return rowdtAsistidoresRow;
@@ -932,6 +957,7 @@ namespace TorneosFut.Class {
                 this.columnPartidosJugados = base.Columns["PartidosJugados"];
                 this.columnPromedioAsistencias = base.Columns["PromedioAsistencias"];
                 this.columnPos = base.Columns["Pos"];
+                this.columnTotalAsistencias = base.Columns["TotalAsistencias"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -955,6 +981,8 @@ namespace TorneosFut.Class {
                 base.Columns.Add(this.columnPromedioAsistencias);
                 this.columnPos = new global::System.Data.DataColumn("Pos", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPos);
+                this.columnTotalAsistencias = new global::System.Data.DataColumn("TotalAsistencias", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotalAsistencias);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2366,6 +2394,22 @@ namespace TorneosFut.Class {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string TotalGoles {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtGoleadores.TotalGolesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'TotalGoles\' de la tabla \'dtGoleadores\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtGoleadores.TotalGolesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsNombreJugadorNull() {
                 return this.IsNull(this.tabledtGoleadores.NombreJugadorColumn);
             }
@@ -2458,6 +2502,18 @@ namespace TorneosFut.Class {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetPosNull() {
                 this[this.tabledtGoleadores.PosColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsTotalGolesNull() {
+                return this.IsNull(this.tabledtGoleadores.TotalGolesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetTotalGolesNull() {
+                this[this.tabledtGoleadores.TotalGolesColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2622,6 +2678,22 @@ namespace TorneosFut.Class {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string TotalAsistencias {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtAsistidores.TotalAsistenciasColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'TotalAsistencias\' de la tabla \'dtAsistidores\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtAsistidores.TotalAsistenciasColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsNombreJugadorNull() {
                 return this.IsNull(this.tabledtAsistidores.NombreJugadorColumn);
             }
@@ -2726,6 +2798,18 @@ namespace TorneosFut.Class {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetPosNull() {
                 this[this.tabledtAsistidores.PosColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsTotalAsistenciasNull() {
+                return this.IsNull(this.tabledtAsistidores.TotalAsistenciasColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetTotalAsistenciasNull() {
+                this[this.tabledtAsistidores.TotalAsistenciasColumn] = global::System.Convert.DBNull;
             }
         }
         

@@ -23,7 +23,6 @@ namespace pruebas
         csJugador csJugador;
         csDGV csDGV;
         frmEstatsGenerales estadistica;
-        frmEquiposEstadisticas equipo;
         public Jugador(string u, string c)
         {
             conexion = new csConexion(u,c);
@@ -53,7 +52,7 @@ namespace pruebas
             //dgvJugador.DataSource = csJugador.mostrarJugador();
             csDGV.MostrarJugadores(dgvJugador);
             csDGV.AdaptarDGV(dgvJugador, panelDgv);
-            dgvJugador.Columns["ImagenJugador"].Visible = false;
+            dgvJugador.Columns["ImagenJugador"].Visible = true;
         }
 
 
@@ -162,10 +161,10 @@ namespace pruebas
 
         private void btnEstadistica_Click(object sender, EventArgs e)
         {
-            string IDJugador = dgvJugador.SelectedRows[0].Cells["IDEJugador"].Value.ToString();
+            string IDJugador = dgvJugador.SelectedRows[0].Cells["IDJugador"].Value.ToString();
             string imagen = dgvJugador.SelectedRows[0].Cells["ImagenJugador"].Value.ToString();
-            equipo = new frmEquiposEstadisticas(IDJugador, imagen);
-            equipo.Show();
+            estadistica = new frmEstatsGenerales(IDJugador, imagen);
+            estadistica.Show();
         }
     }
 }

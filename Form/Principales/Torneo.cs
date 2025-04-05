@@ -155,14 +155,12 @@ namespace TorneosFut
 
         private void btngoleadores_Click(object sender, EventArgs e)
         {
-            frmEstadisticasGol frmEstadisticasGol = new frmEstadisticasGol();
-            frmEstadisticasGol.ShowDialog();
+            
         }
 
         private void btnasistidores_Click(object sender, EventArgs e)
         {
-            frmEstadisticasAsistencias frmEstadisticasAsistencias = new frmEstadisticasAsistencias();
-            frmEstadisticasAsistencias.ShowDialog();
+            
         }
 
         private void btnReglas_Click(object sender, EventArgs e)
@@ -232,6 +230,20 @@ namespace TorneosFut
                 // Asegúrate de cerrar la conexión siempre
                 conexion.CerrarCon();
             }
+        }
+
+        private void btnAsistir_Click(object sender, EventArgs e)
+        {
+            string IDTorneo = dgvTorneo.SelectedRows[0].Cells["IDTorneo"].Value.ToString();
+            frmEstadisticasAsistencias frmEstadisticasAsistencias = new frmEstadisticasAsistencias(IDTorneo);
+            frmEstadisticasAsistencias.ShowDialog();
+        }
+
+        private void btnGolear_Click(object sender, EventArgs e)
+        {
+            string IDTorneo = dgvTorneo.SelectedRows[0].Cells["IDTorneo"].Value.ToString();
+            frmEstadisticasGol frmEstadisticasGol = new frmEstadisticasGol(IDTorneo);
+            frmEstadisticasGol.ShowDialog();
         }
     }
 }

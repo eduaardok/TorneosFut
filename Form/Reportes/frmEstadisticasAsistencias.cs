@@ -13,29 +13,53 @@ namespace TorneosFut
 {
     public partial class frmEstadisticasAsistencias: Form
     {
-        public frmEstadisticasAsistencias()
+        string idtorneo;
+        public frmEstadisticasAsistencias(string IDTorneo)
         {
             InitializeComponent();
+            this.idtorneo = IDTorneo; 
         }
 
         private void frmEstadisticasAsistencias_Load(object sender, EventArgs e)
         {
-            CargarReporte();
+            CargarReporte(idtorneo);
             this.rvwAsistidres.RefreshReport();
         }
-        void CargarReporte()
+        void CargarReporte(string IDTorneo)
         {
             DataTable dtAsistencia = new DataTable();
             csConexion oconSQL = new csConexion();
 
             rvwAsistidres.LocalReport.DataSources.Clear();
 
-            dtAsistencia = oconSQL.ListDGV(@"Select top 10 J.NombreJugador, J.ApellidoJugador, Q.NombreEquipo, J.Sexo, J.Posicion, E.Asistencias, E.PartidosJugados,
-	            cast(round(cast(E.Asistencias as decimal(10, 2)) / cast(E.PartidosJugados as decimal(10, 2)), 2) as decimal(10, 2)) as PromedioAsistencias
-	            from Jugador_TEST J inner join Jugador_Equipo_TEST E on J.IDJugador=E.IDJugador 
-	            inner join Equipo_TEST Q on Q.IDEquipo=E.IDEquipo
-	            where E.PartidosJugados >= 1 and E.Asistencias >= 1
-	            order by Asistencias desc");
+            dtAsistencia = oconSQL.ListDGV($@"SELECT 
+                    ROW_NUMBER() OVER (ORDER BY TotalAsistencias DESC) AS Pos,
+                    Nombre,
+                    Apellido,
+                    NombreEquipo,
+                    TotalAsistencias
+                FROM (
+                    SELECT 
+                        j.NombreJugador AS Nombre,
+                        j.ApellidoJugador AS Apellido,
+                        e.NombreEquipo,
+                        COUNT(a.IDAsistencia) AS TotalAsistencias
+                    FROM 
+                        Torneo t
+                        INNER JOIN dbo.Partido p ON t.IDTorneo = p.IDTorneo
+                        INNER JOIN dbo.Asistencia a ON p.IDPartido = a.IDPartido
+                        INNER JOIN dbo.Jugador j ON a.IDJugador = j.IDJugador
+                        INNER JOIN dbo.Jugador_Equipo je ON j.IDJugador = je.IDJugador
+                        INNER JOIN dbo.Equipo e ON je.IDEquipo = e.IDEquipo
+                    WHERE
+                        t.IDTorneo = {IDTorneo}
+                    GROUP BY 
+                        j.NombreJugador,
+                        j.ApellidoJugador,
+                        e.NombreEquipo
+                ) AS sub
+                ORDER BY 
+                    TotalAsistencias DESC;");
 
             rvwAsistidres.LocalReport.ReportPath = @"rptAsistidor.rdlc";
 

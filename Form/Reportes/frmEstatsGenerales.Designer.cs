@@ -34,19 +34,20 @@
             // rvwEstadisticas
             // 
             this.rvwEstadisticas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rvwEstadisticas.LocalReport.ReportEmbeddedResource = "TorneosFut.Form.Reportes.rptDatos.rdlc";
             this.rvwEstadisticas.Location = new System.Drawing.Point(0, 0);
             this.rvwEstadisticas.Name = "rvwEstadisticas";
             this.rvwEstadisticas.ServerReport.BearerToken = null;
-            this.rvwEstadisticas.Size = new System.Drawing.Size(800, 450);
+            this.rvwEstadisticas.Size = new System.Drawing.Size(1184, 679);
             this.rvwEstadisticas.TabIndex = 0;
             // 
             // frmEstatsGenerales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1184, 679);
             this.Controls.Add(this.rvwEstadisticas);
+            this.MaximumSize = new System.Drawing.Size(1200, 718);
+            this.MinimumSize = new System.Drawing.Size(1200, 718);
             this.Name = "frmEstatsGenerales";
             this.Text = "frmEstatsGenerales";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

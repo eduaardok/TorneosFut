@@ -98,7 +98,7 @@ namespace TorneosFut.Class
         public DataTable mostrarJugador()
         {
             return csConexion.ListDGV("select IDJugador,NombreJugador,ApellidoJugador,Sexo,FechaNacimiento,"
-                                   + "Posicion,Nacionalidad,Peso,Altura,PiernaHabil,ImagenJugador from Jugador");
+                                   + "Posicion,Nacionalidad,Peso,Altura,PiernaHabil, ImagenJugador from Jugador");
         }
         public DataTable ListaidJugadores()
         {

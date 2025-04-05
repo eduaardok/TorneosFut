@@ -13,17 +13,19 @@ namespace TorneosFut
 {
     public partial class frmEstadisticasGol: Form
     {
-        public frmEstadisticasGol()
+        string idtorneo;
+        public frmEstadisticasGol(string IDTorneo)
         {
             InitializeComponent();
+            this.idtorneo = IDTorneo; 
         }
 
         private void frmEstadisticasGol_Load(object sender, EventArgs e)
         {
-            CargarReporte();
+            CargarReporte(idtorneo);
             this.rvwGoleadores.RefreshReport();
         }
-        void CargarReporte()
+        void CargarReporte(string IDTorneo)
         {
             DataTable dtGoles = new DataTable();
             DataTable dtAsistencia = new DataTable();
@@ -31,14 +33,37 @@ namespace TorneosFut
 
             rvwGoleadores.LocalReport.DataSources.Clear();
 
-            dtGoles = oconSQL.ListDGV(@"select row_number() over (order by E.Goles desc) as Pos, J.NombreJugador, J.ApellidoJugador, Q.NombreEquipo, J.Sexo, J.Posicion, E.Goles, E.PartidosJugados,
-                    cast(round(cast(E.Goles AS DECIMAL(10, 2)) / cast(E.PartidosJugados as decimal(10, 2)), 2) as decimal(10, 2)) as PromedioGol
-                from 
-                    Jugador_TEST J 
-                    inner join Jugador_Equipo_TEST E ON J.IDJugador = E.IDJugador 
-                    inner join Equipo_TEST Q ON Q.IDEquipo = E.IDEquipo
-                where E.PartidosJugados >= 1 AND E.Goles >= 1
-                order by E.Goles desc");
+            dtGoles = oconSQL.ListDGV($@"SELECT 
+                    ROW_NUMBER() OVER (ORDER BY TotalGoles DESC) AS Pos,
+                    NombreJugador,
+                    ApellidoJugador,
+                    Posicion,
+                    NombreEquipo,
+                    TotalGoles
+                FROM (
+                    SELECT 
+                        j.NombreJugador,
+                        j.ApellidoJugador,
+                        j.Posicion,
+                        e.NombreEquipo,
+                        COUNT(g.IDGol) AS TotalGoles
+                    FROM 
+                        Torneo t
+                        INNER JOIN dbo.Partido p ON t.IDTorneo = p.IDTorneo
+                        INNER JOIN dbo.Gol g ON p.IDPartido = g.IDPartido
+                        INNER JOIN dbo.Jugador j ON g.IDJugador = j.IDJugador
+                        INNER JOIN dbo.Jugador_Equipo je ON j.IDJugador = je.IDJugador
+                        INNER JOIN dbo.Equipo e ON je.IDEquipo = e.IDEquipo
+                    WHERE
+                        t.IDTorneo = {IDTorneo}
+                    GROUP BY 
+                        j.NombreJugador,
+                        j.ApellidoJugador,
+                        j.Posicion,
+                        e.NombreEquipo
+                ) AS sub
+                ORDER BY 
+                    TotalGoles DESC;");
 
             rvwGoleadores.LocalReport.ReportPath = @"rptGoleador.rdlc";
 

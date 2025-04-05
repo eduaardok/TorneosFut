@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnReglas = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -46,10 +46,10 @@
             this.txtBuscarTorneo = new System.Windows.Forms.TextBox();
             this.dgvTorneo = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnasistidores = new Guna.UI2.WinForms.Guna2Button();
-            this.btngoleadores = new Guna.UI2.WinForms.Guna2Button();
             this.btnGanador = new Guna.UI2.WinForms.Guna2Button();
             this.panelmodul = new System.Windows.Forms.Panel();
+            this.btnAsistir = new Guna.UI2.WinForms.Guna2Button();
+            this.btnGolear = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTorneo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -289,42 +289,42 @@
             this.dgvTorneo.BackgroundColor = System.Drawing.Color.White;
             this.dgvTorneo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvTorneo.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTorneo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTorneo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.dgvTorneo.ColumnHeadersHeight = 40;
             this.dgvTorneo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTorneo.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTorneo.DefaultCellStyle = dataGridViewCellStyle14;
             this.dgvTorneo.EnableHeadersVisualStyles = false;
             this.dgvTorneo.Location = new System.Drawing.Point(150, 295);
             this.dgvTorneo.MultiSelect = false;
             this.dgvTorneo.Name = "dgvTorneo";
             this.dgvTorneo.ReadOnly = true;
             this.dgvTorneo.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTorneo.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTorneo.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvTorneo.RowHeadersVisible = false;
             this.dgvTorneo.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
-            this.dgvTorneo.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.dgvTorneo.RowsDefaultCellStyle = dataGridViewCellStyle16;
             this.dgvTorneo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTorneo.Size = new System.Drawing.Size(1191, 501);
             this.dgvTorneo.TabIndex = 57;
@@ -340,52 +340,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(50, 49);
             this.pictureBox1.TabIndex = 59;
             this.pictureBox1.TabStop = false;
-            // 
-            // btnasistidores
-            // 
-            this.btnasistidores.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnasistidores.Animated = true;
-            this.btnasistidores.BorderRadius = 20;
-            this.btnasistidores.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnasistidores.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnasistidores.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnasistidores.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnasistidores.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.btnasistidores.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnasistidores.ForeColor = System.Drawing.Color.White;
-            this.btnasistidores.HoverState.CustomBorderColor = System.Drawing.Color.Black;
-            this.btnasistidores.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
-            this.btnasistidores.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnasistidores.Location = new System.Drawing.Point(1128, 798);
-            this.btnasistidores.Name = "btnasistidores";
-            this.btnasistidores.Size = new System.Drawing.Size(213, 59);
-            this.btnasistidores.TabIndex = 66;
-            this.btnasistidores.Text = "ASISTIDORES";
-            this.btnasistidores.Visible = false;
-            this.btnasistidores.Click += new System.EventHandler(this.btnasistidores_Click);
-            // 
-            // btngoleadores
-            // 
-            this.btngoleadores.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btngoleadores.Animated = true;
-            this.btngoleadores.BorderRadius = 20;
-            this.btngoleadores.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btngoleadores.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btngoleadores.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btngoleadores.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btngoleadores.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.btngoleadores.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btngoleadores.ForeColor = System.Drawing.Color.White;
-            this.btngoleadores.HoverState.CustomBorderColor = System.Drawing.Color.Black;
-            this.btngoleadores.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
-            this.btngoleadores.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btngoleadores.Location = new System.Drawing.Point(162, 802);
-            this.btngoleadores.Name = "btngoleadores";
-            this.btngoleadores.Size = new System.Drawing.Size(192, 55);
-            this.btngoleadores.TabIndex = 67;
-            this.btngoleadores.Text = "GOLEADORES";
-            this.btngoleadores.Visible = false;
-            this.btngoleadores.Click += new System.EventHandler(this.btngoleadores_Click);
             // 
             // btnGanador
             // 
@@ -418,16 +372,60 @@
             this.panelmodul.Size = new System.Drawing.Size(1490, 811);
             this.panelmodul.TabIndex = 70;
             // 
+            // btnAsistir
+            // 
+            this.btnAsistir.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAsistir.Animated = true;
+            this.btnAsistir.BorderRadius = 20;
+            this.btnAsistir.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAsistir.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAsistir.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAsistir.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAsistir.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            this.btnAsistir.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAsistir.ForeColor = System.Drawing.Color.White;
+            this.btnAsistir.HoverState.CustomBorderColor = System.Drawing.Color.Black;
+            this.btnAsistir.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.btnAsistir.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.btnAsistir.Location = new System.Drawing.Point(1161, 802);
+            this.btnAsistir.Name = "btnAsistir";
+            this.btnAsistir.Size = new System.Drawing.Size(180, 59);
+            this.btnAsistir.TabIndex = 71;
+            this.btnAsistir.Text = "ASISTIDORES";
+            this.btnAsistir.Click += new System.EventHandler(this.btnAsistir_Click);
+            // 
+            // btnGolear
+            // 
+            this.btnGolear.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnGolear.Animated = true;
+            this.btnGolear.BorderRadius = 20;
+            this.btnGolear.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnGolear.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnGolear.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnGolear.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnGolear.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            this.btnGolear.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGolear.ForeColor = System.Drawing.Color.White;
+            this.btnGolear.HoverState.CustomBorderColor = System.Drawing.Color.Black;
+            this.btnGolear.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.btnGolear.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.btnGolear.Location = new System.Drawing.Point(150, 802);
+            this.btnGolear.Name = "btnGolear";
+            this.btnGolear.Size = new System.Drawing.Size(180, 59);
+            this.btnGolear.TabIndex = 72;
+            this.btnGolear.Text = "GOLEADORES";
+            this.btnGolear.Click += new System.EventHandler(this.btnGolear_Click);
+            // 
             // Torneo
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1490, 911);
             this.ControlBox = false;
+            this.Controls.Add(this.btnGolear);
+            this.Controls.Add(this.btnAsistir);
             this.Controls.Add(this.panelmodul);
             this.Controls.Add(this.btnGanador);
-            this.Controls.Add(this.btngoleadores);
-            this.Controls.Add(this.btnasistidores);
             this.Controls.Add(this.btnCrear);
             this.Controls.Add(this.btnPatrocinadores);
             this.Controls.Add(this.btnInscripcionEquipos);
@@ -469,9 +467,9 @@
         private System.Windows.Forms.TextBox txtBuscarTorneo;
         public System.Windows.Forms.DataGridView dgvTorneo;
         private System.Windows.Forms.Button btnReglas;
-        private Guna.UI2.WinForms.Guna2Button btnasistidores;
-        private Guna.UI2.WinForms.Guna2Button btngoleadores;
         private Guna.UI2.WinForms.Guna2Button btnGanador;
         public System.Windows.Forms.Panel panelmodul;
+        private Guna.UI2.WinForms.Guna2Button btnAsistir;
+        private Guna.UI2.WinForms.Guna2Button btnGolear;
     }
 }
