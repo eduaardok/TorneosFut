@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnArbitros = new Guna.UI2.WinForms.Guna2Button();
             this.btnPatrocinador = new Guna.UI2.WinForms.Guna2Button();
             this.btnEquipos = new Guna.UI2.WinForms.Guna2Button();
@@ -77,11 +77,12 @@
             this.btnArbitros.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnArbitros.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnArbitros.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnArbitros.Location = new System.Drawing.Point(723, 18);
+            this.btnArbitros.Location = new System.Drawing.Point(581, 18);
             this.btnArbitros.Name = "btnArbitros";
             this.btnArbitros.Size = new System.Drawing.Size(259, 52);
             this.btnArbitros.TabIndex = 146;
             this.btnArbitros.Text = "Pagos a Árbitros";
+            this.btnArbitros.Visible = false;
             this.btnArbitros.Click += new System.EventHandler(this.btnArbitros_Click);
             // 
             // btnPatrocinador
@@ -105,7 +106,7 @@
             this.btnPatrocinador.Name = "btnPatrocinador";
             this.btnPatrocinador.Size = new System.Drawing.Size(263, 52);
             this.btnPatrocinador.TabIndex = 145;
-            this.btnPatrocinador.Text = "Pago Patrocinadores";
+            this.btnPatrocinador.Text = "Pagos de Patrocinadores";
             this.btnPatrocinador.Click += new System.EventHandler(this.btnPatrocinador_Click);
             // 
             // btnEquipos
@@ -125,7 +126,7 @@
             this.btnEquipos.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnEquipos.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnEquipos.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnEquipos.Location = new System.Drawing.Point(374, 18);
+            this.btnEquipos.Location = new System.Drawing.Point(581, 18);
             this.btnEquipos.Name = "btnEquipos";
             this.btnEquipos.Size = new System.Drawing.Size(259, 52);
             this.btnEquipos.TabIndex = 144;
@@ -138,7 +139,7 @@
             this.txtBuscarEquipo.Font = new System.Drawing.Font("Onest Light", 12F);
             this.txtBuscarEquipo.ForeColor = System.Drawing.Color.Gray;
             this.txtBuscarEquipo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtBuscarEquipo.Location = new System.Drawing.Point(393, 106);
+            this.txtBuscarEquipo.Location = new System.Drawing.Point(395, 98);
             this.txtBuscarEquipo.Multiline = true;
             this.txtBuscarEquipo.Name = "txtBuscarEquipo";
             this.txtBuscarEquipo.Size = new System.Drawing.Size(942, 26);
@@ -154,24 +155,24 @@
             this.dgvPagos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPagos.BackgroundColor = System.Drawing.Color.White;
             this.dgvPagos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPagos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPagos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvPagos.ColumnHeadersHeight = 40;
             this.dgvPagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPagos.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPagos.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvPagos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPagos.EnableHeadersVisualStyles = false;
             this.dgvPagos.Location = new System.Drawing.Point(0, 0);
@@ -181,13 +182,13 @@
             this.dgvPagos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvPagos.RowHeadersWidth = 30;
             this.dgvPagos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
-            this.dgvPagos.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.dgvPagos.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvPagos.RowTemplate.Height = 30;
             this.dgvPagos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPagos.ShowCellToolTips = false;
             this.dgvPagos.ShowEditingIcon = false;
-            this.dgvPagos.Size = new System.Drawing.Size(1353, 370);
+            this.dgvPagos.Size = new System.Drawing.Size(1353, 448);
             this.dgvPagos.TabIndex = 94;
             // 
             // cmbTorneos
@@ -228,7 +229,7 @@
             this.btnPagar.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnPagar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnPagar.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnPagar.Location = new System.Drawing.Point(1223, 539);
+            this.btnPagar.Location = new System.Drawing.Point(1210, 618);
             this.btnPagar.Name = "btnPagar";
             this.btnPagar.Size = new System.Drawing.Size(127, 52);
             this.btnPagar.TabIndex = 150;
@@ -253,7 +254,7 @@
             this.btnAbonar.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnAbonar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnAbonar.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnAbonar.Location = new System.Drawing.Point(1223, 539);
+            this.btnAbonar.Location = new System.Drawing.Point(1210, 618);
             this.btnAbonar.Name = "btnAbonar";
             this.btnAbonar.Size = new System.Drawing.Size(127, 52);
             this.btnAbonar.TabIndex = 143;
@@ -265,7 +266,7 @@
             this.panel1.Controls.Add(this.dgvPagos);
             this.panel1.Location = new System.Drawing.Point(0, 152);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1353, 370);
+            this.panel1.Size = new System.Drawing.Size(1353, 448);
             this.panel1.TabIndex = 149;
             // 
             // panelDgv
@@ -277,15 +278,15 @@
             this.panelDgv.Controls.Add(this.btnPagar);
             this.panelDgv.Controls.Add(this.btnAbonar);
             this.panelDgv.Controls.Add(this.panel1);
-            this.panelDgv.Controls.Add(this.btnArbitros);
             this.panelDgv.Controls.Add(this.btnPatrocinador);
             this.panelDgv.Controls.Add(this.btnEquipos);
             this.panelDgv.Controls.Add(this.pictureBox1);
             this.panelDgv.Controls.Add(this.txtBuscarEquipo);
             this.panelDgv.Controls.Add(this.btnMovimiento);
-            this.panelDgv.Location = new System.Drawing.Point(68, 298);
+            this.panelDgv.Controls.Add(this.btnArbitros);
+            this.panelDgv.Location = new System.Drawing.Point(68, 213);
             this.panelDgv.Name = "panelDgv";
-            this.panelDgv.Size = new System.Drawing.Size(1353, 607);
+            this.panelDgv.Size = new System.Drawing.Size(1353, 686);
             this.panelDgv.TabIndex = 151;
             // 
             // btnMovimiento
@@ -341,6 +342,7 @@
             this.label6.Size = new System.Drawing.Size(170, 25);
             this.label6.TabIndex = 148;
             this.label6.Text = "Ingresos Totales";
+            this.label6.Visible = false;
             // 
             // label5
             // 
@@ -352,6 +354,7 @@
             this.label5.Size = new System.Drawing.Size(170, 25);
             this.label5.TabIndex = 147;
             this.label5.Text = "Ingresos Totales";
+            this.label5.Visible = false;
             // 
             // label4
             // 
@@ -363,6 +366,7 @@
             this.label4.Size = new System.Drawing.Size(170, 25);
             this.label4.TabIndex = 146;
             this.label4.Text = "Ingresos Totales";
+            this.label4.Visible = false;
             // 
             // label3
             // 
@@ -374,6 +378,7 @@
             this.label3.Size = new System.Drawing.Size(88, 25);
             this.label3.TabIndex = 145;
             this.label3.Text = "Balance";
+            this.label3.Visible = false;
             // 
             // label2
             // 
@@ -385,6 +390,7 @@
             this.label2.Size = new System.Drawing.Size(154, 25);
             this.label2.TabIndex = 144;
             this.label2.Text = "Gastos Totales";
+            this.label2.Visible = false;
             // 
             // label1
             // 
@@ -396,6 +402,7 @@
             this.label1.Size = new System.Drawing.Size(170, 25);
             this.label1.TabIndex = 143;
             this.label1.Text = "Ingresos Totales";
+            this.label1.Visible = false;
             // 
             // label7
             // 
@@ -413,7 +420,7 @@
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.BackgroundImage = global::TorneosFut.Properties.Resources.IconoLupa;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(359, 105);
+            this.pictureBox1.Location = new System.Drawing.Point(361, 98);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(28, 27);
             this.pictureBox1.TabIndex = 148;
