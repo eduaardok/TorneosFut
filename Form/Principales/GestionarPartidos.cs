@@ -22,8 +22,7 @@ namespace pruebas
         csDatos csDatos;
         string IdTorneo;
         AgregarTitulares agregarTitulares;
-        TablaDePosiciones tbl;
-
+        
 
         public GestionarPartidos(string IDtorneo,string u, string c)
         {
@@ -31,7 +30,6 @@ namespace pruebas
             csDatos = new csDatos(u, c);
             IdTorneo = IDtorneo;
             csDGV = new csDGV(u,c, IdTorneo, IDPartido);
-            tbl = new TablaDePosiciones(u, c, IdTorneo);
             InitializeComponent();
         }
 
@@ -383,6 +381,7 @@ namespace pruebas
 
         private void btnTabla_Click(object sender, EventArgs e)
         {
+            TablaDePosiciones tbl = new TablaDePosiciones(conexion.Usuario, conexion.Clave, IdTorneo);
             tbl.ShowDialog();
         }
     }
