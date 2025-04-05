@@ -49,7 +49,6 @@ namespace TorneosFut
         private void txtFiltro_TextChanged(object sender, EventArgs e)
         {
             ActualizarTabla();
-
         }
 
         private void txtFiltro_Click(object sender, EventArgs e)

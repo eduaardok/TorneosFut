@@ -85,6 +85,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form\AgregarEditar\AsignarPatrocinio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\AgregarEditar\AsignarPatrocinio.Designer.cs">
+      <DependentUpon>AsignarPatrocinio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\Principales\Formato.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -346,6 +352,9 @@
     <Compile Include="Form\Principales\TablaDePosiciones.Designer.cs">
       <DependentUpon>TablaDePosiciones.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Form\AgregarEditar\AsignarPatrocinio.resx">
+      <DependentUpon>AsignarPatrocinio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\Principales\TablaDePosiciones.resx">
       <DependentUpon>TablaDePosiciones.cs</DependentUpon>
     </EmbeddedResource>

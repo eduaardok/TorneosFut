@@ -40,5 +40,14 @@ namespace TorneosFut
             AggEditOrganizador aggEditOrganizador = new AggEditOrganizador(dgvOrganizador.Rows[dgvOrganizador.CurrentRow.Index].Cells["IDOrganizador"].Value.ToString(), conexion.Usuario, conexion.Clave, false);
             aggEditOrganizador.ShowDialog();
         }
+
+        private void txtFiltro_Click(object sender, EventArgs e)
+        {
+            if (txtFiltro.Text == "Buscar por nombre del Organizador")
+            {
+                txtFiltro.Text = "";
+                txtFiltro.ForeColor = Color.Black;
+            }
+        }
     }
 }

@@ -18,6 +18,7 @@ namespace TorneosFut
         csConexion conexion;
         csDGV csDGV;
         PagoInscripcion PagoInscripcion;
+        AsignarPatrocinio patrocinio;
         int idtorneroSelec = 0;
         public GestionFinanciera(string u, string c)
         {
@@ -117,6 +118,8 @@ namespace TorneosFut
             btnPagar.Visible = true;
             csDGV.MostrarMovimieentosP(dgvPagos, idtorneroSelec);
             AdaptarDGV();
+            patrocinio = new AsignarPatrocinio(conexion.Usuario, conexion.Clave);
+            patrocinio.Show();
         }
 
         private void btnPagar_Click(object sender, EventArgs e)
@@ -159,6 +162,15 @@ namespace TorneosFut
             {
                 cmbTorneos.SelectedIndex = 0;
             }
+        }
+        private void btnAbonar_Click_1(object sender, EventArgs e)
+        {
+            DataGridViewRow row = dgvPagos.SelectedRows[0];
+            string idequipo = row.Cells["IDEquipo"].Value.ToString();
+            string IdTorneo = row.Cells["IDTorneo"].Value.ToString();
+            PagoInscripcion = new PagoInscripcion(IdTorneo, idequipo, conexion.Usuario, conexion.Clave);
+            PagoInscripcion.ShowDialog();
+            ActualizarTablaE();
         }
     }
 }

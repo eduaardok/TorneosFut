@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtBuscarEntrenador = new System.Windows.Forms.TextBox();
+            this.txtFiltro = new System.Windows.Forms.TextBox();
             this.dgvOrganizador = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAggOrganizador = new Guna.UI2.WinForms.Guna2Button();
@@ -47,24 +47,25 @@
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.BackgroundImage = global::TorneosFut.Properties.Resources.IconoLupa;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(196, 101);
+            this.pictureBox1.Location = new System.Drawing.Point(196, 102);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(50, 49);
             this.pictureBox1.TabIndex = 42;
             this.pictureBox1.TabStop = false;
             // 
-            // txtBuscarEntrenador
+            // txtFiltro
             // 
-            this.txtBuscarEntrenador.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtBuscarEntrenador.Font = new System.Drawing.Font("Onest Light", 20F);
-            this.txtBuscarEntrenador.ForeColor = System.Drawing.Color.Gray;
-            this.txtBuscarEntrenador.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtBuscarEntrenador.Location = new System.Drawing.Point(252, 101);
-            this.txtBuscarEntrenador.Multiline = true;
-            this.txtBuscarEntrenador.Name = "txtBuscarEntrenador";
-            this.txtBuscarEntrenador.Size = new System.Drawing.Size(633, 48);
-            this.txtBuscarEntrenador.TabIndex = 41;
-            this.txtBuscarEntrenador.Text = "Buscar por nombre del Entrenador";
+            this.txtFiltro.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtFiltro.Font = new System.Drawing.Font("Onest Light", 20F);
+            this.txtFiltro.ForeColor = System.Drawing.Color.Gray;
+            this.txtFiltro.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.txtFiltro.Location = new System.Drawing.Point(252, 102);
+            this.txtFiltro.Multiline = true;
+            this.txtFiltro.Name = "txtFiltro";
+            this.txtFiltro.Size = new System.Drawing.Size(633, 48);
+            this.txtFiltro.TabIndex = 41;
+            this.txtFiltro.Text = "Buscar por nombre del Organizador";
+            this.txtFiltro.Click += new System.EventHandler(this.txtFiltro_Click);
             // 
             // dgvOrganizador
             // 
@@ -78,40 +79,40 @@
             this.dgvOrganizador.BackgroundColor = System.Drawing.Color.White;
             this.dgvOrganizador.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvOrganizador.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvOrganizador.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOrganizador.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvOrganizador.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvOrganizador.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvOrganizador.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvOrganizador.EnableHeadersVisualStyles = false;
-            this.dgvOrganizador.Location = new System.Drawing.Point(179, 278);
+            this.dgvOrganizador.Location = new System.Drawing.Point(145, 276);
             this.dgvOrganizador.Name = "dgvOrganizador";
             this.dgvOrganizador.ReadOnly = true;
             this.dgvOrganizador.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvOrganizador.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOrganizador.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvOrganizador.RowHeadersVisible = false;
             this.dgvOrganizador.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
-            this.dgvOrganizador.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.dgvOrganizador.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvOrganizador.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvOrganizador.Size = new System.Drawing.Size(1186, 601);
             this.dgvOrganizador.TabIndex = 39;
@@ -141,7 +142,7 @@
             this.btnAggOrganizador.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnAggOrganizador.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnAggOrganizador.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnAggOrganizador.Location = new System.Drawing.Point(558, 193);
+            this.btnAggOrganizador.Location = new System.Drawing.Point(196, 199);
             this.btnAggOrganizador.Name = "btnAggOrganizador";
             this.btnAggOrganizador.Size = new System.Drawing.Size(184, 52);
             this.btnAggOrganizador.TabIndex = 35;
@@ -163,9 +164,9 @@
             this.btnEditar.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnEditar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnEditar.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnEditar.Location = new System.Drawing.Point(425, 193);
+            this.btnEditar.Location = new System.Drawing.Point(481, 182);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(127, 52);
+            this.btnEditar.Size = new System.Drawing.Size(184, 52);
             this.btnEditar.TabIndex = 102;
             this.btnEditar.Text = "EDITAR";
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
@@ -178,11 +179,12 @@
             this.ControlBox = false;
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.txtBuscarEntrenador);
+            this.Controls.Add(this.txtFiltro);
             this.Controls.Add(this.dgvOrganizador);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAggOrganizador);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Location = new System.Drawing.Point(12, 23);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Organizadores";
@@ -201,7 +203,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox txtBuscarEntrenador;
+        private System.Windows.Forms.TextBox txtFiltro;
         public System.Windows.Forms.DataGridView dgvOrganizador;
         public System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button btnAggOrganizador;
