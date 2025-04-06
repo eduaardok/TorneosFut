@@ -76,6 +76,10 @@ namespace TorneosFut
 
         private void Equipos_Load(object sender, EventArgs e)
         {
+            foreach (DataGridViewColumn column in dgvEquipos.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
             //dgvEquipos.DataSource = dgvEquipo¿();
             csDGV.MostrarEquipos(dgvEquipos);

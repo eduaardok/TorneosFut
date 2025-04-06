@@ -29,6 +29,10 @@ namespace PruebasTorneos
 
         private void Padre_Load(object sender, EventArgs e)
         {
+            foreach (DataGridViewColumn column in dgvEntrenador.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
             this.Dock= DockStyle.Fill;
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
             csEntrenador.Cargar(dgvEntrenador, ptbIMG);

@@ -48,6 +48,10 @@ namespace pruebas
        
         private void VerJugadores_Load(object sender, EventArgs e)
         {
+            foreach (DataGridViewColumn column in dgvJugador.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
             //dgvJugador.DataSource = csJugador.mostrarJugador();
             csDGV.MostrarJugadores(dgvJugador);

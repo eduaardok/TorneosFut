@@ -26,6 +26,10 @@ namespace TorneosFut
 
         private void Patrocinadores_Load(object sender, EventArgs e)
         {
+            foreach (DataGridViewColumn column in dgvPatrocinador.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
         }
         void ActualizarTabla()

@@ -26,6 +26,10 @@ namespace TorneosFut
         {
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
             csDGV.MostrarArbitros(dgvArbitro);
+            foreach (DataGridViewColumn column in dgvArbitro.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
         }
 
 

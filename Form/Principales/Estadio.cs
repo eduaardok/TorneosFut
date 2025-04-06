@@ -28,6 +28,10 @@ namespace TorneosFut
 
         private void Estadio_Load(object sender, EventArgs e)
         {
+            foreach (DataGridViewColumn column in dgvEstadio.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
             csEstadio.Cargar(dgvEstadio, ptbImagen);
         }

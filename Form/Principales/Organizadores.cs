@@ -25,6 +25,10 @@ namespace TorneosFut
 
         private void Organizadores_Load(object sender, EventArgs e)
         {
+            foreach (DataGridViewColumn column in dgvOrganizador.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
             csDGV.MostrarOrganizadores(dgvOrganizador);
         }

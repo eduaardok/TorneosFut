@@ -71,6 +71,10 @@ namespace TorneosFut
 
         private void Torneo_Load(object sender, EventArgs e)
         {
+            foreach (DataGridViewColumn column in dgvTorneo.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
             csDGV.MostrarTorneo(dgvTorneo);
             panelmodul.Hide();
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
@@ -270,6 +274,11 @@ namespace TorneosFut
         {
             frmCalendarioGeneral frm= new frmCalendarioGeneral(dgvTorneo.SelectedRows[0].Cells["IDTorneo"].Value.ToString());
             frm.ShowDialog();
+        }
+
+        private void panelmodul_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
