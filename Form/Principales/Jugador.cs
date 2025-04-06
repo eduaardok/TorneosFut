@@ -51,8 +51,9 @@ namespace pruebas
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
             //dgvJugador.DataSource = csJugador.mostrarJugador();
             csDGV.MostrarJugadores(dgvJugador);
+            dgvJugador.Columns["ImagenJugador"].Visible = false;
             csDGV.AdaptarDGV(dgvJugador, panelDgv);
-            dgvJugador.Columns["ImagenJugador"].Visible = true;
+            //dgvJugador.Columns["ImagenJugador"].Visible = true;
         }
 
 
