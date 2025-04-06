@@ -84,7 +84,7 @@
             // btngSalir
             // 
             this.btngSalir.BackColor = System.Drawing.Color.White;
-            this.btngSalir.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.btngSalir.BorderColor = System.Drawing.Color.White;
             this.btngSalir.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btngSalir.CheckedState.CustomBorderColor = System.Drawing.Color.Black;
             this.btngSalir.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
