@@ -23,6 +23,14 @@ namespace TorneosFut
 
         private void frmAsistidores_Load(object sender, EventArgs e)
         {
+            Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
+            if (!GlobalSettings.ModoOscuro)
+            {
+                panel1.BackColor = Color.FromArgb(251, 3, 140);
+                panel2.BackColor = Color.FromArgb(251, 3, 140);
+                panel3.BackColor = Color.FromArgb(251, 3, 140);
+                panel4.BackColor = Color.FromArgb(251, 3, 140);
+            }
             CargarDatos(idtorneo);
             this.rvwAsistencia.RefreshReport();
         }
@@ -90,6 +98,40 @@ namespace TorneosFut
             dataset.Value = dt;
             rvwAsistencia.LocalReport.Refresh();
             this.rvwAsistencia.RefreshReport();
+            
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Normal; 
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+        }
+
+        private void panel2_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left) // Verifica si el botón izquierdo del mouse está presionado
+            {
+                // Mueve el formulario a la nueva posición
+                this.Location = new Point(
+                    this.Location.X + e.X - (panel1.Width / 2),
+                    this.Location.Y + e.Y - (panel1.Height / 2));
+            }
+        }
+
+        private void rvwAsistencia_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

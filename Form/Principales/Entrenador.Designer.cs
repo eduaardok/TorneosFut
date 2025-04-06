@@ -161,7 +161,7 @@
             this.btnAggDT.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnAggDT.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnAggDT.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnAggDT.Location = new System.Drawing.Point(663, 185);
+            this.btnAggDT.Location = new System.Drawing.Point(664, 213);
             this.btnAggDT.Name = "btnAggDT";
             this.btnAggDT.Size = new System.Drawing.Size(184, 52);
             this.btnAggDT.TabIndex = 19;

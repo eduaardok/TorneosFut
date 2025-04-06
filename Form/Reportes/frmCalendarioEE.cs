@@ -24,9 +24,46 @@ namespace TorneosFut
 
         private void frmCalendarioEE_Load(object sender, EventArgs e)
         {
+            Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
+            if (!GlobalSettings.ModoOscuro)
+            {
+                panel1.BackColor = Color.FromArgb(251, 3, 140);
+                panel2.BackColor = Color.FromArgb(251, 3, 140);
+                panel3.BackColor = Color.FromArgb(251, 3, 140);
+                panel4.BackColor = Color.FromArgb(251, 3, 140);
+            }
             CargarDatos(idtorneo, idequipo);
             this.rvwCalendarioClub.RefreshReport();
         }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void panel2_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left) // Verifica si el botón izquierdo del mouse está presionado
+            {
+                // Mueve el formulario a la nueva posición
+                this.Location = new Point(
+                    this.Location.X + e.X - (panel1.Width / 2),
+                    this.Location.Y + e.Y - (panel1.Height / 2));
+            }
+        }
+
         void CargarDatos(string IDTorneo, String IDEquipo)
         {
             DataTable dt = new DataTable();
@@ -35,8 +72,6 @@ namespace TorneosFut
             ReportDataSource dataset = new ReportDataSource();
             rvwCalendarioClub.LocalReport.DataSources.Clear();
             dt = oconSQL.ListDGV($@"select EquipoLocal, EquipoVisitante, Fecha, EstadoPartido from Partido where (EquipoLocal = '{IDEquipo}' or EquipoVisitante = '{IDEquipo}') and IDTorneo = {IDTorneo}"); //Esto de aqui lo cambias por tu consulta
-
-
             string reportPath = Path.Combine(Application.StartupPath, "rptCalendarioEspecifico.rdlc");
             //rvwTablaPos.LocalReport.ReportPath = "rptPosiciones.rdlc"; // Esto por el nombre de tu reporte
             if (File.Exists(reportPath))
