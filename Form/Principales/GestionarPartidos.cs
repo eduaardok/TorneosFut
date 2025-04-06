@@ -296,9 +296,8 @@ namespace pruebas
                 string grupo = row["Grupo"].ToString();
 
                 // Insertar partido de vuelta
-                conexion.Consulta($@"
-     INSERT INTO Partido (IDTorneo, IDEstadio, Jornada, EquipoLocal, EquipoVisitante, EstadoPartido, Grupo)
-     VALUES ({idTorneo}, 1, {jornadaVuelta}, '{equipoLocal}', '{equipoVisitante}', 'PROGRAMADO', {grupo})");
+                conexion.Consulta($" INSERT INTO Partido (IDTorneo, IDEstadio, Jornada, EquipoLocal, EquipoVisitante, EstadoPartido, Grupo)"+
+                 " VALUES ({idTorneo}, 1, {jornadaVuelta}, '{equipoLocal}', '{equipoVisitante}', 'PROGRAMADO', {grupo})");
             }
         }
 
