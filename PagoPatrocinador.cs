@@ -32,7 +32,7 @@ namespace TorneosFut
             DataTable torneo = conexion.ListDGV($"Select NombreTorneo, CostoInscripcion, FechaInicio from Torneo where IDTorneo = {IDTorneo}");
             lbNameTorneo.Text = torneo.Rows[0]["NombreTorneo"].ToString();
             DataTable Empresa = conexion.ListDGV($"select NombreEmpresa from Patrocinador where IDPatrocinador = '{IdPatrocinador}' ");
-            lbNameTorneo.Text = Empresa.Rows[0]["NombreEmpresa"].ToString();
+            lblEmpresa.Text = Empresa.Rows[0]["NombreEmpresa"].ToString();
 
             DataTable Patrocinador_Torneo = conexion.ListDGV($"select * from Patrocinador_Torneo where IDTorneo = {IDTorneo} and IDPatrocinador = '{IdPatrocinador}'");
             lblNivel.Text = Patrocinador_Torneo.Rows[0]["TipoPatrocinio"].ToString();
@@ -60,7 +60,7 @@ namespace TorneosFut
 
             if (saldoIngresado == costoTotal)
             {
-                csDatos.PagoPatrocinador(IDTorneo, IdPatrocinador, "PAGADO");
+                csDatos.PagoPatrocinador(IDTorneo, IdPatrocinador, "PAGADO", txtDescripcion.Text);
                 MessageBox.Show("pagado");
                 Close();
             }

@@ -48,6 +48,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblNivel = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,7 +88,7 @@
             this.btnPagar.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnPagar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnPagar.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnPagar.Location = new System.Drawing.Point(261, 373);
+            this.btnPagar.Location = new System.Drawing.Point(325, 373);
             this.btnPagar.Name = "btnPagar";
             this.btnPagar.Size = new System.Drawing.Size(155, 52);
             this.btnPagar.TabIndex = 177;
@@ -108,7 +110,7 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(518, 50);
+            this.panel4.Location = new System.Drawing.Point(639, 50);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(10, 392);
             this.panel4.TabIndex = 176;
@@ -119,7 +121,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(3, 442);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(525, 10);
+            this.panel3.Size = new System.Drawing.Size(646, 10);
             this.panel3.TabIndex = 175;
             // 
             // panel1
@@ -175,7 +177,7 @@
             this.btnCancelar.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnCancelar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnCancelar.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnCancelar.Location = new System.Drawing.Point(91, 373);
+            this.btnCancelar.Location = new System.Drawing.Point(155, 373);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(155, 52);
             this.btnCancelar.TabIndex = 169;
@@ -235,7 +237,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(528, 50);
+            this.panel2.Size = new System.Drawing.Size(649, 50);
             this.panel2.TabIndex = 170;
             // 
             // lblNivel
@@ -258,11 +260,31 @@
             this.label7.TabIndex = 180;
             this.label7.Text = "Nivel del Patrocinio:";
             // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Location = new System.Drawing.Point(385, 236);
+            this.txtDescripcion.Multiline = true;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(217, 101);
+            this.txtDescripcion.TabIndex = 183;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(381, 209);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(126, 24);
+            this.label8.TabIndex = 182;
+            this.label8.Text = "Descripción:";
+            // 
             // PagoPatrocinador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(528, 452);
+            this.ClientSize = new System.Drawing.Size(649, 452);
+            this.Controls.Add(this.txtDescripcion);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.lblNivel);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.lblEmpresa);
@@ -313,5 +335,7 @@
         public System.Windows.Forms.Label lblNivel;
         public System.Windows.Forms.Label label7;
         public System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox txtDescripcion;
+        public System.Windows.Forms.Label label8;
     }
 }

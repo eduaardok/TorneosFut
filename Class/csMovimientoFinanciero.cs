@@ -118,5 +118,31 @@ namespace TorneosFut
             string consultaSQL = $"DECLARE @cadenaa VARCHAR(MAX) = '{xmlMovimiento}'; EXEC spRegistraMovimientoFinanciero @cadenaa;";
             return conexion.Consulta(consultaSQL);
         }
+        public bool AgregarMovimientoPatro(int iDTorneo, string IDPatrocinador, string descripcion)
+        {
+            DataTable torneo = conexion.ListDGV($"SELECT TOP 1 DineroDisponible \r\nFROM MovimientoFinanciero \r\nORDER BY Fecha DESC, IDMovimiento DESC;;");
+            DineroDisponible = decimal.Parse(torneo.Rows[0]["DineroDisponible"].ToString());
+
+            DataTable patro_torneo = conexion.ListDGV($"select PrecioPatrocinio from Patrocinador_Torneo where IDPatrocinador = '{IDPatrocinador}' and IDTorneo = {iDTorneo}");
+            Monto = decimal.Parse(patro_torneo.Rows[0]["PrecioPatrocinio"].ToString());
+            decimal DineroActual = DineroDisponible + Monto;
+            IDTorneo = iDTorneo;
+            Descripcion = descripcion;
+            string xmlMovimiento =
+                "<MovimientosFinancieros>" +
+                "    <MovimientoFinanciero>" +
+                $"        <IDTorneo>{IDTorneo}</IDTorneo>" +
+                $"        <TipoMovimiento>Ingreso</TipoMovimiento>" +
+                $"        <Monto>{Monto.ToString("N2").Trim()}</Monto>" +
+                $"        <Categoria>Patrocinio</Categoria>" +
+                $"        <Fecha>{DateTime.Now.ToString("yyyy-MM-dd")}</Fecha>" +
+                $"        <Descripcion>{Descripcion}</Descripcion>" +
+                $"        <DineroDisponible>{DineroActual.ToString("F2").Trim()}</DineroDisponible>" +
+                "    </MovimientoFinanciero>" +
+                "</MovimientosFinancieros>";
+
+            string consultaSQL = $"DECLARE @cadenaa VARCHAR(MAX) = '{xmlMovimiento}'; EXEC spRegistraMovimientoFinanciero @cadenaa;";
+            return conexion.Consulta(consultaSQL);
+        }
     }
 }

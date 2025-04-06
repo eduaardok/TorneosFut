@@ -626,9 +626,11 @@ namespace TorneosFut
         {
             return csPatrocinador.AsignarPatrocinador(idPatrocinaddor, IDTorneo, tipoPatrocinio, precioPatrocinio, estado);
         }
-        public bool PagoPatrocinador(int IDTorneo, string IDPatrocinador, string estado)
+        public bool PagoPatrocinador(int IDTorneo, string IDPatrocinador, string estado, string descripcion)
         {
-            return csIncripcion.PagarPatroci(IDTorneo, IDPatrocinador, estado);
+            if (csIncripcion.PagarPatroci(IDTorneo, IDPatrocinador, estado))
+                return csMovimiento.AgregarMovimientoPatro(IDTorneo, IDPatrocinador, descripcion);
+            return false;
         }
     }
 }
