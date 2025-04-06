@@ -1,6 +1,6 @@
 ﻿namespace pruebas
 {
-    partial class GestionarPartidos
+    partial class btnTablaPos
     {
         /// <summary>
         /// Required designer variable.
@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnSalir = new Guna.UI2.WinForms.Guna2Button();
             this.btnGolAsisTarjetas = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -46,9 +46,8 @@
             this.dgvPartido = new System.Windows.Forms.DataGridView();
             this.btnAsignarFechas = new Guna.UI2.WinForms.Guna2Button();
             this.btnEstadoPartido = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.btnTabla = new Guna.UI2.WinForms.Guna2Button();
+            this.btnPosiciones = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.c.SuspendLayout();
             this.pnlDgvPartido.SuspendLayout();
@@ -214,24 +213,24 @@
             this.dgvPartido.BackgroundColor = System.Drawing.Color.White;
             this.dgvPartido.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvPartido.CausesValidation = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPartido.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPartido.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPartido.ColumnHeadersHeight = 40;
             this.dgvPartido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPartido.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPartido.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPartido.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPartido.EnableHeadersVisualStyles = false;
             this.dgvPartido.Location = new System.Drawing.Point(0, 0);
@@ -239,14 +238,14 @@
             this.dgvPartido.Name = "dgvPartido";
             this.dgvPartido.ReadOnly = true;
             this.dgvPartido.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPartido.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPartido.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPartido.RowHeadersVisible = false;
             this.dgvPartido.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvPartido.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -303,50 +302,6 @@
             this.btnEstadoPartido.Text = "FINALIZAR PARTIDO";
             this.btnEstadoPartido.Click += new System.EventHandler(this.btnEstadoPartido_Click);
             // 
-            // guna2Button2
-            // 
-            this.guna2Button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2Button2.Animated = true;
-            this.guna2Button2.BorderRadius = 20;
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.guna2Button2.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.HoverState.BorderColor = System.Drawing.Color.Black;
-            this.guna2Button2.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
-            this.guna2Button2.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button2.Location = new System.Drawing.Point(359, 139);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(213, 59);
-            this.guna2Button2.TabIndex = 143;
-            this.guna2Button2.Text = "PLANTILLA";
-            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
-            // 
-            // guna2Button3
-            // 
-            this.guna2Button3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2Button3.Animated = true;
-            this.guna2Button3.BorderRadius = 20;
-            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.guna2Button3.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button3.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.HoverState.BorderColor = System.Drawing.Color.Black;
-            this.guna2Button3.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
-            this.guna2Button3.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button3.Location = new System.Drawing.Point(140, 139);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.Size = new System.Drawing.Size(213, 59);
-            this.guna2Button3.TabIndex = 144;
-            this.guna2Button3.Text = "AGREGAR TITULARES";
-            this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
-            // 
             // btnTabla
             // 
             this.btnTabla.Animated = true;
@@ -371,14 +326,35 @@
             this.btnTabla.Text = "TABLA DE POSICIONES";
             this.btnTabla.Click += new System.EventHandler(this.btnTabla_Click);
             // 
-            // GestionarPartidos
+            // btnPosiciones
+            // 
+            this.btnPosiciones.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnPosiciones.Animated = true;
+            this.btnPosiciones.BorderRadius = 20;
+            this.btnPosiciones.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnPosiciones.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnPosiciones.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnPosiciones.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnPosiciones.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            this.btnPosiciones.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPosiciones.ForeColor = System.Drawing.Color.White;
+            this.btnPosiciones.HoverState.BorderColor = System.Drawing.Color.Black;
+            this.btnPosiciones.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.btnPosiciones.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.btnPosiciones.Location = new System.Drawing.Point(350, 139);
+            this.btnPosiciones.Name = "btnPosiciones";
+            this.btnPosiciones.Size = new System.Drawing.Size(213, 59);
+            this.btnPosiciones.TabIndex = 146;
+            this.btnPosiciones.Text = "TABLA DE POSCIONES rpt";
+            this.btnPosiciones.Click += new System.EventHandler(this.btnPosiciones_Click);
+            // 
+            // btnTablaPos
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1240, 716);
+            this.Controls.Add(this.btnPosiciones);
             this.Controls.Add(this.btnTabla);
-            this.Controls.Add(this.guna2Button3);
-            this.Controls.Add(this.guna2Button2);
             this.Controls.Add(this.btnEstadoPartido);
             this.Controls.Add(this.btnAsignarFechas);
             this.Controls.Add(this.pnlDgvPartido);
@@ -391,7 +367,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtBuscarPartido);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "GestionarPartidos";
+            this.Name = "btnTablaPos";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -421,8 +397,7 @@
         public System.Windows.Forms.DataGridView dgvPartido;
         private Guna.UI2.WinForms.Guna2Button btnEstadoPartido;
         private Guna.UI2.WinForms.Guna2Button btnAsignarFechas;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
         public Guna.UI2.WinForms.Guna2Button btnTabla;
+        private Guna.UI2.WinForms.Guna2Button btnPosiciones;
     }
 }

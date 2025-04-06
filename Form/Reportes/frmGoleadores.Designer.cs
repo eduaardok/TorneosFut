@@ -1,6 +1,6 @@
 ﻿namespace TorneosFut
 {
-    partial class frmEstatsGenerales
+    partial class frmGoleadores
     {
         /// <summary>
         /// Required designer variable.
@@ -28,37 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.rvwEstadisticas = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.rvwGoleadores = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SuspendLayout();
             // 
-            // rvwEstadisticas
+            // rvwGoleadores
             // 
-            this.rvwEstadisticas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rvwEstadisticas.Location = new System.Drawing.Point(0, 0);
-            this.rvwEstadisticas.Name = "rvwEstadisticas";
-            this.rvwEstadisticas.ServerReport.BearerToken = null;
-            this.rvwEstadisticas.Size = new System.Drawing.Size(1184, 679);
-            this.rvwEstadisticas.TabIndex = 0;
-            this.rvwEstadisticas.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
+            this.rvwGoleadores.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rvwGoleadores.Location = new System.Drawing.Point(0, 0);
+            this.rvwGoleadores.Name = "rvwGoleadores";
+            this.rvwGoleadores.ServerReport.BearerToken = null;
+            this.rvwGoleadores.Size = new System.Drawing.Size(800, 450);
+            this.rvwGoleadores.TabIndex = 0;
+            this.rvwGoleadores.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             // 
-            // frmEstatsGenerales
+            // frmGoleadores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 679);
-            this.Controls.Add(this.rvwEstadisticas);
-            this.MaximumSize = new System.Drawing.Size(1200, 718);
-            this.MinimumSize = new System.Drawing.Size(1200, 718);
-            this.Name = "frmEstatsGenerales";
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.rvwGoleadores);
+            this.Name = "frmGoleadores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmEstatsGenerales";
-            this.Load += new System.EventHandler(this.frmEstatsGenerales_Load);
+            this.Text = "frmGoleadores";
+            this.Load += new System.EventHandler(this.frmGoleadores_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Microsoft.Reporting.WinForms.ReportViewer rvwEstadisticas;
+        private Microsoft.Reporting.WinForms.ReportViewer rvwGoleadores;
     }
 }

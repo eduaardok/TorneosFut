@@ -160,19 +160,16 @@ namespace TorneosFut
             {
                 tipoPatrocinio = "Bronce";
                 precioPatrocinio = Convert.ToDecimal(lblCostoBronce.Text.Trim().ToString());
-                MessageBox.Show(precioPatrocinio.ToString());
             }
             else if (btnPlata.Checked)
             {
                 tipoPatrocinio = "Plata";
                 precioPatrocinio = Convert.ToDecimal(lblCostoPlata.Text.Trim().ToString());
-                MessageBox.Show(precioPatrocinio.ToString());
             }
             else if (btnOro.Checked)
             {
                 tipoPatrocinio = "Oro";
                 precioPatrocinio = Convert.ToDecimal(lblCostoOro.Text.Trim().ToString());
-                MessageBox.Show(precioPatrocinio.ToString());
             }
             else
             {

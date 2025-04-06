@@ -88,6 +88,12 @@
     <Compile Include="Class\dsDataGame.cs">
       <DependentUpon>dsDataGame.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Form\Reportes\frmTablaP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Reportes\frmTablaP.Designer.cs">
+      <DependentUpon>frmTablaP.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\AgregarEditar\AsignarPatrocinio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -298,18 +304,6 @@
     <Compile Include="Form\Principales\GestionInscripcion.Designer.cs">
       <DependentUpon>GestionInscripcion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\Reportes\frmEstadisticasGol.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\Reportes\frmEstadisticasGol.Designer.cs">
-      <DependentUpon>frmEstadisticasGol.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form\Reportes\frmEstadisticasAsistencias.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\Reportes\frmEstadisticasAsistencias.Designer.cs">
-      <DependentUpon>frmEstadisticasAsistencias.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form\Principales\Plantilla.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -322,17 +316,29 @@
     <Compile Include="Form\Principales\GestionFinanciera.Designer.cs">
       <DependentUpon>GestionFinanciera.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\Reportes\frmEstatsGenerales.cs">
+    <Compile Include="Form\Reportes\frmGoleadores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Reportes\frmEstatsGenerales.Designer.cs">
-      <DependentUpon>frmEstatsGenerales.cs</DependentUpon>
+    <Compile Include="Form\Reportes\frmGoleadores.Designer.cs">
+      <DependentUpon>frmGoleadores.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\Reportes\frmEquiposEstadisticas.cs">
+    <Compile Include="Form\Reportes\frmAsistidores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Reportes\frmEquiposEstadisticas.Designer.cs">
-      <DependentUpon>frmEquiposEstadisticas.cs</DependentUpon>
+    <Compile Include="Form\Reportes\frmAsistidores.Designer.cs">
+      <DependentUpon>frmAsistidores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Reportes\frmListaDeJugadores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Reportes\frmListaDeJugadores.Designer.cs">
+      <DependentUpon>frmListaDeJugadores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Reportes\frmEquiposEst.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Reportes\frmEquiposEst.Designer.cs">
+      <DependentUpon>frmEquiposEst.cs</DependentUpon>
     </Compile>
     <Compile Include="PagoPatrocinador.cs">
       <SubType>Form</SubType>
@@ -366,12 +372,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Principales\TablaDePosiciones.resx">
       <DependentUpon>TablaDePosiciones.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\Reportes\frmEquiposEstadisticas.resx">
-      <DependentUpon>frmEquiposEstadisticas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\Reportes\frmEstatsGenerales.resx">
-      <DependentUpon>frmEstatsGenerales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\AgregarEditar\AggEditArbitro.resx">
       <DependentUpon>AggEditArbitro.cs</DependentUpon>
@@ -466,11 +466,20 @@
     <EmbeddedResource Include="Form\Principales\Torneo.resx">
       <DependentUpon>Torneo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Reportes\frmEstadisticasAsistencias.resx">
-      <DependentUpon>frmEstadisticasAsistencias.cs</DependentUpon>
+    <EmbeddedResource Include="Form\Reportes\frmTablaP.resx">
+      <DependentUpon>frmTablaP.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Reportes\frmEstadisticasGol.resx">
-      <DependentUpon>frmEstadisticasGol.cs</DependentUpon>
+    <EmbeddedResource Include="Form\Reportes\frmGoleadores.resx">
+      <DependentUpon>frmGoleadores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Reportes\frmAsistidores.resx">
+      <DependentUpon>frmAsistidores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Reportes\frmListaDeJugadores.resx">
+      <DependentUpon>frmListaDeJugadores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Reportes\frmEquiposEst.resx">
+      <DependentUpon>frmEquiposEst.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PagoPatrocinador.resx">
       <DependentUpon>PagoPatrocinador.cs</DependentUpon>

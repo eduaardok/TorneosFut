@@ -19,7 +19,7 @@ namespace TorneosFut
         csConexion conexion;
         Patrocinadores patro;
         Organizadores orga;
-        GestionarPartidos partidos;
+        btnTablaPos partidos;
         PagoInscripcion inscripcion;
         csDGV csDGV;
         Arbitro arbi;
@@ -107,7 +107,7 @@ namespace TorneosFut
             {
                 if (csValidaciones.ValidarEquiposInscritos(IDTorneo))
                 {
-                    partidos = new GestionarPartidos(IDTorneo, conexion.Usuario, conexion.Clave);
+                    partidos = new btnTablaPos(IDTorneo, conexion.Usuario, conexion.Clave);
                     partidos.ShowDialog();
                 }
             }
@@ -174,57 +174,61 @@ namespace TorneosFut
         {
             try
             {
-                // Abrir la conexión
                 conexion.AbrirCon();
 
-                // Crear el comando para ejecutar el procedimiento almacenado
                 using (SqlCommand cmd = new SqlCommand("ObtenerGanadorTorneo", conexion.Conexion))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-
-                    // Agregar el parámetro de entrada
                     cmd.Parameters.AddWithValue("@torneoID", torneoID);
 
-                    // Ejecutar el comando y leer el resultado
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        // Verificar si hay resultados
                         if (reader.HasRows)
                         {
                             reader.Read();
 
-                            // Verificar si la columna Mensaje tiene un valor
-                            if (reader["Mensaje"] != DBNull.Value)
+                            // Verifica si la columna "Mensaje" existe
+                            bool tieneMensaje = false;
+                            for (int i = 0; i < reader.FieldCount; i++)
                             {
-                                string mensaje = (string)reader["Mensaje"];
+                                if (reader.GetName(i) == "Mensaje")
+                                {
+                                    tieneMensaje = true;
+                                    break;
+                                }
+                            }
+
+                            if (tieneMensaje)
+                            {
+                                string mensaje = reader["Mensaje"].ToString();
                                 MessageBox.Show(mensaje);
                             }
                             else
                             {
-                                // Si no hay mensaje, puedes hacer otro tipo de manejo, por ejemplo:
-                                MessageBox.Show("No se ha devuelto ningún mensaje.");
+                                // Obtener GanadorID y Puntos
+                                string ganadorID = reader["GanadorID"].ToString();
+                                int puntos = Convert.ToInt32(reader["Puntos"]);
+
+                                MessageBox.Show($"Ganador: {ganadorID} con {puntos} puntos.");
                             }
                         }
                         else
                         {
-                            MessageBox.Show("No se pudo obtener el mensaje del torneo.");
+                            MessageBox.Show("No se devolvió ningún resultado.");
                         }
                     }
                 }
             }
             catch (SqlException sqlex)
             {
-                // Manejo de errores SQL
                 MessageBox.Show("Error SQL: " + sqlex.Message);
             }
             catch (Exception ex)
             {
-                // Manejo de otros errores
                 MessageBox.Show("Error: " + ex.Message);
             }
             finally
             {
-                // Asegúrate de cerrar la conexión siempre
                 conexion.CerrarCon();
             }
         }
@@ -232,15 +236,15 @@ namespace TorneosFut
         private void btnAsistir_Click(object sender, EventArgs e)
         {
             string IDTorneo = dgvTorneo.SelectedRows[0].Cells["IDTorneo"].Value.ToString();
-            frmEstadisticasAsistencias frmEstadisticasAsistencias = new frmEstadisticasAsistencias(IDTorneo);
-            frmEstadisticasAsistencias.ShowDialog();
+            frmAsistidores asistencia = new frmAsistidores(IDTorneo);
+            asistencia.ShowDialog();
         }
 
         private void btnGolear_Click(object sender, EventArgs e)
         {
             string IDTorneo = dgvTorneo.SelectedRows[0].Cells["IDTorneo"].Value.ToString();
-            frmEstadisticasGol frmEstadisticasGol = new frmEstadisticasGol(IDTorneo);
-            frmEstadisticasGol.ShowDialog();
+            frmGoleadores goles = new frmGoleadores(IDTorneo);
+            goles.ShowDialog();
         }
 
         private void Torneo_Shown(object sender, EventArgs e)

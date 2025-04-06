@@ -12,7 +12,7 @@ using TorneosFut.Class;
 
 namespace pruebas
 {
-    public partial class GestionarPartidos : Form
+    public partial class btnTablaPos : Form
     {
         csConexion conexion;
         Goles gol;
@@ -24,7 +24,7 @@ namespace pruebas
         AgregarTitulares agregarTitulares;
         
 
-        public GestionarPartidos(string IDtorneo,string u, string c)
+        public btnTablaPos(string IDtorneo,string u, string c)
         {
             conexion = new csConexion(u, c);
             csDatos = new csDatos(u, c);
@@ -383,6 +383,12 @@ namespace pruebas
         {
             TablaDePosiciones tbl = new TablaDePosiciones(conexion.Usuario, conexion.Clave, IdTorneo);
             tbl.ShowDialog();
+        }
+
+        private void btnPosiciones_Click(object sender, EventArgs e)
+        {
+            frmTablaP tabla = new frmTablaP();
+            tabla.Show(); 
         }
     }
 }

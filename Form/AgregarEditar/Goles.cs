@@ -20,7 +20,7 @@ namespace pruebas
         //int IDPartido;
         //int IDJugador;
         csConexion conexion ;
-        GestionarPartidos f;
+        btnTablaPos f;
         static string Id;
         csDGV csDGV;
         csPartido csPartido; 

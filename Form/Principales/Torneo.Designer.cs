@@ -68,7 +68,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1490, 100);
+            this.panel1.Size = new System.Drawing.Size(1476, 100);
             this.panel1.TabIndex = 7;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -169,7 +169,7 @@
             this.btnCrear.HoverState.CustomBorderColor = System.Drawing.Color.Black;
             this.btnCrear.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnCrear.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnCrear.Location = new System.Drawing.Point(357, 211);
+            this.btnCrear.Location = new System.Drawing.Point(402, 297);
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Size = new System.Drawing.Size(180, 59);
             this.btnCrear.TabIndex = 64;
@@ -191,7 +191,7 @@
             this.btnPatrocinadores.HoverState.CustomBorderColor = System.Drawing.Color.Black;
             this.btnPatrocinadores.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnPatrocinadores.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnPatrocinadores.Location = new System.Drawing.Point(930, 211);
+            this.btnPatrocinadores.Location = new System.Drawing.Point(975, 297);
             this.btnPatrocinadores.Name = "btnPatrocinadores";
             this.btnPatrocinadores.Size = new System.Drawing.Size(213, 59);
             this.btnPatrocinadores.TabIndex = 63;
@@ -213,7 +213,7 @@
             this.btnInscripcionEquipos.HoverState.CustomBorderColor = System.Drawing.Color.Black;
             this.btnInscripcionEquipos.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnInscripcionEquipos.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnInscripcionEquipos.Location = new System.Drawing.Point(963, 211);
+            this.btnInscripcionEquipos.Location = new System.Drawing.Point(1008, 297);
             this.btnInscripcionEquipos.Name = "btnInscripcionEquipos";
             this.btnInscripcionEquipos.Size = new System.Drawing.Size(180, 59);
             this.btnInscripcionEquipos.TabIndex = 62;
@@ -235,7 +235,7 @@
             this.btnEditar.HoverState.CustomBorderColor = System.Drawing.Color.Black;
             this.btnEditar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnEditar.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnEditar.Location = new System.Drawing.Point(150, 211);
+            this.btnEditar.Location = new System.Drawing.Point(195, 297);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(180, 59);
             this.btnEditar.TabIndex = 61;
@@ -257,7 +257,7 @@
             this.btnPartidos.HoverState.CustomBorderColor = System.Drawing.Color.Black;
             this.btnPartidos.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnPartidos.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnPartidos.Location = new System.Drawing.Point(1161, 211);
+            this.btnPartidos.Location = new System.Drawing.Point(1206, 297);
             this.btnPartidos.Name = "btnPartidos";
             this.btnPartidos.Size = new System.Drawing.Size(180, 59);
             this.btnPartidos.TabIndex = 60;
@@ -270,7 +270,7 @@
             this.txtBuscarTorneo.Font = new System.Drawing.Font("Onest Light", 20F);
             this.txtBuscarTorneo.ForeColor = System.Drawing.Color.Gray;
             this.txtBuscarTorneo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtBuscarTorneo.Location = new System.Drawing.Point(277, 131);
+            this.txtBuscarTorneo.Location = new System.Drawing.Point(322, 217);
             this.txtBuscarTorneo.Multiline = true;
             this.txtBuscarTorneo.Name = "txtBuscarTorneo";
             this.txtBuscarTorneo.Size = new System.Drawing.Size(633, 48);
@@ -284,7 +284,7 @@
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.BackgroundImage = global::TorneosFut.Properties.Resources.IconoLupa;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(221, 130);
+            this.pictureBox1.Location = new System.Drawing.Point(266, 216);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(50, 49);
             this.pictureBox1.TabIndex = 59;
@@ -305,7 +305,7 @@
             this.btnGanador.HoverState.CustomBorderColor = System.Drawing.Color.Black;
             this.btnGanador.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnGanador.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnGanador.Location = new System.Drawing.Point(1161, 130);
+            this.btnGanador.Location = new System.Drawing.Point(1206, 216);
             this.btnGanador.Name = "btnGanador";
             this.btnGanador.Size = new System.Drawing.Size(180, 59);
             this.btnGanador.TabIndex = 69;
@@ -327,7 +327,7 @@
             this.btnAsistir.HoverState.CustomBorderColor = System.Drawing.Color.Black;
             this.btnAsistir.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnAsistir.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnAsistir.Location = new System.Drawing.Point(1161, 802);
+            this.btnAsistir.Location = new System.Drawing.Point(1206, 888);
             this.btnAsistir.Name = "btnAsistir";
             this.btnAsistir.Size = new System.Drawing.Size(180, 59);
             this.btnAsistir.TabIndex = 71;
@@ -349,7 +349,7 @@
             this.btnGolear.HoverState.CustomBorderColor = System.Drawing.Color.Black;
             this.btnGolear.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnGolear.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnGolear.Location = new System.Drawing.Point(150, 802);
+            this.btnGolear.Location = new System.Drawing.Point(195, 888);
             this.btnGolear.Name = "btnGolear";
             this.btnGolear.Size = new System.Drawing.Size(180, 59);
             this.btnGolear.TabIndex = 72;
@@ -361,7 +361,7 @@
             this.panelDgv.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelDgv.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panelDgv.Controls.Add(this.dgvTorneo);
-            this.panelDgv.Location = new System.Drawing.Point(150, 302);
+            this.panelDgv.Location = new System.Drawing.Point(195, 388);
             this.panelDgv.Name = "panelDgv";
             this.panelDgv.Size = new System.Drawing.Size(1191, 494);
             this.panelDgv.TabIndex = 73;
@@ -426,14 +426,14 @@
             this.panelmodul.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelmodul.Location = new System.Drawing.Point(0, 100);
             this.panelmodul.Name = "panelmodul";
-            this.panelmodul.Size = new System.Drawing.Size(1490, 811);
+            this.panelmodul.Size = new System.Drawing.Size(1476, 861);
             this.panelmodul.TabIndex = 74;
             // 
             // Torneo
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1490, 911);
+            this.ClientSize = new System.Drawing.Size(1476, 961);
             this.ControlBox = false;
             this.Controls.Add(this.panelmodul);
             this.Controls.Add(this.panelDgv);

@@ -1,6 +1,6 @@
 ﻿namespace TorneosFut
 {
-    partial class frmEquiposEstadisticas
+    partial class frmAsistidores
     {
         /// <summary>
         /// Required designer variable.
@@ -28,38 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.rvwEquipos = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.rvwAsistencia = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SuspendLayout();
             // 
-            // rvwEquipos
+            // rvwAsistencia
             // 
-            this.rvwEquipos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rvwEquipos.LocalReport.ReportEmbeddedResource = "TorneosFut.Form.Reportes.rptEquipos.rdlc";
-            this.rvwEquipos.Location = new System.Drawing.Point(0, 0);
-            this.rvwEquipos.Name = "rvwEquipos";
-            this.rvwEquipos.ServerReport.BearerToken = null;
-            this.rvwEquipos.Size = new System.Drawing.Size(1184, 679);
-            this.rvwEquipos.TabIndex = 0;
-            this.rvwEquipos.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
+            this.rvwAsistencia.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rvwAsistencia.Location = new System.Drawing.Point(0, 0);
+            this.rvwAsistencia.Name = "rvwAsistencia";
+            this.rvwAsistencia.ServerReport.BearerToken = null;
+            this.rvwAsistencia.Size = new System.Drawing.Size(800, 450);
+            this.rvwAsistencia.TabIndex = 0;
+            this.rvwAsistencia.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             // 
-            // frmEquiposEstadisticas
+            // frmAsistidores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 679);
-            this.Controls.Add(this.rvwEquipos);
-            this.MaximumSize = new System.Drawing.Size(1200, 718);
-            this.MinimumSize = new System.Drawing.Size(1200, 718);
-            this.Name = "frmEquiposEstadisticas";
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.rvwAsistencia);
+            this.Name = "frmAsistidores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmEquiposEstadisticas";
-            this.Load += new System.EventHandler(this.frmEquiposEstadisticas_Load);
+            this.Text = "frmAsistidores";
+            this.Load += new System.EventHandler(this.frmAsistidores_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Microsoft.Reporting.WinForms.ReportViewer rvwEquipos;
+        private Microsoft.Reporting.WinForms.ReportViewer rvwAsistencia;
     }
 }

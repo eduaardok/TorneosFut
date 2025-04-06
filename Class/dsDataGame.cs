@@ -4,5 +4,9 @@
 
     public partial class dsDataGame
     {
+        partial class dtGoleadoresDataTable
+        {
+
+        }
     }
 }

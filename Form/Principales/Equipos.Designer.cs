@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.panelDgv = new System.Windows.Forms.Panel();
@@ -48,6 +48,7 @@
             this.ptbIMG = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnEquipos = new Guna.UI2.WinForms.Guna2Button();
+            this.btnListas = new Guna.UI2.WinForms.Guna2Button();
             this.panelDgv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).BeginInit();
             this.panel1.SuspendLayout();
@@ -92,14 +93,14 @@
             this.dgvEquipos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvEquipos.BackgroundColor = System.Drawing.Color.White;
             this.dgvEquipos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEquipos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEquipos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvEquipos.ColumnHeadersHeight = 40;
             this.dgvEquipos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvEquipos.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -111,8 +112,8 @@
             this.dgvEquipos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvEquipos.RowHeadersVisible = false;
             this.dgvEquipos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
-            this.dgvEquipos.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.dgvEquipos.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvEquipos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEquipos.ShowCellToolTips = false;
             this.dgvEquipos.ShowEditingIcon = false;
@@ -282,10 +283,9 @@
             // panelmodul
             // 
             this.panelmodul.BackColor = System.Drawing.Color.White;
-            this.panelmodul.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelmodul.Location = new System.Drawing.Point(0, 100);
+            this.panelmodul.Location = new System.Drawing.Point(0, 309);
             this.panelmodul.Name = "panelmodul";
-            this.panelmodul.Size = new System.Drawing.Size(1490, 811);
+            this.panelmodul.Size = new System.Drawing.Size(1121, 602);
             this.panelmodul.TabIndex = 29;
             this.panelmodul.Paint += new System.Windows.Forms.PaintEventHandler(this.panelmodul_Paint);
             // 
@@ -333,6 +333,27 @@
             this.btnEquipos.Text = "ESTADISTICAS";
             this.btnEquipos.Click += new System.EventHandler(this.btnEquipos_Click);
             // 
+            // btnListas
+            // 
+            this.btnListas.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnListas.Animated = true;
+            this.btnListas.BorderRadius = 20;
+            this.btnListas.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnListas.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnListas.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnListas.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            this.btnListas.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnListas.ForeColor = System.Drawing.Color.White;
+            this.btnListas.HoverState.BorderColor = System.Drawing.Color.Black;
+            this.btnListas.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.btnListas.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.btnListas.Location = new System.Drawing.Point(1211, 164);
+            this.btnListas.Name = "btnListas";
+            this.btnListas.Size = new System.Drawing.Size(247, 59);
+            this.btnListas.TabIndex = 31;
+            this.btnListas.Text = "LISTA DE JUGADORES";
+            this.btnListas.Click += new System.EventHandler(this.btnListas_Click);
+            // 
             // Equipos
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -351,6 +372,7 @@
             this.Controls.Add(this.panelDgv);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnEquipos);
+            this.Controls.Add(this.btnListas);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(293, 73);
@@ -390,5 +412,6 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         public System.Windows.Forms.Panel panelmodul;
         private Guna.UI2.WinForms.Guna2Button btnEquipos;
+        private Guna.UI2.WinForms.Guna2Button btnListas;
     }
 }
