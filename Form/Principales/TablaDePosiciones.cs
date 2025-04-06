@@ -29,11 +29,12 @@ namespace TorneosFut
             lblEncabezado.Tag = "NoCambiar";
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
             DataTable dt = csConexion.ListDGV($"SELECT * FROM TablaDePosiciones" +
-                $" WHERE IDTorneo = {Torneo} ORDER BY Grupo asc , Puntos DESC, DiferenciaGoles DESC, GolesAFavor DESC");
+                 $" WHERE IDTorneo = {Torneo} ORDER BY Grupo asc , Puntos DESC, DiferenciaGoles DESC, GolesAFavor DESC");
             dgvPosiciones.DataSource = dt;
             csDGV.AdaptarDGV(dgvPosiciones);
+            dgvPosiciones.Columns["IDTorneo"].Visible = false;
         }
-
+       
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Close();

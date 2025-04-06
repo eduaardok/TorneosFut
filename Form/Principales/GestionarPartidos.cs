@@ -160,6 +160,15 @@ namespace pruebas
                     List<string> grupoEquipo = csDatos.ObtenerListaEquiposGrupoTorneo(idgrupo);
                     GenerarFixture(grupoEquipo, i + 1);
                 }
+
+
+
+
+                if (EsIdaVuelta(IdTorneo) == 1) // función que devuelve 1 o 0
+                {
+                    GenerarPartidosVuelta(IdTorneo);
+                }
+
                 // GenerarFixture(equipos);
                 /* for (int i = 0; i < dgvPartidos.Rows.Count - 1; i++)
                  {
@@ -169,6 +178,16 @@ namespace pruebas
                          return;
                  }*/
                 MessageBox.Show("Partidos generados correctamente");
+                if (conexion.Consulta($"exec spAsignarFechasPartidos {IdTorneo}"))
+                {
+                    MessageBox.Show("Fechas asignadas correctamente");
+                }
+                else
+                {
+                    MessageBox.Show("Error al asignar fechas");
+                }
+                conexion.Consulta($"exec spAsignarEstadioPartidos {IdTorneo}");
+
                 ActualizarTabla();
             }
 
@@ -255,6 +274,43 @@ namespace pruebas
             List<string> resultado = new List<string> { equipoFijo }; // Iniciar con el fijo
             resultado.AddRange(resto); // Agregar los rotados
             return resultado;
+        }
+
+
+        void GenerarPartidosVuelta(string idTorneo)
+        {
+            // Obtener el número total de jornadas de ida
+            DataTable dtMaxJornada = conexion.ListDGV($"SELECT MAX(Jornada) AS MaxJornada FROM Partido WHERE IDTorneo = {idTorneo}");
+            int jornadasIda = dtMaxJornada.Rows[0]["MaxJornada"] != DBNull.Value ? Convert.ToInt32(dtMaxJornada.Rows[0]["MaxJornada"]) : 0;
+
+            // Obtener todos los partidos de ida
+            DataTable partidosIda = conexion.ListDGV($"SELECT Jornada, EquipoLocal, EquipoVisitante, Grupo FROM Partido WHERE IDTorneo = {idTorneo} ORDER BY Jornada");
+
+            foreach (DataRow row in partidosIda.Rows)
+            {
+                int jornadaOriginal = Convert.ToInt32(row["Jornada"]);
+                int jornadaVuelta = jornadaOriginal + jornadasIda; // Jornada de vuelta
+
+                string equipoLocal = row["EquipoVisitante"].ToString(); // Invertido
+                string equipoVisitante = row["EquipoLocal"].ToString();
+                string grupo = row["Grupo"].ToString();
+
+                // Insertar partido de vuelta
+                conexion.Consulta($@"
+     INSERT INTO Partido (IDTorneo, IDEstadio, Jornada, EquipoLocal, EquipoVisitante, EstadoPartido, Grupo)
+     VALUES ({idTorneo}, 1, {jornadaVuelta}, '{equipoLocal}', '{equipoVisitante}', 'PROGRAMADO', {grupo})");
+            }
+        }
+
+
+        int EsIdaVuelta(string idT)
+        {
+            DataTable dt = conexion.ListDGV($"select F.IdaVueltaGrupos from Torneo T inner join Formato F on T.IDFormato = F.IDFormato where T.IDTorneo =  {idT}");
+            if (dt.Rows.Count > 0)
+            {
+                return Convert.ToInt32(dt.Rows[0]["IdaVueltaGrupos"]);
+            }
+            return 0;
         }
 
         private void txtBuscarPartido_TextChanged(object sender, EventArgs e)
