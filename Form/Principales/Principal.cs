@@ -304,9 +304,24 @@ namespace TorneosFut
             btnAuditorias.BackColor = Color.FromArgb(20, 25, 29);
         }
 
-        private void button3_Click_1(object sender, EventArgs e)
+    
+
+        private void button3_Click_2(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(panelModulos,financiera);
+            AbrirFormEnPanel(panelModulos, financiera);
+
+        }
+
+        private void button3_MouseEnter(object sender, EventArgs e)
+        {
+            button3.BackColor = ColorTranslator.FromHtml("#FB038C");
+
+        }
+
+        private void button3_MouseLeave(object sender, EventArgs e)
+        {
+            button3.BackColor = Color.FromArgb(20, 25, 29);
+
         }
     }
 }

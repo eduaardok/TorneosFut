@@ -71,8 +71,8 @@ namespace TorneosFut
 
         private void Torneo_Load(object sender, EventArgs e)
         {
-            panelmodul.Hide();
             csDGV.MostrarTorneo(dgvTorneo);
+            panelmodul.Hide();
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
         }
 
@@ -103,12 +103,14 @@ namespace TorneosFut
 
         private void btnPartidos_Click(object sender, EventArgs e)
         {
-            if (csValidaciones.ValidarEquiposInscritos(IDTorneo))
+            if(IDTorneo != null || IDTorneo == "")
             {
-                partidos = new GestionarPartidos(IDTorneo, conexion.Usuario, conexion.Clave);
-                partidos.ShowDialog();
+                if (csValidaciones.ValidarEquiposInscritos(IDTorneo))
+                {
+                    partidos = new GestionarPartidos(IDTorneo, conexion.Usuario, conexion.Clave);
+                    partidos.ShowDialog();
+                }
             }
-
         }
         private void btnInscripcionEquipos_Click(object sender, EventArgs e)
         {
@@ -125,20 +127,15 @@ namespace TorneosFut
 
         }
         void ActualizarTabla()
-
         {
-            if (txtBuscarTorneo.Text == "BBuscar por nombre del Torneo")
-                csDGV.MostrarTorneoFiltro(dgvTorneo, txtBuscarTorneo.Text);
-
-
+            if (txtBuscarTorneo.Text == "Buscar por nombre del Torneo")
+                txtBuscarTorneo.Text = ""; 
+           // csDGV.MostrarTorneoFiltro(dgvTorneo, txtBuscarTorneo.Text);
+           // ActualizarTabla();
+            csDGV.MostrarTorneoFiltro(dgvTorneo, txtBuscarTorneo.Text);
+            csDGV.AdaptarDGV(dgvTorneo, panelDgv);
         }
-        private void dgvTorneo_SelectionChanged(object sender, EventArgs e)
-        {
-            if (dgvTorneo.CurrentRow != null && dgvTorneo.CurrentRow.Index >= 0)
-            {
-                IDTorneo = dgvTorneo.Rows[dgvTorneo.CurrentRow.Index].Cells[0].Value.ToString();
-            }
-        }
+     
 
         private void txtBuscarTorneo_MouseClick(object sender, MouseEventArgs e)
         {
@@ -244,6 +241,24 @@ namespace TorneosFut
             string IDTorneo = dgvTorneo.SelectedRows[0].Cells["IDTorneo"].Value.ToString();
             frmEstadisticasGol frmEstadisticasGol = new frmEstadisticasGol(IDTorneo);
             frmEstadisticasGol.ShowDialog();
+        }
+
+        private void Torneo_Shown(object sender, EventArgs e)
+        {
+            csDGV.AdaptarDGV(dgvTorneo, panelDgv);
+        }
+
+        private void dgvTorneo_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvTorneo_SelectionChanged_1(object sender, EventArgs e)
+        {
+            if (dgvTorneo.CurrentRow != null && dgvTorneo.CurrentRow.Index >= 0)
+            {
+                IDTorneo = dgvTorneo.Rows[dgvTorneo.CurrentRow.Index].Cells[0].Value.ToString();
+            }
         }
     }
 }

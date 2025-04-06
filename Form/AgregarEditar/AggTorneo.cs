@@ -94,19 +94,20 @@ namespace TorneosFut
                     if (!agg)
                     {
                         csDatos.EditarTorneo(id, txtNombre.Text, cmbFormato.SelectedValue.ToString(), cmbModoFutbol.SelectedValue.ToString(), cmbOrganizador.SelectedValue.ToString(), dtpInicio.Value.ToString(), dtpFin.Value.ToString(), decimal.Parse(txtCosto.Text));
-                        msg.Text = "Se Creo Correctamente";
+                        msg.Text = "Se creó correctamente";
                         msg.Show();
+                        this.Close();
                     }
                     else
                     {
                         csDatos.InsertarTorneo(txtNombre.Text, cmbFormato.SelectedValue.ToString(), cmbModoFutbol.SelectedValue.ToString(), cmbOrganizador.SelectedValue.ToString(), dtpInicio.Value.ToString(), dtpFin.Value.ToString(), decimal.Parse(txtCosto.Text));
+                        this.Close();
                     }
                 }
                 catch (Exception)
                 {
-                    msg.Text = "Datos invalidos";
+                    msg.Text = "Datos inválidos";
                     msg.Show();
-
                 }
             }
         }

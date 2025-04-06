@@ -178,9 +178,9 @@
             // ptbImagen
             // 
             this.ptbImagen.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.ptbImagen.Location = new System.Drawing.Point(1009, 45);
+            this.ptbImagen.Location = new System.Drawing.Point(1066, 26);
             this.ptbImagen.Name = "ptbImagen";
-            this.ptbImagen.Size = new System.Drawing.Size(207, 193);
+            this.ptbImagen.Size = new System.Drawing.Size(173, 161);
             this.ptbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbImagen.TabIndex = 16;
             this.ptbImagen.TabStop = false;

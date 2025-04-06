@@ -84,6 +84,7 @@ namespace pruebas
                      Txtnombre.Clear(); txtapellido.Clear(); cmbsexo.SelectedIndex = -1; dtpNacimiento.ResetText();
                     CmbPosicion.SelectedIndex = -1; TxtNacionalidad.Clear(); txtpeso.Clear(); txtaltura.Clear();
                     cmbpierna.SelectedIndex = -1;  ptbImagen.BackgroundImage = null;
+                    this.Close();
                 }
             }
             else
@@ -94,6 +95,7 @@ namespace pruebas
                 {
                     msg.Text="Jugador editado correctamente";
                     msg.Show();
+                    this.Close();
                 }
                 else
                 {

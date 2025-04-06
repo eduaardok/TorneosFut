@@ -115,7 +115,7 @@ namespace TorneosFut.Class
         #endregion
         public DataTable ListadeTorneo()
         {
-            DataTable dt = csConexion.ListDGV("Select * from Torneo");
+            DataTable dt = csConexion.ListDGV("select IDTorneo, NombreTorneo, Usuario, IDOrganizador, FechaInicio, FechaFin, Estado, CostoInscripcion from Torneo");
             return dt;
         }
         public DataTable ListaIDTorneo()
@@ -126,7 +126,7 @@ namespace TorneosFut.Class
         public DataTable ListadeTorneofiltro(string filtro)
         {
             DataTable dt;
-            dt = csConexion.ListDGV($"select * from Torneo where NombreTorneo like '%{filtro}%'");
+            dt = csConexion.ListDGV($"select IDTorneo, NombreTorneo, Usuario, IDOrganizador, FechaInicio, FechaFin, Estado, CostoInscripcion from Torneo where NombreTorneo like '%{filtro}%'");
 
 
             return dt;

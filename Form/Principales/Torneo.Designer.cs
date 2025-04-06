@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnReglas = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -44,15 +44,17 @@
             this.btnEditar = new Guna.UI2.WinForms.Guna2Button();
             this.btnPartidos = new Guna.UI2.WinForms.Guna2Button();
             this.txtBuscarTorneo = new System.Windows.Forms.TextBox();
-            this.dgvTorneo = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnGanador = new Guna.UI2.WinForms.Guna2Button();
-            this.panelmodul = new System.Windows.Forms.Panel();
             this.btnAsistir = new Guna.UI2.WinForms.Guna2Button();
             this.btnGolear = new Guna.UI2.WinForms.Guna2Button();
+            this.panelDgv = new System.Windows.Forms.Panel();
+            this.dgvTorneo = new System.Windows.Forms.DataGridView();
+            this.panelmodul = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTorneo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelDgv.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTorneo)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -277,59 +279,6 @@
             this.txtBuscarTorneo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtBuscarTorneo_MouseClick);
             this.txtBuscarTorneo.TextChanged += new System.EventHandler(this.txtBuscarTorneo_TextChanged);
             // 
-            // dgvTorneo
-            // 
-            this.dgvTorneo.AllowUserToAddRows = false;
-            this.dgvTorneo.AllowUserToDeleteRows = false;
-            this.dgvTorneo.AllowUserToResizeColumns = false;
-            this.dgvTorneo.AllowUserToResizeRows = false;
-            this.dgvTorneo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dgvTorneo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvTorneo.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvTorneo.BackgroundColor = System.Drawing.Color.White;
-            this.dgvTorneo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvTorneo.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTorneo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvTorneo.ColumnHeadersHeight = 40;
-            this.dgvTorneo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTorneo.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvTorneo.EnableHeadersVisualStyles = false;
-            this.dgvTorneo.Location = new System.Drawing.Point(150, 295);
-            this.dgvTorneo.MultiSelect = false;
-            this.dgvTorneo.Name = "dgvTorneo";
-            this.dgvTorneo.ReadOnly = true;
-            this.dgvTorneo.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTorneo.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvTorneo.RowHeadersVisible = false;
-            this.dgvTorneo.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
-            this.dgvTorneo.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvTorneo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTorneo.Size = new System.Drawing.Size(1191, 501);
-            this.dgvTorneo.TabIndex = 57;
-            this.dgvTorneo.SelectionChanged += new System.EventHandler(this.dgvTorneo_SelectionChanged);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -362,15 +311,6 @@
             this.btnGanador.TabIndex = 69;
             this.btnGanador.Text = "GANADOR";
             this.btnGanador.Click += new System.EventHandler(this.btnGanador_Click);
-            // 
-            // panelmodul
-            // 
-            this.panelmodul.BackColor = System.Drawing.Color.White;
-            this.panelmodul.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelmodul.Location = new System.Drawing.Point(0, 100);
-            this.panelmodul.Name = "panelmodul";
-            this.panelmodul.Size = new System.Drawing.Size(1490, 811);
-            this.panelmodul.TabIndex = 70;
             // 
             // btnAsistir
             // 
@@ -416,6 +356,79 @@
             this.btnGolear.Text = "GOLEADORES";
             this.btnGolear.Click += new System.EventHandler(this.btnGolear_Click);
             // 
+            // panelDgv
+            // 
+            this.panelDgv.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelDgv.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panelDgv.Controls.Add(this.dgvTorneo);
+            this.panelDgv.Location = new System.Drawing.Point(150, 302);
+            this.panelDgv.Name = "panelDgv";
+            this.panelDgv.Size = new System.Drawing.Size(1191, 494);
+            this.panelDgv.TabIndex = 73;
+            // 
+            // dgvTorneo
+            // 
+            this.dgvTorneo.AllowUserToAddRows = false;
+            this.dgvTorneo.AllowUserToDeleteRows = false;
+            this.dgvTorneo.AllowUserToResizeColumns = false;
+            this.dgvTorneo.AllowUserToResizeRows = false;
+            this.dgvTorneo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvTorneo.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvTorneo.BackgroundColor = System.Drawing.Color.White;
+            this.dgvTorneo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvTorneo.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTorneo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvTorneo.ColumnHeadersHeight = 40;
+            this.dgvTorneo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTorneo.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvTorneo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvTorneo.EnableHeadersVisualStyles = false;
+            this.dgvTorneo.Location = new System.Drawing.Point(0, 0);
+            this.dgvTorneo.MultiSelect = false;
+            this.dgvTorneo.Name = "dgvTorneo";
+            this.dgvTorneo.ReadOnly = true;
+            this.dgvTorneo.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTorneo.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvTorneo.RowHeadersVisible = false;
+            this.dgvTorneo.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.dgvTorneo.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvTorneo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvTorneo.Size = new System.Drawing.Size(1191, 494);
+            this.dgvTorneo.TabIndex = 58;
+            this.dgvTorneo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTorneo_CellContentClick);
+            this.dgvTorneo.SelectionChanged += new System.EventHandler(this.dgvTorneo_SelectionChanged_1);
+            // 
+            // panelmodul
+            // 
+            this.panelmodul.BackColor = System.Drawing.Color.White;
+            this.panelmodul.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelmodul.Location = new System.Drawing.Point(0, 100);
+            this.panelmodul.Name = "panelmodul";
+            this.panelmodul.Size = new System.Drawing.Size(1490, 811);
+            this.panelmodul.TabIndex = 74;
+            // 
             // Torneo
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -423,6 +436,7 @@
             this.ClientSize = new System.Drawing.Size(1490, 911);
             this.ControlBox = false;
             this.Controls.Add(this.panelmodul);
+            this.Controls.Add(this.panelDgv);
             this.Controls.Add(this.btnGanador);
             this.Controls.Add(this.btnCrear);
             this.Controls.Add(this.btnPatrocinadores);
@@ -431,7 +445,6 @@
             this.Controls.Add(this.btnPartidos);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtBuscarTorneo);
-            this.Controls.Add(this.dgvTorneo);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnAsistir);
             this.Controls.Add(this.btnGolear);
@@ -443,9 +456,11 @@
             this.ShowInTaskbar = false;
             this.Text = "Torneo";
             this.Load += new System.EventHandler(this.Torneo_Load);
+            this.Shown += new System.EventHandler(this.Torneo_Shown);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTorneo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelDgv.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTorneo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -465,11 +480,12 @@
         private Guna.UI2.WinForms.Guna2Button btnPartidos;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtBuscarTorneo;
-        public System.Windows.Forms.DataGridView dgvTorneo;
         private System.Windows.Forms.Button btnReglas;
         private Guna.UI2.WinForms.Guna2Button btnGanador;
-        public System.Windows.Forms.Panel panelmodul;
         private Guna.UI2.WinForms.Guna2Button btnAsistir;
         private Guna.UI2.WinForms.Guna2Button btnGolear;
+        private System.Windows.Forms.Panel panelDgv;
+        public System.Windows.Forms.DataGridView dgvTorneo;
+        public System.Windows.Forms.Panel panelmodul;
     }
 }

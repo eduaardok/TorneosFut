@@ -129,6 +129,7 @@ namespace TorneosFut
             int IdTorneo = Convert.ToInt32(row.Cells["IDTorneo"].Value.ToString());
             pagoPatrocinador = new PagoPatrocinador(IdTorneo, idpatro, conexion.Usuario, conexion.Clave);
             pagoPatrocinador.ShowDialog();
+            ActualizarTablaM();
         }
 
         private void cmbTorneos_SelectedIndexChanged(object sender, EventArgs e)
