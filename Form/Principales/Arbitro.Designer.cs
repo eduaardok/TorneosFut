@@ -46,7 +46,7 @@
             this.txtFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.txtFiltro.ForeColor = System.Drawing.Color.Gray;
             this.txtFiltro.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtFiltro.Location = new System.Drawing.Point(252, 101);
+            this.txtFiltro.Location = new System.Drawing.Point(200, 40);
             this.txtFiltro.Multiline = true;
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(795, 48);
@@ -71,7 +71,7 @@
             this.btnAgregar.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnAgregar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnAgregar.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnAgregar.Location = new System.Drawing.Point(197, 200);
+            this.btnAgregar.Location = new System.Drawing.Point(145, 139);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(184, 52);
             this.btnAgregar.TabIndex = 19;
@@ -94,7 +94,7 @@
             this.btnEditar.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnEditar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnEditar.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnEditar.Location = new System.Drawing.Point(417, 200);
+            this.btnEditar.Location = new System.Drawing.Point(365, 139);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(184, 52);
             this.btnEditar.TabIndex = 18;
@@ -116,7 +116,7 @@
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.BackgroundImage = global::TorneosFut.Properties.Resources.IconoLupa;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(196, 101);
+            this.pictureBox1.Location = new System.Drawing.Point(144, 40);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(50, 49);
             this.pictureBox1.TabIndex = 22;
@@ -162,7 +162,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1490, 911);
+            this.ClientSize = new System.Drawing.Size(1386, 788);
             this.Controls.Add(this.dgvArbitro);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtFiltro);

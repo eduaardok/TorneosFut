@@ -163,9 +163,8 @@ namespace pruebas
         private void btnEstadistica_Click(object sender, EventArgs e)
         {
             string IDJugador = dgvJugador.SelectedRows[0].Cells["IDJugador"].Value.ToString();
-            string imagen = dgvJugador.SelectedRows[0].Cells["ImagenJugador"].Value.ToString();
-            /*estadistica = new frmEstatsGenerales(IDJugador, imagen);
-            estadistica.Show();*/
+            frmJugadoreEsts jugadorEstat = new frmJugadoreEsts(IDJugador);
+            jugadorEstat.Show();
         }
     }
 }

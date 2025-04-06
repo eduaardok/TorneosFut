@@ -91,6 +91,12 @@
     <Compile Include="Class\dsDataGame.cs">
       <DependentUpon>dsDataGame.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Class\frmJugadoreEsts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Class\frmJugadoreEsts.Designer.cs">
+      <DependentUpon>frmJugadoreEsts.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\Reportes\frmTablaP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -343,6 +349,18 @@
     <Compile Include="Form\Reportes\frmEquiposEst.Designer.cs">
       <DependentUpon>frmEquiposEst.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\Reportes\frmCalendarioEE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Reportes\frmCalendarioEE.Designer.cs">
+      <DependentUpon>frmCalendarioEE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Reportes\frmCalendarioGeneral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Reportes\frmCalendarioGeneral.Designer.cs">
+      <DependentUpon>frmCalendarioGeneral.cs</DependentUpon>
+    </Compile>
     <Compile Include="PagoPatrocinador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -369,6 +387,10 @@
     <Compile Include="Form\Principales\TablaDePosiciones.Designer.cs">
       <DependentUpon>TablaDePosiciones.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Class\frmJugadoreEsts.resx">
+      <DependentUpon>frmJugadoreEsts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Class\rptEstatsJugadores.rdlc" />
     <EmbeddedResource Include="Form\AgregarEditar\AsignarPatrocinio.resx">
       <DependentUpon>AsignarPatrocinio.cs</DependentUpon>
     </EmbeddedResource>
@@ -482,6 +504,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Reportes\frmEquiposEst.resx">
       <DependentUpon>frmEquiposEst.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Reportes\frmCalendarioEE.resx">
+      <DependentUpon>frmCalendarioEE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Reportes\frmCalendarioGeneral.resx">
+      <DependentUpon>frmCalendarioGeneral.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PagoPatrocinador.resx">
       <DependentUpon>PagoPatrocinador.cs</DependentUpon>
