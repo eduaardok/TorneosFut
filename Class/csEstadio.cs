@@ -117,6 +117,16 @@ namespace TorneosFut.Class
             }
             else return "";
         }
+        public string TelePatrocinador(string id)
+        {
+
+            DataTable dt = csConexion.ListDGV($"select Telefono from Patrocinador where IDPatrocinador='{id}'");
+            if (dt.Rows.Count > 0)
+            {
+                return dt.Rows[0][0].ToString();
+            }
+            else return "";
+        }
         #endregion
         #region Insertar
         public bool AgregarEstadio(string id, string nombre, string ubicacion, string imagen)

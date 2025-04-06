@@ -56,9 +56,13 @@ namespace TorneosFut
             panelOro.FillColor = Color.White; // Fondo blanco
             panelOro.CustomBorderColor = Color.White; // Tu color rosa
             panelOro.CustomBorderThickness = new Padding(2); // Grosor del borde
+
+                                  
         }
+       
         private void cmbTorneos_SelectedIndexChanged_1(object sender, EventArgs e)
         {
+            decimal costoInscripcion = 0;
             string nombreTorneo = cmbTorneos.SelectedItem.ToString();
             DataTable dt = conexion.ListDGV(
                 $"SELECT * FROM Torneo WHERE NombreTorneo = '{nombreTorneo.Replace("'", "''")}'"
@@ -67,6 +71,29 @@ namespace TorneosFut
             {
                 DataRow row = dt.Rows[0];
                 IDTorneo = Convert.ToInt32(row["IDTorneo"].ToString());
+                costoInscripcion = Convert.ToDecimal(row["CostoInscripcion"].ToString());
+            }
+            CostosPatrocinio(costoInscripcion);
+        }
+        private void CostosPatrocinio(decimal x)
+        {
+            if ((x > 0) && (x <= 50))
+            {
+                lblCostoBronce.Text = "10.00";
+                lblCostoPlata.Text = "20.00";
+                lblCostoOro.Text = "30.00";
+            }
+            else if(x < 100)
+            {
+                lblCostoBronce.Text = "15.00";
+                lblCostoPlata.Text = "30.00";
+                lblCostoOro.Text = "50.00";
+            }
+            else
+            {
+                lblCostoBronce.Text = "25.00";
+                lblCostoPlata.Text = "50.00";
+                lblCostoOro.Text = "75.00";
             }
         }
 
@@ -132,17 +159,20 @@ namespace TorneosFut
             if (btnBronce.Checked)
             {
                 tipoPatrocinio = "Bronce";
-                precioPatrocinio = 10.00m;
+                precioPatrocinio = Convert.ToDecimal(lblCostoBronce.Text.Trim().ToString());
+                MessageBox.Show(precioPatrocinio.ToString());
             }
             else if (btnPlata.Checked)
             {
                 tipoPatrocinio = "Plata";
-                precioPatrocinio = 20.00m;
+                precioPatrocinio = Convert.ToDecimal(lblCostoPlata.Text.Trim().ToString());
+                MessageBox.Show(precioPatrocinio.ToString());
             }
             else if (btnOro.Checked)
             {
                 tipoPatrocinio = "Oro";
-                precioPatrocinio = 30.00m;
+                precioPatrocinio = Convert.ToDecimal(lblCostoOro.Text.Trim().ToString());
+                MessageBox.Show(precioPatrocinio.ToString());
             }
             else
             {

@@ -47,19 +47,22 @@
             this.btnBronce = new System.Windows.Forms.RadioButton();
             this.panelBronce = new Guna.UI2.WinForms.Guna2Panel();
             this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblCostoBronce = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.btnOro = new System.Windows.Forms.RadioButton();
             this.panelOro = new Guna.UI2.WinForms.Guna2Panel();
             this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
+            this.lblCostoOro = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.btnPlata = new System.Windows.Forms.RadioButton();
             this.panelPlata = new Guna.UI2.WinForms.Guna2Panel();
             this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.lblCostoPlata = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.btnEquipos = new Guna.UI2.WinForms.Guna2Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panelBronce.SuspendLayout();
             this.panelOro.SuspendLayout();
@@ -320,8 +323,9 @@
             // panelBronce
             // 
             this.panelBronce.BackColor = System.Drawing.Color.White;
-            this.panelBronce.Controls.Add(this.label11);
+            this.panelBronce.Controls.Add(this.lblCostoBronce);
             this.panelBronce.Controls.Add(this.label10);
+            this.panelBronce.Controls.Add(this.label11);
             this.panelBronce.Controls.Add(this.label9);
             this.panelBronce.Controls.Add(this.btnBronce);
             this.panelBronce.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
@@ -340,16 +344,16 @@
             this.label11.TabIndex = 175;
             this.label11.Text = "- Mención en redes           - 2 entradas por evento";
             // 
-            // label10
+            // lblCostoBronce
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Onest Light", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(8, 38);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(103, 34);
-            this.label10.TabIndex = 176;
-            this.label10.Text = "$10.00";
+            this.lblCostoBronce.AutoSize = true;
+            this.lblCostoBronce.Font = new System.Drawing.Font("Onest Light", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCostoBronce.ForeColor = System.Drawing.Color.Black;
+            this.lblCostoBronce.Location = new System.Drawing.Point(30, 38);
+            this.lblCostoBronce.Name = "lblCostoBronce";
+            this.lblCostoBronce.Size = new System.Drawing.Size(85, 34);
+            this.lblCostoBronce.TabIndex = 176;
+            this.lblCostoBronce.Text = "10.00";
             // 
             // label9
             // 
@@ -378,8 +382,9 @@
             // panelOro
             // 
             this.panelOro.BackColor = System.Drawing.Color.White;
+            this.panelOro.Controls.Add(this.lblCostoOro);
+            this.panelOro.Controls.Add(this.label13);
             this.panelOro.Controls.Add(this.label15);
-            this.panelOro.Controls.Add(this.label16);
             this.panelOro.Controls.Add(this.btnOro);
             this.panelOro.Controls.Add(this.label17);
             this.panelOro.Location = new System.Drawing.Point(504, 475);
@@ -397,16 +402,16 @@
             this.label15.TabIndex = 180;
             this.label15.Text = "- Campaña en redes         - 10 entradas por evento - Banner primcipal";
             // 
-            // label16
+            // lblCostoOro
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Onest Light", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.Black;
-            this.label16.Location = new System.Drawing.Point(7, 38);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(110, 34);
-            this.label16.TabIndex = 182;
-            this.label16.Text = "$30.00";
+            this.lblCostoOro.AutoSize = true;
+            this.lblCostoOro.Font = new System.Drawing.Font("Onest Light", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCostoOro.ForeColor = System.Drawing.Color.Black;
+            this.lblCostoOro.Location = new System.Drawing.Point(29, 38);
+            this.lblCostoOro.Name = "lblCostoOro";
+            this.lblCostoOro.Size = new System.Drawing.Size(92, 34);
+            this.lblCostoOro.TabIndex = 182;
+            this.lblCostoOro.Text = "30.00";
             // 
             // label17
             // 
@@ -435,8 +440,9 @@
             // panelPlata
             // 
             this.panelPlata.BackColor = System.Drawing.Color.White;
+            this.panelPlata.Controls.Add(this.lblCostoPlata);
+            this.panelPlata.Controls.Add(this.label16);
             this.panelPlata.Controls.Add(this.label12);
-            this.panelPlata.Controls.Add(this.label13);
             this.panelPlata.Controls.Add(this.btnPlata);
             this.panelPlata.Controls.Add(this.label14);
             this.panelPlata.Location = new System.Drawing.Point(274, 475);
@@ -454,16 +460,16 @@
             this.label12.TabIndex = 177;
             this.label12.Text = "- Mención en redes           - 5 entradas por evento  - Banner en el campo";
             // 
-            // label13
+            // lblCostoPlata
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Onest Light", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(7, 38);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(109, 34);
-            this.label13.TabIndex = 179;
-            this.label13.Text = "$20.00";
+            this.lblCostoPlata.AutoSize = true;
+            this.lblCostoPlata.Font = new System.Drawing.Font("Onest Light", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCostoPlata.ForeColor = System.Drawing.Color.Black;
+            this.lblCostoPlata.Location = new System.Drawing.Point(29, 38);
+            this.lblCostoPlata.Name = "lblCostoPlata";
+            this.lblCostoPlata.Size = new System.Drawing.Size(91, 34);
+            this.lblCostoPlata.TabIndex = 179;
+            this.lblCostoPlata.Text = "20.00";
             // 
             // label14
             // 
@@ -499,6 +505,39 @@
             this.btnEquipos.TabIndex = 175;
             this.btnEquipos.Text = "Asignar";
             this.btnEquipos.Click += new System.EventHandler(this.btnEquipos_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Onest Light", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.Location = new System.Drawing.Point(8, 38);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(33, 34);
+            this.label10.TabIndex = 177;
+            this.label10.Text = "$";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Onest Light", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Black;
+            this.label13.Location = new System.Drawing.Point(7, 38);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(33, 34);
+            this.label13.TabIndex = 178;
+            this.label13.Text = "$";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Onest Light", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.Black;
+            this.label16.Location = new System.Drawing.Point(7, 38);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(33, 34);
+            this.label16.TabIndex = 179;
+            this.label16.Text = "$";
             // 
             // AsignarPatrocinio
             // 
@@ -565,15 +604,18 @@
         private Guna.UI2.WinForms.Guna2Panel panelOro;
         private System.Windows.Forms.RadioButton btnPlata;
         private Guna.UI2.WinForms.Guna2Panel panelPlata;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblCostoBronce;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label lblCostoOro;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblCostoPlata;
         private System.Windows.Forms.Label label14;
         public Guna.UI2.WinForms.Guna2Button btnEquipos;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label16;
     }
 }

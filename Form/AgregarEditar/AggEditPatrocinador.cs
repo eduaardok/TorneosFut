@@ -58,6 +58,7 @@ namespace TorneosFut
         {
             txtNombreEmpresa.Text = csDatos.NombrePatrocinador(id);
             txtNombreContacto.Text = csDatos.DescripcionPatrocinador(id);
+            txtTelefono.Text = csDatos.TelefonoPatrocinador(id);
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)

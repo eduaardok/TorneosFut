@@ -594,6 +594,10 @@ namespace TorneosFut
         {
             return csEstadio.DescripcionPatrocinador(ID);
         }
+        public string TelefonoPatrocinador(String ID)
+        {
+            return csEstadio.TelePatrocinador(ID);
+        }
         public string NombreArbitro(string id)
         {
             return csArbitro.nombrearbitro(id);
