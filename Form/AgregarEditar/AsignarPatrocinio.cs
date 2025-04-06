@@ -31,6 +31,9 @@ namespace TorneosFut
 
         private void AsignarPatrocinio_Load(object sender, EventArgs e)
         {
+            lblCostoBronce.Tag = "NoCambiar";
+            lblCostoPlata.Tag = "NoCambiar";
+            lblCostoOro.Tag = "NoCambiar";
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
             if (!GlobalSettings.ModoOscuro)
             {
@@ -38,8 +41,24 @@ namespace TorneosFut
                 panel2.BackColor = Color.FromArgb(251, 3, 140);
                 panel3.BackColor = Color.FromArgb(251, 3, 140);
                 panel4.BackColor = Color.FromArgb(251, 3, 140);
+                panelOro.BorderColor = Color.Black;
+                panelBronce.BorderColor = Color.Black;
+                panelPlata.BorderColor = Color.Black;
+                panelOro.FillColor = Color.FromArgb(217, 200, 209);
+                panelBronce.FillColor = Color.FromArgb(217, 200, 209);
+                panelPlata.FillColor = Color.FromArgb(217, 200, 209);
+
             }
-            DataTable torneooo = conexion.ListDGV($"SELECT * FROM Torneo");
+            else
+            {
+                panelOro.BorderColor = Color.White;
+                panelBronce.BorderColor = Color.White;
+                panelPlata.BorderColor = Color.White;
+                panelOro.FillColor = Color.FromArgb(40, 45, 50);
+                panelBronce.FillColor = Color.FromArgb(40, 45, 50);
+                panelPlata.FillColor = Color.FromArgb(40, 45, 50);
+            }
+                DataTable torneooo = conexion.ListDGV($"SELECT * FROM Torneo");
             cmbTorneos.Items.Clear();
             foreach (DataRow row in torneooo.Rows)
             {
@@ -55,14 +74,8 @@ namespace TorneosFut
             }
             cmbPatrocinadores.SelectedIndexChanged += cmbPatrocinadores_SelectedIndexChanged;
 
-            panelBronce.FillColor = Color.White; // Fondo blanco
-            panelBronce.CustomBorderColor = Color.White; // Tu color rosa
             panelBronce.CustomBorderThickness = new Padding(2); // Grosor del borde
-            panelPlata.FillColor = Color.White; // Fondo blanco
-            panelPlata.CustomBorderColor = Color.White;
             panelPlata.CustomBorderThickness = new Padding(2); // Grosor del borde
-            panelOro.FillColor = Color.White; // Fondo blanco
-            panelOro.CustomBorderColor = Color.White; // Tu color rosa
             panelOro.CustomBorderThickness = new Padding(2); // Grosor del borde
 
                                   

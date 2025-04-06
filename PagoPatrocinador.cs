@@ -37,6 +37,7 @@ namespace TorneosFut
 
         private void PagoPatrocinador_Load(object sender, EventArgs e)
         {
+            Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
             DataTable torneo = conexion.ListDGV($"Select NombreTorneo, CostoInscripcion, FechaInicio from Torneo where IDTorneo = {IDTorneo}");
             lbNameTorneo.Text = torneo.Rows[0]["NombreTorneo"].ToString();
             DataTable Empresa = conexion.ListDGV($"select NombreEmpresa from Patrocinador where IDPatrocinador = '{IdPatrocinador}' ");

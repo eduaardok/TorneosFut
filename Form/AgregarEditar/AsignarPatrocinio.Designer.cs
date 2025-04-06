@@ -327,7 +327,7 @@
             // 
             // panelBronce
             // 
-            this.panelBronce.BackColor = System.Drawing.Color.White;
+            this.panelBronce.BackColor = System.Drawing.Color.Transparent;
             this.panelBronce.BorderColor = System.Drawing.Color.Black;
             this.panelBronce.Controls.Add(this.lblCostoBronce);
             this.panelBronce.Controls.Add(this.label10);
@@ -398,7 +398,7 @@
             // 
             // panelOro
             // 
-            this.panelOro.BackColor = System.Drawing.Color.White;
+            this.panelOro.BackColor = System.Drawing.Color.Transparent;
             this.panelOro.BorderColor = System.Drawing.Color.Black;
             this.panelOro.Controls.Add(this.lblCostoOro);
             this.panelOro.Controls.Add(this.label13);
@@ -468,7 +468,7 @@
             // 
             // panelPlata
             // 
-            this.panelPlata.BackColor = System.Drawing.Color.White;
+            this.panelPlata.BackColor = System.Drawing.Color.Transparent;
             this.panelPlata.BorderColor = System.Drawing.Color.Black;
             this.panelPlata.Controls.Add(this.lblCostoPlata);
             this.panelPlata.Controls.Add(this.label16);
