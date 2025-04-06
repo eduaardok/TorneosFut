@@ -231,6 +231,13 @@ namespace TorneosFut
         private void AggFormato_Load(object sender, EventArgs e)
         {
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
+            if (!GlobalSettings.ModoOscuro)
+            {
+                panel1.BackColor = Color.FromArgb(251, 3, 140);
+                panel2.BackColor = Color.FromArgb(251, 3, 140);
+                panel3.BackColor = Color.FromArgb(251, 3, 140);
+                panel4.BackColor = Color.FromArgb(251, 3, 140);
+            }
             msg.Buttons = MessageDialogButtons.OK;
             msg.Icon = MessageDialogIcon.Information;
             msg.Style = MessageDialogStyle.Light;

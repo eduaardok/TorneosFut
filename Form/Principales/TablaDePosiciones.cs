@@ -25,6 +25,9 @@ namespace TorneosFut
 
         private void TablaDePosiciones_Load(object sender, EventArgs e)
         {
+            c.Tag= "NoCambiar"; 
+            lblEncabezado.Tag = "NoCambiar";
+            Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
             DataTable dt = csConexion.ListDGV($"SELECT * FROM TablaDePosiciones" +
                 $" WHERE IDTorneo = {Torneo} ORDER BY Grupo asc , Puntos DESC, DiferenciaGoles DESC, GolesAFavor DESC");
             dgvPosiciones.DataSource = dt;

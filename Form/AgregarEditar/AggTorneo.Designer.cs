@@ -60,7 +60,7 @@
             this.panel2.Controls.Add(this.btngSalir);
             this.panel2.Controls.Add(this.lblEncabezado);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Font = new System.Drawing.Font("Onest Bold", 15.75F, System.Drawing.FontStyle.Bold);
+            this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(634, 50);
@@ -95,32 +95,32 @@
             // lblEncabezado
             // 
             this.lblEncabezado.AutoSize = true;
-            this.lblEncabezado.Font = new System.Drawing.Font("Onest Bold", 15.75F, System.Drawing.FontStyle.Bold);
+            this.lblEncabezado.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.lblEncabezado.ForeColor = System.Drawing.Color.White;
             this.lblEncabezado.Location = new System.Drawing.Point(12, 8);
             this.lblEncabezado.Name = "lblEncabezado";
-            this.lblEncabezado.Size = new System.Drawing.Size(251, 26);
+            this.lblEncabezado.Size = new System.Drawing.Size(269, 25);
             this.lblEncabezado.TabIndex = 33;
             this.lblEncabezado.Text = "CREACIÓN DE TORNEO";
             // 
             // lblfecha
             // 
             this.lblfecha.AutoSize = true;
-            this.lblfecha.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblfecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblfecha.Location = new System.Drawing.Point(48, 287);
             this.lblfecha.Name = "lblfecha";
-            this.lblfecha.Size = new System.Drawing.Size(149, 24);
+            this.lblfecha.Size = new System.Drawing.Size(155, 24);
             this.lblfecha.TabIndex = 59;
             this.lblfecha.Text = "Fecha de Inicio";
             // 
             // dtpInicio
             // 
-            this.dtpInicio.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpInicio.Location = new System.Drawing.Point(48, 314);
             this.dtpInicio.MaxDate = new System.DateTime(2050, 12, 31, 0, 0, 0, 0);
             this.dtpInicio.MinDate = new System.DateTime(2025, 1, 1, 0, 0, 0, 0);
             this.dtpInicio.Name = "dtpInicio";
-            this.dtpInicio.Size = new System.Drawing.Size(235, 28);
+            this.dtpInicio.Size = new System.Drawing.Size(235, 26);
             this.dtpInicio.TabIndex = 58;
             this.dtpInicio.Value = new System.DateTime(2025, 1, 1, 0, 0, 0, 0);
             // 
@@ -129,11 +129,11 @@
             this.cmbOrganizador.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cmbOrganizador.BackColor = System.Drawing.Color.White;
             this.cmbOrganizador.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbOrganizador.Font = new System.Drawing.Font("Onest Light", 12F);
+            this.cmbOrganizador.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.cmbOrganizador.FormattingEnabled = true;
             this.cmbOrganizador.Location = new System.Drawing.Point(328, 135);
             this.cmbOrganizador.Name = "cmbOrganizador";
-            this.cmbOrganizador.Size = new System.Drawing.Size(231, 29);
+            this.cmbOrganizador.Size = new System.Drawing.Size(231, 28);
             this.cmbOrganizador.TabIndex = 57;
             // 
             // cmbModoFutbol
@@ -141,7 +141,7 @@
             this.cmbModoFutbol.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cmbModoFutbol.BackColor = System.Drawing.Color.White;
             this.cmbModoFutbol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbModoFutbol.Font = new System.Drawing.Font("Onest Light", 12F);
+            this.cmbModoFutbol.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.cmbModoFutbol.FormattingEnabled = true;
             this.cmbModoFutbol.Items.AddRange(new object[] {
             "Fútbol 11",
@@ -150,7 +150,7 @@
             "Fútbol sala"});
             this.cmbModoFutbol.Location = new System.Drawing.Point(328, 229);
             this.cmbModoFutbol.Name = "cmbModoFutbol";
-            this.cmbModoFutbol.Size = new System.Drawing.Size(231, 29);
+            this.cmbModoFutbol.Size = new System.Drawing.Size(231, 28);
             this.cmbModoFutbol.TabIndex = 56;
             // 
             // label1
@@ -158,11 +158,11 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Onest Bold", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
             this.label1.Location = new System.Drawing.Point(322, 186);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 26);
+            this.label1.Size = new System.Drawing.Size(138, 25);
             this.label1.TabIndex = 55;
             this.label1.Text = "Tipo Fútbol:";
             // 
@@ -171,11 +171,11 @@
             this.cmbFormato.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cmbFormato.BackColor = System.Drawing.Color.White;
             this.cmbFormato.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbFormato.Font = new System.Drawing.Font("Onest Light", 12F);
+            this.cmbFormato.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.cmbFormato.FormattingEnabled = true;
             this.cmbFormato.Location = new System.Drawing.Point(52, 229);
             this.cmbFormato.Name = "cmbFormato";
-            this.cmbFormato.Size = new System.Drawing.Size(231, 29);
+            this.cmbFormato.Size = new System.Drawing.Size(231, 28);
             this.cmbFormato.TabIndex = 53;
             // 
             // label4
@@ -183,11 +183,11 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Onest Bold", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
             this.label4.Location = new System.Drawing.Point(46, 186);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 26);
+            this.label4.Size = new System.Drawing.Size(105, 25);
             this.label4.TabIndex = 52;
             this.label4.Text = "Formato:";
             // 
@@ -196,11 +196,11 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Onest Bold", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
             this.label3.Location = new System.Drawing.Point(331, 92);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(145, 26);
+            this.label3.Size = new System.Drawing.Size(148, 25);
             this.label3.TabIndex = 51;
             this.label3.Text = "Organizador:";
             // 
@@ -208,10 +208,10 @@
             // 
             this.txtNombre.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtNombre.BackColor = System.Drawing.Color.White;
-            this.txtNombre.Font = new System.Drawing.Font("Onest Light", 12F);
+            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtNombre.Location = new System.Drawing.Point(49, 136);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(220, 28);
+            this.txtNombre.Size = new System.Drawing.Size(220, 26);
             this.txtNombre.TabIndex = 50;
             // 
             // label2
@@ -219,25 +219,25 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Onest Bold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
             this.label2.Location = new System.Drawing.Point(43, 92);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 26);
+            this.label2.Size = new System.Drawing.Size(100, 25);
             this.label2.TabIndex = 49;
             this.label2.Text = "Nombre:";
             // 
             // btnCrear
             // 
             this.btnCrear.Animated = true;
-            this.btnCrear.BackColor = System.Drawing.Color.White;
+            this.btnCrear.BackColor = System.Drawing.Color.Transparent;
             this.btnCrear.BorderRadius = 20;
             this.btnCrear.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnCrear.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnCrear.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnCrear.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnCrear.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
-            this.btnCrear.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnCrear.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnCrear.ForeColor = System.Drawing.Color.Black;
             this.btnCrear.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnCrear.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
@@ -286,21 +286,21 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(48, 359);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(127, 24);
+            this.label5.Size = new System.Drawing.Size(135, 24);
             this.label5.TabIndex = 102;
             this.label5.Text = "Fecha de Fin";
             // 
             // dtpFin
             // 
-            this.dtpFin.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFin.Location = new System.Drawing.Point(48, 386);
             this.dtpFin.MaxDate = new System.DateTime(2050, 12, 31, 0, 0, 0, 0);
             this.dtpFin.MinDate = new System.DateTime(2025, 1, 1, 0, 0, 0, 0);
             this.dtpFin.Name = "dtpFin";
-            this.dtpFin.Size = new System.Drawing.Size(235, 28);
+            this.dtpFin.Size = new System.Drawing.Size(235, 26);
             this.dtpFin.TabIndex = 101;
             this.dtpFin.Value = new System.DateTime(2025, 1, 1, 0, 0, 0, 0);
             // 
@@ -308,10 +308,10 @@
             // 
             this.txtCosto.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtCosto.BackColor = System.Drawing.Color.White;
-            this.txtCosto.Font = new System.Drawing.Font("Onest Light", 12F);
+            this.txtCosto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtCosto.Location = new System.Drawing.Point(328, 315);
             this.txtCosto.Name = "txtCosto";
-            this.txtCosto.Size = new System.Drawing.Size(149, 28);
+            this.txtCosto.Size = new System.Drawing.Size(149, 26);
             this.txtCosto.TabIndex = 104;
             // 
             // label6
@@ -319,11 +319,11 @@
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Onest Bold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
             this.label6.Location = new System.Drawing.Point(331, 285);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(230, 26);
+            this.label6.Size = new System.Drawing.Size(234, 25);
             this.label6.TabIndex = 103;
             this.label6.Text = "Costo de inscripción:";
             // 

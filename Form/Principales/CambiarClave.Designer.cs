@@ -32,6 +32,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblEncabezado = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCancelar = new Guna.UI2.WinForms.Guna2Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -41,7 +42,6 @@
             this.txtClaveApp = new System.Windows.Forms.TextBox();
             this.lblNueva = new System.Windows.Forms.Label();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
-            this.btnCancelar = new Guna.UI2.WinForms.Guna2Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -85,6 +85,29 @@
             this.panel1.Size = new System.Drawing.Size(610, 299);
             this.panel1.TabIndex = 42;
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Animated = true;
+            this.btnCancelar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCancelar.BorderColor = System.Drawing.Color.Empty;
+            this.btnCancelar.BorderRadius = 20;
+            this.btnCancelar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCancelar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCancelar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCancelar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCancelar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.HoverState.BorderColor = System.Drawing.Color.Black;
+            this.btnCancelar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.btnCancelar.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.btnCancelar.Location = new System.Drawing.Point(142, 194);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(146, 52);
+            this.btnCancelar.TabIndex = 139;
+            this.btnCancelar.Text = "CANCELAR";
+            this.btnCancelar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
@@ -115,13 +138,14 @@
             // btngEnviar
             // 
             this.btngEnviar.Animated = true;
+            this.btngEnviar.BackColor = System.Drawing.Color.Transparent;
             this.btngEnviar.BorderRadius = 20;
             this.btngEnviar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btngEnviar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btngEnviar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btngEnviar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btngEnviar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
-            this.btngEnviar.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btngEnviar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btngEnviar.ForeColor = System.Drawing.Color.Black;
             this.btngEnviar.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btngEnviar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
@@ -137,11 +161,11 @@
             // 
             this.lblClaveAct.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblClaveAct.AutoSize = true;
-            this.lblClaveAct.Font = new System.Drawing.Font("Onest Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClaveAct.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblClaveAct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
             this.lblClaveAct.Location = new System.Drawing.Point(247, 57);
             this.lblClaveAct.Name = "lblClaveAct";
-            this.lblClaveAct.Size = new System.Drawing.Size(57, 24);
+            this.lblClaveAct.Size = new System.Drawing.Size(54, 24);
             this.lblClaveAct.TabIndex = 44;
             this.lblClaveAct.Text = "clave";
             this.lblClaveAct.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -162,10 +186,10 @@
             // 
             this.txtClaveApp.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtClaveApp.BackColor = System.Drawing.Color.White;
-            this.txtClaveApp.Font = new System.Drawing.Font("Onest Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtClaveApp.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtClaveApp.Location = new System.Drawing.Point(252, 122);
             this.txtClaveApp.Name = "txtClaveApp";
-            this.txtClaveApp.Size = new System.Drawing.Size(279, 32);
+            this.txtClaveApp.Size = new System.Drawing.Size(279, 29);
             this.txtClaveApp.TabIndex = 42;
             // 
             // lblNueva
@@ -186,28 +210,6 @@
             this.guna2BorderlessForm1.ContainerControl = this;
             this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
             this.guna2BorderlessForm1.TransparentWhileDrag = true;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Animated = true;
-            this.btnCancelar.BorderColor = System.Drawing.Color.Empty;
-            this.btnCancelar.BorderRadius = 20;
-            this.btnCancelar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnCancelar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnCancelar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnCancelar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCancelar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.btnCancelar.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.HoverState.BorderColor = System.Drawing.Color.Black;
-            this.btnCancelar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
-            this.btnCancelar.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnCancelar.Location = new System.Drawing.Point(142, 194);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(138, 52);
-            this.btnCancelar.TabIndex = 139;
-            this.btnCancelar.Text = "CANCELAR";
-            this.btnCancelar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // CambiarClave
             // 

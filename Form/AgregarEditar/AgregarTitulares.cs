@@ -48,6 +48,14 @@ namespace TorneosFut
 
         private void AgregarTitulares_Load(object sender, EventArgs e)
         {
+            Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
+            if (!GlobalSettings.ModoOscuro)
+            {
+                panel1.BackColor = Color.FromArgb(251, 3, 140);
+                panel2.BackColor = Color.FromArgb(251, 3, 140);
+                panel3.BackColor = Color.FromArgb(251, 3, 140);
+                panel4.BackColor = Color.FromArgb(251, 3, 140);
+            }
             csDGV.MostrarEquiposCMBID(cmbModoFutbol, IDPartid);
             To.Text = dgvtitulares.Rows.Count.ToString();
             msg.Buttons = MessageDialogButtons.OK;

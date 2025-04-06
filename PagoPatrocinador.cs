@@ -20,6 +20,14 @@ namespace TorneosFut
         int IDTorneo;
         public PagoPatrocinador(int IDtorneo, string IDPatrocinador, string u, string c)
         {
+            Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
+            if (!GlobalSettings.ModoOscuro)
+            {
+                panel1.BackColor = Color.FromArgb(251, 3, 140);
+                panel2.BackColor = Color.FromArgb(251, 3, 140);
+                panel3.BackColor = Color.FromArgb(251, 3, 140);
+                panel4.BackColor = Color.FromArgb(251, 3, 140);
+            }
             IDTorneo = IDtorneo;
             IdPatrocinador = IDPatrocinador;
             conexion = new csConexion(u, c);

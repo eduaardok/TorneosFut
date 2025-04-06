@@ -65,11 +65,11 @@
             // lblEncabezado
             // 
             this.lblEncabezado.AutoSize = true;
-            this.lblEncabezado.Font = new System.Drawing.Font("Onest Bold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEncabezado.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEncabezado.ForeColor = System.Drawing.Color.White;
             this.lblEncabezado.Location = new System.Drawing.Point(12, 9);
             this.lblEncabezado.Name = "lblEncabezado";
-            this.lblEncabezado.Size = new System.Drawing.Size(211, 26);
+            this.lblEncabezado.Size = new System.Drawing.Size(229, 25);
             this.lblEncabezado.TabIndex = 33;
             this.lblEncabezado.Text = "AGREGAR ARBITRO";
             // 
@@ -77,10 +77,10 @@
             // 
             this.lblfecha.AutoSize = true;
             this.lblfecha.BackColor = System.Drawing.Color.Transparent;
-            this.lblfecha.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblfecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblfecha.Location = new System.Drawing.Point(32, 260);
             this.lblfecha.Name = "lblfecha";
-            this.lblfecha.Size = new System.Drawing.Size(205, 24);
+            this.lblfecha.Size = new System.Drawing.Size(210, 24);
             this.lblfecha.TabIndex = 94;
             this.lblfecha.Text = "Fecha de Nacimiento\r\n";
             // 
@@ -97,18 +97,19 @@
             // btngCancelar
             // 
             this.btngCancelar.Animated = true;
+            this.btngCancelar.BackColor = System.Drawing.Color.Transparent;
             this.btngCancelar.BorderRadius = 20;
             this.btngCancelar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btngCancelar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btngCancelar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btngCancelar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btngCancelar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
-            this.btngCancelar.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btngCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btngCancelar.ForeColor = System.Drawing.Color.Black;
             this.btngCancelar.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btngCancelar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btngCancelar.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btngCancelar.Location = new System.Drawing.Point(111, 376);
+            this.btngCancelar.Location = new System.Drawing.Point(67, 376);
             this.btngCancelar.Name = "btngCancelar";
             this.btngCancelar.Size = new System.Drawing.Size(144, 52);
             this.btngCancelar.TabIndex = 92;
@@ -119,10 +120,10 @@
             // 
             this.Correo.AutoSize = true;
             this.Correo.BackColor = System.Drawing.Color.Transparent;
-            this.Correo.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Correo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Correo.Location = new System.Drawing.Point(32, 208);
             this.Correo.Name = "Correo";
-            this.Correo.Size = new System.Drawing.Size(72, 24);
+            this.Correo.Size = new System.Drawing.Size(74, 24);
             this.Correo.TabIndex = 87;
             this.Correo.Text = "Correo";
             // 
@@ -130,49 +131,49 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(32, 152);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 24);
+            this.label3.Size = new System.Drawing.Size(87, 24);
             this.label3.TabIndex = 86;
             this.label3.Text = "Apellido";
             // 
             // txtApellido
             // 
             this.txtApellido.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtApellido.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtApellido.Location = new System.Drawing.Point(42, 177);
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(225, 28);
+            this.txtApellido.Size = new System.Drawing.Size(225, 26);
             this.txtApellido.TabIndex = 85;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(32, 96);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 24);
+            this.label2.Size = new System.Drawing.Size(85, 24);
             this.label2.TabIndex = 84;
             this.label2.Text = "Nombre";
             // 
             // txtNombre
             // 
             this.txtNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtNombre.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.Location = new System.Drawing.Point(42, 123);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(225, 28);
+            this.txtNombre.Size = new System.Drawing.Size(225, 26);
             this.txtNombre.TabIndex = 83;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Onest Bold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(30, 58);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 34);
+            this.label1.Size = new System.Drawing.Size(0, 31);
             this.label1.TabIndex = 82;
             // 
             // ptbImagen
@@ -222,6 +223,7 @@
             // btnGuardar
             // 
             this.btnGuardar.Animated = true;
+            this.btnGuardar.BackColor = System.Drawing.Color.Transparent;
             this.btnGuardar.BorderColor = System.Drawing.Color.Empty;
             this.btnGuardar.BorderRadius = 20;
             this.btnGuardar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -229,14 +231,14 @@
             this.btnGuardar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnGuardar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnGuardar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.btnGuardar.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
             this.btnGuardar.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnGuardar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnGuardar.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnGuardar.Location = new System.Drawing.Point(282, 376);
+            this.btnGuardar.Location = new System.Drawing.Point(254, 376);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(127, 52);
+            this.btnGuardar.Size = new System.Drawing.Size(146, 52);
             this.btnGuardar.TabIndex = 98;
             this.btnGuardar.Text = "AGREGAR";
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -244,13 +246,14 @@
             // btnImportar
             // 
             this.btnImportar.Animated = true;
+            this.btnImportar.BackColor = System.Drawing.Color.Transparent;
             this.btnImportar.BorderRadius = 14;
             this.btnImportar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnImportar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnImportar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnImportar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnImportar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.btnImportar.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImportar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImportar.ForeColor = System.Drawing.Color.White;
             this.btnImportar.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnImportar.HoverState.CustomBorderColor = System.Drawing.Color.Black;
@@ -265,10 +268,10 @@
             // txtCorreo
             // 
             this.txtCorreo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtCorreo.Font = new System.Drawing.Font("Onest Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCorreo.Location = new System.Drawing.Point(36, 235);
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(225, 28);
+            this.txtCorreo.Size = new System.Drawing.Size(225, 26);
             this.txtCorreo.TabIndex = 105;
             // 
             // AggEditArbitro

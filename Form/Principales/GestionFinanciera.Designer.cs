@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnArbitros = new Guna.UI2.WinForms.Guna2Button();
             this.btnPatrocinador = new Guna.UI2.WinForms.Guna2Button();
             this.btnEquipos = new Guna.UI2.WinForms.Guna2Button();
@@ -63,7 +63,7 @@
             // btnArbitros
             // 
             this.btnArbitros.Animated = true;
-            this.btnArbitros.BackColor = System.Drawing.Color.White;
+            this.btnArbitros.BackColor = System.Drawing.Color.Transparent;
             this.btnArbitros.BorderColor = System.Drawing.Color.Empty;
             this.btnArbitros.BorderRadius = 20;
             this.btnArbitros.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -71,7 +71,7 @@
             this.btnArbitros.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnArbitros.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnArbitros.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
-            this.btnArbitros.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnArbitros.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnArbitros.ForeColor = System.Drawing.Color.Black;
             this.btnArbitros.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnArbitros.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
@@ -88,7 +88,7 @@
             // btnPatrocinador
             // 
             this.btnPatrocinador.Animated = true;
-            this.btnPatrocinador.BackColor = System.Drawing.Color.White;
+            this.btnPatrocinador.BackColor = System.Drawing.Color.Transparent;
             this.btnPatrocinador.BorderColor = System.Drawing.Color.Empty;
             this.btnPatrocinador.BorderRadius = 20;
             this.btnPatrocinador.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -96,7 +96,7 @@
             this.btnPatrocinador.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnPatrocinador.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnPatrocinador.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
-            this.btnPatrocinador.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnPatrocinador.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnPatrocinador.ForeColor = System.Drawing.Color.Black;
             this.btnPatrocinador.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnPatrocinador.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
@@ -112,7 +112,7 @@
             // btnEquipos
             // 
             this.btnEquipos.Animated = true;
-            this.btnEquipos.BackColor = System.Drawing.Color.White;
+            this.btnEquipos.BackColor = System.Drawing.Color.Transparent;
             this.btnEquipos.BorderColor = System.Drawing.Color.Empty;
             this.btnEquipos.BorderRadius = 20;
             this.btnEquipos.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -120,7 +120,7 @@
             this.btnEquipos.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnEquipos.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnEquipos.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
-            this.btnEquipos.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnEquipos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnEquipos.ForeColor = System.Drawing.Color.Black;
             this.btnEquipos.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnEquipos.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
@@ -136,7 +136,7 @@
             // txtBuscarEquipo
             // 
             this.txtBuscarEquipo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtBuscarEquipo.Font = new System.Drawing.Font("Onest Light", 12F);
+            this.txtBuscarEquipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtBuscarEquipo.ForeColor = System.Drawing.Color.Gray;
             this.txtBuscarEquipo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtBuscarEquipo.Location = new System.Drawing.Point(395, 98);
@@ -155,24 +155,24 @@
             this.dgvPagos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPagos.BackgroundColor = System.Drawing.Color.White;
             this.dgvPagos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPagos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPagos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvPagos.ColumnHeadersHeight = 40;
             this.dgvPagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPagos.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPagos.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvPagos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPagos.EnableHeadersVisualStyles = false;
             this.dgvPagos.Location = new System.Drawing.Point(0, 0);
@@ -180,14 +180,17 @@
             this.dgvPagos.Name = "dgvPagos";
             this.dgvPagos.ReadOnly = true;
             this.dgvPagos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvPagos.RowHeadersVisible = false;
             this.dgvPagos.RowHeadersWidth = 30;
             this.dgvPagos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
-            this.dgvPagos.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.dgvPagos.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvPagos.RowTemplate.Height = 30;
             this.dgvPagos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPagos.ShowCellErrors = false;
             this.dgvPagos.ShowCellToolTips = false;
             this.dgvPagos.ShowEditingIcon = false;
+            this.dgvPagos.ShowRowErrors = false;
             this.dgvPagos.Size = new System.Drawing.Size(1353, 448);
             this.dgvPagos.TabIndex = 94;
             // 
@@ -205,17 +208,17 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(15, 105);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(78, 24);
+            this.label8.Size = new System.Drawing.Size(84, 24);
             this.label8.TabIndex = 151;
             this.label8.Text = "Torneo:";
             // 
             // btnPagar
             // 
             this.btnPagar.Animated = true;
-            this.btnPagar.BackColor = System.Drawing.Color.White;
+            this.btnPagar.BackColor = System.Drawing.Color.Transparent;
             this.btnPagar.BorderColor = System.Drawing.Color.Empty;
             this.btnPagar.BorderRadius = 20;
             this.btnPagar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -223,7 +226,7 @@
             this.btnPagar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnPagar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnPagar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
-            this.btnPagar.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnPagar.ForeColor = System.Drawing.Color.Black;
             this.btnPagar.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnPagar.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
@@ -240,7 +243,7 @@
             // btnAbonar
             // 
             this.btnAbonar.Animated = true;
-            this.btnAbonar.BackColor = System.Drawing.Color.White;
+            this.btnAbonar.BackColor = System.Drawing.Color.Transparent;
             this.btnAbonar.BorderColor = System.Drawing.Color.Empty;
             this.btnAbonar.BorderRadius = 20;
             this.btnAbonar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -248,7 +251,7 @@
             this.btnAbonar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnAbonar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnAbonar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
-            this.btnAbonar.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnAbonar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnAbonar.ForeColor = System.Drawing.Color.Black;
             this.btnAbonar.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnAbonar.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
@@ -303,13 +306,14 @@
             // btnMovimiento
             // 
             this.btnMovimiento.Animated = true;
+            this.btnMovimiento.BackColor = System.Drawing.Color.Transparent;
             this.btnMovimiento.BorderRadius = 20;
             this.btnMovimiento.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnMovimiento.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnMovimiento.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnMovimiento.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnMovimiento.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.btnMovimiento.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMovimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMovimiento.ForeColor = System.Drawing.Color.White;
             this.btnMovimiento.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnMovimiento.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
@@ -324,11 +328,11 @@
             // lblEncabezado
             // 
             this.lblEncabezado.AutoSize = true;
-            this.lblEncabezado.Font = new System.Drawing.Font("Onest Bold", 20F, System.Drawing.FontStyle.Bold);
+            this.lblEncabezado.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
             this.lblEncabezado.ForeColor = System.Drawing.Color.White;
             this.lblEncabezado.Location = new System.Drawing.Point(29, 28);
             this.lblEncabezado.Name = "lblEncabezado";
-            this.lblEncabezado.Size = new System.Drawing.Size(259, 34);
+            this.lblEncabezado.Size = new System.Drawing.Size(260, 31);
             this.lblEncabezado.TabIndex = 33;
             this.lblEncabezado.Text = "Gestión Financiera";
             // 
@@ -337,7 +341,7 @@
             this.panel2.BackColor = System.Drawing.Color.Black;
             this.panel2.Controls.Add(this.lblEncabezado);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Font = new System.Drawing.Font("Onest Bold", 15.75F, System.Drawing.FontStyle.Bold);
+            this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1490, 79);
@@ -346,11 +350,11 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Onest Bold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(386, 211);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(170, 25);
+            this.label6.Size = new System.Drawing.Size(173, 25);
             this.label6.TabIndex = 148;
             this.label6.Text = "Ingresos Totales";
             this.label6.Visible = false;
@@ -358,11 +362,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Onest Bold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(725, 211);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(170, 25);
+            this.label5.Size = new System.Drawing.Size(173, 25);
             this.label5.TabIndex = 147;
             this.label5.Text = "Ingresos Totales";
             this.label5.Visible = false;
@@ -370,11 +374,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Onest Bold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(1069, 211);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(170, 25);
+            this.label4.Size = new System.Drawing.Size(173, 25);
             this.label4.TabIndex = 146;
             this.label4.Text = "Ingresos Totales";
             this.label4.Visible = false;
@@ -382,11 +386,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Onest Bold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.label3.Location = new System.Drawing.Point(1110, 170);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 25);
+            this.label3.Size = new System.Drawing.Size(90, 25);
             this.label3.TabIndex = 145;
             this.label3.Text = "Balance";
             this.label3.Visible = false;
@@ -394,11 +398,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Onest Bold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.label2.Location = new System.Drawing.Point(729, 170);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(154, 25);
+            this.label2.Size = new System.Drawing.Size(158, 25);
             this.label2.TabIndex = 144;
             this.label2.Text = "Gastos Totales";
             this.label2.Visible = false;
@@ -406,11 +410,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Onest Bold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.label1.Location = new System.Drawing.Point(386, 170);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(170, 25);
+            this.label1.Size = new System.Drawing.Size(173, 25);
             this.label1.TabIndex = 143;
             this.label1.Text = "Ingresos Totales";
             this.label1.Visible = false;
@@ -418,11 +422,11 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Onest Light", 15F);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.label7.Location = new System.Drawing.Point(30, 105);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(95, 31);
+            this.label7.Size = new System.Drawing.Size(87, 25);
             this.label7.TabIndex = 149;
             this.label7.Text = "FutXpert";
             // 

@@ -36,6 +36,15 @@ namespace TorneosFut
         }
         private void PagoInscripcion_Load(object sender, EventArgs e)
         {
+            Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
+            if (!GlobalSettings.ModoOscuro)
+            {
+                panel1.BackColor = Color.FromArgb(251, 3, 140);
+                panel2.BackColor = Color.FromArgb(251, 3, 140);
+                panel3.BackColor=Color.FromArgb(251, 3, 140);
+                panel4.BackColor = Color.FromArgb(251, 3, 140);
+            }
+            
             DataTable torneoo = conexion.ListDGV($"select IDInscripcion, Estado, Saldo, MontoAPagar from InscripcionEquipo where IDTorneo = {IdTorneo} and IDEquipo = '{IdEquipo}'");
             lblCosto.Text = Convert.ToDecimal(torneoo.Rows[0]["Saldo"].ToString()).ToString("F2");
 

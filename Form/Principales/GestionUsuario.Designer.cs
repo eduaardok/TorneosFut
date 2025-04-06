@@ -67,7 +67,7 @@
             this.dgvUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -98,13 +98,14 @@
             // 
             this.btngLimpiar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btngLimpiar.Animated = true;
+            this.btngLimpiar.BackColor = System.Drawing.Color.Transparent;
             this.btngLimpiar.BorderRadius = 20;
             this.btngLimpiar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btngLimpiar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btngLimpiar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btngLimpiar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btngLimpiar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.btngLimpiar.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btngLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btngLimpiar.ForeColor = System.Drawing.Color.White;
             this.btngLimpiar.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btngLimpiar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
@@ -120,13 +121,14 @@
             // 
             this.btngCrear.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btngCrear.Animated = true;
+            this.btngCrear.BackColor = System.Drawing.Color.Transparent;
             this.btngCrear.BorderRadius = 20;
             this.btngCrear.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btngCrear.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btngCrear.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btngCrear.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btngCrear.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
-            this.btngCrear.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btngCrear.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btngCrear.ForeColor = System.Drawing.Color.Black;
             this.btngCrear.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btngCrear.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
@@ -144,7 +146,7 @@
             this.txtFiltro.ForeColor = System.Drawing.Color.Gray;
             this.txtFiltro.Location = new System.Drawing.Point(830, 147);
             this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(392, 32);
+            this.txtFiltro.Size = new System.Drawing.Size(392, 29);
             this.txtFiltro.TabIndex = 7;
             this.txtFiltro.Text = "Buscar por nombre de Usuario";
             this.txtFiltro.TextAlignChanged += new System.EventHandler(this.txtFiltro_TextAlignChanged);
@@ -155,18 +157,19 @@
             // 
             this.btngEditar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btngEditar.Animated = true;
+            this.btngEditar.BackColor = System.Drawing.Color.Transparent;
             this.btngEditar.BorderRadius = 20;
             this.btngEditar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btngEditar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btngEditar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btngEditar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btngEditar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
-            this.btngEditar.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btngEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btngEditar.ForeColor = System.Drawing.Color.Black;
             this.btngEditar.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btngEditar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btngEditar.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btngEditar.Location = new System.Drawing.Point(290, 119);
+            this.btngEditar.Location = new System.Drawing.Point(249, 119);
             this.btngEditar.Name = "btngEditar";
             this.btngEditar.Size = new System.Drawing.Size(196, 59);
             this.btngEditar.TabIndex = 5;
@@ -177,18 +180,19 @@
             // 
             this.btngMostrar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btngMostrar.Animated = true;
+            this.btngMostrar.BackColor = System.Drawing.Color.Transparent;
             this.btngMostrar.BorderRadius = 20;
             this.btngMostrar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btngMostrar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btngMostrar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btngMostrar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btngMostrar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.btngMostrar.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btngMostrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btngMostrar.ForeColor = System.Drawing.Color.White;
             this.btngMostrar.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btngMostrar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btngMostrar.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btngMostrar.Location = new System.Drawing.Point(539, 119);
+            this.btngMostrar.Location = new System.Drawing.Point(498, 119);
             this.btngMostrar.Name = "btngMostrar";
             this.btngMostrar.Size = new System.Drawing.Size(196, 59);
             this.btngMostrar.TabIndex = 8;
@@ -208,10 +212,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Onest Bold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(24, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(239, 34);
+            this.label2.Size = new System.Drawing.Size(241, 31);
             this.label2.TabIndex = 11;
             this.label2.Text = "Lista de Usuarios";
             // 
@@ -241,7 +245,7 @@
             this.Controls.Add(this.btngCrear);
             this.Controls.Add(this.btngEditar);
             this.Controls.Add(this.txtFiltro);
-            this.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.MaximizeBox = false;

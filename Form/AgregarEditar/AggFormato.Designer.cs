@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblEncabezado = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
@@ -46,6 +47,10 @@
             this.cmbPlayoff = new System.Windows.Forms.ComboBox();
             this.btnAgregar = new Guna.UI2.WinForms.Guna2Button();
             this.btnCancelar = new Guna.UI2.WinForms.Guna2Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numGrupos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numEquipos)).BeginInit();
@@ -65,11 +70,11 @@
             // lblEncabezado
             // 
             this.lblEncabezado.AutoSize = true;
-            this.lblEncabezado.Font = new System.Drawing.Font("Onest Bold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEncabezado.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEncabezado.ForeColor = System.Drawing.Color.White;
             this.lblEncabezado.Location = new System.Drawing.Point(15, 9);
             this.lblEncabezado.Name = "lblEncabezado";
-            this.lblEncabezado.Size = new System.Drawing.Size(223, 26);
+            this.lblEncabezado.Size = new System.Drawing.Size(242, 25);
             this.lblEncabezado.TabIndex = 33;
             this.lblEncabezado.Text = "AGREGAR FORMATO";
             // 
@@ -77,35 +82,35 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.BackColor = System.Drawing.Color.Transparent;
-            this.lblNombre.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.Location = new System.Drawing.Point(16, 64);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(200, 24);
+            this.lblNombre.Size = new System.Drawing.Size(201, 24);
             this.lblNombre.TabIndex = 86;
             this.lblNombre.Text = "Nombre del formato:";
             // 
             // txtNombre
             // 
-            this.txtNombre.Font = new System.Drawing.Font("Onest Light", 12F);
+            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtNombre.Location = new System.Drawing.Point(20, 91);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(178, 28);
+            this.txtNombre.Size = new System.Drawing.Size(178, 26);
             this.txtNombre.TabIndex = 85;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(16, 140);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(195, 24);
+            this.label1.Size = new System.Drawing.Size(199, 24);
             this.label1.TabIndex = 87;
             this.label1.Text = "Cantidad de grupos:";
             // 
             // numGrupos
             // 
-            this.numGrupos.Font = new System.Drawing.Font("Onest Bold", 10.25F, System.Drawing.FontStyle.Bold);
+            this.numGrupos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold);
             this.numGrupos.Location = new System.Drawing.Point(20, 170);
             this.numGrupos.Maximum = new decimal(new int[] {
             16,
@@ -118,7 +123,7 @@
             0,
             0});
             this.numGrupos.Name = "numGrupos";
-            this.numGrupos.Size = new System.Drawing.Size(120, 25);
+            this.numGrupos.Size = new System.Drawing.Size(120, 23);
             this.numGrupos.TabIndex = 88;
             this.numGrupos.Value = new decimal(new int[] {
             1,
@@ -129,7 +134,7 @@
             // 
             // numEquipos
             // 
-            this.numEquipos.Font = new System.Drawing.Font("Onest Bold", 10.25F, System.Drawing.FontStyle.Bold);
+            this.numEquipos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold);
             this.numEquipos.Increment = new decimal(new int[] {
             2,
             0,
@@ -147,7 +152,7 @@
             0,
             0});
             this.numEquipos.Name = "numEquipos";
-            this.numEquipos.Size = new System.Drawing.Size(120, 25);
+            this.numEquipos.Size = new System.Drawing.Size(120, 23);
             this.numEquipos.TabIndex = 90;
             this.numEquipos.Value = new decimal(new int[] {
             2,
@@ -160,10 +165,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(320, 64);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(263, 24);
+            this.label2.Size = new System.Drawing.Size(267, 24);
             this.label2.TabIndex = 89;
             this.label2.Text = "Cantidad de equipos (total):";
             // 
@@ -171,34 +176,34 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(320, 140);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(233, 24);
+            this.label3.Size = new System.Drawing.Size(232, 24);
             this.label3.TabIndex = 91;
             this.label3.Text = "Partidos de ida y vuelta:";
             // 
             // cmbIdaVuelta
             // 
             this.cmbIdaVuelta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbIdaVuelta.Font = new System.Drawing.Font("Onest Light", 11F);
+            this.cmbIdaVuelta.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.cmbIdaVuelta.FormattingEnabled = true;
             this.cmbIdaVuelta.Items.AddRange(new object[] {
             "Si",
             "No"});
             this.cmbIdaVuelta.Location = new System.Drawing.Point(324, 165);
             this.cmbIdaVuelta.Name = "cmbIdaVuelta";
-            this.cmbIdaVuelta.Size = new System.Drawing.Size(120, 28);
+            this.cmbIdaVuelta.Size = new System.Drawing.Size(120, 26);
             this.cmbIdaVuelta.TabIndex = 92;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(16, 220);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 24);
+            this.label4.Size = new System.Drawing.Size(77, 24);
             this.label4.TabIndex = 93;
             this.label4.Text = "Playoff:";
             // 
@@ -206,16 +211,16 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(320, 220);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(221, 24);
+            this.label6.Size = new System.Drawing.Size(218, 24);
             this.label6.TabIndex = 97;
             this.label6.Text = "Playoff de ida y vuelta:";
             // 
             // numJornadas
             // 
-            this.numJornadas.Font = new System.Drawing.Font("Onest Bold", 10.25F, System.Drawing.FontStyle.Bold);
+            this.numJornadas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold);
             this.numJornadas.Location = new System.Drawing.Point(20, 344);
             this.numJornadas.Maximum = new decimal(new int[] {
             20,
@@ -228,7 +233,7 @@
             0,
             0});
             this.numJornadas.Name = "numJornadas";
-            this.numJornadas.Size = new System.Drawing.Size(120, 25);
+            this.numJornadas.Size = new System.Drawing.Size(120, 23);
             this.numJornadas.TabIndex = 100;
             this.numJornadas.Value = new decimal(new int[] {
             3,
@@ -240,31 +245,31 @@
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(16, 308);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(194, 24);
+            this.label7.Size = new System.Drawing.Size(196, 24);
             this.label7.TabIndex = 99;
             this.label7.Text = "Días entre jornadas:";
             // 
             // cmbIdaVueltaPlayoff
             // 
             this.cmbIdaVueltaPlayoff.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbIdaVueltaPlayoff.Font = new System.Drawing.Font("Onest Light", 11F);
+            this.cmbIdaVueltaPlayoff.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.cmbIdaVueltaPlayoff.FormattingEnabled = true;
             this.cmbIdaVueltaPlayoff.Items.AddRange(new object[] {
             "Si",
             "No"});
             this.cmbIdaVueltaPlayoff.Location = new System.Drawing.Point(324, 250);
             this.cmbIdaVueltaPlayoff.Name = "cmbIdaVueltaPlayoff";
-            this.cmbIdaVueltaPlayoff.Size = new System.Drawing.Size(120, 28);
+            this.cmbIdaVueltaPlayoff.Size = new System.Drawing.Size(120, 26);
             this.cmbIdaVueltaPlayoff.TabIndex = 101;
             this.cmbIdaVueltaPlayoff.SelectedIndexChanged += new System.EventHandler(this.cmbIdaVueltaPlayoff_SelectedIndexChanged);
             // 
             // cmbPlayoff
             // 
             this.cmbPlayoff.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPlayoff.Font = new System.Drawing.Font("Onest Light", 11F);
+            this.cmbPlayoff.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.cmbPlayoff.FormattingEnabled = true;
             this.cmbPlayoff.Items.AddRange(new object[] {
             "No",
@@ -274,20 +279,21 @@
             "Final"});
             this.cmbPlayoff.Location = new System.Drawing.Point(20, 250);
             this.cmbPlayoff.Name = "cmbPlayoff";
-            this.cmbPlayoff.Size = new System.Drawing.Size(178, 28);
+            this.cmbPlayoff.Size = new System.Drawing.Size(178, 26);
             this.cmbPlayoff.TabIndex = 102;
             this.cmbPlayoff.SelectedIndexChanged += new System.EventHandler(this.cmbPlayoff_SelectedIndexChanged);
             // 
             // btnAgregar
             // 
             this.btnAgregar.Animated = true;
+            this.btnAgregar.BackColor = System.Drawing.Color.Transparent;
             this.btnAgregar.BorderRadius = 20;
             this.btnAgregar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnAgregar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnAgregar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnAgregar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnAgregar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.btnAgregar.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
             this.btnAgregar.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnAgregar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
@@ -301,13 +307,14 @@
             // 
             // btnCancelar
             // 
+            this.btnCancelar.BackColor = System.Drawing.Color.Transparent;
             this.btnCancelar.BorderRadius = 20;
             this.btnCancelar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnCancelar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnCancelar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnCancelar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnCancelar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
-            this.btnCancelar.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.Black;
             this.btnCancelar.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnCancelar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
@@ -319,12 +326,49 @@
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel4.Location = new System.Drawing.Point(622, 50);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(3, 360);
+            this.panel4.TabIndex = 107;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(3, 410);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(622, 10);
+            this.panel3.TabIndex = 106;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 50);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(3, 370);
+            this.panel1.TabIndex = 105;
+            // 
+            // guna2BorderlessForm1
+            // 
+            this.guna2BorderlessForm1.BorderRadius = 30;
+            this.guna2BorderlessForm1.ContainerControl = this;
+            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm1.TransparentWhileDrag = true;
+            // 
             // AggFormato
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(625, 420);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.cmbPlayoff);
@@ -376,5 +420,9 @@
         public System.Windows.Forms.ComboBox cmbPlayoff;
         private Guna.UI2.WinForms.Guna2Button btnAgregar;
         private Guna.UI2.WinForms.Guna2Button btnCancelar;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel1;
+        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
     }
 }

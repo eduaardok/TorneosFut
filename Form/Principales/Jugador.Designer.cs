@@ -48,10 +48,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Onest Bold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(25, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(264, 34);
+            this.label2.Size = new System.Drawing.Size(261, 31);
             this.label2.TabIndex = 10;
             this.label2.Text = "Lista de Jugadores";
             // 
@@ -59,13 +59,14 @@
             // 
             this.guna2Button1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.guna2Button1.Animated = true;
+            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
             this.guna2Button1.BorderRadius = 20;
             this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.HoverState.BorderColor = System.Drawing.Color.Black;
             this.guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
@@ -81,6 +82,7 @@
             // 
             this.btnAgregarJugador.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAgregarJugador.Animated = true;
+            this.btnAgregarJugador.BackColor = System.Drawing.Color.Transparent;
             this.btnAgregarJugador.BorderRadius = 20;
             this.btnAgregarJugador.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnAgregarJugador.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -88,7 +90,7 @@
             this.btnAgregarJugador.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnAgregarJugador.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnAgregarJugador.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
-            this.btnAgregarJugador.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarJugador.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarJugador.ForeColor = System.Drawing.Color.Black;
             this.btnAgregarJugador.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnAgregarJugador.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
@@ -162,7 +164,7 @@
             // txtBuscarJugador
             // 
             this.txtBuscarJugador.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtBuscarJugador.Font = new System.Drawing.Font("Onest Light", 20F);
+            this.txtBuscarJugador.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.txtBuscarJugador.ForeColor = System.Drawing.Color.Gray;
             this.txtBuscarJugador.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtBuscarJugador.Location = new System.Drawing.Point(121, 115);
@@ -189,13 +191,14 @@
             // 
             this.btnEstadistica.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnEstadistica.Animated = true;
+            this.btnEstadistica.BackColor = System.Drawing.Color.Transparent;
             this.btnEstadistica.BorderRadius = 20;
             this.btnEstadistica.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnEstadistica.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnEstadistica.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnEstadistica.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnEstadistica.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.btnEstadistica.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEstadistica.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEstadistica.ForeColor = System.Drawing.Color.White;
             this.btnEstadistica.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnEstadistica.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));

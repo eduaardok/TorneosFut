@@ -69,7 +69,7 @@
             this.btnSalir.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnSalir.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnSalir.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
-            this.btnSalir.Font = new System.Drawing.Font("Onest Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.Black;
             this.btnSalir.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnSalir.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
@@ -84,13 +84,14 @@
             // 
             this.btnGolAsisTarjetas.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnGolAsisTarjetas.Animated = true;
+            this.btnGolAsisTarjetas.BackColor = System.Drawing.Color.Transparent;
             this.btnGolAsisTarjetas.BorderRadius = 20;
             this.btnGolAsisTarjetas.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnGolAsisTarjetas.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnGolAsisTarjetas.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnGolAsisTarjetas.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnGolAsisTarjetas.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.btnGolAsisTarjetas.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGolAsisTarjetas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGolAsisTarjetas.ForeColor = System.Drawing.Color.White;
             this.btnGolAsisTarjetas.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnGolAsisTarjetas.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
@@ -115,7 +116,7 @@
             // txtBuscarPartido
             // 
             this.txtBuscarPartido.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtBuscarPartido.Font = new System.Drawing.Font("Onest Light", 20F);
+            this.txtBuscarPartido.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.txtBuscarPartido.ForeColor = System.Drawing.Color.Gray;
             this.txtBuscarPartido.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtBuscarPartido.Location = new System.Drawing.Point(68, 63);
@@ -176,13 +177,14 @@
             // 
             this.btnGenerarPartidos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnGenerarPartidos.Animated = true;
+            this.btnGenerarPartidos.BackColor = System.Drawing.Color.Transparent;
             this.btnGenerarPartidos.BorderRadius = 20;
             this.btnGenerarPartidos.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnGenerarPartidos.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnGenerarPartidos.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnGenerarPartidos.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnGenerarPartidos.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.btnGenerarPartidos.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerarPartidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerarPartidos.ForeColor = System.Drawing.Color.White;
             this.btnGenerarPartidos.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnGenerarPartidos.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
@@ -215,7 +217,7 @@
             this.dgvPartido.CausesValidation = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
@@ -225,7 +227,7 @@
             this.dgvPartido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
@@ -240,7 +242,7 @@
             this.dgvPartido.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -262,13 +264,14 @@
             // 
             this.btnAsignarFechas.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAsignarFechas.Animated = true;
+            this.btnAsignarFechas.BackColor = System.Drawing.Color.Transparent;
             this.btnAsignarFechas.BorderRadius = 20;
             this.btnAsignarFechas.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnAsignarFechas.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnAsignarFechas.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnAsignarFechas.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnAsignarFechas.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.btnAsignarFechas.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAsignarFechas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAsignarFechas.ForeColor = System.Drawing.Color.White;
             this.btnAsignarFechas.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnAsignarFechas.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
@@ -284,13 +287,14 @@
             // 
             this.btnEstadoPartido.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnEstadoPartido.Animated = true;
+            this.btnEstadoPartido.BackColor = System.Drawing.Color.Transparent;
             this.btnEstadoPartido.BorderRadius = 20;
             this.btnEstadoPartido.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnEstadoPartido.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnEstadoPartido.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnEstadoPartido.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnEstadoPartido.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.btnEstadoPartido.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEstadoPartido.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEstadoPartido.ForeColor = System.Drawing.Color.White;
             this.btnEstadoPartido.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnEstadoPartido.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
@@ -305,7 +309,7 @@
             // btnTabla
             // 
             this.btnTabla.Animated = true;
-            this.btnTabla.BackColor = System.Drawing.Color.White;
+            this.btnTabla.BackColor = System.Drawing.Color.Transparent;
             this.btnTabla.BorderColor = System.Drawing.Color.Empty;
             this.btnTabla.BorderRadius = 20;
             this.btnTabla.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -313,7 +317,7 @@
             this.btnTabla.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnTabla.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnTabla.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
-            this.btnTabla.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnTabla.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnTabla.ForeColor = System.Drawing.Color.Black;
             this.btnTabla.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnTabla.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
@@ -330,13 +334,14 @@
             // 
             this.btnPosiciones.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnPosiciones.Animated = true;
+            this.btnPosiciones.BackColor = System.Drawing.Color.Transparent;
             this.btnPosiciones.BorderRadius = 20;
             this.btnPosiciones.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnPosiciones.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnPosiciones.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnPosiciones.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnPosiciones.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.btnPosiciones.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPosiciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPosiciones.ForeColor = System.Drawing.Color.White;
             this.btnPosiciones.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnPosiciones.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));

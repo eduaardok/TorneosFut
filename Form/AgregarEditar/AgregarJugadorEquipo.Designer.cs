@@ -69,11 +69,11 @@
             // lblEncabezado
             // 
             this.lblEncabezado.AutoSize = true;
-            this.lblEncabezado.Font = new System.Drawing.Font("Onest Bold", 15.75F, System.Drawing.FontStyle.Bold);
+            this.lblEncabezado.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.lblEncabezado.ForeColor = System.Drawing.Color.White;
             this.lblEncabezado.Location = new System.Drawing.Point(3, 0);
             this.lblEncabezado.Name = "lblEncabezado";
-            this.lblEncabezado.Size = new System.Drawing.Size(330, 26);
+            this.lblEncabezado.Size = new System.Drawing.Size(354, 25);
             this.lblEncabezado.TabIndex = 34;
             this.lblEncabezado.Text = "AGREGAR JUGADOR A EQUIPO";
             // 
@@ -84,7 +84,7 @@
             this.btnAgregar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnAgregar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnAgregar.FillColor = System.Drawing.Color.White;
-            this.btnAgregar.Font = new System.Drawing.Font("Onest Bold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.Black;
             this.btnAgregar.HoverState.CustomBorderColor = System.Drawing.Color.White;
             this.btnAgregar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
@@ -103,7 +103,7 @@
             this.btnQuitar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnQuitar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnQuitar.FillColor = System.Drawing.Color.White;
-            this.btnQuitar.Font = new System.Drawing.Font("Onest Bold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuitar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuitar.ForeColor = System.Drawing.Color.Black;
             this.btnQuitar.HoverState.CustomBorderColor = System.Drawing.Color.White;
             this.btnQuitar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
@@ -126,24 +126,25 @@
             // 
             this.lblDorsal.AutoSize = true;
             this.lblDorsal.BackColor = System.Drawing.Color.Transparent;
-            this.lblDorsal.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblDorsal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblDorsal.Location = new System.Drawing.Point(297, 256);
             this.lblDorsal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDorsal.Name = "lblDorsal";
-            this.lblDorsal.Size = new System.Drawing.Size(74, 24);
+            this.lblDorsal.Size = new System.Drawing.Size(75, 24);
             this.lblDorsal.TabIndex = 75;
             this.lblDorsal.Text = "Dorsal:";
             // 
             // btngCancelar
             // 
             this.btngCancelar.Animated = true;
+            this.btngCancelar.BackColor = System.Drawing.Color.Transparent;
             this.btngCancelar.BorderRadius = 20;
             this.btngCancelar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btngCancelar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btngCancelar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btngCancelar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btngCancelar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
-            this.btngCancelar.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btngCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.btngCancelar.ForeColor = System.Drawing.Color.Black;
             this.btngCancelar.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btngCancelar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
@@ -158,11 +159,11 @@
             // lbltotal
             // 
             this.lbltotal.AutoSize = true;
-            this.lbltotal.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lbltotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbltotal.Location = new System.Drawing.Point(395, 380);
             this.lbltotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbltotal.Name = "lbltotal";
-            this.lbltotal.Size = new System.Drawing.Size(65, 24);
+            this.lbltotal.Size = new System.Drawing.Size(68, 24);
             this.lbltotal.TabIndex = 69;
             this.lbltotal.Text = "Total: ";
             // 
@@ -170,11 +171,11 @@
             // 
             this.lblequipoder.AutoSize = true;
             this.lblequipoder.BackColor = System.Drawing.Color.Transparent;
-            this.lblequipoder.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblequipoder.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblequipoder.Location = new System.Drawing.Point(428, 35);
             this.lblequipoder.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblequipoder.Name = "lblequipoder";
-            this.lblequipoder.Size = new System.Drawing.Size(224, 24);
+            this.lblequipoder.Size = new System.Drawing.Size(234, 24);
             this.lblequipoder.TabIndex = 68;
             this.lblequipoder.Text = "Jugadores en el Equipo";
             // 
@@ -182,11 +183,11 @@
             // 
             this.lblequipoizq.AutoSize = true;
             this.lblequipoizq.BackColor = System.Drawing.Color.Transparent;
-            this.lblequipoizq.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblequipoizq.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblequipoizq.Location = new System.Drawing.Point(59, 35);
             this.lblequipoizq.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblequipoizq.Name = "lblequipoizq";
-            this.lblequipoizq.Size = new System.Drawing.Size(206, 24);
+            this.lblequipoizq.Size = new System.Drawing.Size(212, 24);
             this.lblequipoizq.TabIndex = 67;
             this.lblequipoizq.Text = "Jugadores sin equipo";
             // 
@@ -227,7 +228,7 @@
             // To
             // 
             this.To.AutoSize = true;
-            this.To.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.To.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.To.Location = new System.Drawing.Point(460, 382);
             this.To.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.To.Name = "To";

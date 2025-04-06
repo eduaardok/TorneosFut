@@ -70,11 +70,11 @@
             // lblEncabezado
             // 
             this.lblEncabezado.AutoSize = true;
-            this.lblEncabezado.Font = new System.Drawing.Font("Onest Bold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEncabezado.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEncabezado.ForeColor = System.Drawing.Color.White;
             this.lblEncabezado.Location = new System.Drawing.Point(15, 9);
             this.lblEncabezado.Name = "lblEncabezado";
-            this.lblEncabezado.Size = new System.Drawing.Size(200, 26);
+            this.lblEncabezado.Size = new System.Drawing.Size(216, 25);
             this.lblEncabezado.TabIndex = 33;
             this.lblEncabezado.Text = "AGREGAR EQUIPO";
             // 
@@ -82,17 +82,17 @@
             // 
             this.Eq.AutoSize = true;
             this.Eq.BackColor = System.Drawing.Color.Transparent;
-            this.Eq.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Eq.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Eq.Location = new System.Drawing.Point(32, 254);
             this.Eq.Name = "Eq";
-            this.Eq.Size = new System.Drawing.Size(161, 24);
+            this.Eq.Size = new System.Drawing.Size(166, 24);
             this.Eq.TabIndex = 97;
             this.Eq.Text = "Equipación local";
             // 
             // cmbEquipacionLocal
             // 
             this.cmbEquipacionLocal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbEquipacionLocal.Font = new System.Drawing.Font("Onest Light", 12F);
+            this.cmbEquipacionLocal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.cmbEquipacionLocal.FormattingEnabled = true;
             this.cmbEquipacionLocal.Items.AddRange(new object[] {
             "Rojo",
@@ -167,24 +167,24 @@
             "Morado claro"});
             this.cmbEquipacionLocal.Location = new System.Drawing.Point(36, 281);
             this.cmbEquipacionLocal.Name = "cmbEquipacionLocal";
-            this.cmbEquipacionLocal.Size = new System.Drawing.Size(178, 29);
+            this.cmbEquipacionLocal.Size = new System.Drawing.Size(178, 28);
             this.cmbEquipacionLocal.TabIndex = 96;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(32, 323);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(199, 24);
+            this.label2.Size = new System.Drawing.Size(197, 24);
             this.label2.TabIndex = 95;
             this.label2.Text = "Equipación visitante";
             // 
             // cmbequipacionvisitante
             // 
             this.cmbequipacionvisitante.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbequipacionvisitante.Font = new System.Drawing.Font("Onest Light", 12F);
+            this.cmbequipacionvisitante.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.cmbequipacionvisitante.FormattingEnabled = true;
             this.cmbequipacionvisitante.Items.AddRange(new object[] {
             "Rojo",
@@ -259,19 +259,20 @@
             "Morado claro"});
             this.cmbequipacionvisitante.Location = new System.Drawing.Point(37, 348);
             this.cmbequipacionvisitante.Name = "cmbequipacionvisitante";
-            this.cmbequipacionvisitante.Size = new System.Drawing.Size(178, 29);
+            this.cmbequipacionvisitante.Size = new System.Drawing.Size(178, 28);
             this.cmbequipacionvisitante.TabIndex = 94;
             // 
             // btnSeleccionarIMG
             // 
             this.btnSeleccionarIMG.Animated = true;
+            this.btnSeleccionarIMG.BackColor = System.Drawing.Color.Transparent;
             this.btnSeleccionarIMG.BorderRadius = 14;
             this.btnSeleccionarIMG.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnSeleccionarIMG.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnSeleccionarIMG.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnSeleccionarIMG.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnSeleccionarIMG.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.btnSeleccionarIMG.Font = new System.Drawing.Font("Onest Bold", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSeleccionarIMG.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeleccionarIMG.ForeColor = System.Drawing.Color.White;
             this.btnSeleccionarIMG.HoverState.CustomBorderColor = System.Drawing.Color.Black;
             this.btnSeleccionarIMG.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
@@ -287,7 +288,7 @@
             // 
             this.lbl.AutoSize = true;
             this.lbl.BackColor = System.Drawing.Color.Transparent;
-            this.lbl.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl.Location = new System.Drawing.Point(33, 56);
             this.lbl.Name = "lbl";
             this.lbl.Size = new System.Drawing.Size(35, 24);
@@ -296,21 +297,22 @@
             // 
             // txtId
             // 
-            this.txtId.Font = new System.Drawing.Font("Onest Light", 12F);
+            this.txtId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtId.Location = new System.Drawing.Point(36, 83);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(121, 28);
+            this.txtId.Size = new System.Drawing.Size(121, 26);
             this.txtId.TabIndex = 90;
             // 
             // btnCancelar
             // 
+            this.btnCancelar.BackColor = System.Drawing.Color.Transparent;
             this.btnCancelar.BorderRadius = 20;
             this.btnCancelar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnCancelar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnCancelar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnCancelar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnCancelar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
-            this.btnCancelar.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.Black;
             this.btnCancelar.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnCancelar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
@@ -325,13 +327,14 @@
             // btnAgregar
             // 
             this.btnAgregar.Animated = true;
+            this.btnAgregar.BackColor = System.Drawing.Color.Transparent;
             this.btnAgregar.BorderRadius = 20;
             this.btnAgregar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnAgregar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnAgregar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnAgregar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnAgregar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.btnAgregar.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
             this.btnAgregar.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnAgregar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
@@ -347,7 +350,7 @@
             // 
             this.lblPosicion.AutoSize = true;
             this.lblPosicion.BackColor = System.Drawing.Color.Transparent;
-            this.lblPosicion.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPosicion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPosicion.Location = new System.Drawing.Point(33, 380);
             this.lblPosicion.Name = "lblPosicion";
             this.lblPosicion.Size = new System.Drawing.Size(79, 24);
@@ -358,10 +361,10 @@
             // 
             this.lblsexo.AutoSize = true;
             this.lblsexo.BackColor = System.Drawing.Color.Transparent;
-            this.lblsexo.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblsexo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblsexo.Location = new System.Drawing.Point(33, 195);
             this.lblsexo.Name = "lblsexo";
-            this.lblsexo.Size = new System.Drawing.Size(78, 24);
+            this.lblsexo.Size = new System.Drawing.Size(80, 24);
             this.lblsexo.TabIndex = 86;
             this.lblsexo.Text = "Género";
             // 
@@ -369,10 +372,10 @@
             // 
             this.lblapellido.AutoSize = true;
             this.lblapellido.BackColor = System.Drawing.Color.Transparent;
-            this.lblapellido.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblapellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblapellido.Location = new System.Drawing.Point(32, 128);
             this.lblapellido.Name = "lblapellido";
-            this.lblapellido.Size = new System.Drawing.Size(111, 24);
+            this.lblapellido.Size = new System.Drawing.Size(110, 24);
             this.lblapellido.TabIndex = 85;
             this.lblapellido.Text = "Presidente";
             // 
@@ -380,50 +383,50 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.BackColor = System.Drawing.Color.Transparent;
-            this.lblNombre.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.Location = new System.Drawing.Point(186, 56);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(84, 24);
+            this.lblNombre.Size = new System.Drawing.Size(85, 24);
             this.lblNombre.TabIndex = 84;
             this.lblNombre.Text = "Nombre";
             // 
             // cmbEstadio
             // 
             this.cmbEstadio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbEstadio.Font = new System.Drawing.Font("Onest Light", 12F);
+            this.cmbEstadio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.cmbEstadio.FormattingEnabled = true;
             this.cmbEstadio.Location = new System.Drawing.Point(36, 402);
             this.cmbEstadio.Name = "cmbEstadio";
-            this.cmbEstadio.Size = new System.Drawing.Size(178, 29);
+            this.cmbEstadio.Size = new System.Drawing.Size(178, 28);
             this.cmbEstadio.TabIndex = 83;
             // 
             // txtPresidente
             // 
-            this.txtPresidente.Font = new System.Drawing.Font("Onest Light", 12F);
+            this.txtPresidente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtPresidente.Location = new System.Drawing.Point(36, 155);
             this.txtPresidente.Name = "txtPresidente";
-            this.txtPresidente.Size = new System.Drawing.Size(178, 28);
+            this.txtPresidente.Size = new System.Drawing.Size(178, 26);
             this.txtPresidente.TabIndex = 82;
             // 
             // cmbGenero
             // 
             this.cmbGenero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbGenero.Font = new System.Drawing.Font("Onest Light", 12F);
+            this.cmbGenero.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.cmbGenero.FormattingEnabled = true;
             this.cmbGenero.Items.AddRange(new object[] {
             "Masculino",
             "Femenino"});
             this.cmbGenero.Location = new System.Drawing.Point(36, 222);
             this.cmbGenero.Name = "cmbGenero";
-            this.cmbGenero.Size = new System.Drawing.Size(178, 29);
+            this.cmbGenero.Size = new System.Drawing.Size(178, 28);
             this.cmbGenero.TabIndex = 81;
             // 
             // txtNombreClub
             // 
-            this.txtNombreClub.Font = new System.Drawing.Font("Onest Light", 12F);
+            this.txtNombreClub.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtNombreClub.Location = new System.Drawing.Point(163, 83);
             this.txtNombreClub.Name = "txtNombreClub";
-            this.txtNombreClub.Size = new System.Drawing.Size(178, 28);
+            this.txtNombreClub.Size = new System.Drawing.Size(178, 26);
             this.txtNombreClub.TabIndex = 80;
             // 
             // ptbImagen

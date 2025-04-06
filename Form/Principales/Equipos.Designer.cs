@@ -66,10 +66,10 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Font = new System.Drawing.Font("Onest Bold", 25F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(51, 108);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(151, 43);
+            this.label1.Size = new System.Drawing.Size(148, 39);
             this.label1.TabIndex = 6;
             this.label1.Text = "Equipos";
             // 
@@ -125,13 +125,14 @@
             // 
             this.btngMostrar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btngMostrar.Animated = true;
+            this.btngMostrar.BackColor = System.Drawing.Color.Transparent;
             this.btngMostrar.BorderRadius = 20;
             this.btngMostrar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btngMostrar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btngMostrar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btngMostrar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btngMostrar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.btngMostrar.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btngMostrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btngMostrar.ForeColor = System.Drawing.Color.White;
             this.btngMostrar.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btngMostrar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
@@ -146,7 +147,7 @@
             // txtBuscarEquipo
             // 
             this.txtBuscarEquipo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtBuscarEquipo.Font = new System.Drawing.Font("Onest Light", 20F);
+            this.txtBuscarEquipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.txtBuscarEquipo.ForeColor = System.Drawing.Color.Gray;
             this.txtBuscarEquipo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtBuscarEquipo.Location = new System.Drawing.Point(177, 175);
@@ -163,6 +164,7 @@
             // 
             this.btngEditar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btngEditar.Animated = true;
+            this.btngEditar.BackColor = System.Drawing.Color.Transparent;
             this.btngEditar.BorderColor = System.Drawing.Color.Empty;
             this.btngEditar.BorderRadius = 20;
             this.btngEditar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -170,7 +172,7 @@
             this.btngEditar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btngEditar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btngEditar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
-            this.btngEditar.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btngEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btngEditar.ForeColor = System.Drawing.Color.Black;
             this.btngEditar.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btngEditar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
@@ -199,7 +201,7 @@
             // 
             this.btnEstadio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
             this.btnEstadio.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEstadio.Font = new System.Drawing.Font("Onest Bold", 20F, System.Drawing.FontStyle.Bold);
+            this.btnEstadio.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
             this.btnEstadio.ForeColor = System.Drawing.Color.White;
             this.btnEstadio.Image = global::TorneosFut.Properties.Resources.icons8_estadio_50;
             this.btnEstadio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -215,7 +217,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Font = new System.Drawing.Font("Onest Bold", 20F, System.Drawing.FontStyle.Bold);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = global::TorneosFut.Properties.Resources.icons8_llamada_de_conferencia_64;
             this.button1.Location = new System.Drawing.Point(21, 9);
@@ -229,7 +231,7 @@
             // 
             this.btnJugador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
             this.btnJugador.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnJugador.Font = new System.Drawing.Font("Onest Bold", 20F, System.Drawing.FontStyle.Bold);
+            this.btnJugador.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
             this.btnJugador.ForeColor = System.Drawing.Color.White;
             this.btnJugador.Image = global::TorneosFut.Properties.Resources.icons8_fútbol_64;
             this.btnJugador.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -245,7 +247,7 @@
             // 
             this.btnEntrenador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
             this.btnEntrenador.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEntrenador.Font = new System.Drawing.Font("Onest Bold", 20F, System.Drawing.FontStyle.Bold);
+            this.btnEntrenador.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
             this.btnEntrenador.ForeColor = System.Drawing.Color.White;
             this.btnEntrenador.Image = global::TorneosFut.Properties.Resources.icons8_male_teacher_64;
             this.btnEntrenador.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -262,13 +264,14 @@
             // 
             this.guna2Button1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.guna2Button1.Animated = true;
+            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
             this.guna2Button1.BorderRadius = 20;
             this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.HoverState.BorderColor = System.Drawing.Color.Black;
             this.guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
@@ -283,9 +286,10 @@
             // panelmodul
             // 
             this.panelmodul.BackColor = System.Drawing.Color.White;
-            this.panelmodul.Location = new System.Drawing.Point(0, 309);
+            this.panelmodul.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelmodul.Location = new System.Drawing.Point(0, 100);
             this.panelmodul.Name = "panelmodul";
-            this.panelmodul.Size = new System.Drawing.Size(1121, 602);
+            this.panelmodul.Size = new System.Drawing.Size(1490, 811);
             this.panelmodul.TabIndex = 29;
             this.panelmodul.Paint += new System.Windows.Forms.PaintEventHandler(this.panelmodul_Paint);
             // 
@@ -315,13 +319,14 @@
             // 
             this.btnEquipos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnEquipos.Animated = true;
+            this.btnEquipos.BackColor = System.Drawing.Color.Transparent;
             this.btnEquipos.BorderRadius = 20;
             this.btnEquipos.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnEquipos.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnEquipos.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnEquipos.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnEquipos.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.btnEquipos.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEquipos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEquipos.ForeColor = System.Drawing.Color.White;
             this.btnEquipos.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnEquipos.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
@@ -337,12 +342,13 @@
             // 
             this.btnListas.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnListas.Animated = true;
+            this.btnListas.BackColor = System.Drawing.Color.Transparent;
             this.btnListas.BorderRadius = 20;
             this.btnListas.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnListas.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnListas.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnListas.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.btnListas.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnListas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnListas.ForeColor = System.Drawing.Color.White;
             this.btnListas.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnListas.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));

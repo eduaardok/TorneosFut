@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.panelOpciones = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnAuditorias = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
@@ -50,7 +51,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panelModulos = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
             this.panelOpciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -74,6 +74,24 @@
             this.panelOpciones.Size = new System.Drawing.Size(294, 618);
             this.panelOpciones.TabIndex = 8;
             // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Image = global::TorneosFut.Properties.Resources.icons8_patrocinador_50;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(0, 328);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(294, 79);
+            this.button3.TabIndex = 15;
+            this.button3.Text = "GESTIÓN FINANCIERA";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click_2);
+            this.button3.MouseEnter += new System.EventHandler(this.button3_MouseEnter);
+            this.button3.MouseLeave += new System.EventHandler(this.button3_MouseLeave);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
@@ -90,7 +108,7 @@
             // 
             this.btnAuditorias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
             this.btnAuditorias.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAuditorias.Font = new System.Drawing.Font("Onest Bold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAuditorias.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAuditorias.ForeColor = System.Drawing.Color.White;
             this.btnAuditorias.Image = global::TorneosFut.Properties.Resources.icons8_audit_50;
             this.btnAuditorias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -108,7 +126,7 @@
             // 
             this.btnUsuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
             this.btnUsuarios.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnUsuarios.Font = new System.Drawing.Font("Onest Bold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsuarios.ForeColor = System.Drawing.Color.White;
             this.btnUsuarios.Image = global::TorneosFut.Properties.Resources.icons8_usuario_50;
             this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -126,7 +144,7 @@
             // 
             this.btnEquipos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
             this.btnEquipos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEquipos.Font = new System.Drawing.Font("Onest Bold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEquipos.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEquipos.ForeColor = System.Drawing.Color.White;
             this.btnEquipos.Image = global::TorneosFut.Properties.Resources.icons8_llamada_de_conferencia_64;
             this.btnEquipos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -144,7 +162,7 @@
             // 
             this.btnTorneos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
             this.btnTorneos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnTorneos.Font = new System.Drawing.Font("Onest Bold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTorneos.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTorneos.ForeColor = System.Drawing.Color.White;
             this.btnTorneos.Image = global::TorneosFut.Properties.Resources.icons8_trofeo_50;
             this.btnTorneos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -256,29 +274,29 @@
             this.ddbtnOpcionesU.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ttmiCambiarClave,
             this.ttmiCerrarSesion});
-            this.ddbtnOpcionesU.Font = new System.Drawing.Font("Onest Bold", 20F, System.Drawing.FontStyle.Bold);
+            this.ddbtnOpcionesU.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
             this.ddbtnOpcionesU.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.ddbtnOpcionesU.Image = ((System.Drawing.Image)(resources.GetObject("ddbtnOpcionesU.Image")));
             this.ddbtnOpcionesU.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ddbtnOpcionesU.Name = "ddbtnOpcionesU";
-            this.ddbtnOpcionesU.Size = new System.Drawing.Size(151, 47);
+            this.ddbtnOpcionesU.Size = new System.Drawing.Size(159, 47);
             this.ddbtnOpcionesU.Text = "USUARIO";
             // 
             // ttmiCambiarClave
             // 
             this.ttmiCambiarClave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.ttmiCambiarClave.Font = new System.Drawing.Font("Onest Bold", 10F, System.Drawing.FontStyle.Bold);
+            this.ttmiCambiarClave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.ttmiCambiarClave.Name = "ttmiCambiarClave";
-            this.ttmiCambiarClave.Size = new System.Drawing.Size(199, 22);
+            this.ttmiCambiarClave.Size = new System.Drawing.Size(207, 22);
             this.ttmiCambiarClave.Text = "CAMBIAR CLAVE";
             this.ttmiCambiarClave.Click += new System.EventHandler(this.ttmiCambiarClave_Click);
             // 
             // ttmiCerrarSesion
             // 
             this.ttmiCerrarSesion.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.ttmiCerrarSesion.Font = new System.Drawing.Font("Onest Bold", 10F, System.Drawing.FontStyle.Bold);
+            this.ttmiCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.ttmiCerrarSesion.Name = "ttmiCerrarSesion";
-            this.ttmiCerrarSesion.Size = new System.Drawing.Size(199, 22);
+            this.ttmiCerrarSesion.Size = new System.Drawing.Size(207, 22);
             this.ttmiCerrarSesion.Text = "CERRAR SESION";
             this.ttmiCerrarSesion.Click += new System.EventHandler(this.ttmiCerrarSesion_Click);
             // 
@@ -311,33 +329,16 @@
             this.panelModulos.TabIndex = 9;
             this.panelModulos.Paint += new System.Windows.Forms.PaintEventHandler(this.panelModulos_Paint);
             // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.Font = new System.Drawing.Font("Onest Bold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(0, 328);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(294, 79);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "GESTIÓN FINANCIERA";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click_2);
-            this.button3.MouseEnter += new System.EventHandler(this.button3_MouseEnter);
-            this.button3.MouseLeave += new System.EventHandler(this.button3_MouseLeave);
-            // 
             // Principal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1330, 668);
             this.Controls.Add(this.panelModulos);
             this.Controls.Add(this.panelOpciones);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Onest Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);

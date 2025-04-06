@@ -36,6 +36,14 @@ namespace pruebas
         }
         private void editarjugador_Load(object sender, EventArgs e)
         {
+            Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
+            if (!GlobalSettings.ModoOscuro)
+            {
+                panel1.BackColor = Color.FromArgb(251, 3, 140);
+                panel2.BackColor = Color.FromArgb(251, 3, 140);
+                panel3.BackColor = Color.FromArgb(251, 3, 140);
+                panel4.BackColor = Color.FromArgb(251, 3, 140);
+            }
             dgvjugadoresLocales.DataSource = conexion.ListDGV($"select J.IDJugador, JE.IDEquipo  from Jugador_Equipo JE inner join " +
                 $"Jugador J on JE.IDJugador = J.IDJugador inner join Partido P on P.EquipoLocal = JE.IDEquipo" +
                 $" where JE.IDEquipo = P.EquipoLocal and JE.FechaSalida is null and P.IDPartido = {Id}");

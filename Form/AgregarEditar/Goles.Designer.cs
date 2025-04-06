@@ -58,12 +58,12 @@
             this.numEquipos = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvasistencia = new System.Windows.Forms.DataGridView();
-            this.btnQuitarGol = new Guna.UI2.WinForms.Guna2Button();
-            this.btnQuitarAsistencia = new Guna.UI2.WinForms.Guna2Button();
-            this.btnConfirmar = new Guna.UI2.WinForms.Guna2Button();
             this.IDJugador1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDEquipo1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Minuto1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnQuitarGol = new Guna.UI2.WinForms.Guna2Button();
+            this.btnQuitarAsistencia = new Guna.UI2.WinForms.Guna2Button();
+            this.btnConfirmar = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvjugadoresVisitantes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvjugadoresLocales)).BeginInit();
@@ -119,13 +119,14 @@
             // btngAsistencia
             // 
             this.btngAsistencia.Animated = true;
+            this.btngAsistencia.BackColor = System.Drawing.Color.Transparent;
             this.btngAsistencia.BorderRadius = 20;
             this.btngAsistencia.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btngAsistencia.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btngAsistencia.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btngAsistencia.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btngAsistencia.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
-            this.btngAsistencia.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btngAsistencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.btngAsistencia.ForeColor = System.Drawing.Color.Black;
             this.btngAsistencia.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btngAsistencia.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
@@ -215,24 +216,25 @@
             // 
             this.lblequipoizq.AutoSize = true;
             this.lblequipoizq.BackColor = System.Drawing.Color.Transparent;
-            this.lblequipoizq.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblequipoizq.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblequipoizq.Location = new System.Drawing.Point(200, 50);
             this.lblequipoizq.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblequipoizq.Name = "lblequipoizq";
-            this.lblequipoizq.Size = new System.Drawing.Size(182, 24);
+            this.lblequipoizq.Size = new System.Drawing.Size(186, 24);
             this.lblequipoizq.TabIndex = 127;
             this.lblequipoizq.Text = "Jugadores Locales";
             // 
             // guna2Button5
             // 
             this.guna2Button5.Animated = true;
+            this.guna2Button5.BackColor = System.Drawing.Color.Transparent;
             this.guna2Button5.BorderRadius = 20;
             this.guna2Button5.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button5.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2Button5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2Button5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
-            this.guna2Button5.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.guna2Button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.guna2Button5.ForeColor = System.Drawing.Color.Black;
             this.guna2Button5.HoverState.BorderColor = System.Drawing.Color.Black;
             this.guna2Button5.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
@@ -248,7 +250,7 @@
             // 
             this.lblequipoder.AutoSize = true;
             this.lblequipoder.BackColor = System.Drawing.Color.Transparent;
-            this.lblequipoder.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblequipoder.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblequipoder.Location = new System.Drawing.Point(655, 50);
             this.lblequipoder.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblequipoder.Name = "lblequipoder";
@@ -259,11 +261,11 @@
             // lblEncabezado
             // 
             this.lblEncabezado.AutoSize = true;
-            this.lblEncabezado.Font = new System.Drawing.Font("Onest Bold", 15.75F, System.Drawing.FontStyle.Bold);
+            this.lblEncabezado.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.lblEncabezado.ForeColor = System.Drawing.Color.White;
             this.lblEncabezado.Location = new System.Drawing.Point(12, 8);
             this.lblEncabezado.Name = "lblEncabezado";
-            this.lblEncabezado.Size = new System.Drawing.Size(384, 26);
+            this.lblEncabezado.Size = new System.Drawing.Size(414, 25);
             this.lblEncabezado.TabIndex = 33;
             this.lblEncabezado.Text = "GESTIONAR EVENTOS DEL PARTIDO";
             // 
@@ -338,6 +340,7 @@
             // btngGol
             // 
             this.btngGol.Animated = true;
+            this.btngGol.BackColor = System.Drawing.Color.Transparent;
             this.btngGol.BorderColor = System.Drawing.Color.Empty;
             this.btngGol.BorderRadius = 20;
             this.btngGol.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -345,7 +348,7 @@
             this.btngGol.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btngGol.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btngGol.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.btngGol.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btngGol.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.btngGol.ForeColor = System.Drawing.Color.White;
             this.btngGol.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btngGol.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
@@ -359,7 +362,7 @@
             // 
             // numEquipos
             // 
-            this.numEquipos.Font = new System.Drawing.Font("Onest Bold", 10.25F, System.Drawing.FontStyle.Bold);
+            this.numEquipos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold);
             this.numEquipos.Location = new System.Drawing.Point(461, 289);
             this.numEquipos.Maximum = new decimal(new int[] {
             90,
@@ -367,14 +370,14 @@
             0,
             0});
             this.numEquipos.Name = "numEquipos";
-            this.numEquipos.Size = new System.Drawing.Size(120, 25);
+            this.numEquipos.Size = new System.Drawing.Size(120, 23);
             this.numEquipos.TabIndex = 140;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(448, 257);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
@@ -422,70 +425,6 @@
             this.dgvasistencia.Size = new System.Drawing.Size(279, 160);
             this.dgvasistencia.TabIndex = 142;
             // 
-            // btnQuitarGol
-            // 
-            this.btnQuitarGol.Animated = true;
-            this.btnQuitarGol.BorderRadius = 20;
-            this.btnQuitarGol.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnQuitarGol.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnQuitarGol.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnQuitarGol.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnQuitarGol.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
-            this.btnQuitarGol.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnQuitarGol.ForeColor = System.Drawing.Color.Black;
-            this.btnQuitarGol.HoverState.BorderColor = System.Drawing.Color.Black;
-            this.btnQuitarGol.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
-            this.btnQuitarGol.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnQuitarGol.Location = new System.Drawing.Point(81, 381);
-            this.btnQuitarGol.Name = "btnQuitarGol";
-            this.btnQuitarGol.Size = new System.Drawing.Size(66, 30);
-            this.btnQuitarGol.TabIndex = 144;
-            this.btnQuitarGol.Text = "x";
-            this.btnQuitarGol.Click += new System.EventHandler(this.btnQuitarGol_Click);
-            // 
-            // btnQuitarAsistencia
-            // 
-            this.btnQuitarAsistencia.Animated = true;
-            this.btnQuitarAsistencia.BorderRadius = 20;
-            this.btnQuitarAsistencia.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnQuitarAsistencia.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnQuitarAsistencia.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnQuitarAsistencia.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnQuitarAsistencia.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
-            this.btnQuitarAsistencia.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnQuitarAsistencia.ForeColor = System.Drawing.Color.Black;
-            this.btnQuitarAsistencia.HoverState.BorderColor = System.Drawing.Color.Black;
-            this.btnQuitarAsistencia.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
-            this.btnQuitarAsistencia.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnQuitarAsistencia.Location = new System.Drawing.Point(538, 381);
-            this.btnQuitarAsistencia.Name = "btnQuitarAsistencia";
-            this.btnQuitarAsistencia.Size = new System.Drawing.Size(66, 30);
-            this.btnQuitarAsistencia.TabIndex = 145;
-            this.btnQuitarAsistencia.Text = "x";
-            this.btnQuitarAsistencia.Click += new System.EventHandler(this.btnQuitarAsistencia_Click);
-            // 
-            // btnConfirmar
-            // 
-            this.btnConfirmar.Animated = true;
-            this.btnConfirmar.BorderColor = System.Drawing.Color.Empty;
-            this.btnConfirmar.BorderRadius = 20;
-            this.btnConfirmar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnConfirmar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnConfirmar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnConfirmar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnConfirmar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.btnConfirmar.Font = new System.Drawing.Font("Onest Bold", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnConfirmar.ForeColor = System.Drawing.Color.White;
-            this.btnConfirmar.HoverState.BorderColor = System.Drawing.Color.Black;
-            this.btnConfirmar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
-            this.btnConfirmar.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnConfirmar.Location = new System.Drawing.Point(789, 655);
-            this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(241, 52);
-            this.btnConfirmar.TabIndex = 146;
-            this.btnConfirmar.Text = "CONFIRMAR";
-            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
-            // 
             // IDJugador1
             // 
             this.IDJugador1.HeaderText = "IDJugador";
@@ -503,6 +442,73 @@
             this.Minuto1.HeaderText = "Minuto";
             this.Minuto1.Name = "Minuto1";
             this.Minuto1.ReadOnly = true;
+            // 
+            // btnQuitarGol
+            // 
+            this.btnQuitarGol.Animated = true;
+            this.btnQuitarGol.BackColor = System.Drawing.Color.Transparent;
+            this.btnQuitarGol.BorderRadius = 20;
+            this.btnQuitarGol.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnQuitarGol.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnQuitarGol.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnQuitarGol.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnQuitarGol.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
+            this.btnQuitarGol.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnQuitarGol.ForeColor = System.Drawing.Color.Black;
+            this.btnQuitarGol.HoverState.BorderColor = System.Drawing.Color.Black;
+            this.btnQuitarGol.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.btnQuitarGol.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.btnQuitarGol.Location = new System.Drawing.Point(81, 381);
+            this.btnQuitarGol.Name = "btnQuitarGol";
+            this.btnQuitarGol.Size = new System.Drawing.Size(66, 30);
+            this.btnQuitarGol.TabIndex = 144;
+            this.btnQuitarGol.Text = "x";
+            this.btnQuitarGol.Click += new System.EventHandler(this.btnQuitarGol_Click);
+            // 
+            // btnQuitarAsistencia
+            // 
+            this.btnQuitarAsistencia.Animated = true;
+            this.btnQuitarAsistencia.BackColor = System.Drawing.Color.Transparent;
+            this.btnQuitarAsistencia.BorderRadius = 20;
+            this.btnQuitarAsistencia.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnQuitarAsistencia.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnQuitarAsistencia.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnQuitarAsistencia.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnQuitarAsistencia.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
+            this.btnQuitarAsistencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnQuitarAsistencia.ForeColor = System.Drawing.Color.Black;
+            this.btnQuitarAsistencia.HoverState.BorderColor = System.Drawing.Color.Black;
+            this.btnQuitarAsistencia.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.btnQuitarAsistencia.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.btnQuitarAsistencia.Location = new System.Drawing.Point(538, 381);
+            this.btnQuitarAsistencia.Name = "btnQuitarAsistencia";
+            this.btnQuitarAsistencia.Size = new System.Drawing.Size(66, 30);
+            this.btnQuitarAsistencia.TabIndex = 145;
+            this.btnQuitarAsistencia.Text = "x";
+            this.btnQuitarAsistencia.Click += new System.EventHandler(this.btnQuitarAsistencia_Click);
+            // 
+            // btnConfirmar
+            // 
+            this.btnConfirmar.Animated = true;
+            this.btnConfirmar.BackColor = System.Drawing.Color.Transparent;
+            this.btnConfirmar.BorderColor = System.Drawing.Color.Empty;
+            this.btnConfirmar.BorderRadius = 20;
+            this.btnConfirmar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnConfirmar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnConfirmar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnConfirmar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnConfirmar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            this.btnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnConfirmar.ForeColor = System.Drawing.Color.White;
+            this.btnConfirmar.HoverState.BorderColor = System.Drawing.Color.Black;
+            this.btnConfirmar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.btnConfirmar.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.btnConfirmar.Location = new System.Drawing.Point(789, 655);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.Size = new System.Drawing.Size(241, 52);
+            this.btnConfirmar.TabIndex = 146;
+            this.btnConfirmar.Text = "CONFIRMAR";
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
             // Goles
             // 
