@@ -33,6 +33,7 @@
             // 
             // rvwEquipos
             // 
+            this.rvwEquipos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.rvwEquipos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rvwEquipos.LocalReport.ReportEmbeddedResource = "TorneosFut.rptEstatsEquipo.rdlc";
             this.rvwEquipos.Location = new System.Drawing.Point(0, 0);
@@ -48,6 +49,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.rvwEquipos);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "frmEquiposEst";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmEquiposEst";

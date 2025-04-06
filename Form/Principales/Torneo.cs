@@ -210,6 +210,8 @@ namespace TorneosFut
                                 int puntos = Convert.ToInt32(reader["Puntos"]);
 
                                 MessageBox.Show($"Ganador: {ganadorID} con {puntos} puntos.");
+                                conexion.Consulta($"update Torneo set Estado = 'FINALIZADO' where IDTorneo = {torneoID}");
+                                ActualizarTabla();
                             }
                         }
                         else
@@ -232,7 +234,6 @@ namespace TorneosFut
                 conexion.CerrarCon();
             }
         }
-
         private void btnAsistir_Click(object sender, EventArgs e)
         {
             string IDTorneo = dgvTorneo.SelectedRows[0].Cells["IDTorneo"].Value.ToString();
@@ -263,6 +264,12 @@ namespace TorneosFut
             {
                 IDTorneo = dgvTorneo.Rows[dgvTorneo.CurrentRow.Index].Cells[0].Value.ToString();
             }
+        }
+
+        private void btnCal_Click(object sender, EventArgs e)
+        {
+            frmCalendarioGeneral frm= new frmCalendarioGeneral(dgvTorneo.SelectedRows[0].Cells["IDTorneo"].Value.ToString());
+            frm.ShowDialog();
         }
     }
 }

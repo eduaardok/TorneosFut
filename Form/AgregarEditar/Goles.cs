@@ -213,83 +213,121 @@ namespace pruebas
             }
         }
 
+
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            using (conexion.Conexion)
+            // Confirmación antes de ejecutar el procedimiento
+            DialogResult resultado = MessageBox.Show(
+                "¿Está seguro de que desea finalizar este partido con esta información? NO PODRÁ EDITAR LOS REGISTROS.",
+                "Confirmación",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            );
+
+            if (resultado == DialogResult.Yes)
             {
-                try
+                using (conexion.Conexion)
                 {
-                    conexion.Conexion.Open();
-
-                    SqlTransaction transaccion = conexion.Conexion.BeginTransaction();
-
                     try
                     {
-                        // Guardar Goles
-                        foreach (DataGridViewRow row in dgvgoles.Rows)
-                        {
-                            if (row.Cells["IDJugador"].Value != null) // Verifica que la fila tenga datos
-                            {
-                                using (SqlCommand cmd = new SqlCommand("spInsertarGol", conexion.Conexion, transaccion))
-                                {
-                                    cmd.CommandType = CommandType.StoredProcedure;
-                                    cmd.Parameters.AddWithValue("@IDPartido", int.Parse(Id));
-                                    cmd.Parameters.AddWithValue("@IDJugador", (row.Cells["IDJugador"].Value));
-                                    cmd.Parameters.AddWithValue("@IDEquipo",(row.Cells["IDEquipo"].Value));
-                                    cmd.Parameters.AddWithValue("@Minuto", Convert.ToInt32(row.Cells["Minuto"].Value));
+                        conexion.Conexion.Open();
 
-                                    cmd.ExecuteNonQuery();
+                        SqlTransaction transaccion = conexion.Conexion.BeginTransaction();
+
+                        try
+                        {
+                            // Guardar Goles
+                            foreach (DataGridViewRow row in dgvgoles.Rows)
+                            {
+                                if (row.Cells["IDJugador"].Value != null) // Verifica que la fila tenga datos
+                                {
+                                    using (SqlCommand cmd = new SqlCommand("spInsertarGol", conexion.Conexion, transaccion))
+                                    {
+                                        cmd.CommandType = CommandType.StoredProcedure;
+                                        cmd.Parameters.AddWithValue("@IDPartido", int.Parse(Id));
+                                        cmd.Parameters.AddWithValue("@IDJugador", (row.Cells["IDJugador"].Value));
+                                        cmd.Parameters.AddWithValue("@IDEquipo", (row.Cells["IDEquipo"].Value));
+                                        cmd.Parameters.AddWithValue("@Minuto", Convert.ToInt32(row.Cells["Minuto"].Value));
+
+                                        cmd.ExecuteNonQuery();
+                                    }
                                 }
                             }
-                        }
 
-                        // Guardar Asistencias
-                        foreach (DataGridViewRow row in dgvasistencia.Rows)
-                        {
-                            if (row.Cells["IDJugador1"].Value != null) // Verifica que la fila tenga datos
+                            // Guardar Asistencias
+                            foreach (DataGridViewRow row in dgvasistencia.Rows)
                             {
-                                using (SqlCommand cmd = new SqlCommand("spInsertarAsistencia", conexion.Conexion, transaccion))
+                                if (row.Cells["IDJugador1"].Value != null) // Verifica que la fila tenga datos
                                 {
-                                    cmd.CommandType = CommandType.StoredProcedure;
-                                    cmd.Parameters.AddWithValue("@IDPartido", int.Parse(Id));
-                                    cmd.Parameters.AddWithValue("@IDJugador", (row.Cells["IDJugador1"].Value));
-                                    cmd.Parameters.AddWithValue("@IDEquipo", (row.Cells["IDEquipo1"].Value));
-                                    cmd.Parameters.AddWithValue("@Minuto", Convert.ToInt32(row.Cells["Minuto1"].Value));
+                                    using (SqlCommand cmd = new SqlCommand("spInsertarAsistencia", conexion.Conexion, transaccion))
+                                    {
+                                        cmd.CommandType = CommandType.StoredProcedure;
+                                        cmd.Parameters.AddWithValue("@IDPartido", int.Parse(Id));
+                                        cmd.Parameters.AddWithValue("@IDJugador", (row.Cells["IDJugador1"].Value));
+                                        cmd.Parameters.AddWithValue("@IDEquipo", (row.Cells["IDEquipo1"].Value));
+                                        cmd.Parameters.AddWithValue("@Minuto", Convert.ToInt32(row.Cells["Minuto1"].Value));
 
-                                    cmd.ExecuteNonQuery();
+                                        cmd.ExecuteNonQuery();
+                                    }
                                 }
                             }
-                        }
 
-                        // Si todo salió bien, se confirma la transacción
-                        transaccion.Commit();
-                        msg.Text = "Datos guardados correctamente.";
-                        msg.Show();
-                        conexion.Conexion.Close();
-                        Close();
-                    }
-                    catch (SqlException ex)
-                    {
-                        msg.Text="Error de SQL Server: " + ex.Message;
-                        msg.Show();
-                        conexion.Conexion.Close();
+                            // Si todo salió bien, se confirma la transacción
+                            transaccion.Commit();
+                            msg.Text = "Datos guardados correctamente.";
+                            msg.Show();
+                            conexion.Conexion.Close();
+                            try
+                            {
+                                // Ejecutar el procedimiento almacenado
+                                conexion.Consulta($"EXEC spFinalizarPartido @IDPartido = {Id}");
+
+                                // Mostrar mensaje de éxito
+                                MessageBox.Show(
+                                    "El partido ha sido finalizado correctamente.",
+                                    "Éxito",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information
+                                );
+                            }
+                            catch (Exception ex)
+                            {
+                                // Manejo de errores
+                                MessageBox.Show(
+                                    "Error al finalizar el partido: " + ex.Message,
+                                    "Error",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error
+                                );
+                            }
+                            Close();
+                        }
+                        catch (SqlException ex)
+                        {
+                            msg.Text = "Error de SQL Server: " + ex.Message;
+                            msg.Show();
+                            conexion.Conexion.Close();
+                        }
+                        catch (Exception ex)
+                        {
+                            transaccion.Rollback();
+                            msg.Text = "Error al guardar datos: " + ex.Message;
+                            msg.Show();
+                            conexion.Conexion.Close();
+                        }
                     }
                     catch (Exception ex)
                     {
-                        transaccion.Rollback();
-                        msg.Text = "Error al guardar datos: " + ex.Message;
+                        msg.Text = "Error de conexión: " + ex.Message;
                         msg.Show();
                         conexion.Conexion.Close();
                     }
                 }
-                catch (Exception ex)
-                {
-                    msg.Text = "Error de conexión: " + ex.Message;
-                    msg.Show();
-                    conexion.Conexion.Close();
-                }
+
             }
+
         }
+
         public bool InsertarGol(int idPartido, int idJugador, int idEquipo, int minuto)
         {
             using (conexion.Conexion)

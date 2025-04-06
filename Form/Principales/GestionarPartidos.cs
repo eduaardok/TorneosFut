@@ -106,8 +106,15 @@ namespace pruebas
             //csDGV = new csDGV(conexion.Usuario, conexion.Clave, IdTorneo, IDPartido);
             if (dgvPartido.CurrentRow != null && dgvPartido.CurrentRow.Index >= 0)
             {
-                gol = new Goles(conexion.Usuario, conexion.Clave, IDPartido);
-                gol.ShowDialog();
+                if (dgvPartido.Rows[dgvPartido.CurrentRow.Index].Cells["EstadoPartido"].Value.ToString() == "FINALIZADO")
+                {
+                    MessageBox.Show("El partido ya finalizó");
+                }
+                else
+                {
+                    gol = new Goles(conexion.Usuario, conexion.Clave, IDPartido);
+                    gol.ShowDialog();
+                }
             }
             ActualizarTabla();
         }
@@ -444,6 +451,13 @@ namespace pruebas
         {
             frmTablaP tabla = new frmTablaP();
             tabla.Show(); 
+        }
+
+        private void guna2Button2_Click_1(object sender, EventArgs e)
+        {
+            DataTable dt = conexion.ListDGV($"SELECT EquipoLocal FROM Partido WHERE IDPartido = {IDPartido}");
+            frmCalendarioEE calendario = new frmCalendarioEE(IdTorneo, dt.Rows[0]["EquipoLocal"].ToString());
+            calendario.ShowDialog();
         }
     }
 }
