@@ -71,7 +71,7 @@ namespace TorneosFut
             //ReportDataSource dataset = new ReportDataSource();
             ReportDataSource dataset = new ReportDataSource();
             rvwCalendarioClub.LocalReport.DataSources.Clear();
-            dt = oconSQL.ListDGV($@"select EquipoLocal, EquipoVisitante, Fecha, EstadoPartido from Partido where (EquipoLocal = '{IDEquipo}' or EquipoVisitante = '{IDEquipo}') and IDTorneo = {IDTorneo}"); //Esto de aqui lo cambias por tu consulta
+            dt = oconSQL.ListDGV($@"select EquipoLocal, EquipoVisitante, CONVERT(VARCHAR(10), Fecha, 103) AS Fecha, Hora,EstadoPartido from Partido where (EquipoLocal = '{IDEquipo}' or EquipoVisitante = '{IDEquipo}') and IDTorneo = {IDTorneo}"); //Esto de aqui lo cambias por tu consulta
             string reportPath = Path.Combine(Application.StartupPath, "rptCalendarioEspecifico.rdlc");
             //rvwTablaPos.LocalReport.ReportPath = "rptPosiciones.rdlc"; // Esto por el nombre de tu reporte
             if (File.Exists(reportPath))
