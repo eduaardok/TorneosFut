@@ -2658,6 +2658,8 @@ namespace TorneosFut.Class {
             
             private global::System.Data.DataColumn columnEstadoPartido;
             
+            private global::System.Data.DataColumn columnHora;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public dtCalendarioGeneralDataTable() {
@@ -2725,6 +2727,14 @@ namespace TorneosFut.Class {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn HoraColumn {
+                get {
+                    return this.columnHora;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2760,13 +2770,14 @@ namespace TorneosFut.Class {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public dtCalendarioGeneralRow AdddtCalendarioGeneralRow(string EquipoLocal, string EquipoVisitante, string Fecha, string EstadoPartido) {
+            public dtCalendarioGeneralRow AdddtCalendarioGeneralRow(string EquipoLocal, string EquipoVisitante, string Fecha, string EstadoPartido, string Hora) {
                 dtCalendarioGeneralRow rowdtCalendarioGeneralRow = ((dtCalendarioGeneralRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         EquipoLocal,
                         EquipoVisitante,
                         Fecha,
-                        EstadoPartido};
+                        EstadoPartido,
+                        Hora};
                 rowdtCalendarioGeneralRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdtCalendarioGeneralRow);
                 return rowdtCalendarioGeneralRow;
@@ -2793,6 +2804,7 @@ namespace TorneosFut.Class {
                 this.columnEquipoVisitante = base.Columns["EquipoVisitante"];
                 this.columnFecha = base.Columns["Fecha"];
                 this.columnEstadoPartido = base.Columns["EstadoPartido"];
+                this.columnHora = base.Columns["Hora"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2806,6 +2818,8 @@ namespace TorneosFut.Class {
                 base.Columns.Add(this.columnFecha);
                 this.columnEstadoPartido = new global::System.Data.DataColumn("EstadoPartido", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEstadoPartido);
+                this.columnHora = new global::System.Data.DataColumn("Hora", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHora);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2947,6 +2961,8 @@ namespace TorneosFut.Class {
             
             private global::System.Data.DataColumn columnEstadoPartido;
             
+            private global::System.Data.DataColumn columnHora;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public dtCalendarioUnicoDataTable() {
@@ -3014,6 +3030,14 @@ namespace TorneosFut.Class {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn HoraColumn {
+                get {
+                    return this.columnHora;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3049,13 +3073,14 @@ namespace TorneosFut.Class {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public dtCalendarioUnicoRow AdddtCalendarioUnicoRow(string EquipoLocal, string EquipoVisitante, string Fecha, string EstadoPartido) {
+            public dtCalendarioUnicoRow AdddtCalendarioUnicoRow(string EquipoLocal, string EquipoVisitante, string Fecha, string EstadoPartido, string Hora) {
                 dtCalendarioUnicoRow rowdtCalendarioUnicoRow = ((dtCalendarioUnicoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         EquipoLocal,
                         EquipoVisitante,
                         Fecha,
-                        EstadoPartido};
+                        EstadoPartido,
+                        Hora};
                 rowdtCalendarioUnicoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdtCalendarioUnicoRow);
                 return rowdtCalendarioUnicoRow;
@@ -3082,6 +3107,7 @@ namespace TorneosFut.Class {
                 this.columnEquipoVisitante = base.Columns["EquipoVisitante"];
                 this.columnFecha = base.Columns["Fecha"];
                 this.columnEstadoPartido = base.Columns["EstadoPartido"];
+                this.columnHora = base.Columns["Hora"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3095,6 +3121,8 @@ namespace TorneosFut.Class {
                 base.Columns.Add(this.columnFecha);
                 this.columnEstadoPartido = new global::System.Data.DataColumn("EstadoPartido", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEstadoPartido);
+                this.columnHora = new global::System.Data.DataColumn("Hora", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHora);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4863,6 +4891,22 @@ namespace TorneosFut.Class {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Hora {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtCalendarioGeneral.HoraColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Hora\' de la tabla \'dtCalendarioGeneral\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtCalendarioGeneral.HoraColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsEquipoLocalNull() {
                 return this.IsNull(this.tabledtCalendarioGeneral.EquipoLocalColumn);
             }
@@ -4907,6 +4951,18 @@ namespace TorneosFut.Class {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetEstadoPartidoNull() {
                 this[this.tabledtCalendarioGeneral.EstadoPartidoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsHoraNull() {
+                return this.IsNull(this.tabledtCalendarioGeneral.HoraColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetHoraNull() {
+                this[this.tabledtCalendarioGeneral.HoraColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -4992,6 +5048,22 @@ namespace TorneosFut.Class {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Hora {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtCalendarioUnico.HoraColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Hora\' de la tabla \'dtCalendarioUnico\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtCalendarioUnico.HoraColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsEquipoLocalNull() {
                 return this.IsNull(this.tabledtCalendarioUnico.EquipoLocalColumn);
             }
@@ -5036,6 +5108,18 @@ namespace TorneosFut.Class {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetEstadoPartidoNull() {
                 this[this.tabledtCalendarioUnico.EstadoPartidoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsHoraNull() {
+                return this.IsNull(this.tabledtCalendarioUnico.HoraColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetHoraNull() {
+                this[this.tabledtCalendarioUnico.HoraColumn] = global::System.Convert.DBNull;
             }
         }
         
