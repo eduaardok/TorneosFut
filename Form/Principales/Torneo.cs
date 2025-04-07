@@ -31,7 +31,8 @@ namespace TorneosFut
         csDatos csDatos;
         Formato formato;
         Guna.UI2.WinForms.Guna2MessageDialog msg = new Guna.UI2.WinForms.Guna2MessageDialog();
-        public Torneo(string u, string c)
+        Principal frmr;
+        public Torneo(string u, string c,Principal frm)
         {
             conexion = new csConexion(u, c);
             csDatos = new csDatos(u, c);
@@ -42,6 +43,7 @@ namespace TorneosFut
             arbi = new Arbitro(u, c);
             formato = new Formato();
             csValidaciones = new csValidaciones(u, c);
+            frmr = frm;
         }
         public static void AbrirFormEnPanel(Panel panel, Form formHijo)
         {
@@ -73,15 +75,8 @@ namespace TorneosFut
 
         private void Torneo_Load(object sender, EventArgs e)
         {
-            msg.Buttons = MessageDialogButtons.OK;
-            msg.Icon = MessageDialogIcon.Information;
-            msg.Style = MessageDialogStyle.Light;
-            msg.Parent = this;
-            if (GlobalSettings.ModoOscuro)
-            {
-                msg.Style = MessageDialogStyle.Dark;
-
-            }
+         
+         
             foreach (DataGridViewColumn column in dgvTorneo.Columns)
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
@@ -89,6 +84,12 @@ namespace TorneosFut
             csDGV.MostrarTorneo(dgvTorneo);
             panelmodul.Hide();
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
+            msg.Buttons = MessageDialogButtons.OK;
+            msg.Icon = MessageDialogIcon.Information;
+            msg.Style = MessageDialogStyle.Light;
+            msg.Parent = frmr;
+            msg.Caption = "GANADOR";
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -183,6 +184,12 @@ namespace TorneosFut
 
         private void btnGanador_Click(object sender, EventArgs e)
         {
+            if (GlobalSettings.ModoOscuro)
+            {
+                msg.Style = MessageDialogStyle.Dark;
+
+            }
+            else msg.Style= MessageDialogStyle.Light;
             ObtenerGanadorTorneo(int.Parse(IDTorneo));
         }
         private void ObtenerGanadorTorneo(int torneoID)
@@ -224,7 +231,7 @@ namespace TorneosFut
                                 // Obtener GanadorID y Puntos
                                 string ganadorID = reader["GanadorID"].ToString();
                                 int puntos = Convert.ToInt32(reader["Puntos"]);
-                                msg.Text = "Ganador: {ganadorID} con {puntos} puntos.";
+                                msg.Text = $"Ganador: {ganadorID} con {puntos} puntos.";
                                 msg.Show(); 
                                 conexion.Consulta($"update Torneo set Estado = 'FINALIZADO' where IDTorneo = {torneoID}");
                                 ActualizarTabla();
@@ -240,11 +247,13 @@ namespace TorneosFut
             }
             catch (SqlException sqlex)
             {
-                MessageBox.Show("Error SQL: " + sqlex.Message);
+                msg.Text="Error SQL: " + sqlex.Message;
+                msg.Show();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                msg.Text="Error: " + ex.Message;
+                msg.Show();
             }
             finally
             {

@@ -605,6 +605,8 @@
     <Content Include="media\door.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\editcorreo.png" />
+    <None Include="Resources\correo.png" />
     <None Include="Resources\gmail_icon-icons.com_59877 %281%29.png" />
     <None Include="Resources\soccer-field-background %281%29.png" />
     <None Include="Resources\futxpert-background.png" />

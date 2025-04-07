@@ -51,7 +51,7 @@ namespace TorneosFut
             ddbtnOpcionesU.Text = name;
             entre= new Entrenador(u, c);
             equi = new Equipos(u, c);
-            tor = new Torneo(u, c);
+            tor = new Torneo(u, c, this);
             Patro = new Patrocinadores(u, c);
             Orga = new Organizadores(u, c);
             auditoria = new Auditoria(u,c);
@@ -191,7 +191,7 @@ namespace TorneosFut
         {
             if (tor != null)
             {
-                tor = new Torneo(conexion.Usuario, conexion.Clave);
+                tor = new Torneo(conexion.Usuario, conexion.Clave,this);
             }
             AbrirFormEnPanel(panelModulos, tor);
             equi.Close();

@@ -31,6 +31,14 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.panelOpciones = new System.Windows.Forms.Panel();
+            this.tmopen = new System.Windows.Forms.Timer(this.components);
+            this.timeclose = new System.Windows.Forms.Timer(this.components);
+            this.btnCerrar = new System.Windows.Forms.Button();
+            this.miniToolStrip = new System.Windows.Forms.ToolStrip();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.tstSuperior = new System.Windows.Forms.ToolStrip();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panelModulos = new System.Windows.Forms.Panel();
             this.btnCorreos = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -38,24 +46,16 @@
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.btnEquipos = new System.Windows.Forms.Button();
             this.btnTorneos = new System.Windows.Forms.Button();
-            this.tmopen = new System.Windows.Forms.Timer(this.components);
-            this.timeclose = new System.Windows.Forms.Timer(this.components);
-            this.btnCerrar = new System.Windows.Forms.Button();
-            this.miniToolStrip = new System.Windows.Forms.ToolStrip();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.tstSuperior = new System.Windows.Forms.ToolStrip();
             this.ddbtnOpcionesU = new System.Windows.Forms.ToolStripDropDownButton();
             this.ttmiCambiarClave = new System.Windows.Forms.ToolStripMenuItem();
             this.ttmiCerrarSesion = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.panelModulos = new System.Windows.Forms.Panel();
             this.panelOpciones.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.tstSuperior.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,13 +76,93 @@
             this.panelOpciones.Size = new System.Drawing.Size(294, 618);
             this.panelOpciones.TabIndex = 8;
             // 
+            // tmopen
+            // 
+            this.tmopen.Interval = 1;
+            this.tmopen.Tick += new System.EventHandler(this.tmopen_Tick);
+            // 
+            // timeclose
+            // 
+            this.timeclose.Interval = 1;
+            this.timeclose.Tick += new System.EventHandler(this.timeclose_Tick);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.BackColor = System.Drawing.Color.White;
+            this.btnCerrar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnCerrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.btnCerrar.Location = new System.Drawing.Point(0, 0);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(60, 50);
+            this.btnCerrar.TabIndex = 1;
+            this.btnCerrar.Text = "-";
+            this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // miniToolStrip
+            // 
+            this.miniToolStrip.AccessibleName = "New item selection";
+            this.miniToolStrip.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDown;
+            this.miniToolStrip.AutoSize = false;
+            this.miniToolStrip.BackColor = System.Drawing.Color.Transparent;
+            this.miniToolStrip.CanOverflow = false;
+            this.miniToolStrip.Dock = System.Windows.Forms.DockStyle.None;
+            this.miniToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.miniToolStrip.Location = new System.Drawing.Point(9, 15);
+            this.miniToolStrip.Name = "miniToolStrip";
+            this.miniToolStrip.Size = new System.Drawing.Size(1199, 50);
+            this.miniToolStrip.TabIndex = 10;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.tstSuperior);
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.btnCerrar);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1330, 50);
+            this.panel1.TabIndex = 6;
+            // 
+            // tstSuperior
+            // 
+            this.tstSuperior.BackColor = System.Drawing.Color.Transparent;
+            this.tstSuperior.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tstSuperior.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ddbtnOpcionesU});
+            this.tstSuperior.Location = new System.Drawing.Point(60, 0);
+            this.tstSuperior.Name = "tstSuperior";
+            this.tstSuperior.Size = new System.Drawing.Size(1196, 50);
+            this.tstSuperior.TabIndex = 10;
+            this.tstSuperior.Text = "toolStrip1";
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 15;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // panelModulos
+            // 
+            this.panelModulos.BackColor = System.Drawing.Color.White;
+            this.panelModulos.BackgroundImage = global::TorneosFut.Properties.Resources.fxfutxpert;
+            this.panelModulos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panelModulos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelModulos.Location = new System.Drawing.Point(294, 50);
+            this.panelModulos.Name = "panelModulos";
+            this.panelModulos.Size = new System.Drawing.Size(1036, 618);
+            this.panelModulos.TabIndex = 9;
+            this.panelModulos.Paint += new System.Windows.Forms.PaintEventHandler(this.panelModulos_Paint);
+            // 
             // btnCorreos
             // 
             this.btnCorreos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
             this.btnCorreos.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnCorreos.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCorreos.ForeColor = System.Drawing.Color.White;
-            this.btnCorreos.Image = global::TorneosFut.Properties.Resources.gmail_icon_icons_com_59877__1_;
+            this.btnCorreos.Image = global::TorneosFut.Properties.Resources.editcorreo;
             this.btnCorreos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCorreos.Location = new System.Drawing.Point(0, 407);
             this.btnCorreos.Name = "btnCorreos";
@@ -196,57 +276,6 @@
             this.btnTorneos.MouseEnter += new System.EventHandler(this.btnTorneos_MouseEnter);
             this.btnTorneos.MouseLeave += new System.EventHandler(this.btnTorneos_MouseLeave);
             // 
-            // tmopen
-            // 
-            this.tmopen.Interval = 1;
-            this.tmopen.Tick += new System.EventHandler(this.tmopen_Tick);
-            // 
-            // timeclose
-            // 
-            this.timeclose.Interval = 1;
-            this.timeclose.Tick += new System.EventHandler(this.timeclose_Tick);
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.BackColor = System.Drawing.Color.White;
-            this.btnCerrar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnCerrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
-            this.btnCerrar.Location = new System.Drawing.Point(0, 0);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(60, 50);
-            this.btnCerrar.TabIndex = 1;
-            this.btnCerrar.Text = "-";
-            this.btnCerrar.UseVisualStyleBackColor = false;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            // 
-            // miniToolStrip
-            // 
-            this.miniToolStrip.AccessibleName = "New item selection";
-            this.miniToolStrip.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDown;
-            this.miniToolStrip.AutoSize = false;
-            this.miniToolStrip.BackColor = System.Drawing.Color.Transparent;
-            this.miniToolStrip.CanOverflow = false;
-            this.miniToolStrip.Dock = System.Windows.Forms.DockStyle.None;
-            this.miniToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.miniToolStrip.Location = new System.Drawing.Point(9, 15);
-            this.miniToolStrip.Name = "miniToolStrip";
-            this.miniToolStrip.Size = new System.Drawing.Size(1199, 50);
-            this.miniToolStrip.TabIndex = 10;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.tstSuperior);
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.btnCerrar);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1330, 50);
-            this.panel1.TabIndex = 6;
-            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.White;
@@ -274,18 +303,6 @@
             this.button1.TabIndex = 11;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // tstSuperior
-            // 
-            this.tstSuperior.BackColor = System.Drawing.Color.Transparent;
-            this.tstSuperior.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tstSuperior.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ddbtnOpcionesU});
-            this.tstSuperior.Location = new System.Drawing.Point(60, 0);
-            this.tstSuperior.Name = "tstSuperior";
-            this.tstSuperior.Size = new System.Drawing.Size(1196, 50);
-            this.tstSuperior.TabIndex = 10;
-            this.tstSuperior.Text = "toolStrip1";
             // 
             // ddbtnOpcionesU
             // 
@@ -332,23 +349,6 @@
             this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
             // 
-            // timer1
-            // 
-            this.timer1.Interval = 15;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // panelModulos
-            // 
-            this.panelModulos.BackColor = System.Drawing.Color.White;
-            this.panelModulos.BackgroundImage = global::TorneosFut.Properties.Resources.fxfutxpert;
-            this.panelModulos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panelModulos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelModulos.Location = new System.Drawing.Point(294, 50);
-            this.panelModulos.Name = "panelModulos";
-            this.panelModulos.Size = new System.Drawing.Size(1036, 618);
-            this.panelModulos.TabIndex = 9;
-            this.panelModulos.Paint += new System.Windows.Forms.PaintEventHandler(this.panelModulos_Paint);
-            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -371,11 +371,11 @@
             this.Load += new System.EventHandler(this.Principal_Load);
             this.Resize += new System.EventHandler(this.Principal_Resize);
             this.panelOpciones.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tstSuperior.ResumeLayout(false);
             this.tstSuperior.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
