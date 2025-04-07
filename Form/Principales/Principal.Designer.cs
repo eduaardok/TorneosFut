@@ -91,6 +91,8 @@
             this.btnCorreos.Text = "CORREOS";
             this.btnCorreos.UseVisualStyleBackColor = false;
             this.btnCorreos.Click += new System.EventHandler(this.btnCorreos_Click);
+            this.btnCorreos.MouseEnter += new System.EventHandler(this.btnCorreos_MouseEnter);
+            this.btnCorreos.MouseLeave += new System.EventHandler(this.btnCorreos_MouseLeave);
             // 
             // button3
             // 

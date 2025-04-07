@@ -336,5 +336,15 @@ namespace TorneosFut
                 correo.BringToFront();
             }
         }
+
+        private void btnCorreos_MouseEnter(object sender, EventArgs e)
+        {
+            btnCorreos.BackColor = ColorTranslator.FromHtml("#FB038C");
+        }
+
+        private void btnCorreos_MouseLeave(object sender, EventArgs e)
+        {
+            btnCorreos.BackColor = Color.FromArgb(20, 25, 29);
+        }
     }
 }
