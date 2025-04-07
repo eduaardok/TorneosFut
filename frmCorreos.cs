@@ -30,7 +30,14 @@ namespace TorneosFut
 
         private void frmCorreos_Load(object sender, EventArgs e)
         {
-
+            Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
+            if (!GlobalSettings.ModoOscuro)
+            {
+                panel1.BackColor = Color.FromArgb(251, 3, 140);
+                panel2.BackColor = Color.FromArgb(251, 3, 140);
+                panel3.BackColor = Color.FromArgb(251, 3, 140);
+                panel4.BackColor = Color.FromArgb(251, 3, 140);
+            }
         }
 
         private void btnEnviar_Click(object sender, EventArgs e)
@@ -133,5 +140,9 @@ namespace TorneosFut
             ActualizarContadorArchivos();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

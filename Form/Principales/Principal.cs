@@ -26,7 +26,7 @@ namespace TorneosFut
           int nWidhtEllipse,
           int nHeightEllipse
         );
-      
+        frmCorreos correo;
         static csConexion conexion;
         static bool esAdmin;
         static csEncriptar encriptar;
@@ -326,8 +326,15 @@ namespace TorneosFut
 
         private void btnCorreos_Click(object sender, EventArgs e)
         {
-            frmCorreos correo = new frmCorreos();
-            correo.Show(); 
+            if (correo == null || correo.IsDisposed)
+            {
+                correo = new frmCorreos();
+                correo.Show();
+            }
+            else
+            {
+                correo.BringToFront();
+            }
         }
     }
 }

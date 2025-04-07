@@ -38,6 +38,14 @@ namespace TorneosFut
         private void PagoPatrocinador_Load(object sender, EventArgs e)
         {
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
+            if (!GlobalSettings.ModoOscuro)
+            {
+                panel1.BackColor = Color.FromArgb(251, 3, 140);
+                panel2.BackColor = Color.FromArgb(251, 3, 140);
+                panel3.BackColor = Color.FromArgb(251, 3, 140);
+                panel4.BackColor = Color.FromArgb(251, 3, 140);
+            }
+
             DataTable torneo = conexion.ListDGV($"Select NombreTorneo, CostoInscripcion, FechaInicio from Torneo where IDTorneo = {IDTorneo}");
             lbNameTorneo.Text = torneo.Rows[0]["NombreTorneo"].ToString();
             DataTable Empresa = conexion.ListDGV($"select NombreEmpresa from Patrocinador where IDPatrocinador = '{IdPatrocinador}' ");
