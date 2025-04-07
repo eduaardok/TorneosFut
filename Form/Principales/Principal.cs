@@ -323,5 +323,11 @@ namespace TorneosFut
             button3.BackColor = Color.FromArgb(20, 25, 29);
 
         }
+
+        private void btnCorreos_Click(object sender, EventArgs e)
+        {
+            frmCorreos correo = new frmCorreos();
+            correo.Show(); 
+        }
     }
 }

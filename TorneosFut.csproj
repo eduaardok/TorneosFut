@@ -361,6 +361,12 @@
     <Compile Include="Form\Reportes\frmCalendarioGeneral.Designer.cs">
       <DependentUpon>frmCalendarioGeneral.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCorreos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCorreos.Designer.cs">
+      <DependentUpon>frmCorreos.cs</DependentUpon>
+    </Compile>
     <Compile Include="PagoPatrocinador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -511,6 +517,9 @@
     <EmbeddedResource Include="Form\Reportes\frmCalendarioGeneral.resx">
       <DependentUpon>frmCalendarioGeneral.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCorreos.resx">
+      <DependentUpon>frmCorreos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PagoPatrocinador.resx">
       <DependentUpon>PagoPatrocinador.cs</DependentUpon>
     </EmbeddedResource>
@@ -596,6 +605,7 @@
     <Content Include="media\door.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\gmail_icon-icons.com_59877 %281%29.png" />
     <None Include="Resources\soccer-field-background %281%29.png" />
     <None Include="Resources\futxpert-background.png" />
     <None Include="Resources\logoFXblanco.png" />

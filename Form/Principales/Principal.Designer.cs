@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.panelOpciones = new System.Windows.Forms.Panel();
+            this.btnCorreos = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnAuditorias = new System.Windows.Forms.Button();
@@ -62,6 +63,7 @@
             // 
             this.panelOpciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
             this.panelOpciones.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panelOpciones.Controls.Add(this.btnCorreos);
             this.panelOpciones.Controls.Add(this.button3);
             this.panelOpciones.Controls.Add(this.pictureBox1);
             this.panelOpciones.Controls.Add(this.btnAuditorias);
@@ -73,6 +75,22 @@
             this.panelOpciones.Name = "panelOpciones";
             this.panelOpciones.Size = new System.Drawing.Size(294, 618);
             this.panelOpciones.TabIndex = 8;
+            // 
+            // btnCorreos
+            // 
+            this.btnCorreos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            this.btnCorreos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCorreos.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCorreos.ForeColor = System.Drawing.Color.White;
+            this.btnCorreos.Image = global::TorneosFut.Properties.Resources.gmail_icon_icons_com_59877__1_;
+            this.btnCorreos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCorreos.Location = new System.Drawing.Point(0, 407);
+            this.btnCorreos.Name = "btnCorreos";
+            this.btnCorreos.Size = new System.Drawing.Size(294, 79);
+            this.btnCorreos.TabIndex = 16;
+            this.btnCorreos.Text = "CORREOS";
+            this.btnCorreos.UseVisualStyleBackColor = false;
+            this.btnCorreos.Click += new System.EventHandler(this.btnCorreos_Click);
             // 
             // button3
             // 
@@ -383,5 +401,6 @@
         private System.Windows.Forms.Panel panelModulos;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnCorreos;
     }
 }
