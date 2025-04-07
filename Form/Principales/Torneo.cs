@@ -1,4 +1,5 @@
-﻿using pruebas;
+﻿using Guna.UI2.WinForms;
+using pruebas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,6 +30,7 @@ namespace TorneosFut
         csValidaciones csValidaciones;
         csDatos csDatos;
         Formato formato;
+        Guna.UI2.WinForms.Guna2MessageDialog msg = new Guna.UI2.WinForms.Guna2MessageDialog();
         public Torneo(string u, string c)
         {
             conexion = new csConexion(u, c);
@@ -71,6 +73,15 @@ namespace TorneosFut
 
         private void Torneo_Load(object sender, EventArgs e)
         {
+            msg.Buttons = MessageDialogButtons.OK;
+            msg.Icon = MessageDialogIcon.Information;
+            msg.Style = MessageDialogStyle.Light;
+            msg.Parent = this;
+            if (GlobalSettings.ModoOscuro)
+            {
+                msg.Style = MessageDialogStyle.Dark;
+
+            }
             foreach (DataGridViewColumn column in dgvTorneo.Columns)
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
@@ -205,22 +216,24 @@ namespace TorneosFut
                             if (tieneMensaje)
                             {
                                 string mensaje = reader["Mensaje"].ToString();
-                                MessageBox.Show(mensaje);
+                                msg.Text = mensaje;
+                                msg.Show();
                             }
                             else
                             {
                                 // Obtener GanadorID y Puntos
                                 string ganadorID = reader["GanadorID"].ToString();
                                 int puntos = Convert.ToInt32(reader["Puntos"]);
-
-                                MessageBox.Show($"Ganador: {ganadorID} con {puntos} puntos.");
+                                msg.Text = "Ganador: {ganadorID} con {puntos} puntos.";
+                                msg.Show(); 
                                 conexion.Consulta($"update Torneo set Estado = 'FINALIZADO' where IDTorneo = {torneoID}");
                                 ActualizarTabla();
                             }
                         }
                         else
                         {
-                            MessageBox.Show("No se devolvió ningún resultado.");
+                            msg.Text = "No se devolvió ningún resultado.";
+                            msg.Show();
                         }
                     }
                 }
