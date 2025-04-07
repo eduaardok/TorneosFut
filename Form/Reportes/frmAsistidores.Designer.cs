@@ -34,7 +34,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnExportarPDF = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.lblEncabezado = new System.Windows.Forms.Label();
@@ -79,7 +79,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
-            this.panel2.Controls.Add(this.guna2Button3);
+            this.panel2.Controls.Add(this.btnExportarPDF);
             this.panel2.Controls.Add(this.guna2Button2);
             this.panel2.Controls.Add(this.guna2Button1);
             this.panel2.Controls.Add(this.lblEncabezado);
@@ -90,21 +90,22 @@
             this.panel2.TabIndex = 101;
             this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
             // 
-            // guna2Button3
+            // btnExportarPDF
             // 
-            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.guna2Button3.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button3.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.Location = new System.Drawing.Point(540, 0);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.Size = new System.Drawing.Size(150, 50);
-            this.guna2Button3.TabIndex = 37;
-            this.guna2Button3.Text = "EXPORTAR PDF";
+            this.btnExportarPDF.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnExportarPDF.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnExportarPDF.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnExportarPDF.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnExportarPDF.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnExportarPDF.FillColor = System.Drawing.Color.Transparent;
+            this.btnExportarPDF.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportarPDF.ForeColor = System.Drawing.Color.White;
+            this.btnExportarPDF.Location = new System.Drawing.Point(540, 0);
+            this.btnExportarPDF.Name = "btnExportarPDF";
+            this.btnExportarPDF.Size = new System.Drawing.Size(150, 50);
+            this.btnExportarPDF.TabIndex = 37;
+            this.btnExportarPDF.Text = "EXPORTAR PDF";
+            this.btnExportarPDF.Click += new System.EventHandler(this.btnExportarPDF_Click);
             // 
             // guna2Button2
             // 
@@ -153,12 +154,11 @@
             // 
             // rvwAsistencia
             // 
-            this.rvwAsistencia.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rvwAsistencia.LocalReport.ReportEmbeddedResource = "TorneosFut.Class.rptEstatsJugadores.rdlc";
             this.rvwAsistencia.Location = new System.Drawing.Point(3, 50);
             this.rvwAsistencia.Name = "rvwAsistencia";
             this.rvwAsistencia.ServerReport.BearerToken = null;
-            this.rvwAsistencia.Size = new System.Drawing.Size(794, 390);
+            this.rvwAsistencia.Size = new System.Drawing.Size(742, 390);
             this.rvwAsistencia.TabIndex = 105;
             this.rvwAsistencia.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             this.rvwAsistencia.Load += new System.EventHandler(this.rvwAsistencia_Load);
@@ -195,6 +195,6 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         public System.Windows.Forms.Label lblEncabezado;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
+        private Guna.UI2.WinForms.Guna2Button btnExportarPDF;
     }
 }

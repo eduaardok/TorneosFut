@@ -33,12 +33,12 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnExportarPDF = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.lblEncabezado = new System.Windows.Forms.Label();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.rvwCalendarioClub = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,7 +72,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
-            this.panel2.Controls.Add(this.guna2Button3);
+            this.panel2.Controls.Add(this.btnExportarPDF);
             this.panel2.Controls.Add(this.guna2Button2);
             this.panel2.Controls.Add(this.guna2Button1);
             this.panel2.Controls.Add(this.lblEncabezado);
@@ -82,6 +82,23 @@
             this.panel2.Size = new System.Drawing.Size(800, 50);
             this.panel2.TabIndex = 105;
             this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
+            // 
+            // btnExportarPDF
+            // 
+            this.btnExportarPDF.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnExportarPDF.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnExportarPDF.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnExportarPDF.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnExportarPDF.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnExportarPDF.FillColor = System.Drawing.Color.Transparent;
+            this.btnExportarPDF.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportarPDF.ForeColor = System.Drawing.Color.White;
+            this.btnExportarPDF.Location = new System.Drawing.Point(540, 0);
+            this.btnExportarPDF.Name = "btnExportarPDF";
+            this.btnExportarPDF.Size = new System.Drawing.Size(150, 50);
+            this.btnExportarPDF.TabIndex = 37;
+            this.btnExportarPDF.Text = "EXPORTAR PDF";
+            this.btnExportarPDF.Click += new System.EventHandler(this.btnExportarPDF_Click);
             // 
             // guna2Button2
             // 
@@ -145,22 +162,6 @@
             this.rvwCalendarioClub.TabIndex = 109;
             this.rvwCalendarioClub.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             // 
-            // guna2Button3
-            // 
-            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.guna2Button3.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button3.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.Location = new System.Drawing.Point(540, 0);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.Size = new System.Drawing.Size(150, 50);
-            this.guna2Button3.TabIndex = 37;
-            this.guna2Button3.Text = "EXPORTAR PDF";
-            // 
             // frmCalendarioEE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -193,6 +194,6 @@
         public System.Windows.Forms.Label lblEncabezado;
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
         private Microsoft.Reporting.WinForms.ReportViewer rvwCalendarioClub;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
+        private Guna.UI2.WinForms.Guna2Button btnExportarPDF;
     }
 }
