@@ -77,6 +77,10 @@ namespace TorneosFut
             }
             rvwListaEqu.LocalReport.DataSources.Add(dataset); // eso de rvwDatos le cambias por el nombre del report viewer que le hayas puesto
             dataset.Value = dt;
+
+            //9.13132in; 3.54167in
+            ConfigurarVistaPrevia(rvwListaEqu, 9.13132f, 3.54167f);
+
             rvwListaEqu.LocalReport.Refresh();
             this.rvwListaEqu.RefreshReport();
         }
@@ -106,6 +110,76 @@ namespace TorneosFut
                 this.Location = new Point(
                     this.Location.X + e.X - (panel1.Width / 2),
                     this.Location.Y + e.Y - (panel1.Height / 2));
+            }
+        }
+
+        private byte[] ExportarReportePDF(ReportViewer viewer)
+        {
+            
+            string deviceInfo = @"<DeviceInfo>
+                            <OutputFormat>PDF</OutputFormat>
+                            <PageWidth>9.13132in</PageWidth>
+                            <PageHeight>500in</PageHeight>
+                            <MarginTop>0in</MarginTop>
+                            <MarginLeft>0in</MarginLeft>
+                            <MarginRight>0in</MarginRight>
+                            <MarginBottom>0in</MarginBottom>
+                            <HugePageBreak>false</HugePageBreak>
+                            <EmbedFonts>true</EmbedFonts>
+                          </DeviceInfo>";
+
+            Warning[] warnings;
+            string[] streamIds;
+            string mimeType = string.Empty;
+            string encoding = string.Empty;
+            string extension = string.Empty;
+
+            byte[] bytes = viewer.LocalReport.Render(
+                "PDF", deviceInfo, out mimeType, out encoding, out extension,
+                out streamIds, out warnings);
+
+            return bytes;
+        }
+
+        private void ConfigurarVistaPrevia(ReportViewer viewer, float anchoOriginal, float altoOriginal)
+        {
+            System.Drawing.Printing.PageSettings configuracionPagina = new System.Drawing.Printing.PageSettings();
+
+            int anchoEnCentesimasPulgada = (int)(anchoOriginal * 100);
+            int altoEnCentesimasPulgada = (int)(altoOriginal * 100);
+
+            configuracionPagina.PaperSize = new System.Drawing.Printing.PaperSize("Personalizado",
+                anchoEnCentesimasPulgada, altoEnCentesimasPulgada);
+
+            configuracionPagina.Margins = new System.Drawing.Printing.Margins(0, 0, 0, 0);
+
+            viewer.SetPageSettings(configuracionPagina);
+        }
+
+        private void btnExportarPDF_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SaveFileDialog saveDialog = new SaveFileDialog();
+                saveDialog.Filter = "Archivos PDF (*.pdf)|*.pdf";
+                saveDialog.Title = "Guardar reporte como PDF";
+                saveDialog.FileName = "Reporte.pdf";
+
+                if (saveDialog.ShowDialog() == DialogResult.OK)
+                {
+                    byte[] bytes = ExportarReportePDF(rvwListaEqu);
+                    File.WriteAllBytes(saveDialog.FileName, bytes);
+
+                    MessageBox.Show("Reporte exportado exitosamente", "Éxito",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    System.Diagnostics.Process.Start(saveDialog.FileName);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al exportar: " + ex.Message, "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

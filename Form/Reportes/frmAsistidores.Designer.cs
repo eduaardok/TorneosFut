@@ -154,11 +154,12 @@
             // 
             // rvwAsistencia
             // 
+            this.rvwAsistencia.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rvwAsistencia.LocalReport.ReportEmbeddedResource = "TorneosFut.Class.rptEstatsJugadores.rdlc";
             this.rvwAsistencia.Location = new System.Drawing.Point(3, 50);
             this.rvwAsistencia.Name = "rvwAsistencia";
             this.rvwAsistencia.ServerReport.BearerToken = null;
-            this.rvwAsistencia.Size = new System.Drawing.Size(742, 390);
+            this.rvwAsistencia.Size = new System.Drawing.Size(794, 390);
             this.rvwAsistencia.TabIndex = 105;
             this.rvwAsistencia.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             this.rvwAsistencia.Load += new System.EventHandler(this.rvwAsistencia_Load);

@@ -449,7 +449,7 @@ namespace pruebas
 
         private void btnPosiciones_Click(object sender, EventArgs e)
         {
-            frmTablaP tabla = new frmTablaP();
+            frmTablaP tabla = new frmTablaP(IdTorneo);
             tabla.Show(); 
         }
 

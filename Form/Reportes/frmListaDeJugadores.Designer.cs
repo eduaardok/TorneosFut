@@ -38,6 +38,7 @@
             this.lblEncabezado = new System.Windows.Forms.Label();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.rvwListaEqu = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.btnExportarPDF = new Guna.UI2.WinForms.Guna2Button();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,6 +72,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.panel2.Controls.Add(this.btnExportarPDF);
             this.panel2.Controls.Add(this.guna2Button2);
             this.panel2.Controls.Add(this.guna2Button1);
             this.panel2.Controls.Add(this.lblEncabezado);
@@ -143,6 +145,23 @@
             this.rvwListaEqu.TabIndex = 125;
             this.rvwListaEqu.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             // 
+            // btnExportarPDF
+            // 
+            this.btnExportarPDF.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnExportarPDF.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnExportarPDF.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnExportarPDF.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnExportarPDF.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnExportarPDF.FillColor = System.Drawing.Color.Transparent;
+            this.btnExportarPDF.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportarPDF.ForeColor = System.Drawing.Color.White;
+            this.btnExportarPDF.Location = new System.Drawing.Point(540, 0);
+            this.btnExportarPDF.Name = "btnExportarPDF";
+            this.btnExportarPDF.Size = new System.Drawing.Size(150, 50);
+            this.btnExportarPDF.TabIndex = 38;
+            this.btnExportarPDF.Text = "EXPORTAR PDF";
+            this.btnExportarPDF.Click += new System.EventHandler(this.btnExportarPDF_Click);
+            // 
             // frmListaDeJugadores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -174,5 +193,6 @@
         public System.Windows.Forms.Label lblEncabezado;
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
         private Microsoft.Reporting.WinForms.ReportViewer rvwListaEqu;
+        private Guna.UI2.WinForms.Guna2Button btnExportarPDF;
     }
 }
