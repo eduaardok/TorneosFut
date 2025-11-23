@@ -15,11 +15,15 @@ namespace TorneosFut
         csDatos csDatos;
         private SqlConnection conec;
         //Server VPN
-        private string _server = "26.76.4.61";
-        private string _database = "BDTorneosBetaV2";
+
+
+
+
+        /*private string _server = ".\SQLEXPRESS";
+        private string _database = "BDTorneosBetaV2";*/
         //Server Local
-        /* private string _server = "(local)";
-         private string _database = "";*/
+        private string _server = $@"26.197.0.134";
+        private string _database = "BDTorneos";
 
         private string _usuario;
         private string _clave;
@@ -51,8 +55,8 @@ namespace TorneosFut
         //private string CadenaConexion => $"Server={_server}; Database={_database}; User id={_usuario}; Password={_clave};";
         public csConexion()
         {
-            _usuario = "UsuarioLectura";
-            _clave = "usuario";
+            _usuario = "administrador";
+            _clave = "rJm7bWNkOPLNdbkkZCMV5Q==";
         }
         public csConexion(string us, string cl)
         {
@@ -71,13 +75,20 @@ namespace TorneosFut
             try
             {
                 conec.Open();
+
+                if (conec.State == ConnectionState.Open)
+                    MessageBox.Show("Conexión abierta correctamente");
+
+                return true;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Error al abrir conexión: " + ex.Message);
+                return false;
             }
-            return true;
         }
+
+
 
         public DataTable ListDGV(string consul)
         {
@@ -121,11 +132,15 @@ namespace TorneosFut
                 return false;
             }
         }
-       
+
         public bool CerrarCon()
         {
-            conec.Close();
+            if (conec != null && conec.State == ConnectionState.Open)
+            {
+                conec.Close();
+            }
             return true;
         }
+
     }
 }
