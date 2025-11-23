@@ -15,10 +15,6 @@ namespace TorneosFut
         csDatos csDatos;
         private SqlConnection conec;
         //Server VPN
-
-
-
-
         /*private string _server = ".\SQLEXPRESS";
         private string _database = "BDTorneosBetaV2";*/
         //Server Local
@@ -52,17 +48,15 @@ namespace TorneosFut
             get => conec;
             set => conec = value;
         }
-        //private string CadenaConexion => $"Server={_server}; Database={_database}; User id={_usuario}; Password={_clave};";
         public csConexion()
         {
             _usuario = "administrador";
-            _clave = "rJm7bWNkOPLNdbkkZCMV5Q==";
+            _clave = "Admin2025";
         }
         public csConexion(string us, string cl)
         {
             _usuario = us;
             _clave = cl;
-            //csDatos = new csDatos(Usuario, Clave);
         }
         void Conectar()
         {
@@ -75,10 +69,6 @@ namespace TorneosFut
             try
             {
                 conec.Open();
-
-                if (conec.State == ConnectionState.Open)
-                    MessageBox.Show("Conexión abierta correctamente");
-
                 return true;
             }
             catch (Exception ex)
@@ -88,15 +78,37 @@ namespace TorneosFut
             }
         }
 
-
-
         public DataTable ListDGV(string consul)
         {
-            AbrirCon();
             DataTable data = new DataTable();
-            SqlDataAdapter sqlData = new SqlDataAdapter(consul, conec);
-            sqlData.Fill(data);
-            CerrarCon();
+            AbrirCon();
+
+            if (conec == null || conec.State != ConnectionState.Open)
+            {
+                MessageBox.Show("No se pudo abrir la conexión a la base de datos.");
+                return data;
+            }
+
+            try
+            {
+                using (SqlDataAdapter sqlData = new SqlDataAdapter(consul, conec))
+                {
+                    sqlData.Fill(data);
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Error de SQL Server: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                CerrarCon();
+            }
+
             return data;
         }
         public void RegistrarAuditoriaInicioSesion()
@@ -141,6 +153,5 @@ namespace TorneosFut
             }
             return true;
         }
-
     }
 }
