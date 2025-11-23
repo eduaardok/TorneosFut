@@ -320,9 +320,9 @@ namespace TorneosFut
         }
 
 
-        public bool InsertarTorneo(string Txtnombre, string formato, string ModoFutbol, string Organizador, string te, string fin, decimal costo)
+        public bool InsertarTorneo(string Txtnombre, string formato, string ModoFutbol, string Organizador, string te, string fin, decimal costo, string Genero)
         {
-            if (csTorneo.AgregarTorneo(Txtnombre, formato, ModoFutbol, Organizador, te, fin, costo))
+            if (csTorneo.AgregarTorneo(Txtnombre, formato, ModoFutbol, Organizador, te, fin, costo, Genero))
             {
                 MessageBox.Show("Torneo registrado correctamente");
                 return true;
@@ -388,9 +388,9 @@ namespace TorneosFut
         {
             return csArbitro.AgregarArbitro(id, nombre, apellido, correo);
         }
-        public bool EditarTorneo(string id, string Txtnombre, string formato, string ModoFutbol, string Organizador, string te, string fin, decimal costo)
+        public bool EditarTorneo(string id, string Txtnombre, string formato, string ModoFutbol, string Organizador, string te, string fin, decimal costo, string Genero)
         {
-            if (csTorneo.ActualizarTorneo(id, Txtnombre, formato, ModoFutbol, Organizador, te, fin, costo))
+            if (csTorneo.ActualizarTorneo(id, Txtnombre, formato, ModoFutbol, Organizador, te, fin, costo, Genero))
             {
                 MessageBox.Show("Torneo actualizado correctamente");
                 return true;
