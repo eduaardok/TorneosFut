@@ -23,7 +23,7 @@ namespace TorneosFut
         private string _correo;
         private string _nombreUsuarioBD;
         private string _claveBD;
-        static csConexion csConexion;
+        private csConexion csConexion;
         public csUsuario(string u, string c)
         {
             csConexion = new csConexion(u, c);

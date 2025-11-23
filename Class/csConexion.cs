@@ -15,11 +15,11 @@ namespace TorneosFut
         csDatos csDatos;
         private SqlConnection conec;
         //Server VPN
-        private string _server = "26.76.4.61";
-        private string _database = "BDTorneosBetaV2";
+        /*private string _server = ".\SQLEXPRESS";
+        private string _database = "BDTorneosBetaV2";*/
         //Server Local
-        /* private string _server = "(local)";
-         private string _database = "";*/
+        private string _server = $@"26.197.0.134";
+        private string _database = "BDTorneos";
 
         private string _usuario;
         private string _clave;
@@ -48,17 +48,15 @@ namespace TorneosFut
             get => conec;
             set => conec = value;
         }
-        //private string CadenaConexion => $"Server={_server}; Database={_database}; User id={_usuario}; Password={_clave};";
         public csConexion()
         {
-            _usuario = "UsuarioLectura";
-            _clave = "usuario";
+            _usuario = "administrador";
+            _clave = "Admin2025";
         }
         public csConexion(string us, string cl)
         {
             _usuario = us;
             _clave = cl;
-            //csDatos = new csDatos(Usuario, Clave);
         }
         void Conectar()
         {
@@ -71,21 +69,46 @@ namespace TorneosFut
             try
             {
                 conec.Open();
+                return true;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Error al abrir conexión: " + ex.Message);
+                return false;
             }
-            return true;
         }
 
         public DataTable ListDGV(string consul)
         {
-            AbrirCon();
             DataTable data = new DataTable();
-            SqlDataAdapter sqlData = new SqlDataAdapter(consul, conec);
-            sqlData.Fill(data);
-            CerrarCon();
+            AbrirCon();
+
+            if (conec == null || conec.State != ConnectionState.Open)
+            {
+                MessageBox.Show("No se pudo abrir la conexión a la base de datos.");
+                return data;
+            }
+
+            try
+            {
+                using (SqlDataAdapter sqlData = new SqlDataAdapter(consul, conec))
+                {
+                    sqlData.Fill(data);
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Error de SQL Server: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                CerrarCon();
+            }
+
             return data;
         }
         public void RegistrarAuditoriaInicioSesion()
@@ -121,10 +144,13 @@ namespace TorneosFut
                 return false;
             }
         }
-       
+
         public bool CerrarCon()
         {
-            conec.Close();
+            if (conec != null && conec.State == ConnectionState.Open)
+            {
+                conec.Close();
+            }
             return true;
         }
     }
