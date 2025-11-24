@@ -320,9 +320,9 @@ namespace TorneosFut
         }
 
 
-        public bool InsertarTorneo(string Txtnombre, string formato, string ModoFutbol, string Organizador, string te, string fin, decimal costo, string Genero)
+        public bool InsertarTorneo(string Txtnombre, string formato, string ModoFutbol, string Organizador, string te, string fin, decimal costo, string Genero, int EdadMin, int EdadMax)
         {
-            if (csTorneo.AgregarTorneo(Txtnombre, formato, ModoFutbol, Organizador, te, fin, costo, Genero))
+            if (csTorneo.AgregarTorneo(Txtnombre, formato, ModoFutbol, Organizador, te, fin, costo, Genero, EdadMin, EdadMax))
             {
                 MessageBox.Show("Torneo registrado correctamente");
                 return true;

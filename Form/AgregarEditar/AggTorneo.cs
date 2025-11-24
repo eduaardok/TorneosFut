@@ -91,29 +91,36 @@ namespace TorneosFut
         }
         private void btngEnviar_Click(object sender, EventArgs e)
         {
-            if (CamposVacios())
+            if (!CamposVacios())
             {
-                try
+                return;
+            }
+
+            if (!ValidarEdades())
+            {
+                return;
+            }
+
+            try
+            {
+                if (!agg)
                 {
-                    if (!agg)
-                    {
-                        MessageBox.Show(cmbGenero.SelectedItem.ToString());
-                        csDatos.EditarTorneo(id, txtNombre.Text, cmbFormato.SelectedValue.ToString(), cmbModoFutbol.SelectedValue.ToString(), cmbOrganizador.SelectedValue.ToString(), dtpInicio.Value.ToString(), dtpFin.Value.ToString(), decimal.Parse(txtCosto.Text), cmbGenero.SelectedItem.ToString());
-                        msg.Text = "Se creó correctamente";
-                        msg.Show();
-                        this.Close();
-                    }
-                    else
-                    {
-                        csDatos.InsertarTorneo(txtNombre.Text, cmbFormato.SelectedValue.ToString(), cmbModoFutbol.SelectedValue.ToString(), cmbOrganizador.SelectedValue.ToString(), dtpInicio.Value.ToString(), dtpFin.Value.ToString(), decimal.Parse(txtCosto.Text), cmbGenero.SelectedItem.ToString());
-                        this.Close();
-                    }
-                }
-                catch (Exception)
-                {
-                    msg.Text = "Datos inválidos";
+                    MessageBox.Show(cmbGenero.SelectedItem.ToString());
+                    csDatos.EditarTorneo(id, txtNombre.Text, cmbFormato.SelectedValue.ToString(), cmbModoFutbol.SelectedValue.ToString(), cmbOrganizador.SelectedValue.ToString(), dtpInicio.Value.ToString(), dtpFin.Value.ToString(), decimal.Parse(txtCosto.Text), cmbGenero.SelectedItem.ToString());
+                    msg.Text = "Se creó correctamente";
                     msg.Show();
+                    this.Close();
                 }
+                else
+                {
+                    csDatos.InsertarTorneo(txtNombre.Text, cmbFormato.SelectedValue.ToString(), cmbModoFutbol.SelectedValue.ToString(), cmbOrganizador.SelectedValue.ToString(), dtpInicio.Value.ToString(), dtpFin.Value.ToString(), decimal.Parse(txtCosto.Text), cmbGenero.SelectedItem.ToString(), (int)numEdadmin.Value, (int)numEdadmax.Value);
+                    this.Close();
+                }
+            }
+            catch (Exception)
+            {
+                msg.Text = "Datos inválidos";
+                msg.Show();
             }
         }
         bool CamposVacios()
@@ -126,5 +133,17 @@ namespace TorneosFut
             }
             else return true;
         }
+
+        bool ValidarEdades()
+        {
+            if (numEdadmin.Value > numEdadmax.Value)
+            {
+                msg.Text = "La edad máxima no puede ser menor a la mínima";
+                msg.Show();
+                return false;
+            }
+            else return true;
+        }
+        
     }
 }

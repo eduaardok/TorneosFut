@@ -131,10 +131,10 @@ namespace TorneosFut.Class
 
             return dt;
         }
-        public bool AgregarTorneo(string Txtnombre, string formato, string ModoFutbol, string Organizador, string te, string fin, decimal costo, string Genero)
+        public bool AgregarTorneo(string Txtnombre, string formato, string ModoFutbol, string Organizador, string te, string fin, decimal costo, string Genero, int EdadMin, int EdadMax)
         {
-            if (csConexion.Consulta($"insert into Torneo (IDTorneo, NombreTorneo, IDModoFutbol, IDOrganizador, FechaInicio, FechaFin, Usuario, Estado, CostoInscripcion, IDFormato, Genero)" +
-                $" values ({GenerarNuevoIDTorneo()}, '{Txtnombre}', {ModoFutbol}, '{Organizador}','{te}','{fin}', system_user, 'PENDIENTE', {costo}, {formato}, '{Genero}')"))
+            if (csConexion.Consulta($"insert into Torneo (IDTorneo, NombreTorneo, IDModoFutbol, IDOrganizador, FechaInicio, FechaFin, Usuario, Estado, CostoInscripcion, IDFormato, Genero, EdadMin, EdadMax)" +
+                $" values ({GenerarNuevoIDTorneo()}, '{Txtnombre}', {ModoFutbol}, '{Organizador}','{te}','{fin}', system_user, 'PENDIENTE', {costo}, {formato}, '{Genero}', '{EdadMin}', '{EdadMax}')"))
                 return true;
             else
                 return false;
