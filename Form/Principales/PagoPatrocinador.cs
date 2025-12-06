@@ -68,23 +68,31 @@ namespace TorneosFut
 
             bool saldoOk = decimal.TryParse(txtsaldo.Text, out saldoIngresado);
             bool costoOk = decimal.TryParse(lblCosto.Text, out costoTotal);
+        
 
-            if (!saldoOk || !costoOk)
-            {
-                MessageBox.Show("Verifica que ambos montos sean válidos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
 
-            if (saldoIngresado == costoTotal)
-            {
-                csDatos.PagoPatrocinador(IDTorneo, IdPatrocinador, "PAGADO", txtDescripcion.Text);
-                MessageBox.Show("pagado");
-                Close();
-            }
-            else
-            {
-                MessageBox.Show("El saldo ingresado debe ser igual al costo total.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+                if (!saldoOk || !costoOk)
+                {
+                    MessageBox.Show("Verifica que ambos montos sean válidos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (saldoIngresado == costoTotal)
+                {
+                    csDatos.PagoPatrocinador(IDTorneo, IdPatrocinador, "PAGADO", txtDescripcion.Text);
+                    MessageBox.Show("pagado");
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("El saldo ingresado debe ser igual al costo total.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            
+
+        }
+
+        private void txtsaldo_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

@@ -101,11 +101,17 @@ namespace TorneosFut
 
         private void dgvEstadio_SelectionChanged(object sender, EventArgs e)
         {
-            if (dgvEstadio.CurrentRow.Index >= 0)
+            if (dgvEstadio.Rows.Count > 0 &&
+    dgvEstadio.CurrentRow != null &&
+    dgvEstadio.CurrentRow.Index >= 0 &&
+    dgvEstadio.CurrentRow.Cells[0].Value != null)
             {
-                string id = dgvEstadio.Rows[dgvEstadio.CurrentRow.Index].Cells[0].Value.ToString();
+                string id = dgvEstadio.Rows[dgvEstadio.CurrentRow.Index]
+                                  .Cells[0].Value.ToString();
+
                 csDatos.MostrarImagenEstadio(id, ptbImagen);
             }
+
         }
     }
 }

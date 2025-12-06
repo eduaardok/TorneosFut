@@ -16,7 +16,7 @@ using static Guna.UI2.WinForms.Suite.Descriptions;
 
 namespace pruebas
 {
-    public partial class Jugador: Form
+    public partial class Jugador : Form
     {
         csConexion conexion;
         AggJugadores agregaJu;
@@ -25,8 +25,8 @@ namespace pruebas
         //frmEstatsGenerales estadistica;
         public Jugador(string u, string c)
         {
-            conexion = new csConexion(u,c);
-            csJugador = new csJugador(u,c);
+            conexion = new csConexion(u, c);
+            csJugador = new csJugador(u, c);
             csDGV = new csDGV(u, c);
             InitializeComponent();
         }
@@ -45,7 +45,7 @@ namespace pruebas
         {
 
         }
-       
+
         private void VerJugadores_Load(object sender, EventArgs e)
         {
             foreach (DataGridViewColumn column in dgvJugador.Columns)
@@ -86,7 +86,7 @@ namespace pruebas
                     {
 
                         string id = dgvJugador.Rows[dgvJugador.CurrentRow.Index].Cells[0].Value.ToString();
-                        AggJugadores agregaJu = new AggJugadores(id,conexion.Usuario, conexion.Clave, false);
+                        AggJugadores agregaJu = new AggJugadores(id, conexion.Usuario, conexion.Clave, false);
                         agregaJu.Txtnombre.Text = dgvJugador.Rows[dgvJugador.CurrentRow.Index].Cells[1].Value.ToString();
                         agregaJu.txtapellido.Text = dgvJugador.Rows[dgvJugador.CurrentRow.Index].Cells[2].Value.ToString();
                         agregaJu.cmbsexo.Text = dgvJugador.Rows[dgvJugador.CurrentRow.Index].Cells[3].Value.ToString();
@@ -96,8 +96,8 @@ namespace pruebas
                         agregaJu.txtpeso.Text = dgvJugador.Rows[dgvJugador.CurrentRow.Index].Cells[7].Value.ToString();
                         agregaJu.txtaltura.Text = dgvJugador.Rows[dgvJugador.CurrentRow.Index].Cells[8].Value.ToString();
                         agregaJu.cmbpierna.Text = dgvJugador.Rows[dgvJugador.CurrentRow.Index].Cells[9].Value.ToString();
-                        agregaJu.ptbImagen.ImageLocation= Path.Combine(Application.StartupPath, "Imagenes", dgvJugador.Rows[dgvJugador.CurrentRow.Index].Cells["ImagenJugador"].Value.ToString());
-                        agregaJu.ShowDialog(); 
+                        agregaJu.ptbImagen.ImageLocation = Path.Combine(Application.StartupPath, "Imagenes", dgvJugador.Rows[dgvJugador.CurrentRow.Index].Cells["ImagenJugador"].Value.ToString());
+                        agregaJu.ShowDialog();
                         ActualizarTabla();
 
                     }
@@ -119,7 +119,7 @@ namespace pruebas
 
         private void btnAgregarJugador_Click(object sender, EventArgs e)
         {
-            AggJugadores aggju = new AggJugadores("",conexion.Usuario, conexion.Clave,true);
+            AggJugadores aggju = new AggJugadores("", conexion.Usuario, conexion.Clave, true);
             aggju.ShowDialog();
             ActualizarTabla();
 
@@ -157,7 +157,10 @@ namespace pruebas
 
         private void dgvJugador_SelectionChanged(object sender, EventArgs e)
         {
-            if (dgvJugador.CurrentRow.Index >= 0)
+            if (dgvJugador.Rows.Count > 0 &&
+       dgvJugador.CurrentRow != null &&
+       dgvJugador.CurrentRow.Index >= 0 &&
+       dgvJugador.CurrentRow.Cells[0].Value != null)
             {
                 string id = dgvJugador.Rows[dgvJugador.CurrentRow.Index].Cells[0].Value.ToString();
                 csJugador.MostrarImagen(id, ptbImagen);

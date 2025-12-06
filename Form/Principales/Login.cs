@@ -34,6 +34,12 @@ namespace TorneosFut
              int nWidhtEllipse,
              int nHeightEllipse
           );
+        [DllImport("user32.dll")] private static extern void ReleaseCapture();
+        [DllImport("user32.dll")] private static extern void SendMessage(IntPtr hWnd, int msg, int wParam, int lParam);
+
+        private const int WM_NCLBUTTONDOWN = 0xA1;
+        private const int HTCAPTION = 0x2;
+
         public Login()
         {
             conec = new csConexion();
@@ -259,6 +265,28 @@ namespace TorneosFut
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void panel5_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
+            this.WindowState = FormWindowState.Maximized;
+        }
+
+        private void panel5_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            
+        }
+
+        private void panel5_MouseMove(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void panel5_MouseUp(object sender, MouseEventArgs e)
+        {
+
         }
     }
 }

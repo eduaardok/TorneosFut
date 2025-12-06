@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.panelDgv = new System.Windows.Forms.Panel();
@@ -78,7 +78,7 @@
             this.panelDgv.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelDgv.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panelDgv.Controls.Add(this.dgvEquipos);
-            this.panelDgv.Location = new System.Drawing.Point(43, 346);
+            this.panelDgv.Location = new System.Drawing.Point(36, 371);
             this.panelDgv.Name = "panelDgv";
             this.panelDgv.Size = new System.Drawing.Size(1415, 543);
             this.panelDgv.TabIndex = 5;
@@ -93,14 +93,14 @@
             this.dgvEquipos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvEquipos.BackgroundColor = System.Drawing.Color.White;
             this.dgvEquipos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEquipos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEquipos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvEquipos.ColumnHeadersHeight = 40;
             this.dgvEquipos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvEquipos.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -112,8 +112,8 @@
             this.dgvEquipos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvEquipos.RowHeadersVisible = false;
             this.dgvEquipos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
-            this.dgvEquipos.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.dgvEquipos.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvEquipos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEquipos.ShowCellToolTips = false;
             this.dgvEquipos.ShowEditingIcon = false;
@@ -137,7 +137,7 @@
             this.btngMostrar.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btngMostrar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btngMostrar.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btngMostrar.Location = new System.Drawing.Point(297, 244);
+            this.btngMostrar.Location = new System.Drawing.Point(290, 269);
             this.btngMostrar.Name = "btngMostrar";
             this.btngMostrar.Size = new System.Drawing.Size(271, 59);
             this.btngMostrar.TabIndex = 11;
@@ -150,7 +150,7 @@
             this.txtBuscarEquipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.txtBuscarEquipo.ForeColor = System.Drawing.Color.Gray;
             this.txtBuscarEquipo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtBuscarEquipo.Location = new System.Drawing.Point(177, 175);
+            this.txtBuscarEquipo.Location = new System.Drawing.Point(170, 200);
             this.txtBuscarEquipo.Multiline = true;
             this.txtBuscarEquipo.Name = "txtBuscarEquipo";
             this.txtBuscarEquipo.Size = new System.Drawing.Size(660, 48);
@@ -177,7 +177,7 @@
             this.btngEditar.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btngEditar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btngEditar.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btngEditar.Location = new System.Drawing.Point(111, 244);
+            this.btngEditar.Location = new System.Drawing.Point(104, 269);
             this.btngEditar.Name = "btngEditar";
             this.btngEditar.Size = new System.Drawing.Size(180, 59);
             this.btngEditar.TabIndex = 10;
@@ -194,20 +194,21 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1490, 100);
+            this.panel1.Size = new System.Drawing.Size(1476, 88);
             this.panel1.TabIndex = 26;
             // 
             // btnEstadio
             // 
             this.btnEstadio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
             this.btnEstadio.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEstadio.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnEstadio.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
             this.btnEstadio.ForeColor = System.Drawing.Color.White;
             this.btnEstadio.Image = global::TorneosFut.Properties.Resources.icons8_estadio_50;
             this.btnEstadio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEstadio.Location = new System.Drawing.Point(906, 3);
+            this.btnEstadio.Location = new System.Drawing.Point(694, 0);
             this.btnEstadio.Name = "btnEstadio";
-            this.btnEstadio.Size = new System.Drawing.Size(294, 85);
+            this.btnEstadio.Size = new System.Drawing.Size(347, 88);
             this.btnEstadio.TabIndex = 8;
             this.btnEstadio.Text = "ESTADIOS";
             this.btnEstadio.UseVisualStyleBackColor = false;
@@ -217,12 +218,13 @@
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = global::TorneosFut.Properties.Resources.icons8_llamada_de_conferencia_64;
-            this.button1.Location = new System.Drawing.Point(21, 9);
+            this.button1.Location = new System.Drawing.Point(1352, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(124, 85);
+            this.button1.Size = new System.Drawing.Size(124, 88);
             this.button1.TabIndex = 7;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -231,13 +233,14 @@
             // 
             this.btnJugador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
             this.btnJugador.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnJugador.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnJugador.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
             this.btnJugador.ForeColor = System.Drawing.Color.White;
             this.btnJugador.Image = global::TorneosFut.Properties.Resources.icons8_fútbol_64;
             this.btnJugador.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnJugador.Location = new System.Drawing.Point(290, 3);
+            this.btnJugador.Location = new System.Drawing.Point(347, 0);
             this.btnJugador.Name = "btnJugador";
-            this.btnJugador.Size = new System.Drawing.Size(294, 85);
+            this.btnJugador.Size = new System.Drawing.Size(347, 88);
             this.btnJugador.TabIndex = 3;
             this.btnJugador.Text = "JUGADORES";
             this.btnJugador.UseVisualStyleBackColor = false;
@@ -247,13 +250,14 @@
             // 
             this.btnEntrenador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
             this.btnEntrenador.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEntrenador.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnEntrenador.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
             this.btnEntrenador.ForeColor = System.Drawing.Color.White;
             this.btnEntrenador.Image = global::TorneosFut.Properties.Resources.icons8_male_teacher_64;
             this.btnEntrenador.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEntrenador.Location = new System.Drawing.Point(590, 3);
+            this.btnEntrenador.Location = new System.Drawing.Point(0, 0);
             this.btnEntrenador.Name = "btnEntrenador";
-            this.btnEntrenador.Size = new System.Drawing.Size(310, 85);
+            this.btnEntrenador.Size = new System.Drawing.Size(347, 88);
             this.btnEntrenador.TabIndex = 6;
             this.btnEntrenador.Text = "ENTRENADORES";
             this.btnEntrenador.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -276,7 +280,7 @@
             this.guna2Button1.HoverState.BorderColor = System.Drawing.Color.Black;
             this.guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.guna2Button1.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button1.Location = new System.Drawing.Point(574, 244);
+            this.guna2Button1.Location = new System.Drawing.Point(567, 269);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(247, 59);
             this.guna2Button1.TabIndex = 28;
@@ -287,9 +291,9 @@
             // 
             this.panelmodul.BackColor = System.Drawing.Color.White;
             this.panelmodul.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelmodul.Location = new System.Drawing.Point(0, 100);
+            this.panelmodul.Location = new System.Drawing.Point(0, 88);
             this.panelmodul.Name = "panelmodul";
-            this.panelmodul.Size = new System.Drawing.Size(1490, 811);
+            this.panelmodul.Size = new System.Drawing.Size(1476, 873);
             this.panelmodul.TabIndex = 29;
             this.panelmodul.Paint += new System.Windows.Forms.PaintEventHandler(this.panelmodul_Paint);
             // 
@@ -297,7 +301,7 @@
             // 
             this.ptbIMG.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ptbIMG.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.ptbIMG.Location = new System.Drawing.Point(870, 174);
+            this.ptbIMG.Location = new System.Drawing.Point(863, 199);
             this.ptbIMG.Name = "ptbIMG";
             this.ptbIMG.Size = new System.Drawing.Size(189, 150);
             this.ptbIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -309,7 +313,7 @@
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.BackgroundImage = global::TorneosFut.Properties.Resources.IconoLupa;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(121, 174);
+            this.pictureBox1.Location = new System.Drawing.Point(114, 199);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(50, 49);
             this.pictureBox1.TabIndex = 17;
@@ -331,7 +335,7 @@
             this.btnEquipos.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnEquipos.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnEquipos.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnEquipos.Location = new System.Drawing.Point(1211, 244);
+            this.btnEquipos.Location = new System.Drawing.Point(1204, 269);
             this.btnEquipos.Name = "btnEquipos";
             this.btnEquipos.Size = new System.Drawing.Size(247, 59);
             this.btnEquipos.TabIndex = 30;
@@ -353,7 +357,7 @@
             this.btnListas.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnListas.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnListas.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnListas.Location = new System.Drawing.Point(1211, 171);
+            this.btnListas.Location = new System.Drawing.Point(1204, 196);
             this.btnListas.Name = "btnListas";
             this.btnListas.Size = new System.Drawing.Size(247, 59);
             this.btnListas.TabIndex = 31;
@@ -365,7 +369,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1490, 911);
+            this.ClientSize = new System.Drawing.Size(1476, 961);
             this.ControlBox = false;
             this.Controls.Add(this.panelmodul);
             this.Controls.Add(this.guna2Button1);

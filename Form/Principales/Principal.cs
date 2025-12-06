@@ -26,6 +26,12 @@ namespace TorneosFut
           int nWidhtEllipse,
           int nHeightEllipse
         );
+        [DllImport("user32.dll")] private static extern void ReleaseCapture();
+        [DllImport("user32.dll")] private static extern void SendMessage(IntPtr hWnd, int msg, int wParam, int lParam);
+
+        private const int WM_NCLBUTTONDOWN = 0xA1;
+        private const int HTCAPTION = 0x2;
+
         frmCorreos correo;
         static csConexion conexion;
         static bool esAdmin;
@@ -163,6 +169,8 @@ namespace TorneosFut
                 btnUsuarios.Text = "";
                 btnEquipos.Text = "";
                 btnAuditorias.Text = "";
+                button3.Text = "";
+                btnCorreos.Text = "";
             }
             else
             {
@@ -171,7 +179,8 @@ namespace TorneosFut
                 btnUsuarios.Text = "USUARIOS";
                 btnEquipos.Text = "EQUIPOS";
                 btnAuditorias.Text = "AUDITORÍAS";
-
+                button3.Text = "GESTIÓN FINANCIERA";
+                btnCorreos.Text = "CORREOS";
             }
         }
         private void timer1_Tick(object sender, EventArgs e)
@@ -345,6 +354,35 @@ namespace TorneosFut
         private void btnCorreos_MouseLeave(object sender, EventArgs e)
         {
             btnCorreos.BackColor = Color.FromArgb(20, 25, 29);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void tstSuperior_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void tstSuperior_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
+            this.WindowState = FormWindowState.Maximized;
+        }
+        private void tstSuperior_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Normal)
+                this.WindowState = FormWindowState.Maximized;
+            else
+                this.WindowState = FormWindowState.Normal;
         }
     }
 }

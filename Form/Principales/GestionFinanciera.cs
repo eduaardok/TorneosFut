@@ -31,8 +31,8 @@ namespace TorneosFut
         private void GestionFinanciera_Load(object sender, EventArgs e)
         {
 
-            lblEncabezado.Tag = "NoCambiar";
-            panel2.Tag= "NoCambiar";
+            
+            
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
             dgvPagos.GridColor = Color.FromArgb(251, 3, 140);
             dgvPagos.GridColor = Color.FromArgb(251, 3, 140);
@@ -175,6 +175,11 @@ namespace TorneosFut
             PagoInscripcion = new PagoInscripcion(IdTorneo, idequipo, conexion.Usuario, conexion.Clave);
             PagoInscripcion.ShowDialog();
             ActualizarTablaE();
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

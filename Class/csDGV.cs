@@ -28,6 +28,7 @@ namespace TorneosFut
         csArbitro csArbitro;
         csOrganizador csOrganizador;
         csMovimientoFinanciero csMovimiento;
+       
         public csDGV(string u, string c, string IDTorneo = "0", string IDpartido = "0")
         {
             conexion = new csConexion(u, c);
@@ -67,6 +68,8 @@ namespace TorneosFut
             {
                 dgv.Columns[i].Width = dgv.Width / columnas;
             }
+            Modo_oscuro.EstiloDGV(dgv);
+
         }
         //Adaptar DataGridView sin panel
         public void AdaptarDGV(DataGridView dgv)

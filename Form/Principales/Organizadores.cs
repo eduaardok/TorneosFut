@@ -31,6 +31,7 @@ namespace TorneosFut
             }
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
             csDGV.MostrarOrganizadores(dgvOrganizador);
+            Modo_oscuro.EstiloDGV(dgvOrganizador);
         }
 
         private void btnAggOrganizador_Click(object sender, EventArgs e)

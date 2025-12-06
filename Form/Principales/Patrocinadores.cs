@@ -22,6 +22,7 @@ namespace TorneosFut
             csDGV = new csDGV(u, c);
             asignarPatrocinio = new AsignarPatrocinio(u, c);
             InitializeComponent();
+            Modo_oscuro.EstiloDGV(dgvPatrocinador);
         }
 
         private void Patrocinadores_Load(object sender, EventArgs e)

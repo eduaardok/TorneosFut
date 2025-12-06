@@ -124,5 +124,29 @@ namespace TorneosFut
                 AplicarTemaClaro(control);
             }
         }
+        public static void EstiloDGV(DataGridView dgv)
+        {
+            // Header fijo SI O SI
+            dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dgv.ColumnHeadersHeight = 50;
+            dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            // Estilos de colores
+            dgv.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#14191D");
+            dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgv.EnableHeadersVisualStyles = false;
+
+            // Filas
+            dgv.RowTemplate.Height = 35;
+            dgv.RowsDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#1E2428");
+            dgv.RowsDefaultCellStyle.ForeColor = Color.White;
+
+            // Columnas del mismo ancho
+            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            // Bordes
+            dgv.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+        }
+
     }
-    }
+}

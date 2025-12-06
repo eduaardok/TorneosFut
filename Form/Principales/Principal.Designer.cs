@@ -40,18 +40,19 @@
             this.btnTorneos = new System.Windows.Forms.Button();
             this.tmopen = new System.Windows.Forms.Timer(this.components);
             this.timeclose = new System.Windows.Forms.Timer(this.components);
-            this.btnCerrar = new System.Windows.Forms.Button();
             this.miniToolStrip = new System.Windows.Forms.ToolStrip();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panelModulos = new System.Windows.Forms.Panel();
+            this.btnCerrar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.tstSuperior = new System.Windows.Forms.ToolStrip();
             this.ddbtnOpcionesU = new System.Windows.Forms.ToolStripDropDownButton();
             this.ttmiCambiarClave = new System.Windows.Forms.ToolStripMenuItem();
             this.ttmiCerrarSesion = new System.Windows.Forms.ToolStripMenuItem();
+            this.tstSuperior = new System.Windows.Forms.ToolStrip();
+            this.button4 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.panelModulos = new System.Windows.Forms.Panel();
             this.panelOpciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -71,9 +72,9 @@
             this.panelOpciones.Controls.Add(this.btnEquipos);
             this.panelOpciones.Controls.Add(this.btnTorneos);
             this.panelOpciones.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelOpciones.Location = new System.Drawing.Point(0, 50);
+            this.panelOpciones.Location = new System.Drawing.Point(0, 44);
             this.panelOpciones.Name = "panelOpciones";
-            this.panelOpciones.Size = new System.Drawing.Size(294, 618);
+            this.panelOpciones.Size = new System.Drawing.Size(294, 624);
             this.panelOpciones.TabIndex = 8;
             // 
             // btnCorreos
@@ -118,7 +119,7 @@
             this.pictureBox1.BackgroundImage = global::TorneosFut.Properties.Resources.logoFX;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 492);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 498);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(294, 126);
             this.pictureBox1.TabIndex = 14;
@@ -206,19 +207,6 @@
             this.timeclose.Interval = 1;
             this.timeclose.Tick += new System.EventHandler(this.timeclose_Tick);
             // 
-            // btnCerrar
-            // 
-            this.btnCerrar.BackColor = System.Drawing.Color.White;
-            this.btnCerrar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnCerrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
-            this.btnCerrar.Location = new System.Drawing.Point(0, 0);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(60, 50);
-            this.btnCerrar.TabIndex = 1;
-            this.btnCerrar.Text = "-";
-            this.btnCerrar.UseVisualStyleBackColor = false;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            // 
             // miniToolStrip
             // 
             this.miniToolStrip.AccessibleName = "New item selection";
@@ -236,16 +224,48 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.tstSuperior);
-            this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.btnCerrar);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1330, 50);
+            this.panel1.Size = new System.Drawing.Size(1330, 44);
             this.panel1.TabIndex = 6;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 15;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // panelModulos
+            // 
+            this.panelModulos.BackColor = System.Drawing.Color.White;
+            this.panelModulos.BackgroundImage = global::TorneosFut.Properties.Resources.fxfutxpert;
+            this.panelModulos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panelModulos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelModulos.Location = new System.Drawing.Point(294, 44);
+            this.panelModulos.Name = "panelModulos";
+            this.panelModulos.Size = new System.Drawing.Size(1036, 624);
+            this.panelModulos.TabIndex = 9;
+            this.panelModulos.Paint += new System.Windows.Forms.PaintEventHandler(this.panelModulos_Paint);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.BackColor = System.Drawing.Color.White;
+            this.btnCerrar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrar.ForeColor = System.Drawing.Color.Black;
+            this.btnCerrar.Location = new System.Drawing.Point(0, 0);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(60, 44);
+            this.btnCerrar.TabIndex = 1;
+            this.btnCerrar.Text = "=";
+            this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // button2
             // 
@@ -256,7 +276,7 @@
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.button2.Location = new System.Drawing.Point(120, 0);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(60, 50);
+            this.button2.Size = new System.Drawing.Size(60, 44);
             this.button2.TabIndex = 12;
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -270,22 +290,10 @@
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Location = new System.Drawing.Point(60, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(60, 50);
+            this.button1.Size = new System.Drawing.Size(60, 44);
             this.button1.TabIndex = 11;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // tstSuperior
-            // 
-            this.tstSuperior.BackColor = System.Drawing.Color.Transparent;
-            this.tstSuperior.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tstSuperior.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ddbtnOpcionesU});
-            this.tstSuperior.Location = new System.Drawing.Point(60, 0);
-            this.tstSuperior.Name = "tstSuperior";
-            this.tstSuperior.Size = new System.Drawing.Size(1196, 50);
-            this.tstSuperior.TabIndex = 10;
-            this.tstSuperior.Text = "toolStrip1";
             // 
             // ddbtnOpcionesU
             // 
@@ -298,8 +306,10 @@
             this.ddbtnOpcionesU.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.ddbtnOpcionesU.Image = ((System.Drawing.Image)(resources.GetObject("ddbtnOpcionesU.Image")));
             this.ddbtnOpcionesU.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ddbtnOpcionesU.Margin = new System.Windows.Forms.Padding(0, 1, 136, 2);
             this.ddbtnOpcionesU.Name = "ddbtnOpcionesU";
-            this.ddbtnOpcionesU.Size = new System.Drawing.Size(159, 47);
+            this.ddbtnOpcionesU.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.ddbtnOpcionesU.Size = new System.Drawing.Size(159, 41);
             this.ddbtnOpcionesU.Text = "USUARIO";
             // 
             // ttmiCambiarClave
@@ -320,34 +330,50 @@
             this.ttmiCerrarSesion.Text = "CERRAR SESION";
             this.ttmiCerrarSesion.Click += new System.EventHandler(this.ttmiCerrarSesion_Click);
             // 
+            // tstSuperior
+            // 
+            this.tstSuperior.BackColor = System.Drawing.Color.Transparent;
+            this.tstSuperior.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tstSuperior.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ddbtnOpcionesU});
+            this.tstSuperior.Location = new System.Drawing.Point(60, 0);
+            this.tstSuperior.Name = "tstSuperior";
+            this.tstSuperior.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.tstSuperior.Size = new System.Drawing.Size(1270, 44);
+            this.tstSuperior.TabIndex = 10;
+            this.tstSuperior.Text = "toolStrip1";
+            this.tstSuperior.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.tstSuperior_ItemClicked);
+            this.tstSuperior.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.tstSuperior_MouseDoubleClick);
+            this.tstSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tstSuperior_MouseDown);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Transparent;
+            this.button4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.DarkRed;
+            this.button4.Location = new System.Drawing.Point(1270, 0);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(60, 44);
+            this.button4.TabIndex = 17;
+            this.button4.Text = "X";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click_1);
+            // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.BackgroundImage = global::TorneosFut.Properties.Resources.userr;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox2.Location = new System.Drawing.Point(1256, 0);
+            this.pictureBox2.Location = new System.Drawing.Point(1197, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(74, 50);
-            this.pictureBox2.TabIndex = 9;
+            this.pictureBox2.Size = new System.Drawing.Size(73, 44);
+            this.pictureBox2.TabIndex = 18;
             this.pictureBox2.TabStop = false;
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 15;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // panelModulos
-            // 
-            this.panelModulos.BackColor = System.Drawing.Color.White;
-            this.panelModulos.BackgroundImage = global::TorneosFut.Properties.Resources.fxfutxpert;
-            this.panelModulos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panelModulos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelModulos.Location = new System.Drawing.Point(294, 50);
-            this.panelModulos.Name = "panelModulos";
-            this.panelModulos.Size = new System.Drawing.Size(1036, 618);
-            this.panelModulos.TabIndex = 9;
-            this.panelModulos.Paint += new System.Windows.Forms.PaintEventHandler(this.panelModulos_Paint);
             // 
             // Principal
             // 
@@ -359,7 +385,7 @@
             this.Controls.Add(this.panelOpciones);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "Principal";
@@ -390,19 +416,20 @@
         private System.Windows.Forms.Button btnEquipos;
         private System.Windows.Forms.Button btnAuditorias;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnCerrar;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.ToolStrip miniToolStrip;
-        private System.Windows.Forms.ToolStripDropDownButton ddbtnOpcionesU;
-        private System.Windows.Forms.ToolStripMenuItem ttmiCambiarClave;
-        private System.Windows.Forms.ToolStripMenuItem ttmiCerrarSesion;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ToolStrip tstSuperior;
         private System.Windows.Forms.Panel panelModulos;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnCorreos;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.ToolStrip tstSuperior;
+        private System.Windows.Forms.ToolStripDropDownButton ddbtnOpcionesU;
+        private System.Windows.Forms.ToolStripMenuItem ttmiCambiarClave;
+        private System.Windows.Forms.ToolStripMenuItem ttmiCerrarSesion;
     }
 }

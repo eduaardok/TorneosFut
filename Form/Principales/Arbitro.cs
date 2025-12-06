@@ -30,6 +30,7 @@ namespace TorneosFut
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
+            Modo_oscuro.EstiloDGV(dgvArbitro);
         }
 
 
@@ -53,6 +54,7 @@ namespace TorneosFut
         {
             csDGV.MostrarArbitrosFiltro(dgvArbitro, txtFiltro.Text);
             csDGV.AdaptarDGV(dgvArbitro);
+            Modo_oscuro.EstiloDGV(dgvArbitro);
         }
         private void txtFiltro_Click(object sender, EventArgs e)
         {

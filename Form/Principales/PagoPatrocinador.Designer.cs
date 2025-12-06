@@ -142,6 +142,8 @@
             this.txtsaldo.Name = "txtsaldo";
             this.txtsaldo.Size = new System.Drawing.Size(100, 26);
             this.txtsaldo.TabIndex = 173;
+            this.txtsaldo.Text = "0.00";
+            this.txtsaldo.TextChanged += new System.EventHandler(this.txtsaldo_TextChanged);
             // 
             // lbNameTorneo
             // 
