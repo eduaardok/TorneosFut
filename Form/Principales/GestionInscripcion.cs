@@ -115,7 +115,6 @@ namespace TorneosFut
             }
         }
 
-
         private void txtBuscarEquipo_MouseClick(object sender, MouseEventArgs e)
         {
             if (txtBuscarEquipo.Text == "Buscar por nombre del Equipo")
@@ -201,7 +200,6 @@ namespace TorneosFut
         }
         private void btnAbonar_Click(object sender, EventArgs e)
         {
-
             //DataGridViewRow row = dgvEquiposIns.SelectedRows[0];
             //string idequipo = row.Cells["IDEquipo"].Value.ToString();
             //PagoInscripcion = new PagoInscripcion(IdTorneo, idequipo, conexion.Usuario, conexion.Clave);

@@ -66,5 +66,10 @@ namespace TorneosFut
         {
             txtFiltro.Clear();
         }
+
+        private void dgvAuditoria_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

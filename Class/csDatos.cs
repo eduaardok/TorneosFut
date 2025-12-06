@@ -388,9 +388,9 @@ namespace TorneosFut
         {
             return csArbitro.AgregarArbitro(id, nombre, apellido, correo);
         }
-        public bool EditarTorneo(string id, string Txtnombre, string formato, string ModoFutbol, string Organizador, string te, string fin, decimal costo, string Genero)
+        public bool EditarTorneo(string id, string Txtnombre, string formato, string ModoFutbol, string Organizador, string te, string fin, decimal costo, string Genero, int EdadMin, int EdadMax)
         {
-            if (csTorneo.ActualizarTorneo(id, Txtnombre, formato, ModoFutbol, Organizador, te, fin, costo, Genero))
+            if (csTorneo.ActualizarTorneo(id, Txtnombre, formato, ModoFutbol, Organizador, te, fin, costo, Genero, EdadMin, EdadMax))
             {
                 MessageBox.Show("Torneo actualizado correctamente");
                 return true;

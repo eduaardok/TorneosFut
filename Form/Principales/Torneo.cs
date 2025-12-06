@@ -302,5 +302,10 @@ namespace TorneosFut
         {
 
         }
+
+        private void btnPatrocinadores_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -61,7 +61,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(35, 39);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(256, 31);
+            this.label2.Size = new System.Drawing.Size(316, 39);
             this.label2.TabIndex = 24;
             this.label2.Text = "Lista de Auditorías";
             // 
@@ -71,7 +71,7 @@
             this.lblBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.lblBusqueda.Location = new System.Drawing.Point(114, 146);
             this.lblBusqueda.Name = "lblBusqueda";
-            this.lblBusqueda.Size = new System.Drawing.Size(81, 18);
+            this.lblBusqueda.Size = new System.Drawing.Size(98, 24);
             this.lblBusqueda.TabIndex = 23;
             this.lblBusqueda.Text = "BUSCAR:";
             // 
@@ -136,6 +136,7 @@
             this.dgvAuditoria.ReadOnly = true;
             this.dgvAuditoria.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvAuditoria.RowHeadersVisible = false;
+            this.dgvAuditoria.RowHeadersWidth = 51;
             this.dgvAuditoria.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.dgvAuditoria.RowsDefaultCellStyle = dataGridViewCellStyle2;
@@ -144,6 +145,7 @@
             this.dgvAuditoria.ShowEditingIcon = false;
             this.dgvAuditoria.Size = new System.Drawing.Size(1415, 642);
             this.dgvAuditoria.TabIndex = 5;
+            this.dgvAuditoria.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAuditoria_CellContentClick);
             // 
             // txtFiltro
             // 
@@ -151,7 +153,7 @@
             this.txtFiltro.ForeColor = System.Drawing.Color.Gray;
             this.txtFiltro.Location = new System.Drawing.Point(117, 175);
             this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(392, 20);
+            this.txtFiltro.Size = new System.Drawing.Size(392, 22);
             this.txtFiltro.TabIndex = 21;
             this.txtFiltro.Text = "Buscar por nombre de Usuario";
             this.txtFiltro.Click += new System.EventHandler(this.txtFiltro_Click);

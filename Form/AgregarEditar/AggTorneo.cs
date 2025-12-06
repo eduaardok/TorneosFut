@@ -106,7 +106,7 @@ namespace TorneosFut
                 if (!agg)
                 {
                     MessageBox.Show(cmbGenero.SelectedItem.ToString());
-                    csDatos.EditarTorneo(id, txtNombre.Text, cmbFormato.SelectedValue.ToString(), cmbModoFutbol.SelectedValue.ToString(), cmbOrganizador.SelectedValue.ToString(), dtpInicio.Value.ToString(), dtpFin.Value.ToString(), decimal.Parse(txtCosto.Text), cmbGenero.SelectedItem.ToString());
+                    csDatos.EditarTorneo(id, txtNombre.Text, cmbFormato.SelectedValue.ToString(), cmbModoFutbol.SelectedValue.ToString(), cmbOrganizador.SelectedValue.ToString(), dtpInicio.Value.ToString(), dtpFin.Value.ToString(), decimal.Parse(txtCosto.Text), cmbGenero.SelectedItem.ToString(), (int)numEdadmin.Value, (int)numEdadmax.Value);
                     msg.Text = "Se creó correctamente";
                     msg.Show();
                     this.Close();

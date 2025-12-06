@@ -140,10 +140,10 @@ namespace TorneosFut.Class
                 return false;
 
         }
-        public bool ActualizarTorneo(string id, string Txtnombre, string formato, string ModoFutbol, string Organizador, string te, string fin, decimal costo, string genero)
+        public bool ActualizarTorneo(string id, string Txtnombre, string formato, string ModoFutbol, string Organizador, string te, string fin, decimal costo, string genero, int EdadMin, int EdadMax)
         {
             if (csConexion.Consulta($"update Torneo set NombreTorneo = '{Txtnombre}', IDFormato={formato}, IDModoFutbol = {ModoFutbol}, IDOrganizador= '{Organizador}'," +
-                $" FechaInicio ='{te}', FechaFin = '{fin}', CostoInscripcion = {costo}, Genero = '{genero}' where IDTorneo = {id}"))
+                $" FechaInicio ='{te}', FechaFin = '{fin}', CostoInscripcion = {costo}, Genero = '{genero}', EdadMin = '{EdadMin}', EdadMax = '{EdadMax}' where IDTorneo = {id}"))
                 return true;
             else
                 return false;

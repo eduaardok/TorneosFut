@@ -19,7 +19,7 @@ namespace TorneosFut
         private string _database = "BDTorneosBetaV2";*/
         //Server Local
         private string _server = $@"26.197.0.134";
-        private string _database = "BDTorneos";
+        private string _database = "BD Torneos A";
 
         private string _usuario;
         private string _clave;
