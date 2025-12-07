@@ -466,5 +466,10 @@ namespace pruebas
         {
 
         }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            EditarHorarios editarHorarios = new EditarHorarios(IDPartido);
+        }
     }
 }

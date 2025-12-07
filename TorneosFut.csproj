@@ -91,6 +91,12 @@
     <Compile Include="Class\dsDataGame.cs">
       <DependentUpon>dsDataGame.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Form\AgregarEditar\EditarHorarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\AgregarEditar\EditarHorarios.Designer.cs">
+      <DependentUpon>EditarHorarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\Reportes\frmJugadoreEsts.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -393,6 +399,9 @@
     <Compile Include="Form\Principales\TablaDePosiciones.Designer.cs">
       <DependentUpon>TablaDePosiciones.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Form\AgregarEditar\EditarHorarios.resx">
+      <DependentUpon>EditarHorarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\Reportes\frmJugadoreEsts.resx">
       <DependentUpon>frmJugadoreEsts.cs</DependentUpon>
     </EmbeddedResource>

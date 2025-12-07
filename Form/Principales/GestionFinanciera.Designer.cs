@@ -42,6 +42,7 @@
             this.btnAbonar = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelDgv = new System.Windows.Forms.Panel();
+            this.lblBusqueda = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnMovimiento = new Guna.UI2.WinForms.Guna2Button();
             this.lblEncabezado = new System.Windows.Forms.Label();
@@ -52,7 +53,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblBusqueda = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPagos)).BeginInit();
             this.panel1.SuspendLayout();
             this.panelDgv.SuspendLayout();
@@ -139,10 +139,10 @@
             this.txtBuscarEquipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtBuscarEquipo.ForeColor = System.Drawing.Color.Gray;
             this.txtBuscarEquipo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtBuscarEquipo.Location = new System.Drawing.Point(395, 98);
+            this.txtBuscarEquipo.Location = new System.Drawing.Point(452, 138);
             this.txtBuscarEquipo.Multiline = true;
             this.txtBuscarEquipo.Name = "txtBuscarEquipo";
-            this.txtBuscarEquipo.Size = new System.Drawing.Size(942, 26);
+            this.txtBuscarEquipo.Size = new System.Drawing.Size(951, 28);
             this.txtBuscarEquipo.TabIndex = 147;
             this.txtBuscarEquipo.Text = "Buscar por nombre categoria, estado, etc";
             // 
@@ -232,7 +232,7 @@
             this.btnPagar.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnPagar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnPagar.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnPagar.Location = new System.Drawing.Point(1210, 618);
+            this.btnPagar.Location = new System.Drawing.Point(1265, 626);
             this.btnPagar.Name = "btnPagar";
             this.btnPagar.Size = new System.Drawing.Size(127, 52);
             this.btnPagar.TabIndex = 150;
@@ -257,7 +257,7 @@
             this.btnAbonar.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnAbonar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnAbonar.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnAbonar.Location = new System.Drawing.Point(1210, 618);
+            this.btnAbonar.Location = new System.Drawing.Point(1265, 626);
             this.btnAbonar.Name = "btnAbonar";
             this.btnAbonar.Size = new System.Drawing.Size(127, 52);
             this.btnAbonar.TabIndex = 143;
@@ -267,14 +267,13 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.dgvPagos);
-            this.panel1.Location = new System.Drawing.Point(0, 152);
+            this.panel1.Location = new System.Drawing.Point(39, 172);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1353, 448);
             this.panel1.TabIndex = 149;
             // 
             // panelDgv
             // 
-            this.panelDgv.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelDgv.BackColor = System.Drawing.Color.White;
             this.panelDgv.Controls.Add(this.lblBusqueda);
             this.panelDgv.Controls.Add(this.cmbTorneos);
@@ -288,17 +287,27 @@
             this.panelDgv.Controls.Add(this.txtBuscarEquipo);
             this.panelDgv.Controls.Add(this.btnMovimiento);
             this.panelDgv.Controls.Add(this.btnArbitros);
-            this.panelDgv.Location = new System.Drawing.Point(68, 213);
+            this.panelDgv.Location = new System.Drawing.Point(12, 98);
             this.panelDgv.Name = "panelDgv";
-            this.panelDgv.Size = new System.Drawing.Size(1353, 686);
+            this.panelDgv.Size = new System.Drawing.Size(1466, 801);
             this.panelDgv.TabIndex = 151;
+            // 
+            // lblBusqueda
+            // 
+            this.lblBusqueda.AutoSize = true;
+            this.lblBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.lblBusqueda.Location = new System.Drawing.Point(392, 77);
+            this.lblBusqueda.Name = "lblBusqueda";
+            this.lblBusqueda.Size = new System.Drawing.Size(81, 18);
+            this.lblBusqueda.TabIndex = 153;
+            this.lblBusqueda.Text = "BUSCAR:";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.BackgroundImage = global::TorneosFut.Properties.Resources.IconoLupa;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(361, 98);
+            this.pictureBox1.Location = new System.Drawing.Point(418, 139);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(28, 27);
             this.pictureBox1.TabIndex = 148;
@@ -390,7 +399,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
-            this.label3.Location = new System.Drawing.Point(1110, 170);
+            this.label3.Location = new System.Drawing.Point(1091, 82);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(90, 25);
             this.label3.TabIndex = 145;
@@ -402,7 +411,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
-            this.label2.Location = new System.Drawing.Point(729, 170);
+            this.label2.Location = new System.Drawing.Point(725, 82);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(158, 25);
             this.label2.TabIndex = 144;
@@ -414,22 +423,12 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
-            this.label1.Location = new System.Drawing.Point(386, 170);
+            this.label1.Location = new System.Drawing.Point(386, 82);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(173, 25);
             this.label1.TabIndex = 143;
             this.label1.Text = "Ingresos Totales";
             this.label1.Visible = false;
-            // 
-            // lblBusqueda
-            // 
-            this.lblBusqueda.AutoSize = true;
-            this.lblBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
-            this.lblBusqueda.Location = new System.Drawing.Point(392, 77);
-            this.lblBusqueda.Name = "lblBusqueda";
-            this.lblBusqueda.Size = new System.Drawing.Size(81, 18);
-            this.lblBusqueda.TabIndex = 153;
-            this.lblBusqueda.Text = "BUSCAR:";
             // 
             // GestionFinanciera
             // 
