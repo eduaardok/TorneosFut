@@ -153,5 +153,12 @@ namespace TorneosFut
             }
             return true;
         }
+        public string CadenaConexion
+        {
+            get
+            {
+                return $"Server={_server}; Database={_database}; User id={_usuario}; Password={_clave};";
+            }
+        }
     }
 }

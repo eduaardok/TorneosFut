@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -138,30 +139,102 @@ namespace TorneosFut
                 txtBuscarEquipo.Text = "";
             ActualizarTabla();
         }
+
+        List<string> ObtenerJugadoresElegibles(int idTorneo)
+        {
+            List<string> lista = new List<string>();
+
+            string query = @"
+                SELECT j.IDJugador, j.NombreJugador, j.ApellidoJugador
+                FROM Jugador j
+                JOIN Jugador_Equipo ej ON ej.IDJugador = j.IDJugador
+                JOIN Equipo e ON e.IDEquipo = ej.IDEquipo
+                JOIN Torneo t ON t.IDTorneo = @idTorneo
+                WHERE dbo.CalcularEdad(j.FechaNacimiento, t.FechaInicio)
+                      BETWEEN t.EdadMin AND t.EdadMax
+            ";
+
+            SqlConnection cn = new SqlConnection(conexion.CadenaConexion);
+            SqlCommand cmd = new SqlCommand(query, cn);
+            cmd.Parameters.Add(new SqlParameter("@idTorneo", idTorneo));
+
+            cn.Open();
+            SqlDataReader rd = cmd.ExecuteReader();
+
+            while (rd.Read())
+            {
+                string linea = rd["IDJugador"].ToString() + " - " +
+                               rd["NombreJugador"].ToString() + " " +
+                               rd["ApellidoJugador"].ToString();
+
+                lista.Add(linea);
+            }
+
+            cn.Close();
+            return lista;
+        }
+
+        void GuardarJugadoresElegibles(int idTorneo)
+        {
+            SqlConnection cn = new SqlConnection(conexion.CadenaConexion);
+
+            SqlCommand cmd = new SqlCommand("dbo.InsertarJugadoresElegibles", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.Add(new SqlParameter("@IDTorneo", idTorneo));
+
+            cn.Open();
+            cmd.ExecuteNonQuery();
+            cn.Close();
+        }
+
         private void btnIncribir_Click(object sender, EventArgs e)
         {
-            if (dgvEquipos.SelectedRows.Count > 0)
+            if (dgvEquipos.SelectedRows.Count == 0)
             {
-                List<string> listaEquipos = new List<string>();
+                MessageBox.Show("Por favor, seleccione al menos un equipo.");
+                return;
+            }
 
-                foreach (DataGridViewRow row in dgvEquipos.SelectedRows)
+            List<string> listaEquipos = new List<string>();
+
+            foreach (DataGridViewRow row in dgvEquipos.SelectedRows)
+            {
+                string idequipo = row.Cells["IDEquipo"].Value.ToString();
+                listaEquipos.Add(idequipo);
+            }
+
+            int idT = int.Parse(IdTorneo);
+
+            List<string> jugadoresOK = ObtenerJugadoresElegibles(idT);
+
+            if (jugadoresOK.Count > 0)
+            {
+                string msg = "Jugadores que PUEDEN entrar al torneo:\n\n";
+
+                for (int i = 0; i < jugadoresOK.Count; i++)
                 {
-                    string idequipo = row.Cells["IDEquipo"].Value.ToString();
-                    listaEquipos.Add(idequipo);
+                    msg += "• " + jugadoresOK[i] + "\n";
                 }
-                if (csDatos.InsertarIncripcion(int.Parse(IdTorneo), listaEquipos, costo, fecha))
-                {
-                    MessageBox.Show($"Se inscribieron correctamente {listaEquipos.Count} equipos.");
-                    ActualizarTabla();
-                }
-                else
-                {
-                    MessageBox.Show("Hubo un error al inscribir algunos equipos.");
-                }
+
+                MessageBox.Show(msg, "Jugadores elegibles");
             }
             else
             {
-                MessageBox.Show("Por favor, seleccione al menos un equipo.");
+                MessageBox.Show("Ningún jugador cumple la edad mínima/máxima.\nNo se puede inscribir.");
+                return;
+            }
+
+            GuardarJugadoresElegibles(idT);
+
+            if (csDatos.InsertarIncripcion(idT, listaEquipos, costo, fecha))
+            {
+                MessageBox.Show($"Se inscribieron correctamente {listaEquipos.Count} equipos.");
+                ActualizarTabla();
+            }
+            else
+            {
+                MessageBox.Show("Hubo un error al inscribir algunos equipos.");
             }
         }
 
