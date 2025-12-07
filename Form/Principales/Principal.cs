@@ -62,6 +62,7 @@ namespace TorneosFut
             Orga = new Organizadores(u, c);
             auditoria = new Auditoria(u,c);
             financiera = new GestionFinanciera(u,c);
+
         }
        
         public static void AbrirFormEnPanel(Panel panel, Form formHijo)
