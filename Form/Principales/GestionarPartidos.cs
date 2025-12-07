@@ -196,6 +196,7 @@ namespace pruebas
                     MessageBox.Show("Error al asignar fechas");
                 }
                 conexion.Consulta($"exec spAsignarEstadioPartidos {IdTorneo}");
+                conexion.Consulta($"EXEC spAsignarHorasPartidos {IdTorneo}");
 
                 ActualizarTabla();
             }
