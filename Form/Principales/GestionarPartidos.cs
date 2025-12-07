@@ -469,7 +469,8 @@ namespace pruebas
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            EditarHorarios editarHorarios = new EditarHorarios(IDPartido);
+            EditarHorarios editarHorarios = new EditarHorarios(IDPartido, conexion.Usuario, conexion.Clave);
+            editarHorarios.ShowDialog();
         }
     }
 }

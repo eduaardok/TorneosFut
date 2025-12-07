@@ -15,10 +15,11 @@ namespace TorneosFut
         static string dia, mes, anio, hora, minuto, estadio;
         csConexion csConex;
         int id;
-        public EditarHorarios(string iD)
+        public EditarHorarios(string iD, string u, string c)
         {
+            csConex = new csConexion(u, c);
+            id = int.Parse(iD);
             InitializeComponent();
-            id= int.Parse(iD);
         }
 
         private void txthora_TextChanged(object sender, EventArgs e)
@@ -62,7 +63,6 @@ namespace TorneosFut
         }
         private void EditarHorarios_Load(object sender, EventArgs e)
         {
-            csConex = new csConexion();
             cmbEstadio.DataSource = csConex.ListDGV("select IDEstadio, NombreEstadio, Ubicacion from Estadio");
             cmbEstadio.ValueMember = "IDEstadio";
             cmbEstadio.DisplayMember = "NombreEstadio";
