@@ -37,6 +37,7 @@ namespace TorneosFut
         {
             csDGV.MostrarPatrocinadoresFiltro(dgvPatrocinador, txtFiltro.Text);
             csDGV.AdaptarDGV(dgvPatrocinador);
+            Modo_oscuro.EstiloDGV(dgvPatrocinador);
         }
 
         private void txtFiltro_TextChanged(object sender, EventArgs e)

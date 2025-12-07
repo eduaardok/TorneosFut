@@ -37,6 +37,7 @@ namespace PruebasTorneos
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
             csEntrenador.Cargar(dgvEntrenador, ptbIMG);
             dgvEntrenador.CellFormatting += dgvEntrenador_CellFormatting;
+            Modo_oscuro.EstiloDGV(dgvEntrenador);
         }
 
         private void btnAggDT_Click(object sender, EventArgs e)
@@ -117,7 +118,8 @@ namespace PruebasTorneos
                 txtBuscarEntrenador.ForeColor = Color.Black;
             }
             csDGV.MostrarEntrenadoresFiltro(dgvEntrenador, txtBuscarEntrenador.Text);
-            csDGV.AdaptarDGV(dgvEntrenador);
+            csDGV.AdaptarDGV(dgvEntrenador); 
+            Modo_oscuro.EstiloDGV(dgvEntrenador);
         }
         private void txtBuscarEntrenador_MouseClick(object sender, MouseEventArgs e)
         {

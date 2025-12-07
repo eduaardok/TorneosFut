@@ -114,6 +114,8 @@ namespace TorneosFut
             {
                 dgvEquiposIns.Columns[i].Width = dgvEquiposIns.Width / dgvEquiposIns.ColumnCount;
             }
+            Modo_oscuro.EstiloDGV(dgvEquipos);
+            Modo_oscuro.EstiloDGV(dgvEquiposIns);
         }
 
         private void txtBuscarEquipo_MouseClick(object sender, MouseEventArgs e)

@@ -38,6 +38,7 @@ namespace TorneosFut
             dgvPagos.GridColor = Color.FromArgb(251, 3, 140);
 
             csDGV.MostrarMovimieentos(dgvPagos, idtorneroSelec);
+            Modo_oscuro.EstiloDGV(dgvPagos);
             AdaptarDGV();
             btnAbonar.Visible = false;
             btnPagar.Visible = false;
@@ -89,6 +90,7 @@ namespace TorneosFut
             {
                 dgvPagos.Columns[i].Width = dgvPagos.Width / dgvPagos.ColumnCount;
             }
+            Modo_oscuro.EstiloDGV(dgvPagos);
         }
 
         private void btnMovimiento_Click(object sender, EventArgs e)

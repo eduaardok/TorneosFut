@@ -58,6 +58,7 @@ namespace TorneosFut
             {
                 dgvEquipos.Columns[i].Width = dgvEquipos.Width / columnas;
             }
+            Modo_oscuro.EstiloDGV(dgvEquipos);
         }
 
         private void guna2Button2_Click_1(object sender, EventArgs e)
@@ -85,6 +86,7 @@ namespace TorneosFut
             csDGV.MostrarEquipos(dgvEquipos);
             AdaptarDGV();
             panelmodul.Hide();
+            Modo_oscuro.EstiloDGV(dgvEquipos);
         }
 
         private void btngMostrar_Click(object sender, EventArgs e)
@@ -166,6 +168,7 @@ namespace TorneosFut
                 txtBuscarEquipo.Text = "";
             csDGV.MostrarEquiposFiltro(dgvEquipos, txtBuscarEquipo.Text);
             csDGV.AdaptarDGV(dgvEquipos, panelDgv);
+            Modo_oscuro.EstiloDGV(dgvEquipos);
         }
         private void txtBuscarEquipo_TextChanged(object sender, EventArgs e)
         {

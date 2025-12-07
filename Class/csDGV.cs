@@ -91,6 +91,7 @@ namespace TorneosFut
             {
                 dgv.Columns[i].Width = dgv.Width / columnas;
             }
+            Modo_oscuro.EstiloDGV(dgv);
         }
         //USUARIOS
         public void MostrarUsuarios(DataGridView dgv)
@@ -202,6 +203,7 @@ namespace TorneosFut
         public void MostrarTorneo(DataGridView dgv)
         {
             dgv.DataSource = csTorneo.ListadeTorneo();
+            Modo_oscuro.EstiloDGV(dgv);
         }
         public void MostrarTorneoFiltro(DataGridView dgv, string Filtro)
         {

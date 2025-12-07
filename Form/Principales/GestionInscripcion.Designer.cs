@@ -52,6 +52,7 @@
             this.panelDgv2 = new System.Windows.Forms.Panel();
             this.dgvEquiposIns = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblBusqueda = new System.Windows.Forms.Label();
             this.c.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelDgv.SuspendLayout();
@@ -368,12 +369,23 @@
             this.label1.TabIndex = 35;
             this.label1.Text = "Equipos Inscritos al torneo";
             // 
+            // lblBusqueda
+            // 
+            this.lblBusqueda.AutoSize = true;
+            this.lblBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.lblBusqueda.Location = new System.Drawing.Point(82, 111);
+            this.lblBusqueda.Name = "lblBusqueda";
+            this.lblBusqueda.Size = new System.Drawing.Size(81, 18);
+            this.lblBusqueda.TabIndex = 143;
+            this.lblBusqueda.Text = "BUSCAR:";
+            // 
             // GestionInscripcion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1412, 729);
+            this.Controls.Add(this.lblBusqueda);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panelDgv2);
             this.Controls.Add(this.panelDgv);
@@ -421,5 +433,6 @@
         private System.Windows.Forms.Panel panelDgv;
         public System.Windows.Forms.DataGridView dgvEquipos;
         private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label lblBusqueda;
     }
 }

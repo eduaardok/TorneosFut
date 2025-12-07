@@ -34,6 +34,7 @@ namespace TorneosFut
             }
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
             csEstadio.Cargar(dgvEstadio, ptbImagen);
+            
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -83,6 +84,7 @@ namespace TorneosFut
             }
             csDGV.MostrarEstadiosFiltro(dgvEstadio, txtFiltro.Text);
             csDGV.AdaptarDGV(dgvEstadio, panelDgv);
+            Modo_oscuro.EstiloDGV(dgvEstadio);
         }
 
         private void txtFiltro_Click(object sender, EventArgs e)

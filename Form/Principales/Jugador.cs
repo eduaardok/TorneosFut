@@ -139,6 +139,7 @@ namespace pruebas
             csDGV.MostrarJugadoresFiltro(dgvJugador, txtBuscarJugador.Text);
             csDGV.AdaptarDGV(dgvJugador, panelDgv);
             dgvJugador.Columns["ImagenJugador"].Visible = false;
+            Modo_oscuro.EstiloDGV(dgvJugador);
 
         }
         private void txtBuscarJugador_Click(object sender, EventArgs e)

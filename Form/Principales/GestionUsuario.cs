@@ -34,6 +34,7 @@ namespace Usuarios
         {
             csDGV.MostrarUsuariosFiltro(dgvUsuarios, mostrarClave, txtFiltro.Text);
             csDGV.AdaptarDGV(dgvUsuarios, panelDgv);
+            Modo_oscuro.EstiloDGV(dgvUsuarios);
         }
         
         private void dgvUsuarios_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)

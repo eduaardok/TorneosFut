@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblBusqueda = new System.Windows.Forms.Label();
             this.btngLimpiar = new Guna.UI2.WinForms.Guna2Button();
@@ -51,7 +51,7 @@
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.BackgroundImage = global::TorneosFut.Properties.Resources.IconoLupa;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(58, 157);
+            this.pictureBox1.Location = new System.Drawing.Point(28, 175);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(50, 49);
             this.pictureBox1.TabIndex = 25;
@@ -61,7 +61,7 @@
             // 
             this.lblBusqueda.AutoSize = true;
             this.lblBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
-            this.lblBusqueda.Location = new System.Drawing.Point(114, 146);
+            this.lblBusqueda.Location = new System.Drawing.Point(81, 155);
             this.lblBusqueda.Name = "lblBusqueda";
             this.lblBusqueda.Size = new System.Drawing.Size(81, 18);
             this.lblBusqueda.TabIndex = 23;
@@ -83,9 +83,9 @@
             this.btngLimpiar.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btngLimpiar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btngLimpiar.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btngLimpiar.Location = new System.Drawing.Point(515, 170);
+            this.btngLimpiar.Location = new System.Drawing.Point(723, 176);
             this.btngLimpiar.Name = "btngLimpiar";
-            this.btngLimpiar.Size = new System.Drawing.Size(180, 36);
+            this.btngLimpiar.Size = new System.Drawing.Size(158, 36);
             this.btngLimpiar.TabIndex = 20;
             this.btngLimpiar.Text = "LIMPIAR";
             this.btngLimpiar.Click += new System.EventHandler(this.btngLimpiar_Click);
@@ -110,14 +110,14 @@
             this.dgvAuditoria.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvAuditoria.BackgroundColor = System.Drawing.Color.White;
             this.dgvAuditoria.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAuditoria.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(29)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAuditoria.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvAuditoria.ColumnHeadersHeight = 40;
             this.dgvAuditoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvAuditoria.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -130,8 +130,8 @@
             this.dgvAuditoria.RowHeadersVisible = false;
             this.dgvAuditoria.RowHeadersWidth = 51;
             this.dgvAuditoria.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
-            this.dgvAuditoria.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.dgvAuditoria.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvAuditoria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAuditoria.ShowCellToolTips = false;
             this.dgvAuditoria.ShowEditingIcon = false;
@@ -142,10 +142,12 @@
             // txtFiltro
             // 
             this.txtFiltro.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.txtFiltro.ForeColor = System.Drawing.Color.Gray;
-            this.txtFiltro.Location = new System.Drawing.Point(117, 175);
+            this.txtFiltro.Location = new System.Drawing.Point(84, 176);
+            this.txtFiltro.Multiline = true;
             this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(392, 20);
+            this.txtFiltro.Size = new System.Drawing.Size(633, 48);
             this.txtFiltro.TabIndex = 21;
             this.txtFiltro.Text = "Buscar por nombre de Usuario";
             this.txtFiltro.Click += new System.EventHandler(this.txtFiltro_Click);
@@ -168,7 +170,7 @@
             this.btngMostrar.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btngMostrar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btngMostrar.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btngMostrar.Location = new System.Drawing.Point(720, 157);
+            this.btngMostrar.Location = new System.Drawing.Point(889, 170);
             this.btngMostrar.Name = "btngMostrar";
             this.btngMostrar.Size = new System.Drawing.Size(268, 59);
             this.btngMostrar.TabIndex = 26;
@@ -191,7 +193,7 @@
             this.guna2Button1.HoverState.BorderColor = System.Drawing.Color.Black;
             this.guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.guna2Button1.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button1.Location = new System.Drawing.Point(1016, 157);
+            this.guna2Button1.Location = new System.Drawing.Point(1185, 170);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(268, 59);
             this.guna2Button1.TabIndex = 27;

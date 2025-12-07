@@ -22,6 +22,19 @@ namespace TorneosFut.Class
         {
             return dgv.Rows[dgv.CurrentRow.Index].Cells["IDTorneo"].Value.ToString();
         }
+        public string NombreTorneoDeID(string idTorneo)
+        {
+            string query = $"SELECT NombreTorneo FROM Torneo WHERE IDTorneo = {idTorneo}";
+            DataTable dt = csConexion.ListDGV(query);
+            if (dt.Rows.Count > 0)
+            {
+                return dt.Rows[0]["NombreTorneo"].ToString();
+            }
+            else
+            {
+                return string.Empty;
+            }
+        }
         public string GenerarNuevoIDTorneo()
         {
             string query = "SELECT ISNULL(MAX(IDTorneo), 0) + 1 FROM Torneo";

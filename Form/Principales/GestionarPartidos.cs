@@ -82,6 +82,7 @@ namespace pruebas
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
+            lblNombretorneo.Text = csDatos.ObtenerNombreTorneo(IdTorneo);
         }
         void ActualizarTabla()
         {
@@ -89,6 +90,7 @@ namespace pruebas
                 txtBuscarPartido.Text = "";
             csDGV.MostrarPartidosFiltro(dgvPartido,txtBuscarPartido.Text, IdTorneo);
             csDGV.AdaptarDGV(dgvPartido, pnlDgvPartido);
+            Modo_oscuro.EstiloDGV(dgvPartido);
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -458,6 +460,11 @@ namespace pruebas
             DataTable dt = conexion.ListDGV($"SELECT EquipoLocal FROM Partido WHERE IDPartido = {IDPartido}");
             frmCalendarioEE calendario = new frmCalendarioEE(IdTorneo, dt.Rows[0]["EquipoLocal"].ToString());
             calendario.ShowDialog();
+        }
+
+        private void lblNombretorneo_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

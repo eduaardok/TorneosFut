@@ -61,22 +61,25 @@ namespace TorneosFut
         private void btnJugadores_Click(object sender, EventArgs e)
         {
             AbrirFormEnPanel(panelmodul, patro);
+
         }
 
         private void btnArbitros_Click(object sender, EventArgs e)
         {
             AbrirFormEnPanel(panelmodul, arbi);
+
         }
 
         private void btnEstadios_Click(object sender, EventArgs e)
         {
             AbrirFormEnPanel(panelmodul, orga);
+
         }
 
         private void Torneo_Load(object sender, EventArgs e)
         {
-         
-         
+
+            panel2.Tag = "NoCambiar";
             foreach (DataGridViewColumn column in dgvTorneo.Columns)
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
@@ -150,6 +153,7 @@ namespace TorneosFut
            // ActualizarTabla();
             csDGV.MostrarTorneoFiltro(dgvTorneo, txtBuscarTorneo.Text);
             csDGV.AdaptarDGV(dgvTorneo, panelDgv);
+            Modo_oscuro.EstiloDGV(dgvTorneo);
         }
      
 
@@ -304,6 +308,11 @@ namespace TorneosFut
         }
 
         private void btnPatrocinadores_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

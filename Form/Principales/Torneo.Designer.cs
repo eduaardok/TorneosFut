@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnReglas = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -48,12 +48,16 @@
             this.btnGanador = new Guna.UI2.WinForms.Guna2Button();
             this.btnAsistir = new Guna.UI2.WinForms.Guna2Button();
             this.btnGolear = new Guna.UI2.WinForms.Guna2Button();
-            this.panelDgv = new System.Windows.Forms.Panel();
-            this.dgvTorneo = new System.Windows.Forms.DataGridView();
             this.btnCal = new Guna.UI2.WinForms.Guna2Button();
             this.panelmodul = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelDgv = new System.Windows.Forms.Panel();
+            this.dgvTorneo = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblBusqueda = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.panelDgv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTorneo)).BeginInit();
             this.SuspendLayout();
@@ -175,7 +179,7 @@
             this.btnCrear.HoverState.CustomBorderColor = System.Drawing.Color.Black;
             this.btnCrear.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnCrear.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnCrear.Location = new System.Drawing.Point(402, 297);
+            this.btnCrear.Location = new System.Drawing.Point(565, 199);
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Size = new System.Drawing.Size(180, 59);
             this.btnCrear.TabIndex = 64;
@@ -198,9 +202,9 @@
             this.btnPatrocinadores.HoverState.CustomBorderColor = System.Drawing.Color.Black;
             this.btnPatrocinadores.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnPatrocinadores.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnPatrocinadores.Location = new System.Drawing.Point(975, 297);
+            this.btnPatrocinadores.Location = new System.Drawing.Point(751, 199);
             this.btnPatrocinadores.Name = "btnPatrocinadores";
-            this.btnPatrocinadores.Size = new System.Drawing.Size(213, 59);
+            this.btnPatrocinadores.Size = new System.Drawing.Size(223, 59);
             this.btnPatrocinadores.TabIndex = 63;
             this.btnPatrocinadores.Text = "ASIGNAR PATROCINADORES";
             this.btnPatrocinadores.Visible = false;
@@ -221,7 +225,7 @@
             this.btnInscripcionEquipos.HoverState.CustomBorderColor = System.Drawing.Color.Black;
             this.btnInscripcionEquipos.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnInscripcionEquipos.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnInscripcionEquipos.Location = new System.Drawing.Point(1008, 297);
+            this.btnInscripcionEquipos.Location = new System.Drawing.Point(980, 199);
             this.btnInscripcionEquipos.Name = "btnInscripcionEquipos";
             this.btnInscripcionEquipos.Size = new System.Drawing.Size(180, 59);
             this.btnInscripcionEquipos.TabIndex = 62;
@@ -244,7 +248,7 @@
             this.btnEditar.HoverState.CustomBorderColor = System.Drawing.Color.Black;
             this.btnEditar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnEditar.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnEditar.Location = new System.Drawing.Point(195, 297);
+            this.btnEditar.Location = new System.Drawing.Point(189, 199);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(180, 59);
             this.btnEditar.TabIndex = 61;
@@ -267,7 +271,7 @@
             this.btnPartidos.HoverState.CustomBorderColor = System.Drawing.Color.Black;
             this.btnPartidos.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnPartidos.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnPartidos.Location = new System.Drawing.Point(1206, 297);
+            this.btnPartidos.Location = new System.Drawing.Point(379, 199);
             this.btnPartidos.Name = "btnPartidos";
             this.btnPartidos.Size = new System.Drawing.Size(180, 59);
             this.btnPartidos.TabIndex = 60;
@@ -280,7 +284,7 @@
             this.txtBuscarTorneo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.txtBuscarTorneo.ForeColor = System.Drawing.Color.Gray;
             this.txtBuscarTorneo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtBuscarTorneo.Location = new System.Drawing.Point(322, 217);
+            this.txtBuscarTorneo.Location = new System.Drawing.Point(245, 83);
             this.txtBuscarTorneo.Multiline = true;
             this.txtBuscarTorneo.Name = "txtBuscarTorneo";
             this.txtBuscarTorneo.Size = new System.Drawing.Size(633, 48);
@@ -294,7 +298,7 @@
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.BackgroundImage = global::TorneosFut.Properties.Resources.IconoLupa;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(266, 216);
+            this.pictureBox1.Location = new System.Drawing.Point(189, 82);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(50, 49);
             this.pictureBox1.TabIndex = 59;
@@ -316,9 +320,9 @@
             this.btnGanador.HoverState.CustomBorderColor = System.Drawing.Color.Black;
             this.btnGanador.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnGanador.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnGanador.Location = new System.Drawing.Point(1206, 216);
+            this.btnGanador.Location = new System.Drawing.Point(1163, 134);
             this.btnGanador.Name = "btnGanador";
-            this.btnGanador.Size = new System.Drawing.Size(180, 59);
+            this.btnGanador.Size = new System.Drawing.Size(166, 59);
             this.btnGanador.TabIndex = 69;
             this.btnGanador.Text = "GANADOR";
             this.btnGanador.Click += new System.EventHandler(this.btnGanador_Click);
@@ -339,7 +343,7 @@
             this.btnAsistir.HoverState.CustomBorderColor = System.Drawing.Color.Black;
             this.btnAsistir.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnAsistir.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnAsistir.Location = new System.Drawing.Point(1206, 888);
+            this.btnAsistir.Location = new System.Drawing.Point(1149, 802);
             this.btnAsistir.Name = "btnAsistir";
             this.btnAsistir.Size = new System.Drawing.Size(180, 59);
             this.btnAsistir.TabIndex = 71;
@@ -362,77 +366,12 @@
             this.btnGolear.HoverState.CustomBorderColor = System.Drawing.Color.Black;
             this.btnGolear.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnGolear.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnGolear.Location = new System.Drawing.Point(195, 888);
+            this.btnGolear.Location = new System.Drawing.Point(138, 802);
             this.btnGolear.Name = "btnGolear";
             this.btnGolear.Size = new System.Drawing.Size(180, 59);
             this.btnGolear.TabIndex = 72;
             this.btnGolear.Text = "GOLEADORES";
             this.btnGolear.Click += new System.EventHandler(this.btnGolear_Click);
-            // 
-            // panelDgv
-            // 
-            this.panelDgv.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panelDgv.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panelDgv.Controls.Add(this.dgvTorneo);
-            this.panelDgv.Location = new System.Drawing.Point(195, 388);
-            this.panelDgv.Name = "panelDgv";
-            this.panelDgv.Size = new System.Drawing.Size(1191, 494);
-            this.panelDgv.TabIndex = 73;
-            // 
-            // dgvTorneo
-            // 
-            this.dgvTorneo.AllowUserToAddRows = false;
-            this.dgvTorneo.AllowUserToDeleteRows = false;
-            this.dgvTorneo.AllowUserToResizeColumns = false;
-            this.dgvTorneo.AllowUserToResizeRows = false;
-            this.dgvTorneo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvTorneo.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvTorneo.BackgroundColor = System.Drawing.Color.White;
-            this.dgvTorneo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvTorneo.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTorneo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.dgvTorneo.ColumnHeadersHeight = 40;
-            this.dgvTorneo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTorneo.DefaultCellStyle = dataGridViewCellStyle10;
-            this.dgvTorneo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvTorneo.EnableHeadersVisualStyles = false;
-            this.dgvTorneo.Location = new System.Drawing.Point(0, 0);
-            this.dgvTorneo.MultiSelect = false;
-            this.dgvTorneo.Name = "dgvTorneo";
-            this.dgvTorneo.ReadOnly = true;
-            this.dgvTorneo.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTorneo.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
-            this.dgvTorneo.RowHeadersVisible = false;
-            this.dgvTorneo.RowHeadersWidth = 51;
-            this.dgvTorneo.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
-            this.dgvTorneo.RowsDefaultCellStyle = dataGridViewCellStyle12;
-            this.dgvTorneo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTorneo.Size = new System.Drawing.Size(1191, 494);
-            this.dgvTorneo.TabIndex = 58;
-            this.dgvTorneo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTorneo_CellContentClick);
-            this.dgvTorneo.SelectionChanged += new System.EventHandler(this.dgvTorneo_SelectionChanged_1);
             // 
             // btnCal
             // 
@@ -450,9 +389,9 @@
             this.btnCal.HoverState.CustomBorderColor = System.Drawing.Color.Black;
             this.btnCal.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnCal.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnCal.Location = new System.Drawing.Point(20, 216);
+            this.btnCal.Location = new System.Drawing.Point(1163, 199);
             this.btnCal.Name = "btnCal";
-            this.btnCal.Size = new System.Drawing.Size(213, 59);
+            this.btnCal.Size = new System.Drawing.Size(163, 59);
             this.btnCal.TabIndex = 75;
             this.btnCal.Text = "VER CALENDARIO";
             this.btnCal.Click += new System.EventHandler(this.btnCal_Click);
@@ -461,11 +400,114 @@
             // 
             this.panelmodul.BackColor = System.Drawing.Color.White;
             this.panelmodul.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelmodul.Location = new System.Drawing.Point(0, 88);
+            this.panelmodul.Location = new System.Drawing.Point(0, 0);
             this.panelmodul.Name = "panelmodul";
             this.panelmodul.Size = new System.Drawing.Size(1476, 873);
             this.panelmodul.TabIndex = 76;
             this.panelmodul.Paint += new System.Windows.Forms.PaintEventHandler(this.panelmodul_Paint);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.panelmodul);
+            this.panel2.Controls.Add(this.panelDgv);
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.btnCal);
+            this.panel2.Controls.Add(this.btnAsistir);
+            this.panel2.Controls.Add(this.txtBuscarTorneo);
+            this.panel2.Controls.Add(this.btnGolear);
+            this.panel2.Controls.Add(this.btnPartidos);
+            this.panel2.Controls.Add(this.btnGanador);
+            this.panel2.Controls.Add(this.btnEditar);
+            this.panel2.Controls.Add(this.btnCrear);
+            this.panel2.Controls.Add(this.btnInscripcionEquipos);
+            this.panel2.Controls.Add(this.btnPatrocinadores);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.lblBusqueda);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 88);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1476, 873);
+            this.panel2.TabIndex = 76;
+            // 
+            // panelDgv
+            // 
+            this.panelDgv.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelDgv.Controls.Add(this.dgvTorneo);
+            this.panelDgv.Location = new System.Drawing.Point(138, 257);
+            this.panelDgv.Name = "panelDgv";
+            this.panelDgv.Size = new System.Drawing.Size(1191, 494);
+            this.panelDgv.TabIndex = 105;
+            // 
+            // dgvTorneo
+            // 
+            this.dgvTorneo.AllowUserToAddRows = false;
+            this.dgvTorneo.AllowUserToDeleteRows = false;
+            this.dgvTorneo.AllowUserToResizeColumns = false;
+            this.dgvTorneo.AllowUserToResizeRows = false;
+            this.dgvTorneo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvTorneo.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvTorneo.BackgroundColor = System.Drawing.Color.White;
+            this.dgvTorneo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvTorneo.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTorneo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvTorneo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTorneo.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvTorneo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvTorneo.EnableHeadersVisualStyles = false;
+            this.dgvTorneo.Location = new System.Drawing.Point(0, 0);
+            this.dgvTorneo.Name = "dgvTorneo";
+            this.dgvTorneo.ReadOnly = true;
+            this.dgvTorneo.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTorneo.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvTorneo.RowHeadersVisible = false;
+            this.dgvTorneo.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.dgvTorneo.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvTorneo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvTorneo.Size = new System.Drawing.Size(1191, 494);
+            this.dgvTorneo.TabIndex = 39;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(232, 31);
+            this.label1.TabIndex = 107;
+            this.label1.Text = "Lista de Torneos";
+            // 
+            // lblBusqueda
+            // 
+            this.lblBusqueda.AutoSize = true;
+            this.lblBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.lblBusqueda.Location = new System.Drawing.Point(242, 62);
+            this.lblBusqueda.Name = "lblBusqueda";
+            this.lblBusqueda.Size = new System.Drawing.Size(81, 18);
+            this.lblBusqueda.TabIndex = 108;
+            this.lblBusqueda.Text = "BUSCAR:";
             // 
             // Torneo
             // 
@@ -473,20 +515,8 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1476, 961);
             this.ControlBox = false;
-            this.Controls.Add(this.panelmodul);
-            this.Controls.Add(this.btnCal);
-            this.Controls.Add(this.panelDgv);
-            this.Controls.Add(this.btnGanador);
-            this.Controls.Add(this.btnCrear);
-            this.Controls.Add(this.btnPatrocinadores);
-            this.Controls.Add(this.btnInscripcionEquipos);
-            this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.btnPartidos);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.txtBuscarTorneo);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btnAsistir);
-            this.Controls.Add(this.btnGolear);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -498,10 +528,11 @@
             this.Shown += new System.EventHandler(this.Torneo_Shown);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panelDgv.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTorneo)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -523,9 +554,12 @@
         private Guna.UI2.WinForms.Guna2Button btnGanador;
         private Guna.UI2.WinForms.Guna2Button btnAsistir;
         private Guna.UI2.WinForms.Guna2Button btnGolear;
-        private System.Windows.Forms.Panel panelDgv;
-        public System.Windows.Forms.DataGridView dgvTorneo;
         private Guna.UI2.WinForms.Guna2Button btnCal;
         public System.Windows.Forms.Panel panelmodul;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelDgv;
+        public System.Windows.Forms.DataGridView dgvTorneo;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label lblBusqueda;
     }
 }

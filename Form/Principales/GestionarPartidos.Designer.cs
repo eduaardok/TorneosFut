@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnSalir = new Guna.UI2.WinForms.Guna2Button();
             this.btnGolAsisTarjetas = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -47,6 +47,8 @@
             this.btnTabla = new Guna.UI2.WinForms.Guna2Button();
             this.btnPosiciones = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnModificar = new Guna.UI2.WinForms.Guna2Button();
+            this.lblNombretorneo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.c.SuspendLayout();
             this.pnlDgvPartido.SuspendLayout();
@@ -95,9 +97,9 @@
             this.btnGolAsisTarjetas.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnGolAsisTarjetas.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnGolAsisTarjetas.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnGolAsisTarjetas.Location = new System.Drawing.Point(691, 133);
+            this.btnGolAsisTarjetas.Location = new System.Drawing.Point(456, 662);
             this.btnGolAsisTarjetas.Name = "btnGolAsisTarjetas";
-            this.btnGolAsisTarjetas.Size = new System.Drawing.Size(306, 59);
+            this.btnGolAsisTarjetas.Size = new System.Drawing.Size(398, 44);
             this.btnGolAsisTarjetas.TabIndex = 60;
             this.btnGolAsisTarjetas.Text = "GESTIONAR EVENTOS DEL PARTIDO";
             this.btnGolAsisTarjetas.Click += new System.EventHandler(this.btnGol_Click);
@@ -106,7 +108,7 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 62);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 63);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(50, 49);
             this.pictureBox1.TabIndex = 59;
@@ -118,7 +120,7 @@
             this.txtBuscarPartido.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.txtBuscarPartido.ForeColor = System.Drawing.Color.Gray;
             this.txtBuscarPartido.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtBuscarPartido.Location = new System.Drawing.Point(68, 63);
+            this.txtBuscarPartido.Location = new System.Drawing.Point(59, 63);
             this.txtBuscarPartido.Multiline = true;
             this.txtBuscarPartido.Name = "txtBuscarPartido";
             this.txtBuscarPartido.Size = new System.Drawing.Size(452, 48);
@@ -188,9 +190,9 @@
             this.btnGenerarPartidos.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnGenerarPartidos.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnGenerarPartidos.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnGenerarPartidos.Location = new System.Drawing.Point(1036, 68);
+            this.btnGenerarPartidos.Location = new System.Drawing.Point(976, 663);
             this.btnGenerarPartidos.Name = "btnGenerarPartidos";
-            this.btnGenerarPartidos.Size = new System.Drawing.Size(180, 59);
+            this.btnGenerarPartidos.Size = new System.Drawing.Size(240, 43);
             this.btnGenerarPartidos.TabIndex = 139;
             this.btnGenerarPartidos.Text = "GENERAR PARTIDOS";
             this.btnGenerarPartidos.Click += new System.EventHandler(this.btnGenerarPartidos_Click);
@@ -214,24 +216,24 @@
             this.dgvPartido.BackgroundColor = System.Drawing.Color.White;
             this.dgvPartido.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvPartido.CausesValidation = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPartido.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPartido.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvPartido.ColumnHeadersHeight = 40;
             this.dgvPartido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPartido.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPartido.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvPartido.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPartido.EnableHeadersVisualStyles = false;
             this.dgvPartido.Location = new System.Drawing.Point(0, 0);
@@ -239,14 +241,14 @@
             this.dgvPartido.Name = "dgvPartido";
             this.dgvPartido.ReadOnly = true;
             this.dgvPartido.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPartido.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPartido.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvPartido.RowHeadersVisible = false;
             this.dgvPartido.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvPartido.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -276,9 +278,9 @@
             this.btnTabla.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnTabla.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnTabla.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnTabla.Location = new System.Drawing.Point(1003, 133);
+            this.btnTabla.Location = new System.Drawing.Point(945, 176);
             this.btnTabla.Name = "btnTabla";
-            this.btnTabla.Size = new System.Drawing.Size(213, 52);
+            this.btnTabla.Size = new System.Drawing.Size(271, 42);
             this.btnTabla.TabIndex = 145;
             this.btnTabla.Text = "TABLA DE POSICIONES";
             this.btnTabla.Click += new System.EventHandler(this.btnTabla_Click);
@@ -299,11 +301,11 @@
             this.btnPosiciones.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnPosiciones.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.btnPosiciones.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnPosiciones.Location = new System.Drawing.Point(817, 68);
+            this.btnPosiciones.Location = new System.Drawing.Point(500, 176);
             this.btnPosiciones.Name = "btnPosiciones";
-            this.btnPosiciones.Size = new System.Drawing.Size(213, 59);
+            this.btnPosiciones.Size = new System.Drawing.Size(354, 42);
             this.btnPosiciones.TabIndex = 146;
-            this.btnPosiciones.Text = "TABLA DE POSCIONES rpt";
+            this.btnPosiciones.Text = "RPT TABLA DE POSCIONES ";
             this.btnPosiciones.Click += new System.EventHandler(this.btnPosiciones_Click);
             // 
             // guna2Button2
@@ -321,18 +323,55 @@
             this.guna2Button2.HoverState.BorderColor = System.Drawing.Color.Black;
             this.guna2Button2.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
             this.guna2Button2.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button2.Location = new System.Drawing.Point(555, 68);
+            this.guna2Button2.Location = new System.Drawing.Point(27, 176);
             this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(247, 59);
+            this.guna2Button2.Size = new System.Drawing.Size(429, 42);
             this.guna2Button2.TabIndex = 147;
             this.guna2Button2.Text = "VER CALENDARIO DEL EQUIPO LOCAL";
             this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click_1);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Animated = true;
+            this.btnModificar.BackColor = System.Drawing.Color.Transparent;
+            this.btnModificar.BorderColor = System.Drawing.Color.Empty;
+            this.btnModificar.BorderRadius = 20;
+            this.btnModificar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnModificar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnModificar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnModificar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnModificar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(209)))));
+            this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnModificar.ForeColor = System.Drawing.Color.Black;
+            this.btnModificar.HoverState.BorderColor = System.Drawing.Color.Black;
+            this.btnModificar.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.btnModificar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(3)))), ((int)(((byte)(140)))));
+            this.btnModificar.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.btnModificar.Location = new System.Drawing.Point(27, 662);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(382, 44);
+            this.btnModificar.TabIndex = 148;
+            this.btnModificar.Text = "MODIFICAR HORARIO Y ESTADIO";
+            // 
+            // lblNombretorneo
+            // 
+            this.lblNombretorneo.AutoSize = true;
+            this.lblNombretorneo.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lblNombretorneo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombretorneo.Location = new System.Drawing.Point(1121, 62);
+            this.lblNombretorneo.Name = "lblNombretorneo";
+            this.lblNombretorneo.Size = new System.Drawing.Size(116, 31);
+            this.lblNombretorneo.TabIndex = 149;
+            this.lblNombretorneo.Text = "Nombre";
+            this.lblNombretorneo.Click += new System.EventHandler(this.lblNombretorneo_Click);
             // 
             // btnTablaPos
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1240, 716);
+            this.Controls.Add(this.lblNombretorneo);
+            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.guna2Button2);
             this.Controls.Add(this.btnPosiciones);
             this.Controls.Add(this.btnTabla);
@@ -377,5 +416,7 @@
         public Guna.UI2.WinForms.Guna2Button btnTabla;
         private Guna.UI2.WinForms.Guna2Button btnPosiciones;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        public Guna.UI2.WinForms.Guna2Button btnModificar;
+        public System.Windows.Forms.Label lblNombretorneo;
     }
 }

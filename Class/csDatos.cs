@@ -622,6 +622,10 @@ namespace TorneosFut
         {
             return csOrganizador.TelefonoOrganizador(id);
         }
+        public string ObtenerNombreTorneo(string id)
+        {
+            return csTorneo.NombreTorneoDeID(id);
+        }
         public bool AsignarPatrocinio(string idPatrocinaddor, int IDTorneo, string tipoPatrocinio, decimal precioPatrocinio, string estado)
         {
             return csPatrocinador.AsignarPatrocinador(idPatrocinaddor, IDTorneo, tipoPatrocinio, precioPatrocinio, estado);

@@ -66,6 +66,7 @@ namespace TorneosFut.Class
             DataTable dt = csConexion.ListDGV(consul);
             dgvEntrenador.DataSource = dt;
             MostrarImagen(dt.Rows[0]["IDEstadio"].ToString(), ptb);
+            Modo_oscuro.EstiloDGV(dgvEntrenador);
         }
 
         public void MostrarImagen(string id, PictureBox ptb)
