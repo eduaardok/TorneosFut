@@ -45,7 +45,7 @@ namespace TorneosFut.Class
         public bool TotalEquiposInscritos(string torneo)
         {
             int participantes;
-            DataTable dt = csConexion.ListDGV($"select F.CantidadEquipos from Formato F inner join Torneo T on F.IDFormato = T.IDFormato where T.IDTorneo ={torneo}");
+            DataTable dt = csConexion.ListDGV($"select F.CantidadEquipos from Formato F inner join Torneo T on F.IDFormato = T.IDFormato where T.IDTorneo = {torneo}");
             participantes = int.Parse(dt.Rows[0][0].ToString());
             int inscritos;
             DataTable dt1 = csConexion.ListDGV($"select count(*) from Torneo T inner join InscripcionEquipo I on T.IDTorneo = I.IDTorneo where T.IDTorneo = {torneo}");
@@ -63,7 +63,7 @@ namespace TorneosFut.Class
         public bool TotalEquiposPagados(string torneo)
         {
             int participantes;
-            DataTable dt = csConexion.ListDGV($"select F.CantidadEquipos from Formato F inner join Torneo T on F.IDFormato = T.IDFormato where T.IDTorneo ={torneo}");
+            DataTable dt = csConexion.ListDGV($"select F.CantidadEquipos from Formato F inner join Torneo T on F.IDFormato = T.IDFormato where T.IDTorneo = {torneo}");
             participantes = int.Parse(dt.Rows[0][0].ToString());
             int pagados;
             DataTable dt1 = csConexion.ListDGV($"select count(*) from Torneo T inner join InscripcionEquipo I on T.IDTorneo = I.IDTorneo where T.IDTorneo = {torneo} and  I.Estado = 'PAGADO'");

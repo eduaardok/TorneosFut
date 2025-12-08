@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -35,6 +36,7 @@
             this.lblEncabezado = new System.Windows.Forms.Label();
             this.btnSalir = new Guna.UI2.WinForms.Guna2Button();
             this.dgvPosiciones = new System.Windows.Forms.DataGridView();
+            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.c.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPosiciones)).BeginInit();
             this.SuspendLayout();
@@ -142,6 +144,13 @@
             this.dgvPosiciones.Size = new System.Drawing.Size(725, 403);
             this.dgvPosiciones.TabIndex = 67;
             // 
+            // guna2BorderlessForm1
+            // 
+            this.guna2BorderlessForm1.BorderRadius = 30;
+            this.guna2BorderlessForm1.ContainerControl = this;
+            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm1.TransparentWhileDrag = true;
+            // 
             // TablaDePosiciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -167,5 +176,6 @@
         private Guna.UI2.WinForms.Guna2Button btnSalir;
         private System.Windows.Forms.Label lblEncabezado;
         public System.Windows.Forms.DataGridView dgvPosiciones;
+        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
     }
 }

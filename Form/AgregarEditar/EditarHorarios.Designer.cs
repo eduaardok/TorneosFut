@@ -41,9 +41,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txthora = new System.Windows.Forms.Label();
-            this.txtminuto = new System.Windows.Forms.Label();
             this.cmbEstadio = new System.Windows.Forms.ComboBox();
+            this.txtminuto = new System.Windows.Forms.TextBox();
+            this.txthora = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -143,6 +143,7 @@
             this.btnCancelar.Size = new System.Drawing.Size(155, 43);
             this.btnCancelar.TabIndex = 181;
             this.btnCancelar.Text = "CANCELAR";
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // dtpFecha
             // 
@@ -183,28 +184,6 @@
             this.label2.TabIndex = 184;
             this.label2.Text = "Fecha:";
             // 
-            // txthora
-            // 
-            this.txthora.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txthora.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txthora.Location = new System.Drawing.Point(115, 127);
-            this.txthora.Name = "txthora";
-            this.txthora.Size = new System.Drawing.Size(100, 24);
-            this.txthora.TabIndex = 188;
-            this.txthora.Text = "Hora";
-            this.txthora.TextChanged += new System.EventHandler(this.txthora_TextChanged);
-            // 
-            // txtminuto
-            // 
-            this.txtminuto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtminuto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtminuto.Location = new System.Drawing.Point(221, 127);
-            this.txtminuto.Name = "txtminuto";
-            this.txtminuto.Size = new System.Drawing.Size(93, 24);
-            this.txtminuto.TabIndex = 187;
-            this.txtminuto.Text = "Minuto";
-            this.txtminuto.Click += new System.EventHandler(this.txtminuto_Click);
-            // 
             // cmbEstadio
             // 
             this.cmbEstadio.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -223,15 +202,35 @@
             this.cmbEstadio.TabIndex = 189;
             this.cmbEstadio.SelectedIndexChanged += new System.EventHandler(this.cmbEstadio_SelectedIndexChanged);
             // 
+            // txtminuto
+            // 
+            this.txtminuto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.txtminuto.Location = new System.Drawing.Point(220, 128);
+            this.txtminuto.Name = "txtminuto";
+            this.txtminuto.Size = new System.Drawing.Size(98, 29);
+            this.txtminuto.TabIndex = 191;
+            this.txtminuto.Text = "Minuto";
+            this.txtminuto.TextChanged += new System.EventHandler(this.txtminuto_Click);
+            // 
+            // txthora
+            // 
+            this.txthora.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.txthora.Location = new System.Drawing.Point(116, 128);
+            this.txthora.Name = "txthora";
+            this.txthora.Size = new System.Drawing.Size(98, 29);
+            this.txthora.TabIndex = 190;
+            this.txthora.Text = "Hora";
+            this.txthora.TextChanged += new System.EventHandler(this.txthora_TextChanged);
+            // 
             // EditarHorarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(381, 308);
-            this.Controls.Add(this.cmbEstadio);
-            this.Controls.Add(this.txthora);
             this.Controls.Add(this.txtminuto);
+            this.Controls.Add(this.txthora);
+            this.Controls.Add(this.cmbEstadio);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -268,8 +267,8 @@
         public System.Windows.Forms.Label label7;
         public System.Windows.Forms.Label label3;
         public System.Windows.Forms.Label label2;
-        public System.Windows.Forms.Label txthora;
-        public System.Windows.Forms.Label txtminuto;
         private System.Windows.Forms.ComboBox cmbEstadio;
+        public System.Windows.Forms.TextBox txthora;
+        public System.Windows.Forms.TextBox txtminuto;
     }
 }

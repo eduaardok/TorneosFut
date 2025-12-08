@@ -187,6 +187,9 @@ namespace pruebas
                          return;
                  }*/
                 MessageBox.Show("Partidos generados correctamente");
+                
+                conexion.Consulta($"exec spAsignarEstadioPartidos {IdTorneo}");
+                conexion.Consulta($"EXEC spAsignarHorasPartidos {IdTorneo}");
                 if (conexion.Consulta($"exec spAsignarFechasPartidos {IdTorneo}"))
                 {
                     MessageBox.Show("Fechas asignadas correctamente");
@@ -195,9 +198,6 @@ namespace pruebas
                 {
                     MessageBox.Show("Error al asignar fechas");
                 }
-                conexion.Consulta($"exec spAsignarEstadioPartidos {IdTorneo}");
-                conexion.Consulta($"EXEC spAsignarHorasPartidos {IdTorneo}");
-
                 ActualizarTabla();
             }
 

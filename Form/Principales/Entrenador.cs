@@ -37,7 +37,9 @@ namespace PruebasTorneos
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
             csEntrenador.Cargar(dgvEntrenador, ptbIMG);
             dgvEntrenador.CellFormatting += dgvEntrenador_CellFormatting;
+
             Modo_oscuro.EstiloDGV(dgvEntrenador);
+
         }
 
         private void btnAggDT_Click(object sender, EventArgs e)
@@ -123,20 +125,20 @@ namespace PruebasTorneos
         }
         private void txtBuscarEntrenador_MouseClick(object sender, MouseEventArgs e)
         {
-            if (txtBuscarEntrenador.Text == "Buscar por nombre del Entrenador")
-            {
-                txtBuscarEntrenador.Text = "";
-                txtBuscarEntrenador.ForeColor = Color.Black;
-            }
+  
+                if (txtBuscarEntrenador.Text == "Buscar por nombre del Entrenador")
+                {
+                    txtBuscarEntrenador.Text = "";
+                    txtBuscarEntrenador.ForeColor = Color.Black;
+                }
         }
 
         private void dgvEntrenador_SelectionChanged_1(object sender, EventArgs e)
         {
-            if (dgvEntrenador.CurrentRow.Index >= 0)
-            {
+ 
                 string id = dgvEntrenador.Rows[dgvEntrenador.CurrentRow.Index].Cells[0].Value.ToString();
                 CsDatos.MostrarImagenEntrenador(id, ptbIMG);
-            }
+       
         }
 
         private void Entrenador_Shown(object sender, EventArgs e)

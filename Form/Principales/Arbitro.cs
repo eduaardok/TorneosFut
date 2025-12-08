@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TorneosFut.Properties;
 
 namespace TorneosFut
 {
@@ -30,7 +31,12 @@ namespace TorneosFut
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
-            Modo_oscuro.EstiloDGV(dgvArbitro);
+            if(this.BackColor == Color.White)
+            {
+                pictureBox1.BackgroundImage = Resources.IconoLupa;
+            }
+            else
+                pictureBox1.BackgroundImage = Resources
         }
 
 

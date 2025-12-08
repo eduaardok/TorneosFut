@@ -129,10 +129,14 @@ namespace PruebasTorneos
         }
         public void Cargar(DataGridView dgvEntrenador, PictureBox ptb)
         {
-            string consul = "select IDEntrenador, NombreEntrenador, ApellidoEntrenador, Sexo, FechaNacimiento from Entrenador";
-            DataTable dt = csConexion.ListDGV(consul);
-            dgvEntrenador.DataSource = dt;
-            MostrarImagen(dt.Rows[0]["IDEntrenador"].ToString(), ptb);
+          
+                string consul = "select IDEntrenador, NombreEntrenador, ApellidoEntrenador, Sexo, FechaNacimiento from Entrenador";
+                DataTable dt = csConexion.ListDGV(consul);
+                dgvEntrenador.DataSource = dt;
+            if (dgvEntrenador.SelectedRows.Count > 0)
+            {
+                MostrarImagen(dt.Rows[0]["IDEntrenador"].ToString(), ptb);
+            }
         }
         
         public void MostrarImagen(string id,PictureBox ptb)

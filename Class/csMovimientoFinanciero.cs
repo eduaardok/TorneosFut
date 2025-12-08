@@ -96,7 +96,7 @@ namespace TorneosFut
         }
         public bool AgregarMovimientoInscripcion(int iDTorneo, decimal monto, string descripcion)
         {
-            DataTable torneo = conexion.ListDGV($"SELECT TOP 1 DineroDisponible \r\nFROM MovimientoFinanciero \r\nORDER BY Fecha DESC, IDMovimiento DESC;;");
+            DataTable torneo = conexion.ListDGV($"SELECT TOP 1 DineroDisponible FROM MovimientoFinanciero ORDER BY Fecha DESC, IDMovimiento DESC");
             DineroDisponible = decimal.Parse(torneo.Rows[0]["DineroDisponible"].ToString());
             decimal DineroActual = DineroDisponible + monto;
             IDTorneo = iDTorneo;

@@ -28,7 +28,7 @@ namespace TorneosFut.Class
         }
         public DataTable ListadePartido(string id)
         {
-            DataTable dt = csConexion.ListDGV($"select IDPartido, Jornada, CONCAT(EquipoLocal, '  vs  ', EquipoVisitante)as Enfrentamiento, GolesLocal, GolesVisitante, Fecha, EstadoPartido, Grupo from  Partido where IDTorneo={id} order by Jornada");
+            DataTable dt = csConexion.ListDGV($"select IDPartido, Jornada, CONCAT(EquipoLocal, '  vs  ', EquipoVisitante)as Enfrentamiento, GolesLocal, GolesVisitante, Fecha, Hora, EstadoPartido, Grupo from  Partido where IDTorneo={id} order by Jornada");
             return dt;
         }
         public DataTable ListaDeEquipos(string idpartido)

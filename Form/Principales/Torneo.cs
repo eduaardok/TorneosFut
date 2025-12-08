@@ -122,14 +122,24 @@ namespace TorneosFut
 
         private void btnPartidos_Click(object sender, EventArgs e)
         {
-            if(IDTorneo != null || IDTorneo == "")
+            if (IDTorneo!= null)
             {
+
                 if (csValidaciones.ValidarEquiposInscritos(IDTorneo))
                 {
                     partidos = new btnTablaPos(IDTorneo, conexion.Usuario, conexion.Clave);
                     partidos.ShowDialog();
                 }
+                else
+                {
+                    msg.Buttons = MessageDialogButtons.OK;
+                    msg.Icon = MessageDialogIcon.Information;
+                    msg.Style = MessageDialogStyle.Light;
+                    msg.Parent = frmr;
+                    msg.Caption = "La cantidad de equipos inscritos no es suficiente";
+                }
             }
+            
         }
         private void btnInscripcionEquipos_Click(object sender, EventArgs e)
         {
@@ -323,6 +333,7 @@ namespace TorneosFut
             if (dgvTorneo.CurrentRow != null && dgvTorneo.CurrentRow.Index >= 0)
             {
                 IDTorneo = dgvTorneo.Rows[dgvTorneo.CurrentRow.Index].Cells[0].Value.ToString();
+
             }
         }
 

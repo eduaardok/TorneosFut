@@ -44,6 +44,11 @@ namespace TorneosFut
             anio = dtpFecha.Value.Year.ToString();
         }
 
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
         void EstablecerFecha(int id)
         {
             DataTable dataTable = new DataTable();
@@ -67,7 +72,7 @@ namespace TorneosFut
             cmbEstadio.ValueMember = "IDEstadio";
             cmbEstadio.DisplayMember = "NombreEstadio";
             EstablecerFecha(id);
-
+            Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
         }
 
         private void btneditar_Click(object sender, EventArgs e)
