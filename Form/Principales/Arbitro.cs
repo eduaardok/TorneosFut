@@ -31,12 +31,12 @@ namespace TorneosFut
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
-            if(this.BackColor == Color.White)
-            {
-                pictureBox1.BackgroundImage = Resources.IconoLupa;
-            }
-            else
-                pictureBox1.BackgroundImage = Resources
+            //if (this.BackColor == Color.White)
+            //{
+            //    pictureBox1.BackgroundImage = Resources.IconoLupa;
+            //}
+            //else
+            //    pictureBox1.BackgroundImage = Resources.LunaBlanco.png;
         }
 
 
