@@ -43,15 +43,30 @@ namespace TorneosFut
                 cmbModoFutbol.Enabled = false;
                 btnCrear.Text = "EDITAR";
 
-                DataTable torneo = conexion.ListDGV($"select F.NombreFormato, M.NombreModo from ModoFutbol M\r\ninner join \r\n(select t.IDTorneo, T.IDModoFutbol, F.NombreFormato from Formato F\r\ninner join\r\n(select IDTorneo, IDModoFutbol, IDFormato from Torneo) T on T.IDFormato = F.IDFormato)F on F.IDModoFutbol = M.IDModoFutbol\r\nwhere F.IDTorneo = {id}");
+                DataTable torneo = conexion.ListDGV($@"
+                    select 
+                        F.NombreFormato,
+                        M.NombreModo,
+                        T.EdadMin,
+                        T.EdadMax
+                    from Torneo T
+                    inner join Formato F ON T.IDFormato = F.IDFormato
+                    inner join ModoFutbol M ON T.IDModoFutbol = M.IDModoFutbol
+                    where T.IDTorneo = {id}
+                ");
+
                 form = torneo.Rows[0]["NombreFormato"].ToString();
                 cmbFormato.DataSource = csTorneo.LlenarFormatoID(form);
                 cmbFormato.ValueMember = "IDFormato";
                 cmbFormato.DisplayMember = "NombreFormato";
+
                 tipo = torneo.Rows[0]["NombreModo"].ToString();
                 cmbModoFutbol.DataSource = csTorneo.LlenarModoID(tipo);
                 cmbModoFutbol.ValueMember = "IDModoFutbol";
                 cmbModoFutbol.DisplayMember = "NombreModo";
+                numEdadmin.Value = Convert.ToDecimal(torneo.Rows[0]["EdadMin"]);
+                numEdadmax.Value = Convert.ToDecimal(torneo.Rows[0]["EdadMax"]);
+
             }
         }
         private void AggTorneo_Load(object sender, EventArgs e)
@@ -103,23 +118,61 @@ namespace TorneosFut
 
             try
             {
-                if (!agg)
+                if (!agg) // EDITAR
                 {
-                    MessageBox.Show(cmbGenero.SelectedItem.ToString());
-                    csDatos.EditarTorneo(id, txtNombre.Text, cmbFormato.SelectedValue.ToString(), cmbModoFutbol.SelectedValue.ToString(), cmbOrganizador.SelectedValue.ToString(), dtpInicio.Value.ToString(), dtpFin.Value.ToString(), decimal.Parse(txtCosto.Text), cmbGenero.SelectedItem.ToString(), (int)numEdadmin.Value, (int)numEdadmax.Value);
-                    msg.Text = "Se creó correctamente";
+                    csDatos.EditarTorneo(id, txtNombre.Text,
+                                       cmbFormato.SelectedValue.ToString(),
+                                       cmbModoFutbol.SelectedValue.ToString(),
+                                       cmbOrganizador.SelectedValue.ToString(),
+                                       dtpInicio.Value.ToString(),
+                                       dtpFin.Value.ToString(),
+                                       decimal.Parse(txtCosto.Text),
+                                       cmbGenero.SelectedItem.ToString(),
+                                       (int)numEdadmin.Value,
+                                       (int)numEdadmax.Value);
+
+                    if (csDatos.RecalcularJugadoresTorneo(id))
+                    {
+                        msg.Text = "Torneo editado correctamente.\nSe recalcularon los jugadores válidos.";
+                    }
+                    else
+                    {
+                        msg.Text = "Torneo editado, pero hubo un error al recalcular jugadores.";
+                    }
                     msg.Show();
                     this.Close();
                 }
-                else
+                else // CREAR
                 {
-                    csDatos.InsertarTorneo(txtNombre.Text, cmbFormato.SelectedValue.ToString(), cmbModoFutbol.SelectedValue.ToString(), cmbOrganizador.SelectedValue.ToString(), dtpInicio.Value.ToString(), dtpFin.Value.ToString(), decimal.Parse(txtCosto.Text), cmbGenero.SelectedItem.ToString(), (int)numEdadmin.Value, (int)numEdadmax.Value);
+                    string nuevoIDTorneo = csDatos.InsertarTorneo(
+                        txtNombre.Text,
+                        cmbFormato.SelectedValue.ToString(),
+                        cmbModoFutbol.SelectedValue.ToString(),
+                        cmbOrganizador.SelectedValue.ToString(),
+                        dtpInicio.Value.ToString(),
+                        dtpFin.Value.ToString(),
+                        decimal.Parse(txtCosto.Text),
+                        cmbGenero.SelectedItem.ToString(),
+                        (int)numEdadmin.Value,
+                        (int)numEdadmax.Value);
+
+                    if (!string.IsNullOrEmpty(nuevoIDTorneo))
+                    {
+                        csDatos.RecalcularJugadoresTorneo(nuevoIDTorneo);
+                        msg.Text = "Torneo creado correctamente";
+                    }
+                    else
+                    {
+                        msg.Text = "Error al crear el torneo";
+                    }
+
+                    msg.Show();
                     this.Close();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                msg.Text = "Datos inválidos";
+                msg.Text = "Datos inválidos: " + ex.Message;
                 msg.Show();
             }
         }

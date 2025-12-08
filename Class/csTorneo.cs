@@ -144,14 +144,17 @@ namespace TorneosFut.Class
 
             return dt;
         }
-        public bool AgregarTorneo(string Txtnombre, string formato, string ModoFutbol, string Organizador, string te, string fin, decimal costo, string Genero, int EdadMin, int EdadMax)
+        public string AgregarTorneo(string Txtnombre, string formato, string ModoFutbol, string Organizador, string te, string fin, decimal costo, string Genero, int EdadMin, int EdadMax)
         {
-            if (csConexion.Consulta($"insert into Torneo (IDTorneo, NombreTorneo, IDModoFutbol, IDOrganizador, FechaInicio, FechaFin, Usuario, Estado, CostoInscripcion, IDFormato, Genero, EdadMin, EdadMax)" +
-                $" values ({GenerarNuevoIDTorneo()}, '{Txtnombre}', {ModoFutbol}, '{Organizador}','{te}','{fin}', system_user, 'PENDIENTE', {costo}, {formato}, '{Genero}', '{EdadMin}', '{EdadMax}')"))
-                return true;
-            else
-                return false;
+            string nuevoID = GenerarNuevoIDTorneo();
 
+            if (csConexion.Consulta($"INSERT INTO Torneo (IDTorneo, NombreTorneo, IDModoFutbol, IDOrganizador, FechaInicio, FechaFin, Usuario, Estado, CostoInscripcion, IDFormato, Genero, EdadMin, EdadMax)" +
+                $" VALUES ({nuevoID}, '{Txtnombre}', {ModoFutbol}, '{Organizador}','{te}','{fin}', system_user, 'PENDIENTE', {costo}, {formato}, '{Genero}', '{EdadMin}', '{EdadMax}')"))
+            {
+                return nuevoID;
+            }
+
+            return null;
         }
         public bool ActualizarTorneo(string id, string Txtnombre, string formato, string ModoFutbol, string Organizador, string te, string fin, decimal costo, string genero, int EdadMin, int EdadMax)
         {

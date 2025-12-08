@@ -110,7 +110,7 @@
             this.lblEncabezado.Location = new System.Drawing.Point(16, 10);
             this.lblEncabezado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEncabezado.Name = "lblEncabezado";
-            this.lblEncabezado.Size = new System.Drawing.Size(346, 31);
+            this.lblEncabezado.Size = new System.Drawing.Size(269, 25);
             this.lblEncabezado.TabIndex = 33;
             this.lblEncabezado.Text = "CREACIÓN DE TORNEO";
             // 
@@ -121,7 +121,7 @@
             this.lblfecha.Location = new System.Drawing.Point(59, 290);
             this.lblfecha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblfecha.Name = "lblfecha";
-            this.lblfecha.Size = new System.Drawing.Size(192, 29);
+            this.lblfecha.Size = new System.Drawing.Size(155, 24);
             this.lblfecha.TabIndex = 59;
             this.lblfecha.Text = "Fecha de Inicio";
             // 
@@ -133,7 +133,7 @@
             this.dtpInicio.MaxDate = new System.DateTime(2050, 12, 31, 0, 0, 0, 0);
             this.dtpInicio.MinDate = new System.DateTime(2025, 1, 1, 0, 0, 0, 0);
             this.dtpInicio.Name = "dtpInicio";
-            this.dtpInicio.Size = new System.Drawing.Size(312, 30);
+            this.dtpInicio.Size = new System.Drawing.Size(312, 26);
             this.dtpInicio.TabIndex = 58;
             this.dtpInicio.Value = new System.DateTime(2025, 1, 1, 0, 0, 0, 0);
             // 
@@ -147,7 +147,7 @@
             this.cmbOrganizador.Location = new System.Drawing.Point(437, 125);
             this.cmbOrganizador.Margin = new System.Windows.Forms.Padding(4);
             this.cmbOrganizador.Name = "cmbOrganizador";
-            this.cmbOrganizador.Size = new System.Drawing.Size(307, 33);
+            this.cmbOrganizador.Size = new System.Drawing.Size(307, 28);
             this.cmbOrganizador.TabIndex = 57;
             // 
             // cmbModoFutbol
@@ -165,7 +165,7 @@
             this.cmbModoFutbol.Location = new System.Drawing.Point(437, 225);
             this.cmbModoFutbol.Margin = new System.Windows.Forms.Padding(4);
             this.cmbModoFutbol.Name = "cmbModoFutbol";
-            this.cmbModoFutbol.Size = new System.Drawing.Size(307, 33);
+            this.cmbModoFutbol.Size = new System.Drawing.Size(307, 28);
             this.cmbModoFutbol.TabIndex = 56;
             // 
             // label1
@@ -178,7 +178,7 @@
             this.label1.Location = new System.Drawing.Point(431, 190);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(170, 31);
+            this.label1.Size = new System.Drawing.Size(138, 25);
             this.label1.TabIndex = 55;
             this.label1.Text = "Tipo Fútbol:";
             // 
@@ -192,7 +192,7 @@
             this.cmbFormato.Location = new System.Drawing.Point(59, 225);
             this.cmbFormato.Margin = new System.Windows.Forms.Padding(4);
             this.cmbFormato.Name = "cmbFormato";
-            this.cmbFormato.Size = new System.Drawing.Size(312, 33);
+            this.cmbFormato.Size = new System.Drawing.Size(312, 28);
             this.cmbFormato.TabIndex = 53;
             // 
             // label4
@@ -205,7 +205,7 @@
             this.label4.Location = new System.Drawing.Point(59, 190);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(131, 31);
+            this.label4.Size = new System.Drawing.Size(105, 25);
             this.label4.TabIndex = 52;
             this.label4.Text = "Formato:";
             // 
@@ -219,7 +219,7 @@
             this.label3.Location = new System.Drawing.Point(431, 90);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(183, 31);
+            this.label3.Size = new System.Drawing.Size(148, 25);
             this.label3.TabIndex = 51;
             this.label3.Text = "Organizador:";
             // 
@@ -231,7 +231,7 @@
             this.txtNombre.Location = new System.Drawing.Point(59, 125);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(312, 30);
+            this.txtNombre.Size = new System.Drawing.Size(312, 26);
             this.txtNombre.TabIndex = 50;
             // 
             // label2
@@ -244,7 +244,7 @@
             this.label2.Location = new System.Drawing.Point(59, 90);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(125, 31);
+            this.label2.Size = new System.Drawing.Size(100, 25);
             this.label2.TabIndex = 49;
             this.label2.Text = "Nombre:";
             // 
@@ -315,7 +315,7 @@
             this.label5.Location = new System.Drawing.Point(59, 390);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(166, 29);
+            this.label5.Size = new System.Drawing.Size(135, 24);
             this.label5.TabIndex = 102;
             this.label5.Text = "Fecha de Fin";
             // 
@@ -327,7 +327,7 @@
             this.dtpFin.MaxDate = new System.DateTime(2050, 12, 31, 0, 0, 0, 0);
             this.dtpFin.MinDate = new System.DateTime(2025, 1, 1, 0, 0, 0, 0);
             this.dtpFin.Name = "dtpFin";
-            this.dtpFin.Size = new System.Drawing.Size(312, 30);
+            this.dtpFin.Size = new System.Drawing.Size(312, 26);
             this.dtpFin.TabIndex = 101;
             this.dtpFin.Value = new System.DateTime(2025, 1, 1, 0, 0, 0, 0);
             // 
@@ -339,7 +339,7 @@
             this.txtCosto.Location = new System.Drawing.Point(437, 425);
             this.txtCosto.Margin = new System.Windows.Forms.Padding(4);
             this.txtCosto.Name = "txtCosto";
-            this.txtCosto.Size = new System.Drawing.Size(282, 30);
+            this.txtCosto.Size = new System.Drawing.Size(282, 26);
             this.txtCosto.TabIndex = 104;
             // 
             // label6
@@ -352,7 +352,7 @@
             this.label6.Location = new System.Drawing.Point(431, 390);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(288, 31);
+            this.label6.Size = new System.Drawing.Size(234, 25);
             this.label6.TabIndex = 103;
             this.label6.Text = "Costo de inscripción:";
             // 
@@ -366,7 +366,7 @@
             this.label7.Location = new System.Drawing.Point(431, 290);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(119, 31);
+            this.label7.Size = new System.Drawing.Size(96, 25);
             this.label7.TabIndex = 105;
             this.label7.Text = "Genero:";
             // 
@@ -383,7 +383,7 @@
             this.cmbGenero.Location = new System.Drawing.Point(431, 325);
             this.cmbGenero.Margin = new System.Windows.Forms.Padding(4);
             this.cmbGenero.Name = "cmbGenero";
-            this.cmbGenero.Size = new System.Drawing.Size(307, 33);
+            this.cmbGenero.Size = new System.Drawing.Size(307, 28);
             this.cmbGenero.TabIndex = 106;
             // 
             // numEdadmin
@@ -402,7 +402,7 @@
             0});
             this.numEdadmin.Name = "numEdadmin";
             this.numEdadmin.ReadOnly = true;
-            this.numEdadmin.Size = new System.Drawing.Size(165, 30);
+            this.numEdadmin.Size = new System.Drawing.Size(165, 26);
             this.numEdadmin.TabIndex = 107;
             this.numEdadmin.Value = new decimal(new int[] {
             5,
@@ -426,7 +426,7 @@
             0});
             this.numEdadmax.Name = "numEdadmax";
             this.numEdadmax.ReadOnly = true;
-            this.numEdadmax.Size = new System.Drawing.Size(165, 30);
+            this.numEdadmax.Size = new System.Drawing.Size(165, 26);
             this.numEdadmax.TabIndex = 108;
             this.numEdadmax.Value = new decimal(new int[] {
             5,
@@ -441,7 +441,7 @@
             this.lblEdadMin.Location = new System.Drawing.Point(59, 490);
             this.lblEdadMin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEdadMin.Name = "lblEdadMin";
-            this.lblEdadMin.Size = new System.Drawing.Size(165, 29);
+            this.lblEdadMin.Size = new System.Drawing.Size(132, 24);
             this.lblEdadMin.TabIndex = 109;
             this.lblEdadMin.Text = "Edad minima";
             // 
@@ -452,7 +452,7 @@
             this.label8.Location = new System.Drawing.Point(246, 490);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(170, 29);
+            this.label8.Size = new System.Drawing.Size(137, 24);
             this.label8.TabIndex = 110;
             this.label8.Text = "Edad máxima";
             // 

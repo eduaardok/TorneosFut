@@ -3,6 +3,7 @@ using PruebasTorneos;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -320,15 +321,17 @@ namespace TorneosFut
         }
 
 
-        public bool InsertarTorneo(string Txtnombre, string formato, string ModoFutbol, string Organizador, string te, string fin, decimal costo, string Genero, int EdadMin, int EdadMax)
+        public string InsertarTorneo(string Txtnombre, string formato, string ModoFutbol, string Organizador, string te, string fin, decimal costo, string Genero, int EdadMin, int EdadMax)
         {
-            if (csTorneo.AgregarTorneo(Txtnombre, formato, ModoFutbol, Organizador, te, fin, costo, Genero, EdadMin, EdadMax))
+            string nuevoID = csTorneo.AgregarTorneo(Txtnombre, formato, ModoFutbol, Organizador, te, fin, costo, Genero, EdadMin, EdadMax);
+
+            if (!string.IsNullOrEmpty(nuevoID))
             {
                 MessageBox.Show("Torneo registrado correctamente");
-                return true;
+                return nuevoID;
             }
-            else
-                return false;
+
+            return null;
         }
         public bool InsertarEstadio(string id, string nombre, string ubicacion, string imagen, string filename)
         {
@@ -635,6 +638,38 @@ namespace TorneosFut
             if (csIncripcion.PagarPatroci(IDTorneo, IDPatrocinador, estado))
                 return csMovimiento.AgregarMovimientoPatro(IDTorneo, IDPatrocinador, descripcion);
             return false;
+        }
+        public bool RecalcularJugadoresTorneo(string idTorneo)
+        {
+            try
+            {
+                csConexion.AbrirCon();
+
+                using (SqlCommand cmd = new SqlCommand("sp_RecalcularJugadoresTorneo", csConexion.Conexion))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@IDTorneo", int.Parse(idTorneo));
+
+                    cmd.ExecuteNonQuery();
+                    return true;
+                }
+            }
+            catch (SqlException sqlex)
+            {
+                MessageBox.Show("Error SQL al recalcular jugadores: " + sqlex.Message,
+                               "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al recalcular jugadores: " + ex.Message,
+                               "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            finally
+            {
+                csConexion.CerrarCon();
+            }
         }
     }
 }

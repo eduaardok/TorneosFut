@@ -133,9 +133,41 @@ namespace TorneosFut
         }
         private void btnInscripcionEquipos_Click(object sender, EventArgs e)
         {
-            gestionInscripcion = new GestionInscripcion(IDTorneo, conexion.Usuario, conexion.Clave);
-            gestionInscripcion.ShowDialog();
+            string idTorneoSeleccionado = ObtenerIDTorneoSeleccionado();
 
+            if (string.IsNullOrEmpty(idTorneoSeleccionado))
+            {
+                MessageBox.Show("Por favor, seleccione un torneo de la lista.", "Aviso",
+                               MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            gestionInscripcion = new GestionInscripcion(idTorneoSeleccionado, conexion.Usuario, conexion.Clave);
+            gestionInscripcion.ShowDialog();
+        }
+
+        private string ObtenerIDTorneoSeleccionado()
+        {
+            try
+            {
+                if (dgvTorneo.SelectedRows.Count > 0)
+                {
+                    var cellValue = dgvTorneo.SelectedRows[0].Cells["IDTorneo"].Value;
+                    return cellValue?.ToString() ?? string.Empty;
+                }
+                else if (dgvTorneo.CurrentRow != null)
+                {
+                    var cellValue = dgvTorneo.CurrentRow.Cells["IDTorneo"].Value;
+                    return cellValue?.ToString() ?? string.Empty;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al obtener ID del torneo: {ex.Message}", "Error",
+                               MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return string.Empty;
         }
 
         private void btnCrear_Click_1(object sender, EventArgs e)
@@ -213,7 +245,6 @@ namespace TorneosFut
                         {
                             reader.Read();
 
-                            // Verifica si la columna "Mensaje" existe
                             bool tieneMensaje = false;
                             for (int i = 0; i < reader.FieldCount; i++)
                             {
@@ -232,7 +263,6 @@ namespace TorneosFut
                             }
                             else
                             {
-                                // Obtener GanadorID y Puntos
                                 string ganadorID = reader["GanadorID"].ToString();
                                 int puntos = Convert.ToInt32(reader["Puntos"]);
                                 msg.Text = $"Ganador: {ganadorID} con {puntos} puntos.";

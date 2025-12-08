@@ -55,21 +55,45 @@ namespace TorneosFut
             dgvEquipos.GridColor = Color.FromArgb(251, 3, 140);
             dgvEquiposIns.GridColor = Color.FromArgb(251, 3, 140);
 
-            DataTable torneo = conexion.ListDGV($"Select FechaInicio, CostoInscripcion from Torneo where IDTorneo = {IdTorneo}");
-            fecha = torneo.Rows[0]["FechaInicio"].ToString();
-            costo = decimal.Parse(torneo.Rows[0]["CostoInscripcion"].ToString());
+            try
+            {
+                if (string.IsNullOrEmpty(IdTorneo))
+                {
+                    MessageBox.Show("El ID del torneo no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Close();
+                    return;
+                }
 
-            csDGV.MostrarNameEquipos(IdTorneo, dgvEquipos);
-            AdaptarDGV();
-            csDGV.MostrarEquiposInsc(IdTorneo, dgvEquiposIns);
-            AdaptarDGV();
+                string consulta = $"Select FechaInicio, CostoInscripcion from Torneo where IDTorneo = {IdTorneo}";
+                DataTable torneo = conexion.ListDGV(consulta);
+        
+                if (torneo.Rows.Count > 0)
+                {
+                    fecha = torneo.Rows[0]["FechaInicio"].ToString();
+                    costo = decimal.Parse(torneo.Rows[0]["CostoInscripcion"].ToString());
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró el torneo especificado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Close();
+                    return;
+                }
 
-            c.Tag = "NoCambiar";
-            panel1.Tag = "NoCambiar";
-            panel3.Tag = "NoCambiar";
-            panel4.Tag = "NoCambiar";
-            Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
+                csDGV.MostrarNameEquipos(IdTorneo, dgvEquipos);
+                AdaptarDGV();
+                csDGV.MostrarEquiposInsc(IdTorneo, dgvEquiposIns);
+                AdaptarDGV();
 
+                c.Tag = "NoCambiar";
+                panel1.Tag = "NoCambiar";
+                panel3.Tag = "NoCambiar";
+                panel4.Tag = "NoCambiar";
+                Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}\n\nStack Trace:\n{ex.StackTrace}", "Error Completo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         void AdaptarDGV()
         {
