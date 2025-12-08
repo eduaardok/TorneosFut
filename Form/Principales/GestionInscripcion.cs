@@ -223,7 +223,6 @@ namespace TorneosFut
             }
 
             List<string> listaEquipos = new List<string>();
-
             foreach (DataGridViewRow row in dgvEquipos.SelectedRows)
             {
                 string idequipo = row.Cells["IDEquipo"].Value.ToString();
@@ -232,17 +231,16 @@ namespace TorneosFut
 
             int idT = int.Parse(IdTorneo);
 
+            // Mostrar jugadores elegibles (opcional, solo para info)
             List<string> jugadoresOK = ObtenerJugadoresElegibles(idT);
 
             if (jugadoresOK.Count > 0)
             {
                 string msg = "Jugadores que PUEDEN entrar al torneo:\n\n";
-
                 for (int i = 0; i < jugadoresOK.Count; i++)
                 {
                     msg += "• " + jugadoresOK[i] + "\n";
                 }
-
                 MessageBox.Show(msg, "Jugadores elegibles");
             }
             else
@@ -251,8 +249,13 @@ namespace TorneosFut
                 return;
             }
 
-            GuardarJugadoresElegibles(idT);
+            if (!csDatos.RecalcularJugadoresTorneo(IdTorneo))
+            {
+                MessageBox.Show("Error al calcular jugadores elegibles.");
+                return;
+            }
 
+            // Inscribir equipos
             if (csDatos.InsertarIncripcion(idT, listaEquipos, costo, fecha))
             {
                 MessageBox.Show($"Se inscribieron correctamente {listaEquipos.Count} equipos.");
