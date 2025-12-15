@@ -25,6 +25,12 @@ namespace TorneosFut
             csDatos= new csDatos(u,c);
             InitializeComponent();
         }
+        public AggEditArbitro(string u, string c, bool n)
+        {
+            N = n;
+            csDatos = new csDatos(u, c);
+            InitializeComponent();
+        }
 
         private void btngCancelar_Click(object sender, EventArgs e)
         {

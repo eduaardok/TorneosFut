@@ -26,6 +26,7 @@ namespace TorneosFut
         private void Arbitro_Load(object sender, EventArgs e)
         {
             Modo_oscuro.AplicarModoOscuro(this, GlobalSettings.ModoOscuro);
+            Modo_oscuro.EstiloDGV(dgvArbitro);
             csDGV.MostrarArbitros(dgvArbitro);
             foreach (DataGridViewColumn column in dgvArbitro.Columns)
             {
@@ -42,7 +43,7 @@ namespace TorneosFut
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            AggEditArbitro AggEditArbitro = new AggEditArbitro(csConexion.Usuario,csConexion.Clave,true, dgvArbitro.Rows[dgvArbitro.CurrentRow.Index].Cells[0].Value.ToString());
+            AggEditArbitro AggEditArbitro = new AggEditArbitro(csConexion.Usuario,csConexion.Clave,true);
             AggEditArbitro.ShowDialog();
         }
 
@@ -61,6 +62,7 @@ namespace TorneosFut
             csDGV.MostrarArbitrosFiltro(dgvArbitro, txtFiltro.Text);
             csDGV.AdaptarDGV(dgvArbitro);
             Modo_oscuro.EstiloDGV(dgvArbitro);
+
         }
         private void txtFiltro_Click(object sender, EventArgs e)
         {
@@ -74,6 +76,7 @@ namespace TorneosFut
         private void Arbitro_Shown(object sender, EventArgs e)
         {
             csDGV.MostrarArbitros(dgvArbitro);
+            Modo_oscuro.EstiloDGV(dgvArbitro);
         }
     }
 }
